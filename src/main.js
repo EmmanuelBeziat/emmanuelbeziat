@@ -28,17 +28,17 @@ router.map({
 	},
 	'/': {
 		component: {
-			template: "<h1>Home</h1>"
+			template: "<div><h1>Home</h1></div>"
 		}
 	},
 	'/blog': {
 		component: {
-			template: "<h1>Articles</h1>"
+			template: "<div><h1>Articles</h1></div>"
 		}
 	},
 	'/portfolio': {
 		component: {
-			template: "<h1>Portfolio</h1>"
+			template: "<div><h1>Portfolio</h1></div>"
 		}
 	}
 });

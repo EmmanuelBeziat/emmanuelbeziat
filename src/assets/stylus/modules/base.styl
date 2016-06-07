@@ -7,3 +7,18 @@ body
 h1
 	font-family $font-stack-heading
 	font-weight 200
+
+.site-main
+	width 60rem
+	margin auto
+
+.fade-transition
+	transition transform .3s ease-in-out, opacity .3s ease-in-out
+
+.fade-enter
+.fade-leave
+	transform translateX(-15%) scale(.8)
+	opacity 0
+
+.fade-enter
+	transform translateX(5%) scale(.8)
