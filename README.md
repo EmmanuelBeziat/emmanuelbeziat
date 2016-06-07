@@ -1,7 +1,7 @@
 # Emmanuel Beziat
 ![madewith](https://img.shields.io/badge/made%20with-vuejs-brightgreen.svg?style=flat-square)
 
-> My website, basically. 2016 inside!
+My website, basically. 2016 inside!
 
 ## Build Setup
 
