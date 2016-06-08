@@ -1,8 +1,10 @@
 <template>
 	<div class="site">
 		<app-header></app-header>
-		<app-nav></app-nav>
-		<app-main></app-main>
+		<div class="site-content">
+			<app-nav></app-nav>
+			<app-main></app-main>
+		</div>
 		<app-footer></app-footer>
 	</div>
 </template>

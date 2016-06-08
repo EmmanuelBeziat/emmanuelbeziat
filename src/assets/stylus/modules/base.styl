@@ -1,24 +1,30 @@
+html
+	height 100%
+	box-sizing border-box
+
+*
+*::before
+*::after
+	box-sizing inherit
+
 body
 	margin 0
 	font 400 $font-size-base/1.5em $font-stack-common
 	background $color-background
 	color $color-text
+	height 100%
 
 h1
 	font-family $font-stack-heading
 	font-weight 200
 
-.site-main
+.site
+	min-height 100%
+	display flex
+	flex-direction row
+	align-items stretch
+	overflow-x hidden
+
+.site-content
 	width 60rem
-	margin auto
-
-.fade-transition
-	transition transform .3s ease-in-out, opacity .3s ease-in-out
-
-.fade-enter
-.fade-leave
-	transform translateX(-15%) scale(.8)
-	opacity 0
-
-.fade-enter
-	transform translateX(5%) scale(.8)
+	margin 0 auto

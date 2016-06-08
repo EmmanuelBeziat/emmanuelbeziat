@@ -2,6 +2,7 @@ import Vue from 'vue'
 import App from './App'
 import Home from './pages/Home'
 import Articles from './pages/Articles'
+import Portfolio from './pages/Portfolio'
 import NotFound from './pages/NotFound'
 import VueRouter from 'vue-router'
 
@@ -27,19 +28,20 @@ router.map({
 		}
 	},
 	'/': {
-		component: {
-			template: "<div><h1>Home</h1></div>"
-		}
+		component: Home
 	},
 	'/blog': {
-		component: {
-			template: "<div><h1>Articles</h1></div>"
+		component: Articles,
+		subRoutes: {
+			'/article-1': {
+				component: {
+					template: '<div><h1>Article 1</h1></div>'
+				}
+			}
 		}
 	},
 	'/portfolio': {
-		component: {
-			template: "<div><h1>Portfolio</h1></div>"
-		}
+		component: Portfolio
 	}
 });
 

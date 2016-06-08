@@ -1,5 +1,7 @@
 <template>
-	<h1>404</h1>
+	<section>
+		<h1>Page non-trouvée</h1>
+	</section>
 </template>
 
 <script>
