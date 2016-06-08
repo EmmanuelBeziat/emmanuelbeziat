@@ -11,26 +11,24 @@ Vue.use(VueRouter)
 
 // Initializing the router with options
 export var router = new VueRouter({
-	history: true
+	history: true,
+	linkActiveClass: 'site-menu__link--active'
 });
 
-// Redirect certain routes to other routes
-
-
-// Define your routes here.
-// NOTE: You'd normally do something
-// like require('./home/index.vue') for the component
 router.map({
 	// Not found handler
 	'*': {
 		component: {
+			name: 'not-found',
 			template: NotFound
 		}
 	},
 	'/': {
+		name: 'home',
 		component: Home
 	},
 	'/blog': {
+		name: 'blog',
 		component: Articles,
 		subRoutes: {
 			'/article-1': {
@@ -41,6 +39,7 @@ router.map({
 		}
 	},
 	'/portfolio': {
+		name: 'portfolio',
 		component: Portfolio
 	}
 });

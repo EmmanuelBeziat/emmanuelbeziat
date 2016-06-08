@@ -1,8 +1,8 @@
 <template>
 	<nav class="site-menu">
-		<a v-link="{ path: '/' }">Home</a>
-		<a v-link="{ path: '/portfolio' }">Portfolio</a>
-		<a v-link="{ path: '/blog' }">Blog</a>
+		<a class="site-menu__link" v-link="{ name: 'home', exact: true }">Home</a>
+		<a class="site-menu__link" v-link="{ name: 'portfolio' }">Portfolio</a>
+		<a class="site-menu__link" v-link="{ name: 'blog' }">Blog</a>
 	</nav>
 </template>
 

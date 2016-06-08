@@ -1,0 +1,32 @@
+.site-menu
+	display flex
+	justify-content flex-end
+
+.site-menu__link
+	font 400 1.85rem/1 $font-stack-heading
+	text-decoration none
+	color $color-text
+	position relative
+
+	&::before
+	&::after
+		display inline-block
+		opacity 0
+		transition .3s ease-in-out
+
+	&::before
+		content "<"
+		transform translateX(20px)
+		padding-right .125em
+	&::after
+		content "/>"
+		transform translateX(-20px)
+		padding-left .1875em
+
+.site-menu__link--active
+.site-menu__link:hover
+.site-menu__link:focus
+	&::before
+	&::after
+		opacity 1
+		transform translateX(0)
