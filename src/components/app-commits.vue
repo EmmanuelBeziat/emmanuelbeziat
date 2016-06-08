@@ -10,6 +10,7 @@
 
 <script>
 var apiURL = 'https://api.github.com/repos/EmmanuelBeziat/emmanuelbeziat/commits?per_page=3&sha='
+
 export default {
 	data () {
 		return {
