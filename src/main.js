@@ -15,9 +15,14 @@ export var router = new VueRouter({
 	linkActiveClass: 'site-menu__link--active'
 });
 
+router.redirect({
+  // redirect any not-found route to 404
+  '*': '/not-found'
+});
+
 router.map({
 	// Not found handler
-	'*': {
+	'/not-found': {
 		component: {
 			name: 'not-found',
 			template: NotFound
