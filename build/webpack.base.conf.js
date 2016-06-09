@@ -2,6 +2,7 @@ var path = require('path')
 var config = require('../config')
 var utils = require('./utils')
 var projectRoot = path.resolve(__dirname, '../')
+var SvgStore = require('webpack-svgstore-plugin')
 
 module.exports = {
 	entry: {
@@ -24,6 +25,20 @@ module.exports = {
 	resolveLoader: {
 		fallback: [path.join(__dirname, '../node_modules')]
 	},
+
+	plugins: [
+		new SvgStore(
+			[
+				path.join(__dirname, 'assets', 'icons', '**/*.svg')
+			],
+			'./static',
+			{
+				name: '[hash].icons.svg',
+				prefix: ''
+			}
+		)
+	],
+
 	module: {
 		loaders: [
 			{

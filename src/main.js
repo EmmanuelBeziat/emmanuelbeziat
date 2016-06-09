@@ -1,13 +1,21 @@
 import Vue from 'vue'
+import Svg from 'vue-svg-directive'
+import VueRouter from 'vue-router'
+
 import App from './App'
 import Home from './pages/Home'
 import Articles from './pages/Articles'
 import Portfolio from './pages/Portfolio'
 import NotFound from './pages/NotFound'
-import VueRouter from 'vue-router'
 
 // Telling Vue to use the router
 Vue.use(VueRouter)
+
+Vue.use(Svg, {
+	sprites : '/static/sprite/sprites.svg',
+	prefix  : '',
+	class   : 'icon'
+})
 
 // Initializing the router with options
 export var router = new VueRouter({

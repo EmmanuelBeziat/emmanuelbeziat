@@ -11,7 +11,7 @@ module.exports = {
 		productionSourceMap: true,
 		// gzip off by default as many popular static hosts such as
 		// surge or netlify already gzip all static assets for you
-		productionGzip: false,
+		productionGzip: true,
 		productionGzipExtensions: ['js', 'css']
 	},
 	dev: {
