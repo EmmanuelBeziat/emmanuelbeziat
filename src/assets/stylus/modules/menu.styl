@@ -13,6 +13,7 @@
 		display inline-block
 		opacity 0
 		transition .3s ease-in-out
+		color $color-text
 
 	&::before
 		content "<"
@@ -22,6 +23,46 @@
 		content "/>"
 		transform translateX(-20px)
 		padding-left .1875em
+
+	&:nth-child(1)
+		&:hover
+		&:focus
+			color $color-green
+
+	&:nth-child(2)
+		&:hover
+		&:focus
+			color $color-blue
+
+	&:nth-child(3)
+		&:hover
+		&:focus
+			color $color-red
+
+.site-menu__link--active
+	&:nth-child(1)
+		color $color-green
+		&:hover
+		&:focus
+			&::before
+			&::after
+				color $color-green
+
+	&:nth-child(2)
+		color $color-blue
+		&:hover
+		&:focus
+			&::before
+			&::after
+				color $color-blue
+
+	&:nth-child(3)
+		color $color-red
+		&:hover
+		&:focus
+			&::before
+			&::after
+				color $color-red
 
 .site-menu__link--active
 .site-menu__link:hover
