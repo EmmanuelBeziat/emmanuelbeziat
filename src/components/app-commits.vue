@@ -2,7 +2,7 @@
 	<div class="commits">
 		<h2>Dernières mises à jour du site !</h2>
 		<div v-for="record in commits">
-			<span class="commits__date"><a :href="record.html_url" target="_blank">{{record.commit.author.date | formatDate}}</a></span>
+			<span class="commits__date"><a :href="record.html_url" target="_blank">{{record.commit.author.date | formatDate}}</a></span> —
 			<span class="commits__message">{{record.commit.message | truncate}}</span>
 		</div>
 	</div>
