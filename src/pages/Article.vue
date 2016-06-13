@@ -1,7 +1,5 @@
 <template>
 	<section>
-		<h1>Liste d'articles</h1>
-
 		<article>
 			{{{article}}}
 		</article>

@@ -6,6 +6,7 @@ import VueResource from 'vue-resource'
 import App from './App'
 import Home from './pages/Home'
 import Articles from './pages/Articles'
+import Article from './pages/Article'
 import Portfolio from './pages/Portfolio'
 import NotFound from './pages/NotFound'
 
@@ -48,7 +49,7 @@ router.map({
 		subRoutes: {
 			'/article-1': {
 				component: {
-					template: '<div><h1>Article 1</h1></div>'
+					template: Article
 				}
 			}
 		}

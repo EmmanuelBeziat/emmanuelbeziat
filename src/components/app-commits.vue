@@ -27,10 +27,6 @@ export default {
 		this.fetchData()
 	},
 
-	watch: {
-		currentBranch: 'fetchData'
-	},
-
 	filters: {
 		truncate: function (v) {
 			var newline = v.indexOf('\n')

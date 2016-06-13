@@ -45,6 +45,7 @@
     "karma-webpack": "^1.7.0",
     "kouto-swiss": "^0.12.0",
     "lolex": "^1.4.0",
+    "marked": "^0.3.5",
     "mocha": "^2.4.5",
     "moment": "^2.13.0",
     "ora": "^0.2.0",
