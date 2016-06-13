@@ -9,6 +9,10 @@
 </template>
 
 <script>
+import Moment from 'moment'
+
+Moment.locale('fr')
+
 var apiURL = 'https://api.github.com/repos/EmmanuelBeziat/emmanuelbeziat/commits?per_page=3&sha='
 
 export default {
@@ -34,7 +38,9 @@ export default {
 		},
 
 		formatDate: function (v) {
-			return v.replace(/T|Z/g, ' ')
+			var date = Moment(v.replace(/T|Z/g, ' '), 'YYYY-MM-DD hh:mm:ss')
+
+			return date.format('dddd Do MMM YYYY[, à] hh[h]mm')
 		}
 	},
 
