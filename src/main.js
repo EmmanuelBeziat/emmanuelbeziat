@@ -47,8 +47,9 @@ router.map({
 		name: 'blog',
 		component: Articles,
 		subRoutes: {
-			'/article-1': {
+			'/:name': {
 				component: {
+					name: 'article',
 					template: Article
 				}
 			}
