@@ -15,9 +15,9 @@ Vue.use(VueRouter)
 Vue.use(VueResource)
 
 Vue.use(Svg, {
-	sprites : '/static/sprite/sprites.svg',
-	prefix  : '',
-	class   : 'icon'
+	sprites: '/static/sprites/icons.svg',
+	prefix: '',
+	class: 'icon'
 })
 
 // Initializing the router with options
@@ -27,8 +27,8 @@ export var router = new VueRouter({
 });
 
 router.redirect({
-  // redirect any not-found route to 404
-  '*': '/not-found'
+	// redirect any not-found route to 404
+	'*': '/not-found'
 });
 
 router.map({
@@ -39,10 +39,12 @@ router.map({
 			template: NotFound
 		}
 	},
+
 	'/': {
 		name: 'home',
 		component: Home
 	},
+
 	'/blog': {
 		name: 'blog',
 		component: Articles,
@@ -55,6 +57,7 @@ router.map({
 			}
 		}
 	},
+
 	'/portfolio': {
 		name: 'portfolio',
 		component: Portfolio

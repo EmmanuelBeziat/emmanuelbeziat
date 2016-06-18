@@ -1,23 +1,22 @@
 <template>
 	<div class="social" v-if="resume">
 		<a href="https://twitter/{{ resume.contact.twitter }}" class="social__link" target="_blank">
-			<i class="icon-twitter" aria-hidden="true"></i><span class="sr-only">Twitter</span>
-			<svg v-svg sprite="twitter"></svg>
+			<svg v-svg class="icon social__icon" sprite="twitter"></svg><span class="sr-only">Twitter</span>
 		</a>
 		<a href="https://www.facebook.com/{{ resume.contact.facebook }}" class="social__link" target="_blank">
-			<i class="icon-facebook" aria-hidden="true"></i><span class="sr-only">Facebook</span>
+			<svg v-svg class="icon social__icon" sprite="facebook"></svg><span class="sr-only">Twitter</span>
 		</a>
 		<a href="https://github.com/{{ resume.contact.github }}" class="social__link" target="_blank">
-			<i class="icon-github" aria-hidden="true"></i><span class="sr-only">Github</span>
+			<svg v-svg class="icon social__icon" sprite="github"></svg><span class="sr-only">Github</span>
 		</a>
 		<a href="https://codepen.io/{{ resume.contact.codepen }}" class="social__link" target="_blank">
-			<i class="icon-codepen" aria-hidden="true"></i><span class="sr-only">Codepen</span>
+			<svg v-svg class="icon social__icon" sprite="codepen"></svg><span class="sr-only">Codepen</span>
 		</a>
 		<a href="https://www.linkedin.com/in/{{ resume.contact.linkedin }}" class="social__link" target="_blank">
-			<i class="icon-linkedin" aria-hidden="true"></i><span class="sr-only">Linkedin</span>
+			<svg v-svg class="icon social__icon" sprite="linkedin"></svg><span class="sr-only">Linkedin</span>
 		</a>
 		<a href="https://plus.google.com/+{{ resume.contact.googleplus }}" class="social__link" target="_blank">
-			<i class="icon-googleplus" aria-hidden="true"></i><span class="sr-only">Google Plus</span>
+			<svg v-svg class="icon social__icon" sprite="google-plus"></svg><span class="sr-only">Google Plus</span>
 		</a>
 	</div>
 
