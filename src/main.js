@@ -1,5 +1,6 @@
 import Vue from 'vue'
 import Svg from 'vue-svg-directive'
+import VueHead from 'vue-head'
 import VueRouter from 'vue-router'
 import VueResource from 'vue-resource'
 
@@ -10,7 +11,7 @@ import Article from './pages/Article'
 import Portfolio from './pages/Portfolio'
 import NotFound from './pages/NotFound'
 
-// Telling Vue to use the router
+Vue.use(VueHead)
 Vue.use(VueRouter)
 Vue.use(VueResource)
 

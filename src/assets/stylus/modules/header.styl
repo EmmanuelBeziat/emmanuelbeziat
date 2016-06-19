@@ -8,24 +8,43 @@
 
 .site-header__title
 	margin-top 0
-	font-size 2.25rem
+	font-size 2.55rem
 	line-height 1
+	font-weight 400
 
 .site-header__bio
 	margin 2em 0
 
+.social
+	display flex
+	flex-flow row wrap
+	justify-content space-between
+
 .social__link
-	display inline-block
-	width 2rem
-	height 2rem
-	padding .25em
-	background rgba(0, 0, 0, .7)
+	display block
+	width 3rem
+	height 3rem
+	padding .5em
+	background darken($color-background, 25%)
 	border-radius 2px
+	margin-bottom 4px
+	transition .5s ease-out
+	overflow hidden
+
+	&:hover
+	&:focus
+		transition .2s ease-out
+
+brand-icon(twitter, $color-brand-twitter)
+brand-icon(facebook, $color-brand-facebook)
+brand-icon(google-plus, $color-brand-google-plus)
+brand-icon(linkedin, $color-brand-linkedin)
+brand-icon(codepen, $color-brand-codepen)
+brand-icon(github, $color-brand-github)
+brand-icon(codepen, $color-brand-codepen)
 
 .social__icon
 	display block
 	fill $color-text
 	width 100%
 	height 100%
-
-
