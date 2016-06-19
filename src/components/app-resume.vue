@@ -21,28 +21,11 @@
 </template>
 
 <script>
-var infos = 'static/resume.json'
 
 export default {
 	data () {
 		return {
 			resume: null
-		}
-	},
-
-	created: function() {
-		this.fetchData()
-	},
-
-	methods: {
-		fetchData: function() {
-			var xhr = new XMLHttpRequest()
-			var self = this
-			xhr.open('GET', infos)
-			xhr.onload = function () {
-				self.resume = JSON.parse(xhr.responseText)
-			}
-			xhr.send()
 		}
 	}
 }
