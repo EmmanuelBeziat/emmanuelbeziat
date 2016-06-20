@@ -8,11 +8,13 @@ module.exports = {
 	entry: {
 		app: './src/main.js'
 	},
+
 	output: {
 		path: config.build.assetsRoot,
 		publicPath: config.build.assetsPublicPath,
 		filename: '[name].js'
 	},
+
 	resolve: {
 		extensions: ['', '.js', '.vue'],
 		fallback: [path.join(__dirname, '../node_modules')],
@@ -22,6 +24,7 @@ module.exports = {
 			'components': path.resolve(__dirname, '../src/components')
 		}
 	},
+
 	resolveLoader: {
 		fallback: [path.join(__dirname, '../node_modules')]
 	},
@@ -34,7 +37,8 @@ module.exports = {
 			'./static',
 			{
 				name: '[hash].icons.svg',
-				prefix: ''
+				prefix: '',
+				svgoOptions: { }
 			}
 		)
 	],
@@ -77,6 +81,7 @@ module.exports = {
 			}
 		]
 	},
+
 	vue: {
 		loaders: utils.cssLoaders()
 	}

@@ -1,5 +1,6 @@
 import Vue from 'vue'
 import Svg from 'vue-svg-directive'
+import VueHead from 'vue-head'
 import VueRouter from 'vue-router'
 import VueResource from 'vue-resource'
 
@@ -10,14 +11,14 @@ import Article from './pages/Article'
 import Portfolio from './pages/Portfolio'
 import NotFound from './pages/NotFound'
 
-// Telling Vue to use the router
+Vue.use(VueHead)
 Vue.use(VueRouter)
 Vue.use(VueResource)
 
 Vue.use(Svg, {
-	sprites : '/static/sprite/sprites.svg',
-	prefix  : '',
-	class   : 'icon'
+	sprites: '/static/sprites/icons.svg',
+	prefix: '',
+	class: 'icon'
 })
 
 // Initializing the router with options
@@ -27,8 +28,8 @@ export var router = new VueRouter({
 });
 
 router.redirect({
-  // redirect any not-found route to 404
-  '*': '/not-found'
+	// redirect any not-found route to 404
+	'*': '/not-found'
 });
 
 router.map({
@@ -39,21 +40,25 @@ router.map({
 			template: NotFound
 		}
 	},
+
 	'/': {
 		name: 'home',
 		component: Home
 	},
+
 	'/blog': {
 		name: 'blog',
 		component: Articles,
 		subRoutes: {
-			'/article-1': {
+			'/:name': {
 				component: {
+					name: 'article',
 					template: Article
 				}
 			}
 		}
 	},
+
 	'/portfolio': {
 		name: 'portfolio',
 		component: Portfolio

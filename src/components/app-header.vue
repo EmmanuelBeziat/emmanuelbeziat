@@ -1,6 +1,6 @@
 <template>
 	<header class="site-header">
-		<h1 class="site-header__title">Emmanuel Béziat</h1>
+		<h1 class="site-header__title"><a class="site-header__link" v-link="{ name: 'home', exact: true, activeClass: 'site-header__link--active' }">Emmanuel Béziat</a></h1>
 
 		<app-resume></app-resume>
 
