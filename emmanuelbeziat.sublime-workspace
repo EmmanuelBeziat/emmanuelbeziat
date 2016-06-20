@@ -1,0 +1,665 @@
+{
+	"auto_complete":
+	{
+		"selected_items":
+		[
+			[
+				"raw",
+				"rawMarkdown"
+			],
+			[
+				"git",
+				"gitHub"
+			],
+			[
+				"repon",
+				"response"
+			],
+			[
+				"article",
+				"articles"
+			],
+			[
+				"font-",
+				"font-stack-common"
+			],
+			[
+				"assets",
+				"assetsPath"
+			],
+			[
+				"popup",
+				"popupPosY"
+			],
+			[
+				"color",
+				"color-background"
+			],
+			[
+				"colo",
+				"color-background"
+			],
+			[
+				"note",
+				"note-maker"
+			],
+			[
+				"mag",
+				"margin-top"
+			]
+		]
+	},
+	"buffers":
+	[
+		{
+			"file": "/C/Users/Emmanuel/AppData/Local/Temp/Rar$DRa0.562/bootstrap-4.0.0-alpha.2/dist/css/bootstrap.css",
+			"settings":
+			{
+				"buffer_size": 115805,
+				"line_ending": "Unix"
+			}
+		}
+	],
+	"build_system": "",
+	"build_system_choices":
+	[
+	],
+	"build_varint": "",
+	"command_palette":
+	{
+		"height": 354.0,
+		"last_filter": "insta",
+		"selected_items":
+		[
+			[
+				"insta",
+				"Package Control: Install Package"
+			],
+			[
+				"list",
+				"Package Control: List Packages"
+			],
+			[
+				"install",
+				"Package Control: Install Package"
+			],
+			[
+				"remove",
+				"Package Control: Remove Package"
+			],
+			[
+				"update",
+				"Package Control: Upgrade/Overwrite All Packages"
+			]
+		],
+		"width": 446.0
+	},
+	"console":
+	{
+		"height": 126.0,
+		"history":
+		[
+			"import urllib.request,os,hashlib; h = 'eb2297e1a458f27d836c04bb0cbaf282' + 'd0e7a3098092775ccb37ca9d6b2e4b7d'; pf = 'Package Control.sublime-package'; ipp = sublime.installed_packages_path(); urllib.request.install_opener( urllib.request.build_opener( urllib.request.ProxyHandler()) ); by = urllib.request.urlopen( 'http://packagecontrol.io/' + pf.replace(' ', '%20')).read(); dh = hashlib.sha256(by).hexdigest(); print('Error validating download (got %s instead of %s), please try manual install' % (dh, h)) if dh != h else open(os.path.join( ipp, pf), 'wb' ).write(by)  "
+		]
+	},
+	"distraction_free":
+	{
+		"menu_visible": true,
+		"show_minimap": false,
+		"show_open_files": false,
+		"show_tabs": false,
+		"side_bar_visible": false,
+		"status_bar_visible": false
+	},
+	"expanded_folders":
+	[
+		"/E/Taff/Web/Sites/emmanuelbeziat"
+	],
+	"file_history":
+	[
+		"/E/Taff/Web/Sites/emmanuelbeziat/emmanuelbeziat.sublime-project",
+		"/E/Taff/Web/Sites/emmanuelbeziat/index.html",
+		"/E/Taff/Web/Sites/emmanuelbeziat/src/components/app-commits.vue",
+		"/E/Taff/Web/Sites/emmanuelbeziat/src/pages/Articles.vue",
+		"/E/Taff/Web/Sites/emmanuelbeziat/src/pages/Article.vue",
+		"/E/Taff/Web/Sites/emmanuelbeziat/src/main.js",
+		"/E/Taff/Web/Sites/emmanuelbeziat/src/components/app-main.vue",
+		"/C/Users/Emmanuel/AppData/Roaming/Sublime Text 3/Packages/User/Preferences.sublime-settings",
+		"/C/Users/Emmanuel/AppData/Local/Temp/scp00371/var/www/moargeek/site/Capture d&apos;écran_160613_001.jpg",
+		"/C/Users/Emmanuel/AppData/Roaming/Sublime Text 3/Packages/User/SublimeLinter.sublime-settings",
+		"/C/Users/Emmanuel/AppData/Roaming/Sublime Text 3/Packages/SublimeLinter/SublimeLinter.sublime-settings",
+		"/E/Taff/Web/Sites/emmanuelbeziat/.eslintrc",
+		"/E/Taff/Web/Sites/emmanuelbeziat/build/webpack.base.conf.js",
+		"/E/Taff/Web/Sites/emmanuelbeziat/config/index.js",
+		"/C/Users/Emmanuel/Downloads/instagram.svg",
+		"/C/Users/Emmanuel/Downloads/twitter.svg",
+		"/C/Users/Emmanuel/Downloads/android.svg",
+		"/C/Users/Emmanuel/Downloads/apple.svg",
+		"/C/Users/Emmanuel/Downloads/codepen.svg",
+		"/C/Users/Emmanuel/Downloads/linkedin.svg",
+		"/C/Users/Emmanuel/Downloads/facebook.svg",
+		"/C/Users/Emmanuel/Downloads/pinterest.svg",
+		"/C/Users/Emmanuel/Downloads/google-plus.svg",
+		"/C/Users/Emmanuel/Downloads/windows.svg",
+		"/C/Users/Emmanuel/Downloads/edge.svg",
+		"/E/Taff/Web/Sites/emmanuelbeziat/src/assets/stylus/utils/fonts.styl",
+		"/E/Taff/Web/Sites/emmanuelbeziat/src/assets/stylus/modules/header.styl",
+		"/E/Taff/Web/Sites/emmanuelbeziat/src/pages/Home.vue",
+		"/E/Taff/Web/Sites/emmanuelbeziat/src/components/app-header.vue",
+		"/E/Taff/Web/Sites/emmanuelbeziat/src/components/app-tweets.vue",
+		"/E/Taff/Web/Sites/emmanuelbeziat/src/assets/stylus/utils/variables.styl",
+		"/E/Taff/Web/Sites/emmanuelbeziat/src/assets/stylus/modules/base.styl",
+		"/E/Taff/Web/Sites/emmanuelbeziat/src/components/app-resume.vue",
+		"/E/Taff/Web/Sites/emmanuelbeziat/src/components/app-social.vue",
+		"/E/Taff/Web/Sites/emmanuelbeziat/static/resume.json",
+		"/E/Taff/Web/Sites/emmanuelbeziat/src/assets/stylus/modules/footer.styl",
+		"/E/Taff/Web/Sites/emmanuelbeziat/src/App.vue",
+		"/E/Taff/Web/Sites/emmanuelbeziat/src/pages/Portfolio.vue",
+		"/E/Taff/Web/Sites/emmanuelbeziat/src/assets/stylus/main.styl",
+		"/E/Taff/Web/Sites/emmanuelbeziat/src/assets/stylus/utils/animations.styl",
+		"/E/Taff/Web/Sites/emmanuelbeziat/src/pages/NotFound.vue",
+		"/E/Taff/Web/Sites/emmanuelbeziat/src/components/app-nav.vue",
+		"/E/Taff/Web/Sites/emmanuelbeziat/src/content/articles/exemple-d-article/index.md",
+		"/E/Taff/Web/Sites/emmanuelbeziat/src/content/showcase/exemple-de-showcase/index.md",
+		"/E/Taff/Web/Sites/emmanuelbeziat/src/assets/stylus/utils/mixins.styl",
+		"/C/Users/Emmanuel/AppData/Local/Temp/Rar$DIa0.575/stylesheet.css",
+		"/E/Taff/Web/Sites/emmanuelbeziat/src/assets/stylus/vendors/prism.styl",
+		"/E/Taff/Web/Sites/emmanuelbeziat/dist/index.html",
+		"/E/Taff/Web/Sites/emmanuelbeziat/src/components/app-footer.vue",
+		"/E/Taff/Web/Sites/emmanuelbeziat/src/Test.vue",
+		"/E/Taff/Web/Sites/emmanuelbeziat/.editorconfig",
+		"/E/Taff/Web/Sites/emmanuelbeziat/.babelrc",
+		"/E/Taff/Web/Sites/emmanuelbeziat/build/webpack.prod.conf.js",
+		"/E/Taff/Web/Sites/emmanuelbeziat/build/webpack.dev.conf.js",
+		"/E/Taff/Web/Sites/emmanuelbeziat/build/utils.js",
+		"/E/Taff/Web/Sites/emmanuelbeziat/build/dev-client.js",
+		"/E/Taff/Web/Sites/emmanuelbeziat/build/dev-server.js",
+		"/E/Taff/Web/Sites/emmanuelbeziat/build/build.js",
+		"/E/Taff/Web/Sites/emmanuelbeziat/config/test.env.js",
+		"/E/Taff/Web/Sites/emmanuelbeziat/config/prod.env.js",
+		"/E/Taff/Web/Sites/emmanuelbeziat/config/dev.env.js",
+		"/E/Taff/Web/Sites/emmanuelbeziat/src/components/Hello.vue",
+		"/E/Taff/Web/Sites/emmanuelbeziat/package.json",
+		"/E/Taff/Web/Sites/emmanuelbeziat/.gitignore",
+		"/E/Taff/Web/Sites/emmanuelbeziat/README.md",
+		"/E/Taff/Web/Sites/emmanuelbeziat/LICENCE",
+		"/E/Taff/Web/GitHub/site-exemple-base/index.html",
+		"/E/Taff/Web/Sites/webpack/src/js/main.js",
+		"/E/Taff/Web/Sites/webpack/build/webpack.base.js",
+		"/E/Taff/Web/Sites/webpack/build/build.js",
+		"/E/Taff/Web/Sites/webpack/build/webpack.prod.js",
+		"/E/Taff/Web/Sites/webpack/build/webpack.dev.js",
+		"/E/Taff/Web/Sites/webpack/index.html",
+		"/E/Taff/Web/Sites/webpack/src/js/hello.js",
+		"/E/Taff/Web/Sites/webpack/src/css/main.css",
+		"/E/Taff/Web/Sites/webpack/package.json",
+		"/E/Taff/Web/Sites/webpack/src/css/hello.css",
+		"/E/Taff/Web/Sites/webpack/.babelrc",
+		"/E/Taff/Web/Sites/webpack/src/stylus/main.styl",
+		"/E/Taff/Web/Sites/emmanuelbeziat/site/wp-content/themes/emmanuelb/dev/stylus/modules/posts.styl",
+		"/E/Taff/Web/Sites/emmanuelbeziat/site/wp-content/themes/emmanuelb/package.json",
+		"/C/Users/Emmanuel/AppData/Local/Temp/scp11036/etc/nginx/conf.d/headers.conf",
+		"/C/Users/Emmanuel/AppData/Local/Temp/scp36164/etc/nginx/sites-enabled/faispeterleswatts.nconf",
+		"/C/Users/Emmanuel/AppData/Local/Temp/scp36745/etc/nginx/sites-enabled/moargeek.nconf",
+		"/C/Users/Emmanuel/AppData/Local/Temp/Rar$DRa0.299/1",
+		"/C/Users/Emmanuel/AppData/Local/Temp/scp34534/etc/apache2/sites-enabled/faispeterleswatts.conf",
+		"/C/Users/Emmanuel/AppData/Local/Temp/scp05825/etc/nginx/sites-enabled/emmanuelbeziat.nconf",
+		"/C/Users/Emmanuel/AppData/Local/Temp/scp29915/etc/nginx/sites-enabled/emmanuelbeziat.nconf",
+		"/C/Users/Emmanuel/Downloads/ebeziat_site.sql",
+		"/C/Users/Emmanuel/AppData/Local/Temp/Rar$DIa0.106/autoload.php",
+		"/E/Taff/Web/Sites/emmanuelbeziat/site/wp-content/themes/emmanuelb/emmanuelb/content.php",
+		"/E/Taff/Web/Sites/emmanuelbeziat/site/wp-content/themes/emmanuelb/emmanuelb/header.php",
+		"/E/Taff/Web/Sites/emmanuelbeziat/site/wp-content/themes/emmanuelb/dev/javascript/plugins/jquery.scrolloffset.js",
+		"/E/Taff/Web/Sites/emmanuelbeziat/site/wp-content/themes/emmanuelb/dev/javascript/plugins/jquery-modern-form.js",
+		"/E/Taff/Web/Sites/emmanuelbeziat/site/wp-content/themes/emmanuelb/dev/javascript/plugins/jquery.tabs.js",
+		"/E/Taff/Web/Sites/emmanuelbeziat/emmanuelb-2016/src/stylus/main.styl",
+		"/E/Taff/Web/Sites/emmanuelbeziat/site/wp-content/themes/emmanuelb/dev/stylus/vendors/prism.styl",
+		"/C/Users/Emmanuel/Desktop/eval-prestashop/prestashop-eval/config/config.inc.php",
+		"/C/Users/Emmanuel/AppData/Local/Temp/scp32864/var/www/emmanuelbeziat/site/wp-config.php",
+		"/E/Taff/Web/Sites/emmanuelbeziat/site/wp-content/themes/emmanuelb/emmanuelb/js/customcodes.js",
+		"/C/Users/Emmanuel/AppData/Local/Temp/scp44257/etc/nginx/sites-enabled/emmanuelbeziat.nconf",
+		"/C/Users/Emmanuel/AppData/Local/Temp/scp14089/var/www/emmanuelbeziat/site/wp-config.php",
+		"/C/Users/Emmanuel/AppData/Local/Temp/scp12549/etc/nginx/sites-enabled/emmanuelbeziat.nconf",
+		"/C/Users/Emmanuel/AppData/Local/Temp/scp55256/etc/nginx/sites-enabled/webquiche.nconf",
+		"/C/Users/Emmanuel/AppData/Local/Temp/scp55322/etc/nginx/sites-enabled/moargeek.nconf",
+		"/C/Users/Emmanuel/AppData/Local/Temp/scp56626/etc/nginx/sites-enabled/debunker.nconf",
+		"/C/Users/Emmanuel/AppData/Local/Temp/scp43650/etc/nginx/sites-available/infographizm.nconf",
+		"/C/Users/Emmanuel/AppData/Local/Temp/scp54631/etc/nginx/sites-enabled/default",
+		"/C/Users/Emmanuel/AppData/Local/Temp/scp46038/etc/letsencrypt/live/emmanuelbeziat.com/fullchain.pem",
+		"/C/Users/Emmanuel/AppData/Local/Temp/scp09505/etc/apache2/sites-enabled/emmanuelbeziat.conf",
+		"/C/Users/Emmanuel/AppData/Local/Temp/scp42641/var/log/letsencrypt/letsencrypt.log",
+		"/C/Users/Emmanuel/AppData/Local/Temp/scp08812/var/www/emmanuelbeziat/site/.well-known/acme-challenge/demo",
+		"/C/Users/Emmanuel/AppData/Local/Temp/scp07929/var/www/emmanuelbeziat/site/.well-known/acme-challenge/demo",
+		"/C/Users/Emmanuel/AppData/Local/Temp/scp55978/etc/nginx/sites-enabled/parkourfinder.nconf",
+		"/C/Users/Emmanuel/AppData/Local/Temp/scp53611/etc/nginx/conf.d/headers.conf",
+		"/C/Users/Emmanuel/AppData/Local/Temp/scp53047/etc/nginx/conf.d/default.conf",
+		"/C/Users/Emmanuel/AppData/Local/Temp/scp53377/etc/nginx/conf.d/proxy.conf",
+		"/C/Users/Emmanuel/AppData/Local/Temp/scp49443/var/log/nginx/error.log",
+		"/C/Users/Emmanuel/AppData/Local/Temp/scp52429/etc/letsencrypt/live/emmanuelbeziat.com/fullchain.pem",
+		"/E/Taff/Web/Sites/emmanuelbeziat/emmanuelb-2016/gulpfile.js",
+		"/E/Taff/Web/Sites/emmanuelbeziat/emmanuelb-2016/src/stylus/vendors/prism.styl",
+		"/E/Taff/Web/Sites/emmanuelbeziat/emmanuelb-2016/src/stylus/vendors/normalize.styl",
+		"/E/Taff/Web/Sites/emmanuelbeziat/emmanuelb-2016/src/stylus/utils/variables.styl",
+		"/C/Users/Emmanuel/AppData/Local/Temp/scp23288/etc/nginx/sites-enabled/infographizm.nconf",
+		"/C/Users/Emmanuel/AppData/Local/Temp/scp40507/etc/nginx/sites-available/emmanuelbeziat.nconf",
+		"/C/Users/Emmanuel/AppData/Local/Temp/scp40298/etc/nginx/sites-available/emmanuelbeziat.nconf.ssl",
+		"/C/Users/Emmanuel/AppData/Local/Temp/scp22494/etc/nginx/sites-enabled/emmanuelbeziat.nconf.http",
+		"/E/Taff/Web/Sites/emmanuelbeziat/emmanuelb-2016/emmanuelb-2016/index.php"
+	],
+	"find":
+	{
+		"height": 70.0
+	},
+	"find_in_files":
+	{
+		"height": 158.0,
+		"where_history":
+		[
+			"E:\\Taff\\Web\\Sites\\emmanuelbeziat\\config",
+			"E:\\Taff\\Web\\Sites\\emmanuelbeziat\\build",
+			"E:\\Taff\\Web\\Sites\\emmanuelbeziat\\emmanuelb-2016\\src",
+			"E:\\Taff\\Web\\Sites\\emmanuelbeziat\\emmanuelb-2016\\dev",
+			"E:\\Taff\\Web\\Sites\\emmanuelbeziat\\emmanuelb-2016",
+			"",
+			"site/wp-content/themes/emmanuelb/emmanuelb",
+			"site/wp-content/themes/emmanuelb/dev/stylus",
+			"site/wp-content/themes/emmanuelb/",
+			"site/wp-content/themes/emmanuelb/dev/stylus",
+			"site/wp-content/themes/emmanuelb",
+			"",
+			"/Theme - itg.flat",
+			"Theme - itg.flat",
+			"",
+			"/itg",
+			""
+		]
+	},
+	"find_state":
+	{
+		"case_sensitive": false,
+		"find_history":
+		[
+			"px",
+			"Articles",
+			"apiURL",
+			"localhost",
+			"port",
+			"PORT",
+			"port",
+			"social",
+			"appSocial",
+			"AppResume",
+			"resume",
+			"social",
+			"al__link\"",
+			"		{\"name\": \"twitter\", \"count\":\"EmmanuelBeziat\",\n		{\"name\": \"github\", \"count\":\"EmmanuelBeziat\",\n		{\"name\": \"codepen\", \"count\":\"EmmanuelBeziat\",\n		{\"name\": \"facebook\",\"count\": \"emmanuelbeziat\",\n		{\"name\": \"linkedin\", \"count\":\"emmanuel-b/49/429/542\",\n		{\"name\": \"googleplus\", \"count\": \"Emmanuelbeziat-web\"",
+			"\",",
+			":",
+			"tweets",
+			"Articles",
+			"iv>\"",
+			"\"<di",
+			"<div>",
+			"../",
+			"light",
+			"Light",
+			"light",
+			"components",
+			"pages",
+			"Home",
+			"footer",
+			"Bottom",
+			"Home",
+			"Top",
+			"header",
+			"Top",
+			"div",
+			"Header",
+			"header",
+			"Hello",
+			"conf",
+			"*.youtube.com",
+			"e[data-length=\"",
+			"Markup",
+			"CSS\n",
+			"moargeek",
+			"	443 ssl",
+			"443 ssl",
+			"dev",
+			"emmanuelbeziat",
+			"webquiche",
+			"emmanuelbeziat",
+			"sql",
+			"www",
+			"infogpaphizm",
+			"emmanuelbeziat",
+			"cdn",
+			"emmanuelbeziat",
+			"n	80",
+			"443 ssl",
+			"ssl_certificate /etc/letsencrypt/live/infographizm.com/fullchain.pem;\n	ssl_certificate_key /etc/letsencrypt/live/infographizm.com/privkey.pem;",
+			"	ssl_certificate /etc/letsencrypt/live/emmanuelbeziat.com/fullchain.pem;\n	ssl_certificate_key /etc/letsencrypt/live/emmanuelbeziat.com/privkey.pem;",
+			"443 ssl",
+			"infographizm",
+			"ten	80",
+			"80",
+			"gradient",
+			"fonts-stack-headings",
+			"fonts-stack-common",
+			"fonts-stack-monospace",
+			"fontFace",
+			".pipe(plugins.livereload());",
+			"443",
+			"ten	80;",
+			"80",
+			"#ssl",
+			"ssl_certificate",
+			"ssl_certificate /",
+			"443 ssl",
+			"id=\"error-page\"",
+			"function admin_page_access_denied",
+			"admin_page_access_denied(",
+			"admin_page_access_denied()",
+			"admin_page_access_denied",
+			"user_can_access_admin_page",
+			"do not have sufficient permissions to access this page",
+			"; ?>",
+			"<?php echo ",
+			"</a></li",
+			" rel=\"nofollow\"",
+			"href",
+			"<li><a cla",
+			"a",
+			"443 ssl",
+			"<span style=\"color:#FF1493\"> ",
+			"clients",
+			"webquiche",
+			"mondomaine",
+			"moaparkourfinder",
+			"webquiche",
+			"http",
+			"moargeek",
+			"listen	80;",
+			"webquiche",
+			"listen	80;",
+			"webquiche",
+			"listen	80;",
+			"emmanuelbeziat",
+			"listen	80",
+			"80",
+			".\n",
+			"example",
+			"\n\n	# Redirection https\n	RewriteCond %{HTTPS} off\n	RewriteRule (.*) https://%{HTTP_HOST}%{REQUEST_URI}",
+			"emmanuelbeziat",
+			"listen	80",
+			"listen	80;",
+			"80",
+			"443 ssl",
+			"http://127.0.0.1:8082",
+			"ssl_certificate /etc/letsencrypt/live/emmanuelbeziat.com/fullchain.pem;\n	ssl_certificate_key /etc/letsencrypt/live/emmanuelbeziat.com/privkey.pem;",
+			"443 ssl",
+			"8443",
+			"8082",
+			"443",
+			"80;",
+			".gi",
+			"reply",
+			"\\",
+			"content '\\",
+			"e847"
+		],
+		"highlight": true,
+		"in_selection": false,
+		"preserve_case": false,
+		"regex": false,
+		"replace_history":
+		[
+			"font-stack-headings",
+			"font-stack-common",
+			"font-stack-monospace",
+			"absoluteLock",
+			"width-gutter",
+			"width-content",
+			"width-header",
+			"mediaquery-mobile",
+			"mediaquery-tablet",
+			"mediaquery-desktop-small",
+			"mediaquery-desktop-wide",
+			"font-size-root",
+			"color-code",
+			"color-strong",
+			"color-emphasis",
+			"color-links",
+			"color-headings",
+			"color-text",
+			"color-background",
+			"breakpoint-small",
+			"breakpoint-medium",
+			"breakpoint-large",
+			"fonts-stack-monospace",
+			"fonts-stack-headings",
+			"fonts-stack-common",
+			"em",
+			"",
+			" ",
+			"",
+			"absolutePos",
+			" * @since Emmanuel B 2.5",
+			" \"* @since Emmanuel B 2.5\"",
+			" * @since Emmanuel B 2.5",
+			"positionAngles",
+			""
+		],
+		"reverse": false,
+		"show_context": true,
+		"use_buffer2": true,
+		"whole_word": false,
+		"wrap": true
+	},
+	"groups":
+	[
+		{
+			"selected": 2,
+			"sheets":
+			[
+				{
+					"buffer": 0,
+					"file": "/C/Users/Emmanuel/AppData/Local/Temp/Rar$DRa0.562/bootstrap-4.0.0-alpha.2/dist/css/bootstrap.css",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 115805,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								80500,
+								80502
+							]
+						],
+						"settings":
+						{
+							"BracketHighlighterBusy": false,
+							"bh_regions":
+							[
+								"bh_curly",
+								"bh_curly_center",
+								"bh_curly_open",
+								"bh_curly_close",
+								"bh_curly_content",
+								"bh_square",
+								"bh_square_center",
+								"bh_square_open",
+								"bh_square_close",
+								"bh_square_content",
+								"bh_c_define",
+								"bh_c_define_center",
+								"bh_c_define_open",
+								"bh_c_define_close",
+								"bh_c_define_content",
+								"bh_default",
+								"bh_default_center",
+								"bh_default_open",
+								"bh_default_close",
+								"bh_default_content",
+								"bh_round",
+								"bh_round_center",
+								"bh_round_open",
+								"bh_round_close",
+								"bh_round_content",
+								"bh_regex",
+								"bh_regex_center",
+								"bh_regex_open",
+								"bh_regex_close",
+								"bh_regex_content",
+								"bh_unmatched",
+								"bh_unmatched_center",
+								"bh_unmatched_open",
+								"bh_unmatched_close",
+								"bh_unmatched_content",
+								"bh_double_quote",
+								"bh_double_quote_center",
+								"bh_double_quote_open",
+								"bh_double_quote_close",
+								"bh_double_quote_content",
+								"bh_single_quote",
+								"bh_single_quote_center",
+								"bh_single_quote_open",
+								"bh_single_quote_close",
+								"bh_single_quote_content",
+								"bh_angle",
+								"bh_angle_center",
+								"bh_angle_open",
+								"bh_angle_close",
+								"bh_angle_content",
+								"bh_tag",
+								"bh_tag_center",
+								"bh_tag_open",
+								"bh_tag_close",
+								"bh_tag_content"
+							],
+							"color_scheme": "Packages/User/Color Highlighter/themes/Material-Theme.tmTheme",
+							"function_name_status_row": 4345,
+							"syntax": "Packages/LESS/LESS.tmLanguage",
+							"tab_size": 2,
+							"translate_tabs_to_spaces": true
+						},
+						"translation.x": 0.0,
+						"translation.y": 77652.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 2,
+					"type": "text"
+				},
+				{
+					"file": "/C/Users/Emmanuel/AppData/Local/Temp/scp57348/var/www/moargeek/site/Capture d&apos;écran_160617_001.jpg",
+					"semi_transient": false,
+					"stack_index": 1,
+					"type": "image"
+				},
+				{
+					"file": "/C/Users/Emmanuel/AppData/Local/Temp/scp10581/var/www/moargeek/site/shadow.jpg",
+					"semi_transient": false,
+					"stack_index": 0,
+					"type": "image"
+				}
+			]
+		}
+	],
+	"incremental_find":
+	{
+		"height": 28.0
+	},
+	"input":
+	{
+		"height": 63.0
+	},
+	"layout":
+	{
+		"cells":
+		[
+			[
+				0,
+				0,
+				1,
+				1
+			]
+		],
+		"cols":
+		[
+			0.0,
+			1.0
+		],
+		"rows":
+		[
+			0.0,
+			1.0
+		]
+	},
+	"menu_visible": true,
+	"output.find_results":
+	{
+		"height": 0.0
+	},
+	"output.gulp_output":
+	{
+		"height": 98.0
+	},
+	"pinned_build_system": "",
+	"project": "emmanuelbeziat.sublime-project",
+	"replace":
+	{
+		"height": 52.0
+	},
+	"save_all_on_build": true,
+	"select_file":
+	{
+		"height": 0.0,
+		"last_filter": "",
+		"selected_items":
+		[
+		],
+		"width": 0.0
+	},
+	"select_project":
+	{
+		"height": 500.0,
+		"last_filter": "",
+		"selected_items":
+		[
+			[
+				"",
+				"E:\\Taff\\Web\\Sites\\emmanuelbeziat\\emmanuelbeziat.sublime-workspace"
+			],
+			[
+				"emmanuel",
+				"E:\\Taff\\Web\\Sites\\emmanuelbeziat\\emmanuelbeziat.sublime-project"
+			]
+		],
+		"width": 380.0
+	},
+	"select_symbol":
+	{
+		"height": 0.0,
+		"last_filter": "",
+		"selected_items":
+		[
+		],
+		"width": 0.0
+	},
+	"selected_group": 0,
+	"settings":
+	{
+	},
+	"show_minimap": true,
+	"show_open_files": true,
+	"show_tabs": true,
+	"side_bar_visible": true,
+	"side_bar_width": 280.0,
+	"status_bar_visible": true,
+	"template_settings":
+	{
+	}
+}
