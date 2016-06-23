@@ -2,13 +2,13 @@
 	<section>
 		<h1>Liste d'articles (github)</h1>
 
-		<github-file-explorer username="EmmanuelBeziat" repo="emmanuelbeziat"></github-file-explorer>
+		<list-articles username="EmmanuelBeziat" repo="emmanuelbeziat"></list-articles>
 	</section>
 </template>
 
 <script>
 //import listArticles from 'components/app-list-articles'
-import githubFileExplorer from 'components/github-file-explorer'
+import listArticles from 'components/app-list-articles'
 
 export default {
 	data () {
@@ -17,7 +17,7 @@ export default {
 	},
 
 	components: {
-		githubFileExplorer
+		listArticles
 	}
 }
 </script>

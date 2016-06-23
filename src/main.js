@@ -52,7 +52,7 @@ router.map({
 		subRoutes: {
 			'/:name': {
 				component: {
-					name: 'article',
+					name: ':article',
 					template: Article
 				}
 			}

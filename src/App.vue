@@ -13,7 +13,6 @@
 import appHeader from './components/app-header'
 import appNav from './components/app-nav'
 import appMain from './components/app-main'
-import githubFileExplorer from './components/github-file-explorer'
 import appFooter from './components/app-footer'
 
 export default {

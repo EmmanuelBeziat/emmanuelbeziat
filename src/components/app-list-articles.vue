@@ -1,53 +1,52 @@
 <template>
-	<article>
-		{{{ article }}}
-	</article>
+	<div class="articles">
+		<h2>files</h2>
+		<div v-for="file in files">
+			<a href="/blog/{{ file.name }}">{{ file.name }}</a>
+		</div>
+	</div>
 </template>
 
 <script>
-var gitHub = 'https://raw.githubusercontent.com/EmmanuelBeziat/emmanuelbeziat/master/src/content/articles/exemple-d-article/index.md'
-
 export default {
 	data () {
 		return {
-			article: ""
+			path: '/src/content/articles',
+			files: []
+		}
+	},
+
+	props: {
+		username: {
+			type: String,
+			required: true
+		},
+		repo: {
+			type: String,
+			required: true
 		}
 	},
 
 	created: function () {
-		this.fetchData()
+		if (this.username && this.repo) {
+			this.getFiles()
+		}
 	},
 
-	filters: {
+	computed: {
+		fullRepoUrl: function () {
+			return this.username + '/' + this.repo
+		}
 	},
 
 	methods: {
-		fetchData: function () {
-			var xhr = new XMLHttpRequest()
-			var self = this
-			xhr.open('GET', gitHub)
-			xhr.onload = function () {
-				self.markdown(xhr.responseText)
-			}
-			xhr.send()
-		},
-
-		markdown: function(value) {
-			// POST request to GitHub API
-			this.$http({
-				url: 'https://api.github.com/markdown',
-				method: 'POST',
-				data: {text: value, mode: 'gfm'}
-			}).then(function (response) {
-				// success callback
-				this.article = response.data
+		getFiles: function () {
+			this.$http.get('https://api.github.com/repos/' + this.fullRepoUrl + '/contents' + this.path).then(function (response) {
+				this.files = response.data
 			}, function (response) {
-				// error callback
-				console.log(response.data)
-			});
+				console.log(response)
+			})
 		}
-
 	}
-
 }
 </script>
