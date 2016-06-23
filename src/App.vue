@@ -13,13 +13,12 @@
 import appHeader from './components/app-header'
 import appNav from './components/app-nav'
 import appMain from './components/app-main'
+import githubFileExplorer from './components/github-file-explorer'
 import appFooter from './components/app-footer'
 
-var infos = 'static/resume.json'
 export default {
 	data () {
 		return {
-			resume: null
 		}
 	},
 
@@ -28,22 +27,6 @@ export default {
 		appNav,
 		appMain,
 		appFooter
-	},
-
-	created: function() {
-		this.fetchData()
-	},
-
-	methods: {
-		fetchData: function() {
-			var xhr = new XMLHttpRequest()
-			var self = this
-			xhr.open('GET', infos)
-			xhr.onload = function () {
-				self.resume = JSON.parse(xhr.responseText)
-			}
-			xhr.send()
-		}
 	}
 }
 </script>
