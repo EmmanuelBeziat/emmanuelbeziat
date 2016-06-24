@@ -1,8 +1,7 @@
 <template>
 	<div class="articles">
-		<h2>files</h2>
 		<div v-for="file in files">
-			<a href="/blog/{{ file.name }}">{{ file.name }}</a>
+			<h2><a href="/blog/{{ file.name }}">{{ file.name }}</a></h2>
 		</div>
 	</div>
 </template>
