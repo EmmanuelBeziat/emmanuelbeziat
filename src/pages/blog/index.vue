@@ -13,6 +13,16 @@
 
 <script>
 	import Blog from '../../resources/blog'
+	import MarkedMetaData from 'marked-metadata'
+	var fs = require('fs')
+
+	var urltest = '../../content/articles/exemple-d-article/index.md'
+
+	var source = fs.readFileSync(urltest).toString();
+	console.log(source)
+
+	var md = new MarkedMetaData(urltest);
+	md.defineTokens('---', '---')
 
 	module.exports = {
 
