@@ -5,12 +5,3 @@
 		<a class="site-menu__link" v-link="{ name: 'blog' }">Blog</a>
 	</nav>
 </template>
-
-<script>
-export default {
-	data () {
-		return {
-		}
-	}
-}
-</script>

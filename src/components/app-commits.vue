@@ -9,55 +9,52 @@
 </template>
 
 <script>
-import Moment from 'moment'
+	import Moment from 'moment'
 
-Moment.locale('fr')
+	const gitHub = 'https://api.github.com/repos/EmmanuelBeziat/emmanuelbeziat/commits?per_page=3&sha='
 
-var gitHub = 'https://api.github.com/repos/EmmanuelBeziat/emmanuelbeziat/commits?per_page=3&sha='
-
-export default {
-	data () {
-		return {
-			commits: null,
-			currentBranch: 'master'
-		}
-	},
-
-	created: function () {
-		this.fetchData()
-	},
-
-	filters: {
-		truncate: function (v) {
-			var newline = v.indexOf('\n')
-			return newline > 0 ? v.slice(0, newline) : v
+	export default {
+		data () {
+			return {
+				commits: null,
+				currentBranch: 'master'
+			}
 		},
 
-		formatDate: function (v) {
-			var date = Moment(v.replace(/T|Z/g, ' '), 'YYYY-MM-DD hh:mm:ss')
+		created: function () {
+			this.fetchData()
+		},
 
-			return date.format('dddd Do MMM YYYY[, à] HH[h]mm')
-		}
-	},
+		filters: {
+			truncate: function (v) {
+				const newline = v.indexOf('\n')
+				return newline > 0 ? v.slice(0, newline) : v
+			},
 
-	methods: {
-		fetchData: function () {
-			var xhr = new XMLHttpRequest()
-			var self = this
-			xhr.open('GET', gitHub + self.currentBranch)
-			xhr.onload = function () {
-				self.commits = JSON.parse(xhr.responseText)
+			formatDate: function (v) {
+				const date = Moment(v.replace(/T|Z/g, ' '), 'YYYY-MM-DD hh:mm:ss')
+				return date.format('dddd Do MMM YYYY[, à] HH[h]mm')
 			}
-			xhr.send()
+		},
 
-			/*this.$http({ url: gitHub, method: 'GET'}).then(function (response) {
-				response.data.forEach(function() {
+		methods: {
+			fetchData: function () {
+				var xhr = new XMLHttpRequest()
+				var self = this
+				xhr.open('GET', gitHub + self.currentBranch)
+				xhr.onload = function () {
+					self.commits = JSON.parse(xhr.responseText)
+				}
+				xhr.send()
 
-				})
-			}, function(reponse) {
-				self.commits = "Impossible de charger les commits"
-			})*/
+				/*this.$http({ url: gitHub, method: 'GET'}).then(function (response) {
+					response.data.forEach(function() {
+
+					})
+				}, function(reponse) {
+					self.commits = "Impossible de charger les commits"
+				})*/
+			}
 		}
 	}
-}
 </script>

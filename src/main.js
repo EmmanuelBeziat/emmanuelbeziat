@@ -3,17 +3,13 @@ import Svg from 'vue-svg-directive'
 import VueHead from 'vue-head'
 import VueRouter from 'vue-router'
 import VueResource from 'vue-resource'
-
-import App from './App'
-import Home from './pages/Home'
-import Articles from './pages/Articles'
-import Article from './pages/Article'
-import Portfolio from './pages/Portfolio'
-import NotFound from './pages/NotFound'
+import {redirects, routes} from './app/routes'
+import {config, before, after} from './app/router'
 
 Vue.use(VueHead)
 Vue.use(VueRouter)
 Vue.use(VueResource)
+require('./app/boot')
 
 Vue.use(Svg, {
 	sprites: '/static/sprites/icons.svg',
@@ -22,48 +18,12 @@ Vue.use(Svg, {
 })
 
 // Initializing the router with options
-export var router = new VueRouter({
-	history: true,
-	linkActiveClass: 'site-menu__link--active'
-});
-
-router.redirect({
-	// redirect any not-found route to 404
-	'*': '/not-found'
-});
-
-router.map({
-	// Not found handler
-	'/not-found': {
-		component: {
-			name: 'not-found',
-			template: NotFound
-		}
-	},
-
-	'/': {
-		name: 'home',
-		component: Home
-	},
-
-	'/blog': {
-		name: 'blog',
-		component: Articles,
-		subRoutes: {
-			'/:name': {
-				component: {
-					name: ':article',
-					template: Article
-				}
-			}
-		}
-	},
-
-	'/portfolio': {
-		name: 'portfolio',
-		component: Portfolio
-	}
-});
+let Router = new VueRouter(config)
+Router.map(routes)
+Router.redirect(redirects)
+Router.beforeEach(before)
+Router.afterEach(after)
 
 // Initializing the whole thing together
-router.start(App, 'app')
+import App from './app'
+Router.start(App, 'app')
