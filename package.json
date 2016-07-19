@@ -7,6 +7,7 @@
   "scripts": {
     "dev": "node build/dev-server.js",
     "build": "node build/build.js",
+    "deploy": "./build/deploy.sh",
     "unit": "karma start test/unit/karma.conf.js --single-run",
     "test": "npm run unit"
   },
