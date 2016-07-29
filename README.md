@@ -20,5 +20,8 @@ npm run unit
 
 # run all tests
 npm test
-```
 
+# deploy on Github-Pages
+npm run build
+
+```
