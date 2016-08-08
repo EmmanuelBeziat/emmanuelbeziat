@@ -2,9 +2,9 @@
 	<article class="article">
 		<header class="article__header">
 			<h1 class="article__title">{{ post.title }}</h1>
-			<div class="article__date">{{ post.published_at | moment 'dddd Do MMM YYYY[, à] HH[h]mm' }}</div>
+			<div class="article__date">{{ post.date | moment 'dddd Do MMM YYYY[, à] HH[h]mm' }}</div>
 		</header>
-		<div class="article__content" v-linkable>{{{ post.content_html }}}</div>
+		<div class="article__content" v-linkable>{{{ post.content }}}</div>
 	</article>
 </template>
 
@@ -25,7 +25,17 @@
 			 * @return {Promise}
 			 */
 			data (transition) {
-				return Blog.get().then(response => this.$set('post', response.data))
+				//return Blog.get().then(response => this.$set('post', response.data.post))
+			}
+		},
+
+		created: function () {
+			this.fetchData()
+		},
+
+		methods: {
+			fetchData: function () {
+				return Blog.get().then(response => this.$set('post', response.data.post))
 			}
 		},
 
@@ -33,10 +43,8 @@
 		 * @return {Object}
 		 */
 		data () {
-			return () {
-				return {
-					post: { }
-				}
+			return {
+				post: { }
 			}
 		}
 	}
