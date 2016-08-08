@@ -1,12 +1,12 @@
 ---
-date: "2015-11-17"
-title: "Exemple d'article"
+title: The Lottery Ticket
+author: Emmanuel B.
+date: "2013-03-15 15:00"
+template: article.jade
 tags:
-  - favicon
-  - gulp
-  - grunt
-authors:
-  - phbernard
+  - Fiction
+  - Russian
+
 ---
 
 # Exemple d'article

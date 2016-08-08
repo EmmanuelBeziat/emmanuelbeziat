@@ -4,8 +4,9 @@
 
 		<div v-for="post in posts">
 			<article class="article">
-				<h1 class="article__title"><a v-link="{ name: 'blog-post', params: { slug: post.slug } }">{{ post.title }}</a></h1>
-				<div class="article__date">{{ post.published_at | moment 'dddd Do MMM YYYY[, à] HH[h]mm' }}</div>
+				<h1 class="article__title"><a v-link="{ name: 'blog-post', params: { slug: post.basename } }">{{ post.title }}</a></h1>
+				<div class="article__date">Posté le {{ post.date | moment 'dddd Do MMM YYYY[, à] HH[h]mm' }}</div>
+				<div class="article__body">{{{ post.content }}}</div>
 			</article>
 		</div>
 	</section>
@@ -13,8 +14,6 @@
 
 <script>
 	import Blog from '../../resources/blog'
-
-	var urltest = '../../content/articles/exemple-d-article/index.md'
 
 	module.exports = {
 
@@ -30,7 +29,17 @@
 			 * @return {Promis}
 			 */
 			data (transition) {
-				return Blog.get().then(response => this.$set('posts', response.data))
+				//return Blog.get().then(response => this.$set('posts', response.data))
+			}
+		},
+
+		created: function () {
+			this.fetchData()
+		},
+
+		methods: {
+			fetchData: function () {
+				return Blog.get().then(response => this.$set('posts', response.data.post))
 			}
 		},
 

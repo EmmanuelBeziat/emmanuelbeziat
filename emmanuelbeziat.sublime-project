@@ -4,6 +4,7 @@
 		{
 			"file_exclude_patterns":
 			[
+				"LICENCE",
 				"emmanuelbeziat.sublime-project"
 			],
 			"folder_exclude_patterns":
