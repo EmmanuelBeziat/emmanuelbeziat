@@ -44,7 +44,7 @@ getDirectories(folders.src).forEach(function(directory) {
 	var pageCount = 1
 	var items = 0
 
-	files.forEach(function(element) {
+	files.forEach(function(element, index, fileArray) {
 		var post = fs.readFileSync(path.join(srcFolder, element), 'utf8')
 		var fileName = distFolder + '/page-' + pageCount + '.json'
 
@@ -55,7 +55,7 @@ getDirectories(folders.src).forEach(function(directory) {
 				'title': result.attributes.title,
 				'author': result.attributes.author || 'Emmanuel B.',
 				'date': result.attributes.date || new Date().format('Y-m-d h:i'),
-				'tags': result.attributes.tags ||,
+				'tags': result.attributes.tags || '',
 				'template': result.attributes.template || 'post.vue',
 				'basename': result.attributes.basename || slug(result.attributes.title, { lower: true }),
 				'content': result.html
