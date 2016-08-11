@@ -14,7 +14,7 @@
         "arrow-body-style": "error",
         "arrow-parens": "error",
         "arrow-spacing": "error",
-        "block-scoped-var": "error",
+        "block-scoped-var": "off",
         "block-spacing": "error",
         "brace-style": "error",
         "callback-return": "error",
@@ -183,7 +183,7 @@
         "semi": "off",
         "semi-spacing": "error",
         "sort-imports": "off",
-        "sort-vars": "error",
+        "sort-vars": "off",
         "space-before-blocks": "error",
         "space-before-function-paren": "error",
         "space-in-parens": [

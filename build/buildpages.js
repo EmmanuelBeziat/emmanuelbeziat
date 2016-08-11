@@ -55,9 +55,10 @@ getDirectories(folders.src).forEach(function(directory) {
 				'title': result.attributes.title,
 				'author': result.attributes.author || 'Emmanuel B.',
 				'date': result.attributes.date || new Date().format('Y-m-d h:i'),
-				'tags': result.attributes.tags || '',
+				'tags': result.attributes.tags || [''],
+				'categories': result.attributes.categories || ['non-classe'],
 				'template': result.attributes.template || 'post.vue',
-				'basename': result.attributes.basename || slug(result.attributes.title, { lower: true }),
+				'basename': result.attributes.basename || slug(result.attributes.title.substr(11), { lower: true }),
 				'content': result.html
 			})
 		})
