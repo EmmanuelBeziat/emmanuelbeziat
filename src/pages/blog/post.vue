@@ -1,5 +1,6 @@
 <template>
 	<article class="article">
+		<h1>Toucheur de verges</h1>
 		<header class="article__header">
 			<h1 class="article__title">{{ post.title }}</h1>
 			<div class="article__date">{{ post.date | moment 'dddd Do MMM YYYY[, à] HH[h]mm' }}</div>
@@ -35,7 +36,10 @@
 
 		methods: {
 			fetchData: function () {
-				return Blog.get().then(response => this.$set('post', response.data.post))
+				const slug = this.$route.params.slug
+				const response = Blog.getSinglePost(slug).then(response => this.$set('post', response.data.post))
+
+				console.log(response.data)
 			}
 		},
 

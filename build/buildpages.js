@@ -9,7 +9,7 @@ var mkdirp = require('mkdirp')
 var jsonfile = require('jsonfile')
 var parser = require('markdown-parse')
 var spinner = ora('Compiling markdown files to json…\n')
-var maxArticlesPerPage = 10
+//var maxArticlesPerPage = 10
 
 var folders = {
 	'src': path.join('src', 'content'),
@@ -46,7 +46,8 @@ getDirectories(folders.src).forEach(function(directory) {
 
 	files.forEach(function(element, index, fileArray) {
 		var post = fs.readFileSync(path.join(srcFolder, element), 'utf8')
-		var fileName = distFolder + '/page-' + pageCount + '.json'
+		//var fileName = distFolder + '/page-' + pageCount + '.json'
+		var fileName = distFolder + '/articles.json'
 
 		items++
 
@@ -58,12 +59,12 @@ getDirectories(folders.src).forEach(function(directory) {
 				'tags': result.attributes.tags || [''],
 				'categories': result.attributes.categories || ['non-classe'],
 				'template': result.attributes.template || 'post.vue',
-				'basename': result.attributes.basename || slug(result.attributes.title.substr(11), { lower: true }),
+				'basename': result.attributes.basename || slug(result.attributes.title, { lower: true }),
 				'content': result.html
 			})
 		})
 
-		if (index === fileArray.length - 1) {
+		/*if (index === fileArray.length - 1) {
 			createJsonFiles(fileName, fileContent)
 		}
 
@@ -72,9 +73,10 @@ getDirectories(folders.src).forEach(function(directory) {
 			pageCount++
 			items = 0
 			fileContent = {'posts': []}
-		}
+		}*/
 	})
 
+	createJsonFiles(distFolder + '/articles.json', fileContent)
 })
 
 spinner.stop()
