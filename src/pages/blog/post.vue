@@ -37,7 +37,7 @@
 		methods: {
 			fetchData: function () {
 				const slug = this.$route.params.slug
-				const response = Blog.getSinglePost(slug).then(response => this.$set('post', response.data.post))
+				const response = Blog.getSinglePost().then(response => this.$set('post', response.data.post))
 
 				console.log(response.data)
 			}

@@ -18,6 +18,6 @@ module.exports = {
 	},
 
 	getSinglePost(params) {
-		return Vue.resource(this.url).get(params);
+		return Vue.resource('../' + this.url).get(params);
 	}
 }
