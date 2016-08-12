@@ -1,7 +1,7 @@
 <template>
-	<section class="posts-list">
+	<div class="posts-list">
 		<article class="article posts-list__item" v-for="post in posts">
-			<h1 class="article__title"><a v-link="{ name: 'blog-post', params: { slug: post.basename }}">{{ post.title }}</a></h1>
+			<h1 class="article__title"><a v-link="{ name: 'blog-post', params: { slug: post.basename } }">{{ post.title }}</a></h1>
 			<div class="article__infos">
 				<div class="article__date">Posté le <time>{{ post.date | moment 'dddd Do MMM YYYY[, à] HH[h]mm' }}</time></div>
 				<div class="article__tags">
@@ -9,7 +9,7 @@
 				</div>
 			</div>
 		</article>
-	</section>
+	</div>
 </template>
 
 <script>

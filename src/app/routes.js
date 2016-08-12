@@ -14,13 +14,13 @@ module.exports = {
 	routes: {
 		'/': {
 			name: 'home',
-			title: '',
+			title: 'Emmanuel Béziat',
 			component: require('../pages/home')
 		},
 
 		'/portfolio': {
 			name: 'portfolio',
-			title: 'Portfolio',
+			title: 'Portfolio — Emmanuel Béziat',
 			component: require('../pages/portfolio/index')
 		},
 
@@ -31,7 +31,7 @@ module.exports = {
 
 		'/blog': {
 			name: 'blog',
-			title: 'Blog',
+			title: 'Blog — Emmanuel Béziat',
 			component: require('../pages/blog/index')
 		},
 
