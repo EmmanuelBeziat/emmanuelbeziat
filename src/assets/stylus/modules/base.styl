@@ -8,6 +8,11 @@ html
 *::after
 	box-sizing inherit
 
+::selection
+	background $color-blue
+	color $color-text
+	text-shadow 0 1px solid darken($color-blue, 50%)
+
 body
 	margin 0
 	font 400 $font-size-base/1.5em $font-stack-common
@@ -40,3 +45,6 @@ a
 	padding 2em
 	width 50rem
 	margin 0 auto
+
+.site-main
+	margin 6em auto 4em
