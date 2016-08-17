@@ -9,10 +9,10 @@ code[class*="language-"]
 pre[class*="language-"]
 	color #f8f8f2
 	text-shadow 0 1px rgba(0,0,0,0.3)
-	font-family $fonts-stack-monospace
+	font-family $font-stack-code
 	direction ltr
 	text-align left
-	line-height 1.25em
+	line-height 1.5em
 	white-space pre
 	word-spacing normal
 	word-break normal
@@ -24,7 +24,7 @@ pre[class*="language-"] ::-moz-selection
 code[class*="language-"]::-moz-selection
 code[class*="language-"] ::-moz-selection
 	text-shadow none
-	background $color-grey
+	background darken($color-background, 10%)
 
 
 pre[class*="language-"]::selection
@@ -32,7 +32,7 @@ pre[class*="language-"] ::selection
 code[class*="language-"]::selection
 code[class*="language-"] ::selection
 	text-shadow none
-	background $color-grey
+	background darken($color-background, 10%)
 
 
 @media print
@@ -42,14 +42,14 @@ code[class*="language-"] ::selection
 
 /* Code blocks */
 pre[class*="language-"]
-	padding 1em
-	margin 1em 0
+	padding 1.5em 2em
+	margin 2em 0
 	overflow auto
-	border-radius 0.3em
+	border-radius .2em
 
 :not(pre) > code[class*="language-"]
 pre[class*="language-"]
-	background darken(#272822, 30%)
+	background darken($color-background, 10%)
 
 
 /* Inline code */
@@ -158,13 +158,13 @@ pre[data-line]
 div.prism-show-language
 	position relative
 
-	& > div.prism-show-language-label[data-language]
+	& > div.prism-show-language-label
 		color color-text
 		background-color lighten($color-background, 10%)
 		border-radius 0 3px 0 3px
 		display inline-block
 		position absolute
-		top 0
+		top 16px
 		right 0
 		width auto
 		height auto

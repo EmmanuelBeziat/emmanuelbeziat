@@ -24,6 +24,7 @@
 <script>
 	import Blog from '../../resources/blog'
 	import Prism from 'prismjs'
+	import 'prismjs/plugins/show-language/prism-show-language.min.js'
 
 	module.exports = {
 
