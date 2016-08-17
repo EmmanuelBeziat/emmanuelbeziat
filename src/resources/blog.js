@@ -5,7 +5,7 @@ module.exports = {
 	/**
 	 * @type {String}
 	 */
-	url: 'static/posts/articles/articles.json',
+	articles: 'static/posts/articles/articles.json',
 
 	/**
 	 * Make a get request to the blog api
@@ -14,10 +14,10 @@ module.exports = {
 	 * @return {Promise}
 	 */
 	listPosts(params) {
-		return Vue.resource(this.url).get(params);
+		return Vue.resource(this.articles).get(params);
 	},
 
-	getSinglePost(params) {
-		return Vue.resource('../' + this.url).get(params);
+	getSinglePost(post, params) {
+		return Vue.resource('../' + this.articles).get(params);
 	}
 }

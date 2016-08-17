@@ -48,8 +48,16 @@
 
 		methods: {
 			fetchData: function () {
-				const slug = this.$route.params.slug
-				const response = Blog.getSinglePost().then(response => this.$set('post', response.data.post))
+				const that = this
+				const slug = that.$route.params.slug
+				const response = Blog.getSinglePost(slug).then((response) => {
+
+					response.data.posts.forEach(function(post) {
+						if (post.basename === slug) {
+							that.$set('post', post)
+						}
+					})
+				})
 			}
 		},
 

@@ -12,7 +12,7 @@ var spinner = ora('Compiling markdown files to json…\n')
 //var maxArticlesPerPage = 10
 
 var folders = {
-	'src': path.join('src', 'content'),
+	'src': path.join('content'),
 	'dist': path.join('static', 'posts')
 }
 
@@ -40,22 +40,21 @@ getDirectories(folders.src).forEach(function(directory) {
 	console.log(('+ Creating folder ' + distFolder).green)
 
 	var files = fs.readdirSync(srcFolder, 'utf8')
-	var fileContent = {'posts': []}
+	var fileContent = { 'posts': [] }
 	var pageCount = 1
 	var items = 0
 
 	files.forEach(function(element, index, fileArray) {
 		var post = fs.readFileSync(path.join(srcFolder, element), 'utf8')
-		//var fileName = distFolder + '/page-' + pageCount + '.json'
-		var fileName = distFolder + '/articles.json'
+		var fileName = element.substr(0, element.lastIndexOf('.')) + '.json'
 
-		items++
+		//items++
 
 		parser(post, function(err, result) {
 			fileContent.posts.push({
 				'title': result.attributes.title,
 				'author': result.attributes.author || 'Emmanuel B.',
-				'date': result.attributes.date || new Date().format('Y-m-d h:i'),
+				'date': result.attributes.date || new Date(),
 				'tags': result.attributes.tags || [''],
 				'categories': result.attributes.categories || ['non-classe'],
 				'template': result.attributes.template || 'post.vue',
@@ -76,7 +75,7 @@ getDirectories(folders.src).forEach(function(directory) {
 		}*/
 	})
 
-	createJsonFiles(distFolder + '/articles.json', fileContent)
+	createJsonFiles(path.join(distFolder, 'articles.json'), fileContent)
 })
 
 spinner.stop()
