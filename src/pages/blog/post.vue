@@ -23,6 +23,7 @@
 
 <script>
 	import Blog from '../../resources/blog'
+	import Prism from 'prismjs'
 
 	module.exports = {
 
@@ -68,6 +69,10 @@
 			return {
 				post: { }
 			}
+		},
+
+		ready () {
+			Prism.highlightAll()
 		}
 	}
 </script>

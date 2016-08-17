@@ -14,8 +14,6 @@ import appHeader from './components/app-header'
 import appNav from './components/app-nav'
 import appMain from './components/app-main'
 import appFooter from './components/app-footer'
-import Prism from 'prismjs'
-Prism.highlightAll();
 
 export default {
 	data () {
