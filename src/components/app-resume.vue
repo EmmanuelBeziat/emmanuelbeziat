@@ -17,11 +17,11 @@
 		</a>
 	</div>
 
-	<div class="site-header__bio" v-if="resume">{{ resume.bio.short }}</div>
+	<div class="site-header__bio" v-if="resume">{{{ resume.bio.long }}}</div>
 </template>
 
 <script>
-	const infos = 'static/resume.json'
+	const infos = '/static/resume.json'
 
 	export default {
 		data () {

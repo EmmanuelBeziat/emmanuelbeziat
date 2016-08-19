@@ -8,6 +8,7 @@
     "dev": "node build/dev-server.js",
     "build": "node build/build.js",
     "pages": "node build/buildpages.js",
+    "svg": "svg-sprite-generate -d src/assets/icons -o static/sprites/icons.svg",
     "deploy": "./build/deploy.sh",
     "unit": "karma start test/unit/karma.conf.js --single-run",
     "test": "npm run unit"

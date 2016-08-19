@@ -23,16 +23,7 @@
 		 * @type {Object}
 		 */
 		Route: {
-			waitForData: true,
-
-			/**
-			 * Fetch route data
-			 * @param  {Object} transition
-			 * @return {Promis}
-			 */
-			data (transition) {
-				//return Blog.get().then(response => this.$set('posts', response.data))
-			}
+			waitForData: true
 		},
 
 		created: function () {

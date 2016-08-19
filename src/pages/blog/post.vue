@@ -41,16 +41,7 @@
 		 * @type {Object}
 		 */
 		Route: {
-			waitForData: true,
-
-			/**
-			 * Fetch route data
-			 * @param  {Object} transition
-			 * @return {Promise}
-			 */
-			data (transition) {
-				//return Blog.get().then(response => this.$set('post', response.data.post))
-			}
+			waitForData: true
 		},
 
 		created: function () {
