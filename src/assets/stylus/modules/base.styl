@@ -1,5 +1,4 @@
 html
-	height 100%
 	box-sizing border-box
 	overflow-y scroll
 
@@ -18,12 +17,20 @@ body
 	font 400 $font-size-base/1.5em $font-stack-common
 	background $color-background
 	color $color-text
-	height 100%
 
 h1
 h2
+h3
 	font-family $font-stack-heading
 	font-weight 200
+	margin 2em 0 .75em
+
+h2
+	font-size 2.25em
+	color $color-green
+
+h3
+	font 700 1.45em/1.5 $font-stack-common
 
 a
 	transition .2s ease-in-out
@@ -35,7 +42,7 @@ a
 		color $color-yellow
 
 .site
-	min-height 100%
+	min-height 100vh
 	display flex
 	flex-direction row
 	align-items stretch
@@ -48,3 +55,8 @@ a
 
 .site-main
 	margin 6em auto 4em
+
+.flex
+	display flex
+	justify-content space-between
+	align-items center

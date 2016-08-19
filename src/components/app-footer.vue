@@ -3,13 +3,3 @@
 		© 2016 Emmanuel Béziat
 	</footer>
 </template>
-
-<script>
-
-export default {
-	data () {
-		return {
-		}
-	}
-}
-</script>

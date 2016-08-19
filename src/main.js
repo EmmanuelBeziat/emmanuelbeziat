@@ -11,6 +11,8 @@ Vue.use(VueRouter)
 Vue.use(VueResource)
 require('./app/boot')
 
+Vue.use(VueHead)
+
 Vue.use(Svg, {
 	sprites: '/static/sprites/icons.svg',
 	prefix: '',
@@ -18,7 +20,7 @@ Vue.use(Svg, {
 })
 
 // Initializing the router with options
-let Router = new VueRouter(config)
+const Router = new VueRouter(config)
 Router.map(routes)
 Router.redirect(redirects)
 Router.beforeEach(before)
