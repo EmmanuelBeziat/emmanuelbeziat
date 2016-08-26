@@ -3,6 +3,7 @@ title: "Mon top des mauvaises pratiques web"
 date: "2014-01-02 09:46:17"
 tags:
 - html/css
+- mauvaises pratiques
 categories:
 - Tutoriels
 ---
@@ -34,13 +35,15 @@ Mon conseil : tenez-vous en au changement de couleur et aux [`text-decoration`]
 
 Très récemment, je suis tombé sur ça :
 
-~~~.language-markup
-<aa>Quelque chose</aa>~~~
+```markup
+<aa>Quelque chose</aa>
+```
 
 Ou bien encore ça :
 
-~~~.language-markup
-<r class="valeur">Quelque chose</r>~~~
+```markup
+<r class="valeur">Quelque chose</r>
+```
 
 Inutile de vous dire que ça n’est en aucun cas du html, que ça n’est pas valide, et je trouve absolument scandaleux que les navigateurs affichent un truc pareil sans broncher…
 

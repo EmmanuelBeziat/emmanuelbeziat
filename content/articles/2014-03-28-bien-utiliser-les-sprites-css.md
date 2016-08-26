@@ -25,7 +25,7 @@ Pour la suite du tutoriel, on va les fusionner comme ceci et utiliser cette imag
 
 ![sprite](https://www.emmanuelbeziat.com/wp-content/uploads/2014/03/sprite-test.png)
 
-<div class="note note--question">Mais quel intérêt y a-t-il ? C'est moins pratique en CSS ! Et puis charger une grosse image, ça prend plus de temps qu'une petite, non ?</div>
+Mais quel intérêt y a-t-il ? C'est moins pratique en CSS ! Et puis charger une grosse image, ça prend plus de temps qu'une petite, non ? {.note .note--question}
 
 Songez à ceci : la grande image fait 68 ko, chaque petite fait 12 ko. Donc, d’un côté on chargera une fois 68ko, et de l’autre on chargera douze fois 12 ko, soient… 144 ko. Mais ce n’est pas tout : à chaque fois que vous allez devoir charger une image, donc effectuer une requête HTTP pour récupérer l’image et l’afficher, soit un aller-retour. En n’ayant qu'une seule image, vous économisez de nombreux allers-retours. Certes cela paraît minime, mais imaginez que vous ayez des centaines de milliers de visiteurs uniques par jour !
 
@@ -35,13 +35,13 @@ De plus, dans le cas d’un élément qui change d’image au survol, vous êtes
 
 Maintenant que nos images sont prêtes, il va falloir choisir en CSS ce que l’on veut afficher. Pour cela, il faut d’abord que l’image soit définie comme background dans un objet ayant une certaine taille.
 
-<div class="note note--info">En fonction de ce que l’on veut et de la façon dont on a organisé notre image, une seule taille (largeur ou hauteur) peut être définie, par exemple pour faire un `repeat-x` ou `repeat-y`.</div>
+En fonction de ce que l’on veut et de la façon dont on a organisé notre image, une seule taille (largeur ou hauteur) peut être définie, par exemple pour faire un `repeat-x` ou `repeat-y`. {.note .note--info}
 
 Pour l’instant, prenons un cas simple où l’on veut afficher des icônes les unes à la suite des autres, toutes de largeur et hauteur fixes et définies.
 
 Voici notre code HTML :
 
-~~~.language-markup
+```markup
 <ul class="icon">
 	<li class="icon__item icon__item--1"></li>
 	<li class="icon__item icon__item--2"></li>
@@ -49,11 +49,12 @@ Voici notre code HTML :
 	<li class="icon__item icon__item--4"></li>
 	<li class="icon__item icon__item--5"></li>
 	<li class="icon__item icon__item--6"></li>
-</ul>~~~
+</ul>
+```
 
 Chaque point de la liste sera donc une icône. Vous n’êtes évidemment pas obligé d’utiliser des listes. Comme elles sont toutes de même taille, on applique une classe « icone », la même pour toutes afin de ne pas répéter les mêmes éléments à chaque fois, et ne pas avoir à toutes les modifier en cas de changement :
 
-~~~.language-css
+```css
 /* Cibler les éléments <li> appartenant à un élément de classe "icone" */
 .icon__item
 {
@@ -61,28 +62,30 @@ Chaque point de la liste sera donc une icône. Vous n’êtes évidemment pas ob
 	height: 60px;
 	display: inline-block;
 	background: url("sprite.png") no-repeat;
-}~~~
+}
+```
 
 Qu'avons-nous fait pour l’instant ? Nous avons simplement dit que chaque point de la liste sera un bloc en ligne de 60 pixels de hauteur et de largeur, et qu'il aura une image de fond. Pour éviter tout problème, on peut lui appliquer la valeur `no-repeat`.
 
 Maintenant, c'est là que les choses se corsent (mais pas beaucoup, promis). On va appliquer des classes avec un background de notre image, en leur indiquant la position, au moyen de `background-position`. Voyons ce que ça donne dans la pratique, pour l’icône de droite seulement :
 
-~~~.language-css
-.icon__item--1 { background-position: left top; }~~~
+```css
+.icon__item--1 { background-position: left top; }
+```
 
 ![resultat1](http://uploads.siteduzero.com/files/237001_238000/237404.png)
 
-<div class="note note--question">Qu'est-ce qui s'est passé précisément ? Il n’y a rien de particulier…</div>
+Qu'est-ce qui s'est passé précisément ? Il n’y a rien de particulier… {.note .note--question}
 
 Revoyons un peu le code. On a gardé la même image de background qu'initialement, et on lui a simplement donné une position. L’image est affichée à partir de son bord gauche et de son bord haut (left top). Comme on a dit que la liste avait une largeur et une hauteur de 60 pixels, le reste de l’image au-delà de ces 60×60 n’est pas affiché, on a donc exactement ce qu'on voulait. Sauf qu'on ne s'en rend pas bien compte car on n’a qu'une image pour l’instant, mais nous allons arranger ça très vite.
 
-<div class="note note--info">La position de base est toujours le coin en haut à gauche. Vous pouvez essayer de mettre 0 0 à la place de left top, vous verrez que vous obtiendrez le même résultat.</div>
+La position de base est toujours le coin en haut à gauche. Vous pouvez essayer de mettre 0 0 à la place de left top, vous verrez que vous obtiendrez le même résultat. { .note .note--info }
 
 ## La méthode en action
 
 Bien, bien, bien. On voulait peindre le plafond, je vous ai donné l’échelle, je vous ai placé dessus, je vous ai donné la peinture. Maintenant, accrochez-vous bien au pinceau : j’enlève l’échelle !
 
-~~~.language-css
+```css
 .icon__item {
 	width: 60px;
 	height: 60px;
@@ -95,13 +98,14 @@ Bien, bien, bien. On voulait peindre le plafond, je vous ai donné l’échelle,
 .icon__item--3 { background-position: 40% top; }
 .icon__item--4 { background-position: 60% top; }
 .icon__item--5 { background-position: 80% top; }
-.icon__item--6 { background-position: right top; }~~~
+.icon__item--6 { background-position: right top; }
+```
 
 Allez, vous allez voir que c'est tout simple. Vous avez même peut-être déjà compris ! Revoyons l’action ralentie au magnétoscope :
 
-~~~.language-css
+```css
 .icon__item--2 { background-position: 20% top; }
-~~~
+```
 
 On a donc déplacé notre image de 20 % vers la droite, comme dans l’image suivante. Comme l’image est régulière et le nombre d’icônes de 6, faire le déplacement en pourcentage est aisé : il y a en tout cinq déplacements à faire, d’un seul bloc à chaque fois. 1/5 = 20 %.
 
@@ -109,21 +113,22 @@ On a donc déplacé notre image de 20 % vers la droite, comme dans l’image sui
 
 Ainsi, au fur et à mesure, on peut placer notre image où on le souhaite, et comme on a toujours la taille de 60×60px à partir du point défini, on a l’illusion qu'il n’y a qu'une seule image.
 
-<div class="note note--important">Notez bien : j’ai utilisé les valeurs left et right au début et à la fin car c'est plus simple que des valeurs en pourcentage, mais 0 % et 100 % auraient aussi bien fonctionné. En fonction des images utilisées, ce n’est pas toujours possible. Ici, notre image est « régulière », ce qui permet ce genre de facilités.</div>
+Notez bien : j’ai utilisé les valeurs left et right au début et à la fin car c'est plus simple que des valeurs en pourcentage, mais 0 % et 100 % auraient aussi bien fonctionné. En fonction des images utilisées, ce n’est pas toujours possible. Ici, notre image est « régulière », ce qui permet ce genre de facilités. { .note .note--important }
 
 Mais il existe également une autre façon de faire : utiliser des valeurs en pixels. Nous allons voir comment.
 
-~~~.language-css
+```css
 .icon__item--1 { background-position: left top; }
 .icon__item--2 { background-position: -60px top; }
 .icon__item--3 { background-position: -120px top; }
 .icon__item--4 { background-position: -180px top; }
 .icon__item--5 { background-position: -240px top; }
-.icon__item--6 { background-position: right top; }~~~
+.icon__item--6 { background-position: right top; }
+```
 
 Comme vous le voyez, les valeurs en pixels sont négatives. Si vous vous trompez et que vous mettez une valeur positive, le déplacement se fera dans le mauvais sens, et le résultat le plus probable, c'est que vous ne verrez tout simplement pas l’image. Faites bien attention, là encore j’aurais pu utiliser 0px en lieu et place de left et -300px au lieu de right.
 
-<div class="note note--question">Alors, quelle est la différence entre l’utilisation des % et des pixels ?</div>
+Alors, quelle est la différence entre l’utilisation des % et des pixels ? { .note .note--question }
 
 Il n’y a pas vraiment de différence, mais des avantages et des inconvénients inhérents à chaque méthode. Voyons deux cas :
 
@@ -144,7 +149,7 @@ Vous l’attendiez tous, hein ?
 
 En fait, la gestion du survol de la souris va être toute simple à partir de ce qu'on a déjà fait. Comme un code vaut mieux qu'un long discours, voici :
 
-~~~.language-css
+```css
 .icon__item {
 	width: 60px;
 	height: 60px;
@@ -165,7 +170,8 @@ En fait, la gestion du survol de la souris va être toute simple à partir de ce
 .icon__item--3:hover { background-position: 40% bottom; }
 .icon__item--4:hover { background-position: 60% bottom; }
 .icon__item--5:hover { background-position: 80% bottom; }
-.icon__item--6:hover { background-position: right bottom; }~~~
+.icon__item--6:hover { background-position: right bottom; }
+```
 
 Ouh, c'était compliqué hein ?
 
@@ -177,7 +183,7 @@ Grâce à la pseudo-classe `:hover`, on peut agir sur l’action du survol de la
 
 ## Cas particulier : les images répétées
 
-<div class="note note--important">Les sprites ont tout de même leurs limites. En effet, il arrivera dans vos designs que vous devrez répéter une image. Or, si vous choisissez d’affecter un background sur toute une surface, toute l’image va apparaître.</div>
+Les sprites ont tout de même leurs limites. En effet, il arrivera dans vos designs que vous devrez répéter une image. Or, si vous choisissez d’affecter un background sur toute une surface, toute l’image va apparaître. { .note .note--important }
 
 Il va donc vous falloir faire attention, et penser à regrouper vos images à répéter suivant leur sens. Pour répéter vos images horizontalement avec un `repeat-x`, vous devez placer vos images verticalement et jouer sur le placement en hauteur :
 
@@ -201,24 +207,26 @@ Je vous laisse regarder ceux de [Yahoo](http://l2.yimg.com/dh/ap/default/140318/
 
 J’ai eu quelques demandes et questions concernant les possibilités d’utilisation des sprites. Des questions qui peuvent paraître simples à certains, mais que je vais quand même aborder ici pour que tout le monde trouve son bonheur.
 
-<div class="note note--quesion">Comment puis-je utiliser la méthode des sprites avec des liens, pour faire un menu ?
-Comment puis-je afficher du texte par-dessus mes images ?</div>
-<div class="note note--info">Cet exemple ne concerne que des liens ayant un contenu textuel écrit dans le HTML, sous lequel on souhaiterait mettre une image de fond changeant au survol. Pour des images cliquables, voir la partie suivante.</div>
+Comment puis-je utiliser la méthode des sprites avec des liens, pour faire un menu ?
+Comment puis-je afficher du texte par-dessus mes images ? { .note .note--question }
+
+Cet exemple ne concerne que des liens ayant un contenu textuel écrit dans le HTML, sous lequel on souhaiterait mettre une image de fond changeant au survol. Pour des images cliquables, voir la partie suivante. {.note .note--info}
 
 Le principe des sprites peut être appliqué sur n’importe quel élément. Si vous souhaitez faire des liens cliquables dont le fond change au survol, comme sur le Site du Zéro, il faut appliquer nos classes à la balise du lien, comme suit :
 
-~~~.language-markup
+```markup
 <ul class="menu">
 	<li class="menu__item"><a class="menu__link" href="lien">Ma Page 1</a></li>
 	<li class="menu__item"><a class="menu__link" href="lien">Ma Page 2</a></li>
 	<li class="menu__item"><a class="menu__link" href="lien">Ma Page 3</a></li>
-</ul>~~~
+</ul>
+```
 
 Voici notre image (certes un peu moche… Mais c'est pour l’idée) :
 
 ![image test sprite](http://uploads.siteduzero.com/files/247001_248000/247162.png)
 
-~~~.language-css
+```css
 .menu {
 	margin: 0;
 	padding: 0;
@@ -242,26 +250,28 @@ Voici notre image (certes un peu moche… Mais c'est pour l’idée) :
 .menu__link:hover {
 	/* On affiche seulement la portion de l’image voulue : le bas */
 	background-position: 0 bottom;
-}~~~
+}
+```
 
 De cette manière, vous constatez que comme on applique l’image en background sur un élément, on peut parfaitement y afficher du texte et utiliser les liens normalement.
 
 ### Cas des images cliquables
 
-<div class="note note--alert">Malgré tout, il est important de savoir que dans le cas d’une image cliquable, les sprites ne devraient pas être utilisés !</div>
+Malgré tout, il est important de savoir que dans le cas d’une image cliquable, les sprites ne devraient pas être utilisés ! { .note .note--alert }
 
 En effet, utiliser les sprites avec un lien sans texte reviendrait à avoir un lien vide :
 
-~~~.language-markup
-<a href="mapage.html"></a>~~~
+```markup
+<a href="mapage.html"></a>
+```
 
 Sur ce code, on appliquerait nos backgrounds et l’effet de positionnement au survol. Mais créer un lien vide en HTML n’est pas une bonne chose, pour des questions d’accessibilité.
 
-<div class="note note--question">Mais pourquoi ? Comme on le stylise en CSS, on peut quand même le voir et cliquer dessus, non ?</div>
+Mais pourquoi ? Comme on le stylise en CSS, on peut quand même le voir et cliquer dessus, non ? { .note .note--question }
 
 Certes, mais songez que certains internautes sont contraints de naviguer avec l’affichage des CSS désactivé, ou des lecteurs d’écrans. C'est le cas des personnes malvoyantes. Pour eux, le résultat sera sans appel : un lien vide qui n’affiche rien, et qui n’est donc pas cliquable. En conséquence, il devient impossible de naviguer sur votre site. C'est pour cela qu'il faut utiliser une image dans le HTML.
 
-<div class="note note--question">Mais le problème sera le même avec une image dans le HTML : si un utilisateur est malvoyant, il ne la verra pas !</div>
+Mais le problème sera le même avec une image dans le HTML : si un utilisateur est malvoyant, il ne la verra pas ! { .note .note--info }
 
 Et c'est là le rôle de l’attribut `alt`, qui est obligatoire dans la balise `<img />`. En effet, dans le cas où une image ne serait pas chargée pour une raison ou une autre (erreur de connexion, lecteur d’écran pour personne malvoyante…), c'est la description contenue dans l’attribut `alt` qui sera affiché ! Ainsi, le lien reste toujours cliquable. Pensez donc toujours à remplir cette balise consciencieusement.
 

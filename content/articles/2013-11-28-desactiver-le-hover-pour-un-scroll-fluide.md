@@ -3,6 +3,8 @@ title: "Désactiver le :hover pour un scroll fluide"
 date: "2013-11-28 17:07:44"
 tags:
 - html/css
+- javascript
+- bonnes pratiques
 categories:
 - Tutoriels
 ---
@@ -23,16 +25,17 @@ Suivant le _tweet_ mis en lumière plus haut, et l’article de TheCSSNinja, voi
 
 Voici le code CSS en question :
 
-~~~.language-css
+```css
 .disable-hover {
 	pointer-events: none;
-}~~~
+}
+```
 
-<div class="note note--important">Notez que la propriété pointer-events cause une erreur dans la validateur CSS du W3C.</div>
+Notez que la propriété pointer-events cause une erreur dans la validateur CSS du W3C. {.note .note--important}
 
 Maintenant, un peu de Javascript :
 
-~~~.language-javascript
+```javascript
 var body = document.body,
 	timer;
 
@@ -47,11 +50,12 @@ window.addEventListener('scroll’, function() {
 		body.classList.remove('disable-hover')
 	}, 200);
 
-}, false);~~~
+}, false);
+```
 
 Et voilà !
 
-### Conclusature
+## Conclusature
 
 Je n’avais jamais été confronté moi-même à ce "bug", attendu que mon navigateur principal (IE) désactive de lui-même les _pointer events_ lorsqu'on fait défiler une page. Piqué de curiosité en lisant l’article, j’ai donc fait le test sur Chrome et Firefox, pour constater qu'effectivement… Ouch. Je reprend donc ici la moelle de l’article en question, d’une part afin de ne pas oublier cette astuce, d’autre part afin que les anglophobes puissent en bénéficier aussi.
 

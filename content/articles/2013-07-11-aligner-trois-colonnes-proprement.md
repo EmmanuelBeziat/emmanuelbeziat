@@ -15,12 +15,13 @@ Mais c'est en réalité très simple à faire, et nous allons voir comment.
 
 La première chose, c'est d’abord de placer les trois colonnes dans un conteneur, que nous appellerons ici "_container_". Ensuite, il faut mettre les éléments flottants (les sidebar donc) avant le corps central.
 
-~~~.language-markup
+```markup
 <div class="container">
 	<div class="sidebar--left"></div>
 	<div class="sidebar--right"></div>
 	<div class="content"></div>
-</div>~~~
+</div>
+```
 
 Comme toujours, essayez d’ajouter un peu de contenu pour pouvoir voir les effets ; utilisez par exemple le [générateur de lipsum](http://fr.lipsum.com/ "Générateur de lipsum").
 
@@ -28,7 +29,7 @@ Comme toujours, essayez d’ajouter un peu de contenu pour pouvoir voir les effe
 
 Maintenant, il suffit de mettre en place les éléments :
 
-~~~.language-css
+```css
 .container {
 	overflow: auto;
 }
@@ -45,18 +46,20 @@ Maintenant, il suffit de mettre en place les éléments :
 
 .content {
 	overflow: hidden;
-}~~~
+}
+```
 
 Voyons ces lignes en détail :
 
-~~~.language-css
+```css
 .container {
 	overflow: auto;
-}~~~
+}
+```
 
 Les éléments flottants (utilisés avec la propriété `float` donc) sortent du _flux d’éléments_, ce qui conduit les autres éléments à passer en-dessous comme s'ils étaient ignorés. Utiliser une propriété neutre comme `overflow` permet au contenant de tenir compte de ces flottants et de les englober pour que tout rentre dans l’ordre.
 
-~~~.language-css
+```css
 .sidebar--left {
 	width: 200px;
 	float: left;
@@ -65,14 +68,16 @@ Les éléments flottants (utilisés avec la propriété `float` donc) sortent du
 .sidebar--right {
 	width: 200px;
 	float: right;
-}~~~
+}
+```
 
 On place simplement les éléments flottants (les menus latéraux) à gauche et à droite avec la propriété `float`, et on leur attribue une largeur fixe.
 
-~~~.language-css
+```css
 .content {
 	overflow: hidden;
-}~~~
+}
+```
 
 Enfin, on ne précise aucune largeur à cet élément afin qu'il s'adapte automatiquement à l’espace disponible. Là encore, on use de la propriété `overflow` pour que cette colonne tienne compte des deux éléments flottants.
 

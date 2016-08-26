@@ -2,7 +2,7 @@
 title: "Google est opportuniste"
 date: "2013-07-30 01:29:59"
 tags:
-- entreprises
+- brand
 categories:
 - Diatribes
 ---

@@ -3,6 +3,8 @@ title: "Préfixes CSS, jusqu'à quand ?"
 date: "2013-08-06 16:10:16"
 tags:
 - html/css
+- bonnes pratiques
+- workflow
 categories:
 - Tutoriels
 ---
@@ -16,14 +18,15 @@ Pour ceux d’entre toi, lecteur, qui ne comprendrais pas de quoi je parle, voic
 
 Les "**préfixes propriétaires**" (aussi connus sous le sobriquet de "préfixes vendeurs"), sont apparus afin d’intégrer dans le CSS des propriétés non-standardisées (la standardisation étant le travail du [W3C](http://www.w3.org/), l’organisme chargé de chapeauter les technologies html/css). On ajoute donc un préfixe devant la propriété CSS, comme ça : `-prefixe-propriété`. En sachant qu'il y a plusieurs préfixes existants, on se retrouve souvent avec ceci :
 
-~~~.language-css
+```css
 élément {
 	-webkit-propriété: valeur;
 	-moz-propriété: valeur;
 	-ms-propriété: valeur;
 	-o-propriété: valeur;
 	propriété: valeur;
-}~~~
+}
+```
 
 Et là, tu vas me dire "Mais qu'est-ce que c'est ce foutoir ?" (et tu auras raison !). Hé bien chaque préfixe correspond à un moteur de rendu qui équipe différents navigateurs. En voici la liste non-exhaustive (car il y a PLEIN de navigateurs) avec seulement les principaux :
 
@@ -38,7 +41,7 @@ On voit parfois passer le préfixe `-kthml-`, mais il est bien moindre car corre
 
 C'est là le but de cet article. En effet, les préfixes ont l’avantage de proposer des versions "beta" (non complètes) des propriétés en cours d’élaboration par le W3C (en contrepartie, leur prise en charge est parfois partielle et bancale) pour que les développeurs puissent commencer à travailler avec, mais ils posent aussi un problème de compatibilité, car un préfixe `-moz-` ne sera pas lu par un navigateur qui ne tourne pas sur Gecko, de même qu'un préfixe `-webkit-` ne sera pas pris en compte par un navigateur non-webkit. Mais ajouter des préfixes pour tous les navigateurs possible représente un travail conséquent et alourdit le code. De plus, les propriétés étant toujours en cours d’élaboration, leur syntaxe est susceptible de changer (c'est ce qui s'est passé avec `linear-gradient`). De plus dans certains cas, la propriété est finalisée depuis suffisamment longtemps pour que la plupart des navigateurs aient pu l’implémenter correctement, et les préfixes ne sont donc plus utiles. Dans certains cas, ils ne sont plus pris en charge par les versions récentes d’un navigateur (c'est le cas de `-moz-border-radius`).
 
-<div class="note note--important">Mettez toujours la propriété finale (donc sans préfixes) après les propriétés préfixées. Ce n’est pas une lubie, mais un principe de logique : le navigateur doit lire en dernier la propriété finale et l’appliquer à la place de la propriété préfixée.</div>
+Mettez toujours la propriété finale (donc sans préfixes) après les propriétés préfixées. Ce n’est pas une lubie, mais un principe de logique : le navigateur doit lire en dernier la propriété finale et l’appliquer à la place de la propriété préfixée. {.note .note--important}
 
 ### Une solution : se renseigner
 
@@ -51,15 +54,16 @@ Un site référence quelles propriétés sont disponibles avec ou sans préfixes
 
 Notre code sera donc tout simplement :
 
-~~~.language-css
+```css
 élément {
 	-webkit-transition: all 1s ease;
 	transition: all 1s ease;
-}~~~
+}
+```
 
 À refaire pour chaque propriété sur laquelle vous pourriez avoir un doute, bien entendu.
 
-<div class="note note--info">Notez bien que les informations de cet articles sont valables à sa date de rédaction. Je ne le mettrai pas à jour chaque fois qu'une propriété change un poil, donc comprenez-en le sens mais notez que les propriétés présentées peuvent avoir été validées depuis longtemps au moment où vous lirez ceci.</div>
+Notez bien que les informations de cet articles sont valables à sa date de rédaction. Je ne le mettrai pas à jour chaque fois qu'une propriété change un poil, donc comprenez-en le sens mais notez que les propriétés présentées peuvent avoir été validées depuis longtemps au moment où vous lirez ceci. {.note .note--info}
 
 ## Pour se faciliter la vie
 
@@ -87,4 +91,5 @@ Parce qu'un peu de généralités ne fait pas de mal !
 *   [box-sizing](http://caniuse.com/#feat=css3-boxsizing)
 *   [transition](http://caniuse.com/#feat=css-transitions)
 *   [gradient](http://caniuse.com/#feat=css-gradients) (à utiliser toutefois avec un fallback)
-<div class="note note--info">Je ne mets ici que les propriétés qui ont longtemps été préfixées, pas la liste complète des propriétés CSS3 qui n’ont pas besoin de préfixes.</div>
+
+Je ne mets ici que les propriétés qui ont longtemps été préfixées, pas la liste complète des propriétés CSS3 qui n’ont pas besoin de préfixes. {.note .note--info}

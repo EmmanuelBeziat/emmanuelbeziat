@@ -34,7 +34,7 @@ Pour peu que je sois occupé, je risque de ne pas entendre mon téléphone sonne
 
 Perversité supplémentaire, quelqu'un qui a laissé sa missive tient pour acquis que j’en ai bien pris note et s'attend forcément à ce que je le rappelle —&nbsp;souvent dans l’heure. Il va donc très probablement se frustrer de ma non-réponse, et venir m'en remettre une nouvelle couche en exprimant en sus sa colère et l’urgence de la situation. Et toujours attendre que je rappelle —&nbsp;ce que je ne ferais pas, puisque c'est de toutes façons beaucoup trop tard et que, à moins que ce ne soit pour m'offrir plein d’argent, je n’ai probablement pas envie de parler. **En plus, il faut se justifier de son absence…**
 
-<div class="note note--info">Notez que toutes les urgences évoquées ici n’en sont jamais vraiment ; dans 95% des cas, c'est juste de l’impatience de la part de l’interlocuteur.</div>
+Notez que toutes les urgences évoquées ici n’en sont jamais vraiment ; dans 95% des cas, c'est juste de l’impatience de la part de l’interlocuteur. {.note .note--info}
 
 Tant qu'on y est, voici un florilège des messages que j’ai déjà reçu (et auxquels je n’ai jamais répondu pour des raisons qui me semblent évidentes)&nbsp;:
 

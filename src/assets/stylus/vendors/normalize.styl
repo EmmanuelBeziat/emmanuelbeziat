@@ -327,6 +327,23 @@ textarea
 	overflow auto
 
 /**
+ * Blockquote
+ */
+blockquote
+	position relative
+	margin 2rem 0
+	padding-left 4rem
+	font 400 italic 1.15em/1.5em $font-stack-common
+
+blockquote::before
+	content "“"
+	position absolute
+	left 0
+	top 2rem
+	font-size 6em
+	color lighten($color-background, 25%)
+
+/**
  * 1. Add the correct box sizing in IE 10-.
  * 2. Remove the padding in IE 10-.
  */

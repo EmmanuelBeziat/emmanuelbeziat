@@ -3,6 +3,7 @@ title: "Utiliser les propriétés de police avec une font-web"
 date: "2013-07-13 23:28:05"
 tags:
 - html/css
+- bonnes pratiques
 categories:
 - Tutoriels
 ---
@@ -13,11 +14,11 @@ Il vous est peut-être déjà arrivé d’utiliser `@font-face` ? Cette proprié
 Mais il existe une façon d’utiliser proprement ces polices, et la voici…
 
 
-### Une simple question d’organisation
+## Une simple question d’organisation
 
 La méthode en question est très simple. Alors que le générateur vous fournira un nom de police différent pour chaque police que vous lui avez envoyé, tout en mettant les valeurs de `font-weight` et `font-style` sur `normal` :
 
-~~~.language-css
+```css
 @font-face {
 	font-family: "MaPoliceRegular"
 	src: url("MaPolice-Regular-webfont.eot");
@@ -45,11 +46,11 @@ La méthode en question est très simple. Alors que le générateur vous fournir
 	font-weight: normal;
 	font-style: normal;
 }
-~~~
+```
 
 La solution, c'est simplement de modifier ce code par défaut afin de mettre un nom (`font-family`) identique pour tous, et des propriétés (`font-weight` et `font-style`) qui correspondent à la police en question :
 
-~~~.language-css
+```css
 @font-face {
 	font-family: "MaPolice"
 	src: local("Ma Police Regular"),
@@ -75,10 +76,11 @@ La solution, c'est simplement de modifier ce code par défaut afin de mettre un 
 		 url("MaPolice-Italique-webfont.woff") format("woff");
 	font-weight: 400;
 	font-style: italic;
-}~~~
+}
+```
 
 De cette façon, vous pouvez appliquer les propriétés à votre police "MaPolice", sans avoir besoin d’en changer : le CSS saura qu'il faut charger une police différente en fonction des valeurs de ces propriétés.
 
-### Un exemple ?
+## Un exemple ?
 
 Voici [une page d’exemple](http://lab.infographizm.com/css/fonts/webfonts-tests-weight/) si vous souhaitez voir le code d’un peu plus près.

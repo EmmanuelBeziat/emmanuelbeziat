@@ -3,6 +3,7 @@ title: "Le problème du dev web d'aujourd'hui"
 date: "2015-10-07 02:34:00"
 tags:
 - bonnes pratiques
+- workflow
 categories:
 - Diatribes
 ---
@@ -24,7 +25,7 @@ Pour autant, je prend conscience que freiner me fait prendre du retard, et j’e
 
 Un exemple simple : Pour utiliser Stylus (ou Sass, ou Less, etc.), il faut l’installer sur la machine sur laquelle on travaille. Oui, mais comment ? Hé bien il faut d’abord installer [NodeJS](https://nodejs.org/). Peu importe l’environnement sur lequel je suis (OSX, Windows, Linux), il me faut à présent lancer la console, et taper une commande pour installer Stylus :
 
-$ npm install -g stylus~~~
+$ npm install -g stylus```
 
 Et là, on a touché du doigt les deux premiers problèmes que je vois dans cette nouvelle ère.
 
@@ -40,7 +41,7 @@ Oui, moi aussi j’aime me la péter un peu devant un néophyte en tapouillant t
 
 À titre d’exemple, voilà le "minimum" de code que je tape pour utiliser un task-runner en fonction de mes besoins "simples". Et la commande n’est que le début, après il me faut paramétrer tout le fonctionnement ; même si je peux réutiliser d’anciens modèles.
 
-~~~$ npm install --save-dev gulp gulp-stylus gulp-concat gulp-uglify gulp-plumber gulp-sourcemaps gulp-imagemin gulp-rename gulp-autoprefixer~~~
+```$ npm install --save-dev gulp gulp-stylus gulp-concat gulp-uglify gulp-plumber gulp-sourcemaps gulp-imagemin gulp-rename gulp-autoprefixer```
 
 Pour peu que j’utilise [Jade](http://jade-lang.com/) et [CoffeeScript](http://coffeescript.org/), il faut ajouter d’autres dépendances. Encore heureux qu'il n’y ai pas trente-six commandes. Mais la console quoi… **En 2015, putain !**
 
@@ -54,10 +55,10 @@ Un problème dans l’autre sens, donc : les outils sont dépendants, ont des d�
 
 Donc, une fois que j’ai Composer, il faut que j’installe mes outils (Frameworks, Classes)… Via la console, avec une commande. Mais pas la même qu'avec NodeJS, puisqu'il n’utilise pas ce dernier — vous suivez ? Hop, deux docs ouvertes, et d’autres commandes à retenir.
 
-~~~$ curl -sS https://getcomposer.org/installer | php
+```$ curl -sS https://getcomposer.org/installer | php
 $ mv composer.phar /usr/local/bin/composer
 
-$ composer require slim/slim~~~
+$ composer require slim/slim```
 
 Bon, c'est bien, ça marche. Mais je voudrais aussi utiliser jQuery et Bootstrap… Ah, mais pour ceux-là il faut Bower ! Bien, donc j’installe aussi Bower, un outil qui sert à installer des dépendances. Comme Composer. Comme NodeJS, aussi. Donc **j’installe des installeurs de dépendances**. Oui, oui. Bien sûr, Bower a ses propres commandes pour installer ses dépendances, sinon ce ne serait pas drôle. Hop, trois docs ouvertes.
 
@@ -77,8 +78,8 @@ Le problème, c'est que pour faire fonctionner Vagrant, il nous faut aussi un au
 
 Outre le fait que la procédure est longue et pas toujours bien renseignée en fonction de ce qu'on cherche, tout est toujours en ligne de commande :
 
-~~~$ vagrant init hashicorp/precise32
-$ vagrant up~~~
+```$ vagrant init hashicorp/precise32
+$ vagrant up```
 
 Mais surtout, pour utiliser pleinement les outils de Vagrant, il va falloir installer des dépendances pour ce dernier. Avec ses propres commandes. Hop, une doc de plus. Donc, pour installer des dépendances à Vagrant, il faut… Installer une dépendance, qui va installer les dépendances. Et allez ! On se tourne donc vers Chef, on lance une commande Vagrant, et on l’installe. Et ça marche… Jusqu'à ce qu'on veuille installer des dépendances ; là, il faut installer ChefDK, un ensemble de classes pour Chef, cette fois via git ou un installer Windows (qui ne demande pas dans quel dossier s'installer et se fout à la racine du disque C:/. Pour la petite histoire, cette faute lui a vallu une désinstallation immédiate de ma bécane, et je n’ai donc toujours pas de VagrantBox sur mon PC).
 
@@ -86,7 +87,7 @@ Mais surtout, pour utiliser pleinement les outils de Vagrant, il va falloir inst
 
 Ajoutons à tout ça qu'il nous faut généralement aussi installer et configurer git, qui s'utilise — mais vous le savez déjà ou l’avez deviné — en ligne de commandes. Et celles-ci, elles sont velues en plus. Même chez les plus chevronnés de l’outil, certains problèmes qui se posent parce que Jean-Bertrand a _commit_ sur la branche de préprod’ que Jeanne-Syvlie était en train de _merge_ alors que François-Eugène faisait un _checkout_, et on est parti pour deux heures à fouiller dans la doc, essayer toutes les commandes existantes, et bloquer le taff de tout le monde.
 
-~~~$ git stash create "Stash message"
+```$ git stash create "Stash message"
 $ git pull --rebase
 $ git stash clear
 $ git commit -m "Commit message"

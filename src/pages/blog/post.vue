@@ -21,8 +21,18 @@
 		<div class="article__content" v-linkable>{{{ post.content }}}</div>
 
 		<footer class="article__footer">
-			<div class="articles__share">
-				<app-share></app-share>
+			<div class="flex">
+				<div class="article__tags">
+					<span class="c-tag" v-for="tag in post.tags">{{ tag }}</span>
+				</div>
+
+				<div class="articles__share">
+					<app-share></app-share>
+				</div>
+			</div>
+
+			<div class="article__help">
+				Un problème ? Une question ? <br>Vous pouvez me contacter sur <a href="https://www.twitter.com/EmmanuelBeziat" target="_blank">Twitter</a>, poster un ticket sur <a href="https://github.com/EmmanuelBeziat/emmanuelbeziat/issues" target="_blank">Github</a>, ou bien créer un sujet sur un forum d’entraide comme <a href="https://zestedesavoir.com/" target="_blank">ZesteDeSavoir</a>, <a href="https://openclassrooms.com/dashboard" target="_blank">OpenClassrooms</a>, <a href="http://www.alsacreations.com/" target="_blank">Alsacréations</a>…
 			</div>
 		</footer>
 	</article>

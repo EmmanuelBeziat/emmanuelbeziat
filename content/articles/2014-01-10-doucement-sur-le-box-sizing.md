@@ -2,7 +2,8 @@
 title: "Doucement sur le box-sizing !"
 date: "2014-01-10 13:27:20"
 tags:
-- html/css
+- html/
+- bonnes pratiques
 categories:
 - Diatribes
 ---
@@ -16,11 +17,12 @@ Mais Est-ce vraiment une bonne idée ?
 
 Un jour, un gugusse fort inspiré a eu une idée <del>merdique</del> révolutionnaire en découvrant le sélecteur universel `*`. Fort embêté par quelques marges automatiques, notamment celle sur body (Pour ceux qui l’ignoreraient, body a un margin automatique de 8px), il s'est dit que, plutôt que de penser à mettre quelques `margin: 0;` là où il en avait besoin, ce serait plus simple de tout péter avec ce petit sélecteur. C'est ainsi qu'est né le premier des reset CSS :
 
-~~~.language-css
+```css
 * {
 	margin: 0;
 	padding: 0;
-}~~~
+}
+```
 
 En suivit celui d’Eric Meyer qui, à l’époque d’IE6, avait le bon goût de tenter de corriger intelligement les différences de marges automatiques d’un navigateur à l’autre. Seulement voilà  : à tout péter comme un gros babouin avec ces reset, il en résulte un problème conséquent : les marges automatiques ne sont pas faites pour les clebs et quand on les vire toutes, le texte devient complètement illisible. L’interaction normale des éléments html les uns envers les autres est un poil compromise, les paragraphes ne sont plus des paragraphes, etc.. À l’époque du html4 où internet était un vaste réseau de pages persos MultiMania pleines de gifs "codées" via des logiciels WYSIWYG, on ne se posait pas trop la question : on rustinait ça comme de grosses otaries à coup de `<br />` et hop, on avait des marges.
 
@@ -52,33 +54,36 @@ Après la cosmétique douteuse, on s'est rendu compte qu'il y avait aussi du pra
 
 Le fait est que définir `width` à un élément concerne en fait la largeur de son contenu, indépendamment de ses marges et de ses bordures. Ainsi, si on attribue à un bloc ce code CSS :
 
-~~~.language-css
+```css
 element {
 	width: 100px;
 	padding: 10px;
 	border: 2px solid white;
-}~~~
+}
+```
 
 La largeur totale réelle de l’élément sera de 124px : 100px de large, deux fois 10px de padding (gauche et droite), et deux fois 2px de bordure.
 
 Il suffit donc de prendre en compte ce fait et de modifier retirer 24px à la largeur attribuée :
 
-~~~.language-css
+```css
 element {
 	width: 76px;
 	padding: 10px;
 	border: 2px solid white;
-}~~~
+}
+```
 
 Ainsi, notre élément fera bien 100px de large. Mais désormais, grâce à `box-sizing` il existe un autre moyen :
 
-~~~.language-css
+```css
 element {
 	box-sizing: border-box;
 	width: 100px;
 	padding: 10px;
 	border: 2px solid white;
-}~~~
+}
+```
 
 En effet, la valeur `border-box` force le navigateur à prendre en compte la largeur attribuée sur l’ensemble de l’élément plutôt que sur son seul contenu (par opposition donc à son autre valeur, celle attribuée aux éléments par défaut : `content-box`). L’élément fera donc bien 100px de largeur, avec une marge interne de 10px de chaque côté et une bordure de 2px.
 
@@ -88,14 +93,15 @@ Et c'est super pratique, dans le cas par exemple des formulaires si l’on souha
 
 De là a fleuri ce petit bout de code en début de nombreuses feuilles de style, comme je le disais en début d’article :
 
-~~~.language-css
+```css
 *,
 *:after,
 *:before {
 	-webkit-box-sizing: border-box;
 	-moz-box-sizing: border-box;
 	box-sizing: border-box;
-}~~~
+}
+```
 
 Retour de la méthode paladin des croisades :
 

@@ -7,9 +7,19 @@ var path = require('path')
 var colors = require('colors')
 var mkdirp = require('mkdirp')
 var jsonfile = require('jsonfile')
-var parser = require('markdown-parse')
+var markdown = require('markdown-parse')
 var spinner = ora('Compiling markdown files to json…\n')
 //var maxArticlesPerPage = 10
+
+var test = ''
+
+var md = require('markdown-it')({
+	html: true,
+	breaks: true,
+	linkify: true
+}).use(require('markdown-it-attrs')).use(require('markdown-it-front-matter'), function(fm) {
+	test = fm
+})
 
 var folders = {
 	'src': path.join('content'),
@@ -26,6 +36,12 @@ function createJsonFiles(fileName, fileContent) {
 	jsonfile.writeFile(fileName, fileContent)
 	console.log('	+ Files: ' + fileName)
 }
+
+var md = require('markdown-it')({
+	html: true,
+	break: true,
+	linkify: true
+}).use(require('markdown-it-attrs'))
 
 spinner.start()
 
@@ -48,9 +64,11 @@ getDirectories(folders.src).forEach(function(directory) {
 		var post = fs.readFileSync(path.join(srcFolder, element), 'utf8')
 		var fileName = element.substr(0, element.lastIndexOf('.')) + '.json'
 
+		md.render(post)
+
 		//items++
 
-		parser(post, function(err, result) {
+		markdown(post, function(err, result) {
 			fileContent.posts.push({
 				'title': result.attributes.title,
 				'author': result.attributes.author || 'Emmanuel B.',
@@ -59,9 +77,9 @@ getDirectories(folders.src).forEach(function(directory) {
 				'categories': result.attributes.categories || ['non-classe'],
 				'template': result.attributes.template || 'post.vue',
 				'basename': result.attributes.basename || slug(result.attributes.title, { lower: true }),
-				'content': result.html
+				'content': md.render(result.body)
 			})
-		})
+		}) //*/
 
 		/*if (index === fileArray.length - 1) {
 			createJsonFiles(fileName, fileContent)
@@ -72,7 +90,7 @@ getDirectories(folders.src).forEach(function(directory) {
 			pageCount++
 			items = 0
 			fileContent = {'posts': []}
-		}*/
+		} //*/
 	})
 
 	createJsonFiles(path.join(distFolder, 'articles.json'), fileContent)

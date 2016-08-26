@@ -16,11 +16,13 @@ Bien que tout simple, je me suis dit que ça pourrait intéresser du monde. En a
 
 Alors on va la faire simple. Pour moi j’ai utilisé une liste non-ordonnée html, simplement parce qu'il s'agissait d’une liste de compétences (Ouais, c'est pas compliqué le html, voyez ?). Inutile de préciser que ça marcherait avec n’importe quoi. Aussi, pour l’exemple, je vais utiliser de bonnes vieilles `div`.
 
+```markup
 <div class="barre" data-length="30"></div>
 <div class="barre" data-length="20"></div>
 <div class="barre" data-length="50"></div>
 <div class="barre" data-length="80"></div>
-<div class="barre" data-length="40"></div>~~~
+<div class="barre" data-length="40"></div>
+```
 
 ### Data-length ?
 
@@ -36,18 +38,19 @@ Ma foi, ce n’est pas plus compliqué que ça. On va utiliser le positionnement
 
 On commence par donner le style de fond à la `div`, ainsi qu'un positionnement relatif pour pouvoir ensuite positionner le pseudo-élément.
 
-~~~.language-css
+```css
 .barre {
 	width: 300px;
 	background: grey;
 	border: 2px solid grey;
 	position: relative;
 	height: 10px;
-}~~~
+}
+```
 
 Maintenant, on donne un style au pseudo-élément, qui devient notre barre "intérieure" :
 
-~~~.language-css
+```css
 .barre:after {
 	content: ""
 	position: absolute;
@@ -55,11 +58,12 @@ Maintenant, on donne un style au pseudo-élément, qui devient notre barre "int�
 	left: 0;
 	top: 0;
 	bottom: 0;
-}~~~
+}
+```
 
 Reste ensuite à leur attribuer une largeur, en fonction de la valeur de notre `data-length`. Je ne vous mets que les dizaines (parce que ça n’a pas beaucoup d’intérêt de faire plus, à mon sens ; et aussi parce que j’ai la flemme de me cogner les 90 autres valeurs.).
 
-~~~.language-css
+```css
 .barre[data-length="10"]:after { width: 10% }
 .barre[data-length="20"]:after { width: 20% }
 .barre[data-length="30"]:after { width: 30% }
@@ -69,7 +73,8 @@ Reste ensuite à leur attribuer une largeur, en fonction de la valeur de notre `
 .barre[data-length="70"]:after { width: 70% }
 .barre[data-length="80"]:after { width: 80% }
 .barre[data-length="90"]:after { width: 90% }
-.barre[data-length="100"]:after { width: 100% }~~~
+.barre[data-length="100"]:after { width: 100% }
+```
 
 ## Conclusion
 

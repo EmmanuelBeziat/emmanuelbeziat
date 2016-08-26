@@ -3,6 +3,7 @@ title: "Règles HTML/CSS pour les débutants"
 date: "2014-05-06 02:23:53"
 tags:
 - html/css
+- bonnes pratiques
 categories:
 - Tutoriels
 ---
@@ -16,15 +17,17 @@ Et comme je suis une feignasse, plutôt que de répéter trouzmille fois les mê
 
 Le premier problème récurrent, c'est de ne pas connaître les noms des différents éléments qui composent le code. C'est bien plus compliqué d’exposer un problème quand on ne sait pas comment s'appelle quelque chose. Aussi, voici un schéma explicatif très simple de la terminologie HTML/CSS.
 
-~~~.language-markup
-<balise attribut="valeur">~~~
+```markup
+<balise attribut="valeur">
+```
 
-~~~.language-css
+```css
 déclaration {
 	propriété: valeur;
-}~~~
+}
+```
 
-<div class="note note--important">Une déclaration CSS est composée de sélecteurs. Si vous ne voyez pas de quoi il s'agit, voir l’article sur les [sélecteurs CSS](http://www.emmanuelbeziat.com/blog/principes-du-css-les-selecteurs-partie1-css2/ "Principes du CSS – Les sélecteurs (Partie1 : cSS2)").</div>
+Une déclaration CSS est composée de sélecteurs. Si vous ne voyez pas de quoi il s'agit, voir l’article sur les [sélecteurs CSS](http://www.emmanuelbeziat.com/blog/principes-du-css-les-selecteurs-partie1-css2/ "Principes du CSS – Les sélecteurs (Partie1 : cSS2)"). { .note .note--important }
 
 Voilà ; dorénavant, interdiction de parler de "propriétés html" ou de "balises css".
 
@@ -46,19 +49,21 @@ Les balises doivent être imbriquées proprement. C'est à dire que lorsque vous
 
 Bon :
 
-~~~.language-markup
+```markup
 <div>
 	<span>
 	</span>
-</div>~~~
+</div>
+```
 
 Mauvais :
 
-~~~.language-markup
+```markup
 <div>
 	<span>
 	</div>
-</span>~~~
+</span>
+```
 
 ### Balises dépréciées
 
@@ -66,7 +71,7 @@ On est en 2014 au moment de la rédaction de cet article, et je vois encore rég
 
 Il est primordial de comprendre ce principe de sémantique du HTML. Lorsque qu'on utilise une balise `<em>`, ce n’est pas pour mettre du texte en italique, c'est pour créer une [emphase](https://fr.wiktionary.org/wiki/emphase "emphase — Wiktionnaire") ; or, il se trouve que dans les règles d’écriture occidentale, l’emphase est exprimée en italique. Exemple : "Tu es _vraiment_ sûr de ton coup ?".
 
-<div class="note note--important">On retient : on n’utilise pas des balises pour leur rendu, mais pour leur **sens sémantique**.</div>
+On retient : on n’utilise pas des balises pour leur rendu, mais pour leur **sens sémantique**. { .note .note--important }
 
 De fait, toutes les balises et attributs à but esthétique doivent être définitivement supprimées de vos pages : `<center>`, `<font>`, `<basefont>`, `<strike>`.
 
@@ -100,9 +105,9 @@ Les nouvelles balises de structure introduites en html5 (à savoir `header`, `as
 
 De la même façon, ces balises ne sont pas uniques (sauf `main`) et ne dispensent donc pas d’utiliser classes et ID pour les cibler en CSS plutôt que de simplement utiliser leur nom d’élément. En clair, faites comme avant, mais en remplaçant les `div` lorsqu'un élément sémantique est possible. Exemple : `<header id="header">`.
 
-<div class="note note--info">En ce moment, la tendance est à l’utilisation quasi-exclusive de classes et à l’abandon des ID. Mais c'est bien une tendance, et non une spécification du langage. Faites comme vous le sentez, mais n’abusez pas des ID !</div>
+En ce moment, la tendance est à l’utilisation quasi-exclusive de classes et à l’abandon des ID. Mais c'est bien une tendance, et non une spécification du langage. Faites comme vous le sentez, mais n’abusez pas des ID ! { .note .note--info }
 
-### La balise <p>
+### La balise `<p>
 
 La balise `<p>` est utilisée pour mettre en forme des paragraphes. Si vous n’avez pas besoin de faire des paragraphes (C'est à dire plusieurs blocs de textes espacés entre eux), rien ne vous force à utiliser cette balise. Et contrairement à ce que j’ai pu lire, rien n’oblige les images à être contenues dans un paragraphe.
 
@@ -134,7 +139,7 @@ Une erreur courante : vouloir à tout prix contrôler la hauteur des éléments
 
 ### Float et display
 
-<p>Il est parfaitement inutile d’essayer de donner à un élément flottant une propriété `display`. Un flottant est **TOUJOURS** de type _block_, et il est **IMPOSSIBLE** de changer ça.
+Il est parfaitement inutile d’essayer de donner à un élément flottant une propriété `display`. Un flottant est **TOUJOURS** de type _block_, et il est **IMPOSSIBLE** de changer ça.
 
 ### Le reset CSS
 
@@ -142,8 +147,9 @@ Une autre mauvaise idée. Plus d’explications dans l’article [Doucement sur 
 
 Et surtout, évidemment, surtout pas ça :
 
-~~~.language-css
-* { margin: 0; padding: 0; }~~~
+```css
+* { margin: 0; padding: 0; }
+```
 
 ## Conclusion
 

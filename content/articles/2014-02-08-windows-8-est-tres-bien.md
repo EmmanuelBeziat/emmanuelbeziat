@@ -106,7 +106,7 @@ Comme je l’ai déjà évoqué tantôt, Windows Vista, 7 et 8 contiennent tout 
 
 À titre d’exemple (bien qu'une seule personne ne soit pas représentative, j’en conviens), depuis septembre 2011 (Date de sortie de la version _Developer Preview_), je n’ai rencontré **aucune** (j’insiste.) incompatibilité avec mes nombreux logiciels que sont la suite quasi-complète d’Adobe (Photoshop, InDesign, Illustrator, Dreamweaver, Premiere Pro, Captivate, After Effects…), 3D Studio Max, Zbrush, WinSCP, Visual Studio, uWamp, SmartGit, Reaper, Guitar Pro, Pod Farm, la suite Office (Word, Excel, Powerpoint, Outlook) ou la majorité de mes quelques 90 jeux sur Steam. AUCUN.
 
-<div class="note note--info">Je parle bien ici de compatibilité logicielle. Les drivers (ou pilotes), sont la jonction entre le matériel (langage machine) et les applications qui tournent sur l’OS ; les deux ne sont pas de même niveau, et les seconds se reposent sur les premiers. C'est pourquoi il est important que les constructeurs travaillent au développement de drivers pour chaque système ; c'est aussi pourquoi certaines applications peuvent ne pas fonctionner, dépendantes d’une ressource de plus bas niveau.</div>
+Je parle bien ici de compatibilité logicielle. Les drivers (ou pilotes), sont la jonction entre le matériel (langage machine) et les applications qui tournent sur l’OS ; les deux ne sont pas de même niveau, et les seconds se reposent sur les premiers. C'est pourquoi il est important que les constructeurs travaillent au développement de drivers pour chaque système ; c'est aussi pourquoi certaines applications peuvent ne pas fonctionner, dépendantes d’une ressource de plus bas niveau. {.note .note--info}
 
 ### "Un Windows sur deux est mauvais"
 
@@ -234,7 +234,7 @@ Inexact. Dans le cas d’un compte local, on peut se connecter sans aucun mot de
 
 De plus, fait intéressant, quand un utilisateur sous Windows 7 expose un problème quelconque, les autres cherchent des causes probables (défaillance matérielle, drivers, etc.) ; quand un utilisateur sous Windows 8 expose un problème quelconque, les autres mettent directement en cause l’OS, sans chercher de causes. Étrange, hein ?
 
-<div class="note note--info">**Edit du 8 février 2014** L’un de mes YouTubers préférés, Bruce Benamran ([sa chaine "e-penser"](https://www.youtube.com/channel/UCcziTK2NKeWtWQ6kB5tmQ8Q "YouTube")), a publié récemment une vidéo sur _l’effet cigogne_ (ou _post hoc ergo propter hoc_ pour ceux qui aiment se la péter dans diverses langues mortes dont tout le monde se fout), qui décrit assez bien le problème. Outre la vidéo (que je vous mets ci-dessous), j’en profite pour vous recommander sa chaine, elle déboite les rotules à mémé.</div>
+**Edit du 8 février 2014** L’un de mes YouTubers préférés, Bruce Benamran ([sa chaine "e-penser"](https://www.youtube.com/channel/UCcziTK2NKeWtWQ6kB5tmQ8Q "YouTube")), a publié récemment une vidéo sur _l’effet cigogne_ (ou _post hoc ergo propter hoc_ pour ceux qui aiment se la péter dans diverses langues mortes dont tout le monde se fout), qui décrit assez bien le problème. Outre la vidéo (que je vous mets ci-dessous), j’en profite pour vous recommander sa chaine, elle déboite les rotules à mémé. { .note .note--info }
 
 <div class="video"><iframe src="https://www.youtube.com/embed/lg2hFq9RlYM?rel=0" allowfullscreen></iframe></div>
 
@@ -258,4 +258,4 @@ Pour finir, une petite remarque sur l’accueil des nouvelles versions du systè
 
 ### Il en parle aussi
 
-<p>Je viens de trouver grâce à un internaute de **Clubic** une autre diatribe du même acabit, que je note ici pour l’avoir sous la main, et aussi pour vous la faire partager : ['Windows 8 : mes impressions après quelques mois d’utilisation'](http://www.geekmag.fr/windows-8-mes-impressions-apres-quelques-mois-dutilisation/ "GeekMag"). _Haters gonna hate_.
+Je viens de trouver grâce à un internaute de **Clubic** une autre diatribe du même acabit, que je note ici pour l’avoir sous la main, et aussi pour vous la faire partager : ['Windows 8 : mes impressions après quelques mois d’utilisation'](http://www.geekmag.fr/windows-8-mes-impressions-apres-quelques-mois-dutilisation/ "GeekMag"). _Haters gonna hate_.

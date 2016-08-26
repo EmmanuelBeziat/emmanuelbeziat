@@ -16,11 +16,12 @@ Je ne traite ici que du CSS 2.1\. Le CSS3 apporte de nouveaux sélecteurs très 
 
 Pour petit rappel :
 
-~~~.language-markup
-<balise attribut="valeur">~~~
+```markup
+<balise attribut="valeur">
+```
 
 Donc si vous êtes là, c'est que vous savez construire une feuille de style. Et vous travaillez comme ceci, grosso modo :
-~~~.language-css
+```css
 #page {
 	width: 800px;
 	overflow: auto;
@@ -29,14 +30,16 @@ Donc si vous êtes là, c'est que vous savez construire une feuille de style. Et
 #page .bloc {
 	width: 100px;
 	display: inline-block;
-}~~~
+}
+```
 
 C'est une bonne base de travail ; mais il existe une utilisation plus avancée des sélecteurs. Figurez-vous que ceci veut dire quelque chose en CSS :
 
-~~~.language-css
+```css
 #page > div * div + div li:first-child a[href~="index.html"]  {
 	color: #ccc;
-}~~~
+}
+```
 
 Certes, c'est un tantinet plus long et complexe qu'écrire simplement la classe d’un élément.
 
@@ -54,14 +57,15 @@ De plus, ça peut se révéler très utile dans certains cas. Songez à ceci :
 
 ### Sélecteur de descendance
 
-~~~.language-css
-.rouge span { color: red }~~~
+```css
+.rouge span { color: red }
+```
 
 Vous utilisez déjà très probablement ce sélecteur, sans même le savoir. En effet, mettre un élément à la suite d’un autre crée automatiquement un principe de descendance. Dans le cas présent, la `div` portant la classe `rouge` devient parente de l’élément `span` qui lui, devient enfant.
 
 Dans cet exemple, toutes les balises `span` contenues dans la `div` seront affectés, et ce peu importe s'il y a d’autres balises entre eux ; sauf si un parent plus "proche" lui donne une information contradictoire, comme une autre couleur : c'est le principe d’héritage.
 
-~~~.language-markup
+```markup
 <div class="rouge">
 	<div class="bleu">
 		<span id="monID">Ce texte sera affecté</span>
@@ -69,7 +73,8 @@ Dans cet exemple, toutes les balises `span` contenues dans la `div` seront affec
 	<span>Ce texte sera affecté</span>
 </div>
 
-<span>Ce texte ne sera pas affecté</span>~~~
+<span>Ce texte ne sera pas affecté</span>
+```
 
 Dans le cas présent, le `span` portant l’id "monID" est enfant de la `div` "bleu", puis de la `div` "rouge". Voyons un petit schéma simple histoire de bien comprendre ce principe :
 
@@ -94,12 +99,13 @@ Dans le cas présent, le `span` portant l’id "monID" est enfant de la `div` "b
 
 ### Selecteur d’enfant direct : ">"
 
-~~~.language-css
-.rouge > span { color: red }~~~
+```css
+.rouge > span { color: red }
+```
 
 Sur le même principe de lien enfant/parent, ce sélecteur (qui ne porte pas de nom particulier au demeurant, mais que j’appelle "sélecteur d’enfant direct" pour être plus clair) sert à agir uniquement sur les enfants directs d’un élément, à l’inverse du sélecteur simple qui agit de manière récursive (c'est-à-dire sur toute sa descendance, y compris les descendants de ses descendants).
 
-~~~.language-markup
+```markup
 <div class="rouge">
 	<div class="bleu">
 		<span>Ce texte ne sera pas affecté</span>
@@ -108,7 +114,8 @@ Sur le même principe de lien enfant/parent, ce sélecteur (qui ne porte pas de 
 	<span>Ce texte sera affecté</span>
 </div>
 
-<span>Ce texte ne sera pas affecté</span>~~~
+<span>Ce texte ne sera pas affecté</span>
+```
 <div class="showcode">
 
 *   Mes enfants directs seront rouges
@@ -122,19 +129,21 @@ Sur le même principe de lien enfant/parent, ce sélecteur (qui ne porte pas de 
 
 ### Selecteur d’enfant indirect : "*"
 
-~~~.language-css
-.rouge * span { color: red }~~~
+```css
+.rouge * span { color: red }
+```
 
 À l’inverse du sélecteur d’enfant direct, ce sélecteur agit de manière inverse et affecte tous ses descendants sauf ses enfants directs.
 
-~~~.language-markup
+```markup
 <div class="rouge">
 	<div class="bleu">
 		<span>Ce texte sera affecté</span>
 	</div>
 	<span>Ce texte ne sera pas affecté</span>
 </div>
-<span>Ce texte ne sera pas affecté</span>~~~
+<span>Ce texte ne sera pas affecté</span>
+```
 <div class="showcode">
 
 *   Mes enfants descendants seront rouges
@@ -152,12 +161,13 @@ Sur le même principe de lien enfant/parent, ce sélecteur (qui ne porte pas de 
 
 ### Selecteur d’adjacence directe : "+"
 
-~~~.language-css
-.rouge span + span { color: red }~~~
+```css
+.rouge span + span { color: red }
+```
 
 Un sélecteur un peu plus complexe cette fois-ci, mais très utile. Celui-ci sert à définir un lien d’adjacence entre deux balises ayant un parent direct commun. Les éléments adjacents au dernier cité ne seront pas affectés.
 
-~~~.language-markup
+```markup
 <div class="rouge">
 	<div class="bleu">
 		<span>Ce texte ne sera pas affecté</span>
@@ -166,7 +176,8 @@ Un sélecteur un peu plus complexe cette fois-ci, mais très utile. Celui-ci ser
 	<span>Ce texte ne sera pas affecté</span>
 	<span>Ce texte sera affecté</span>
 </div>
-<span>Ce texte ne sera pas affecté</span>~~~
+<span>Ce texte ne sera pas affecté</span>
+```
 <div class="showcode">
 
 *   Je n’ai rien dit à personne
@@ -177,8 +188,9 @@ Un sélecteur un peu plus complexe cette fois-ci, mais très utile. Celui-ci ser
 
 On peut bien sûr utiliser ce sélecteur plusieurs fois. Par exemple, si on voulait affecter les éléments d’une liste seulement à partir du quatrième élément :
 
-~~~.language-css
-li+li+li+li { color: red }~~~
+```css
+li+li+li+li { color: red }
+```
 <div class="showcode">
 
 1.  Élément de liste
@@ -193,53 +205,63 @@ li+li+li+li { color: red }~~~
 
 C'est un sélecteur dont je me sers régulièrement pour, entre autres, définir des marges automatiques entre deux éléments de même nature, comme des blocs d’un élément de menu.
 
-~~~.language-css
-#sidebar div+div { margin-top: 15px }~~~
+```css
+#sidebar div+div { margin-top: 15px }
+```
 
 ## Les sélecteurs d’attributs
 
 On peut également attribuer des propriétés à un (ou plusieurs) élément(s) html précis en fonction des attributs qu'ils portent. Ainsi on peut, encore une fois, se passer facilement d’ajouts de classes dans le html en se reposant sur ce qui existe déjà. Il suffit d’accoler le nom de l’attribut en question entre crochets [] à l’élément en question. On ne se soucie pas de la valeur de cet attribut.
 
-~~~.language-css
-a[title] { color: red }~~~
+```css
+a[title] { color: red }
+```
 
-~~~.language-markup
+```markup
 <a href="#">Ce lien ne sera pas affecté</a>
 <a href="#" title="">Ce lien sera affecté</a>
-<a href="#" title="Venez sur mon site !">Ce lien sera affecté</a>~~~
+<a href="#" title="Venez sur mon site !">Ce lien sera affecté</a>
+```
 
-~~~.language-css
-a[target] { color: red }~~~
+```css
+a[target] { color: red }
+```
 
-~~~.language-markup
+```markup
 <a href="#">Ce lien ne sera pas affecté</a>
 <a href="#" title="">Ce lien ne sera pas affecté</a>
-<a href="#" title="" target="">Ce lien sera affecté</a>~~~
+<a href="#" title="" target="">Ce lien sera affecté</a>
+```
 
 Mais on peut également aller plus loin et cibler un élément dont l’attribut prend une valeur précise. C'est très utile pour les éléments d’un formulaire, qui sont définis, avec la même balise, par la valeur de leur type :
 
-~~~.language-css
-input[type="password"] { color: red }~~~
+```css
+input[type="password"] { color: red }
+```
 
-~~~.language-markup
+```markup
 <input type="text" />
 <input type="password" /> <!-- Cet élément sera affecté -->
-<input type="submit" />~~~
+<input type="submit" />
+```
 
 Vous pouvez également définir le fait qu'un attribut doit contenir au moins une des valeurs énoncées.
 
-~~~.language-css
-a[rel~="copyright"] { color: red }~~~
+```css
+a[rel~="copyright"] { color: red }
+```
 
-~~~.language-markup
+```markup
 <a href="#" rel="">Ce lien ne sera pas affecté</a>
 <a href="#" rel="copyright">Ce lien sera affecté</a>
-<a href="#" rel="copyright copyleft">Ce lien sera affecté</a>~~~
+<a href="#" rel="copyright copyleft">Ce lien sera affecté</a>
+```
 
 Sachez enfin qu'on peut combiner ces sélecteurs à volonté :
 
-~~~.language-css
-a[rel][target=_blank][title] { color: red }~~~
+```css
+a[rel][target=_blank][title] { color: red }
+```
 
 ## Les pseudo-classes
 
@@ -249,25 +271,28 @@ Les pseudo-classes désignent des éléments que l’on n’aurait pas pu cibler
 
 Très pratique dans certains cas, cette pseudo-classe cible un élément s'il est le premier enfant de son parent. Il faut donc bien faire attention, car il s'agit bien du premier enfant, et non du premier enfant d’un tel type. Par exemple :
 
-~~~.language-css
-div p:first-child { color: red }~~~
+```css
+div p:first-child { color: red }
+```
 
-~~~.language-markup
+```markup
 <div>
 	<p>Cet élément sera affecté</p>
 	<p>Cet élément ne sera pas affecté</p>
 	<p>Cet élément ne sera pas affecté</p>
-</div>~~~
+</div>
+```
 
 Si on voit maintenant, pour le même code CSS, ce code HTML :
 
-~~~.language-markup
+```markup
 <div>
 	<h2>Ce titre ne sera pas affecté</h2>
 	<p>Cet élément ne sera pas affecté</p>
 	<p>Cet élément ne sera pas affecté</p>
 	<p>Cet élément ne sera pas affecté</p>
-</div>~~~
+</div>
+```
 
 Rien ne va se passer. En effet, le code CSS signifie "cibler tous les éléments `p` s'il s'agit du premier enfant de leur parent" et non "cibler tous les éléments `p` qui sont les premiers de ces éléments de type `p` enfants". Or dans ce cas, c'est `h2` qui est le premier enfant.
 
@@ -275,41 +300,47 @@ Rien ne va se passer. En effet, le code CSS signifie "cibler tous les éléments
 
 Cette pseudo-classe est de moins en moins utilisée. Elle est héritée de la première version du CSS et servait à cibler un lien "actif" (donc un lien au moment où il était cliqué). On peut maintenant l’utiliser sur n’importe quel élément, mais c'est assez peu usité.
 
-~~~.language-css
-a:active { color: white }~~~
+```css
+a:active { color: white }
+```
 
 ### :link
 
 Cette pseudo-classe est de moins en moins utilisée. Elle sert à cibler un lien qui n’a pas encore été visité par le visiteur actuel.
 
-~~~.language-css
-a:link { color: white }~~~
+```css
+a:link { color: white }
+```
 
 ### :visited
 
 Cette pseudo-classe est de moins en moins utilisée. À l’inverse du précédent, elle sert à cibler un lien qui a déjà été visité par le visiteur actuel.
 
-~~~.language-css
-a:visited { color: violet }~~~
+```css
+a:visited { color: violet }
+```
 
 ### :focus
 
 Cette pseudo-classe permet de cibler un élément qui a actuellement le "focus". Par exemple, lorsque vous cliquez dans un champ de texte, celui-ci prend automatiquement cette valeur dynamique de focus. C'est aussi le cas des liens, lorsqu'on navigue avec la touche "tab".
 
-~~~.language-css
-input:focus { background: green }~~~
+```css
+input:focus { background: green }
+```
 
 ### :hover
 
 Cette pseudo-classe est très utilisée. Elle déclenche un ensemble de propriétés au survol d’un élément par la souris. C'est par exemple très utilisé pour les menus, qui vont se dérouler ou changer de couleur au survol. On peut l’appliquer à tout élément html.
 
-~~~.language-css
-div:hover { background: white }~~~
+```css
+div:hover { background: white }
+```
 
 Il est aussi possible de cibler des éléments au survol de leur parent. Dans le cas suivant, ce sont tous les liens contenus dans un élément de liste, au survol de la div qui les contient (et non au survol du lien) :
 
-~~~.language-css
-div:hover li a { background: white }~~~
+```css
+div:hover li a { background: white }
+```
 
 ## Les pseudo-éléments
 
@@ -319,42 +350,49 @@ Les pseudo-éléments s'utilisent de la même manière que les pseudo-classes ; 
 
 On peut se servir de `:first-letter` pour créer des lettrines. C'est d’ailleurs sa principale utilité. Dans l’exemple suivant, tous les éléments `p` verront leur première lettre affichée en rouge.
 
-~~~p:first-letter { color: red }~~~
+```p:first-letter { color: red }
+```
 
 ### :first-line
 
 Peu utilisé, ce pseudo-élément va agir sur la première ligne de texte d’un élément.
 
-~~~p:first-line { color: red }~~~
+```p:first-line { color: red }
+```
 
 ### :after et :before
 
 Voici deux pseudo-éléments complémentaires très utiles. Ils s'utilisent avec la propriété `content` et servent à rajouter un élément avant (pour `:before`) ou après (pour `:after`) un autre élément.
 
-~~~span:before{ content: "→ " }~~~
+```span:before{ content: "→ " }
+```
 
 Ainsi pour ce code :
 
-~~~.language-markup
-<span>Test</span>~~~
+```markup
+<span>Test</span>
+```
 
 On obtiendra ce résultat :
 
 <div class="showcode">→ Test</div>
-~~~.language-css
-a:after{ content: " >>" }~~~
+```css
+a:after{ content: " >>" }
+```
 
-~~~.language-markup
+```markup
 <a href="#">Lien</a>
-<a href="#">Lien >></a>~~~
+<a href="#">Lien >></a>
+```
 
 ## Le sélecteur universel : " * "
 
 Ce sélecteur, à ne pas confondre avec le sélecteur d’enfant indirect que nous avons vu plus haut, cible tous les éléments.
 
-~~~.language-css
-* { color: red }~~~
+```css
+* { color: red }
+```
 
-<div class="note note--alert">Ce sélecteur est donc très "lourd" (tout est relatif) à utiliser et vous ne devriez l’employer qu'avec une extrême parcimonie, voire jamais !</div>
+Ce sélecteur est donc très "lourd" (tout est relatif) à utiliser et vous ne devriez l’employer qu'avec une extrême parcimonie, voire jamais ! {.note .note--important}
 
 N’hésitez pas si vous avez des questions, le formulaire de commentaires est là !

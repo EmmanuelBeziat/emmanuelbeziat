@@ -2,6 +2,7 @@
 title: "L'informatique facile m'a tué"
 date: "2013-11-11 23:04:47"
 tags:
+- informatique
 categories:
 - Diatribes
 ---

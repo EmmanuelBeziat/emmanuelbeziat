@@ -3,6 +3,7 @@ title: "Conseils aux graphistes web"
 date: "2015-01-15 05:03:48"
 tags:
 - design
+- bonnes pratiques
 categories:
 - Web
 ---
@@ -128,4 +129,4 @@ La meilleure façon de ne pas compliquer le travail des autres reste encore d’
 
 La plupart des webdesigners avec qui j’ai travaillé n’ont en fait aucune formation en webdesign. Ce sont généralement des maquettistes print et/ou infographistes PAO reconvertis ou qui ont ajouté une compétence à leur panel d’activités. Si vous êtes dans ce cas, n’hésitez pas à chercher quelques journées de formation en webdesign, et lisez des bouquins qui pourront vous aider à vous imprégner plus efficacement du travail de webdesigner.
 
-<div class="note note--important">La maquette est une étape importante et ne doit pas être expédiée ni négligée. Les maquettes présentées au client devraient toujours d’abord être validées par des développeurs et des ergonomes.</div>
+La maquette est une étape importante et ne doit pas être expédiée ni négligée. Les maquettes présentées au client devraient toujours d’abord être validées par des développeurs et des ergonomes. { .note .note--important }
