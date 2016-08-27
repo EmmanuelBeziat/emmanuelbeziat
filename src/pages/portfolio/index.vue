@@ -24,7 +24,7 @@
 
 		methods: {
 			fetchData: function () {
-				return Post.getPost('static/posts/portfolio/portfolio.json').then(response => this.$set('portfolio', response.data.posts.reverse()))
+				return Post.getPosts('static/posts/portfolio/portfolio.json').then(response => this.$set('portfolio', response.data.posts.reverse()))
 			}
 		},
 

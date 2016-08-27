@@ -30,7 +30,7 @@
 			fetchData: function () {
 				const that = this
 				const slug = that.$route.params.slug
-				const response = Post.getPosts('../static/posts/articles/articles.json', slug).then((response) => {
+				const response = Post.getPosts('../static/posts/portfolio/portfolio.json', slug).then((response) => {
 
 					response.data.posts.forEach(function(post) {
 						if (post.basename === slug) {
