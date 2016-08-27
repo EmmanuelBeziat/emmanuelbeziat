@@ -24,7 +24,7 @@ Pour toutes ces raisons **je n’aime pas le téléphone**, au sens _vocal_ de l
 
 ## Je déteste encore plus les répondeurs
 
-Et dans tout ce malaise, vient le répondeur. L’effet le plus pervers de l’appel téléphonique. En effet, si on ne peut pas ou —&nbsp;Comme ça m'arrive <del>parfois</del> souvent&nbsp;— qu'on n’a pas envie de répondre, on se retrouve avec un message vocal sur son répondeur. La pire des punitions.
+Et dans tout ce malaise, vient le répondeur. L’effet le plus pervers de l’appel téléphonique. En effet, si on ne peut pas ou — Comme ça m'arrive <del>parfois</del> souvent — qu'on n’a pas envie de répondre, on se retrouve avec un message vocal sur son répondeur. La pire des punitions.
 
 Honnêtement, je pense que ce truc a été inventé avec de bonnes intentions. Le genre de bonnes intentions qui conduit le monde à des cataclysmes et qui pavent probablement l’enfer, s'il existe.
 
@@ -32,18 +32,18 @@ Honnêtement, je pense que ce truc a été inventé avec de bonnes intentions. L
 
 Pour peu que je sois occupé, je risque de ne pas entendre mon téléphone sonner. S'il y a plusieurs appels, je me retrouve avec plusieurs messages à écouter à la fin de la journée (Généralement, ils sont tous urgentissimes) ; j’ai horreur de ça. Et je ne sais pas pour vous, mais moi je n’ai pas de notifications particulières en cas de babillardes laissées à mon intention. Ce qui fait que je ne sais pas qu'il y en a avant d’aller vérifier "par hasard" ou bien de recevoir un sms qui m'informe que j’ai 21 messages en attente (tous urgentissimes en général, depuis 11 jours). Messages que je n’aurais pas envie d’écouter (Vous regardez souvent les journaux télévisés du mois dernier vous ?).
 
-Perversité supplémentaire, quelqu'un qui a laissé sa missive tient pour acquis que j’en ai bien pris note et s'attend forcément à ce que je le rappelle —&nbsp;souvent dans l’heure. Il va donc très probablement se frustrer de ma non-réponse, et venir m'en remettre une nouvelle couche en exprimant en sus sa colère et l’urgence de la situation. Et toujours attendre que je rappelle —&nbsp;ce que je ne ferais pas, puisque c'est de toutes façons beaucoup trop tard et que, à moins que ce ne soit pour m'offrir plein d’argent, je n’ai probablement pas envie de parler. **En plus, il faut se justifier de son absence…**
+Perversité supplémentaire, quelqu'un qui a laissé sa missive tient pour acquis que j’en ai bien pris note et s'attend forcément à ce que je le rappelle — souvent dans l’heure. Il va donc très probablement se frustrer de ma non-réponse, et venir m'en remettre une nouvelle couche en exprimant en sus sa colère et l’urgence de la situation. Et toujours attendre que je rappelle — ce que je ne ferais pas, puisque c'est de toutes façons beaucoup trop tard et que, à moins que ce ne soit pour m'offrir plein d’argent, je n’ai probablement pas envie de parler. **En plus, il faut se justifier de son absence…**
 
 Notez que toutes les urgences évoquées ici n’en sont jamais vraiment ; dans 95% des cas, c'est juste de l’impatience de la part de l’interlocuteur. {.note .note--info}
 
-Tant qu'on y est, voici un florilège des messages que j’ai déjà reçu (et auxquels je n’ai jamais répondu pour des raisons qui me semblent évidentes)&nbsp;:
+Tant qu'on y est, voici un florilège des messages que j’ai déjà reçu (et auxquels je n’ai jamais répondu pour des raisons qui me semblent évidentes) :
 
-*   'C'est moi, rappelle vite.' →&nbsp;À moins d’avoir une voix reconnaissable entre mille (ce qui est le cas de Roger Carel, mais c'est à peu près tout —&nbsp;et il ne m'appelle pas souvent), je n’ai aucune idée de qui il s'agit.
-*   'Shronjrour bronchrieur Bregiarh chrest jronchieur Grhajeuhsheu […], a bvientjoshr' →&nbsp;Le cas typique où le type m'appelait depuis l’anus d’un pachyderme. Ou avait un forfait voyelles. Dans tous les cas je ne sais ni qui c'était, ni ce qu'il voulait, et il n’y a aucune chance que je rappelle.
-*   'Oui Jeanette, c'est Marie-Clothilde, je voulais te reparler de la réunion à la chapelle Saint-Molusque pour le 12 […]' →&nbsp;Rappeler pour signifier que c'était un faux numéro ? Allons donc.
-*   'Allô ? Allô ?' →&nbsp;Le cas classique du gars qui n’a pas encore assimilé ce qu'est un répondeur.
-*   'C'est votre banque, vous êtes à découvert depuis 11 mois. Merci de nous rappeler au plus vite.' →&nbsp; Rappeler un numéro surtaxé qui va me prendre le pognon que je n’ai pas, pour vous confirmer que j’ai pas un copeck et vous entendre me conseiller de vite renflouer mon compte (comme si je trouvais régulièrement des liasses de 500 dans les replis de mon canapé)&nbsp;? J’en rêve&nbsp;!
-*   **Cas particulier&nbsp;:&nbsp;** 'Ouais.' →&nbsp;Mon père, ce héro, qui adore signifier que les longues annonces de répondeur l’emmerdent, et compense le temps passé en omettant de préciser le motif de son coup de bigot. Alors je le rappelle, mais il ne répond pas non plus ; du coup je lui laisse un message pour demander pourquoi il a appelé.
+*   'C'est moi, rappelle vite.' → À moins d’avoir une voix reconnaissable entre mille (ce qui est le cas de Roger Carel, mais c'est à peu près tout — et il ne m'appelle pas souvent), je n’ai aucune idée de qui il s'agit.
+*   'Shronjrour bronchrieur Bregiarh chrest jronchieur Grhajeuhsheu […], a bvientjoshr' → Le cas typique où le type m'appelait depuis l’anus d’un pachyderme. Ou avait un forfait voyelles. Dans tous les cas je ne sais ni qui c'était, ni ce qu'il voulait, et il n’y a aucune chance que je rappelle.
+*   'Oui Jeanette, c'est Marie-Clothilde, je voulais te reparler de la réunion à la chapelle Saint-Molusque pour le 12 […]' → Rappeler pour signifier que c'était un faux numéro ? Allons donc.
+*   'Allô ? Allô ?' → Le cas classique du gars qui n’a pas encore assimilé ce qu'est un répondeur.
+*   'C'est votre banque, vous êtes à découvert depuis 11 mois. Merci de nous rappeler au plus vite.' →  Rappeler un numéro surtaxé qui va me prendre le pognon que je n’ai pas, pour vous confirmer que j’ai pas un copeck et vous entendre me conseiller de vite renflouer mon compte (comme si je trouvais régulièrement des liasses de 500 dans les replis de mon canapé) ? J’en rêve !
+*   **Cas particulier : ** 'Ouais.' → Mon père, ce héro, qui adore signifier que les longues annonces de répondeur l’emmerdent, et compense le temps passé en omettant de préciser le motif de son coup de bigot. Alors je le rappelle, mais il ne répond pas non plus ; du coup je lui laisse un message pour demander pourquoi il a appelé.
 
 C'est bien sûr un échantillon, mais c'est assez parlant.
 
@@ -53,10 +53,10 @@ Pour toutes ces raisons, **j’ai désactivé totalement mon répondeur.** C'est
 
 D’abord, pour les cas que je sais "importants", mon téléphone affiche très bien la liste des numéros qui m'ont appelé. S'ils font partie de mon répertoire, je sais si je dois rappeler ou si ça peut attendre. Ensuite, la plupart des gens avec qui je communique de façon régulière m'envoient un SMS, ou bien utilisent un autre biais (Skype en tête), et ont rarement besoin de me parler de vive voix. Les moins réguliers envoient très bien leurs emails, et je m'en satisfait parfaitement.
 
-En plus, un petit texte s'assimile et se comprend aussi bien voire beaucoup mieux qu'une conversation téléphonique —&nbsp;surtout par répondeurs interposés&nbsp;— principalement parce que les gens ne vont pas droit au but : on papote, on tourne autour du pot, on ne sait plus trop où on veut en venir. Et je ne comprend pas les flemmards qui préfèrent appeler pour dire trois banalités sans importance plutôt que de simplement taper quelques mots, à plus forte raison maintenant que les téléphones ont autant de touches que de lettres et des fonctionnalités pour accélérer la saisie, corriger les fautes, suggérer des mots et même s'occuper de la ponctuation.
+En plus, un petit texte s'assimile et se comprend aussi bien voire beaucoup mieux qu'une conversation téléphonique — surtout par répondeurs interposés — principalement parce que les gens ne vont pas droit au but : on papote, on tourne autour du pot, on ne sait plus trop où on veut en venir. Et je ne comprend pas les flemmards qui préfèrent appeler pour dire trois banalités sans importance plutôt que de simplement taper quelques mots, à plus forte raison maintenant que les téléphones ont autant de touches que de lettres et des fonctionnalités pour accélérer la saisie, corriger les fautes, suggérer des mots et même s'occuper de la ponctuation.
 
 ### Et vous ?
 
 Franchement, à l’heure des smartphones, des forfaits aux sms illimités, des applications de messagerie de tous types (Facebook, Twitter, What's App, Skype) et des mails qui n’ont jamais été aussi nombreux, pourquoi encore s'emmerder avec cet instrument archaïque qu'est le répondeur téléphonique ? C'est tout l’inverse de ce qu'on recherche aujourd’hui : la visibilité, l’efficacité, et l’instantanéité. Bref, ça n’a plus sa place dans ce monde pour moi.
 
-Alors vraiment, si vous aussi vous n’aimez pas votre répondeur, arrêtez d’hésiter&nbsp;: Désactivez-le une bonne fois pour toutes.
+Alors vraiment, si vous aussi vous n’aimez pas votre répondeur, arrêtez d’hésiter : Désactivez-le une bonne fois pour toutes.

@@ -29,15 +29,15 @@ Le logo, c’est la tête d’une marque. Un bon logo est un signe fort, une gar
 
 On reconnaît un excellent logo (et un excellent **branding** en général) au fait qu’il soit intemporel. Par exemple, le logotype d’une célèbre boisson gazeuse à base de feuille de coca, pratiquement inchangé depuis plus d’un siècle : aucune ride, aucun doute possible. Une typo qui est toujours dans l’air du temps, que ce soit en 1920, en 1987 ou en 2016\. Exemple d’un mauvais _branding_ : son concurrent de toujours, qui a eu tellement de logos, de typographies et d’années d’errances visuelles qu’il est impossible à la majorité de la population de le décrire de tête (faites l’expérience).
 
-Alors certes, le logo de la marque du père-noël (je vous avais dit que j’aime regarder des vidéos avec des théories débiles !) n’est pas un modèle d’ingéniosité, mais il marche parfaitement (et on verra pourquoi ci-après). Mais des idées de logos superbement créatifs, on en trouve à la pelle sur internet : [99 creative logo designs for inspiration](http://www.awwwards.com/99-creative-logo-designs-for-inspiration.html). Regardez "Fish Food", "Loveclip", "Motion", "Fence", "Turn", "Twins", "Up", "Antartica", "One", "Cook Finder", "Horror Films", "Rocket Golf", "Lab", "Killed", "Sushi", "Choose", "Bison", "Wiesinger Music", "Pencil"… À chaque fois, une idée simple mais brillante. Un logo simple mais ingénieux. Il y en a plein, cherchez-en d’autres !
+Alors certes, le logo de la marque du père-noël (je vous avais dit que j’aime regarder des vidéos avec des théories débiles !) n’est pas un modèle d’ingéniosité, mais il marche parfaitement (et on verra pourquoi ci-après). Mais des idées de logos superbement créatifs, on en trouve à la pelle sur internet : [99 creative logo designs for inspiration](http://www.awwwards.com/99-creative-logo-designs-for-inspiration.html){ target="_blank" }. Regardez "Fish Food", "Loveclip", "Motion", "Fence", "Turn", "Twins", "Up", "Antartica", "One", "Cook Finder", "Horror Films", "Rocket Golf", "Lab", "Killed", "Sushi", "Choose", "Bison", "Wiesinger Music", "Pencil"… À chaque fois, une idée simple mais brillante. Un logo simple mais ingénieux. Il y en a plein, cherchez-en d’autres !
 
 Mais surtout, vous avez noté ? Tous ces logos… Ils ne seraient pas un peu _flat design_, peuchère ?
 
 ## Les effets, à quoi ça sert ?
 
-En effet, un bon logo n’a besoin d’aucun artifice ! Récemment (bon, ok, il y a 10 ans), la mode du « web 2.0 » — propulsée par l’accès au haut-débit pour tous, le piratage facile de Photoshop et la démocratisation de l’informatique à domicile même chez les prolos comme moi — nous apportait une vague d’amateurisme dans le monde du design et du web (va checker mon super article '[L’informatique facile m’a tué](https://www.emmanuelbeziat.com/blog/linformatique-facile-ma-tue/)', j’cause du sujet). L’amateurisme, avec sa bite et son couteau, a décidé de planquer son manque d’inspiration derrière une ignoble mode du « shiny-glossy-3d-futuro-classy-owi-owi-tu-la-sens-bien-ma-trentaine-de-filtres-toshop », déjà bien engagée par Aqua (Apple) et Aero (Microsoft).
+En effet, un bon logo n’a besoin d’aucun artifice ! Récemment (bon, ok, il y a 10 ans), la mode du « web 2.0 » — propulsée par l’accès au haut-débit pour tous, le piratage facile de Photoshop et la démocratisation de l’informatique à domicile même chez les prolos comme moi — nous apportait une vague d’amateurisme dans le monde du design et du web (va checker mon super article [L’informatique facile m’a tué](https://www.emmanuelbeziat.com/blog/linformatique-facile-ma-tue/){ target="_blank" }, j’cause du sujet). L’amateurisme, avec sa bite et son couteau, a décidé de planquer son manque d’inspiration derrière une ignoble mode du « shiny-glossy-3d-futuro-classy-owi-owi-tu-la-sens-bien-ma-trentaine-de-filtres-toshop », déjà bien engagée par Aqua (Apple) et Aero (Microsoft).
 
-Aucun besoin d’être original ou créatif : tant qu'il y a plein de reflets et d’ombres, c’est trop la classe. MarieJulien en parlent très bien ici (avec de bons exemples) : '[Tutorial Illustrator : comment faire un bon gros logo web 2.0 qui tâche](http://mariejulien.com/post/2007/12/10/Tutorial-illustrator%3A-comment-faire-un-bon-gros-logo-web20-qui-tache)'.
+Aucun besoin d’être original ou créatif : tant qu'il y a plein de reflets et d’ombres, c’est trop la classe. MarieJulien en parlent très bien ici (avec de bons exemples) : [Tutorial Illustrator : comment faire un bon gros logo web 2.0 qui tâche](http://mariejulien.com/post/2007/12/10/Tutorial-illustrator%3A-comment-faire-un-bon-gros-logo-web20-qui-tache){ target="_blank" }.
 
 Alors encore une fois, c’est là de la bonne grosse généralité : tout ce qui a des effets n’est pas moche ou à jeter. Mais on a vraiment assisté à une bonne décennie d’agression visuelle et mentale, la médiocrité et la pauvreté créative masquée habilement derrière la « technique » (je me gausse).
 
@@ -57,7 +57,7 @@ Alors oui : le nouveau logo d’Instagram est moche. Basique, simple, et n’exp
 
 #### Avec une idée de base foireuse, le résultat sera pourri ; peu importe le traitement.
 
-Un exemple visuel pour s’en convaincre dans ce très bon article : '[Are you victim of a bad brand design? — Robert Hacala](http://roberthacala.com/are-you-a-victim-of-bad-brand-design "Robert Hacala")'.
+Un exemple visuel pour s’en convaincre dans ce très bon article : [Are you victim of a bad brand design? — Robert Hacala](http://roberthacala.com/are-you-a-victim-of-bad-brand-design "Robert Hacala"){ target="_blank" }.
 
 À la limite, ce nouveau logo Instagram intègre l’idée de filtre de tons, ce qui est quand même LE truc qui a rendu l’app populaire (rendre les photos quelconques et moches intéressantes en leur donnant un semblant de personnalité grâce à des filtres). Donc ma foi, celui-ci est peut-être plus dans le ton (haha !) que son prédécesseur.
 
@@ -93,7 +93,7 @@ Vous avez immédiatement vu un visage qui sourit (sinon, c’est que vous avez p
 
 Au contraire de cette affirmation stupide, le cerveau est parfaitement capable de reconnaître très rapidement une représentation simple d’un objet comme étant l’objet lui-même. C’est une question de survie.
 
-Pour en savoir un peu plus, je vous recommande cette vidéo de la géniale chaîne YouTube [e-penser]() : '10 choses insensées que votre cerveau sait faire sans e-penser'. Il y a justement dedans le sujet de la paréidolie.
+Pour en savoir un peu plus, je vous recommande cette vidéo de la géniale chaîne YouTube [e-penser](https://www.youtube.com/user/epenser1){ target="_blank" } : '10 choses insensées que votre cerveau sait faire sans e-penser'. Il y a justement dedans le sujet de la paréidolie.
 
 <div class="video"><iframe src="https://www.youtube.com/embed/7GiQuG2S26Q" allowfullscreen></iframe></div>
 

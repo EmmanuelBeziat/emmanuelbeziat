@@ -201,7 +201,7 @@ Voilà ce qu'avait Google il fut un temps :
 
 ![Google](http://uploads.siteduzero.com/files/253001_254000/253715.png)
 
-Je vous laisse regarder ceux de [Yahoo](http://l2.yimg.com/dh/ap/default/140318/pc_icons_btns_sprite_0318_3pm_v2.png "Sprite Yahoo"), [Google](https://ssl.gstatic.com/gb/images/v1_b444d4f7.png "Sprite Google"), [Facebook](https://fbstatic-a.akamaihd.net/rsrc.php/v2/yI/r/-AOcMrAaRxs.png "Sprite Facebook"), [Amazon](http://g-ecx.images-amazon.com/images/G/08/gno/sprites/global-sprite-v1._V361337220_.png "Sprite Amazon")…
+Je vous laisse regarder ceux de [Yahoo](http://l2.yimg.com/dh/ap/default/140318/pc_icons_btns_sprite_0318_3pm_v2.png "Sprite Yahoo"){ target="_blank" }, [Google](https://ssl.gstatic.com/gb/images/v1_b444d4f7.png "Sprite Google"){ target="_blank" }, [Facebook](https://fbstatic-a.akamaihd.net/rsrc.php/v2/yI/r/-AOcMrAaRxs.png "Sprite Facebook"){ target="_blank" }, [Amazon](http://g-ecx.images-amazon.com/images/G/08/gno/sprites/global-sprite-v1._V361337220_.png "Sprite Amazon"){ target="_blank" }…
 
 ## Les sprites sous un lien textuel
 
@@ -281,4 +281,4 @@ Bien sûr ! Et elle se trouve dans un autre article sur ce blog ! '[Changer une 
 
 ## Conclusion
 
-Pour conclure, voici un petit site pour vous aider à créer vos sprites : [Spritegen](http://fr.spritegen.website-performance.org/), ainsi qu'un autre pour optimiser la taille de vos images en les compressant sans en dégrader la qualité : [Smush.it](http://www.smushit.com/ysmush.it/).
+Pour conclure, voici un petit site pour vous aider à créer vos sprites : [Spritegen](http://fr.spritegen.website-performance.org/){ target="_blank" }, ainsi qu'un autre pour optimiser la taille de vos images en les compressant sans en dégrader la qualité : [Smush.it](http://www.smushit.com/ysmush.it/){ target="_blank" }.

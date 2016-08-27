@@ -47,7 +47,7 @@ Pour des raisons de pratique, il est déconseillé d’utiliser une tripotée de
 
 ## Utilisez des typos standards…
 
-Attention à ne pas faire dans l’excentricité. Certes, aujourd’hui la propriété `@font-face` permet de faire bien des choses pratiques, mais il y a mille et unes raisons (ou presque) pour qu'une typo ne se charge pas. Réservez donc les polices "excentriques" à des textes particuliers, tels que les titres, le menu de navigation ou des encarts occasionnels. Pour ce qui est du contenu textuel, restez-en aux polices dites "web safe" dont [voici une liste](http://www.anthony-brard.com/les-fonts-web-safe) (pas forcément exhaustive).
+Attention à ne pas faire dans l’excentricité. Certes, aujourd’hui la propriété `@font-face` permet de faire bien des choses pratiques, mais il y a mille et unes raisons (ou presque) pour qu'une typo ne se charge pas. Réservez donc les polices "excentriques" à des textes particuliers, tels que les titres, le menu de navigation ou des encarts occasionnels. Pour ce qui est du contenu textuel, restez-en aux polices dites "web safe" dont [voici une liste](http://www.anthony-brard.com/les-fonts-web-safe){ target="_blank" } (pas forcément exhaustive).
 
 Vous pouvez bien sûr adapter en fonction de votre cible : pour un site à destination des utilisateurs de Windows Phone (par exemple), ou pour une majorité d’utilisateurs Windows, vous pouvez opter pour _Segoe UI_, qui sera très raccord avec le reste de l’environnement de travail. À l’inverse, pour le site de votre application OSX ou iOS, l’emploi de _Helvetica Neue_ sera tout à fait approprié et safe puisque présente sur tous les systèmes Apple (du moins, ceux relativement récents).
 
@@ -83,7 +83,7 @@ Là encore, si la troisième _release_ de CSS nous a apporté de sympathiques pr
 
 ## Utilisez des font-icons
 
-Plutôt que de piocher des images sur [iconfinder](https://www.iconfinder.com/) (au demeurant très bon), **pourquoi ne pas utiliser une font-icon** ? En fonction des besoins, [FontAwesome](http://fortawesome.github.io/Font-Awesome/) ou [Genericons](http://genericons.com/) sont de très bons choix.
+Plutôt que de piocher des images sur [iconfinder](https://www.iconfinder.com/){ target="_blank" } (au demeurant très bon), **pourquoi ne pas utiliser une font-icon** ? En fonction des besoins, [FontAwesome](http://fortawesome.github.io/Font-Awesome/){ target="_blank" } ou [Genericons](http://genericons.com/){ target="_blank" } sont de très bons choix.
 
 D’abord, ça évitera à l’intégrateur-trice de devoir enregistrer chaque icône manuellement, devoir faire des sprites, et parfois utiliser des ruses de sioux pour des états différents (survol). Ensuite, ça évitera beaucoup de complications pour la gestion des différents supports, et des écrans (Par exemple, les fameux écrans Retina et leurs pendants chez la concurrence).
 
@@ -107,7 +107,7 @@ Enfin, **assurez-vous d’utiliser des tailles de police réelles**. Photoshop l
 
 Un point essentiel du design de ces dernières années : l’arrivée des grilles. Elles permettent de structurer facilement ses pages, autant pour le designer que le codeur. Cela permet une cohérence visuelle impeccable et évite d’avoir à gérer plusieurs tailles différentes.
 
-Vous pouvez par exemple utiliser les scripts de [960.gs](http://960.gs/) (ou les modèles fournis), ou bien des [templates prédéfinis](http://www.ravelrumba.com/photoshop-grids/ "Photoshop Grids"). Plus d’explications dans cet article de Smashing Magazine : ['Establishing your grid in photoshop (en)'](http://www.smashingmagazine.com/2011/11/09/establishing-your-grid-in-photoshop/).
+Vous pouvez par exemple utiliser les scripts de [960.gs](http://960.gs/){ target="_blank" } (ou les modèles fournis), ou bien des [templates prédéfinis](http://www.ravelrumba.com/photoshop-grids/ "Photoshop Grids"){ target="_blank" }. Plus d’explications dans cet article de Smashing Magazine : ['Establishing your grid in photoshop (en)'](http://www.smashingmagazine.com/2011/11/09/establishing-your-grid-in-photoshop/){ target="_blank" }.
 
 Demandez à votre intégrateur-trice ce qu'il-elle utilise généralement, vous trouverez sûrement un outil commun.
 

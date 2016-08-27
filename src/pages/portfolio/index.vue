@@ -7,7 +7,7 @@
 </template>
 
 <script>
-	import Portfolio from '../../resources/portfolio'
+	import Post from '../../resources/post'
 
 	module.exports = {
 
@@ -24,7 +24,7 @@
 
 		methods: {
 			fetchData: function () {
-				return Portfolio.listPortfolio().then(response => this.$set('portfolio', response.data.posts.reverse()))
+				return Post.getPost('static/posts/portfolio/portfolio.json').then(response => this.$set('portfolio', response.data.posts.reverse()))
 			}
 		},
 

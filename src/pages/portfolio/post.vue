@@ -5,13 +5,13 @@
 		</header>
 		<div class="post__content" v-linkable>{{{ post.content }}}</div>
 		<footer class="post__footer">
-			<a class="post__backlink" v-link="{ name: 'portfolio' }"éé><i class="icon-arrow-left"></i> Revenir au portfolio</a>
+			<a class="post__backlink" v-link="{ name: 'portfolio' }"><i class="icon-arrow-left"></i> Revenir au portfolio</a>
 		</footer>
 	</article>
 </template>
 
 <script>
-	import Portfolio from '../../resources/portfolio'
+	import Post from '../../resources/post'
 
 	module.exports = {
 
@@ -30,7 +30,7 @@
 			fetchData: function () {
 				const that = this
 				const slug = that.$route.params.slug
-				const response = Portfolio.getSinglePortfolio(slug).then((response) => {
+				const response = Post.getPosts('../static/posts/articles/articles.json', slug).then((response) => {
 
 					response.data.posts.forEach(function(post) {
 						if (post.basename === slug) {

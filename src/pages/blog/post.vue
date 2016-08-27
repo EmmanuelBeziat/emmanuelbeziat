@@ -39,7 +39,7 @@
 </template>
 
 <script>
-	import Blog from '../../resources/blog'
+	import Post from '../../resources/post'
 	import Prism from 'prismjs'
 	import 'prismjs/plugins/show-language/prism-show-language.min.js'
 
@@ -62,7 +62,7 @@
 			fetchData: function () {
 				const that = this
 				const slug = that.$route.params.slug
-				const response = Blog.getSinglePost(slug).then((response) => {
+				const response = Post.getPosts('../static/posts/articles/articles.json', slug).then((response) => {
 
 					response.data.posts.forEach(function(post) {
 						if (post.basename === slug) {

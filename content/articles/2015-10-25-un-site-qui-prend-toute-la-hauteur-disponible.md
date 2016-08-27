@@ -100,7 +100,7 @@ Maintenant, nous nous attaquons au pied-de-page. Il faut que celui-ci ait tout d
 
 Et nous y voici ! Il est à noter que le pied de page doit avoir du contenu pour être affiché, à cause de son positionnement absolu.
 
-Vous pouvez voir le code en action sur [Codepen](http://codepen.io/EmmanuelB/pen/rfCey).
+Vous pouvez voir le code en action sur [Codepen](http://codepen.io/EmmanuelB/pen/rfCey){ target="_blank" }.
 
 ## La méthode intermédiaire (IE 8+)
 
@@ -176,7 +176,7 @@ Hé oui, c'est tout. On dit au bloc principal de faire au minimum la totalité d
 
 ## La méthode moderne améliorée (IE 10+)
 
-Pour celle-ci, on va utiliser `flexbox`, une propriété toute récente, dont je vous invite à [vérifier la compatibilité](http://caniuse.com/#feat=flexbox "CanIUse Flexbox ?").
+Pour celle-ci, on va utiliser `flexbox`, une propriété toute récente, dont je vous invite à [vérifier la compatibilité](http://caniuse.com/#feat=flexbox "CanIUse Flexbox ?"){ target="_blank" }.
 
 Flexbox n’est pas sensé être utilisé pour un gabarit de page, c'est normalement le module CSS `grid` à qui revient cette charge. Cependant, l’écriture des spécifications de `flexbox` est presque terminé et la propriété est implémentée dans tous les navigateurs modernes, alors que `grid` est encore en _working draft_, et n’est implémenté que dans Internet Explorer 10+ et Edge. {.note .note--important}
 
@@ -211,4 +211,4 @@ C'est tout !
 
 ## La méthode de demain
 
-À priori, il viendra un temps où nous utiliseront le module grid afin de faire le squelette de notre site (Et flexbox sera utilisé pour la gestion fine du contenu). Pour en savoir plus, je vous suggère de lire [cet article sur Alsacréations](http://www.alsacreations.com/article/lire/1388-css3-grid-layout.html){target="_blank"}.
+À priori, il viendra un temps où nous utiliseront le module grid afin de faire le squelette de notre site (Et flexbox sera utilisé pour la gestion fine du contenu). Pour en savoir plus, je vous suggère de lire [cet article sur Alsacréations](http://www.alsacreations.com/article/lire/1388-css3-grid-layout.html){ target="_blank" }.

@@ -22,9 +22,9 @@ Je sais qu'un joli dessin est souvent plus éloquent qu'un long discours, cepend
 
 ## Le problème du pourcentage
 
-Je commence par la parenthèse de cet article, à savoir la question du pourcentage dans l’intégration d’un site. Honnêtement, c'est bancal, hasardeux. On ne s'en sert que dans des cas spécifiques, par exemple pour obtenir des colonnes ou grilles fluides comme dans [Bootstrap](http://getbootstrap.com/ "Bootstrap 3"), et quelques autres points.
+Je commence par la parenthèse de cet article, à savoir la question du pourcentage dans l’intégration d’un site. Honnêtement, c'est bancal, hasardeux. On ne s'en sert que dans des cas spécifiques, par exemple pour obtenir des colonnes ou grilles fluides comme dans [Bootstrap](http://getbootstrap.com/ "Bootstrap"){ target="_blank" }, et quelques autres points.
 
-Si vous êtes un(e) adepte du `width: 100%;`, je vous renvoie à l’excellent article de **Raphaël Goetter**, '[Width 100%, tu es le mal](http://blog.goetter.fr/post/13556565063/width-100-tu-es-le-mal "La tête dans le flux !")', qui vous expliquera non-seulement le problème inhérent à cette déclaration pourrie, mais également **comment vous en passer au mieux**.
+Si vous êtes un(e) adepte du `width: 100%;`, je vous renvoie à l’excellent article de **Raphaël Goetter**, '[Width 100%, tu es le mal](http://blog.goetter.fr/post/13556565063/width-100-tu-es-le-mal "La tête dans le flux !"){ target="_blank" }', qui vous expliquera non-seulement le problème inhérent à cette déclaration pourrie, mais également **comment vous en passer au mieux**.
 
 ## Fluide, dis-tu ?
 
@@ -32,7 +32,7 @@ Lorsqu'on fait un site fluide (aussi appelé "liquide" dans certains cas), on fa
 
 ### Foutez la paix aux pourcentages
 
-Comme je le disais, pour faire un site qui s'adapte en largeur, on se passe très bien des valeurs en pourcentages (jusqu'à un certain besoin, certes). Les valeur en pixels s'en sortent très bien (L’ami [Clément Galidie](http://clement-galidie.fr/ "Clément Galidie") renchérira — à raison — que les valeurs en _em_ aussi). Penchez-vous sur des propriétés comme `min-width` et `max-width` et sur mon autre article '[Aligner trois colonnes proprement](http://www.emmanuelbeziat.com/blog/aligner-trois-colonnes-proprement/)' pour vous en convaincre.
+Comme je le disais, pour faire un site qui s'adapte en largeur, on se passe très bien des valeurs en pourcentages (jusqu'à un certain besoin, certes). Les valeur en pixels s'en sortent très bien (L’ami [Clément Galidie](http://clement-galidie.fr/ "Clément Galidie"){ target="_blank" } renchérira — à raison — que les valeurs en _em_ aussi). Penchez-vous sur des propriétés comme `min-width` et `max-width` et sur mon autre article '[Aligner trois colonnes proprement](http://www.emmanuelbeziat.com/blog/aligner-trois-colonnes-proprement/)' pour vous en convaincre.
 
 ## Le responsive, c'est quoi ?
 

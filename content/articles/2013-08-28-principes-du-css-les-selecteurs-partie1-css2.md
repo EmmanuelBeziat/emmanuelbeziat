@@ -117,7 +117,6 @@ Sur le même principe de lien enfant/parent, ce sélecteur (qui ne porte pas de 
 <span>Ce texte ne sera pas affecté</span>
 ```
 <div class="showcode">
-
 *   Mes enfants directs seront rouges
 
 *   <span style="color:red">Mon parent m'a dit d’être rouge</span>
@@ -125,7 +124,8 @@ Sur le même principe de lien enfant/parent, ce sélecteur (qui ne porte pas de 
 
 *   On ne m'a rien dit
 *   On ne m'a rien dit
-*   Mon parent m'a dit d’être rouge</div>
+*   Mon parent m'a dit d’être rouge
+</div>
 
 ### Selecteur d’enfant indirect : "*"
 
@@ -157,7 +157,8 @@ Sur le même principe de lien enfant/parent, ce sélecteur (qui ne porte pas de 
 
 *   Mon grand-parent m'a dit d’être rouge
 *   Mon grand-parent m'a dit d’être rouge
-*   On ne m'a rien dit</div>
+*   On ne m'a rien dit
+</div>
 
 ### Selecteur d’adjacence directe : "+"
 
@@ -192,7 +193,6 @@ On peut bien sûr utiliser ce sélecteur plusieurs fois. Par exemple, si on voul
 li+li+li+li { color: red }
 ```
 <div class="showcode">
-
 1.  Élément de liste
 2.  Élément de liste
 3.  Élément de liste
@@ -201,7 +201,8 @@ li+li+li+li { color: red }
 6.  Élément de liste
 7.  Élément de liste
 8.  Élément de liste
-9.  Élément de liste</div>
+9.  Élément de liste
+</div>
 
 C'est un sélecteur dont je me sers régulièrement pour, entre autres, définir des marges automatiques entre deux éléments de même nature, comme des blocs d’un élément de menu.
 

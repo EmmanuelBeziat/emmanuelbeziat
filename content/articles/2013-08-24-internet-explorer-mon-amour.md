@@ -20,19 +20,19 @@ IE6, vous connaissez ? Vous l’avez beaucoup critiqué, n’est-ce pas ? Vous l
 
 Pour ceux qui veulent entendre un autre que moi en parler, il y a cette vidéo (en anglais) de Bruce Lawson (Opera) qui tenait une excellente conférence sur le sujet à Sud Web 2012 :
 
-<iframe class="aligncenter" src="http://player.vimeo.com/video/52171395?color=ff9933" width="500" height="375" frameborder="0" webkitAllowFullScreen mozallowfullscreen allowFullScreen></iframe>
+<div class="video"><iframe src="http://player.vimeo.com/video/52171395?color=ff9933" allowFullScreen></iframe></div>
 
 ## IE et les standards
 
 _"Internet Explorer ne respecte pas les standards !"_ peut-on entendre çà et là sur la toile (surtout de la bouche - enfin du clavier - de ceux qui ne connaissent pas lesdits standards).
 
-Je crois que la réponse la plus pertinente dans ce genre de cas reste _"Euh, si"_. Mais je te vois déjà, lecteur, rire derrière ton écran en allant vérifier le score d’IE sur [html5test](http://html5test.com). Alors je sens qu'il va me falloir t'apporter des preuves de ce que j’avance. Et ça tombe bien, parce que j’ai tout ce qu'il faut pour ça.
+Je crois que la réponse la plus pertinente dans ce genre de cas reste _"Euh, si"_. Mais je te vois déjà, lecteur, rire derrière ton écran en allant vérifier le score d’IE sur [html5test](http://html5test.com){ target="_blank" }. Alors je sens qu'il va me falloir t'apporter des preuves de ce que j’avance. Et ça tombe bien, parce que j’ai tout ce qu'il faut pour ça.
 
-Je vais commencer par une preuve qui fait très mal, et du coup je vais l’écrire en gras-qui-te-pète-bien-la-rétine : **Chrome et Firefox galèrent à gérer un border tout simple**. Bon, j’exagère un poil, mais ce n’est pas si loin de la vérité. Plus exactement, **WebKit** (le moteur de rendu qui équipe Chrome, Safari, Opera et Maxthon - entre autres), **Gecko** (Firefox) et **Trident** (Internet Explorer) ont tous une façon différente de gérer les éléments, et sur border on remarque aisément des difficultés sur certains. Pour vérifier ça, vous pouvez vous rendre sur [le labo](http://lab.infographizm.com/divers/tests-compatibilite-navigateurs/ "Voir les tests de compatibilité navigateur sur le Laboratoire InfographiZm"), et constater par vous-même.
+Je vais commencer par une preuve qui fait très mal, et du coup je vais l’écrire en gras-qui-te-pète-bien-la-rétine : **Chrome et Firefox galèrent à gérer un border tout simple**. Bon, j’exagère un poil, mais ce n’est pas si loin de la vérité. Plus exactement, **WebKit** (le moteur de rendu qui équipe Chrome, Safari, Opera et Maxthon - entre autres), **Gecko** (Firefox) et **Trident** (Internet Explorer) ont tous une façon différente de gérer les éléments, et sur border on remarque aisément des difficultés sur certains. Pour vérifier ça, vous pouvez vous rendre sur [ce jsfiddle](https://jsfiddle.net/3hs1ftmo/2/){ target="_blank" }, et constater par vous-même.
 
 Les résultats sont les suivants. À noter que le code est tout à fait identique pour chaque navigateur.
 
-![Test bordures navigateur class=](https://www.emmanuelbeziat.com/wp-content/uploads/2013/08/tests-border-nav1.png)
+![Test bordures navigateur](https://www.emmanuelbeziat.com/wp-content/uploads/2013/08/tests-border-nav1.png)
 
 Vous pourrez aussi constater que Firefox ne prend pas en compte le line-height dans un champ de texte, ni le positionnement dans une cellule de tableau.
 
@@ -44,7 +44,7 @@ La question du test ACID3 a un moment été un centre d’intérêt, avant que t
 
 ![acid3-chrome10](https://www.emmanuelbeziat.com/wp-content/uploads/2013/08/acid3-chrome10.jpg)
 
-Résultat affiché de 100%, alors que le rendu est très loin de celui qui est censé être le [gage d’un résultat correct](http://acid3.acidtests.org/ "Test Acid3").
+Résultat affiché de 100%, alors que le rendu est très loin de celui qui est censé être le [gage d’un résultat correct](http://acid3.acidtests.org/ "Test Acid3"){ target="_blank" }.
 
 C'est exactement le même genre de soucis avec html5test : ce genre de sites ne fait que vérifier si une fonctionnalité est présente, elle ne teste pas son implémentation. De fait, Chrome prétend gérer les nouveaux paramètres de la propriété `background-position` introduits en CSS3, alors que ce n’est absolument pas le cas dans les faits.
 
@@ -60,7 +60,7 @@ De ce côté, on peut signaler qu'Internet Explorer était le premier à introdu
 
 Du reste, Internet Explorer a longtemps été le seul, sur Windows, à bénéficier d’une version native en 64 bits. Chrome a rejoint les rangs fin 2014.
 
-On vante souvent les fonctionnalités des autres navigateurs mais IE offre généralement les mêmes possibilités.<p>
+On vante souvent les fonctionnalités des autres navigateurs mais IE offre généralement les mêmes possibilités.
 
 *   Comme les autres, il peut rétablir des onglets fermés par inadvertance, ou récupérer une session entière après une coupure du PC
 *   IE intègre un antipub natif auquel on peut donner les listes noires utilisées par AdBlock
@@ -69,9 +69,9 @@ On vante souvent les fonctionnalités des autres navigateurs mais IE offre gén�
 
 ### Intégration d’IE avec Windows
 
-<p>Microsoft propose en sus des outils d’intégration à Windows assez intéressant, il est dommage que les autres navigateurs ne suivent pas le mouvement. On peut en effet épingler un site de façon plus ou moins avancée dans la barre des tâches avec divers raccourcis, et sur les tuiles de l’interface Modern UI de Windows 8.
+Microsoft propose en sus des outils d’intégration à Windows assez intéressant, il est dommage que les autres navigateurs ne suivent pas le mouvement. On peut en effet épingler un site de façon plus ou moins avancée dans la barre des tâches avec divers raccourcis, et sur les tuiles de l’interface Modern UI de Windows 8.
 
-J’ai écrit un [tutoriel sur le sujet](http://www.emmanuelbeziat.com/blog/site-epingle-avec-internet-explorer/ "Site épinglé avec Internet Explorer") qui vous permettra d’en savoir plus si ça vous intéresse.
+J’ai écrit un [tutoriel sur le sujet](http://www.emmanuelbeziat.com/blog/site-epingle-avec-internet-explorer/ "Site épinglé avec Internet Explorer"){ target="_blank" } qui vous permettra d’en savoir plus si ça vous intéresse.
 
 ## Alors pourquoi tant de haine ?
 
@@ -97,4 +97,4 @@ Vous êtes prévenus !
 
 Demain sort Microsoft Edge, remplaçant d’Internet Explorer. Ce qui signifie que ce dernier n’aura plus de version supplémentaire. Niels Leenheer lui a rendu un petit hommage vidéo dans une conférence :
 
-<iframe class="aligncenter" width="700" height="394" src="https://www.youtube.com/embed/w4WAPTJM8E0" frameborder="0" allowfullscreen></iframe>
+<div class="video"><iframe src="https://www.youtube.com/embed/w4WAPTJM8E0" allowfullscreen></iframe></div>

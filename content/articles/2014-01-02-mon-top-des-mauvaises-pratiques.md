@@ -29,7 +29,7 @@ Tout aussi insupportable que les curseurs indélicats, les **liens qui foutent l
 
 La seule variante utilisable, c'est quand le lien est un bloc entier qui **ne change pas de taille au survol**, et dont seul le contenu change.
 
-Mon conseil : tenez-vous en au changement de couleur et aux [`text-decoration`](http://www.w3.org/TR/CSS21/text.html#decoration).
+Mon conseil : tenez-vous en au changement de couleur et aux [`text-decoration`](http://www.w3.org/TR/CSS21/text.html#decoration){ target="_blank" }.
 
 ## #3 : les balises qui n’existent pas
 

@@ -18,7 +18,7 @@ Ce n’est que récemment qu'on s'est dit que ce serait bien d’avoir des règl
 
 L’un des problèmes du web, c'est d’abord son accessibilité. J’entend par là que n’importe qui peut faire son site ; c'est à la fois bien et mal, car ça donne naissance au meilleur comme au pire…
 
-Tout le monde peut apprendre le HTML / CSS / JavaScript / PHP. On trouve une foule de tutoriels, de cours et de ressources sur internet pour ça. Mais bien souvent, ces ressources datent, sont incomplètes et/ou véhiculent de nombreuses erreurs (même les plus réputées, et même lorsqu'elles prétendent donner des certifications : [OpenClassrooms](http://fr.openclassrooms.com/), [W3Schools](http://www.w3schools.com/)), que les élèves avides de savoir apprennent, assimilent, reproduisent et transmettent à leur tour. C'est à cause de ça qu'on retrouve encore aujourd’hui des horreurs de ce genre dans de nombreux sites :
+Tout le monde peut apprendre le HTML / CSS / JavaScript / PHP. On trouve une foule de tutoriels, de cours et de ressources sur internet pour ça. Mais bien souvent, ces ressources datent, sont incomplètes et/ou véhiculent de nombreuses erreurs (même les plus réputées, et même lorsqu'elles prétendent donner des certifications : [OpenClassrooms](http://fr.openclassrooms.com/){ target="_blank" }, [W3Schools](http://www.w3schools.com/){ target="_blank" }), que les élèves avides de savoir apprennent, assimilent, reproduisent et transmettent à leur tour. C'est à cause de ça qu'on retrouve encore aujourd’hui des horreurs de ce genre dans de nombreux sites :
 
 * { margin: 0; padding: 0; }
 
@@ -34,12 +34,12 @@ La première chose, c'est bien sûr **d’améliorer continuellement vos compét
 
 Il y a tout d’abord les références des différents langages. Ces sources sont les plus fiables, alors quand vous voulez vérifier une information, privilégiez-les !
 
-*   HTML/CSS : [Le wiki du W3C](http://www.w3.org/wiki/Main_Page "W3C wiki")
-*   PHP : [Documentation du PHP](http://www.php.net//manual/fr/index.php "Documentation PHP")
-*   jQuery : [Documentation et API de jQuery](http://api.jquery.com/ "documentation API")
-*   Ruby : [Documentation Ruby](https://www.ruby-lang.org/fr/documentation/ "Documentation Ruby")
-*   WordPress : [Codex WordPress](http://codex.wordpress.org/fr:Accueil "Codex WordPress")
-*   Bootstrap : [Documentation Bootstrap](http://getbootstrap.com/getting-started/ "Get Bootstrap")
+*   HTML/CSS : [Le wiki du W3C](http://www.w3.org/wiki/Main_Page "W3C wiki"){ target="_blank" }
+*   PHP : [Documentation du PHP](http://www.php.net//manual/fr/index.php "Documentation PHP"){ target="_blank" }
+*   jQuery : [Documentation et API de jQuery](http://api.jquery.com/ "documentation API"){ target="_blank" }
+*   Ruby : [Documentation Ruby](https://www.ruby-lang.org/fr/documentation/ "Documentation Ruby"){ target="_blank" }
+*   WordPress : [Codex WordPress](http://codex.wordpress.org/fr:Accueil "Codex WordPress"){ target="_blank" }
+*   Bootstrap : [Documentation Bootstrap](http://getbootstrap.com/getting-started/ "Get Bootstrap"){ target="_blank" }
 
 Pratiquement pour chaque langage / support / Framework, vous trouverez une documentation officielle.
 
@@ -47,8 +47,8 @@ Pratiquement pour chaque langage / support / Framework, vous trouverez une docum
 
 Ces sources ne sont pas officielles, mais elles sont de qualité.
 
-*   [Mozilla Developer Network](https://developer.mozilla.org/fr/ "Mozilla Developer Network")
-*   [Alsacréations](http://www.alsacreations.com/ "alsacreatuibs") (certains articles peuvent être obsolètes, attention)
+*   [Mozilla Developer Network](https://developer.mozilla.org/fr/ "Mozilla Developer Network"){ target="_blank" }
+*   [Alsacréations](http://www.alsacreations.com/ "Alsacréations"){ target="_blank" } (certains articles peuvent être obsolètes, attention)
 
 Évidemment, il faut bien sûr accepter une remise en question perpétuelle de ce qu'on <del>sait</del> croyait savoir… Soyez curieux(ses), lisez des blogs, des articles…
 
@@ -69,10 +69,13 @@ N’oubliez pas que le web est participatif ! Votre aide est toujours la bienven
 Pour finir, voici quelques blogs que je recommande de suivre :
 
 *   [Emmanuel B.](http://www.emmanuelbeziat.com/blog/) <small>(Ben quoi ?)</small>
-*   [JS-Attitude](http://www.js-attitude.fr/) (Fouillez au milieu des annonces de formations, y a des articles qui tuent !)
-*   [Lea Verou](http://lea.verou.me/)
-*   [David Walsh](http://davidwalsh.name/)
-*   [Stéphanie Walter](http://www.inpixelitrust.fr/blog/)
-*   [Codex Sphinxial](http://informatique.lamecarlate.net/)
-*   [Raphaël Goetter](http://blog.goetter.fr/)
-*   [Marie Guillaumet](http://marieguillaumet.com/)
+*   [JS-Attitude](http://www.js-attitude.fr/){ target="_blank" } (Fouillez au milieu des annonces de formations, y a des articles qui tuent !)
+*   [Lea Verou (en)](http://lea.verou.me/){ target="_blank" }
+*   [David Walsh (en)](http://davidwalsh.name/){ target="_blank" }
+*   [Stéphanie Walter](http://www.inpixelitrust.fr/blog/){ target="_blank" }
+*   [Codex Sphinxial](http://informatique.lamecarlate.net/){ target="_blank" }
+*   [Raphaël Goetter](http://blog.goetter.fr/){ target="_blank" }
+*   [Marie Guillaumet](http://marieguillaumet.com/){ target="_blank" }
+*   [Hugo Giraudel (en)](http://hugogiraudel.com/){ target="_blank" }
+*   [MoOx](https://moox.io/){ target="_blank" }
+*   [Cyril Krylatov](http://blog.cyrilou.me/){ target="_blank" }

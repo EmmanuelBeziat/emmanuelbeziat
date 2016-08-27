@@ -30,13 +30,13 @@ Et comme à ce niveau-là, la seule reconnaissance c'est d’être très demand�
 
 Mais après tout ça, comment un professionnel peut-il justifier auprès d’un client une facture de 1800€ pour une affiche ? Le résultat est là : les graphistes sont sous-évalués, leur travail dévalué et leur profession prise pour un passe-temps d’adolescent mal dégrossi. Pire, ils sont régulièrement exploités au gré de "concours" (lire "arnaques") organisées par diverses boîtes peu scrupuleuses pour avoir des centaines de propositions pour pas un rond, et n’en rémunérer (mal, qui plus est - parfois pas du tout) qu'une seule.
 
-Les graphistes ont d’ailleurs récemment poussé un [gros coup de gueule collectif](http://www.meltybuzz.fr/gratuiste-le-tumblr-des-graphistes-gratuits-en-rogne-a193271.html) en lançant le tumblr "Gratuiste" (malheureusement fermé depuis) pour recenser toutes les demandes qu'ils reçoivent.
+Les graphistes ont d’ailleurs récemment poussé un [gros coup de gueule collectif](http://www.meltybuzz.fr/gratuiste-le-tumblr-des-graphistes-gratuits-en-rogne-a193271.html){ target="_blank" } en lançant le tumblr "Gratuiste" (malheureusement fermé depuis) pour recenser toutes les demandes qu'ils reçoivent.
 
 #### Quelques liens à lire sur le sujet
 
-*   ["Les concours de graphisme, pourquoi ça craint en général - Marie & Julien](http://www.mariejulien.com/?post/2007/09/06/Les-concours-de-graphisme-pourquoi-ca-craint-en-general)
-*   [Mon maçon était illustrateur](http://monmacon.tumblr.com/), blog illustré où sont comparés les métiers de graphiste et de maçon pour montrer le ridicule des situations que vivent les illustrateurs.
-*   Le twitter [@gratuiste](https://twitter.com/gratuiste)
+*   ["Les concours de graphisme, pourquoi ça craint en général - Marie & Julien](http://www.mariejulien.com/?post/2007/09/06/Les-concours-de-graphisme-pourquoi-ca-craint-en-general){ target="_blank" }
+*   [Mon maçon était illustrateur](http://monmacon.tumblr.com/){ target="_blank" }, blog illustré où sont comparés les métiers de graphiste et de maçon pour montrer le ridicule des situations que vivent les illustrateurs.
+*   Le twitter [@gratuiste](https://twitter.com/gratuiste){ target="_blank" }
 
 ### Tout le monde peut <del>cuisiner</del> développer
 
@@ -58,13 +58,13 @@ Des "projets" comme ça, on en voit passer une trentaine par jours. Aucun n’ab
 
 J’en profite pour l’écrire en gros à tous ceux qui espèrent cacher leurs créations, leur code ou tout autre chose aux yeux du monde : **LE MONDE ENTIER SE FOUT TOTALEMENT DE VOTRE PROJET !** Et ce sera le cas tant que ce ne sera qu'un projet ; Facebook a eu du succès parce qu'il était "prêt" et terminé, les specs' techniques n’auraient intéressé personne.
 
-Bref, je m'égare. Là encore, [d’autres en ont parlé bien mieux que moi](http://conquerirlemonde.com/blog/category/erreurs-classiques/).
+Bref, je m'égare. Là encore, [d’autres en ont parlé bien mieux que moi](http://conquerirlemonde.com/blog/category/erreurs-classiques/){ target="_blank" }.
 
 ## Tout ça pour dire quoi ?
 
 Simplement que le fait d’être assis devant un ordinateur ne rend pas le métier moins technique qu'un autre. Il n’y a pas de logiciel miracle qui fasse le boulot à notre place ; et quand un outil fait une part du travail, il faut apprendre à l’utiliser (et parfois le développer soi-même). Et le travail, devinez quoi ? Ça se paie.
 
-J’avais trouvé une belle citation sur une illustration ; comme je ne l’ai pas retrouvée, je vais simplement l’écrire (et la traduire) :
+J’avais trouvé une belle citation sur une illustration ; comme je ne l’ai pas retrouvée, je vais simplement l’écrire approximativement (et la traduire tout aussi approximativement) :
 
 > Pourquoi devrais-je payer autant pour une illustration qui vous a pris dix minutes à faire ?
 > - Parce que j’ai étudié et travaillé dix ans pour apprendre à faire ça en dix minutes.
@@ -73,6 +73,6 @@ J’avais trouvé une belle citation sur une illustration ; comme je ne l’ai p
 
 J’ai eu quelques retours rapides sur cet article (merci hé, je ne savais pas que quelqu'un lisait ici !), et du coup je voudrais quand même préciser que malgré tout, les métiers concernés n’en sont pas moins passionnants et importants, et que notre travail est quand même assez souvent bien reconnu. Si j’ai eu quelques clients désagréables et mauvais payeurs, d’autres ont au contraire été très honnêtes, ouverts et à l’écoute de l’expertise que je pouvais leur apporter. L’important, c'est de trouver de bons collègues ; et moi, j’ai été engagé dans une super agence !
 
-Alors rassurez-vous, fidèles lecteurs (oui, vous les deux au fond là bas !), tout n’est pas que tristesse et désespoir ! Vous pourrez même vous payer une bonne tranche de rire sur [Les Joies du Code](http://lesjoiesducode.tumblr.com/) et [WebAgencyFail](http://www.webagencyfail.com/).
+Alors rassurez-vous, fidèles lecteurs (oui, vous les deux au fond là bas !), tout n’est pas que tristesse et désespoir ! Vous pourrez même vous payer une bonne tranche de rire sur [Les Joies du Code](http://lesjoiesducode.tumblr.com/){ target="_blank" } et [WebAgencyFail](http://www.webagencyfail.com/){ target="_blank" }.
 
-**Edit du 11 mars 2015 :** Comme le web est un endroit vaste, on tombe parfois sur des gens qui pensent comme nous (Si, si !). Du coup, voici un autre informaticien qui a fait le même constat (comme beaucoup d’entre nous) et qui en parle très bien dans son article '[Informaticien, un métier ingrat](http://www.neoeon.net/index.php?act=1&com=64 "Neoeon") — Neoeon'.
+**Edit du 11 mars 2015 :** Comme le web est un endroit vaste, on tombe parfois sur des gens qui pensent comme nous (Si, si !). Du coup, voici un autre informaticien qui a fait le même constat (comme beaucoup d’entre nous) et qui en parle très bien dans son article [Informaticien, un métier ingrat](http://www.neoeon.net/index.php?act=1&com=64 "Neoeon"){ target="_blank" }.

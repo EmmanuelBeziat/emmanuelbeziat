@@ -9,7 +9,6 @@ categories:
 
 Lorsque l’on fait un site, on est parfois confronté à un besoin : celui de gérer le **changement d’une image au survol de la souris**. C'est souvent le cas avec des menus. Si la technique des _sprites CSS_ (à propos desquels j’ai écrit [ce tutoriel](http://www.emmanuelbeziat.com/blog/bien-utiliser-les-sprites-css/ "Bien utiliser les sprites CSS") et qui ne sera donc pas détaillée ici) est utile dans certains cas, elle est fortement déconseillée dans le cas d’une image cliquable. Nous allons donc voir une solution alternative intéressante.
 
-
 ## Le problème posé
 
 ### Pourquoi ne pas utiliser les sprites ?
@@ -22,19 +21,22 @@ Dans le cas d’une image cliquable, à plus forte raison un menu qui ne contien
 <a href="mapage.html"></a>
 ```
 
-Si on peut styliser cette balise en CSS pour lui donner une hauteur, une largeur et un fond, retenez bien que tout le monde ne visionne pas un site comme vous. Les internautes mal-voyants qui utilisent un lecteur d’écran ne peuvent lire que le contenu strict de la page ; ils se retrouveront donc face à un lien vide de 0px×0px qui ne sera pas cliquable, car il ne sera tout simplement pas affiché par le navigateur.<p>
-<p>**En conséquence, la navigation sur votre site sera impossible !**
+Si on peut styliser cette balise en CSS pour lui donner une hauteur, une largeur et un fond, retenez bien que tout le monde ne visionne pas un site comme vous. Les internautes mal-voyants qui utilisent un lecteur d’écran ne peuvent lire que le contenu strict de la page ; ils se retrouveront donc face à un lien vide de 0px×0px qui ne sera pas cliquable, car il ne sera tout simplement pas affiché par le navigateur.
+
+
+**En conséquence, la navigation sur votre site sera impossible !**
 
 ### Une solution possible en javascript
 
-On peut également charger une image au survol grâce aux événements `onmouseover` et `onmouseout` du javascript. Si cette méthode permet de palier au problème précédemment exposé, elle en présente deux autres :<p>
+On peut également charger une image au survol grâce aux événements `onmouseover` et `onmouseout` du javascript. Si cette méthode permet de palier au problème précédemment exposé, elle en présente deux autres :
+
 
 1.  Tout d’abord, vos visiteurs peuvent très bien avoir désactivé l’exécution du javascript sur leur navigateur (pour des raisons qui les concernent).
 2.  L’image ne sera chargée qu'au survol, ce qui créera un effet de _clipping_ (clignotement) le temps que l’image soit affichée. Pour une petite connexion (comme la 3G) cela se révèle très vite particulièrement désagréable.
 
 ## La solution : un compromis
 
-<p>La meilleure solution consiste à mettre l’image "normale" dans le html, puis de la masquer au survol pour révéler une image de fond en CSS. Nous allons donc voir comment procéder.
+La meilleure solution consiste à mettre l’image "normale" dans le html, puis de la masquer au survol pour révéler une image de fond en CSS. Nous allons donc voir comment procéder.
 
 ### Le HTML
 
@@ -79,8 +81,7 @@ Maintenant, nous pouvons masquer l’image au survol grâce à la pseudo-propri�
 
 Pour éviter toute mauvaise surprise, je vous recommande aussi de :
 
-*   Penser à désactiver l’affichage de bordure automatique autour des images cliquables, au moyen de ce code :```a img { border: none; }
-```
+*   Penser à désactiver l’affichage de bordure automatique autour des images cliquables, au moyen de ce code :`a img { border: none; }`
 *   De spécifier également la hauteur et la largeur de l’image
 
 *   En CSS si les images sont toutes de même dimension (cas d’un menu) :

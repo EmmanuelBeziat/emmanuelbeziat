@@ -65,6 +65,6 @@ Et c'est tout ! Votre colonne fonctionne maintenant. En effet, votre "vraie" col
 
 Comme quoi, le CSS, c'est aussi de la magie !
 
-Vous pouvez voir l’exemple en action sur [ce Codepen](http://codepen.io/EmmanuelB/pen/zGMxEN).
+Vous pouvez voir l’exemple en action sur [ce Codepen](http://codepen.io/EmmanuelB/pen/zGMxEN){ target="_blank" }.
 
-Merci à [Lamecarlate](http://lamecarlate.net/) et [Clément](http://clement-galidie.fr/) pour leurs ajouts.
+Merci à [Lamecarlate](http://lamecarlate.net/){ target="_blank" } et [Clément](http://clement-galidie.fr/){ target="_blank" } pour leurs ajouts.
