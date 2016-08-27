@@ -95,5 +95,5 @@ Au contraire de cette affirmation stupide, le cerveau est parfaitement capable d
 
 Pour en savoir un peu plus, je vous recommande cette vidéo de la géniale chaîne YouTube [e-penser](https://www.youtube.com/user/epenser1){ target="_blank" } : '10 choses insensées que votre cerveau sait faire sans e-penser'. Il y a justement dedans le sujet de la paréidolie.
 
-<div class="video"><iframe src="https://www.youtube.com/embed/7GiQuG2S26Q" allowfullscreen></iframe></div>
+@[youtube](7GiQuG2S26Q)
 

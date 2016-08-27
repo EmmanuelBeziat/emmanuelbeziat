@@ -11,7 +11,7 @@
 </template>
 
 <script>
-	import Post from '../../resources/post'
+	import Post from '../../app/resources/post'
 
 	module.exports = {
 

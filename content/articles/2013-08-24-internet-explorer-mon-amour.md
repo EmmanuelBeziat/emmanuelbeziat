@@ -20,7 +20,7 @@ IE6, vous connaissez ? Vous l’avez beaucoup critiqué, n’est-ce pas ? Vous l
 
 Pour ceux qui veulent entendre un autre que moi en parler, il y a cette vidéo (en anglais) de Bruce Lawson (Opera) qui tenait une excellente conférence sur le sujet à Sud Web 2012 :
 
-<div class="video"><iframe src="http://player.vimeo.com/video/52171395?color=ff9933" allowFullScreen></iframe></div>
+@[vimeo](52171395)
 
 ## IE et les standards
 
@@ -97,4 +97,4 @@ Vous êtes prévenus !
 
 Demain sort Microsoft Edge, remplaçant d’Internet Explorer. Ce qui signifie que ce dernier n’aura plus de version supplémentaire. Niels Leenheer lui a rendu un petit hommage vidéo dans une conférence :
 
-<div class="video"><iframe src="https://www.youtube.com/embed/w4WAPTJM8E0" allowfullscreen></iframe></div>
+@[youtube](w4WAPTJM8E0)

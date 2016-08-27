@@ -125,6 +125,6 @@ Il y a encore des gens coincés à la dernière décade, qui surfent avec Intern
 
 Adonc, comme un cycle, la bêtise de l’emploi du sélecteur universel pour attribuer des propriétés cools et bien à la mode revient. Et je ne vois **toujours pas** en quoi ce serait une bonne idée, cette fois. Je laisse Vaas vous expliquer :
 
-<div class="video"><iframe src="//www.youtube.com/embed/kNdGM6tOoT4" allowfullscreen></iframe></div>
+@[youtube](kNdGM6tOoT4)
 
 Alors, plutôt que de mettre `box-sizing: border-box;` partout, utilisez-le simplement lorsque vous en avez besoin.

@@ -236,7 +236,7 @@ De plus, fait intéressant, quand un utilisateur sous Windows 7 expose un probl�
 
 **Edit du 8 février 2014** L’un de mes YouTubers préférés, Bruce Benamran ([sa chaine "e-penser"](https://www.youtube.com/channel/UCcziTK2NKeWtWQ6kB5tmQ8Q "YouTube"){ target="_blank" }), a publié récemment une vidéo sur _l’effet cigogne_ (ou _post hoc ergo propter hoc_ pour ceux qui aiment se la péter dans diverses langues mortes dont tout le monde se fout), qui décrit assez bien le problème. Outre la vidéo (que je vous mets ci-dessous), j’en profite pour vous recommander sa chaine, elle déboite les rotules à mémé. { .note .note--info }
 
-<div class="video"><iframe src="https://www.youtube.com/embed/lg2hFq9RlYM?rel=0" allowfullscreen></iframe></div>
+@[youtube](lg2hFq9RlYM)
 
 ## Conclusion
 

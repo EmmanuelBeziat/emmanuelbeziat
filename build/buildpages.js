@@ -16,10 +16,24 @@ var folders = {
 }
 
 var md = require('markdown-it')({
-	html: true,
-	breaks: true,
-	linkify: true
-}).use(require('markdown-it-attrs'))
+		html: true,
+		breaks: true,
+		linkify: true
+	})
+	.use(require('markdown-it-attrs'))
+
+var blockEmbedPlugin = require("markdown-it-block-embed");
+
+/**
+ * Todo: remove when options declaration will be fied
+ * https://github.com/rotorz/markdown-it-block-embed/issues/2
+ */
+md.use(blockEmbedPlugin, {
+	containerClassName: 'video',
+	serviceClassPrefix: 'video--',
+	outputPlayerSize: false,
+	allowFullScreen: true
+});
 
 function getDirectories(srcpath) {
 	return fs.readdirSync(srcpath).filter(function(file) {
