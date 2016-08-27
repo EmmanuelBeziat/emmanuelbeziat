@@ -1,22 +1,33 @@
-.article__title
+.post
+	[target="_blank"]::after
+		content "\e803"
+		font-family Icons
+		vertical-align baseline
+		position relative
+		bottom 2px
+		height 1em
+		width 1em
+		display inline-block
+
+.post__title
 	margin 0
 	color $color-red
 	font 400 2.8rem/1.5 $font-stack-heading
 
-.article__date
+.post__date
 	font-size .8em
 	color $color-yellow
 
-.article__header
+.post__header
 	margin-bottom 2rem
 	padding-bottom 2rem
 	border-bottom 1px solid $color-separator
 
-.article__footer
+.post__footer
 	margin-top 2rem
 	padding-top 2rem
 	border-top 1px solid $color-separator
 
-.article__help
+.post__help
 	font-size .9rem
 	margin-top 2rem

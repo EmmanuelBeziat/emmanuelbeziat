@@ -1,5 +1,5 @@
 <template>
-	{{ copyright }}
+	© {{ year }} Emmanuel Béziat
 </template>
 
 <script>
@@ -8,7 +8,7 @@ import Moment from 'moment'
 export default {
 	data () {
 		return {
-			copyright: '© ' + Moment().format('YYYY') + ' Emmanuel Béziat'
+			year: Moment().format('YYYY')
 		}
 	}
 }

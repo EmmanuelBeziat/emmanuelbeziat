@@ -1,9 +1,12 @@
 <template>
-	<article class="article">
-		<header class="article__header">
-			<h1 class="article__title">{{ post.title }}</h1>
+	<article class="post portfolio">
+		<header class="post__header">
+			<h1 class="post__title">{{ post.title }}</h1>
 		</header>
-		<div class="article__content" v-linkable>{{{ post.content }}}</div>
+		<div class="post__content" v-linkable>{{{ post.content }}}</div>
+		<footer class="post__footer">
+			<a class="post__backlink" v-link="{ name: 'portfolio' }"éé><i class="icon-arrow-left"></i> Revenir au portfolio</a>
+		</footer>
 	</article>
 </template>
 
