@@ -24,4 +24,7 @@ npm test
 # deploy on Github-Pages
 npm run build
 
+# render markdown to json
+npm run pages
+
 ```
