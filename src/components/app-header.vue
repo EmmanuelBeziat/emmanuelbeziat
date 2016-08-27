@@ -6,22 +6,25 @@
 
 		<app-resume></app-resume>
 
-		<div class="site-header__copyright">{{ copyright }}</div>
+		<div class="site-header__copyright">
+			<app-copyright></app-copyright>
+		</div>
 	</header>
 </template>
 
 <script>
 import appResume from '../components/app-resume'
+import appCopyright from '../components/app-copyright'
 
 export default {
 	data () {
 		return {
-			copyright: '© ' + '2016' + ' Emmanuel Béziat'
 		}
 	},
 
 	components: {
-		appResume
+		appResume,
+		appCopyright
 	}
 }
 </script>

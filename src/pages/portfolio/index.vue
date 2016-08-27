@@ -1,17 +1,13 @@
 <template>
-	<section>
-		<h1>Portfolio</h1>
-
-		<div v-for="portfolio in portfolios">
-			<article class="portfolio">
-				<h1 class="portfolio__title"><a v-link="{ name: 'portfolio-item', params: { slug: portfolfio.slug } }">{{ portfolio.title }}</a></h1>
-			</article>
-		</div>
-	</section>
+	<div class="portfolio-list">
+		<article class="portfolio-list__item" v-for="post in portfolio">
+			<h1 class="post-list__title"><a v-link="{ name: 'portfolio-post', params: { slug: post.basename } }">{{ post.title }}</a></h1>
+		</article>
+	</div>
 </template>
 
 <script>
-	import Blog from '../../resources/portfolio'
+	import Portfolio from '../../resources/portfolio'
 
 	module.exports = {
 
@@ -19,15 +15,16 @@
 		 * @type {Object}
 		 */
 		Route: {
-			waitForData: true,
+			waitForData: true
+		},
 
-			/**
-			 * Fetch route data
-			 * @param  {Object} transition
-			 * @return {Promis}
-			 */
-			data (transition) {
-				return Blog.get().then(response => this.$set('portfolios', response.data))
+		created: function () {
+			this.fetchData()
+		},
+
+		methods: {
+			fetchData: function () {
+				return Portfolio.listPortfolio().then(response => this.$set('portfolio', response.data.posts.reverse()))
 			}
 		},
 
@@ -36,7 +33,7 @@
 		 */
 		data () {
 			return {
-				posts: []
+				portfolio: []
 			}
 		}
 	}

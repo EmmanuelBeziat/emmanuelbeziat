@@ -1,5 +1,20 @@
 <template>
 	<footer class="site-footer">
-		© 2016 Emmanuel Béziat
+		<app-copyright></app-copyright>
 	</footer>
 </template>
+
+<script>
+import appCopyright from '../components/app-copyright'
+
+export default {
+	data () {
+		return {
+		}
+	},
+
+	components: {
+		appCopyright
+	}
+}
+</script>
