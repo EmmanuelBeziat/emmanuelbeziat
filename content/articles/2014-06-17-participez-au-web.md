@@ -20,7 +20,9 @@ L’un des problèmes du web, c'est d’abord son accessibilité. J’entend par
 
 Tout le monde peut apprendre le HTML / CSS / JavaScript / PHP. On trouve une foule de tutoriels, de cours et de ressources sur internet pour ça. Mais bien souvent, ces ressources datent, sont incomplètes et/ou véhiculent de nombreuses erreurs (même les plus réputées, et même lorsqu'elles prétendent donner des certifications : [OpenClassrooms](http://fr.openclassrooms.com/){ target="_blank" }, [W3Schools](http://www.w3schools.com/){ target="_blank" }), que les élèves avides de savoir apprennent, assimilent, reproduisent et transmettent à leur tour. C'est à cause de ça qu'on retrouve encore aujourd’hui des horreurs de ce genre dans de nombreux sites :
 
+```css
 * { margin: 0; padding: 0; }
+```
 
 Donc, il est important de faire un peu de ménage, lien après lien, site après site.
 
@@ -39,7 +41,6 @@ Il y a tout d’abord les références des différents langages. Ces sources son
 *   jQuery : [Documentation et API de jQuery](http://api.jquery.com/ "documentation API"){ target="_blank" }
 *   Ruby : [Documentation Ruby](https://www.ruby-lang.org/fr/documentation/ "Documentation Ruby"){ target="_blank" }
 *   WordPress : [Codex WordPress](http://codex.wordpress.org/fr:Accueil "Codex WordPress"){ target="_blank" }
-*   Bootstrap : [Documentation Bootstrap](http://getbootstrap.com/getting-started/ "Get Bootstrap"){ target="_blank" }
 
 Pratiquement pour chaque langage / support / Framework, vous trouverez une documentation officielle.
 
@@ -48,7 +49,6 @@ Pratiquement pour chaque langage / support / Framework, vous trouverez une docum
 Ces sources ne sont pas officielles, mais elles sont de qualité.
 
 *   [Mozilla Developer Network](https://developer.mozilla.org/fr/ "Mozilla Developer Network"){ target="_blank" }
-*   [Alsacréations](http://www.alsacreations.com/ "Alsacréations"){ target="_blank" } (certains articles peuvent être obsolètes, attention)
 
 Évidemment, il faut bien sûr accepter une remise en question perpétuelle de ce qu'on <del>sait</del> croyait savoir… Soyez curieux(ses), lisez des blogs, des articles…
 
@@ -68,7 +68,7 @@ N’oubliez pas que le web est participatif ! Votre aide est toujours la bienven
 
 Pour finir, voici quelques blogs que je recommande de suivre :
 
-*   [Emmanuel B.](http://www.emmanuelbeziat.com/blog/) <small>(Ben quoi ?)</small>
+*   [Emmanuel B.](https://www.emmanuelbeziat.com/blog/) <small>(Ben quoi ?)</small>
 *   [JS-Attitude](http://www.js-attitude.fr/){ target="_blank" } (Fouillez au milieu des annonces de formations, y a des articles qui tuent !)
 *   [Lea Verou (en)](http://lea.verou.me/){ target="_blank" }
 *   [David Walsh (en)](http://davidwalsh.name/){ target="_blank" }
@@ -79,3 +79,7 @@ Pour finir, voici quelques blogs que je recommande de suivre :
 *   [Hugo Giraudel (en)](http://hugogiraudel.com/){ target="_blank" }
 *   [MoOx](https://moox.io/){ target="_blank" }
 *   [Cyril Krylatov](http://blog.cyrilou.me/){ target="_blank" }
+
+Et des sites plein <del>des bonnes choses qui sont bonnes pour votre chaton qui est plein de vie</del> de bons conseils :
+
+* [PutainDeCode](http://putaindecode.io/){ target="_blank" }

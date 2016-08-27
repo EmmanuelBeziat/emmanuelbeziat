@@ -42,6 +42,7 @@
 	import Post from '../../resources/post'
 	import Prism from 'prismjs'
 	import 'prismjs/plugins/show-language/prism-show-language.min.js'
+	import 'prismjs/components/prism-bash.min.js'
 
 	import appShare from 'components/app-share'
 
