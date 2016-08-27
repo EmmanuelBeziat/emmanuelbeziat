@@ -34,8 +34,6 @@ Les résultats sont les suivants. À noter que le code est tout à fait identiqu
 
 ![Test bordures navigateur](https://www.emmanuelbeziat.com/wp-content/uploads/2013/08/tests-border-nav1.png)
 
-Vous pourrez aussi constater que Firefox ne prend pas en compte le line-height dans un champ de texte, ni le positionnement dans une cellule de tableau.
-
 **Mise à jour 8 Février 2014 :** Toujours aucune amélioration sur ces points sur Firefox 27 et Chrome 32.
 
 **Mise à jour 23 Avril 2015 :** Depuis quelques versions, le problème de position dans les cellules de tableau est réglé sur Firefox.
