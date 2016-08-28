@@ -99,7 +99,9 @@
 			/**
 			 * Ignitiate code hightlighting with PrismJS
 			 */
-			Prism.highlightAll()
+			setTimeout(function() {
+				Prism.highlightAll()
+			}, 10)
 		}
 	}
 </script>

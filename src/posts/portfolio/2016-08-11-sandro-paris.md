@@ -2,6 +2,7 @@
 title: "Sandro Paris"
 date: "2015-08-11 00:00:00"
 image: "sandro"
+color: "black"
 clients:
 - Sandro Paris
 - Blondie

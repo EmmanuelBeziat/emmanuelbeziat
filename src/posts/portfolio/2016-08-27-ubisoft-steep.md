@@ -1,7 +1,8 @@
 ---
-title: "Steep (Ubisoft)"
+title: "Ubisoft"
 date: "2015-08-27 00:00:00"
-image: "steep"
+image: "ubisoft"
+color: "violet"
 clients:
 - Ubisoft
 - Dixxit

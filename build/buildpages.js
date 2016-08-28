@@ -11,7 +11,7 @@ var markdown = require('markdown-parse')
 var spinner = ora('Compiling markdown files to json…\n')
 
 var folders = {
-	'src': path.join('content'),
+	'src': path.join('src', 'posts'),
 	'dist': path.join('static', 'posts')
 }
 
@@ -86,6 +86,7 @@ getDirectories(folders.src).forEach(function(directory) {
 				fileContent.posts.push({
 					'title': result.attributes.title,
 					'image': result.attributes.image || '',
+					'color': result.attributes.color || 'black',
 					'date': result.attributes.date || new Date(),
 					'tags': result.attributes.tags || [''],
 					'clients': result.attributes.clients || [''],

@@ -3,7 +3,7 @@
 	flex-flow row wrap
 
 .portfolio__item
-	flex 0 0 calc(50% - 6px)
+	flex 0 0 calc(33% - 6px)
 	position relative
 	margin 0 3px 6px
 
@@ -15,16 +15,16 @@
 	justify-content center
 	align-items center
 	z-index 10
+	transform-origin 50% 20px
 	transition .2s ease-in-out
 	backface-visibility hidden
-	transform-origin 50% 20px
 
 .portfolio__image
 	width 128px
 	height 128px
 	fill $color-text
 	backface-visibility hidden
-	transition .2s ease-in-out
+	transition .2s ease-in-out .1s
 
 .portfolio__caption
 	z-index 5
@@ -50,10 +50,28 @@
 .portfolio__item:hover
 	.portfolio__layer
 		transform scale(.4) translateZ(0)
-		background rgba(0, 0, 0, 0)
+		border-radius 50%
+
+	.portfolio__layer--blue
+		background $color-blue
+
+	.portfolio__layer--red
+		background $color-red
+
+	.portfolio__layer--violet
+		background $color-violet
+
+	.portfolio__layer--yellow
+		background darken($color-yellow, 10%)
+
+	.portfolio__layer--green
+		background $color-green
+
+	.portfolio__layer--black
+		background darken($color-grey, 50%)
 
 	.portfolio__image
-		transform scale(1.25) translateZ(0) rotate(360deg)
+		transform scale(1.1) translateZ(0)
 
 .portfolio__see-more
 	display inline-block
