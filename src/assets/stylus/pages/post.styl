@@ -9,6 +9,14 @@
 		width 1em
 		display inline-block
 
+	h2, h3, h4
+		position relative
+
+		&:hover
+			.post__anchor::before
+				opacity 1
+				transform translateX(0)
+
 .post__title
 	margin 0
 	color $color-red
@@ -31,3 +39,8 @@
 .post__help
 	font-size .9rem
 	margin-top 2rem
+
+.post__anchor::before
+	opacity 0
+	transition .2s ease-in-out
+	transform translateX(-75%)

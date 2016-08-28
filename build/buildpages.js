@@ -21,6 +21,11 @@ var md = require('markdown-it')({
 		linkify: true
 	})
 	.use(require('markdown-it-attrs'))
+	.use(require('markdown-it-anchor'), {
+		permalink: false,
+		permalinkClass: 'icon-link post__anchor',
+		permalinkSymbol: ''
+	})
 
 var blockEmbedPlugin = require("markdown-it-block-embed");
 

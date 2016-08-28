@@ -41,7 +41,7 @@ On voit parfois passer le préfixe `-kthml-`, mais il est bien moindre car corre
 
 C'est là le but de cet article. En effet, les préfixes ont l’avantage de proposer des versions "beta" (non complètes) des propriétés en cours d’élaboration par le W3C (en contrepartie, leur prise en charge est parfois partielle et bancale) pour que les développeurs puissent commencer à travailler avec, mais ils posent aussi un problème de compatibilité, car un préfixe `-moz-` ne sera pas lu par un navigateur qui ne tourne pas sur Gecko, de même qu'un préfixe `-webkit-` ne sera pas pris en compte par un navigateur non-webkit. Mais ajouter des préfixes pour tous les navigateurs possible représente un travail conséquent et alourdit le code. De plus, les propriétés étant toujours en cours d’élaboration, leur syntaxe est susceptible de changer (c'est ce qui s'est passé avec `linear-gradient`). De plus dans certains cas, la propriété est finalisée depuis suffisamment longtemps pour que la plupart des navigateurs aient pu l’implémenter correctement, et les préfixes ne sont donc plus utiles. Dans certains cas, ils ne sont plus pris en charge par les versions récentes d’un navigateur (c'est le cas de `-moz-border-radius`).
 
-Mettez toujours la propriété finale (donc sans préfixes) après les propriétés préfixées. Ce n’est pas une lubie, mais un principe de logique : le navigateur doit lire en dernier la propriété finale et l’appliquer à la place de la propriété préfixée. {.note .note--important}
+Mettez toujours la propriété finale (donc sans préfixes) après les propriétés préfixées. Ce n’est pas une lubie, mais un principe de logique : le navigateur doit lire en dernier la propriété finale et l’appliquer à la place de la propriété préfixée. {.c-note .c-note--important}
 
 ### Une solution : se renseigner
 
@@ -63,7 +63,7 @@ Notre code sera donc tout simplement :
 
 À refaire pour chaque propriété sur laquelle vous pourriez avoir un doute, bien entendu.
 
-Notez bien que les informations de cet articles sont valables à sa date de rédaction. Je ne le mettrai pas à jour chaque fois qu'une propriété change un poil, donc comprenez-en le sens mais notez que les propriétés présentées peuvent avoir été validées depuis longtemps au moment où vous lirez ceci. {.note .note--info}
+Notez bien que les informations de cet articles sont valables à sa date de rédaction. Je ne le mettrai pas à jour chaque fois qu'une propriété change un poil, donc comprenez-en le sens mais notez que les propriétés présentées peuvent avoir été validées depuis longtemps au moment où vous lirez ceci. {.c-note .c-note--info}
 
 ## Pour se faciliter la vie
 
@@ -92,4 +92,4 @@ Parce qu'un peu de généralités ne fait pas de mal !
 *   [transition](http://caniuse.com/#feat=css-transitions){ target="_blank" }
 *   [gradient](http://caniuse.com/#feat=css-gradients){ target="_blank" } (à utiliser toutefois avec un fallback)
 
-Je ne mets ici que les propriétés qui ont longtemps été préfixées, pas la liste complète des propriétés CSS3 qui n’ont pas besoin de préfixes. {.note .note--info}
+Je ne mets ici que les propriétés qui ont longtemps été préfixées, pas la liste complète des propriétés CSS3 qui n’ont pas besoin de préfixes. {.c-note .c-note--info}

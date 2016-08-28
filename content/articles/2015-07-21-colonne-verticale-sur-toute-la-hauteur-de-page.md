@@ -48,7 +48,7 @@ Pour l’instant, votre colonne ne va pas jusqu'en bas de votre écran, à moins
 
 On crée donc un pseudo-élément après notre colonne, avec un contenu vide. On lui attribue une position fixe, ce qui veut dire que l’élément sera lié à la fenêtre du navigateur, et non au contenu de votre page. Puis, on l’accroche à `0px` du haut de la fenêtre, du bas, et à gauche. Ainsi, cet élément ne bougera jamais, même si vous descendez dans la page : il fera toujours la largeur de la fenêtre. Enfin, on lui attribue la même largeur et la même couleur que notre colonne, via la valeur`inherit`.
 
-Mais… Je ne vois plus ma colonne ! Qu'est-ce qu'il se passe ? { .note .note--question }
+Mais… Je ne vois plus ma colonne ! Qu'est-ce qu'il se passe ? { .c-note .c-note--question }
 
 En effet, si vous avez testé ce code, vous devez avoir remarqué que votre pseudo-élément couvre votre colonne et que celle-ci n’est plus visible. Pas de panique ! On va simplement positionner l’élément enfant `.colonne-content` pour ajouter une propriété `z-index`, qui va permettre de gérer la superposition des éléments. Plus la valeur est haute, plus l’élément est à l’avant-plan.
 

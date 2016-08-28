@@ -31,7 +31,7 @@ Voici le code CSS en question :
 }
 ```
 
-Notez que la propriété pointer-events cause une erreur dans la validateur CSS du W3C. {.note .note--important}
+Notez que la propriété pointer-events cause une erreur dans la validateur CSS du W3C. {.c-note .c-note--important}
 
 Maintenant, un peu de Javascript :
 

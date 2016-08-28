@@ -11,7 +11,8 @@ module.exports = {
 		hasbang: false,
 		history: true,
 		saveScrollPosition: true,
-		linkActiveClass: 'site-menu__link--active'
+		linkActiveClass: 'site-menu__link--active',
+		transitionOnLoad: true
 	},
 
 	/**

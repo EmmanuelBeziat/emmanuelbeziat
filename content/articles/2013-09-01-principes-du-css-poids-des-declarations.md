@@ -107,11 +107,11 @@ Surprise ! Ça ne fonctionne pas. En effet, cette déclaration n’a un poids qu
 
 Cette déclaration fait donc 111 (identifiant + classe + element), son poids est supérieur à la première, et notre lien s'affiche en vert.
 
-Les pseudo-classes (`:hover`, `:first-child`, etc.) ont le même poids qu'une classe (donc 10) et les pseudo-éléments ont le même poids qu'un élément (1). {.note .note--info}
+Les pseudo-classes (`:hover`, `:first-child`, etc.) ont le même poids qu'une classe (donc 10) et les pseudo-éléments ont le même poids qu'un élément (1). {.c-note .c-note--info}
 
 
 Attention toutefois : Il ne s'agit pas d’une simple notation mathématique, mais de "niveaux de poids". 10 classes n’auraient le même poids qu'un ID. Il est impossible de surcharger un type "supérieur" — en clair, des éléments ne pourront pas surcharger une classe, une classe ne pourra pas surcharger un ID, etc.
-\nPour être plus précis, il faudrait noter "1.0.1" et non simplement "101". Ce qui signifie que si on rajoutait 15 classes à cette déclaration, on obtiendrait un poids de "1.15.1", et non 251. {.note .note--important} 
+\nPour être plus précis, il faudrait noter "1.0.1" et non simplement "101". Ce qui signifie que si on rajoutait 15 classes à cette déclaration, on obtiendrait un poids de "1.15.1", et non 251. {.c-note .c-note--important}
 
 ### Notez bien !
 

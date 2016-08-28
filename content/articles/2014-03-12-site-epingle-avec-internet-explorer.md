@@ -11,7 +11,7 @@ categories:
 
 Avec Windows 7 est apparue la possibilité d’épingler des programmes dans la barre des tâches. Internet Explorer (depuis la version 9) propose une fonctionnalité d’épinglage avancé : il suffit de déplacer l’onglet d’une page vers la barre des tâches pour y trouver de nouvelles actions possibles. Ces fonctionnalités se paramètrent sur votre propre site, nous allons donc voir comment.
 
-<figure class="text-center">![sites-epingles](https://www.emmanuelbeziat.com/wp-content/uploads/2013/07/sites-epingles.jpg)<figcaption>Fonctionnalités des sites épinglés</figcaption></figure>
+![sites-epingles](https://www.emmanuelbeziat.com/wp-content/uploads/2013/07/sites-epingles.jpg)
 
 Pour la première partie, un minimum de connaissances en HTML est requis. Les parties HTML seront suffisamment détaillées pour que les moins expérimentés s'y retrouvent.
 
@@ -25,7 +25,7 @@ Il existe plusieurs façons pour un utilisateur d’épingler un site.
 
 Dans Windows 7 et 8 (en mode bureau), il suffit de faire glisser l’onglet du site ou le favicon (icône du site) vers la barre des tâches pour que le site s'épingle seul. Il est également possible d’utiliser le menu Outils (`Alt` + `o`), puis de sélectionner "_Ajouter le site au menu démarrer_", mais le raccourci se place dans le menu et non sur la barre des tâches.
 
-<figure class="text-center">![épinglage](https://www.emmanuelbeziat.com/wp-content/uploads/2013/07/epinglage.jpg)<figcaption>Ajouter un site à l’écran d’accueil, sous Windows 8</figcaption></figure>
+![épinglage](https://www.emmanuelbeziat.com/wp-content/uploads/2013/07/epinglage.jpg)
 
 Dans Windows 8 (en mode ModernUI), il y a un bouton "_Épingler à l’écran d’accueil_" dans la barre de navigation en bas de la fenêtre d’Internet Explorer.
 
@@ -35,13 +35,13 @@ Il est également possible de créer des outils d’épinglage (boutons, barres)
 
 Lorsqu'un site est lancé depuis un raccourci épinglé, l’interface change légèrement par rapport à une fenêtre normale d’Internet Explorer. Le bouton accueil à droite disparaît, l’icône du site est affichée à gauche des boutons de navigation, et ceux-ci adoptent une couleur différente.
 
-<figure class="text-center">![Un exemple de site épinglé](https://www.emmanuelbeziat.com/wp-content/uploads/2013/07/exemple-site-epingle.jpg)<figcaption>Un exemple de site épinglé</figcaption></figure>
+![Un exemple de site épinglé](https://www.emmanuelbeziat.com/wp-content/uploads/2013/07/exemple-site-epingle.jpg)
 
 ### La barre des tâches, mais pas seulement !
 
 Il existe également une petite subtilité : si vous glissez le site non pas sur la barre des tâches mais sur le bouton du menu Démarrer (uniquement pour Windows 7 donc), votre site et ses raccourcis apparaîtront dans celui-ci.
 
-<figure class="text-center">![epinglage menu démarrer](https://www.emmanuelbeziat.com/wp-content/uploads/2013/07/menu-demarrer.jpg)<figcaption>On peut aussi épingler au menu démarrer !</figcaption></figure>
+![epinglage menu démarrer](https://www.emmanuelbeziat.com/wp-content/uploads/2013/07/menu-demarrer.jpg)
 
 La théorie étant vue, place à l’action.
 
@@ -53,7 +53,7 @@ Il faut savoir que n’importe quel site peut être épinglé à la barre de tâ
 
 Ces éléments permettent de définir plusieurs paramètres qui seront enregistrés lors de l’épinglage du site, et donc de la création du raccourci. Ce sont des éléments facultatifs, mais recommandés.
 
-Il est important de comprendre que ces valeurs ne seront utilisées qu'à l’épinglage. Si vous modifiez ces données après que vous ou un utilisateur ayez épinglé le site, les modifications ne seront pas prises en comptes. Il faudra réépingler le site pour qu'une nouvelle "installation" se crée avec ces nouveaux paramètres. {.note .note--important}
+Il est important de comprendre que ces valeurs ne seront utilisées qu'à l’épinglage. Si vous modifiez ces données après que vous ou un utilisateur ayez épinglé le site, les modifications ne seront pas prises en comptes. Il faudra réépingler le site pour qu'une nouvelle "installation" se crée avec ces nouveaux paramètres. {.c-note .c-note--important}
 
 #### application-name
 
@@ -87,7 +87,7 @@ Pour choisir vous-même quelle URL sera lancée au moment de l’ouverture, vous
 
 Ici, on demande au site de toujours s'ouvrir à la racine (l’index). On pourrait mettre n’importe quelle adresse, soit absolue (de forme http://www.monsite.com), soit relative à la page en cours (de forme /test.html).
 
-Seuls les protocoles HTTP et HTTPS sont autorisés. { .note .note--info }
+Seuls les protocoles HTTP et HTTPS sont autorisés. { .c-note .c-note--info }
 
 #### msapplication-window
 
@@ -156,11 +156,11 @@ Saviez-vous que de nombreux sites utilisent déjà ces fonctionnalités ? Voici 
 <meta name="msapplication-TileColor" content="#00aced">
 ```
 
-<figure class="text-center">![exemple-bing](https://www.emmanuelbeziat.com/wp-content/uploads/2013/07/exemple-bing.jpg)<figcaption>L’exemple de Bing</figcaption></figure>
+![exemple-bing](https://www.emmanuelbeziat.com/wp-content/uploads/2013/07/exemple-bing.jpg)
 
 ## Liste de raccourcis statiques (tâches)
 
-<figure class="text-center">![taches facebook](https://www.emmanuelbeziat.com/wp-content/uploads/2013/07/taches-fb.jpg)<figcaption>Exemple de tâches d’un site connu</figcaption></figure>
+![taches facebook](https://www.emmanuelbeziat.com/wp-content/uploads/2013/07/taches-fb.jpg)
 
 Le plus simple pour commencer, est de pouvoir ajouter des liens statiques, appelés "tâches" (jumplists en anglais). Ces liens ont pour but de rediriger vers des pages pérennes de votre site.
 
@@ -181,9 +181,10 @@ Les valeurs possibles de content sont au nombre de quatre, et doivent être sép
 <tr><td class="nowrap">icon-uri</td><td>Une icône (image ou fichier icône) qui sera affichée juste en face du lien. L’adresse de l’icône peut également être absolue ou relative.</td></tr>
 <tr><td class="nowrap">window-type</td><td>Permet de définir le mode d’ouverture de la page liée.
 
-*   tab (valeur par défaut) : nouvel onglet dans la fenêtre actuelle
-*   window : nouvelle fenêtre
-*   self : onglet actuel</td></tr></table>
+<ul>
+<li>tab (valeur par défaut) : nouvel onglet dans la fenêtre actuelle</li>
+<li>window : nouvelle fenêtre</li>
+<li>self : onglet actuel</li></ul></td></tr></table>
 
 Par exemple, pour créer un lien vers un blog, avec une icône personnalisée, on pourrait faire ceci :
 
@@ -197,7 +198,7 @@ Ou pour faire un lien vers une page Twitter en utilisant leur favicon comme icô
 <meta name="msapplication-task" content="name=Twitter;action-uri=http://fr.twitter.com/moi;icon-uri=http://twitter.com/favicon.ico">
 ```
 
-Il est tout à fait possible de s'arrêter ici. Ces fonctions sont largement suffisantes pour beaucoup de sites. Les parties suivantes du tutoriel requièrent des notions plus ou moins avancées de Javascript, et ne conviendront pas aux débutants. { .note .note--info }
+Il est tout à fait possible de s'arrêter ici. Ces fonctions sont largement suffisantes pour beaucoup de sites. Les parties suivantes du tutoriel requièrent des notions plus ou moins avancées de Javascript, et ne conviendront pas aux débutants. { .c-note .c-note--info }
 
 ## Liste de raccourcis dynamiques
 
@@ -313,7 +314,7 @@ Puisque l’on a ajouté des éléments de manière dynamique, il peut être uti
 
 Une technique qui peut-être très pratique pour indiquer qu'un certain type d’événement s'est produit. Par exemple, que l’utilisateur a reçu un certain nombre de messages.
 
-<figure class="text-center">![notification-facebook](https://www.emmanuelbeziat.com/wp-content/uploads/2014/03/notif-fb.jpg)<figcaption>La notification de Facebook</figcaption></figure>
+![notification-facebook](https://www.emmanuelbeziat.com/wp-content/uploads/2014/03/notif-fb.jpg)
 
 Cela se fait avec la méthode [`msSiteModeSetIconOverlay()`](http://msdn.microsoft.com/fr-fr/library/ff976316%28v=vs.85%29.aspx "MSDN"), qui attend deux paramètres : l’adresse de l’image (obligatoire), et un texte descriptif de la notification (optionnel).
 
@@ -365,9 +366,9 @@ function modifierIcone(statut) {
 
 ### Clignotement du bouton dans la barre des tâches
 
-Utile pour attirer rapidement l’attention, il faut néanmoins se demander s'il n’est pas plus pertinent d’utiliser une image superposée à l’icône. En effet, il n’y a rien de plus agaçant pour un utilisateur qu'un élément qui clignote toutes les deux minutes. Il sera par exemple préférable de mettre un chiffre en image pour signaler que de nouveaux commentaires ont été postés, plutôt que de flasher l’utilisateur à chaque fois. { .note .note--important }
+Utile pour attirer rapidement l’attention, il faut néanmoins se demander s'il n’est pas plus pertinent d’utiliser une image superposée à l’icône. En effet, il n’y a rien de plus agaçant pour un utilisateur qu'un élément qui clignote toutes les deux minutes. Il sera par exemple préférable de mettre un chiffre en image pour signaler que de nouveaux commentaires ont été postés, plutôt que de flasher l’utilisateur à chaque fois. { .c-note .c-note--important }
 
-<figure class="text-center">![clignotement](https://www.emmanuelbeziat.com/wp-content/uploads/2014/03/clignotement.jpg)<figcaption>Un exemple de clignotement</figcaption></figure>
+![clignotement](https://www.emmanuelbeziat.com/wp-content/uploads/2014/03/clignotement.jpg)
 
 Le clignotement se fait au moyen de la méthode [`msSiteModeActivate()`](http://msdn.microsoft.com/fr-fr/library/ff975166%28v=vs.85%29.aspx "MSDN"). Celle-ci ne prend aucun paramètre, et ne fait rien d’autre que faire clignoter l’icône jusqu'à ce que l’utilisateur ait ouvert la fenêtre.
 
@@ -377,7 +378,7 @@ Pour aller plus loin, il est également possible d’ajouter des fonctionnalité
 
 Au-delà de boutons de lecture, on peut imaginer ajouter un bouton pour accéder directement à une liste de favoris, un bouton de partage sur les réseaux sociaux, modifier un état (en ligne/hors ligne), ou bien accéder aux informations de localisation d’une entreprise ; bref, un véritable petit contrôle à distance de votre site.
 
-<figure class="text-center">![barre d&#039;outils](https://www.emmanuelbeziat.com/wp-content/uploads/2014/03/barre-outils.jpg)<figcaption>Une barre d’outils</figcaption></figure>
+![barre d’outils](https://www.emmanuelbeziat.com/wp-content/uploads/2014/03/barre-outils.jpg)
 
 #### À retenir avant toute chose
 
@@ -531,7 +532,7 @@ Et voilà pour cette partie.
 
 Comme je vous le disais au début, il est possible de créer des images dans votre site que l’utilisateur aura simplement à déplacer vers la barre des tâches au lieu de l’onglet, vous donnant ainsi la possibilité d’expliquer simplement à vos utilisateurs de quoi il retourne. C'est ainsi que sur certains sites comme HtmlGoodies, les utilisateurs d’Internet Explorer 9 ou plus ont une petite barre affichée indiquant qu'il suffit de la déplacer dans la barre des tâches (l’image étant explicite) pour bénéficier de nouvelles fonctionnalités.
 
-<figure class="text-center">![htmlgoodies](https://www.emmanuelbeziat.com/wp-content/uploads/2014/03/htmlgoodies.jpg)<figcaption>L’exemple de HTMLGoodies</figcaption></figure>
+![htmlgoodies](https://www.emmanuelbeziat.com/wp-content/uploads/2014/03/htmlgoodies.jpg)
 
 Faire ceci est très simple, car il suffit d’ajouter à une image la classe `msPinSite` pour que le navigateur sache quoi faire de cette image et comment la traiter. N’importe quel format d’image web peut-être utilisé (JPG, GIF, PNG).
 
@@ -565,7 +566,7 @@ Il existe un plugin jQuery nommé Pinify, qui apporte quelques suppléments (à 
 
 Concrètement, il permet de faire tout ce que l’on vient de voir, aussi bien la partie HTML que Javascript, de manière plus simple et rapide avec la syntaxe habituelle du jQuery. Vous pourrez donc créer vos balises meta, ajouter des listes de raccourcis (tâches) statiques ou dynamiques, gérer les notifications et créer une barre d’outils avec encore plus de facilité.
 
-Cette partie est facultative, et s'adresse aux développeurs déjà habitués à manipuler du Javascript et jQuery. Elle sera donc concise et se contentera de présenter la façon de faire pour les étapes vues, en utilisant Pinify ; en cas de besoin, leur documentation est disponible. {.note .note--info}
+Cette partie est facultative, et s'adresse aux développeurs déjà habitués à manipuler du Javascript et jQuery. Elle sera donc concise et se contentera de présenter la façon de faire pour les étapes vues, en utilisant Pinify ; en cas de besoin, leur documentation est disponible. {.c-note .c-note--info}
 
 Tout d’abord, il faut [télécharger Pinify](http://polyfillsbook.com/pinify/ "Pinify") et ajouter le fichier `jquery.pinify.js` à notre page (après avoir inclus jQuery). Tout est expliqué sur leur page, je vous laisse le soin d’aller lire leurs explications.
 

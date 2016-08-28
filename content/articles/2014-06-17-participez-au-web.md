@@ -26,7 +26,7 @@ Tout le monde peut apprendre le HTML / CSS / JavaScript / PHP. On trouve une fou
 
 Donc, il est important de faire un peu de ménage, lien après lien, site après site.
 
-Pensez bien à vérifier les informations que vous trouverez sur internet, et à les questionner (Même sur ce blog) ! { .note .note--important }
+Pensez bien à vérifier les informations que vous trouverez sur internet, et à les questionner (Même sur ce blog) ! { .c-note .c-note--important }
 
 ## Que faire ?
 

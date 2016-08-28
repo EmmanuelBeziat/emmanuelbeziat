@@ -12,7 +12,7 @@ Lorsqu'on crée un design dont la particularité est que le pied de page soit to
 Nous allons voir plusieurs solutions possibles, à choisir en fonction de vos besoins.
 
 
-Ce tutoriel date un peu (2013), mais je suis en train de lui faire une petite remise à jour, incluant de nouvelles méthodes plus modernes et plus efficaces. Je n’ai pas encore détaillé toutes ces nouvelles méthodes, mais le code est disponible. {.note .note--info}
+Ce tutoriel date un peu (2013), mais je suis en train de lui faire une petite remise à jour, incluant de nouvelles méthodes plus modernes et plus efficaces. Je n’ai pas encore détaillé toutes ces nouvelles méthodes, mais le code est disponible. {.c-note .c-note--info}
 
 Tout d’abord, comprenons bien de quoi l’on parle dans ce tutoriel, et pour cela, nous allons d’abord illustrer le problème.
 
@@ -53,7 +53,7 @@ Ce n’est qu'un exemple de site de base ; vous pouvez bien sûr utiliser votre 
 
 ![Illustration du tutoriel](https://www.emmanuelbeziat.com/wp-content/uploads/2013/07/tuto1-05.png)
 
-Pourquoi mettre le pied de page (footer) en dehors du bloc principal ? {.note .note--question}
+Pourquoi mettre le pied de page (footer) en dehors du bloc principal ? {.c-note .c-note--question}
 
 Toute l’astuce est là, c'est le fait de placer le pied-de-page en dehors du bloc du contenu qui va permettre de le fixer au bas de la page, mais aussi de l’empêcher de passer par-dessus le texte du contenu.
 
@@ -178,7 +178,7 @@ Hé oui, c'est tout. On dit au bloc principal de faire au minimum la totalité d
 
 Pour celle-ci, on va utiliser `flexbox`, une propriété toute récente, dont je vous invite à [vérifier la compatibilité](http://caniuse.com/#feat=flexbox "CanIUse Flexbox ?"){ target="_blank" }.
 
-Flexbox n’est pas sensé être utilisé pour un gabarit de page, c'est normalement le module CSS `grid` à qui revient cette charge. Cependant, l’écriture des spécifications de `flexbox` est presque terminé et la propriété est implémentée dans tous les navigateurs modernes, alors que `grid` est encore en _working draft_, et n’est implémenté que dans Internet Explorer 10+ et Edge. {.note .note--important}
+Flexbox n’est pas sensé être utilisé pour un gabarit de page, c'est normalement le module CSS `grid` à qui revient cette charge. Cependant, l’écriture des spécifications de `flexbox` est presque terminé et la propriété est implémentée dans tous les navigateurs modernes, alors que `grid` est encore en _working draft_, et n’est implémenté que dans Internet Explorer 10+ et Edge. {.c-note .c-note--important}
 
 ```markup
 <body>

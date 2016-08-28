@@ -394,6 +394,6 @@ Ce sélecteur, à ne pas confondre avec le sélecteur d’enfant indirect que no
 * { color: red }
 ```
 
-Ce sélecteur est donc très "lourd" (tout est relatif) à utiliser et vous ne devriez l’employer qu'avec une extrême parcimonie, voire jamais ! {.note .note--important}
+Ce sélecteur est donc très "lourd" (tout est relatif) à utiliser et vous ne devriez l’employer qu'avec une extrême parcimonie, voire jamais ! {.c-note .c-note--important}
 
 N’hésitez pas si vous avez des questions, le formulaire de commentaires est là !
