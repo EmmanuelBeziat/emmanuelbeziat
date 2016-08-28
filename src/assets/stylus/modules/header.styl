@@ -1,7 +1,7 @@
 .site-header
 	padding 2rem
 	background darken($color-background, 10%)
-	width 20rem
+	width $size-header
 	position relative
 	z-index 10
 	text-align center
@@ -27,8 +27,7 @@
 
 .social__link
 	display block
-	width 3rem
-	height 3rem
+	size 3rem
 	padding .5em
 	background darken($color-background, 25%)
 	border-radius 2px
@@ -51,5 +50,4 @@ brand-icon(social__link--codepen, $color-brand-codepen)
 .social__icon
 	display block
 	fill $color-text
-	width 100%
-	height 100%
+	size 100%

@@ -26,11 +26,11 @@ h3
 	margin 2em 0 .75em
 
 h2
-	font-size 2.25em
+	font-size $font-size-heading-2
 	color $color-green
 
 h3
-	font 700 1.45em/1.5 $font-stack-common
+	font 700 $font-size-heading-3/1.5 $font-stack-common
 
 a
 	transition .2s ease-in-out
@@ -42,7 +42,7 @@ a
 		color $color-yellow
 
 .site
-	min-height 100vh
+	min-height $size-viewport-height
 	display flex
 	flex-direction row
 	align-items stretch
@@ -50,7 +50,7 @@ a
 
 .site-content
 	padding 2em
-	width 50rem
+	width $size-content
 	margin 0 auto
 
 .site-main

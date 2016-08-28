@@ -1,3 +1,7 @@
+/**
+ * Simple @font-face mixin
+ * http://kouto-swiss.io/docs.html#font-face
+ **/
 font-face( name, font-src, weight = false, style = false, formats = local eot woff2 woff truetype svg, svg-font-name = false, local-font-name = false )
 	@font-face
 		font-family name
@@ -25,16 +29,44 @@ font-face( name, font-src, weight = false, style = false, formats = local eot wo
 			push( fonts, 'url("' + font-src + '.svg#' + svg-name + '") format("svg")' )
 		src unquote( join( ", ", fonts ) )
 
+/**
+ * Convert pixels to rem. Assumes 1rem = 16px
+ * http://kouto-swiss.io/docs.html#rem
+ */
+rem( values )
+	base = $font-size-base is a "unit" ? $font-size-base : 16
+	result = null
+
+	for value in values
+		if type( value ) == "unit" && ( unit( value ) == "px" || unit( value ) == "" )
+			value = unit( round(value / base, 3 ), "rem" )
+			if value == "0rem" { value = 0 }
+
+		result = result != null ? result value : value
+	result
+
+/**
+ * Shortcut for width and height properties
+ * http://kouto-swiss.io/docs.html#size
+ **/
+size( values... )
+	if length( values ) == 1
+		width: values[ 0 ] || auto
+		height: values[ 0 ] || auto
+	else
+		width: values[ 0 ] if values[ 0 ] != false
+		height: values[ 1 ] if values[ 1 ] != false
+
 brand-icon( class, color )
 	.{class}
 		&:hover
 		&:focus
 			background-color color
 
-shadow-maker(iterations, blur, color)
+shadow-maker( iterations, blur, color )
 	$shadows = '0 0 0 transparent'
 	for i in 1..iterations
-		$shadows += ', %spx %spx' % (i i) blur color
+		$shadows += ', %spx %spx' % ( i i ) blur color
 
-long-shadow(iterations = 10, blur = 0, color = rgba(0, 0, 0, .5))
-	return unquote(shadow-maker(iterations, blur, color))
+long-shadow( iterations = 10, blur = 0, color = rgba( 0, 0, 0, .5 ) )
+	return unquote( shadow-maker( iterations, blur, color ) )
