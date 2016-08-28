@@ -15,6 +15,12 @@
 				</div>
 			</div>
 		</div>
+
+		<div class="c-note c-note--success">
+			<div class="portfolio__thanks">
+				Et bien d’autres au cours des ans <small>(merci, hé ! <i class="icon-heart"></i>)</small>
+			</div>
+		</div>
 	</section>
 </template>
 
