@@ -1,37 +1,48 @@
 <template>
-	<article class="article">
-		<header class="article__header">
-			<h1 class="article__title">{{ post.title }}</h1>
+	<article class="post">
+		<header class="post__header">
+			<h1 class="post__title">{{ post.title }}</h1>
 
-			<div class="article__infos">
-				<div class="article__date">Posté le <time>{{ post.date | moment 'dddd Do MMM YYYY[, à] HH[h]mm' }}</time></div>
+			<div class="post__infos">
+				<div class="post__date">Posté le <time>{{ post.date | moment 'dddd Do MMM YYYY[, à] HH[h]mm' }}</time></div>
 
 				<div class="flex">
-					<div class="article__tags">
+					<div class="post__tags">
 						<span class="c-tag" v-for="tag in post.tags">{{ tag }}</span>
 					</div>
 
-					<div class="articles__share">
+					<div class="posts__share">
 						<app-share></app-share>
 					</div>
 				</div>
 			</div>
 		</header>
 
-		<div class="article__content" v-linkable>{{{ post.content }}}</div>
+		<div class="post__content" v-linkable>{{{ post.content }}}</div>
 
-		<footer class="article__footer">
-			<div class="articles__share">
-				<app-share></app-share>
+		<footer class="post__footer">
+			<div class="flex">
+				<div class="post__tags">
+					<span class="c-tag" v-for="tag in post.tags">{{ tag }}</span>
+				</div>
+
+				<div class="posts__share">
+					<app-share></app-share>
+				</div>
+			</div>
+
+			<div class="post__help">
+				Un problème ? Une question ? <br>Vous pouvez me contacter sur <a href="https://www.twitter.com/EmmanuelBeziat" target="_blank">Twitter</a>, poster un ticket sur <a href="https://github.com/EmmanuelBeziat/emmanuelbeziat/issues" target="_blank">Github</a>, ou bien créer un sujet sur un forum d’entraide comme <a href="https://zestedesavoir.com/" target="_blank">ZesteDeSavoir</a>, <a href="https://openclassrooms.com/dashboard" target="_blank">OpenClassrooms</a>, <a href="http://www.alsacreations.com/" target="_blank">Alsacréations</a>…
 			</div>
 		</footer>
 	</article>
 </template>
 
 <script>
-	import Blog from '../../resources/blog'
+	import Post from '../../app/resources/post'
 	import Prism from 'prismjs'
 	import 'prismjs/plugins/show-language/prism-show-language.min.js'
+	import 'prismjs/components/prism-bash.min.js'
 
 	import appShare from 'components/app-share'
 
@@ -52,7 +63,7 @@
 			fetchData: function () {
 				const that = this
 				const slug = that.$route.params.slug
-				const response = Blog.getSinglePost(slug).then((response) => {
+				const response = Post.getPosts('../static/posts/articles/articles.json', slug).then((response) => {
 
 					response.data.posts.forEach(function(post) {
 						if (post.basename === slug) {
@@ -88,7 +99,9 @@
 			/**
 			 * Ignitiate code hightlighting with PrismJS
 			 */
-			Prism.highlightAll()
+			setTimeout(function() {
+				Prism.highlightAll()
+			}, 10)
 		}
 	}
 </script>

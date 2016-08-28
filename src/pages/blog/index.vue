@@ -15,7 +15,7 @@
 </template>
 
 <script>
-	import Blog from '../../resources/blog'
+	import Post from '../../app/resources/post'
 
 	module.exports = {
 
@@ -32,7 +32,7 @@
 
 		methods: {
 			fetchData: function () {
-				return Blog.listPosts().then(response => this.$set('posts', response.data.posts.reverse()))
+				return Post.getPosts('static/posts/articles/articles.json').then(response => this.$set('posts', response.data.posts.reverse()))
 			}
 		},
 

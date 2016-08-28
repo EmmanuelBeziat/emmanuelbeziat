@@ -5,7 +5,7 @@ My website, basically. 2016 inside!
 
 ## Build Setup
 
-~~~ bash
+``` bash
 # install dependencies
 npm install
 
@@ -24,4 +24,7 @@ npm test
 # deploy on Github-Pages
 npm run build
 
-~~~
+# render markdown to json
+npm run pages
+
+```

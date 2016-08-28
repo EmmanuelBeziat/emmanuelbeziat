@@ -25,8 +25,8 @@ module.exports = {
 		},
 
 		'/portfolio/:slug': {
-			name: 'portfolio-item',
-			component: require('../pages/portfolio/index')
+			name: 'portfolio-post',
+			component: require('../pages/portfolio/post')
 		},
 
 		'/blog': {

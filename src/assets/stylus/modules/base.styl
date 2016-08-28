@@ -32,6 +32,7 @@ h2
 h3
 	font 700 $font-size-heading-3/1.5 $font-stack-common
 
+// Links
 a
 	transition .2s ease-in-out
 	color $color-green
@@ -41,6 +42,25 @@ a
 	&:focus
 		color $color-yellow
 
+// Quotes
+blockquote
+	position relative
+	margin 2rem 0
+	padding-left 4rem
+	font 400 italic 1.15em/1.5em $font-stack-common
+
+blockquote::before
+	content "“"
+	position absolute
+	left 0
+	top 2rem
+	font-size 6em
+	color lighten($color-background, 25%)
+
+q
+	quotes "« " " »"
+
+// Layout base
 .site
 	min-height $size-viewport-height
 	display flex
