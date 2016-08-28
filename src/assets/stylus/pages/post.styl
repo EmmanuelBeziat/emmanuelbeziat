@@ -44,3 +44,20 @@
 	opacity 0
 	transition .2s ease-in-out
 	transform translateX(-75%)
+
+.post__navigation::before
+	transition transform .2s ease-in-out
+
+.post__navigation--previous::before
+	margin-right 5px
+
+.post__navigation--previous:hover::before
+.post__navigation--previous:focus::before
+	transform translateX(-25%)
+
+.post__navigation--next::before
+	margin-left 5px
+
+.post__navigation--next:hover::before
+.post__navigation--next:focus::before
+	transform translateX(25%)

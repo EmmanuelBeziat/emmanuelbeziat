@@ -1,0 +1,66 @@
+.portfolio__list
+	display flex
+	flex-flow row wrap
+
+.portfolio__item
+	flex 0 0 calc(50% - 6px)
+	position relative
+	margin 0 3px 6px
+
+.portfolio__layer
+	background $color-separator
+	position relative
+	height 240px
+	display flex
+	justify-content center
+	align-items center
+	z-index 10
+	transition .2s ease-in-out
+	backface-visibility hidden
+	transform-origin 50% 20px
+
+.portfolio__image
+	width 128px
+	height 128px
+	fill $color-text
+	backface-visibility hidden
+	transition .2s ease-in-out
+
+.portfolio__caption
+	z-index 5
+	position absolute
+	top 0
+	right 0
+	bottom 0
+	left 0
+	padding 20px
+	background darken($color-background, 10%)
+	display flex
+	flex-direction column
+	justify-content flex-end
+	overflow hidden
+	text-align center
+
+.portfolio__title
+	margin 0 0 .5em
+	line-height 1.5
+	font-size 28px
+	font-weight 400
+
+.portfolio__item:hover
+	.portfolio__layer
+		transform scale(.4) translateZ(0)
+		background rgba(0, 0, 0, 0)
+
+	.portfolio__image
+		transform scale(1.25) translateZ(0) rotate(360deg)
+
+.portfolio__see-more
+	display inline-block
+	background $color-red
+	color $color-text
+	padding .25em .75em
+
+	&:hover
+		color inherit
+		background $color-grey

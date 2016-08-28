@@ -5,7 +5,7 @@
 		</header>
 		<div class="post__content" v-linkable>{{{ post.content }}}</div>
 		<footer class="post__footer">
-			<a class="post__backlink" v-link="{ name: 'portfolio' }"><i class="icon-arrow-left"></i> Revenir au portfolio</a>
+			<a class="post__navigation post__navigation--previous icon-arrow-left" href="/portfolio">Revenir au portfolio</a>
 		</footer>
 	</article>
 </template>

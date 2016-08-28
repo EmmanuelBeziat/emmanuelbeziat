@@ -27,7 +27,7 @@ var md = require('markdown-it')({
 		permalinkSymbol: ''
 	})
 
-var blockEmbedPlugin = require("markdown-it-block-embed");
+var blockEmbedPlugin = require('markdown-it-block-embed');
 
 /**
  * Todo: remove when options declaration will be fied
@@ -88,7 +88,7 @@ getDirectories(folders.src).forEach(function(directory) {
 					'image': result.attributes.image || '',
 					'date': result.attributes.date || new Date(),
 					'tags': result.attributes.tags || [''],
-					'clients': result.attributes.categories || [''],
+					'clients': result.attributes.clients || [''],
 					'template': result.attributes.template || 'portfolio.vue',
 					'basename': result.attributes.basename || slug(result.attributes.title, { lower: true }),
 					'content': md.render(result.body)
