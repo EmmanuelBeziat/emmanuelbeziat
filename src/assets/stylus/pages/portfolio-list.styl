@@ -10,7 +10,7 @@
 .portfolio__layer
 	background $color-separator
 	position relative
-	height 240px
+	height rem(240px)
 	display flex
 	justify-content center
 	align-items center
@@ -20,8 +20,7 @@
 	backface-visibility hidden
 
 .portfolio__image
-	width 128px
-	height 128px
+	size rem(128px)
 	fill $color-text
 	backface-visibility hidden
 	transition .2s ease-in-out .1s
@@ -33,7 +32,7 @@
 	right 0
 	bottom 0
 	left 0
-	padding 20px
+	padding rem(20px)
 	background darken($color-background, 10%)
 	display flex
 	flex-direction column
@@ -44,7 +43,7 @@
 .portfolio__title
 	margin 0 0 .5em
 	line-height 1.5
-	font-size 28px
+	font-size rem(28px)
 	font-weight 400
 
 .portfolio__item:hover
@@ -84,7 +83,7 @@
 		background $color-grey
 
 .portfolio__thanks
-	font-size 22px
+	font-size $font-size-heading-4
 
 	.icon-heart
 		color $color-red
