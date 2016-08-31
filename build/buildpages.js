@@ -21,24 +21,17 @@ var md = require('markdown-it')({
 		linkify: true
 	})
 	.use(require('markdown-it-attrs'))
+	.use(require('markdown-it-block-embed'), {
+		containerClassName: 'video',
+		serviceClassPrefix: 'video--',
+		outputPlayerSize: false,
+		allowFullScreen: true
+	})
 	.use(require('markdown-it-anchor'), {
 		permalink: false,
 		permalinkClass: 'icon-link post__anchor',
 		permalinkSymbol: ''
 	})
-
-var blockEmbedPlugin = require('markdown-it-block-embed');
-
-/**
- * Todo: remove when options declaration will be fied
- * https://github.com/rotorz/markdown-it-block-embed/issues/2
- */
-md.use(blockEmbedPlugin, {
-	containerClassName: 'video',
-	serviceClassPrefix: 'video--',
-	outputPlayerSize: false,
-	allowFullScreen: true
-});
 
 function getDirectories(srcpath) {
 	return fs.readdirSync(srcpath).filter(function(file) {
