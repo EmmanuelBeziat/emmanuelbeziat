@@ -3,9 +3,7 @@
 		<div class="portfolio__list">
 			<div class="portfolio__item" v-for="post in portfolio">
 				<div class="portfolio__layer portfolio__layer--{{ post.color }}">
-					<svg class="portfolio__image icon">
-						<use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="/static/sprites/icons.svg#{{ post.image }}"></use>
-					</svg>
+					<svg class="portfolio__image icon" v-svg :sprite="post.image"></svg>
 				</div>
 				<div class="portfolio__caption">
 					<h2 class="portfolio__title">{{ post.title }}</h2>
