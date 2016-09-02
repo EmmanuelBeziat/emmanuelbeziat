@@ -1,6 +1,30 @@
+.not-found
+	text-align center
+
+.not-found__404
+	font 400 rem(82px)/1.5 $font-stack-heading
+	margin 0
+	color $color-green
+
+.not-found__title
+	font 400 $font-size-heading-2/1.5 $font-stack-heading
+	margin-top 0
+
 .not-found__image
 	size rem(256px)
 	border-radius 50%
-	margin 4rem auto
-	background url('../static/images/404.gif') 50% 50% no-repeat
+	margin 4rem auto 0
+	background transparent 50% 50% no-repeat
 	background-size cover
+
+	&.doctor-who
+		background-image url('../src/assets/images/404/doctor-who.gif')
+
+	&.the-office
+		background-image url('../src/assets/images/404/the-office.gif')
+
+	&.south-park
+		background-image url('../src/assets/images/404/south-park.gif')
+
+	&.mario
+		background-image url('../src/assets/images/404/mario.png')

@@ -29,6 +29,8 @@
 </template>
 
 <script>
+const codes = ['html', 'css', 'javascript', 'bash']
+
 import Prism from 'prismjs'
 
 export default {
@@ -47,7 +49,6 @@ export default {
 		 * Show randomly a code on a specific language
 		 */
 		getHomeCode: function () {
-			const codes = ['html', 'css', 'javascript', 'bash']
 			const selectedCode = codes[Math.floor(Math.random() * codes.length)]
 
 			this.$set('code', selectedCode)
