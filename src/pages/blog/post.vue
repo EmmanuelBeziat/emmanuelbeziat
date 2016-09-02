@@ -35,11 +35,11 @@
 				Un problème ? Une question ? <br>Vous pouvez me contacter sur <a href="https://www.twitter.com/EmmanuelBeziat" target="_blank">Twitter</a>, poster un ticket sur <a href="https://github.com/EmmanuelBeziat/emmanuelbeziat/issues" target="_blank">Github</a>, ou bien créer un sujet sur un forum d’entraide comme <a href="https://zestedesavoir.com/" target="_blank">ZesteDeSavoir</a>, <a href="https://openclassrooms.com/dashboard" target="_blank">OpenClassrooms</a>, <a href="http://www.alsacreations.com/" target="_blank">Alsacréations</a>…
 			</div>
 		</footer>
-	</article>
 
-	<div class="comments">
-		<disqus shortname="emmanuelbeziat"></disqus>
-	</div>
+		<div class="comments">
+			<disqus shortname="emmanuelbeziat"></disqus>
+		</div>
+	</article>
 </template>
 
 <script>

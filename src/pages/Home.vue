@@ -6,10 +6,7 @@
 				<span class="presentation__age"><span>{{ age }}</span> ({{ nextbd }})</span>
 			</h1>
 
-<pre class="language-css"><code>metiers: {
-	developpeur: web, front-end;
-	formateur: web;
-}</code></pre>
+			<app-homecode></app-homecode>
 		</div>
 
 		<app-commits></app-commits>
@@ -18,15 +15,14 @@
 
 <script>
 import appCommits from 'components/app-commits'
-import appTweets from 'components/app-tweets'
+import appHomecode from 'components/app-homecode'
 import Moment from 'moment'
-import Prism from 'prismjs'
 
 export default {
 	data () {
 		return {
-			age: '',
-			nextbd: ''
+			age: null,
+			nextbd: null
 		}
 	},
 
@@ -35,6 +31,9 @@ export default {
 	},
 
 	methods: {
+		/**
+		 * Calculate age and birthday
+		 */
 		birthdayCalculate: function () {
 			const date = '16.09.1987-02:26'
 			const format = 'DD.MM.YYYY-HH:mm'
@@ -55,13 +54,7 @@ export default {
 
 	components: {
 		appCommits,
-		appTweets
-	},
-
-	ready () {
-		setTimeout(function () {
-			Prism.highlightAll()
-		}, 10)
+		appHomecode
 	}
 }
 
