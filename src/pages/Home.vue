@@ -10,10 +10,8 @@
 	developpeur: web, front-end;
 	formateur: web;
 }</code></pre>
-
 		</div>
 
-		<app-tweets></app-tweets>
 		<app-commits></app-commits>
 	</section>
 </template>

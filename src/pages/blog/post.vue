@@ -36,10 +36,15 @@
 			</div>
 		</footer>
 	</article>
+
+	<div class="comments">
+		<disqus shortname="emmanuelbeziat"></disqus>
+	</div>
 </template>
 
 <script>
 	import Post from '../../app/resources/post'
+	import Disqus from 'vue-disqus'
 	import Prism from 'prismjs'
 	import 'prismjs/plugins/show-language/prism-show-language.min.js'
 	import 'prismjs/components/prism-bash.min.js'
@@ -75,7 +80,8 @@
 		},
 
 		components: {
-			appShare
+			appShare,
+			Disqus
 		},
 
 		head: {
