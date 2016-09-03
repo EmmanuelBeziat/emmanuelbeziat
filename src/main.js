@@ -21,6 +21,7 @@ Vue.use(Svg, {
 
 // Initializing the router with options
 const Router = new VueRouter(config)
+
 Router.map(routes)
 Router.redirect(redirects)
 Router.beforeEach(before)

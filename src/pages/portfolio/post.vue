@@ -12,6 +12,7 @@
 
 <script>
 	import Post from '../../app/resources/post'
+	import Vue from 'vue'
 
 	module.exports = {
 
@@ -38,6 +39,14 @@
 						}
 					})
 				})
+			}
+		},
+
+		head: {
+			title: function () {
+				return {
+					inner: this.title
+				}
 			}
 		},
 

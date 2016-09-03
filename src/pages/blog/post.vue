@@ -73,6 +73,7 @@
 					response.data.posts.forEach(function(post) {
 						if (post.basename === slug) {
 							that.$set('post', post)
+							that.$set('myTitle', post.title)
 						}
 					})
 				})
@@ -82,14 +83,6 @@
 		components: {
 			appShare,
 			Disqus
-		},
-
-		head: {
-			meta: function () {
-				return [
-
-				]
-			}
 		},
 
 		/**
