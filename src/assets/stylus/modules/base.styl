@@ -40,7 +40,10 @@ a
 
 	&:hover
 	&:focus
-		color $color-yellow
+		col
+
+img
+	max-width 100%
 
 // Quotes
 blockquote
@@ -68,13 +71,22 @@ q
 	align-items stretch
 	overflow-x hidden
 
+	@media (max-width $breakpoint-tablet)
+		flex-direction column
+
 .site-content
 	padding 2em
 	width $size-content
 	margin 0 auto
 
+	@media (max-width $breakpoint-tablet)
+		width 100%
+
 .site-main
-	margin 6em auto 4em
+	margin 6rem auto 4rem
+
+	@media (max-width $breakpoint-tablet)
+		margin 4rem auto 2rem
 
 .flex
 	display flex

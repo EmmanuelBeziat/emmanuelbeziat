@@ -17,11 +17,11 @@ Voici donc un ensemble de points à éviter ou approfondir lorsque vous prépare
 
 Une première erreur très (trop) fréquente : tenir l’espace de travail comme "complet". Une image valant mieux que beaucoup de mots, voilà une illustration du problème :
 
-![photoshop-problem-1](https://www.emmanuelbeziat.com/wp-content/uploads/2015/01/photoshop-problem-1.jpg)
+![photoshop-problem-1](https://images.emmanuelbeziat.com/photoshop-problem-1.jpg)
 
 Le design est ici bien rendu, somme toute classique, et l’image sort de façon élégante du cadre du site pour aller rejoindre les bords. Oui, mais **les bords en question ne représentent pas l’écran d’un visiteur** potentiel du site. Ainsi, si on agrandi l’espace de travail pour se représenter la taille d’écran d’un visiteur du site, on se retrouve avec un problème graphique assez évident :
 
-![photoshop-problem-02](https://www.emmanuelbeziat.com/wp-content/uploads/2015/01/photoshop-problem-02.jpg)
+![photoshop-problem-02](https://images.emmanuelbeziat.com/photoshop-problem-02.jpg)
 
 L’image ne va plus jusqu'au bord. Outre le fait que ce soit très moche, le site perd toute sa consistance. Il n’y a aucun moyen de gérer ça proprement côté intégration : étirer l’image serait de toutes façons totalement affreux.
 
@@ -33,7 +33,7 @@ Un autre point essentiel : photoshop permet une gestion avancée des textes. On
 
 De même, je vois souvent des blocs de texte prévus dans les maquettes pour avoir un certain nombre de lignes, comme dans cet exemple :
 
-![photoshop-problem-3](https://www.emmanuelbeziat.com/wp-content/uploads/2015/01/photoshop-problem-3.png)
+![photoshop-problem-3](https://images.emmanuelbeziat.com/photoshop-problem-3.png)
 
 Le soucis, c'est qu'il est impossible d’être sûr à 100% que le texte sera affiché tel quel sur le site. Il se peut très bien qu'il dépasse, et donc que tout le principe de ce bout de design se retrouve par terre.
 
@@ -63,7 +63,7 @@ Avec le CSS3 est arrivé un super outil : la propriété `border-radius`. Bien 
 
 Cependant, une exception à cette règle concerne les ronds parfaits contenant du texte. En effet, si un bouton rond contenant un picto (Comme l’icone de twitter) ne pose à priori aucun problème à l’intégrateur, la question d’un disque contenant du texte est beaucoup plus délicate.
 
-![photoshop-problem-4](https://www.emmanuelbeziat.com/wp-content/uploads/2015/01/photoshop-problem-4.png)
+![photoshop-problem-4](https://images.emmanuelbeziat.com/photoshop-problem-4.png)
 
 Pour les raisons précédemment citées, la gestion du texte dans une page web est délicate. Or, la rondeur de cet élément repose sur la taille fixe de celui-ci (sinon, ça devient un ovale), car les dimensions d’un conteneur dépendent de son contenu. Il devient de facto très pénible d’obtenir le rendu souhaité en CSS pur, il faut donc ruser et adapter le texte à son conteneur — ce qui pose là encore certains soucis en CSS.
 
@@ -73,7 +73,7 @@ Alors, utilisez les ronds avec parcimonie !
 
 ## Attention avec les hauteurs de blocs
 
-![photoshop-problem-5](https://www.emmanuelbeziat.com/wp-content/uploads/2015/01/photoshop-problem-5.jpg)
+![photoshop-problem-5](https://images.emmanuelbeziat.com/photoshop-problem-5.jpg)
 
 De la même façon que le texte n’est pas contrôlable, la gestion des hauteurs est pour l’instant assez calamiteuse. La hauteur d’un élément se base par défaut sur son contenu. Afin d’obtenir un effet comme l’image ci-dessus, il faudrait donc forcer la hauteur des blocs, et espérer que le texte ne dépasse sur aucun support, ou que celui-ci ne vienne pas à être changé (le client peut vouloir ajouter une phrase). Gardez donc toujours en tête que la hauteur des éléments en CSS est très complexe à gérer (ce sera amélioré dans quelques temps, mais avant de pouvoir l’utiliser en production, il faudra bien quelques années).
 

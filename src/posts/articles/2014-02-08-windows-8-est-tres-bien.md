@@ -14,7 +14,7 @@ Plus sérieusement, très régulièrement il m'arrive sur de très nombreux foru
 
 ## Le cas Vista
 
-![Windows vista](https://www.emmanuelbeziat.com/wp-content/uploads/2014/02/windows-vista-logo.png)
+![Windows vista](https://images.emmanuelbeziat.com/windows-vista-logo.png)
 
 Avant de commencer avec le cas Windows 8, je vais d’abord me pencher sur Vista et m'atteler tout d’abord à détruire un bon gros à-priori (à tel point que j’ai même la prétention de l’écrire en gras !) : **Vista était un très bon OS**.
 
@@ -44,7 +44,7 @@ Il n’empêche que Vista a apporté, avec NT6, de nombreuses améliorations sur
 
 ## L’arrivée de 7
 
-![Windows 7](https://www.emmanuelbeziat.com/wp-content/uploads/2014/02/windows-7-logo.png)
+![Windows 7](https://images.emmanuelbeziat.com/windows-7-logo.png)
 
 En voilà un Windows qu'il a été bien accueilli ! C'est même le premier Windows à l’être. Ses ventes exceptionnelles sont un record absolu pour Microsoft : 100 millions de licences écoulées en 6 mois, 525 millions en deux ans. À titre de comparaison, Windows XP a s'est écoulé à 20 millions d’unités en 6 mois, et 400 millions en 6 ans.
 
@@ -54,7 +54,7 @@ C'est quand même bien moins fourni que Vista… Normal, puisque celui-ci a déj
 
 ## Bonjour Windows 8
 
-![Windows 8](https://www.emmanuelbeziat.com/wp-content/uploads/2014/02/windows-8-logo.png)
+![Windows 8](https://images.emmanuelbeziat.com/windows-8-logo.png)
 
 C'est donc naturellement que Windows 7 se devait d’avoir un successeur. À défaut de pouvoir réitérer l’exploit commercial de 7 (en sachant que le marché du PC s'essouffle désormais face aux smartphones et aux tablettes), il s'appuie toujours sur les acquis précédents (Noyau NT6.2 puis 6.3 pour Windows 8.1). On trouve encore quelques nouveautés et optimisations : prise en charge native de l’USB3, des téléviseurs 3D, montage natif des images ISO, interface ruban dans l’explorateur, meilleure gestion des transferts de fichiers, possibilité de rétablir les réglages d’usine, chiffrement des disques, meilleur _versionning_, gestion plus avancée du multi-écrans, sécurité accrue, nouveau gestionnaire de tâches, optimisation du démarrage, meilleur accès au matériel, synchronisation des paramètres, meilleure utilisation des profils…
 
@@ -90,7 +90,7 @@ Ben merde alors, en fait c'est tout pareil ! Et oui, ami lecteur : le menu dém
 
 ### "Windows 8 n’est pas ergonomique"
 
-_O, rly_ ? Pourtant, ce n’est jamais que Windows 7\. Exactement pareil, avec un bureau et des icones dessus, une barre des tâches épinglable, l’heure en bas à droite, et des fenêtres qui se baladent. Et si vous mettez ma parole en doute, voici une [capture d’écran de de mon bureau](https://www.emmanuelbeziat.com/wp-content/uploads/2014/02/w8-screen.jpg "Windows 8 Bureau"){ target="_blank" } <small>(en petit, parce que quoi, vous voulez pas regarder mon dossier porno aussi non ?!)</small>. En quoi est-ce que ça change ? "Les menu en ruban" diront certains. Sauf que, en fait, cet affichage permet de gérer la plupart des options de fenêtres disponible auparavant via _"Fichier"_,_ "Édition"_, _"Affichage"_, sans pour autant avoir à ouvrir une multitude de fenêtres différentes. Ça s'appelle donc une amélioration, puisque le gain de temps, par exemple pour afficher les fichiers masqués ou les extensions, passe de cinq clics à deux (oui parce que vous allez le voir, le clic est très important pour le détracteur de Windows 8).
+_O, rly_ ? Pourtant, ce n’est jamais que Windows 7. Exactement pareil, avec un bureau et des icones dessus, une barre des tâches épinglable, l’heure en bas à droite, et des fenêtres qui se baladent. Et si vous mettez ma parole en doute, voici une [capture d’écran de de mon bureau]https://images.emmanuelbeziat.com/w8-screen.jpg "Windows 8 Bureau"){ target="_blank" } <small>(en petit, parce que quoi, vous voulez pas regarder mon dossier porno aussi non ?!)</small>. En quoi est-ce que ça change ? "Les menu en ruban" diront certains. Sauf que, en fait, cet affichage permet de gérer la plupart des options de fenêtres disponible auparavant via _"Fichier"_,_ "Édition"_, _"Affichage"_, sans pour autant avoir à ouvrir une multitude de fenêtres différentes. Ça s'appelle donc une amélioration, puisque le gain de temps, par exemple pour afficher les fichiers masqués ou les extensions, passe de cinq clics à deux (oui parce que vous allez le voir, le clic est très important pour le détracteur de Windows 8).
 
 Peut-être parle-t-on alors de l’interface ModernUI ? Ça tombe bien, le point précédent montrait que l’utilisation "basique" est absolument identique à celle du menu démarrer. Pas davantage de clics, et même moins dans le cas de la liste des programmes puisqu'on n’a pas à ouvrir de sous-dossiers ici. Et comme le réfractaire est de mauvaise foi, il s'acharnera à prouver la contre-intuitivité des applications de ModernUI, qu'il ne va pourtant pas utiliser puisqu'il ne veut qu'un menu démarrer. Mesquin, va !
 
@@ -230,7 +230,7 @@ Inexact. Dans le cas d’un compte local, on peut se connecter sans aucun mot de
 
 Ça, c'est ce que j’appelle l’effet Iceberg. Il y a énormément plus de sujets concernant des problèmes avec Windows 7 puisque celui-ci est présent depuis plus longtemps. Donc la plupart des gens qui ont un problème dessus vont trouver une réponse existante à leur question ou leur problème. Il y a encore régulièrement des sujets de problèmes avec d’autres OS, du reste. Mais c'est une partie que les gens occultent souvent.
 
-![Effet Iceberg](https://www.emmanuelbeziat.com/wp-content/uploads/2014/02/effeticeberg.jpg)
+![Effet Iceberg](https://images.emmanuelbeziat.com/effeticeberg.jpg)
 
 De plus, fait intéressant, quand un utilisateur sous Windows 7 expose un problème quelconque, les autres cherchent des causes probables (défaillance matérielle, drivers, etc.) ; quand un utilisateur sous Windows 8 expose un problème quelconque, les autres mettent directement en cause l’OS, sans chercher de causes. Étrange, hein ?
 

@@ -32,7 +32,7 @@ Lorsqu'on fait un site fluide (aussi appelé "liquide" dans certains cas), on fa
 
 ### Foutez la paix aux pourcentages
 
-Comme je le disais, pour faire un site qui s'adapte en largeur, on se passe très bien des valeurs en pourcentages (jusqu'à un certain besoin, certes). Les valeur en pixels s'en sortent très bien (L’ami [Clément Galidie](http://clement-galidie.fr/ "Clément Galidie"){ target="_blank" } renchérira — à raison — que les valeurs en _em_ aussi). Penchez-vous sur des propriétés comme `min-width` et `max-width` et sur mon autre article '[Aligner trois colonnes proprement](http://www.emmanuelbeziat.com/blog/aligner-trois-colonnes-proprement/)' pour vous en convaincre.
+Comme je le disais, pour faire un site qui s'adapte en largeur, on se passe très bien des valeurs en pourcentages (jusqu'à un certain besoin, certes). Les valeur en pixels s'en sortent très bien (L’ami [Clément Galidie](http://clement-galidie.fr/ "Clément Galidie"){ target="_blank" } renchérira — à raison — que les valeurs en _em_ aussi). Penchez-vous sur des propriétés comme `min-width` et `max-width` et sur mon autre article '[Aligner trois colonnes proprement](https://www.emmanuelbeziat.com/blog/aligner-trois-colonnes-proprement/)' pour vous en convaincre.
 
 ## Le responsive, c'est quoi ?
 

@@ -46,6 +46,10 @@ pre[class*="language-"]
 	overflow auto
 	border-radius .2em
 
+	@media (max-width $breakpoint-mobile)
+		margin 2em -2rem
+		border-radius 0
+
 :not(pre) > code[class*="language-"]
 pre[class*="language-"]
 	background darken($color-background, 10%)
@@ -173,3 +177,7 @@ div.prism-show-language
 		z-index 1
 		box-shadow none
 		transform none
+
+		@media (max-width $breakpoint-mobile)
+			right -2rem
+			top 0

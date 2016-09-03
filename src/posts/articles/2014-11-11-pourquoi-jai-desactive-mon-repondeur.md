@@ -12,7 +12,7 @@ On <del>m'emmerde</del> me demande souvent pourquoi on ne peut pas me laisser de
 
 ## Je déteste le téléphone
 
-![phones-icons](https://www.emmanuelbeziat.com/wp-content/uploads/2014/11/phones-icons.png)
+![phones-icons](https://images.emmanuelbeziat.com/phones-icons.png)
 
 Certains adolescents passent / ont passé leur vie l’oreille vissée à des appareils plus ou moins évolués. Je me souviens encore de ma sœur qui, dans les années 90 et à la maison, monopolisait la ligne pendant des heures. Je n’ai jamais compris pourquoi, quel plaisir elle pouvait bien en retirer. Cette machine infernale m'a toujours fait flipper. D’un seul coup, sans prévenir, ça gueule dans la maison sa sonnerie ignoble. Ça fait sursauter, ça brise le calme et ça stresse d’un coup.
 

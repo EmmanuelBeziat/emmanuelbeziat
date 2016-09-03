@@ -7,6 +7,9 @@
 	z-index 10
 	text-align center
 
+	@media (max-width $breakpoint-tablet)
+		width auto
+
 .site-header__title
 	margin 0
 	font-size $font-size-heading-1
@@ -16,15 +19,29 @@
 .site-header__bio
 	margin 2rem 0
 
+	@media (max-width $breakpoint-tablet)
+		display none
+
 .site-header__picture
 	border-radius 50%
 	vertical-align top
 	margin 2rem auto
 
+	@media (max-width $breakpoint-tablet)
+		display none
+
+.site-header__copyright
+	@media (max-width $breakpoint-tablet)
+		display none
+
 .social
 	display flex
 	flex-flow row wrap
 	justify-content space-between
+
+	@media (max-width $breakpoint-tablet)
+		justify-content center
+		margin-top 1rem
 
 .social__link
 	display block
@@ -42,6 +59,11 @@
 	&:hover
 	&:focus
 		transition .2s ease-out
+
+	@media (max-width $breakpoint-tablet)
+		margin-left 4px
+		&:first-child
+			margin-left 0
 
 brand-icon(social__link--twitter, $color-brand-twitter)
 brand-icon(social__link--facebook, $color-brand-facebook)

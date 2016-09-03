@@ -11,7 +11,7 @@ categories:
 
 L’astuce CSS du jour, c'est à **Christian Schaefer** et **TheCSSNinja** qu'on la doit.
 
-> [@paul_irish](https://twitter.com/paul_irish) Easy. Apply "pointer-events: none" to the <body> on scrollstart and remove it on scrollend. [@tabatkins](https://twitter.com/tabatkins)
+> [@paul_irish](https://twitter.com/paul_irish) Easy. Apply "pointer-events: none" to the body on scrollstart and remove it on scrollend. [@tabatkins](https://twitter.com/tabatkins)
 > &mdash; Christian Schaefer (@derSchepp) [12 Novembre 2013](https://twitter.com/derSchepp/statuses/400394164350644224)
 
 

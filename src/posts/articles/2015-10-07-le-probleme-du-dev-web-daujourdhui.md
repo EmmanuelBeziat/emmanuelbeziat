@@ -13,7 +13,7 @@ Ces dernières années, pas mal d’avancées ont été faites dans le domaine d
 Pour autant, il me semble que tout ne soit pas rose… Petite réaction à chaud.
 
 
-![web-moderne](https://www.emmanuelbeziat.com/wp-content/uploads/2015/10/web-moderne.png)
+![web-moderne](https://images.emmanuelbeziat.com/web-moderne.png)
 
 ## Je suis un dinosaure, mais je me soigne
 

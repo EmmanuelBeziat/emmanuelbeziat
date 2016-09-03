@@ -23,7 +23,7 @@ Concrètement, par exemple pour avoir un ensemble d’icônes faites avec des im
 
 Pour la suite du tutoriel, on va les fusionner comme ceci et utiliser cette image :
 
-![sprite](https://www.emmanuelbeziat.com/wp-content/uploads/2014/03/sprite-test.png)
+![sprite](https://images.emmanuelbeziat.com/sprite-test.png)
 
 Mais quel intérêt y a-t-il ? C'est moins pratique en CSS ! Et puis charger une grosse image, ça prend plus de temps qu'une petite, non ? {.c-note .c-note--question}
 

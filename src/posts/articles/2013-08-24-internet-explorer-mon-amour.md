@@ -32,7 +32,7 @@ Je vais commencer par une preuve qui fait très mal, et du coup je vais l’écr
 
 Les résultats sont les suivants. À noter que le code est tout à fait identique pour chaque navigateur.
 
-![Test bordures navigateur](https://www.emmanuelbeziat.com/wp-content/uploads/2013/08/tests-border-nav1.png)
+![Test bordures navigateur](https://images.emmanuelbeziat.com/tests-border-nav1.png)
 
 **Mise à jour 8 Février 2014 :** Toujours aucune amélioration sur ces points sur Firefox 27 et Chrome 32.
 
@@ -40,7 +40,7 @@ Les résultats sont les suivants. À noter que le code est tout à fait identiqu
 
 La question du test ACID3 a un moment été un centre d’intérêt, avant que tous les navigateurs n’arrivent à 100% de réussite. Cependant, on peut s'interroger autant sur la fiabilité du test que sur l’implémentation des éléments testés, en voyant ce résultat obtenu par Chrome 10 (seule version à avoir eu ce "problème") :
 
-![acid3-chrome10](https://www.emmanuelbeziat.com/wp-content/uploads/2013/08/acid3-chrome10.jpg)
+![acid3-chrome10](https://images.emmanuelbeziat.com/acid3-chrome10.jpg)
 
 Résultat affiché de 100%, alors que le rendu est très loin de celui qui est censé être le [gage d’un résultat correct](http://acid3.acidtests.org/ "Test Acid3"){ target="_blank" }.
 

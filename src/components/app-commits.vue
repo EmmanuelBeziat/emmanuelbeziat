@@ -1,6 +1,6 @@
 <template>
 	<div class="commits">
-		<h2>Dernières mises à jour du site !</h2>
+		<h2>Dernières mises à jour du site</h2>
 		<div v-for="record in commits">
 			<span class="commits__date"><a :href="record.html_url" target="_blank">{{record.commit.author.date | formatDate}}</a></span> —
 			<span class="commits__message">{{record.commit.message | truncate}}</span>
@@ -46,14 +46,6 @@
 					self.commits = JSON.parse(xhr.responseText)
 				}
 				xhr.send()
-
-				/*this.$http({ url: gitHub, method: 'GET'}).then(function (response) {
-					response.data.forEach(function() {
-
-					})
-				}, function(reponse) {
-					self.commits = "Impossible de charger les commits"
-				})*/
 			}
 		}
 	}
