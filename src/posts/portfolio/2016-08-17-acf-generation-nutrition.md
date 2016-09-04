@@ -13,7 +13,4 @@ tags:
 - wordpress
 ---
 
-Génération Nutrition
-
-![Génération Nutrition](/images/projets/generation-nutrition/generation-nutrition-1.jpg)
-
+Ce projet datant un peu, je n’ai plus grand chose à disposition ! { .c-note .c-note--info }

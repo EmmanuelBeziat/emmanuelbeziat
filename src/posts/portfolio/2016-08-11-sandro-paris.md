@@ -11,7 +11,4 @@ tags:
 - html/css
 ---
 
-Sandro Paris
-
-![Sandro Paris](/images/projets/sandro/sandro-1.jpg)
-
+Ce projet datant un peu, je n’ai plus grand chose à disposition ! { .c-note .c-note--info }

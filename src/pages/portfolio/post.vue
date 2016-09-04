@@ -2,6 +2,16 @@
 	<article class="post portfolio">
 		<header class="post__header">
 			<h1 class="post__title">{{ post.title }}</h1>
+			<div class="post__infos">
+				<div class="flex">
+					<div class="post__tags">
+						<span class="c-tag" v-for="client in post.clients">{{ client }}</span>
+					</div>
+					<div class="post__tags">
+						<span class="c-tag" v-for="tag in post.tags">{{ tag }}</span>
+					</div>
+				</div>
+			</div>
 		</header>
 		<div class="post__content" v-linkable>{{{ post.content }}}</div>
 		<footer class="post__footer">
@@ -39,14 +49,6 @@
 						}
 					})
 				})
-			}
-		},
-
-		head: {
-			title: function () {
-				return {
-					inner: this.title
-				}
 			}
 		},
 

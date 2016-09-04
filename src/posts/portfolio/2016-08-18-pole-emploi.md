@@ -12,7 +12,4 @@ tags:
 - javascript
 ---
 
-Pôle Emploi
-
-![Pôle Emploi](/images/projets/pole-emploi/pole-emploi-1.jpg)
-
+Ce projet datant un peu, je n’ai plus grand chose à disposition ! { .c-note .c-note--info }

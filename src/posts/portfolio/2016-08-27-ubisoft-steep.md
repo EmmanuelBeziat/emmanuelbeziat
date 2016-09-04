@@ -18,5 +18,7 @@ tags:
 
 Il a donc fallu intégrer des maquettes très visuelles dans le CMS maison de l’éditeur, à grand renfort d’animations en javascript
 
-![Steep](/images/projets/steep/steep-1.jpg)
+![Steep](https://images.emmanuelbeziat.com/steep-1.jpg)
+
+![Steep](https://images.emmanuelbeziat.com/steep-2.jpg)
 

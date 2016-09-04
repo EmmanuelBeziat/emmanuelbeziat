@@ -10,7 +10,4 @@ tags:
 - html/css
 ---
 
-The Watch Observer
-
-![The Watch Observer](/images/projets/the-watch-observer/the-watch-observer-1.jpg)
-
+Ce projet datant un peu, je n’ai plus grand chose à disposition ! { .c-note .c-note--info }

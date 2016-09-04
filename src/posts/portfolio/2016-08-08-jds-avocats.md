@@ -12,7 +12,6 @@ tags:
 - wordpress
 ---
 
-Moët & Chandon
+Beaucoup de types de contenus différents, tous en relation les uns avec les autres. C’est avec cette problématique en tête qu’il a fallu développer ce site, administré par **WordPress**. Ce furent de longues nuits de travail, mais très riches en apprentissage.
 
-![Moët & Chandon](/images/projets/moet-chandon/moet-chandon-1.jpg)
-
+![JDS Avocats](https://images.emmanuelbeziat.com/jds.jpg)

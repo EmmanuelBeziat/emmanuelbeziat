@@ -11,7 +11,6 @@ tags:
 - facebook
 ---
 
-Moët & Chandon
+## Webpage Facebook
 
-![Moët & Chandon](/images/projets/moet-chandon/moet-chandon-1.jpg)
-
+Ce projet datant un peu, je n’ai plus grand chose à disposition ! { .c-note .c-note--info }

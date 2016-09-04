@@ -12,7 +12,4 @@ tags:
 - facebook
 ---
 
-Giorgio Armani
-
-![Giorgio Armani](/images/projets/armiani/si-1.jpg)
-
+Ce projet datant un peu, je n’ai plus grand chose à disposition ! { .c-note .c-note--info }

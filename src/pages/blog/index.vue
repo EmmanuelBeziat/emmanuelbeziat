@@ -1,6 +1,6 @@
 <template>
 	<div class="posts-list">
-		<article class="posts-list__item" v-for="post in posts">
+		<article class="posts-list__item" v-for="post in posts" v-if="datePast(post.date)">
 			<h1 class="post-list__title"><a v-link="{ name: 'blog-post', params: { slug: post.basename } }">{{ post.title }}</a></h1>
 
 			<div class="post-list__infos">
@@ -16,6 +16,7 @@
 
 <script>
 	import Post from '../../app/resources/post'
+	import Moment from 'moment'
 
 	module.exports = {
 
@@ -33,6 +34,10 @@
 		methods: {
 			fetchData: function () {
 				return Post.getPosts('static/posts/articles/articles.json').then(response => this.$set('posts', response.data.posts.reverse()))
+			},
+
+			datePast: function (date) {
+				return Moment(date).isBefore(Moment().format('YYYY-MM-DD hh:mm:ss'))
 			}
 		},
 
