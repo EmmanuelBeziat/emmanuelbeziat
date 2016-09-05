@@ -12,4 +12,4 @@ tags:
 - facebook
 ---
 
-Ce projet datant un peu, je n’ai plus grand chose à disposition ! { .c-note .c-note--info }
+Ce projet est encore un peu récent, je le mettrais à jour dans quelques temps. { .c-note .c-note--info }
