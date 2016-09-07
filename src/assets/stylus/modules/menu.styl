@@ -4,15 +4,20 @@
 
 	@media (max-width $breakpoint-mobile)
 		justify-content center
+		flex-direction column
 
 .site-menu__link
 	font 400 $font-size-menu/1 $font-stack-heading
 	text-decoration none
 	color $color-text
 	position relative
-
 	@media (max-width $breakpoint-mobile)
-		font-size $font-size-heading-3
+		font-size $font-size-heading-2
+		line-height 1.45em
+		text-align center
+		opacity 0
+		max-height 0
+		overflow hidden
 
 	&::before
 	&::after
@@ -30,42 +35,35 @@
 		transform translateX(-20px)
 		padding-left .1875em
 
-	&:nth-child(1)
+	&:nth-of-type(1)
 		&:hover
 		&:focus
 			color $color-green
 
-	&:nth-child(2)
+	&:nth-of-type(2)
 		&:hover
 		&:focus
 			color $color-blue
 
-	&:nth-child(3)
+	&:nth-of-type(3)
 		&:hover
 		&:focus
 			color $color-red
 
 .site-menu__link--active
-	&:nth-child(1)
+	&:hover
+		&::before
+		&::after
+			color inherit
+
+	&:nth-of-type(1)
 		color $color-green
-		&:hover
-			&::before
-			&::after
-				color $color-green
 
-	&:nth-child(2)
+	&:nth-of-type(2)
 		color $color-blue
-		&:hover
-			&::before
-			&::after
-				color $color-blue
 
-	&:nth-child(3)
+	&:nth-of-type(3)
 		color $color-red
-		&:hover
-			&::before
-			&::after
-				color $color-red
 
 .site-menu__link--active
 .site-menu__link:hover
@@ -74,3 +72,81 @@
 	&::after
 		opacity 1
 		transform translateX(0)
+
+.site-menu__button
+	border 0
+	background none
+	outline 0
+	color $color-text
+	position relative
+	z-index 10
+	white-space nowrap
+	padding 0 0 rem(10px)
+	font 400 $font-size-heading-2/1 $font-stack-heading
+	display flex
+	align-items center
+	transition .3s ease-in-out
+
+	&::after
+		content ""
+		position absolute
+		left 0
+		right 0
+		bottom 0
+		height 1px
+		background $color-text
+		transition inherit
+		transform scale(0)
+		transform-origin 0 0
+
+	@media (min-width $breakpoint-mobile)
+		display none
+
+.site-menu__icon
+	display inline-block
+	height rem(3px)
+	width rem(28px)
+	margin-right rem(10px)
+	background $color-text
+	position relative
+	transition .3s ease-in-out
+
+	&::before
+	&::after
+	span
+		content ""
+		position absolute
+		width inherit
+		height inherit
+		background inherit
+		left 0
+		top 0
+		transition inherit
+
+	&::before
+		transform translateY(-10px)
+
+	&::after
+		transform translateY(10px)
+
+@media (max-width $breakpoint-mobile)
+	.site-menu--is-open
+		.site-menu__button
+			margin-bottom rem(20px)
+			&::after
+				transform scale(1)
+
+		.site-menu__icon
+			transform rotate(-45deg)
+
+			&::before
+			&::after
+				transform translateY(0) scale(.5)
+				opacity 0
+
+			span
+				transform rotate(90deg)
+
+		.site-menu__link
+			opacity 1
+			max-height $font-size-heading-1
