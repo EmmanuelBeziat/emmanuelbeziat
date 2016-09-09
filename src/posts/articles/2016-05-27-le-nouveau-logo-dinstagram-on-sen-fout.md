@@ -87,7 +87,7 @@ Au cours d’un« débat » sur le _flat design_, quelqu’un m’a sorti une 
 
 À quiconque croirait à ces stupides sornettes, laissez-moi vous montrer ceci :
 
-![smile-flat](https://images.emmanuelbeziat.com/smile-flat.png){ .text-center }
+![smile-flat](https://images.emmanuelbeziat.com/smile-flat.png) { .text-align-center }
 
 Vous avez immédiatement vu un visage qui sourit (sinon, c’est que vous avez probablement un problème neuronal ; ou que vous êtes d’une extrême mauvaise foi). Alors que si on est un peu honnête, il ne s’agit pas d’un visage, mais d’un cercle et de trois courbes.
 
