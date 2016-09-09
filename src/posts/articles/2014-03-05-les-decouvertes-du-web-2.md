@@ -18,4 +18,4 @@ Pour tous vos projets web, pour tous vos clients aux idées farfelues, voici un 
 
 De bien joli boutons qui changent de taille et de forme en fonction du contenu : [Ridiculously Responsive Social Sharing Buttons](http://kurtnoble.com/labs/rrssb/ "Kurt Noble"){ target="_blank" }
 
-C'est tout !
+c’est tout !

@@ -7,7 +7,7 @@ categories:
 - Tutoriels
 ---
 
-Lorsqu'on crée un design dont la particularité est que le pied de page soit toujours au bas de l’écran, on se heurte à un petit soucis de conception : comment définir une hauteur minimale à la fenêtre ?
+Lorsqu’on crée un design dont la particularité est que le pied de page soit toujours au bas de l’écran, on se heurte à un petit soucis de conception : comment définir une hauteur minimale à la fenêtre ?
 
 Nous allons voir plusieurs solutions possibles, à choisir en fonction de vos besoins.
 
@@ -16,7 +16,7 @@ Ce tutoriel date un peu (2013), mais je suis en train de lui faire une petite re
 
 Tout d’abord, comprenons bien de quoi l’on parle dans ce tutoriel, et pour cela, nous allons d’abord illustrer le problème.
 
-Lorsqu'un site possède une hauteur totale plus grande que l’écran sur lequel il est vu, on peut alors descendre la page vers le bas, jusqu'au bas de la page en question ; là, le défilement est arrêté, le pied-de-page, ou "footer" en anglais, est alors fixé naturellement au bas de la page et de l’écran.
+Lorsqu’un site possède une hauteur totale plus grande que l’écran sur lequel il est vu, on peut alors descendre la page vers le bas, jusqu’au bas de la page en question ; là, le défilement est arrêté, le pied-de-page, ou "footer" en anglais, est alors fixé naturellement au bas de la page et de l’écran.
 
 ![Illustration du tutoriel](https://images.emmanuelbeziat.com/tuto1-01.png) ![Illustration du tutoriel](https://images.emmanuelbeziat.com/tuto1-02.png)
 
@@ -49,17 +49,17 @@ Nous partons sur cette base html :
 </div><!-- fin page -->
 ```
 
-Ce n’est qu'un exemple de site de base ; vous pouvez bien sûr utiliser votre propre site.
+Ce n’est qu’un exemple de site de base ; vous pouvez bien sûr utiliser votre propre site.
 
 ![Illustration du tutoriel](https://images.emmanuelbeziat.com/tuto1-05.png)
 
 Pourquoi mettre le pied de page (footer) en dehors du bloc principal ? {.c-note .c-note--question}
 
-Toute l’astuce est là, c'est le fait de placer le pied-de-page en dehors du bloc du contenu qui va permettre de le fixer au bas de la page, mais aussi de l’empêcher de passer par-dessus le texte du contenu.
+Toute l’astuce est là, c’est le fait de placer le pied-de-page en dehors du bloc du contenu qui va permettre de le fixer au bas de la page, mais aussi de l’empêcher de passer par-dessus le texte du contenu.
 
 ### Le CSS en action
 
-La première étape est donc de donner à `<html>` une hauteur de 100% (correspondant à toute la hauteur de la fenêtre), qui servira de hauteur de référence pour les balises enfants et les valeurs en pourcentage que nous allons leur donner par la suite. En effet, la valeur relative "100%" doit correspondre à quelque chose : c'est donc "100% de la fenêtre" pour `<html>`. La première balise enfant étant `<body>`, nous lui attribuons également cette valeur pour qu'elle adote une hauteur de "100% de `<html>`". Ainsi, nous pourrons positionner le footer facilement au bas de l’écran dans sa position "minimale".
+La première étape est donc de donner à `<html>` une hauteur de 100% (correspondant à toute la hauteur de la fenêtre), qui servira de hauteur de référence pour les balises enfants et les valeurs en pourcentage que nous allons leur donner par la suite. En effet, la valeur relative "100%" doit correspondre à quelque chose : c’est donc "100% de la fenêtre" pour `<html>`. La première balise enfant étant `<body>`, nous lui attribuons également cette valeur pour qu’elle adote une hauteur de "100% de `<html>`". Ainsi, nous pourrons positionner le footer facilement au bas de l’écran dans sa position "minimale".
 
 ```css
 html, body { height: 100% }
@@ -86,7 +86,7 @@ Nous passons maintenant au conteneur `bloc-principal`. L’astuce consiste à lu
 }
 ```
 
-Maintenant, nous nous attaquons au pied-de-page. Il faut que celui-ci ait tout d’abord une hauteur définie (même s'il s'agit d’un pourcentage), puis il faut lui affecter un positionnement absolu. Comme son parent direct, le conteneur `page`, est en positionnement relatif, `footer` se sert de cette référence pour savoir où se positionner. Enfin, grâce au positionnement absolu, il suffira d’accrocher le conteneur au bas du bloc parent. On ajoute également `left` et `right` afin que le bloc prenne toute la largeur.
+Maintenant, nous nous attaquons au pied-de-page. Il faut que celui-ci ait tout d’abord une hauteur définie (même s’il s’agit d’un pourcentage), puis il faut lui affecter un positionnement absolu. Comme son parent direct, le conteneur `page`, est en positionnement relatif, `footer` se sert de cette référence pour savoir où se positionner. Enfin, grâce au positionnement absolu, il suffira d’accrocher le conteneur au bas du bloc parent. On ajoute également `left` et `right` afin que le bloc prenne toute la largeur.
 
 ```css
 .site-footer {
@@ -145,7 +145,7 @@ Ainsi, on obtient le même résultat, avec moins d’efforts. Il sera toutefois 
 
 ## La méthode moderne (IE 9+)
 
-Cette méthode nécessite qu'on connaisse la hauteur du pied de page.
+Cette méthode nécessite qu’on connaisse la hauteur du pied de page.
 
 Nous avons besoin de cette base html :
 
@@ -172,13 +172,13 @@ body {
 }
 ```
 
-Hé oui, c'est tout. On dit au bloc principal de faire au minimum la totalité de la hauteur de la fenêtre, moins la hauteur du pied de page. Malin, non ?
+Hé oui, c’est tout. On dit au bloc principal de faire au minimum la totalité de la hauteur de la fenêtre, moins la hauteur du pied de page. Malin, non ?
 
 ## La méthode moderne améliorée (IE 10+)
 
 Pour celle-ci, on va utiliser `flexbox`, une propriété toute récente, dont je vous invite à [vérifier la compatibilité](http://caniuse.com/#feat=flexbox "CanIUse Flexbox ?"){ target="_blank" }.
 
-Flexbox n’est pas sensé être utilisé pour un gabarit de page, c'est normalement le module CSS `grid` à qui revient cette charge. Cependant, l’écriture des spécifications de `flexbox` est presque terminé et la propriété est implémentée dans tous les navigateurs modernes, alors que `grid` est encore en _working draft_, et n’est implémenté que dans Internet Explorer 10+ et Edge. {.c-note .c-note--important}
+Flexbox n’est pas sensé être utilisé pour un gabarit de page, c’est normalement le module CSS `grid` à qui revient cette charge. Cependant, l’écriture des spécifications de `flexbox` est presque terminé et la propriété est implémentée dans tous les navigateurs modernes, alors que `grid` est encore en _working draft_, et n’est implémenté que dans Internet Explorer 10+ et Edge. {.c-note .c-note--important}
 
 ```markup
 <body>
@@ -207,7 +207,7 @@ body {
 }
 ```
 
-C'est tout !
+c’est tout !
 
 ## La méthode de demain
 

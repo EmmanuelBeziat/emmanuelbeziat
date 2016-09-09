@@ -50,7 +50,7 @@ La méthode en question est très simple. Alors que le générateur vous fournir
 }
 ```
 
-La solution, c'est simplement de modifier ce code par défaut afin de mettre un nom (`font-family`) identique pour tous, et des propriétés (`font-weight` et `font-style`) qui correspondent à la police en question :
+La solution, c’est simplement de modifier ce code par défaut afin de mettre un nom (`font-family`) identique pour tous, et des propriétés (`font-weight` et `font-style`) qui correspondent à la police en question :
 
 ```css
 @font-face {
@@ -81,7 +81,7 @@ La solution, c'est simplement de modifier ce code par défaut afin de mettre un 
 }
 ```
 
-De cette façon, vous pouvez appliquer les propriétés à votre police "MaPolice", sans avoir besoin d’en changer : le CSS saura qu'il faut charger une police différente en fonction des valeurs de ces propriétés.
+De cette façon, vous pouvez appliquer les propriétés à votre police "MaPolice", sans avoir besoin d’en changer : le CSS saura qu’il faut charger une police différente en fonction des valeurs de ces propriétés.
 
 ## Un exemple ?
 

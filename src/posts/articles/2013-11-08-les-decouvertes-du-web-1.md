@@ -8,7 +8,7 @@ categories:
 - Veille
 ---
 
-Au programme aujourd’hui : des astuces en CSS, un mythe qui s'effondre et un site bien utile.
+Au programme aujourd’hui : des astuces en CSS, un mythe qui s’effondre et un site bien utile.
 
 ### Grille CSS toujours pleine
 
@@ -20,6 +20,6 @@ Idée reçue ayant la vie dure, [UxMyths](http://uxmyths.com/post/654047943/myth
 
 ### CSS-Prefix
 
-Vous est-il déjà arrivé de devoir reprendre votre CSS pour copier-coller un sélecteur supplémentaire sur une quarantaines de déclarations, pas toutes sur différentes lignes ? Hé bien pas de panique, la solution s'appelle [CSS-Prefix](http://www.css-prefix.com/){ target="_blank" }.
+Vous est-il déjà arrivé de devoir reprendre votre CSS pour copier-coller un sélecteur supplémentaire sur une quarantaines de déclarations, pas toutes sur différentes lignes ? Hé bien pas de panique, la solution s’appelle [CSS-Prefix](http://www.css-prefix.com/){ target="_blank" }.
 
-C'est tout !
+c’est tout !

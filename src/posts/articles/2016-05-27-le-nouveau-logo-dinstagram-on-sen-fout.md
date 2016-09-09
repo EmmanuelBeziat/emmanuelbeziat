@@ -1,5 +1,5 @@
 ---
-title: "Le nouveau logo d'Instagram ? On s'en fout !"
+title: "Le nouveau logo d’Instagram ? On s’en fout !"
 date: "2016-05-27 04:24:14"
 tags:
 - design
@@ -8,9 +8,9 @@ categories:
 - Diatribes
 ---
 
-C'est LE grand événement qui secoue la toile. La famine, la guerre ne comptent plus. Même Nabilla est reléguée au second plan médiatique. Parce qu’être Charlie ça va un temps, mais il ne faut pas non plus exagérer ! Oui, aujourd’hui, le grand malheur d'internet, c’est **le nouveau logo d'Instagram**.
+c’est LE grand événement qui secoue la toile. La famine, la guerre ne comptent plus. Même Nabilla est reléguée au second plan médiatique. Parce qu’être Charlie ça va un temps, mais il ne faut pas non plus exagérer ! Oui, aujourd’hui, le grand malheur d’internet, c’est **le nouveau logo d’Instagram**.
 
-Si si, je te jure. Parce qu’il est tellement moche que 'même mon petit frère fait mieux sous paint' (j’ai déjà entendu ça quelque part…).
+Si si, je te jure. Parce qu’il est tellement moche que <q>même mon petit frère fait mieux sous paint</q> (j’ai déjà entendu ça quelque part…).
 
 D’ordinaire, je me tamponne littéralement l’oreille de toutes ces tragédies qui secouent le merveilleux quotidien des braves gens (qui n’aiment pas que l’on suive une autre route qu’eux ♪♫). Mais le débat dérive beaucoup sur le _flat design_, et comme le design j’aime bien ça (et le flat design aussi)… Hé ben maintenant, j’ai envie d’en parler aussi !
 
@@ -37,7 +37,7 @@ Mais surtout, vous avez noté ? Tous ces logos… Ils ne seraient pas un peu _f
 
 En effet, un bon logo n’a besoin d’aucun artifice ! Récemment (bon, ok, il y a 10 ans), la mode du« web 2.0 » — propulsée par l’accès au haut-débit pour tous, le piratage facile de Photoshop et la démocratisation de l’informatique à domicile même chez les prolos comme moi — nous apportait une vague d’amateurisme dans le monde du design et du web (va checker mon super article [L’informatique facile m’a tué](https://www.emmanuelbeziat.com/blog/linformatique-facile-ma-tue/){ target="_blank" }, j’cause du sujet). L’amateurisme, avec sa bite et son couteau, a décidé de planquer son manque d’inspiration derrière une ignoble mode du« shiny-glossy-3d-futuro-classy-owi-owi-tu-la-sens-bien-ma-trentaine-de-filtres-toshop », déjà bien engagée par Aqua (Apple) et Aero (Microsoft).
 
-Aucun besoin d’être original ou créatif : tant qu'il y a plein de reflets et d’ombres, c’est trop la classe. MarieJulien en parlent très bien ici (avec de bons exemples) : [Tutorial Illustrator : comment faire un bon gros logo web 2.0 qui tâche](http://mariejulien.com/post/2007/12/10/Tutorial-illustrator%3A-comment-faire-un-bon-gros-logo-web20-qui-tache){ target="_blank" }.
+Aucun besoin d’être original ou créatif : tant qu’il y a plein de reflets et d’ombres, c’est trop la classe. MarieJulien en parlent très bien ici (avec de bons exemples) : [Tutorial Illustrator : comment faire un bon gros logo web 2.0 qui tâche](http://mariejulien.com/post/2007/12/10/Tutorial-illustrator%3A-comment-faire-un-bon-gros-logo-web20-qui-tache){ target="_blank" }.
 
 Alors encore une fois, c’est là de la bonne grosse généralité : tout ce qui a des effets n’est pas moche ou à jeter. Mais on a vraiment assisté à une bonne décennie d’agression visuelle et mentale, la médiocrité et la pauvreté créative masquée habilement derrière la« technique » (je me gausse).
 
@@ -45,7 +45,7 @@ Alors encore une fois, c’est là de la bonne grosse généralité : tout ce q
 
 C’est tout.
 
-Fort de toutes ces réflexions, regardons le logo d'Instagram : c’est un polaroïd. Bon.
+Fort de toutes ces réflexions, regardons le logo d’Instagram : c’est un polaroïd. Bon.
 
 Et ? Hé ben c’est tout. C’est aussi nul que ça. Le logo de Kodak était mieux foutu : il intégrait un appareil photo dans l’initiale du nom de la marque. Mais là, non. C’est nul. Vide. Creux.
 
@@ -87,7 +87,7 @@ Au cours d’un« débat » sur le _flat design_, quelqu’un m’a sorti une 
 
 À quiconque croirait à ces stupides sornettes, laissez-moi vous montrer ceci :
 
-![smile-flat](https://images.emmanuelbeziat.com/smile-flat.png)
+![smile-flat](https://images.emmanuelbeziat.com/smile-flat.png){ .text-center }
 
 Vous avez immédiatement vu un visage qui sourit (sinon, c’est que vous avez probablement un problème neuronal ; ou que vous êtes d’une extrême mauvaise foi). Alors que si on est un peu honnête, il ne s’agit pas d’un visage, mais d’un cercle et de trois courbes.
 

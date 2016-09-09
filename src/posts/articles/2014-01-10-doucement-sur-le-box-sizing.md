@@ -8,14 +8,14 @@ categories:
 - Diatribes
 ---
 
-Récemment dans les milieux autorisés, un certain bout de code a fait son apparition. Rapidement intégré dans les thèmes WordPress, le Framework Bootstrap, Normalize et maints autres projets, `box-sizing` est devenu un "indispensable" dans une feuille de style aujourd’hui, alors seulement qu'on commence enfin à mettre la technique du _Reset CSS_ de côté.
+Récemment dans les milieux autorisés, un certain bout de code a fait son apparition. Rapidement intégré dans les thèmes WordPress, le Framework Bootstrap, Normalize et maints autres projets, `box-sizing` est devenu un "indispensable" dans une feuille de style aujourd’hui, alors seulement qu’on commence enfin à mettre la technique du _Reset CSS_ de côté.
 
 Mais Est-ce vraiment une bonne idée ?
 
 
 ## Souvenons-nous
 
-Un jour, un gugusse fort inspiré a eu une idée <del>merdique</del> révolutionnaire en découvrant le sélecteur universel `*`. Fort embêté par quelques marges automatiques, notamment celle sur body (Pour ceux qui l’ignoreraient, body a un margin automatique de 8px), il s'est dit que, plutôt que de penser à mettre quelques `margin: 0;` là où il en avait besoin, ce serait plus simple de tout péter avec ce petit sélecteur. C'est ainsi qu'est né le premier des reset CSS :
+Un jour, un gugusse fort inspiré a eu une idée <del>merdique</del> révolutionnaire en découvrant le sélecteur universel `*`. Fort embêté par quelques marges automatiques, notamment celle sur body (Pour ceux qui l’ignoreraient, body a un margin automatique de 8px), il s’est dit que, plutôt que de penser à mettre quelques `margin: 0;` là où il en avait besoin, ce serait plus simple de tout péter avec ce petit sélecteur. c’est ainsi qu’est né le premier des reset CSS :
 
 ```css
 * {
@@ -26,29 +26,29 @@ Un jour, un gugusse fort inspiré a eu une idée <del>merdique</del> révolution
 
 En suivit celui d’Eric Meyer qui, à l’époque d’IE6, avait le bon goût de tenter de corriger intelligement les différences de marges automatiques d’un navigateur à l’autre. Seulement voilà  : à tout péter comme un gros babouin avec ces reset, il en résulte un problème conséquent : les marges automatiques ne sont pas faites pour les clebs et quand on les vire toutes, le texte devient complètement illisible. L’interaction normale des éléments html les uns envers les autres est un poil compromise, les paragraphes ne sont plus des paragraphes, etc.. À l’époque du html4 où internet était un vaste réseau de pages persos MultiMania pleines de gifs "codées" via des logiciels WYSIWYG, on ne se posait pas trop la question : on rustinait ça comme de grosses otaries à coup de `<br />` et hop, on avait des marges.
 
-Puis est venu le temps du xhtml, où l’accent était mis sur **la sémantique du html**, la **séparation de la mise en forme**… Toujours habitués à utiliser des Reset, il a bien fallu se dire qu'après avoir foutu en l’air toutes les marges, il fallait ensuite les remettre manuellement. Quarante lignes pour retirer toutes les marges (Merci Meyer), quatre-vingt pour remettre des marges (Vous comprendrez que je trouve le principe débile) et de futures longues heures à débuguer ça parce que telle ou telle balise aura été oublié, parce que les marges qu'on a mises ne fonctionnent pas comme attendu et diverses raisons supplémentaires.
+Puis est venu le temps du xhtml, où l’accent était mis sur **la sémantique du html**, la **séparation de la mise en forme**… Toujours habitués à utiliser des Reset, il a bien fallu se dire qu’après avoir foutu en l’air toutes les marges, il fallait ensuite les remettre manuellement. Quarante lignes pour retirer toutes les marges (Merci Meyer), quatre-vingt pour remettre des marges (Vous comprendrez que je trouve le principe débile) et de futures longues heures à débuguer ça parce que telle ou telle balise aura été oublié, parce que les marges qu’on a mises ne fonctionnent pas comme attendu et diverses raisons supplémentaires.
 
-Alors que les navigateurs se sont standardisés entretemps, il a fallu presque dix ans pour qu'apparaisse l’idée d’une feuille de style de base qui redéfinirait directement et correctement les marges automatiques plutôt que de carrément les supprimer.
+Alors que les navigateurs se sont standardisés entretemps, il a fallu presque dix ans pour qu’apparaisse l’idée d’une feuille de style de base qui redéfinirait directement et correctement les marges automatiques plutôt que de carrément les supprimer.
 
-Et je trouve personnellement qu'aujourd’hui, on se passe très bien des deux.
+Et je trouve personnellement qu’aujourd’hui, on se passe très bien des deux.
 
 ### Un point sur le sélecteur universel
 
-Le sélecteur universel `*` (À ne pas confondre avec le [sélecteur d’enfant indirect](http://www.emmanuelbeziat.com/blog/principes-du-css-les-selecteurs-partie1-css2/#selecteur-enfant-indirect)) n’a que peu d’utilité dans un cas pratique. On s'en sert très peu, voire quasiment jamais. Ses manifestations les plus courantes sont généralement les plus mauvaises, comme dans le cas de ce reset sauvage.
+Le sélecteur universel `*` (À ne pas confondre avec le [sélecteur d’enfant indirect](http://www.emmanuelbeziat.com/blog/principes-du-css-les-selecteurs-partie1-css2/#selecteur-enfant-indirect)) n’a que peu d’utilité dans un cas pratique. On s’en sert très peu, voire quasiment jamais. Ses manifestations les plus courantes sont généralement les plus mauvaises, comme dans le cas de ce reset sauvage.
 
 > "Toi là, vil élément ! Peu importe qui tu es, tu n’auras plus aucune marge !
 >
 > - Mais monsieur, je suis un élément _inline_, ça n’a aucune utilité sur moi, je n’ai aucune marge !
 >
-> - Je t'ai pas demandé ton avis, petit bouseux. SUIVANT ! Toi là, vil élément…"
+> - Je t’ai pas demandé ton avis, petit bouseux. SUIVANT ! Toi là, vil élément…"
 
 Le résultat est donc d’attribuer des propriétés à tous les éléments de la page, sans se soucier d’un besoin quelconque. En effet, les éléments comme `<div>`, `<span>`, `<a>`, etc. n’ont aucune marge par défaut. Quelle utilité donc d’alourdir le rendu et la feuille de style avec des propriétés qui n’ont pas lieu d’être ?
 
 ## Le parallèle avec le passé
 
-Partant de ce qu'on a vu du passé, analysons le présent : le CSS3 est arrivé avec ses grands sabots et, comme à chaque nouveauté, tout a été écumé par mode : les designs de sites arborant de beaux gradients générés en CSS, les coins arrondis dans tous les sens plus que de raison, les ombres sous les blocs ou les textes, les animations… Tout y passe, comme si le fait de rendre quelque chose possible aisément le rendait indispensable.
+Partant de ce qu’on a vu du passé, analysons le présent : le CSS3 est arrivé avec ses grands sabots et, comme à chaque nouveauté, tout a été écumé par mode : les designs de sites arborant de beaux gradients générés en CSS, les coins arrondis dans tous les sens plus que de raison, les ombres sous les blocs ou les textes, les animations… Tout y passe, comme si le fait de rendre quelque chose possible aisément le rendait indispensable.
 
-Après la cosmétique douteuse, on s'est rendu compte qu'il y avait aussi du pratique. Et alors est arrivé la mode de `box-sizing: border-box;`.
+Après la cosmétique douteuse, on s’est rendu compte qu’il y avait aussi du pratique. Et alors est arrivé la mode de `box-sizing: border-box;`.
 
 ### Quel intérêt ?
 
@@ -87,7 +87,7 @@ element {
 
 En effet, la valeur `border-box` force le navigateur à prendre en compte la largeur attribuée sur l’ensemble de l’élément plutôt que sur son seul contenu (par opposition donc à son autre valeur, celle attribuée aux éléments par défaut : `content-box`). L’élément fera donc bien 100px de largeur, avec une marge interne de 10px de chaque côté et une bordure de 2px.
 
-Et c'est super pratique, dans le cas par exemple des formulaires si l’on souhaite que les champs aient une largeur de 100% (un des rares cas où `width: 100%` est valable) tout en ayant une marge intérieure pour que le texte ne soit pas collé au bord.
+Et c’est super pratique, dans le cas par exemple des formulaires si l’on souhaite que les champs aient une largeur de 100% (un des rares cas où `width: 100%` est valable) tout en ayant une marge intérieure pour que le texte ne soit pas collé au bord.
 
 ## Ne pas faire n’importe quoi
 
@@ -109,7 +109,7 @@ Retour de la méthode paladin des croisades :
 >
 > - Mais monsieur, je suis un élément _inline_, ça n’a aucune utilité sur moi… Je ne prend même pas les marges en compte !
 >
-> - Je t'ai pas demandé ton avis, petit con. SUIVANT ! Toi là, vil élément…"
+> - Je t’ai pas demandé ton avis, petit con. SUIVANT ! Toi là, vil élément…"
 
 Le rendu de la page sera donc alourdi par un travail inutile qui ajoutera à **tous** les éléments un `box-sizing`.
 

@@ -7,13 +7,13 @@ categories:
 - Tutoriels
 ---
 
-C'est un problème auquel se confrontent régulièrement les intégrateurs : créer un **design en trois colonnes** — habituellement, deux menus latéraux (appelés "sidebar") et une colonne centrale pour le contenu du site.
+c’est un problème auquel se confrontent régulièrement les intégrateurs : créer un **design en trois colonnes** — habituellement, deux menus latéraux (appelés "sidebar") et une colonne centrale pour le contenu du site.
 
-Mais c'est en réalité très simple à faire, et nous allons voir comment.
+Mais c’est en réalité très simple à faire, et nous allons voir comment.
 
 ## Le html
 
-La première chose, c'est d’abord de placer les trois colonnes dans un conteneur, que nous appellerons ici "_container_". Ensuite, il faut mettre les éléments flottants (les sidebar donc) avant le corps central.
+La première chose, c’est d’abord de placer les trois colonnes dans un conteneur, que nous appellerons ici "_container_". Ensuite, il faut mettre les éléments flottants (les sidebar donc) avant le corps central.
 
 ```markup
 <div class="container">
@@ -57,7 +57,7 @@ Voyons ces lignes en détail :
 }
 ```
 
-Les éléments flottants (utilisés avec la propriété `float` donc) sortent du _flux d’éléments_, ce qui conduit les autres éléments à passer en-dessous comme s'ils étaient ignorés. Utiliser une propriété neutre comme `overflow` permet au contenant de tenir compte de ces flottants et de les englober pour que tout rentre dans l’ordre.
+Les éléments flottants (utilisés avec la propriété `float` donc) sortent du _flux d’éléments_, ce qui conduit les autres éléments à passer en-dessous comme s’ils étaient ignorés. Utiliser une propriété neutre comme `overflow` permet au contenant de tenir compte de ces flottants et de les englober pour que tout rentre dans l’ordre.
 
 ```css
 .sidebar--left {
@@ -79,7 +79,7 @@ On place simplement les éléments flottants (les menus latéraux) à gauche et 
 }
 ```
 
-Enfin, on ne précise aucune largeur à cet élément afin qu'il s'adapte automatiquement à l’espace disponible. Là encore, on use de la propriété `overflow` pour que cette colonne tienne compte des deux éléments flottants.
+Enfin, on ne précise aucune largeur à cet élément afin qu’il s’adapte automatiquement à l’espace disponible. Là encore, on use de la propriété `overflow` pour que cette colonne tienne compte des deux éléments flottants.
 
 ## Conclusion
 

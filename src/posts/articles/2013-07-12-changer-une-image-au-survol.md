@@ -7,13 +7,13 @@ categories:
 - Tutoriels
 ---
 
-Lorsque l’on fait un site, on est parfois confronté à un besoin : celui de gérer le **changement d’une image au survol de la souris**. C'est souvent le cas avec des menus. Si la technique des _sprites CSS_ (à propos desquels j’ai écrit [ce tutoriel](http://www.emmanuelbeziat.com/blog/bien-utiliser-les-sprites-css/ "Bien utiliser les sprites CSS") et qui ne sera donc pas détaillée ici) est utile dans certains cas, elle est fortement déconseillée dans le cas d’une image cliquable. Nous allons donc voir une solution alternative intéressante.
+Lorsque l’on fait un site, on est parfois confronté à un besoin : celui de gérer le **changement d’une image au survol de la souris**. c’est souvent le cas avec des menus. Si la technique des _sprites CSS_ (à propos desquels j’ai écrit [ce tutoriel](http://www.emmanuelbeziat.com/blog/bien-utiliser-les-sprites-css/ "Bien utiliser les sprites CSS") et qui ne sera donc pas détaillée ici) est utile dans certains cas, elle est fortement déconseillée dans le cas d’une image cliquable. Nous allons donc voir une solution alternative intéressante.
 
 ## Le problème posé
 
 ### Pourquoi ne pas utiliser les sprites ?
 
-Les _sprites_ sont très utiles pour gérer les images de fond ; mais dès lors qu'une image véhicule une information (image cliquable, portrait d’un auteur, schéma explicatif, etc.) et n’est plus seulement décorative, il est **nécessaire** que cette image soit présente dans le HTML (balise `<img>`).
+Les _sprites_ sont très utiles pour gérer les images de fond ; mais dès lors qu’une image véhicule une information (image cliquable, portrait d’un auteur, schéma explicatif, etc.) et n’est plus seulement décorative, il est **nécessaire** que cette image soit présente dans le HTML (balise `<img>`).
 
 Dans le cas d’une image cliquable, à plus forte raison un menu qui ne contiendrait aucun texte, il est très fortement déconseillé de recourir aux images CSS, car cela impose que le lien dans le HTML soit vide :
 
@@ -32,7 +32,7 @@ On peut également charger une image au survol grâce aux événements `onmouseo
 
 
 1.  Tout d’abord, vos visiteurs peuvent très bien avoir désactivé l’exécution du javascript sur leur navigateur (pour des raisons qui les concernent).
-2.  L’image ne sera chargée qu'au survol, ce qui créera un effet de _clipping_ (clignotement) le temps que l’image soit affichée. Pour une petite connexion (comme la 3G) cela se révèle très vite particulièrement désagréable.
+2.  L’image ne sera chargée qu’au survol, ce qui créera un effet de _clipping_ (clignotement) le temps que l’image soit affichée. Pour une petite connexion (comme la 3G) cela se révèle très vite particulièrement désagréable.
 
 ## La solution : un compromis
 
@@ -40,7 +40,7 @@ La meilleure solution consiste à mettre l’image "normale" dans le html, puis 
 
 ### Le HTML
 
-Ici, rien de bien compliqué. Nous allons nous contenter de mettre notre image et notre lien tout à fait normalement (à noter qu'on peut tout à fait utiliser le même effet sans un lien avec une image seule).
+Ici, rien de bien compliqué. Nous allons nous contenter de mettre notre image et notre lien tout à fait normalement (à noter qu’on peut tout à fait utiliser le même effet sans un lien avec une image seule).
 
 Pour les besions de l’exemple, nous plaçons le lien dans une balise portant l’ID "menu".
 
@@ -52,7 +52,7 @@ Pour les besions de l’exemple, nous plaçons le lien dans une balise portant l
 
 ### Le CSS
 
-C'est ici que l’astuce se déroule. Tout d’abord, nous allons affecter à notre lien un comportement de type `inline-block`, afin de pouvoir lui donner des valeurs de hauteur et de largeur sans pour autant briser sa mise en place au sein d’un texte ou d’un menu (à adapter selon vos besoins).
+c’est ici que l’astuce se déroule. Tout d’abord, nous allons affecter à notre lien un comportement de type `inline-block`, afin de pouvoir lui donner des valeurs de hauteur et de largeur sans pour autant briser sa mise en place au sein d’un texte ou d’un menu (à adapter selon vos besoins).
 
 ```css
 #menu a {

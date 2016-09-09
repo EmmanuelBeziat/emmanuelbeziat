@@ -7,7 +7,7 @@ categories:
 - Tutoriels
 ---
 
-Lorsqu'on utilise du CSS, on peut se contenter des trois sélecteurs de base : les éléments, les identifiants et les classes. Souvent, sans le savoir, vous utilisez un sélecteur simple de descendance, par un espace entre deux de ces sélecteurs - hé oui ! Mais il existe d’autres sélecteurs plus avancés, nous allons les passer en revue.
+Lorsqu’on utilise du CSS, on peut se contenter des trois sélecteurs de base : les éléments, les identifiants et les classes. Souvent, sans le savoir, vous utilisez un sélecteur simple de descendance, par un espace entre deux de ces sélecteurs - hé oui ! Mais il existe d’autres sélecteurs plus avancés, nous allons les passer en revue.
 
 Je ne traite ici que du CSS 3\. Je vous recommande d’avoir lu préalablement l’article concernant les [sélecteurs du CSS2](http://www.emmanuelbeziat.com/blog/principes-du-css-les-selecteurs-partie1-css2/ "Principes du CSS – Les sélecteurs (Partie1 : cSS2)").
 
@@ -20,7 +20,7 @@ namespace|div {
 }
 ```
 
-Une des grandes nouveautés apportées par cette nouvelle version est la gestion des espaces de noms. Les programmeurs sauront de quoi je parle. Pour faire simple, on peut définir un espace de nom particulier et n’appliquer des propriétés qu'aux balises dans cet espace de nom.
+Une des grandes nouveautés apportées par cette nouvelle version est la gestion des espaces de noms. Les programmeurs sauront de quoi je parle. Pour faire simple, on peut définir un espace de nom particulier et n’appliquer des propriétés qu’aux balises dans cet espace de nom.
 
 **Exemple :** Définissons un espace de nom pour une page particulière :
 
@@ -32,7 +32,7 @@ Puis un espace de nom pour une autre page :
 ```css
 @namespace membre url(http://www.monsite.com/membre.html);```
 
-Il est désormais possible d’appliquer des modifications qui ne seront spécifiques qu'à ces pages :
+Il est désormais possible d’appliquer des modifications qui ne seront spécifiques qu’à ces pages :
 
 ```css
 /* propriétés qui ne seront appliqués que sur les balises h1
@@ -53,7 +53,7 @@ membre|h1 { color: red }
 h1 {color: red}
 ```
 
-À noter qu'il est possible de définir un nom d’espace par défaut :
+À noter qu’il est possible de définir un nom d’espace par défaut :
 
 ```css
 @namespace "http://www.monsite.com"```
@@ -70,7 +70,7 @@ h1 ~ pre {
 }
 ```
 
-Dans la même idée que les sélecteurs d’adjacence `+`, celui-ci permet d’atteindre tout élément (ici `pre`) de même niveau que l’élément référent (ici `h1`). La différence étant qu'ici, l’élément cible n’a pas besoin d’être directement adjacent à l’élément référent.
+Dans la même idée que les sélecteurs d’adjacence `+`, celui-ci permet d’atteindre tout élément (ici `pre`) de même niveau que l’élément référent (ici `h1`). La différence étant qu’ici, l’élément cible n’a pas besoin d’être directement adjacent à l’élément référent.
 
 ```markup
 <h1>Titre</h1>
@@ -94,7 +94,7 @@ Ce sélecteur permet de choisir un élément dont la valeur de l’attribut comm
 <a href="https://www.monsite.com">Ce lien sera affecté</a>
 ```
 
-Évidemment, ça ne se limite pas qu'aux liens.
+Évidemment, ça ne se limite pas qu’aux liens.
 
 ```css
 a[href$=.pdf] {
@@ -127,7 +127,7 @@ Celui-ci enfin, permet de sélectionner l’élément dont l’attribut désign�
 
 ### :last-child
 
-À la manière de `:first-child`, cette pseudo-classe cible un élément s'il est le dernier enfant de son parent.
+À la manière de `:first-child`, cette pseudo-classe cible un élément s’il est le dernier enfant de son parent.
 
 ```css
 div p:last-child {
@@ -154,7 +154,7 @@ Si on voit maintenant, pour le même code CSS, ce code HTML :
 </div>
 ```
 
-Rien ne va se passer. En effet, le code CSS signifie "cibler tous les éléments `p` s'il s'agit du dernier enfant de leur parent" et non "cibler tous les éléments `p` qui sont les derniers de ce éléments de type `p` enfants". Or dans ce cas, c'est `h2` qui est le dernier enfant.
+Rien ne va se passer. En effet, le code CSS signifie "cibler tous les éléments `p` s’il s’agit du dernier enfant de leur parent" et non "cibler tous les éléments `p` qui sont les derniers de ce éléments de type `p` enfants". Or dans ce cas, c’est `h2` qui est le dernier enfant.
 
 ### :first-of-type
 
@@ -310,7 +310,7 @@ p:nth-of-type(3) {
 </div>
 ```
 
-Sachant qu'il s'agit de type et non de nombre d’enfant, on peut s'en servir même lorsqu'il y a des balises entre deux :
+Sachant qu’il s’agit de type et non de nombre d’enfant, on peut s’en servir même lorsqu’il y a des balises entre deux :
 
 ```markup
 <div>
@@ -343,7 +343,7 @@ p:nth-last-of-type(3) {
 </div>
 ```
 
-Sachant qu'il s'agit de type et non de nombre d’enfant, on peut s'en servir même lorsqu'il y a des balises entre deux :
+Sachant qu’il s’agit de type et non de nombre d’enfant, on peut s’en servir même lorsqu’il y a des balises entre deux :
 
 ```markup
 <div>
@@ -399,7 +399,7 @@ p:empty {
 
 ### :enabled
 
-Celle-ci permet de cibler tout élément qui est, soit par défaut, soit précisément via html, défini comme "actif". C'est surtout utile pour les éléments de formulaire.
+Celle-ci permet de cibler tout élément qui est, soit par défaut, soit précisément via html, défini comme "actif". c’est surtout utile pour les éléments de formulaire.
 
 ```input:enabled {
 	background: white
@@ -431,4 +431,4 @@ input:disabled {
 
 ## Conclusion… ?
 
-Tout en essayant d’être complet, je n’ai pas été exhaustif. Le CSS3 est une norme loin d’être terminée, qui évolue encore, et qui pourrait voir d’autres éléments s'ajouter par la suite. Comme toujours, n’oubliez pas qu'on peut toujours mixer plusieurs sélecteurs !
+Tout en essayant d’être complet, je n’ai pas été exhaustif. Le CSS3 est une norme loin d’être terminée, qui évolue encore, et qui pourrait voir d’autres éléments s’ajouter par la suite. Comme toujours, n’oubliez pas qu’on peut toujours mixer plusieurs sélecteurs !
