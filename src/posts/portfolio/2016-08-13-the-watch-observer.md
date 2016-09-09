@@ -20,4 +20,4 @@ tags:
 
 ## Newsletter
 
-Et pour aller avec un nouveau site, une campagne d’emailing a été lancée, avec toutes les contraintes de compatibilité habituelles à relever !
+Et pour aller avec un nouveau site, une campagne d’emailing a été lancée, avec toutes les contraintes de compatibilité habituelles à relever !

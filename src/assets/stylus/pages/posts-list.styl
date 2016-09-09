@@ -9,6 +9,7 @@
 
 	@media (max-width $breakpoint-mobile)
 		line-height 1.25
+		overflow auto
 
 .post-list__infos
 	font-size $font-size-article-infos
@@ -35,3 +36,17 @@
 
 .post-list__content
 	margin-bottom 1em
+
+.post-list__top-link
+	float right
+	background $color-green
+	margin-top rem(10px)
+	color $color-background
+	border-radius rem(2px)
+
+	&:hover
+		background $color-red
+		color $color-background
+
+	@media (min-width $breakpoint-mobile)
+		display none

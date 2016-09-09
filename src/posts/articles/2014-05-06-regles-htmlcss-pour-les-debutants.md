@@ -29,13 +29,13 @@ déclaration {
 
 Une déclaration CSS est composée de sélecteurs. Si vous ne voyez pas de quoi il s'agit, voir l’article sur les [sélecteurs CSS](http://www.emmanuelbeziat.com/blog/principes-du-css-les-selecteurs-partie1-css2/ "Principes du CSS – Les sélecteurs (Partie1 : cSS2)"). { .c-note .c-note--important }
 
-Voilà ; dorénavant, interdiction de parler de "propriétés html" ou de "balises css".
+Voilà ; dorénavant, interdiction de parler de "propriétés html" ou de "balises css".
 
 ## HTML
 
 ### La balise `<br />`
 
-Une erreur courante (Mais où avez-vous trouvé ça ?!) consiste à écrire la balise `<br />` en inversant le sens d’auto-fermeture : `</br>`. Ça n’existe pas. C'est soit `<br />` (xhtml ou html) soit `<br>` (html seulement) ; pas `</br>` ni `<br/>` (l’espace n’est pas facultatif).
+Une erreur courante (Mais où avez-vous trouvé ça ?!) consiste à écrire la balise `<br />` en inversant le sens d’auto-fermeture : `</br>`. Ça n’existe pas. C'est soit `<br />` (xhtml ou html) soit `<br>` (html seulement) ; pas `</br>` ni `<br/>` (l’espace n’est pas facultatif).
 
 Et cette balise ne sert qu'à revenir à la ligne au sein d’un bloc de texte. Elle ne sert pas à sauter des lignes, ni à faire des marges.
 
@@ -47,7 +47,7 @@ L’attribut `alt=""` est obligatoire sur les balises `<img />`.
 
 Les balises doivent être imbriquées proprement. C'est à dire que lorsque vous ouvrez une balise puis une seconde, il faut refermer la seconde avant la première.
 
-Bon :
+Bon :
 
 ```markup
 <div>
@@ -56,7 +56,7 @@ Bon :
 </div>
 ```
 
-Mauvais :
+Mauvais :
 
 ```markup
 <div>
@@ -69,15 +69,15 @@ Mauvais :
 
 On est en 2014 au moment de la rédaction de cet article, et je vois encore régulièrement du code obsolète depuis l’arrivée du xhtml (2001). Il est important de noter que désormais (et depuis longtemps maintenant), on sépare la structure et le contenu (html) de la mise en forme (css).
 
-Il est primordial de comprendre ce principe de sémantique du HTML. Lorsque qu'on utilise une balise `<em>`, ce n’est pas pour mettre du texte en italique, c'est pour créer une [emphase](https://fr.wiktionary.org/wiki/emphase "emphase — Wiktionnaire"){ target="_blank" } ; or, il se trouve que dans les règles d’écriture occidentale, l’emphase est exprimée en italique. Exemple : "Tu es _vraiment_ sûr de ton coup ?".
+Il est primordial de comprendre ce principe de sémantique du HTML. Lorsque qu'on utilise une balise `<em>`, ce n’est pas pour mettre du texte en italique, c'est pour créer une [emphase](https://fr.wiktionary.org/wiki/emphase "emphase — Wiktionnaire"){ target="_blank" } ; or, il se trouve que dans les règles d’écriture occidentale, l’emphase est exprimée en italique. Exemple : "Tu es _vraiment_ sûr de ton coup ?".
 
 On retient : on n’utilise pas des balises pour leur rendu, mais pour leur **sens sémantique**. { .c-note .c-note--important }
 
-De fait, toutes les balises et attributs à but esthétique doivent être définitivement supprimées de vos pages : `<center>`, `<font>`, `<basefont>`, `<strike>`.
+De fait, toutes les balises et attributs à but esthétique doivent être définitivement supprimées de vos pages : `<center>`, `<font>`, `<basefont>`, `<strike>`.
 
-À noter que plusieurs balises dépréciées en xhtml ont fait leur retour en html5 **avec un nouveau sens sémantique** (tout relatif, personnellement j’ai surtout l’impression qu'ils savaient pas quoi en foutre). Leurs spécifications sont assez peu claires, voire franchement brouillons. Je vous les liste quand même : `<b>`, `<i>`, `<s>`, `<u>`.
+À noter que plusieurs balises dépréciées en xhtml ont fait leur retour en html5 **avec un nouveau sens sémantique** (tout relatif, personnellement j’ai surtout l’impression qu'ils savaient pas quoi en foutre). Leurs spécifications sont assez peu claires, voire franchement brouillons. Je vous les liste quand même : `<b>`, `<i>`, `<s>`, `<u>`.
 
-De la même façon, les attributs liés au style doivent dégager : `alink`, `background`, `bgcolor`, `link`, `vlink`, `align`, `valing`, `hspace`, `vspace`, `border`, `height`, `width`, `nowrap`, `star`, `clear`, `noshade`…
+De la même façon, les attributs liés au style doivent dégager : `alink`, `background`, `bgcolor`, `link`, `vlink`, `align`, `valing`, `hspace`, `vspace`, `border`, `height`, `width`, `nowrap`, `star`, `clear`, `noshade`…
 
 ### marquee
 
@@ -103,9 +103,9 @@ Très souvent, on tombe sur des sujets rapportant des comportements étranges de
 
 Les nouvelles balises de structure introduites en html5 (à savoir `header`, `aside`, `footer`, `nav`, `figure`, `section`, etc.) ne remplacent pas les `div`. On utilise toujours des `div` si on doit faire un bloc qui n’a pas de vocation sémantique particulière.
 
-De la même façon, ces balises ne sont pas uniques (sauf `main`) et ne dispensent donc pas d’utiliser classes et ID pour les cibler en CSS plutôt que de simplement utiliser leur nom d’élément. En clair, faites comme avant, mais en remplaçant les `div` lorsqu'un élément sémantique est possible. Exemple : `<header id="header">`.
+De la même façon, ces balises ne sont pas uniques (sauf `main`) et ne dispensent donc pas d’utiliser classes et ID pour les cibler en CSS plutôt que de simplement utiliser leur nom d’élément. En clair, faites comme avant, mais en remplaçant les `div` lorsqu'un élément sémantique est possible. Exemple : `<header id="header">`.
 
-En ce moment, la tendance est à l’utilisation quasi-exclusive de classes et à l’abandon des ID. Mais c'est bien une tendance, et non une spécification du langage. Faites comme vous le sentez, mais n’abusez pas des ID ! { .c-note .c-note--info }
+En ce moment, la tendance est à l’utilisation quasi-exclusive de classes et à l’abandon des ID. Mais c'est bien une tendance, et non une spécification du langage. Faites comme vous le sentez, mais n’abusez pas des ID ! { .c-note .c-note--info }
 
 ### La balise `
 
@@ -127,17 +127,17 @@ L’erreur la plus répandue est de croire qu'utiliser la propriété `position`
 
 Une autre croyance qui a la vie dure : mettre toutes les valeurs en % serait mieux. Ce n’est pas le cas. Il n’y a que de rares cas où l’utilisation des % se justifie (notamment les grilles CSS, comme [960.gz](http://960.gs/){ target="_blank" } ou celles utilisé par [Bootstrap](http://getbootstrap.com/){ target="_blank" } ou [Foundation](http://foundation.zurb.com/){ target="_blank" }).
 
-Vous pouvez très bien faire un site extensible en n’utilisant qu'un minimum de valeurs en % (un exemple : [Aligner trois colonnes proprement](http://www.emmanuelbeziat.com/blog/aligner-trois-colonnes-proprement/ "Aligner trois colonnes proprement"). Et même dans ces cas-là, n’utilisez pas les % pour des marges, elles n’ont pas à être extensibles !
+Vous pouvez très bien faire un site extensible en n’utilisant qu'un minimum de valeurs en % (un exemple : [Aligner trois colonnes proprement](http://www.emmanuelbeziat.com/blog/aligner-trois-colonnes-proprement/ "Aligner trois colonnes proprement"). Et même dans ces cas-là, n’utilisez pas les % pour des marges, elles n’ont pas à être extensibles !
 
-Les pourcentages apportent beaucoup plus de problèmes et de problématiques que de solutions, alors il faut être parfaitement certain de maîtriser son environnement avant de s'en servir. [Voici un exemple concret](https://jsfiddle.net/ee944u5t/){ target="_blank" }, rencontré par un internaute d’OpenClassrooms : lorsqu'on agrandi la fenêtre de rendu, on remarque un dépassement vertical (en bas). Les marges ayant été définies de façon relative (avec des pourcentages), celles-ci sont calculées par rapport à la largeur du parent, même pour les marges verticales. Donc en étirant la largeur du conteneur, on étire la marge verticale du bloc enfant… Bref, n’importe quoi.
+Les pourcentages apportent beaucoup plus de problèmes et de problématiques que de solutions, alors il faut être parfaitement certain de maîtriser son environnement avant de s'en servir. [Voici un exemple concret](https://jsfiddle.net/ee944u5t/){ target="_blank" }, rencontré par un internaute d’OpenClassrooms : lorsqu'on agrandi la fenêtre de rendu, on remarque un dépassement vertical (en bas). Les marges ayant été définies de façon relative (avec des pourcentages), celles-ci sont calculées par rapport à la largeur du parent, même pour les marges verticales. Donc en étirant la largeur du conteneur, on étire la marge verticale du bloc enfant… Bref, n’importe quoi.
 
 Et pensez aux propriétés `min-width` et `max-width`.
 
-Et `width: 100%;`, [n’y pensez même pas](http://blog.goetter.fr/articles/width-100-tu-es-le-mal/ "Width 100%, tu es le mal !"){ target="_blank" }.
+Et `width: 100%;`, [n’y pensez même pas](http://blog.goetter.fr/articles/width-100-tu-es-le-mal/ "Width 100%, tu es le mal !"){ target="_blank" }.
 
 ### Les hauteurs
 
-Une erreur courante : vouloir à tout prix contrôler la hauteur des éléments de son site. C'est une **mauvaise** idée. Une page s'adapte en hauteur en fonction de son contenu. La hauteur que vous définissez par rapport à ce que vous voyez sur votre écran ne correspond pas à ce que verront les autres. Si quelqu'un zoome le texte pour des questions de visibilités, si un écran est trop petit et réduis l’espace, alors le contenu va dépasser le contenant, et ce sera à la fois moche et illisible. Sauf cas très spécifiques, ne touchez pas à la hauteur des éléments, laissez-les prendre la hauteur qu'ils veulent. Pour décoller le contenu des bords d’un conteneur, pensez au padding !
+Une erreur courante : vouloir à tout prix contrôler la hauteur des éléments de son site. C'est une **mauvaise** idée. Une page s'adapte en hauteur en fonction de son contenu. La hauteur que vous définissez par rapport à ce que vous voyez sur votre écran ne correspond pas à ce que verront les autres. Si quelqu'un zoome le texte pour des questions de visibilités, si un écran est trop petit et réduis l’espace, alors le contenu va dépasser le contenant, et ce sera à la fois moche et illisible. Sauf cas très spécifiques, ne touchez pas à la hauteur des éléments, laissez-les prendre la hauteur qu'ils veulent. Pour décoller le contenu des bords d’un conteneur, pensez au padding !
 
 ### Float et display
 
@@ -145,9 +145,9 @@ Il est parfaitement inutile d’essayer de donner à un élément flottant une p
 
 ### Le reset CSS
 
-Une autre mauvaise idée. Plus d’explications dans l’article [Doucement sur le box-sizing !](http://www.emmanuelbeziat.com/blog/doucement-sur-le-box-sizing/ "Doucement sur le box-sizing !").
+Une autre mauvaise idée. Plus d’explications dans l’article [Doucement sur le box-sizing !](http://www.emmanuelbeziat.com/blog/doucement-sur-le-box-sizing/ "Doucement sur le box-sizing !").
 
-Et surtout, évidemment, surtout pas ça :
+Et surtout, évidemment, surtout pas ça :
 
 ```css
 * { margin: 0; padding: 0; }
@@ -155,4 +155,4 @@ Et surtout, évidemment, surtout pas ça :
 
 ## Conclusion
 
-Difficile d’être exhaustif, aussi cette petite liste sera complétée au fur et à mesure. Bref, maintenant que vous avez lu ça, vous avez de bonnes cartes en main. Alors faites du bon code !
+Difficile d’être exhaustif, aussi cette petite liste sera complétée au fur et à mesure. Bref, maintenant que vous avez lu ça, vous avez de bonnes cartes en main. Alors faites du bon code !

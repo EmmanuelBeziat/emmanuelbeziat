@@ -14,7 +14,7 @@ Reste que pour centrer un élément positionné de façon absolue ou fixe, on ne
 
 ## Avant…
 
-Avant, on partait du principe qu'il fallait connaître la largeur de l’élément qu'on voulait centrer. Alors on appliquait un top / left, puis un margin-top / left négatif, comme suit :
+Avant, on partait du principe qu'il fallait connaître la largeur de l’élément qu'on voulait centrer. Alors on appliquait un top / left, puis un margin-top / left négatif, comme suit :
 
 ```css
 element {
@@ -25,11 +25,11 @@ element {
 }
 ```
 
-Le problème, c'est qu'il faut que la taille soit fixe, et connue. Mais que se passe-t-il si la taille peut-être variable ? Hé, ouais.
+Le problème, c'est qu'il faut que la taille soit fixe, et connue. Mais que se passe-t-il si la taille peut-être variable ? Hé, ouais.
 
-## Maintenant !
+## Maintenant !
 
-Maintenant, on a une possibilité supplémentaire, en utilisant `transform` :
+Maintenant, on a une possibilité supplémentaire, en utilisant `transform` :
 
 ```css
 element {

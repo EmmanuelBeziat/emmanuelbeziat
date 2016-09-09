@@ -7,7 +7,7 @@ categories:
 - Tutoriels
 ---
 
-C'est un problème auquel se confrontent régulièrement les intégrateurs : créer un **design en trois colonnes** - habituellement, deux menus latéraux (appelés "sidebar") et une colonne centrale pour le contenu du site.
+C'est un problème auquel se confrontent régulièrement les intégrateurs : créer un **design en trois colonnes** — habituellement, deux menus latéraux (appelés "sidebar") et une colonne centrale pour le contenu du site.
 
 Mais c'est en réalité très simple à faire, et nous allons voir comment.
 
@@ -23,11 +23,11 @@ La première chose, c'est d’abord de placer les trois colonnes dans un contene
 </div>
 ```
 
-Comme toujours, essayez d’ajouter un peu de contenu pour pouvoir voir les effets ; utilisez par exemple le [générateur de lipsum](http://fr.lipsum.com/ "Générateur de lipsum"){ target="_blank" }.
+Comme toujours, essayez d’ajouter un peu de contenu pour pouvoir voir les effets ; utilisez par exemple le [générateur de lipsum](http://fr.lipsum.com/ "Générateur de lipsum"){ target="_blank" }.
 
 ## Le CSS
 
-Maintenant, il suffit de mettre en place les éléments :
+Maintenant, il suffit de mettre en place les éléments :
 
 ```css
 .container {
@@ -49,7 +49,7 @@ Maintenant, il suffit de mettre en place les éléments :
 }
 ```
 
-Voyons ces lignes en détail :
+Voyons ces lignes en détail :
 
 ```css
 .container {
@@ -85,4 +85,4 @@ Enfin, on ne précise aucune largeur à cet élément afin qu'il s'adapte automa
 
 Avec cette méthode, si votre design est évolutif ou que la mise en page change (une colonne ou une autre ou bien les deux ou aucune en fonction des pages visitées, par exemple), la colonne centrale sera toujours adaptée correctement, ainsi que son contenu. Vous pouvez voir le gabarit en action et le tester sur [ce pen](http://codepen.io/EmmanuelB/pen/qniHp "CodePen"){ target="_blank" }.
 
-Si vous voulez plus d’explication sur le fonctionnement des flottants et des _overflow_, je vous conseille un bon article : [Le contexte de formatage block en CSS](http://www.alsacreations.com/astuce/lire/1543-le-contexte-de-formatage-block-en-css.html "Alsacréations"){ target="_blank" }.
+Si vous voulez plus d’explication sur le fonctionnement des flottants et des _overflow_, je vous conseille un bon article : [Le contexte de formatage block en CSS](http://www.alsacreations.com/astuce/lire/1543-le-contexte-de-formatage-block-en-css.html "Alsacréations"){ target="_blank" }.

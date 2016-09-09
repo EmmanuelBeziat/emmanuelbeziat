@@ -17,7 +17,7 @@ Je suis récemment tombé sur un joli traité des bonnes manières et autres pol
 *   Indentation en tabulation. 1 niveau d’indentation = 1 tabulation.
 *   Les commentaires sont importants, mais il faut commenter intelligemment : un commentaire inutile prend de la place pour rien.
 *   On se décide pour une langue : on nomme toutes les variables / classes en **anglais** ou en **français** (et, si possible, mais facultativement, les commentaires aussi), et on s'y tient : on ne jongle pas d’une langue à l’autre.
-*   Les _TODO_ sont conseillés, mais il faut les détailler : rien ne dit que c’est vous qui repasserez dessus.
+*   Les _TODO_ sont conseillés, mais il faut les détailler : rien ne dit que c’est vous qui repasserez dessus.
 *   Tout projet de code devrait être stocké sur un gestionnaire de version comme _Git_, via la plateforme [GitHub](http://github.com/){ target="_blank" }.
 *   Corriger un fichier qui ne respecte pas les conventions n’est **jamais** une perte de temps.
 
@@ -57,7 +57,7 @@ Il ne devrait jamais y avoir une portion de code qui ne soit pas couverte par au
 
 *   Indentation stricte.
 *   Préférer les propriétés raccourcies (`font`, `background`, `margin`…).
-*   Quand on utilise des propriétés `-vendor-prefix`, on n’oublie pas de mettre la propriété finale de la spec à la fin. Et surtout, on vérifie si c'est nécessaire (voir l’article [Préfixes CSS : jusqu'à quand](http://www.emmanuelbeziat.com/blog/prefixes-css-jusqua-quand/ "Préfixes CSS, jusqu’à quand ?"){ target="_blank" }) !
+*   Quand on utilise des propriétés `-vendor-prefix`, on n’oublie pas de mettre la propriété finale de la spec à la fin. Et surtout, on vérifie si c'est nécessaire (voir l’article [Préfixes CSS : jusqu'à quand](http://www.emmanuelbeziat.com/blog/prefixes-css-jusqua-quand/ "Préfixes CSS, jusqu’à quand ?"){ target="_blank" }) !
 *   Pas de hack, sauf si _vraiment_ pas le choix. Préférer les _commentaires conditionnels_ de HTML pour rajouter des feuilles de styles spécifiques ou des classes sur l’élément `<html>`.
 *   En _Less_, _Sass_ ou _Stylus_ :
 

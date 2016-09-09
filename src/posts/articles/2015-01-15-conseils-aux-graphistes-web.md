@@ -15,11 +15,11 @@ Voici donc un ensemble de points à éviter ou approfondir lorsque vous prépare
 
 ## Le bord du PSD n’est pas le bord de l’écran
 
-Une première erreur très (trop) fréquente : tenir l’espace de travail comme "complet". Une image valant mieux que beaucoup de mots, voilà une illustration du problème :
+Une première erreur très (trop) fréquente : tenir l’espace de travail comme "complet". Une image valant mieux que beaucoup de mots, voilà une illustration du problème :
 
 ![photoshop-problem-1](https://images.emmanuelbeziat.com/photoshop-problem-1.jpg)
 
-Le design est ici bien rendu, somme toute classique, et l’image sort de façon élégante du cadre du site pour aller rejoindre les bords. Oui, mais **les bords en question ne représentent pas l’écran d’un visiteur** potentiel du site. Ainsi, si on agrandi l’espace de travail pour se représenter la taille d’écran d’un visiteur du site, on se retrouve avec un problème graphique assez évident :
+Le design est ici bien rendu, somme toute classique, et l’image sort de façon élégante du cadre du site pour aller rejoindre les bords. Oui, mais **les bords en question ne représentent pas l’écran d’un visiteur** potentiel du site. Ainsi, si on agrandi l’espace de travail pour se représenter la taille d’écran d’un visiteur du site, on se retrouve avec un problème graphique assez évident :
 
 ![photoshop-problem-02](https://images.emmanuelbeziat.com/photoshop-problem-02.jpg)
 
@@ -29,9 +29,9 @@ Pensez donc toujours à choisir un espace de travail large et à tester votre re
 
 ## Le texte n’est pas contrôlable
 
-Un autre point essentiel : photoshop permet une gestion avancée des textes. On peut, à loisir, modifier le rendu d’une police, gérer son lissage, son inclinaison, lui donner divers effets, le positionner de façon fine et précise, etc.. **Ce n’est pas le cas sur le web** ! L’affichage d’une police dépend du navigateur, du système d’exploitation, du type d’écran… De même, les contrôles sur le texte sont relativement pauvres en CSS, et il est pour l’instant encore presqu'impossible de faire — par exemple — des colonnes fluides de texte, des couleurs dégradées dans des lettres, ou bien simplement d’aligner au centre la dernière ligne d’un texte justifié.
+Un autre point essentiel : photoshop permet une gestion avancée des textes. On peut, à loisir, modifier le rendu d’une police, gérer son lissage, son inclinaison, lui donner divers effets, le positionner de façon fine et précise, etc.. **Ce n’est pas le cas sur le web** ! L’affichage d’une police dépend du navigateur, du système d’exploitation, du type d’écran… De même, les contrôles sur le texte sont relativement pauvres en CSS, et il est pour l’instant encore presqu'impossible de faire — par exemple — des colonnes fluides de texte, des couleurs dégradées dans des lettres, ou bien simplement d’aligner au centre la dernière ligne d’un texte justifié.
 
-De même, je vois souvent des blocs de texte prévus dans les maquettes pour avoir un certain nombre de lignes, comme dans cet exemple :
+De même, je vois souvent des blocs de texte prévus dans les maquettes pour avoir un certain nombre de lignes, comme dans cet exemple :
 
 ![photoshop-problem-3](https://images.emmanuelbeziat.com/photoshop-problem-3.png)
 
@@ -53,7 +53,7 @@ Vous pouvez bien sûr adapter en fonction de votre cible : pour un site à dest
 
 Dans tous les cas, **pensez à fournir les fichiers des typos** que vous utilisez à l’intégrateur.
 
-## … et ne les modifiez pas !
+## … et ne les modifiez pas !
 
 Il va sans dire que toute modification _corporelle_ d’une typo est prohibée. J’entends par là modifier l’échelle horizontale ou verticale de celle-ci, ou bien utiliser les options _Faux-gras_ ou _Faux-italique_, par exemple.
 
@@ -67,9 +67,9 @@ Cependant, une exception à cette règle concerne les ronds parfaits contenant d
 
 Pour les raisons précédemment citées, la gestion du texte dans une page web est délicate. Or, la rondeur de cet élément repose sur la taille fixe de celui-ci (sinon, ça devient un ovale), car les dimensions d’un conteneur dépendent de son contenu. Il devient de facto très pénible d’obtenir le rendu souhaité en CSS pur, il faut donc ruser et adapter le texte à son conteneur — ce qui pose là encore certains soucis en CSS.
 
-Du reste, si l’intégrateur doit tenir compte de navigateurs antédiluviens (IE8 ou inférieur (ouille !)), il devra en sus utiliser une image pour le disque, ce qui l’obligera à encore plus d’ajustements de texte.
+Du reste, si l’intégrateur doit tenir compte de navigateurs antédiluviens (IE8 ou inférieur (ouille !)), il devra en sus utiliser une image pour le disque, ce qui l’obligera à encore plus d’ajustements de texte.
 
-Alors, utilisez les ronds avec parcimonie !
+Alors, utilisez les ronds avec parcimonie !
 
 ## Attention avec les hauteurs de blocs
 
@@ -83,7 +83,7 @@ Là encore, si la troisième _release_ de CSS nous a apporté de sympathiques pr
 
 ## Utilisez des font-icons
 
-Plutôt que de piocher des images sur [iconfinder](https://www.iconfinder.com/){ target="_blank" } (au demeurant très bon), **pourquoi ne pas utiliser une font-icon** ? En fonction des besoins, [FontAwesome](http://fortawesome.github.io/Font-Awesome/){ target="_blank" } ou [Genericons](http://genericons.com/){ target="_blank" } sont de très bons choix.
+Plutôt que de piocher des images sur [iconfinder](https://www.iconfinder.com/){ target="_blank" } (au demeurant très bon), **pourquoi ne pas utiliser une font-icon** ? En fonction des besoins, [FontAwesome](http://fortawesome.github.io/Font-Awesome/){ target="_blank" } ou [Genericons](http://genericons.com/){ target="_blank" } sont de très bons choix.
 
 D’abord, ça évitera à l’intégrateur-trice de devoir enregistrer chaque icône manuellement, devoir faire des sprites, et parfois utiliser des ruses de sioux pour des états différents (survol). Ensuite, ça évitera beaucoup de complications pour la gestion des différents supports, et des écrans (Par exemple, les fameux écrans Retina et leurs pendants chez la concurrence).
 
@@ -101,27 +101,27 @@ De même, vérifiez avec votre chef de projet si le design doit être fluide, ad
 
 Le rendu du texte par défaut (le contenu textuel) doit être le même partout, pour chaque page. Par défaut, la taille de texte d’un document web est définie à 16px, pour fournir un compromis entre confort de lecture et quantité de texte affichée. Vous pouvez bien sûr en changer, mais assurez-vous que cette taille soit la même pour toutes les pages. De même ne faites pas de variations entre les éléments occasionnels : la taille d’un titre devrait elle aussi rester la même d’une page à une autre, même si la mise en forme est différente (ça arrive, par exemple une page "article" et une page "liste des articles" ne sont pas forcément identiques).
 
-Enfin, **assurez-vous d’utiliser des tailles de police réelles**. Photoshop laisse la liberté de mettre des tailles totalement délirantes (23.58px) qu'il n’est pas possible d’avoir en web. De même, gardez une cohérence au niveau des valeur : restez plutôt sur des nombres pairs et privilégiez des écarts logiques et linéaires (Par exemple de 8 pixels : 16px, 24px, 32px).
+Enfin, **assurez-vous d’utiliser des tailles de police réelles**. Photoshop laisse la liberté de mettre des tailles totalement délirantes (23.58px) qu'il n’est pas possible d’avoir en web. De même, gardez une cohérence au niveau des valeur : restez plutôt sur des nombres pairs et privilégiez des écarts logiques et linéaires (Par exemple de 8 pixels : 16px, 24px, 32px).
 
 ## Utilisez des grilles
 
 Un point essentiel du design de ces dernières années : l’arrivée des grilles. Elles permettent de structurer facilement ses pages, autant pour le designer que le codeur. Cela permet une cohérence visuelle impeccable et évite d’avoir à gérer plusieurs tailles différentes.
 
-Vous pouvez par exemple utiliser les scripts de [960.gs](http://960.gs/){ target="_blank" } (ou les modèles fournis), ou bien des [templates prédéfinis](http://www.ravelrumba.com/photoshop-grids/ "Photoshop Grids"){ target="_blank" }. Plus d’explications dans cet article de Smashing Magazine : ['Establishing your grid in photoshop (en)'](http://www.smashingmagazine.com/2011/11/09/establishing-your-grid-in-photoshop/){ target="_blank" }.
+Vous pouvez par exemple utiliser les scripts de [960.gs](http://960.gs/){ target="_blank" } (ou les modèles fournis), ou bien des [templates prédéfinis](http://www.ravelrumba.com/photoshop-grids/ "Photoshop Grids"){ target="_blank" }. Plus d’explications dans cet article de Smashing Magazine : ['Establishing your grid in photoshop (en)'](http://www.smashingmagazine.com/2011/11/09/establishing-your-grid-in-photoshop/){ target="_blank" }.
 
 Demandez à votre intégrateur-trice ce qu'il-elle utilise généralement, vous trouverez sûrement un outil commun.
 
 ## Attention à la casse
 
-Il se peut que l’intégrateur-trice doive copier-coller les textes que vous aurez mis en maquette. Le contenu de certains projets est parfois validés directement en maquette, parfois dans des langues étrangères. J’ai eu le cas récemment avec du mongol, auquel je ne pige pas un broque : il m'était impossible de réécrire le contenu moi-même. Pour ces raisons, faites attention à votre façon d’écrire du texte : **Ne mettez jamais tout en majuscules**. Si vous devez mettre un texte en capitales, utilisez le bouton "Tout en capitales" du panneau d’options _Caractère_. De la même façon, il m'arrive de copier coller des textes et de me retrouver avec 'un ACCOMPAGNEMENT personnalisÉ'. Faites donc attention à ce genre de détails, et écrivez de façon normale même si le rendu diffère.
+Il se peut que l’intégrateur-trice doive copier-coller les textes que vous aurez mis en maquette. Le contenu de certains projets est parfois validés directement en maquette, parfois dans des langues étrangères. J’ai eu le cas récemment avec du mongol, auquel je ne pige pas un broque : il m'était impossible de réécrire le contenu moi-même. Pour ces raisons, faites attention à votre façon d’écrire du texte : **Ne mettez jamais tout en majuscules**. Si vous devez mettre un texte en capitales, utilisez le bouton "Tout en capitales" du panneau d’options _Caractère_. De la même façon, il m'arrive de copier coller des textes et de me retrouver avec 'un ACCOMPAGNEMENT personnalisÉ'. Faites donc attention à ce genre de détails, et écrivez de façon normale même si le rendu diffère.
 
 ## Les modes de fusion
 
-Photoshop propose différents modes de fonctionnement des calques entre eux :
+Photoshop propose différents modes de fonctionnement des calques entre eux :
 
 ![Modes de fusion Photoshop](https://www.emmanuelbeziat.com/wp-content/uploads/2015/09/modes-de-fusion.jpg)
 
-Vous voyez de quoi je parle ? C'est un outil très cool, pour faire plein d’effets sympatoches. Hé bien **vous n’y touchez pas !** Il est strictement impossible de reproduire ces effets en web. Alors n’en faites rien, sauf si vous pouvez aplatir le résultat final (et dans le doute, demandez, encore une fois).
+Vous voyez de quoi je parle ? C'est un outil très cool, pour faire plein d’effets sympatoches. Hé bien **vous n’y touchez pas !** Il est strictement impossible de reproduire ces effets en web. Alors n’en faites rien, sauf si vous pouvez aplatir le résultat final (et dans le doute, demandez, encore une fois).
 
 ## Conclusion : discutez avec tout le monde
 

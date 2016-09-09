@@ -8,7 +8,7 @@ categories:
 - Tutoriels
 ---
 
-Il vous est peut-être déjà arrivé d’utiliser `@font-face` ? Cette propriété permet l’ajout de polices (_typos_, _fonts_…) sur vos sites web sans que le visiteur n’ait besoin de les installer sur son ordinateur. De nombreux sites, tels que [FontSquirrel](http://www.fontsquirrel.com/){ target="_blank" } permettent de générer le CSS nécessaire tout en convertissant les fichiers aux formats appropriés.
+Il vous est peut-être déjà arrivé d’utiliser `@font-face` ? Cette propriété permet l’ajout de polices (_typos_, _fonts_…) sur vos sites web sans que le visiteur n’ait besoin de les installer sur son ordinateur. De nombreux sites, tels que [FontSquirrel](http://www.fontsquirrel.com/){ target="_blank" } permettent de générer le CSS nécessaire tout en convertissant les fichiers aux formats appropriés.
 
 
 Mais les CSS proposés par défaut séparent les différents styles d’une même police, en la traitant comme des polices différentes (et donc séparées). Il faut donc, en fonction de vos besoins, non pas utiliser les propriétés `font-weight` ou `font-style` pour modifier l’épaisseur ou la mise en italique d’un texte, mais carrément demander à utiliser une autre police avec `font-family`, tout en gérant quand même ces propriétés pour les polices "_fallback_".
@@ -18,7 +18,7 @@ Mais il existe une façon d’utiliser proprement ces polices, et la voici…
 
 ## Une simple question d’organisation
 
-La méthode en question est très simple. Alors que le générateur vous fournira un nom de police différent pour chaque police que vous lui avez envoyé, tout en mettant les valeurs de `font-weight` et `font-style` sur `normal` :
+La méthode en question est très simple. Alors que le générateur vous fournira un nom de police différent pour chaque police que vous lui avez envoyé, tout en mettant les valeurs de `font-weight` et `font-style` sur `normal` :
 
 ```css
 @font-face {
@@ -50,7 +50,7 @@ La méthode en question est très simple. Alors que le générateur vous fournir
 }
 ```
 
-La solution, c'est simplement de modifier ce code par défaut afin de mettre un nom (`font-family`) identique pour tous, et des propriétés (`font-weight` et `font-style`) qui correspondent à la police en question :
+La solution, c'est simplement de modifier ce code par défaut afin de mettre un nom (`font-family`) identique pour tous, et des propriétés (`font-weight` et `font-style`) qui correspondent à la police en question :
 
 ```css
 @font-face {
@@ -83,6 +83,6 @@ La solution, c'est simplement de modifier ce code par défaut afin de mettre un 
 
 De cette façon, vous pouvez appliquer les propriétés à votre police "MaPolice", sans avoir besoin d’en changer : le CSS saura qu'il faut charger une police différente en fonction des valeurs de ces propriétés.
 
-## Un exemple ?
+## Un exemple ?
 
 Voici [une page d’exemple](http://lab.infographizm.com/css/fonts/webfonts-tests-weight/){ target="_blank" } si vous souhaitez voir le code d’un peu plus près.

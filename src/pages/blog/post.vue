@@ -45,6 +45,7 @@
 <script>
 	import Post from '../../app/resources/post'
 	import Disqus from 'vue-disqus'
+	import SmoothScroll from 'smooth-scroll'
 	import Prism from 'prismjs'
 	import 'prismjs/plugins/show-language/prism-show-language.min.js'
 	import 'prismjs/components/prism-bash.min.js'
@@ -100,6 +101,11 @@
 			setTimeout(function() {
 				Prism.highlightAll()
 			}, 10)
+
+			/**
+			 * Enable smooth anchors scroll
+			 */
+			SmoothsScroll.init()
 		}
 	}
 </script>

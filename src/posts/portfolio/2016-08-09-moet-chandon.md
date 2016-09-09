@@ -13,4 +13,4 @@ tags:
 
 ## Webpage Facebook
 
-Ce projet datant un peu, je n’ai plus grand chose à disposition ! { .c-note .c-note--info }
+Ce projet datant un peu, je n’ai plus grand chose à disposition ! { .c-note .c-note--info }

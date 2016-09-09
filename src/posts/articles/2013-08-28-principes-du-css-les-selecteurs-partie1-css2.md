@@ -1,5 +1,5 @@
 ---
-title: "Principes du CSS - Les sélecteurs (Partie1 : CSS2)"
+title: "Principes du CSS - Les sélecteurs (Partie1 : CSS2)"
 date: "2013-08-28 01:54:32"
 tags:
 - html/css
@@ -7,20 +7,20 @@ categories:
 - Tutoriels
 ---
 
-Lorsqu'on utilise du CSS, on peut se contenter des trois sélecteurs de base : les éléments, les identifiants et les classes. Souvent, sans le savoir, vous utilisez un sélecteur simple de descendance, par un espace entre deux de ces sélecteurs - hé oui ! Mais il existe d’autres sélecteurs plus avancés, nous allons les passer en revue.
+Lorsqu'on utilise du CSS, on peut se contenter des trois sélecteurs de base : les éléments, les identifiants et les classes. Souvent, sans le savoir, vous utilisez un sélecteur simple de descendance, par un espace entre deux de ces sélecteurs - hé oui ! Mais il existe d’autres sélecteurs plus avancés, nous allons les passer en revue.
 
 
 Je ne traite ici que du CSS 2.1\. Le CSS3 apporte de nouveaux sélecteurs très intéressants et utiles, [qui sont listés dans cet article](http://www.emmanuelbeziat.com/blog/principes-du-css-les-selecteurs-partie-2-css3/).
 
 ## Préambule
 
-Pour petit rappel :
+Pour petit rappel :
 
 ```markup
 <balise attribut="valeur">
 ```
 
-Donc si vous êtes là, c'est que vous savez construire une feuille de style. Et vous travaillez comme ceci, grosso modo :
+Donc si vous êtes là, c'est que vous savez construire une feuille de style. Et vous travaillez comme ceci, grosso modo :
 ```css
 #page {
 	width: 800px;
@@ -33,7 +33,7 @@ Donc si vous êtes là, c'est que vous savez construire une feuille de style. Et
 }
 ```
 
-C'est une bonne base de travail ; mais il existe une utilisation plus avancée des sélecteurs. Figurez-vous que ceci veut dire quelque chose en CSS :
+C'est une bonne base de travail ; mais il existe une utilisation plus avancée des sélecteurs. Figurez-vous que ceci veut dire quelque chose en CSS :
 
 ```css
 #page > div * div + div li:first-child a[href~="index.html"]  {
@@ -47,7 +47,7 @@ Il est important de noter que la séparation du contenu et de la mise en forme e
 
 Mais on peut minimiser au maximum l’utilisation de ces classes et de ces ID grâce à l’utilisation des sélecteurs. Dans l’exemple ci-dessus, j’ai volontairement exagéré la complexité, mais on peut faire beaucoup de choses avec simplicité - parfois même plus qu'avec des classes.
 
-De plus, ça peut se révéler très utile dans certains cas. Songez à ceci :
+De plus, ça peut se révéler très utile dans certains cas. Songez à ceci :
 
 *   Vous n’aurez peut-être pas toujours accès au html et donc pas la possibilité de le modifier.
 *   Vous pouvez, grâce à ça, proposer un changement de design très facile, qui ne nécessite que peu de remaniement html sur votre site.
@@ -63,7 +63,7 @@ De plus, ça peut se révéler très utile dans certains cas. Songez à ceci :
 
 Vous utilisez déjà très probablement ce sélecteur, sans même le savoir. En effet, mettre un élément à la suite d’un autre crée automatiquement un principe de descendance. Dans le cas présent, la `div` portant la classe `rouge` devient parente de l’élément `span` qui lui, devient enfant.
 
-Dans cet exemple, toutes les balises `span` contenues dans la `div` seront affectés, et ce peu importe s'il y a d’autres balises entre eux ; sauf si un parent plus "proche" lui donne une information contradictoire, comme une autre couleur : c'est le principe d’héritage.
+Dans cet exemple, toutes les balises `span` contenues dans la `div` seront affectés, et ce peu importe s'il y a d’autres balises entre eux ; sauf si un parent plus "proche" lui donne une information contradictoire, comme une autre couleur : c'est le principe d’héritage.
 
 ```markup
 <div class="rouge">
@@ -76,7 +76,7 @@ Dans cet exemple, toutes les balises `span` contenues dans la `div` seront affec
 <span>Ce texte ne sera pas affecté</span>
 ```
 
-Dans le cas présent, le `span` portant l’id "monID" est enfant de la `div` "bleu", puis de la `div` "rouge". Voyons un petit schéma simple histoire de bien comprendre ce principe :
+Dans le cas présent, le `span` portant l’id "monID" est enfant de la `div` "bleu", puis de la `div` "rouge". Voyons un petit schéma simple histoire de bien comprendre ce principe :
 
 <div class="showcode">
 
@@ -87,7 +87,7 @@ Dans le cas présent, le `span` portant l’id "monID" est enfant de la `div` "b
 
 *   Le parent de mon parent m'a dit d’être rouge
 *   Le parent de mon parent m'a dit d’être rouge
-*   Mon parent m'a dit d’être rouge, mais mes enfants seront verts !
+*   Mon parent m'a dit d’être rouge, mais mes enfants seront verts !
 
 *   Mon parent m'a dit d’être vert
 *   Mon parent m'a dit d’être vert
@@ -97,7 +97,7 @@ Dans le cas présent, le `span` portant l’id "monID" est enfant de la `div` "b
 *   Mon parent m'a dit d’être bleu
 </div>
 
-### Selecteur d’enfant direct : ">"
+### Selecteur d’enfant direct : ">"
 
 ```css
 .rouge > span { color: red }
@@ -127,7 +127,7 @@ Sur le même principe de lien enfant/parent, ce sélecteur (qui ne porte pas de 
 *   Mon parent m'a dit d’être rouge
 </div>
 
-### Selecteur d’enfant indirect : "*"
+### Selecteur d’enfant indirect : "*"
 
 ```css
 .rouge * span { color: red }
@@ -160,7 +160,7 @@ Sur le même principe de lien enfant/parent, ce sélecteur (qui ne porte pas de 
 *   On ne m'a rien dit
 </div>
 
-### Selecteur d’adjacence directe : "+"
+### Selecteur d’adjacence directe : "+"
 
 ```css
 .rouge span + span { color: red }
@@ -183,11 +183,11 @@ Un sélecteur un peu plus complexe cette fois-ci, mais très utile. Celui-ci ser
 
 *   Je n’ai rien dit à personne
 
-*   Mes frères seront rouges !
+*   Mes frères seront rouges !
 *   Mon frère m'a dit d’être rouge
 *   Mon frère m'a dit d’être rouge</div>
 
-On peut bien sûr utiliser ce sélecteur plusieurs fois. Par exemple, si on voulait affecter les éléments d’une liste seulement à partir du quatrième élément :
+On peut bien sûr utiliser ce sélecteur plusieurs fois. Par exemple, si on voulait affecter les éléments d’une liste seulement à partir du quatrième élément :
 
 ```css
 li+li+li+li { color: red }
@@ -221,7 +221,7 @@ a[title] { color: red }
 ```markup
 <a href="#">Ce lien ne sera pas affecté</a>
 <a href="#" title="">Ce lien sera affecté</a>
-<a href="#" title="Venez sur mon site !">Ce lien sera affecté</a>
+<a href="#" title="Venez sur mon site !">Ce lien sera affecté</a>
 ```
 
 ```css
@@ -234,7 +234,7 @@ a[target] { color: red }
 <a href="#" title="" target="">Ce lien sera affecté</a>
 ```
 
-Mais on peut également aller plus loin et cibler un élément dont l’attribut prend une valeur précise. C'est très utile pour les éléments d’un formulaire, qui sont définis, avec la même balise, par la valeur de leur type :
+Mais on peut également aller plus loin et cibler un élément dont l’attribut prend une valeur précise. C'est très utile pour les éléments d’un formulaire, qui sont définis, avec la même balise, par la valeur de leur type :
 
 ```css
 input[type="password"] { color: red }
@@ -258,7 +258,7 @@ a[rel~="copyright"] { color: red }
 <a href="#" rel="copyright copyleft">Ce lien sera affecté</a>
 ```
 
-Sachez enfin qu'on peut combiner ces sélecteurs à volonté :
+Sachez enfin qu'on peut combiner ces sélecteurs à volonté :
 
 ```css
 a[rel][target=_blank][title] { color: red }
@@ -268,9 +268,9 @@ a[rel][target=_blank][title] { color: red }
 
 Les pseudo-classes désignent des éléments que l’on n’aurait pas pu cibler sans ajouter une classe particulière.
 
-### :first-child
+### :first-child
 
-Très pratique dans certains cas, cette pseudo-classe cible un élément s'il est le premier enfant de son parent. Il faut donc bien faire attention, car il s'agit bien du premier enfant, et non du premier enfant d’un tel type. Par exemple :
+Très pratique dans certains cas, cette pseudo-classe cible un élément s'il est le premier enfant de son parent. Il faut donc bien faire attention, car il s'agit bien du premier enfant, et non du premier enfant d’un tel type. Par exemple :
 
 ```css
 div p:first-child { color: red }
@@ -284,7 +284,7 @@ div p:first-child { color: red }
 </div>
 ```
 
-Si on voit maintenant, pour le même code CSS, ce code HTML :
+Si on voit maintenant, pour le même code CSS, ce code HTML :
 
 ```markup
 <div>
@@ -297,7 +297,7 @@ Si on voit maintenant, pour le même code CSS, ce code HTML :
 
 Rien ne va se passer. En effet, le code CSS signifie "cibler tous les éléments `p` s'il s'agit du premier enfant de leur parent" et non "cibler tous les éléments `p` qui sont les premiers de ces éléments de type `p` enfants". Or dans ce cas, c'est `h2` qui est le premier enfant.
 
-### :active
+### :active
 
 Cette pseudo-classe est de moins en moins utilisée. Elle est héritée de la première version du CSS et servait à cibler un lien "actif" (donc un lien au moment où il était cliqué). On peut maintenant l’utiliser sur n’importe quel élément, mais c'est assez peu usité.
 
@@ -305,7 +305,7 @@ Cette pseudo-classe est de moins en moins utilisée. Elle est héritée de la pr
 a:active { color: white }
 ```
 
-### :link
+### :link
 
 Cette pseudo-classe est de moins en moins utilisée. Elle sert à cibler un lien qui n’a pas encore été visité par le visiteur actuel.
 
@@ -313,7 +313,7 @@ Cette pseudo-classe est de moins en moins utilisée. Elle sert à cibler un lien
 a:link { color: white }
 ```
 
-### :visited
+### :visited
 
 Cette pseudo-classe est de moins en moins utilisée. À l’inverse du précédent, elle sert à cibler un lien qui a déjà été visité par le visiteur actuel.
 
@@ -321,7 +321,7 @@ Cette pseudo-classe est de moins en moins utilisée. À l’inverse du précéde
 a:visited { color: violet }
 ```
 
-### :focus
+### :focus
 
 Cette pseudo-classe permet de cibler un élément qui a actuellement le "focus". Par exemple, lorsque vous cliquez dans un champ de texte, celui-ci prend automatiquement cette valeur dynamique de focus. C'est aussi le cas des liens, lorsqu'on navigue avec la touche "tab".
 
@@ -329,7 +329,7 @@ Cette pseudo-classe permet de cibler un élément qui a actuellement le "focus".
 input:focus { background: green }
 ```
 
-### :hover
+### :hover
 
 Cette pseudo-classe est très utilisée. Elle déclenche un ensemble de propriétés au survol d’un élément par la souris. C'est par exemple très utilisé pour les menus, qui vont se dérouler ou changer de couleur au survol. On peut l’appliquer à tout élément html.
 
@@ -337,7 +337,7 @@ Cette pseudo-classe est très utilisée. Elle déclenche un ensemble de proprié
 div:hover { background: white }
 ```
 
-Il est aussi possible de cibler des éléments au survol de leur parent. Dans le cas suivant, ce sont tous les liens contenus dans un élément de liste, au survol de la div qui les contient (et non au survol du lien) :
+Il est aussi possible de cibler des éléments au survol de leur parent. Dans le cas suivant, ce sont tous les liens contenus dans un élément de liste, au survol de la div qui les contient (et non au survol du lien) :
 
 ```css
 div:hover li a { background: white }
@@ -345,36 +345,36 @@ div:hover li a { background: white }
 
 ## Les pseudo-éléments
 
-Les pseudo-éléments s'utilisent de la même manière que les pseudo-classes ; cette appellation désigne simplement des éléments que l’on n’aurait pas pu identifier sans ajouter un autre élément (comme span ou div, par exemple).
+Les pseudo-éléments s'utilisent de la même manière que les pseudo-classes ; cette appellation désigne simplement des éléments que l’on n’aurait pas pu identifier sans ajouter un autre élément (comme span ou div, par exemple).
 
-### :first-letter
+### :first-letter
 
 On peut se servir de `:first-letter` pour créer des lettrines. C'est d’ailleurs sa principale utilité. Dans l’exemple suivant, tous les éléments `p` verront leur première lettre affichée en rouge.
 
 ```p:first-letter { color: red }
 ```
 
-### :first-line
+### :first-line
 
 Peu utilisé, ce pseudo-élément va agir sur la première ligne de texte d’un élément.
 
 ```p:first-line { color: red }
 ```
 
-### :after et :before
+### :after et :before
 
 Voici deux pseudo-éléments complémentaires très utiles. Ils s'utilisent avec la propriété `content` et servent à rajouter un élément avant (pour `:before`) ou après (pour `:after`) un autre élément.
 
 ```span:before{ content: "→ " }
 ```
 
-Ainsi pour ce code :
+Ainsi pour ce code :
 
 ```markup
 <span>Test</span>
 ```
 
-On obtiendra ce résultat :
+On obtiendra ce résultat :
 
 <div class="showcode">→ Test</div>
 ```css
@@ -386,7 +386,7 @@ a:after{ content: " >>" }
 <a href="#">Lien >></a>
 ```
 
-## Le sélecteur universel : " * "
+## Le sélecteur universel : " * "
 
 Ce sélecteur, à ne pas confondre avec le sélecteur d’enfant indirect que nous avons vu plus haut, cible tous les éléments.
 
@@ -394,6 +394,6 @@ Ce sélecteur, à ne pas confondre avec le sélecteur d’enfant indirect que no
 * { color: red }
 ```
 
-Ce sélecteur est donc très "lourd" (tout est relatif) à utiliser et vous ne devriez l’employer qu'avec une extrême parcimonie, voire jamais ! {.c-note .c-note--important}
+Ce sélecteur est donc très "lourd" (tout est relatif) à utiliser et vous ne devriez l’employer qu'avec une extrême parcimonie, voire jamais ! {.c-note .c-note--important}
 
-N’hésitez pas si vous avez des questions, le formulaire de commentaires est là !
+N’hésitez pas si vous avez des questions, le formulaire de commentaires est là !

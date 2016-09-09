@@ -1,6 +1,7 @@
 <template>
 	<div class="posts-list">
 		<article class="posts-list__item" v-for="post in posts" v-if="datePast(post.date)">
+			<!--<a data-scroll href="#" class="post-list__top-link icon-up-open"><span class="sr-only">Retour en haut de page</span></a>-->
 			<h1 class="post-list__title"><a v-link="{ name: 'blog-post', params: { slug: post.basename } }">{{ post.title }}</a></h1>
 
 			<div class="post-list__infos">
@@ -17,6 +18,7 @@
 <script>
 	import Post from '../../app/resources/post'
 	import Moment from 'moment'
+	import SmoothScroll from 'smooth-scroll'
 
 	module.exports = {
 
@@ -39,6 +41,10 @@
 			datePast: function (date) {
 				return Moment(date).isBefore(Moment().format('YYYY-MM-DD hh:mm:ss'))
 			}
+		},
+
+		ready () {
+			SmoothScroll.init()
 		},
 
 		/**

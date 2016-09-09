@@ -19,7 +19,7 @@ Pour la seconde partie, facultative, mais non moins intéressante, vous aurez é
 
 Allons-y.
 
-## Comment épingle-t-on un site ?
+## Comment épingle-t-on un site ?
 
 Il existe plusieurs façons pour un utilisateur d’épingler un site.
 
@@ -37,7 +37,7 @@ Lorsqu'un site est lancé depuis un raccourci épinglé, l’interface change l�
 
 ![Un exemple de site épinglé](https://www.emmanuelbeziat.com/wp-content/uploads/2013/07/exemple-site-epingle.jpg)
 
-### La barre des tâches, mais pas seulement !
+### La barre des tâches, mais pas seulement !
 
 Il existe également une petite subtilité : si vous glissez le site non pas sur la barre des tâches mais sur le bouton du menu Démarrer (uniquement pour Windows 7 donc), votre site et ses raccourcis apparaîtront dans celui-ci.
 
@@ -47,7 +47,7 @@ La théorie étant vue, place à l’action.
 
 ## Préparer le terrain
 
-Il faut savoir que n’importe quel site peut être épinglé à la barre de tâche, il n’y a rien à faire pour rendre un site épinglable ou non. Ce que nous allons faire tout au long de ce tutoriel, c'est **personnaliser cet épinglage** ; pour commencer, nous allons voir quelques informations de personnalisation de base à donner au site par le biais des métadonnées.
+Il faut savoir que n’importe quel site peut être épinglé à la barre de tâche, il n’y a rien à faire pour rendre un site épinglable ou non. Ce que nous allons faire tout au long de ce tutoriel, c'est **personnaliser cet épinglage** ; pour commencer, nous allons voir quelques informations de personnalisation de base à donner au site par le biais des métadonnées.
 
 ### Les métadonnées d’installation
 
@@ -59,7 +59,7 @@ Il est important de comprendre que ces valeurs ne seront utilisées qu'à l’é
 
 La première chose que l’on pourrait vouloir faire, c'est modifier le nom affiché dans la fenêtre d’information, qui apparaît lors du clic droit sur l’icône d’un site épinglé. En effet, par défaut il sera affiché le contenu de la balise `<title>` du document lié.
 
-Ajoutons donc une métadonnée afin de choisir nous-mêmes ce qui sera affiché par le lien de base :
+Ajoutons donc une métadonnée afin de choisir nous-mêmes ce qui sera affiché par le lien de base :
 
 ```markup
 <meta name="application-name" content="Un beau site épinglable">
@@ -72,14 +72,14 @@ Le résultat est immédiat, le nom du lien vers le site est transformé selon no
 Il est également possible d’ajouter une infobulle qui apparaîtra lors du survol de l’icône.
 
 ```markup
-<meta name="msapplication-tooltip" content="Cliquez pour vous rendre sur un magnifique site !">
+<meta name="msapplication-tooltip" content="Cliquez pour vous rendre sur un magnifique site !">
 ```
 
 #### msapplication-starturl
 
 Il faut savoir que, par défaut, la page qui s'ouvrira lorsqu'un utilisateur cliquera sur le bouton du site épinglé sera celle qu'il visitait au moment où il l’a épinglé. S'il était sur une page obscure du fin fond de votre site, c'est cette page qu'il verra chaque fois qu'il ouvrira votre site par le biais de l’icône épinglée.
 
-Pour choisir vous-même quelle URL sera lancée au moment de l’ouverture, vous pouvez utiliser ce code :
+Pour choisir vous-même quelle URL sera lancée au moment de l’ouverture, vous pouvez utiliser ce code :
 
 ```markup
 <meta name="msapplication-starturl" content="./">
@@ -93,7 +93,7 @@ Seuls les protocoles HTTP et HTTPS sont autorisés. { .c-note .c-note--info }
 
 Par défaut, lors de la première ouverture d’un site épinglé, la fenêtre ouverte aura une taille de 800×600 pixels. Par la suite, la taille conservée sera celle qu'aura décidé l’utilisateur en redimensionnant ladite fenêtre.
 
-Cependant, il peut être judicieux de vouloir faire en sorte que le premier affichage soit plus grand. Et c'est possible avec cette balise meta :
+Cependant, il peut être judicieux de vouloir faire en sorte que le premier affichage soit plus grand. Et c'est possible avec cette balise meta :
 
 ```markup
 <meta name="msapplication-window" content="width=1024;height=768">
@@ -107,9 +107,9 @@ Ces paramètres sont lus à chaque fois que le site épinglé est ouvert. Les do
 
 #### msapplication-navbutton-color
 
-Comme je le disais plus tôt, lorsqu'un site est lancé depuis un raccourci épinglé (on parle de mode site), l’interface est légèrement modifiée par rapport au site ouvert normalement. Par exemple, les boutons précédents et suivants adoptent une couleur adaptée au site ; par défaut, Internet Explorer choisit cette couleur parmi les dominantes principales du site.
+Comme je le disais plus tôt, lorsqu'un site est lancé depuis un raccourci épinglé (on parle de mode site), l’interface est légèrement modifiée par rapport au site ouvert normalement. Par exemple, les boutons précédents et suivants adoptent une couleur adaptée au site ; par défaut, Internet Explorer choisit cette couleur parmi les dominantes principales du site.
 
-Là encore, vous pouvez choisir vous-même cette couleur :
+Là encore, vous pouvez choisir vous-même cette couleur :
 
 ```markup
 <meta name="msapplication-navbutton-color" content="#c80000">
@@ -129,7 +129,7 @@ Cet élément permet de créer une ligne de séparation entre deux éléments de
 
 ### Quelques exemples
 
-Saviez-vous que de nombreux sites utilisent déjà ces fonctionnalités ? Voici de petits exemples…
+Saviez-vous que de nombreux sites utilisent déjà ces fonctionnalités ? Voici de petits exemples…
 
 #### Facebook
 
@@ -172,7 +172,7 @@ Voici la balise en question, qui se définit par la valeur de name "msapplicatio
 <meta name="msapplication-task" content="">
 ```
 
-Les valeurs possibles de content sont au nombre de quatre, et doivent être séparées par un point-virgule. Voici un tableau des différentes valeurs possibles et de leur utilité :
+Les valeurs possibles de content sont au nombre de quatre, et doivent être séparées par un point-virgule. Voici un tableau des différentes valeurs possibles et de leur utilité :
 
 <table><tr><th>Nom</th><th>Description</th></tr>
 <tr><td>name</td><td>Nom de la tâche, qui apparaît dans la liste.
@@ -186,13 +186,13 @@ Les valeurs possibles de content sont au nombre de quatre, et doivent être sép
 <li>window : nouvelle fenêtre</li>
 <li>self : onglet actuel</li></ul></td></tr></table>
 
-Par exemple, pour créer un lien vers un blog, avec une icône personnalisée, on pourrait faire ceci :
+Par exemple, pour créer un lien vers un blog, avec une icône personnalisée, on pourrait faire ceci :
 
 ```markup
-<meta name="msapplication-task" content="name=Le Blog !;action-uri=http://monblog.com;icon-uri=blog.ico">
+<meta name="msapplication-task" content="name=Le Blog !;action-uri=http://monblog.com;icon-uri=blog.ico">
 ```
 
-Ou pour faire un lien vers une page Twitter en utilisant leur favicon comme icône :
+Ou pour faire un lien vers une page Twitter en utilisant leur favicon comme icône :
 
 ```markup
 <meta name="msapplication-task" content="name=Twitter;action-uri=http://fr.twitter.com/moi;icon-uri=http://twitter.com/favicon.ico">
@@ -208,7 +208,7 @@ Il est également possible de créer des tâches dynamiquement, en utilisant du 
 
 Lorsque le site est ouvert depuis un raccourci épinglé, on dit qu'il est en mode site. Il sera donc utile de vérifier en Javascript si le site est exécuté avec ce mode ou pas. Pour ça, il existe une méthode [`msIsSiteMode()`](http://msdn.microsoft.com/fr-fr/library/ie/ff976310%28v=vs.85%29.aspx "MSDN").
 
-Nous pouvons créer une fonction simple de vérification, et attribuer le résultat à une variable :
+Nous pouvons créer une fonction simple de vérification, et attribuer le résultat à une variable :
 
 ```var siteMode = testSiteMode();
 
@@ -291,11 +291,11 @@ window.onload = function() {
 }
 ```
 
-Notez l’utilisation de la méthode [`msSiteModeShowJumList()`](http://msdn.microsoft.com/fr-fr/library/ff976318%28v=vs.85%29.aspx "MSDN") : elle est obligatoire, sans quoi les liens ajoutés ne seront pas affichés.
+Notez l’utilisation de la méthode [`msSiteModeShowJumList()`](http://msdn.microsoft.com/fr-fr/library/ff976318%28v=vs.85%29.aspx "MSDN") : elle est obligatoire, sans quoi les liens ajoutés ne seront pas affichés.
 
 Il ne vous reste désormais qu'à trouver des idées d’application. Vous pouvez par exemple, comme **Amazon**, enregistrer une liste de favoris, ou la liste des dernières recherches effectuées.
 
-On pourrait par exemple imaginer créer un bouton pour l’ajout d’une fiche de membre à une liste de Favoris. Le bouton appellerait une fonction `AjouterMembreListe`, et les paramètres seraient passés dynamiquement à la fonction avec PHP (ou autre) :
+On pourrait par exemple imaginer créer un bouton pour l’ajout d’une fiche de membre à une liste de Favoris. Le bouton appellerait une fonction `AjouterMembreListe`, et les paramètres seraient passés dynamiquement à la fonction avec PHP (ou autre) :
 
 ```javascript
 var site = null;
@@ -308,7 +308,7 @@ function AjouterMembreListe(nomMembre, adresseMembre) {
 
 ## Les notifications en Javascript
 
-Puisque l’on a ajouté des éléments de manière dynamique, il peut être utile de prévenir l’utilisateur que des changements ont été faits. Il y a deux possibilités pour cela : ajouter une image superposée à l’icône, ou faire clignoter l’icône dans la barre des tâches.
+Puisque l’on a ajouté des éléments de manière dynamique, il peut être utile de prévenir l’utilisateur que des changements ont été faits. Il y a deux possibilités pour cela : ajouter une image superposée à l’icône, ou faire clignoter l’icône dans la barre des tâches.
 
 ### Ajouter une image par-dessus l’icône
 
@@ -316,7 +316,7 @@ Une technique qui peut-être très pratique pour indiquer qu'un certain type d�
 
 ![notification-facebook](https://www.emmanuelbeziat.com/wp-content/uploads/2014/03/notif-fb.jpg)
 
-Cela se fait avec la méthode [`msSiteModeSetIconOverlay()`](http://msdn.microsoft.com/fr-fr/library/ff976316%28v=vs.85%29.aspx "MSDN"), qui attend deux paramètres : l’adresse de l’image (obligatoire), et un texte descriptif de la notification (optionnel).
+Cela se fait avec la méthode [`msSiteModeSetIconOverlay()`](http://msdn.microsoft.com/fr-fr/library/ff976316%28v=vs.85%29.aspx "MSDN"), qui attend deux paramètres : l’adresse de l’image (obligatoire), et un texte descriptif de la notification (optionnel).
 
 ```window.external.msSiteModeSetIconOverlay('newMP.ico', 'Un nouveau message privé est arrivé');```
 
@@ -324,7 +324,7 @@ Pour retirer cette image, on peut utiliser la méthode [`msSiteModeClearIconOver
 
 ### Exemple concret
 
-Voici maintenant un exemple d’utilisation, qui imagine que nous avons un système de Commentaires. On souhaite créer une fonction qui modifie l’image en fonction d’un statut passé dynamiquement en fonction d’un événement. Une recherche est faite sur le site pour détecter la présence de nouveaux messages, et le résultat est transmis à l’icône épinglée par le biais d’une fonction :
+Voici maintenant un exemple d’utilisation, qui imagine que nous avons un système de Commentaires. On souhaite créer une fonction qui modifie l’image en fonction d’un statut passé dynamiquement en fonction d’un événement. Une recherche est faite sur le site pour détecter la présence de nouveaux messages, et le résultat est transmis à l’icône épinglée par le biais d’une fonction :
 
 *   État normal
 *   Nouveaux messages, avec affichage du nombre de messages
@@ -332,7 +332,7 @@ Voici maintenant un exemple d’utilisation, qui imagine que nous avons un syst�
 *   Erreur
 ```javascript
 var etats = { VIDE: 0, NORMAL: 1, ERREUR: 2 };
-var messages = [ 'En attente', 'Nouveaux commentaires !', 'Erreur' ];
+var messages = [ 'En attente', 'Nouveaux commentaires !', 'Erreur' ];
 
 // Fonction de modification de l’icône en fonction du statut
 function modifierIcone(statut) {
@@ -376,7 +376,7 @@ Le clignotement se fait au moyen de la méthode [`msSiteModeActivate()`](http://
 
 Pour aller plus loin, il est également possible d’ajouter des fonctionnalités à la fenêtre d’aperçu, à la manière des lecteurs multimédias qui disposent dans cette même fenêtre de boutons tels que Play, Stop, Pause, Suivant et Précédent. Il est possible de créer le même genre d’éléments pour un site épinglé.
 
-Au-delà de boutons de lecture, on peut imaginer ajouter un bouton pour accéder directement à une liste de favoris, un bouton de partage sur les réseaux sociaux, modifier un état (en ligne/hors ligne), ou bien accéder aux informations de localisation d’une entreprise ; bref, un véritable petit contrôle à distance de votre site.
+Au-delà de boutons de lecture, on peut imaginer ajouter un bouton pour accéder directement à une liste de favoris, un bouton de partage sur les réseaux sociaux, modifier un état (en ligne/hors ligne), ou bien accéder aux informations de localisation d’une entreprise ; bref, un véritable petit contrôle à distance de votre site.
 
 ![barre d’outils](https://www.emmanuelbeziat.com/wp-content/uploads/2014/03/barre-outils.jpg)
 
@@ -388,7 +388,7 @@ Au-delà de boutons de lecture, on peut imaginer ajouter un bouton pour accéder
 
 ### Créer les boutons et la barre
 
-Contrairement aux tâches, les boutons de la barre d’outils doivent être créés avant la barre. Nous utilisons la méthode [`msSiteModeAddThumbBarButton()`](http://msdn.microsoft.com/fr-fr/library/ff976313%28v=vs.85%29.aspx "MSDN"), qui attend deux paramètres : l’URL de l’icône à utiliser (16×16px), et la description à afficher dans l’infobulle du bouton.
+Contrairement aux tâches, les boutons de la barre d’outils doivent être créés avant la barre. Nous utilisons la méthode [`msSiteModeAddThumbBarButton()`](http://msdn.microsoft.com/fr-fr/library/ff976313%28v=vs.85%29.aspx "MSDN"), qui attend deux paramètres : l’URL de l’icône à utiliser (16×16px), et la description à afficher dans l’infobulle du bouton.
 
 ```javascript
 var btnFacebook = window.external.msSiteModeAddThumbBarButton('facebook.ico', 'Facebook');
@@ -408,7 +408,7 @@ Rendus ici, nous avons trois jolis boutons affichés sous notre site, mais qui n
 
 #### Appeler l’événement
 
-En fonction du mode de document (je vous passe les détails), la méthode d’appel au gestionnaire peut changer. Il faut donc prévoir les deux cas possibles :
+En fonction du mode de document (je vous passe les détails), la méthode d’appel au gestionnaire peut changer. Il faut donc prévoir les deux cas possibles :
 
 ```if (document.addEventListener) {
 	document.addEventListener('msthumbnailclick', actionBouton, false);
@@ -418,7 +418,7 @@ else if (document.attachEvent) {
 }
 ```
 
-Avec ceci, vous n’aurez pas de problème. Continuons donc : on peut maintenant créer la fonction adéquate. Lors de l’étape précédente, nous avons donné des identifiants à chaque bouton, c'est ce qui est passé en paramètre ici :
+Avec ceci, vous n’aurez pas de problème. Continuons donc : on peut maintenant créer la fonction adéquate. Lors de l’étape précédente, nous avons donné des identifiants à chaque bouton, c'est ce qui est passé en paramètre ici :
 
 ```function actionBouton(bouton) {
 	switch (bouton.buttonID) {
@@ -429,7 +429,7 @@ Avec ceci, vous n’aurez pas de problème. Continuons donc : on peut maintenant
 }
 ```
 
-Il ne reste plus qu'à définir les actions en questions, par exemple en faisant des appels de fonctions que vous aurez préalablement créées (ou que vous allez créer par la suite) :
+Il ne reste plus qu'à définir les actions en questions, par exemple en faisant des appels de fonctions que vous aurez préalablement créées (ou que vous allez créer par la suite) :
 
 ```function actionBouton(bouton) {
 	switch (bouton.buttonID) {
@@ -446,15 +446,15 @@ Comme je vous le disais plus tôt, il n’est pas possible d’ajouter ou de mod
 
 #### Activer et désactiver un bouton
 
-Si vous faites un lecteur audio comme dans l’exemple de l’image d’illustration plus haut, il peut être utile d’activer ou désactiver certains boutons. Par exemple, lorsque l’utilisateur est sur la première piste, le bouton "piste précédente" est inutile ; idem lorsqu'il écoute la dernière piste pour le bouton "piste suivante".
+Si vous faites un lecteur audio comme dans l’exemple de l’image d’illustration plus haut, il peut être utile d’activer ou désactiver certains boutons. Par exemple, lorsque l’utilisateur est sur la première piste, le bouton "piste précédente" est inutile ; idem lorsqu'il écoute la dernière piste pour le bouton "piste suivante".
 
-C'est la méthode [`msSiteModeUpdateThumbBarButton()`](http://msdn.microsoft.com/fr-fr/library/ff976320%28v=vs.85%29.aspx "MSDN") qui va permettre ceci. Elle attend trois paramètres obligatoires :
+C'est la méthode [`msSiteModeUpdateThumbBarButton()`](http://msdn.microsoft.com/fr-fr/library/ff976320%28v=vs.85%29.aspx "MSDN") qui va permettre ceci. Elle attend trois paramètres obligatoires :
 
-*   l’identifiant du bouton retourné par la méthode [`msSiteModeAddThumbBarButton()`](http://msdn.microsoft.com/fr-fr/library/ff976313%28v=vs.85%29.aspx "MSDN") ; souvenez-vous, nous avons nommé les nôtres `btnFacebook`, `btnTwitter` et `btnGoogle`</a> dans le point précédent. Ce sont ces noms qu'il faut indiquer.
+*   l’identifiant du bouton retourné par la méthode [`msSiteModeAddThumbBarButton()`](http://msdn.microsoft.com/fr-fr/library/ff976313%28v=vs.85%29.aspx "MSDN") ; souvenez-vous, nous avons nommé les nôtres `btnFacebook`, `btnTwitter` et `btnGoogle`</a> dans le point précédent. Ce sont ces noms qu'il faut indiquer.
 *   un booléen qui indiquera si le bouton est activé (`true`) ou désactivé (`false`) : c'est ce dont nous allons nous servir ici.
 *   un second booléen qui indiquera si le bouton est affiché (`true`) ou masqué (`false`)
 
-Voyons un exemple avec deux boutons qui s'activent et se désactivent l’un l’autre :
+Voyons un exemple avec deux boutons qui s'activent et se désactivent l’un l’autre :
 
 ```javascript
 var btnEtat = 0;
@@ -481,7 +481,7 @@ function boutonChange() {
 
 #### Masquer un bouton
 
-Parfois, il peut être utile de masquer un bouton. On utilise donc la même méthode ([`msSiteModeUpdateThumbBarButton()`](http://msdn.microsoft.com/fr-fr/library/ff976320%28v=vs.85%29.aspx "MSDN")) que pour l’activation et la désactivation, mais cette fois nous nous intéressons au dernier paramètre attendu par la méthode. Il suffit donc de mettre le dernier paramètre sur false pour masquer un bouton :
+Parfois, il peut être utile de masquer un bouton. On utilise donc la même méthode ([`msSiteModeUpdateThumbBarButton()`](http://msdn.microsoft.com/fr-fr/library/ff976320%28v=vs.85%29.aspx "MSDN")) que pour l’activation et la désactivation, mais cette fois nous nous intéressons au dernier paramètre attendu par la méthode. Il suffit donc de mettre le dernier paramètre sur false pour masquer un bouton :
 
 ```javascript
 window.external.msSiteModeUpdateThumbBarButton(boutonID, true, false);```
@@ -496,7 +496,7 @@ function masquerBoutons() {
 }
 ```
 
-Il suffit ensuite d’appeler la fonction à l’événement unload :
+Il suffit ensuite d’appeler la fonction à l’événement unload :
 
 ```markup
 <body onunload="masquerBoutons()">
@@ -518,7 +518,7 @@ Ensuite, il suffit de modifier ces états via une fonction. On imagine qu'on pas
 
 ```function playPause(etat) {
 	// En fonction de l’état envoyé, on défini le style à affecter
-	var styleBtn = etat.pause ? stylePlay : stylePause;
+	var styleBtn = etat.pause ? stylePlay : stylePause;
 	// On attribue au bouton le nouveau style
 	window.external.msSiteModeShowButtonStyle(btnPlayPause, styleBtn);
 }
@@ -566,11 +566,11 @@ Il existe un plugin jQuery nommé Pinify, qui apporte quelques suppléments (à 
 
 Concrètement, il permet de faire tout ce que l’on vient de voir, aussi bien la partie HTML que Javascript, de manière plus simple et rapide avec la syntaxe habituelle du jQuery. Vous pourrez donc créer vos balises meta, ajouter des listes de raccourcis (tâches) statiques ou dynamiques, gérer les notifications et créer une barre d’outils avec encore plus de facilité.
 
-Cette partie est facultative, et s'adresse aux développeurs déjà habitués à manipuler du Javascript et jQuery. Elle sera donc concise et se contentera de présenter la façon de faire pour les étapes vues, en utilisant Pinify ; en cas de besoin, leur documentation est disponible. {.c-note .c-note--info}
+Cette partie est facultative, et s'adresse aux développeurs déjà habitués à manipuler du Javascript et jQuery. Elle sera donc concise et se contentera de présenter la façon de faire pour les étapes vues, en utilisant Pinify ; en cas de besoin, leur documentation est disponible. {.c-note .c-note--info}
 
 Tout d’abord, il faut [télécharger Pinify](http://polyfillsbook.com/pinify/ "Pinify") et ajouter le fichier `jquery.pinify.js` à notre page (après avoir inclus jQuery). Tout est expliqué sur leur page, je vous laisse le soin d’aller lire leurs explications.
 
-Ensuite, il suffit d’appeler la fonction `.pinify();` :
+Ensuite, il suffit d’appeler la fonction `.pinify();` :
 
 ```javascript
 $('head’).pinify();```
@@ -642,7 +642,7 @@ $.pinify.addJumpList ({
 
 #### Méthode de l’icône supplémentaire
 
-Encore plus simple que dans la version d’origine, jQuery oblige :
+Encore plus simple que dans la version d’origine, jQuery oblige :
 
 ```javascript
 $.pinify.addOverlay ({
@@ -657,14 +657,14 @@ $.pinify.clearOverlay();```
 
 #### Méthode du clignotement
 
-Tout aussi simplement que la méthode initiale :
+Tout aussi simplement que la méthode initiale :
 
 ```javascript
 $.pinify.flashTaskbar();```
 
 ### Les aperçus
 
-Cette fois, le plugin simplifie grandement la tâche :
+Cette fois, le plugin simplifie grandement la tâche :
 
 ```javascript
 $.pinify.createThumbbarButtons({
@@ -690,4 +690,4 @@ Voilà, vous savez désormais tout. Il est possible d’aller plus loin encore, 
 
 Néanmoins, il s'agit de fonctionnalités bien plus avancées, nous nous arrêterons donc ici pour le moment. De nouvelles fonctionnalités apparaîtront avec les prochaines versions de Windows et d’Internet Explorer, comme déjà depuis IE10 les **notifications de Badge**. Ce sera l’occasion d’y revenir, et le tutoriel sera mis à jour en temps voulu.
 
-Faites de beaux sites épinglables !
+Faites de beaux sites épinglables !

@@ -71,6 +71,7 @@
     "sinon": "^1.17.3",
     "sinon-chai": "^2.8.0",
     "slug": "^0.9.1",
+    "smooth-scroll": "github:cferdinandi/smooth-scroll",
     "stylus": "^0.54.5",
     "stylus-loader": "^2.1.0",
     "url-loader": "^0.5.7",
