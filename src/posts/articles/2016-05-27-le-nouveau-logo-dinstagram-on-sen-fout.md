@@ -1,5 +1,7 @@
 ---
 title: "Le nouveau logo d’Instagram ? On s’en fout !"
+image: "https://images.emmanuelbeziat.com/instagram-logo.jpg"
+description: "c’est LE grand événement qui secoue la toile. La famine, la guerre ne comptent plus. Même Nabilla est reléguée au second plan médiatique. Parce qu’être Charlie ça va un temps, mais il ne faut pas non plus exagérer ! Oui, aujourd’hui, le grand malheur d’internet, c’est le nouveau logo d’Instagram."
 date: "2016-05-27 04:24:14"
 tags:
 - design

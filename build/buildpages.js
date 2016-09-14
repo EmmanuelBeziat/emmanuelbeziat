@@ -66,12 +66,14 @@ getDirectories(folders.src).forEach(function(directory) {
 			if (directory === 'articles') {
 				fileContent.posts.push({
 					'title': result.attributes.title,
+                    'image': result.attributes.image || 'https://images.emmanuelbeziat.com/social-thumbnail.jpg',
 					'author': result.attributes.author || 'Emmanuel B.',
 					'date': result.attributes.date || new Date(),
 					'tags': result.attributes.tags || [''],
 					'categories': result.attributes.categories || ['non-classe'],
 					'template': result.attributes.template || 'post.vue',
 					'basename': result.attributes.basename || slug(result.attributes.title, { lower: true }),
+                    'description': result.attributes.description || md.render(result.body).substring(0, 170),
 					'content': md.render(result.body)
 				})
 			}

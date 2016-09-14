@@ -29,31 +29,48 @@
 			waitForData: true
 		},
 
+		/**
+		 * @return {Object}
+		 */
+		data () {
+			return {
+				posts: [],
+                params: {
+                    title: 'Blog'
+                }
+			}
+		},
+
 		created: function () {
 			this.fetchData()
 		},
 
 		methods: {
 			fetchData: function () {
+                this.getAsyncData()
 				return Post.getPosts('static/posts/articles/articles.json').then(response => this.$set('posts', response.data.posts.reverse()))
 			},
 
 			datePast: function (date) {
 				return Moment(date).isBefore(Moment().format('YYYY-MM-DD hh:mm:ss'))
-			}
+			},
+
+            getAsyncData: function () {
+                this.$emit('updateHead')
+            }
 		},
+
+        head: {
+            title: function () {
+                return {
+                    inner: this.params.title,
+                    separator: '—'
+                }
+            }
+        },
 
 		ready () {
 			SmoothScroll.init()
-		},
-
-		/**
-		 * @return {Object}
-		 */
-		data () {
-			return {
-				posts: []
-			}
 		}
 	}
 </script>

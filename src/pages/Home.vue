@@ -35,7 +35,7 @@ export default {
 		 * Calculate age and birthday
 		 */
 		birthdayCalculate: function () {
-			const date = '16.09.1987-02:26'
+			const date = '17.09.1987-02:26'
 			const format = 'DD.MM.YYYY-HH:mm'
 			const birthday = Moment(date, format).add(1, 'year')
 			const nextbd = Moment(date, format).set({ 'year': Moment().year() })

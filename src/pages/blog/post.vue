@@ -74,10 +74,20 @@
 					response.data.posts.forEach(function(post) {
 						if (post.basename === slug) {
 							that.$set('post', post)
+                            that.$set('params.title', post.title)
+                            that.$set('params.image', post.image)
+                            that.$set('params.description', post.description)
 						}
+
+                        // Update Metadatas
+                        that.getAsyncData()
 					})
 				})
-			}
+			},
+
+            getAsyncData: function () {
+                this.$emit('updateHead')
+            }
 		},
 
 		components: {
@@ -90,22 +100,50 @@
 		 */
 		data () {
 			return {
-				post: { }
+				post: { },
+                params: {
+                    title: 'Blog',
+                    image: '',
+                    description: ''
+                }
 			}
 		},
 
+        /**
+         * Metadatas
+         */
+        head: {
+            title: function () {
+                return {
+                    inner: this.params.title + ' :: Blog',
+                    separator: '—'
+                }
+            },
+            meta: function () {
+                return [
+                    { property: 'og:title', content: this.params.title, id: 'fbTitle' },
+                    { property: 'og:url', content: document.URL, id: 'fbUrl' },
+                    { property: 'og:image', content: this.params.image, id: 'fbImage' },
+                    { property: 'og:description', content: this.params.description, id: 'fbDescription' },
+                    { property: 'twitter:title', content: this.params.title, id: 'twTitle' },
+                    { property: 'twitter:url', content: document.URL, id: 'twUrl' },
+                    { property: 'twitter:image', content: this.params.image, id: 'twImage' },
+                    { property: 'twitter:description', content: this.params.description, id: 'twDescription' },
+                    { itemprop: 'name', content: this.params.title, id: 'gTitle' },
+                    { itemprop: 'image', content: this.params.image, id: 'gImage' },
+                    { itemprop: 'description', content: this.params.description, id: 'gDescription' }
+                ]
+            }
+        },
+
 		ready () {
-			/**
-			 * Ignitiate code hightlighting with PrismJS
-			 */
+			// Ignitiate code hightlighting with PrismJ
 			setTimeout(function() {
 				Prism.highlightAll()
 			}, 10)
 
-			/**
-			 * Enable smooth anchors scroll
-			 */
-			SmoothsScroll.init()
+			// Enable smooth anchors scroll
+			SmoothScroll.init()
 		}
 	}
 </script>

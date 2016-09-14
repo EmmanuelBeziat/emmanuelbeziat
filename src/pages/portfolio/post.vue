@@ -46,18 +46,41 @@
 					response.data.posts.forEach(function(post) {
 						if (post.basename === slug) {
 							that.$set('post', post)
+                            that.$set('params.title', post.title)
 						}
+
+                        // Update Metadatas
+                        that.getAsyncData()
 					})
 				})
-			}
+			},
+
+            getAsyncData: function () {
+                this.$emit('updateHead')
+            }
 		},
+
+        /**
+         * Metadatas
+         */
+        head: {
+            title: function () {
+                return {
+                    inner: this.params.title + ' :: Portfolio',
+                    separator: '—'
+                }
+            }
+        },
 
 		/**
 		 * @return {Object}
 		 */
 		data () {
 			return {
-				post: { }
+				post: { },
+                params: {
+                    title: ''
+                }
 			}
 		}
 	}

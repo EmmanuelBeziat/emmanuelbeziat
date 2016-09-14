@@ -34,23 +34,40 @@
 			waitForData: true
 		},
 
+        /**
+		 * @return {Object}
+		 */
+		data () {
+			return {
+				portfolio: [],
+                params: {
+                    title: 'Portfolio'
+                }
+			}
+		},
+
 		created: function () {
 			this.fetchData()
 		},
 
 		methods: {
 			fetchData: function () {
+                this.getAsyncData()
 				return Post.getPosts('static/posts/portfolio/portfolio.json').then(response => this.$set('portfolio', response.data.posts.reverse()))
-			}
+			},
+
+            getAsyncData: function () {
+                this.$emit('updateHead')
+            }
 		},
 
-		/**
-		 * @return {Object}
-		 */
-		data () {
-			return {
-				portfolio: []
-			}
-		}
+        head: {
+            title: function () {
+                return {
+                    inner: this.params.title,
+                    separator: '—'
+                }
+            }
+        }
 	}
 </script>

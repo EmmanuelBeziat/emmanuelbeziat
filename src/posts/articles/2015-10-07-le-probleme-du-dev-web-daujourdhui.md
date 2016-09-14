@@ -1,6 +1,8 @@
 ---
 title: "Le problème du dev web d’aujourd’hui"
 date: "2015-10-07 02:34:00"
+image: "https://images.emmanuelbeziat.com/web-moderne.png"
+description: "Ces dernières années, pas mal d’avancées ont été faites dans le domaine du web. L’arrivée de html5 mais surtout de CSS3, de nouvelles API, les nouvelles possibilités au sein des navigateurs, le versionning (svn, git), les fonticons, les préprocesseurs et la pléthore de nouveaux outils comme les task-runners ont permis de faire de grosses avancées en matière de workflow, de productivité et de possibilités."
 tags:
 - bonnes pratiques
 - workflow
