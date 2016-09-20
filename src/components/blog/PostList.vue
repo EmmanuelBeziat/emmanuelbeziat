@@ -2,6 +2,7 @@
   <section class="blog">
     <div class="post-list" v-if="!$loadingRouteData">
       <article class="post-list__item" v-for="post in postlist">
+        {{ post.title }}
       </article>
     </div>
 
@@ -22,7 +23,7 @@ export default {
 
   methods: {
     extractPosts: function (posts) {
-      let archive = {}
+      let archive = []
       let ret = []
 
       for (let post of posts) {

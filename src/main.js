@@ -11,7 +11,7 @@ Vue.use(VueHead)
 Vue.use(VueRouter)
 
 Vue.use(svg, {
-  sprites: './assets/icons/sprite.svg',
+  sprites: './src/assets/icons/sprite.svg',
   prefix: '',
   class: 'icon'
 })

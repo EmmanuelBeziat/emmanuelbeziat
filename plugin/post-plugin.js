@@ -1,52 +1,74 @@
 require('shelljs/global')
+var fs = require('fs-extra')
+var slug = require('slug')
 var path = require('path')
-var fs = require('fs')
-var yaml = require('js-yaml')
+var jsonfile = require('jsonfile')
+var markdown = require('markdown-parse')
+var folders =  path.resolve(__dirname, '../src/posts')
 
-// PostPlugin.js
-var reg = /^(-{3,}|;{3,})\n([\s\S]+?)\n\1(?:$|\n([\s\S]*)$)/
-
-function PostPlugin(options) {
-  // Configure plugin with options
+function PostPlugin (options) {
+  // Configure options
 }
 
 PostPlugin.prototype.apply = function (compiler) {
-  compiler.plugin('entry-option', function () {
+  compiler.plugin("entry-option", function (){
     generateMetaData()
   })
 }
 
+function getDirectories(srcpath) {
+  return fs.readdirSync(srcpath).filter(function(file) {
+    return fs.statSync(path.join(srcpath, file)).isDirectory();
+  });
+}
+
+function createJsonFiles(fileName, fileContent) {
+  jsonfile.writeFile(fileName, fileContent)
+  console.log('	+ Files: ' + fileName)
+}
+
 function generateMetaData () {
-  console.log('generate meta data\n')
+  console.log('Generate post metadatas started…')
+  getDirectories(folders).forEach(function(directory) {
+    var folder = path.resolve(__dirname, '../src/posts/' + directory)
+    var fileContent = []
 
-  var postPath = path.resolve(__dirname, '../src/posts/articles')
-  var postMetaList = []
+    ls(path.resolve(folder, '*.md')).forEach(function(element, index, fileArray) {
+      var post = fs.readFileSync(path.resolve(folder, element), 'utf8')
 
-  ls(path.resolve(postPath, '*.md')).forEach(function (post) {
-    var metaData
-    var content = cat(post)
-    var match = reg.exec(content)
+      markdown(post, function(err, result) {
+        if (directory === 'articles') {
 
-    if (match) {
-      var yfm = yaml.load(yfm)
+          fileContent.unshift({
+            'title': result.attributes.title,
+            'image': result.attributes.image || 'https://images.emmanuelbeziat.com/social-thumbnail.jpg',
+            'date': result.attributes.date || new Date(),
+            'tags': result.attributes.tags || [''],
+            'categories': result.attributes.categories || ['non-classe'],
+            'template': result.attributes.template || 'blog',
+            'basename': result.attributes.basename || slug(result.attributes.title, { lower: true }),
+            'description': result.attributes.description || '',
+            'disqus': result.attributes.disqus || true
+          })
+        }
+        else if (directory === 'portfolio') {
+          fileContent.unshift({
+            'title': result.attributes.title,
+            'image': result.attributes.image || '',
+            'color': result.attributes.color || 'black',
+            'date': result.attributes.date || new Date(),
+            'tags': result.attributes.tags || [''],
+            'clients': result.attributes.clients || [''],
+            'template': result.attributes.template || 'portfolio',
+            'basename': result.attributes.basename || slug(result.attributes.title, { lower: true }),
+          })
+        }
+      })
+    })
 
-      try {
-        metaData = yaml.load(yfm)
-        metaData._title = path.basename(post, '.md').slice(11),
-        metaData.year = path.basename(post, '.md').slice(0, 4)
-        metaData.month = path.basename(post, '.md').slice(5, 7)
-        metaData.year = path.basename(post, '.md').slice(8, 10)
-      }
-      catch (e) {
-        console.log(post)
-      }
-
-      postMEtaList.unshift(metaData)
-    }
+    createJsonFiles(path.resolve(folder, 'meta.json'), fileContent)
+    console.log('Generate post metadatas finished!')
   })
-
-  fs.writeFileSync(path.resolve(__dirname, '../src/posts/articles/meta.json'), JSON.stringify(postMetaList))
-  console.log('generate meta finished\n')
 }
 
 module.exports = PostPlugin
