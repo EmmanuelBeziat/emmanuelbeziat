@@ -1,35 +1,32 @@
 <template>
-	<div class="site">
-		<app-header></app-header>
-		<div class="site-content">
-			<app-nav></app-nav>
-			<app-main></app-main>
-		</div>
-		<app-footer></app-footer>
-	</div>
+  <div class="site">
+    <layout-header></layout-header>
+
+    <div class="site-content">
+      <layout-menu></layout-menu>
+      <main class="site-main">
+        <router-view transition="fade" transition-mode="out-in"></router-view>
+      </main>
+    </div>
+
+    <layout-footer></layout-footer>
+  </div>
 </template>
 
 <script>
-import appHeader from './components/app-header'
-import appNav from './components/app-nav'
-import appMain from './components/app-main'
-import appFooter from './components/app-footer'
+import layoutHeader from 'components/layout/header'
+import layoutMenu from 'components/layout/menu'
+import layoutFooter from 'components/layout/footer'
 
 export default {
-	data () {
-		return {
-		}
-	},
-
-	components: {
-		appHeader,
-		appNav,
-		appMain,
-		appFooter
-	}
+  components: {
+    layoutHeader,
+    layoutMenu,
+    layoutFooter
+  }
 }
 </script>
 
 <style lang="stylus">
-	@require './assets/stylus/main.styl'
+@require './assets/stylus/main.styl'
 </style>

@@ -1,112 +1,46 @@
 <!doctype html>
-<html lang="fr-FR" dir="ltr" prefix="og: http://ogp.me/ns#">
-	<head>
-		<meta charset="utf-8">
-		<meta name="viewport" content="width=device-width, initial-scale=1.0, shrink-to-fit=no">
-		<meta name="application-name" content="Emmanuel Béziat">
-		<meta name="format-detection" content="telephone=no">
-		<meta name="description" content="Portfolio en ligne d’un développeur web du sud. Billets de blogs, tutoriels, astuces, diatribes et réflexions sur le métier, le code et plein d’autres choses.">
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>Emmanuel Béziat</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, shrink-to-fit=no">
 
-		<!-- Google -->
-		<meta name="google-site-verification" content="r-jxizeApI9fc9d0Lz8hsK4L_PFTuQdtzQ2AvWM7S-g">
-		<meta itemprop="name" content="Emmanuel Béziat" id="gTitle">
-		<meta itemprop="image" content="https://example.com/image.jpg" id="gImage">
-		<meta itemprop="description" content="Portfolio en ligne d'un développeur web du sud. Billets de blogs, tutoriels, astuces, diatribes et réflexions sur le métier, le code et plein d'autres choses." id="gDescription">
-
-		<!-- Twitter -->
-		<meta name="twitter:card" content="summary_large_image">
-		<meta name="twitter:site" content="@EmmanuelBeziat">
-		<meta name="twitter:title" content="Emmanuel Béziat" id="twTitle">
-		<meta name="twitter:url" content="https://www.emmanuelbeziat.com/" id="twUrl">
-		<meta name="twitter:image" content="/static/images/emmanuelb.png" id="twImage">
-		<meta name="twitter:description" content="Portfolio en ligne d'un développeur web du sud. Billets de blogs, tutoriels, astuces, diatribes et réflexions sur le métier, le code et plein d'autres choses." id="twDescription">
-
-		<!-- Facebook -->
-		<meta property="og:title" content="Emmanuel Béziat" id="fbTitle">
-		<meta property="og:site_name" content="Emmanuel Béziat">
-		<meta property="og:type" content="article">
-		<meta property="og:url" content="https://www.emmanuelbeziat.com/" id="fbUrl">
-		<meta property="og:locale:alternate" content="fr_FR">
-		<meta property="og:image" content="/static/images/emmanuelb.png" id="fbImage">
-		<meta property="og:description" content="Portfolio en ligne d'un développeur web du sud. Billets de blogs, tutoriels, astuces, diatribes et réflexions sur le métier, le code et plein d'autres choses." id="fbDescription">
-
-		<!-- Apple -->
-		<meta name="apple-mobile-web-app-capable" content="yes">
-		<meta name="apple-mobile-web-app-status-bar-style" content="black">
-		<meta name="apple-mobile-web-app-title" content="Emmanuel Béziat">
-
-		<!-- Android -->
-		<meta name="theme-color" content="#E64545">
-		<meta name="mobile-web-app-capable" content="yes">
-
-		<!-- Microsoft -->
-		<meta name="msapplication-tooltip" content="Emmanuel Béziat">
-		<meta name="msapplication-starturl" content="/">
-		<meta name="msapplication-config" content="browserconfig.xml">
-		<meta name="msapplication-navbutton-color" content="#c3e88d">
-		<meta name="msapplication-square150x150logo" content="/static/images/favicons/logo.png">
-		<meta name="msapplication-square310x310logo" content="/static/images/favicons/largelogo.png">
-		<meta name="msapplication-square70x70logo" content="/static/images/favicons/tinylogo.png">
-		<meta name="msapplication-wide310x150logo" content="/static/images/favicons/widelogo.png">
-		<meta name="msapplication-task" content="name=Check Order Status;action-uri=./orderStatus.aspx?src=IE9;icon-uri=./favicon.ico">
-		<meta name="msapplication-task-seperator" content="1">
-		<meta name="msapplication-TileColor" content="#263238">
-		<meta name="msapplication-TileImage" content="/static/images/favicons/tileimage.jpg">
-		<meta name="msapplication-window" content="width=1600;height=900">
-
-		<title>Emmanuel Béziat</title>
-
-		<link rel="profile" href="http://gmpg.org/xfn/11">
-		<link rel="shortcut icon" href="/static/images/favicons/favicon.ico">
-
-		<!-- Google -->
-		<link rel="publisher" href="https://plus.google.com/+Emmanuelbeziat-web">
-
-		<!-- Apple -->
-		<link rel="apple-touch-icon" href="/static/images/favicons/apple-touch-icon.png">
-		<link rel="apple-touch-icon-precomposed" href="/static/images/favicons/apple-touch-icon-precomposed.png"><!-- In most cases, one 180×180px touch icon in the head is enough -->
-		<link rel="apple-touch-startup-image" href="/static/images/favicons/startup.png">
-		<link rel="mask-icon" href="path/to/icon.svg" color="red">
-
-		<script>
-			/////////////////////////////////////////////////////////////////////////
-			// Single Page Apps for GitHub Pages
-			// https://github.com/rafrex/spa-github-pages
-			// Copyright (c) 2016 Rafael Pedicini, licensed under the MIT License
-			// ----------------------------------------------------------------------
-			// This script checks to see if a redirect is present in the query string
-			// and converts it back into the correct url and adds it to the
-			// browser's history using window.history.replaceState(...),
-			// which won't cause the browser to attempt to load the new url.
-			// When the single page app is loaded further down in this file,
-			// the correct url will be waiting in the browser's history for
-			// the single page app to route accordingly.
-			/////////////////////////////////////////////////////////////////////////
-
-			(function(l) {
-				if (l.search) {
-					var q = {};
-					l.search.slice(1).split('&').forEach(function(v) {
-						var a = v.split('=');
-						q[a[0]] = a.slice(1).join('=').replace(/~and~/g, '&');
-					});
-					if (q.p !== undefined) {
-						window.history.replaceState(null, null,
-						l.pathname.slice(0, -1) + (q.p || '') +
-						(q.q ? ('?' + q.q) : '') +
-						l.hash);
-					}
-				}
-			}(window.location))
-		</script>
-	</head>
-	<body>
-		<app></app>
-		<noscript>
-			<div class="noscript">
-				<h3 class="noscript__header">Javascript est désactivé sur votre navigateur !</h3>
-				Il semble que les scripts soient désactivés sur votre navigateur, vous risquez de ne pas pouvoir consulter correctement le site.
-			</div>
-		</noscript>
-	</body>
+    <!-- Start Single Page Apps for GitHub Pages -->
+    <script>
+      /////////////////////////////////////////////////////////////////////////
+      // Single Page Apps for GitHub Pages
+      // https://github.com/rafrex/spa-github-pages
+      // Copyright (c) 2016 Rafael Pedicini, licensed under the MIT License
+      // ----------------------------------------------------------------------
+      // This script checks to see if a redirect is present in the query string
+      // and converts it back into the correct url and adds it to the
+      // browser's history using window.history.replaceState(...),
+      // which won't cause the browser to attempt to load the new url.
+      // When the single page app is loaded further down in this file,
+      // the correct url will be waiting in the browser's history for
+      // the single page app to route accordingly.
+      /////////////////////////////////////////////////////////////////////////
+      (function(l) {
+        if (l.search) {
+          var q = {};
+          l.search.slice(1).split('&').forEach(function(v) {
+            var a = v.split('=');
+            q[a[0]] = a.slice(1).join('=').replace(/~and~/g, '&');
+          });
+          if (q.p !== undefined) {
+            window.history.replaceState(null, null,
+              (q.p || '') +
+              (q.q ? ('?' + q.q) : '') +
+              l.hash
+            );
+          }
+        }
+      }(window.location))
+    </script>
+    <!-- End Single Page Apps for GitHub Pages -->
+  </head>
+  <body>
+    <app></app>
+    <!-- built files will be auto injected -->
+  </body>
 </html>

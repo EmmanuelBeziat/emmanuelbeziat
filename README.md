@@ -1,7 +1,6 @@
-# Emmanuel Beziat
-![madewith](https://img.shields.io/badge/made%20with-vuejs-brightgreen.svg?style=flat-square)
+# emmanuelbeziat
 
-My website, basically. 2016 inside!
+> My personal website, with vue.js
 
 ## Build Setup
 
@@ -18,13 +17,11 @@ npm run build
 # run unit tests
 npm run unit
 
+# run e2e tests
+npm run e2e
+
 # run all tests
 npm test
-
-# deploy on Github-Pages
-npm run build
-
-# render markdown to json
-npm run pages
-
 ```
+
+For detailed explanation on how things work, checkout the [guide](http://vuejs-templates.github.io/webpack/) and [docs for vue-loader](http://vuejs.github.io/vue-loader).
