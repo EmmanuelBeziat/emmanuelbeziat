@@ -3,6 +3,7 @@ var config = require('../config')
 var utils = require('./utils')
 var projectRoot = path.resolve(__dirname, '../')
 var PostPlugin = require('../plugin/post-plugin.js')
+var SvgPlugin = require('../plugin/svg-plugin.js')
 
 module.exports = {
   entry: {
@@ -84,6 +85,7 @@ module.exports = {
     loaders: utils.cssLoaders()
   },
   plugins: [
-    new PostPlugin()
+    new PostPlugin(),
+    new SvgPlugin()
   ]
 }

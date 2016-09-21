@@ -67,8 +67,8 @@ function generateMetaData () {
     })
 
     createJsonFiles(path.resolve(folder, 'meta.json'), fileContent)
-    console.log('Generate post metadatas finished!')
   })
+  console.log('Generate post metadatas finished!')
 }
 
 module.exports = PostPlugin

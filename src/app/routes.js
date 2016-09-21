@@ -35,7 +35,7 @@ module.exports = {
       component: require('../components/blog/PostList')
     },
 
-    '/blog/:title': {
+    '/blog/:slug': {
       name: 'blog-post',
       component: require('../components/blog/Post')
     },
