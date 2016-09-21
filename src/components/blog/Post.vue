@@ -22,7 +22,7 @@
         </div>
       </header>
 
-      <div class="post__content" v-linkable>{{{ post.content }}}</div>
+      <div class="post__content" v-linkable>{{{ content }}}</div>
 
       <footer class="post__footer">
         <div class="flex">
@@ -48,6 +48,25 @@
 
 <script>
 import Disqus from 'vue-disqus'
+import markdown from 'marksown-parse'
+
+var md = require('markdown-it')({
+    html: true,
+    breaks: true,
+    linkify: true
+  })
+  .use(require('markdown-it-attrs'))
+  .use(require('markdown-it-block-embed'), {
+    containerClassName: 'video',
+    serviceClassPrefix: 'video--',
+    outputPlayerSize: false,
+    allowFullScreen: true
+  })
+  .use(require('markdown-it-anchor'), {
+    permalink: false,
+    permalinkClass: 'icon-link post__anchor',
+    permalinkSymbol: ''
+  })
 
 module.exports = {
   data () {
@@ -70,15 +89,15 @@ module.exports = {
       /* let year = transition.to.params.year
       let month = transition.to.params.month
       let day = transition.to.params.day
-      let basename = transition.to.params.basename
+      let basename = transition.to.params.basename */
       let fileName = '${year}-${month}-${day}-' + basename
 
       require('../posts/articles/' + fileName + '.md')((exports) => {
+        console.log(exports)
         transition.next({
-          content: md(exports.content)
-          title:
+          post.content: md(exports.content)
         })
-      })*/
+      })
     }
   }
 }
