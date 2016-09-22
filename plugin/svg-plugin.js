@@ -1,6 +1,5 @@
 require('shelljs/global')
 var fs = require('fs-extra')
-var path = require('path')
 var exec = require('child_process').exec
 var cmd = 'svg-sprite-generate -d ./src/assets/icons -o ./src/assets/icons/sprite.svg'
 
@@ -9,7 +8,7 @@ function SvgPlugin (options) {
 }
 
 SvgPlugin.prototype.apply = function (compiler) {
-  compiler.plugin("entry-option", function (){
+  compiler.plugin('entry-option', function () {
     generateSprite()
   })
 }
@@ -26,7 +25,9 @@ function generateSprite () {
   })
 
   exec(cmd, function (error, stdout, stderr) {
-    console.log(stdout)
+    if (undefined !== error) {
+      console.log(error)
+    }
   })
 
   console.log('Generate svg sprite finished!')

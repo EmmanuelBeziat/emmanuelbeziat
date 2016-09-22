@@ -43,8 +43,8 @@ export default {
 
   route: {
     data (transition) {
-      require.ensure('../../posts/articles/meta.json', (require) => {
-        const posts = require('../../posts/articles/meta.json')
+      require.ensure('../posts/articles/meta.json', (require) => {
+        const posts = require('../posts/articles/meta.json')
         const extractList = this.extractList(posts)
 
         transition.next({

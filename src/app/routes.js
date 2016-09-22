@@ -21,23 +21,23 @@ module.exports = {
     '/portfolio': {
       name: 'portfolio',
       title: 'Portfolio — Emmanuel Béziat',
-      component: require('../components/portfolio/PostList')
+      component: require('../components/PortfolioPostList')
     },
 
     '/portfolio/:slug': {
       name: 'portfolio-post',
-      component: require('../components/portfolio/Post')
+      component: require('../components/PortfolioPost')
     },
 
     '/blog': {
       name: 'blog',
       title: 'Blog — Emmanuel Béziat',
-      component: require('../components/blog/PostList')
+      component: require('../components/BlogPostList')
     },
 
     '/blog/:slug': {
       name: 'blog-post',
-      component: require('../components/blog/Post')
+      component: require('../components/BlogPost')
     },
 
     '*': {
