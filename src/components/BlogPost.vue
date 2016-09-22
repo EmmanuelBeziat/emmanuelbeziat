@@ -71,12 +71,7 @@ var md = require('markdown-it')({
 module.exports = {
   data () {
     return {
-      post: {
-        title: 'Chargement…',
-        tags: ['test'],
-        date: new Date(),
-        content: 'pouet'
-      }
+      post: []
     }
   },
 
@@ -85,26 +80,36 @@ module.exports = {
   },
 
   methods: {
-    extractPost: function (post) {
-      this.post.content = 'convert'
+    getPostName: function (posts, basename) {
+      let fileName
+      posts.forEach(function (post) {
+        if (post.basename === basename) {
+          fileName = '../posts/articles/' + post.path
+        }
+      })
+
+      return fileName
     }
   },
 
   route: {
     data (transition) {
-      /* let year = transition.to.params.year
-      let month = transition.to.params.month
-      let day = transition.to.params.day
       let basename = transition.to.params.slug
-      // let fileName = '${year}-${month}-${day}-' + basename
-      let fileName = basename
+      let fileName
 
-      /* require('../posts/articles/' + fileName + '.md')((exports) => {
-        console.log(exports)
+      require.ensure('../posts/articles/meta.json', (require) => {
+        const posts = require('../posts/articles/meta.json')
+        const getPostName = this.getPostName(posts, basename)
+
+        fileName = getPostName
+        console.log(fileName)
+      })
+
+      require('../posts/articles/2016-05-27-le-nouveau-logo-dinstagram-on-sen-fout.md')((exports) => {
         transition.next({
-
+          post: exports.metaData.title
         })
-      }) */
+      })
     }
   }
 }

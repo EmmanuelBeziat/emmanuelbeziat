@@ -1,7 +1,7 @@
 ---
 title: "Aligner trois colonnes proprement"
 date: "2013-07-11 02:00:08"
-description: "c’est un problème auquel se confrontent régulièrement les intégrateurs : créer un design en trois colonnes — habituellement, deux menus latéraux (appelés sidebar) et une colonne centrale pour le contenu du site. Mais c’est en réalité très simple à faire, et nous allons voir comment."
+description: "c’est un problème auquel se confrontent régulièrement les intégrateurs : créer un design en trois colonnes. Mais c’est en réalité très simple à faire, et nous allons voir comment."
 tags:
 - html/css
 categories:

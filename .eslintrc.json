@@ -49,7 +49,7 @@
         "id-blacklist": "error",
         "id-length": "error",
         "id-match": "error",
-        "indent": "tab",
+        "indent": "off",
         "init-declarations": "error",
         "jsx-quotes": "error",
         "key-spacing": "off",

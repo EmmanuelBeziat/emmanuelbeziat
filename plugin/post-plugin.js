@@ -16,27 +16,27 @@ PostPlugin.prototype.apply = function (compiler) {
   })
 }
 
-function getDirectories(srcpath) {
-  return fs.readdirSync(srcpath).filter(function(file) {
+function getDirectories (srcpath) {
+  return fs.readdirSync(srcpath).filter(function (file) {
     return fs.statSync(path.join(srcpath, file)).isDirectory();
   });
 }
 
-function createJsonFiles(fileName, fileContent) {
+function createJsonFiles (fileName, fileContent) {
   jsonfile.writeFile(fileName, fileContent)
   console.log('	+ Files: ' + fileName)
 }
 
 function generateMetaData () {
   console.log('Generate post metadatas started…')
-  getDirectories(folders).forEach(function(directory) {
+  getDirectories(folders).forEach(function (directory) {
     var folder = path.resolve(__dirname, '../src/posts/' + directory)
     var fileContent = []
 
-    ls(path.resolve(folder, '*.md')).forEach(function(element, index, fileArray) {
+    ls(path.resolve(folder, '*.md')).forEach(function (element, index, fileArray) {
       var post = fs.readFileSync(path.resolve(folder, element), 'utf8')
 
-      markdown(post, function(err, result) {
+      markdown(post, function (err, result) {
         if (directory === 'articles') {
 
           fileContent.unshift({
@@ -47,6 +47,7 @@ function generateMetaData () {
             'categories': result.attributes.categories || ['non-classe'],
             'template': result.attributes.template || 'blog',
             'basename': result.attributes.basename || slug(result.attributes.title, { lower: true }),
+            'path': element.split('/').pop(),
             'description': result.attributes.description || '',
             'disqus': result.attributes.disqus || true
           })
@@ -61,6 +62,7 @@ function generateMetaData () {
             'clients': result.attributes.clients || [''],
             'template': result.attributes.template || 'portfolio',
             'basename': result.attributes.basename || slug(result.attributes.title, { lower: true }),
+            'path': element.split('/').pop()
           })
         }
       })

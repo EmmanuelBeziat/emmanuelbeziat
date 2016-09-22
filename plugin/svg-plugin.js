@@ -17,7 +17,6 @@ function generateSprite () {
   console.log('\nGenerate svg sprite started…')
 
   fs.stat('./src/assets/icons/sprite.svg', function (err, stat) {
-    console.log(stat)
     if (err === null) {
       console.log('old sprite removed')
       fs.unlink('./src/assets/icons/sprite.svg')
@@ -26,7 +25,6 @@ function generateSprite () {
 
   exec(cmd, function (error, stdout, stderr) {
     if (undefined !== error) {
-      console.log(error)
     }
   })
 

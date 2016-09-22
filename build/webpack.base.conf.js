@@ -47,6 +47,10 @@ module.exports = {
         loader: 'vue'
       },
       {
+        test: /\.md$/,
+        loader: 'bundle-loader!json-loader!../../loader/post-loader.js'
+      },
+      {
         test: /\.js$/,
         loader: 'babel',
         include: projectRoot,
