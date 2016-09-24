@@ -14,9 +14,9 @@
 </template>
 
 <script>
-import layoutHeader from 'components/layout/header'
-import layoutMenu from 'components/layout/menu'
-import layoutFooter from 'components/layout/footer'
+import layoutHeader from 'components/layout/Header'
+import layoutMenu from 'components/layout/Menu'
+import layoutFooter from 'components/layout/Footer'
 
 export default {
   components: {

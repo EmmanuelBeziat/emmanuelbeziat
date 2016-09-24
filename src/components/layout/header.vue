@@ -35,7 +35,7 @@
 </template>
 
 <script>
-import moduleCopyright from '../modules/copyright'
+import moduleCopyright from '../modules/Copyright'
 
 export default {
   data () {

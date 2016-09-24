@@ -1,11 +1,11 @@
 <template>
   <div class="blog">
-    <div v-if="!$loadingRouteData" class="loader">
+    <div v-if="$loadingRouteData" class="loader">
       <div class="loader__item"></div>
       <div class="loader__title">Chargement</div>
     </div>
 
-    <article class="post" v-if="$loadingRouteData">
+    <article class="post" v-if="!$loadingRouteData">
       <header class="post__header">
         <h1 class="post__title">{{ title }}</h1>
 
@@ -40,7 +40,7 @@
 
     </article>
 
-    <div class="comments" v-if="$loadingRouteData">
+    <div class="comments" v-if="!$loadingRouteData">
       <disqus shortname="emmanuelbeziat"></disqus>
     </div>
   </div>
@@ -48,25 +48,28 @@
 
 <script>
 import Disqus from 'vue-disqus'
-/* import markdown from 'marksown-parse'
+import SmoothScroll from 'smooth-scroll'
+import Prism from 'prismjs'
+import 'prismjs/plugins/show-language/prism-show-language.min.js'
+import 'prismjs/components/prism-bash.min.js'
 
 var md = require('markdown-it')({
-    html: true,
-    breaks: true,
-    linkify: true
-  })
-  .use(require('markdown-it-attrs'))
-  .use(require('markdown-it-block-embed'), {
-    containerClassName: 'video',
-    serviceClassPrefix: 'video--',
-    outputPlayerSize: false,
-    allowFullScreen: true
-  })
-  .use(require('markdown-it-anchor'), {
-    permalink: false,
-    permalinkClass: 'icon-link post__anchor',
-    permalinkSymbol: ''
-  }) */
+  html: true,
+  breaks: true,
+  linkify: true
+})
+.use(require('markdown-it-attrs'))
+.use(require('markdown-it-block-embed'), {
+  containerClassName: 'video',
+  serviceClassPrefix: 'video--',
+  outputPlayerSize: false,
+  allowFullScreen: true
+})
+.use(require('markdown-it-anchor'), {
+  permalink: false,
+  permalinkClass: 'icon-link post__anchor',
+  permalinkSymbol: ''
+})
 
 module.exports = {
   data () {
@@ -74,7 +77,7 @@ module.exports = {
       content: '',
       title: '',
       date: new Date(),
-      tags: ['tag', 'tag']
+      tags: []
     }
   },
 
@@ -82,7 +85,7 @@ module.exports = {
     Disqus
   },
 
-  /* methods: {
+  methods: {
     getPostName: function (posts, basename) {
       let fileName
       posts.forEach(function (post) {
@@ -90,37 +93,40 @@ module.exports = {
           fileName = '../posts/articles/' + post.path
         }
       })
-
       return fileName
     }
-  },*/
+  },
 
   route: {
     data (transition) {
-      let fileName = '2016-05-27-le-nouveau-logo-dinstagram-on-sen-fout.md'
-      require('../posts/articles/' + fileName)((exports) => {
-        transition.next({
-          content: exports.rawContent,
-          title: exports.metaData.title
-        })
-      })
-      /* let basename = transition.to.params.slug
-      let fileName
+      let basename = transition.to.params.slug
 
       require.ensure('../posts/articles/meta.json', (require) => {
         const posts = require('../posts/articles/meta.json')
         const getPostName = this.getPostName(posts, basename)
 
-        fileName = getPostName
-        console.log(fileName)
-      })
+        console.log(getPostName)
 
-      require('../posts/articles/2016-05-27-le-nouveau-logo-dinstagram-on-sen-fout.md')((exports) => {
-        transition.next({
-          post: exports.metaData.title
+        require('../posts/articles/2015-10-25-un-site-qui-prend-toute-la-hauteur-disponible.md')((exports) => {
+          transition.next({
+            content: md.render(exports.rawContent),
+            date: exports.metaData.date,
+            tags: exports.metaData.tags,
+            title: exports.metaData.title
+          })
         })
-      }) */
+      })
     }
+  },
+
+  ready () {
+    // Ignitiate code hightlighting with PrismJS
+    setTimeout(function () {
+      Prism.highlightAll()
+    }, 10)
+
+    // Smooth Scroll
+    SmoothScroll.init()
   }
 }
 </script>
