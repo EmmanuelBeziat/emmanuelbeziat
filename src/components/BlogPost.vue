@@ -7,14 +7,14 @@
 
     <article class="post" v-if="$loadingRouteData">
       <header class="post__header">
-        <h1 class="post__title">{{ post.title }}</h1>
+        <h1 class="post__title">{{ title }}</h1>
 
         <div class="post__infos">
-          <div class="post__date">Posté le <time>{{ post.date | moment 'ddd Do MMM YYYY[, à] HH[h]mm' }}</time></div>
+          <div class="post__date">Posté le <time>{{ date | moment 'ddd Do MMM YYYY[, à] HH[h]mm' }}</time></div>
 
           <div class="flex">
             <div class="post__tags">
-              <span class="c-tag" v-for="tag in post.tags">{{ tag }}</span>
+              <span class="c-tag" v-for="tag in tags">{{ tag }}</span>
             </div>
 
             <div class="post__share"></div>
@@ -22,12 +22,12 @@
         </div>
       </header>
 
-      <div class="post__content" v-linkable>{{{ post.content }}}</div>
+      <div class="post__content" v-linkable>{{{ content }}}</div>
 
       <footer class="post__footer">
         <div class="flex">
           <div class="post__tags">
-            <span class="c-tag" v-for="tag in post.tags">{{ tag }}</span>
+            <span class="c-tag" v-for="tag in tags">{{ tag }}</span>
           </div>
 
           <div class="post__share"></div>
@@ -71,7 +71,10 @@ var md = require('markdown-it')({
 module.exports = {
   data () {
     return {
-      post: []
+      content: '',
+      title: '',
+      date: new Date(),
+      tags: ['tag', 'tag']
     }
   },
 
@@ -79,7 +82,7 @@ module.exports = {
     Disqus
   },
 
-  methods: {
+  /* methods: {
     getPostName: function (posts, basename) {
       let fileName
       posts.forEach(function (post) {
@@ -90,11 +93,18 @@ module.exports = {
 
       return fileName
     }
-  },
+  },*/
 
   route: {
     data (transition) {
-      let basename = transition.to.params.slug
+      let fileName = '2016-05-27-le-nouveau-logo-dinstagram-on-sen-fout.md'
+      require('../posts/articles/' + fileName)((exports) => {
+        transition.next({
+          content: exports.rawContent,
+          title: exports.metaData.title
+        })
+      })
+      /* let basename = transition.to.params.slug
       let fileName
 
       require.ensure('../posts/articles/meta.json', (require) => {
@@ -109,7 +119,7 @@ module.exports = {
         transition.next({
           post: exports.metaData.title
         })
-      })
+      }) */
     }
   }
 }
