@@ -5,7 +5,7 @@
       <div class="loader__title">Chargement</div>
     </div>
 
-    <div class="presentation" v-if="!$loadingRouteData" >
+    <div class="presentation" v-if="!$loadingRouteData">
       <h1 class="presentation__title">
         <span class="presentation__name">Emmanuel Béziat</span>
         <span class="presentation__age"><span>{{ age }}</span> ({{ nextBirthday }})</span>
@@ -14,7 +14,9 @@
       <module-codehome></module-codehome>
     </div>
 
-    <module-updates></module-updates>
+    <div class="skills"></div>
+
+    <module-updates v-if="!$loadingRouteData"></module-updates>
   </section>
 </template>
 
