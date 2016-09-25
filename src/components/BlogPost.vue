@@ -121,7 +121,7 @@ module.exports = {
     // Ignitiate code hightlighting with PrismJS
     setTimeout(function () {
       Prism.highlightAll()
-    }, 10)
+    }, 200)
 
     // Smooth Scroll
     SmoothScroll.init()
