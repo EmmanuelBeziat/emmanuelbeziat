@@ -17,7 +17,7 @@
     data () {
       return {
         commits: null,
-        currentBranch: 'gh-pages'
+        currentBranch: 'master'
       }
     },
 

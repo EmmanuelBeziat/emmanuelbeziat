@@ -11,7 +11,8 @@ module.exports = {
     'html'
   ],
   'env': {
-    'es6': true
+    'es6': true,
+    'browser': true
   },
   // add your custom rules here
   'rules': {
