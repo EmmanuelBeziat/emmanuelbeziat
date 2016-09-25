@@ -13,15 +13,12 @@
 
       <module-codehome></module-codehome>
     </div>
-
-    <module-updates></module-updates>
   </section>
 </template>
 
 <script>
 import Moment from 'moment'
 import moduleCodehome from '../components/modules/Codehome'
-import moduleUpdates from '../components/modules/Updates'
 
 export default {
   data () {
@@ -32,8 +29,7 @@ export default {
   },
 
   components: {
-    moduleCodehome,
-    moduleUpdates
+    moduleCodehome
   },
 
   created: function () {
