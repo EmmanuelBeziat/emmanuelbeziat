@@ -1,7 +1,7 @@
 require('shelljs/global')
 var fs = require('fs-extra')
 var exec = require('child_process').exec
-var cmd = 'svg-sprite-generate -d ./src/assets/icons -o ./src/assets/icons/sprite.svg'
+var cmd = 'svg-sprite-generate -d ./src/assets/icons -o ./src/assets/images/sprite.svg'
 
 function SvgPlugin (options) {
   // Configure options
@@ -19,7 +19,7 @@ function generateSprite () {
   fs.stat('./src/assets/icons/sprite.svg', function (err, stat) {
     if (err === null) {
       console.log('[svg sprite] old sprite removed successfully')
-      fs.unlink('./src/assets/icons/sprite.svg')
+      fs.unlink('./src/assets/images/sprite.svg')
     }
   })
 
