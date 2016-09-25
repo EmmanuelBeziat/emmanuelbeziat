@@ -90,7 +90,7 @@ module.exports = {
       let fileName
       posts.forEach(function (post) {
         if (post.basename === basename) {
-          fileName = '../posts/articles/' + post.path
+          fileName = '/' + post.path
         }
       })
       return fileName
@@ -105,9 +105,7 @@ module.exports = {
         const posts = require('../posts/articles/meta.json')
         const getPostName = this.getPostName(posts, basename)
 
-        console.log(getPostName)
-
-        require('../posts/articles/2015-10-25-un-site-qui-prend-toute-la-hauteur-disponible.md')((exports) => {
+        require('../posts/articles' + getPostName)((exports) => {
           transition.next({
             content: md.render(exports.rawContent),
             date: exports.metaData.date,

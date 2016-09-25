@@ -9,6 +9,7 @@ module.exports = function (content) {
   }
   var rawMeta = match[2]
   var rawContent = match[3]
+
   try {
     metaData = yaml.load(rawMeta)
   } catch (e) {

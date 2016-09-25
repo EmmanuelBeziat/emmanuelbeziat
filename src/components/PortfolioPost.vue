@@ -60,7 +60,7 @@ module.exports = {
       let fileName
       posts.forEach(function (post) {
         if (post.basename === basename) {
-          fileName = post.path
+          fileName = '/' + post.path
         }
       })
       return fileName
@@ -75,10 +75,7 @@ module.exports = {
         const posts = require('../posts/portfolio/meta.json')
         const getPostName = this.getPostName(posts, basename)
 
-        console.log(getPostName)
-        const path = '2016-08-27-ubisoft-steep'
-
-        require('../posts/portfolio/' + path + '.md')((exports) => {
+        require('../posts/portfolio' + getPostName)((exports) => {
           transition.next({
             content: md.render(exports.rawContent),
             clients: exports.metaData.clients,
