@@ -32,7 +32,9 @@
             <span class="c-tag" v-for="tag in tags">{{ tag }}</span>
           </div>
 
-          <div class="post__share"></div>
+          <div class="post__share">
+            <module-share></module-share>
+          </div>
         </div>
 
         <div class="post__help">
