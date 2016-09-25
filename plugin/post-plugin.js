@@ -28,7 +28,7 @@ function createJsonFiles (fileName, fileContent) {
 }
 
 function generateMetaData () {
-  console.log('Generate post metadatas started…')
+  console.log('[posts json] starting…')
   getDirectories(folders).forEach(function (directory) {
     var folder = path.resolve(__dirname, '../src/posts/' + directory)
     var fileContent = []
@@ -70,7 +70,7 @@ function generateMetaData () {
 
     createJsonFiles(path.resolve(folder, 'meta.json'), fileContent)
   })
-  console.log('Generate post metadatas finished!')
+  console.log('[posts json] complete!')
 }
 
 module.exports = PostPlugin

@@ -14,21 +14,23 @@ SvgPlugin.prototype.apply = function (compiler) {
 }
 
 function generateSprite () {
-  console.log('\nGenerate svg sprite started…')
+  console.log('\n[svg sprite] starting…')
 
   fs.stat('./src/assets/icons/sprite.svg', function (err, stat) {
     if (err === null) {
-      // console.log('old sprite removed')
-      // fs.unlink('./src/assets/icons/sprite.svg')
+      console.log('[svg sprite] old sprite removed successfully')
+      fs.unlink('./src/assets/icons/sprite.svg')
     }
   })
 
   exec(cmd, function (error, stdout, stderr) {
-    if (undefined !== error) {
+    if (error) {
+      console.log('[svg sprite] error')
+    }
+    else {
+      console.log('[svg sprite] complete!')
     }
   })
-
-  console.log('Generate svg sprite finished!')
 }
 
 module.exports = SvgPlugin
