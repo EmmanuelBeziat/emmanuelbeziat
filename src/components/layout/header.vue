@@ -24,8 +24,8 @@
 
     <div class="site-header__bio">
       <p>jeune développeur web perpignanais passionné de geekeries</p>
-      <p>je travaille chez <a href="http://www.italic.fr/">Italic</a>, une chouette web-agency à paris !</p>
-      <p>et je suis également formateur web à l'<a href="http://www.lidem.eu/">IDEM</a>, dans l'sud !</p>
+      <p>je travaille chez <a href="http://www.italic.fr/">Italic</a>, une chouette web-agency à paris</p>
+      <p>et je suis également formateur web à l’<a href="http://www.lidem.eu/">IDEM</a>, dans le sud plein de soleil</p>
     </div>
 
     <div class="site-header__copyright">
