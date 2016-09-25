@@ -17,7 +17,9 @@
               <span class="c-tag" v-for="tag in tags">{{ tag }}</span>
             </div>
 
-            <div class="post__share"></div>
+            <div class="post__share">
+              <module-share></module-share>
+            </div>
           </div>
         </div>
       </header>
@@ -48,6 +50,7 @@
 
 <script>
 import Disqus from 'vue-disqus'
+import moduleShare from '../components/modules/Sharepost.vue'
 import SmoothScroll from 'smooth-scroll'
 import Prism from 'prismjs'
 import 'prismjs/plugins/show-language/prism-show-language.min.js'
@@ -82,7 +85,8 @@ module.exports = {
   },
 
   components: {
-    Disqus
+    Disqus,
+    moduleShare
   },
 
   methods: {
