@@ -65,11 +65,19 @@ module.exports = {
         loader: 'vue-html'
       },
       {
-        test: /\.(png|jpe?g|gif|svg)(\?.*)?$/,
+        test: /\.(png|jpe?g|gif)(\?.*)?$/,
         loader: 'url',
         query: {
           limit: 10000,
-          name: utils.assetsPath('img/[name].[hash:7].[ext]')
+          name: utils.assetsPath('images/[name].[hash:7].[ext]')
+        }
+      },
+      {
+        test: /\.svg/,
+        loader: 'svg-url-loader',
+        query: {
+          limit: 10000,
+          name:utils.assetsPath('icons/[name].[hash:7].[ext]')
         }
       },
       {

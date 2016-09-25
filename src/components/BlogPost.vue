@@ -74,10 +74,10 @@ var md = require('markdown-it')({
 module.exports = {
   data () {
     return {
-      content: '',
-      title: '',
-      date: new Date(),
-      tags: []
+      content: null,
+      title: null,
+      date: null,
+      tags: null
     }
   },
 

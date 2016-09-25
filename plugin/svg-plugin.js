@@ -18,8 +18,8 @@ function generateSprite () {
 
   fs.stat('./src/assets/icons/sprite.svg', function (err, stat) {
     if (err === null) {
-      console.log('old sprite removed')
-      fs.unlink('./src/assets/icons/sprite.svg')
+      // console.log('old sprite removed')
+      // fs.unlink('./src/assets/icons/sprite.svg')
     }
   })
 
