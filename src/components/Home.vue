@@ -14,10 +14,6 @@
       <module-codehome></module-codehome>
     </div>
 
-    <div class="skills">
-      <h2>Ce que je sais faire…</h2>
-    </div>
-
     <module-updates v-if="!$loadingRouteData"></module-updates>
   </section>
 </template>
