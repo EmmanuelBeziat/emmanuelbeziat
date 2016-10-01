@@ -20,7 +20,7 @@
     "markdown-it": "^8.0.0",
     "markdown-it-anchor": "^2.5.0",
     "markdown-it-attrs": "^0.7.0",
-    "markdown-it-block-embed": "0.0.3",
+    "markdown-it-block-embed": "^0.0.3",
     "markdown-parse": "^0.2.1",
     "moment": "^2.15.0",
     "smooth-scroll": "github:cferdinandi/smooth-scroll"

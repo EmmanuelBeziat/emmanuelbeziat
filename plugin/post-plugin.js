@@ -40,7 +40,7 @@ function generateMetaData () {
         if (directory === 'articles') {
           fileContent.unshift({
             'title': result.attributes.title,
-            'image': result.attributes.image || 'https://images.emmanuelbeziat.com/social-thumbnail.jpg',
+            'image': result.attributes.image || 'https://images.emmanuelbeziat.com/social-default-fb.jpg',
             'date': result.attributes.date || new Date(),
             'tags': result.attributes.tags || [''],
             'categories': result.attributes.categories || ['non-classe'],
