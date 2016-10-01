@@ -20,6 +20,7 @@
 
 <script>
 import Moment from 'moment'
+import 'moment/locale/fr'
 import moduleUpdates from '../components/modules/Updates'
 import moduleCodehome from '../components/modules/Codehome'
 
@@ -36,24 +37,24 @@ export default {
     moduleUpdates
   },
 
-  created: function () {
-    this.birthdayCalculate()
-  },
-
-  methods: {
-    birthdayCalculate: function () {
+  route: {
+    data (transition) {
       const date = '16.09.1987-02:26'
       const format = 'DD.MM.YYYY-HH:mm'
       const birthday = Moment(date, format)
       const nextbd = Moment(date, format).set({ 'year': Moment().year() })
+
       Moment.updateLocale('fr', {
         relativeTime: {
           future: 'pour encore %s',
           past: 'depuis %s'
         }
       })
-      this.$set('age', birthday.fromNow(true))
-      this.$set('nextBirthday', nextbd.fromNow())
+
+      transition.next({
+        age: birthday.fromNow(true),
+        nextBirthday: nextbd.fromNow()
+      })
     }
   }
 }

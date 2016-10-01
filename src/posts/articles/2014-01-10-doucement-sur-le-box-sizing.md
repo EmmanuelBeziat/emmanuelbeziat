@@ -6,6 +6,7 @@ tags:
 - bonnes pratiques
 categories:
 - Diatribes
+publish: false
 ---
 
 Récemment dans les milieux autorisés, un certain bout de code a fait son apparition. Rapidement intégré dans les thèmes WordPress, le Framework Bootstrap, Normalize et maints autres projets, `box-sizing` est devenu un "indispensable" dans une feuille de style aujourd’hui, alors seulement qu’on commence enfin à mettre la technique du _Reset CSS_ de côté.

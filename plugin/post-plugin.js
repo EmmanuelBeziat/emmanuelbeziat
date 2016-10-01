@@ -38,7 +38,6 @@ function generateMetaData () {
 
       markdown(post, function (err, result) {
         if (directory === 'articles') {
-
           fileContent.unshift({
             'title': result.attributes.title,
             'image': result.attributes.image || 'https://images.emmanuelbeziat.com/social-thumbnail.jpg',
@@ -49,7 +48,8 @@ function generateMetaData () {
             'basename': result.attributes.basename || slug(result.attributes.title, { lower: true }),
             'path': element.split('/').pop(),
             'description': result.attributes.description || '',
-            'disqus': result.attributes.disqus || true
+            'disqus': result.attributes.disqus || true,
+            'publish': result.attributes.publish || true
           })
         }
         else if (directory === 'portfolio') {
@@ -62,7 +62,8 @@ function generateMetaData () {
             'clients': result.attributes.clients || [''],
             'template': result.attributes.template || 'portfolio',
             'basename': result.attributes.basename || slug(result.attributes.title, { lower: true }),
-            'path': element.split('/').pop()
+            'path': element.split('/').pop(),
+            'publish': result.attributes.publish || true
           })
         }
       })

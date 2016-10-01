@@ -1,5 +1,6 @@
 import Vue from 'vue'
 import Moment from 'moment'
+import 'moment/locale/fr'
 
 Moment.locale('fr')
 

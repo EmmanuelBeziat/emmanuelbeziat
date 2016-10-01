@@ -10,7 +10,7 @@ categories:
 Lorsqu’on utilise du CSS, on peut se contenter des trois sélecteurs de base : les éléments, les identifiants et les classes. Souvent, sans le savoir, vous utilisez un sélecteur simple de descendance, par un espace entre deux de ces sélecteurs - hé oui ! Mais il existe d’autres sélecteurs plus avancés, nous allons les passer en revue.
 
 
-Je ne traite ici que du CSS 2.1\. Le CSS3 apporte de nouveaux sélecteurs très intéressants et utiles, [qui sont listés dans cet article](http://www.emmanuelbeziat.com/blog/principes-du-css-les-selecteurs-partie-2-css3/).
+Je ne traite ici que du CSS 2.1. Le CSS3 apporte de nouveaux sélecteurs très intéressants et utiles, [qui sont listés dans cet article](http://www.emmanuelbeziat.com/blog/principes-du-css-les-selecteurs-partie-2-css3/).
 
 ## Préambule
 

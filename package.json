@@ -9,7 +9,8 @@
     "build": "node build/build.js",
     "unit": "karma start test/unit/karma.conf.js --single-run",
     "test": "npm run unit",
-    "lint": "eslint --ext .js,.vue src test/unit/specs test/e2e/specs"
+    "lint": "eslint --ext .js,.vue src test/unit/specs test/e2e/specs",
+    "postinstall": "rm -rf node_modules/webpack/node_modules/uglify-js"
   },
   "dependencies": {
     "vue": "^1.0.21",
@@ -87,6 +88,7 @@
     "webpack": "^1.12.2",
     "webpack-dev-middleware": "^1.4.0",
     "webpack-hot-middleware": "^2.6.0",
-    "webpack-merge": "^0.8.3"
+    "webpack-merge": "^0.8.3",
+    "uglify-js": "git://github.com/mishoo/UglifyJS2#harmony"
   }
 }

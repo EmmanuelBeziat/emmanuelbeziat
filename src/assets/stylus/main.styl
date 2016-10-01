@@ -1,25 +1,40 @@
-@require 'utils/variables.styl'
-@require 'utils/mixins.styl'
-@require 'utils/fonts.styl'
-@require 'utils/animations.styl'
-@require 'utils/helpers.styl'
+// ITCSS architecture
 
-@require 'vendors/normalize.styl'
+// 1. Settings
+@require 'settings/variables.styl'
+
+// 2. Tools
+@require 'tools/mixins.styl'
+
+// 3. Generic
+@require 'generic/reset.styl'
+@require 'generic/normalize.styl'
+
+// 4. Base
+@require 'base/base.styl'
+@require 'base/fonts.styl'
+@require 'base/animations.styl'
+
+// 5. Objects
+
+// 6. Components
+@require 'components/layout/header.styl'
+@require 'components/layout/menu.styl'
+@require 'components/layout/footer.styl'
+
+@require 'components/modules/tags.styl'
+@require 'components/modules/share.styl'
+@require 'components/modules/icons.styl'
+@require 'components/modules/notes.styl'
+@require 'components/modules/loader.styl'
+
+@require 'components/pages/home.styl'
+@require 'components/pages/not-found.styl'
+@require 'components/pages/posts-list.styl'
+@require 'components/pages/post.styl'
+@require 'components/pages/portfolio-list.styl'
+
 @require 'vendors/prism.styl'
 
-@require 'modules/base.styl'
-@require 'modules/header.styl'
-@require 'modules/menu.styl'
-@require 'modules/footer.styl'
-
-@require 'components/tags.styl'
-@require 'components/share.styl'
-@require 'components/icons.styl'
-@require 'components/notes.styl'
-@require 'components/loader.styl'
-
-@require 'pages/home.styl'
-@require 'pages/not-found.styl'
-@require 'pages/posts-list.styl'
-@require 'pages/post.styl'
-@require 'pages/portfolio-list.styl'
+// 7. Helpers
+@require 'helpers/helpers.styl'

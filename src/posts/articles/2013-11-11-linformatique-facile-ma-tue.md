@@ -66,8 +66,8 @@ Simplement que le fait d’être assis devant un ordinateur ne rend pas le méti
 
 J’avais trouvé une belle citation sur une illustration ; comme je ne l’ai pas retrouvée, je vais simplement l’écrire approximativement (et la traduire tout aussi approximativement) :
 
-> Pourquoi devrais-je payer autant pour une illustration qui vous a pris dix minutes à faire ?
-> - Parce que j’ai étudié et travaillé dix ans pour apprendre à faire ça en dix minutes.
+> Pourquoi devrais-je payer autant pour quelque chose qui vous prend dix minutes ?
+> - Parce que j’ai travaillé dix ans pour savoir le faire en dix minutes.
 
 ### Edit et post-scriptum
 

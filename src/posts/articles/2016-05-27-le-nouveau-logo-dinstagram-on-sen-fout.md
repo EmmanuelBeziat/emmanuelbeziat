@@ -85,7 +85,7 @@ C’est comme avec n’importe quel courant artistique : on peut faire du très
 
 ### La connerie
 
-Au cours d’un« débat » sur le _flat design_, quelqu’un m’a sorti une excellente ânerie : 'Le cerveau est habitué à voir des objets réels, il a besoin de détails pour reconnaître un objet, sinon ça le fatigue !'
+Au cours d’un« débat » sur le _flat design_, quelqu’un m’a sorti une excellente ânerie : <q>Le cerveau est habitué à voir des objets réels, il a besoin de détails pour reconnaître un objet, sinon ça le fatigue !</q>
 
 À quiconque croirait à ces stupides sornettes, laissez-moi vous montrer ceci :
 

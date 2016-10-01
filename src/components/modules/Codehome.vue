@@ -5,15 +5,24 @@
 
     &lt;h2&gt;Formateur&lt;/h2&gt;
     html/css, Javascript, Workflow, WordPress
-  &lt;section&gt;</code></pre>
+
+    &lt;h3&gt;Bonus&lt;/h3&gt;
+    Compétences de graphiste
+  &lt;section&gt;
+  </code></pre>
 
 
-  <pre class="language-css" v-if="code == 'css'"><code>metiers: {
+  <pre class="language-css" v-if="code == 'css'"><code>metiers {
     developpeur: web front-end;
     formateur: html-css javascript workflow wordpress;
+    bonus: competences(graphiste);
+  }
+
+  caburant {
+    boisson: "Coca-cola";
   }</code></pre>
 
-  <pre class="language-javascript" v-if="code == 'javascript'"><code>const metiers = function () {
+  <pre class="language-javascript" v-if="code == 'javascript'"><code>const metiers = {
     developpeur: [ 'web', 'front-end' ],
 
     formateur: {
@@ -21,17 +30,38 @@
       javascript: true,
       workflow: true,
       wordpress: true
-    }
+    },
+
+    bonus: {
+      compétences: 'graphiste'
+    },
+
+    carburant: 'Coca-cola'
   }</code></pre>
 
-  <pre class="language-bash" v-if="code == 'bash'"><code>$ metier developpeur --web --front-end
-  $ metier formateur --html-css --javascript --workflow --wordpress</code></pre>
+  <pre class="language-php" v-if="code == 'php'"><code>&lt;?php function metiers() {
+    $developpeur = [ 'web', 'front-end' ];
+
+    $formateur = [
+      'html_css' => true,
+      'javascript' => true,
+      'workflow' => true,
+      'wordpress' => true
+    ];
+
+    $bonus = [
+      'compétences' => 'graphiste'
+    ];
+
+    $carburant = 'Coca-cola';
+  }</code></pre>
 </template>
 
 <script>
-const codes = ['html', 'css', 'javascript', 'bash']
+const codes = ['html', 'css', 'javascript', 'php']
 
 import Prism from 'prismjs'
+import 'prismjs/components/prism-php.min.js'
 
 export default {
   data () {

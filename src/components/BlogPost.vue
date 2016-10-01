@@ -10,7 +10,7 @@
         <h1 class="post__title">{{ title }}</h1>
 
         <div class="post__infos">
-          <div class="post__date">Posté le <time>{{ date | moment 'ddd Do MMM YYYY[, à] HH[h]mm' }}</time></div>
+          <div class="post__date">Posté le <time>{{ date | moment 'ddd Do MMM YYYY' }}</time></div>
 
           <div class="flex">
             <div class="post__tags">
@@ -44,7 +44,7 @@
 
     </article>
 
-    <div class="comments" v-if="!$loadingRouteData">
+    <div class="comments" v-if="!$loadingRouteData" v-if="disqus">
       <disqus shortname="emmanuelbeziat"></disqus>
     </div>
   </div>
@@ -63,7 +63,6 @@ var md = require('markdown-it')({
   breaks: true,
   linkify: true
 })
-.use(require('markdown-it-attrs'))
 .use(require('markdown-it-block-embed'), {
   containerClassName: 'video',
   serviceClassPrefix: 'video--',
@@ -82,7 +81,8 @@ module.exports = {
       content: null,
       title: null,
       date: null,
-      tags: null
+      tags: null,
+      disqus: null
     }
   },
 
@@ -111,12 +111,13 @@ module.exports = {
         const posts = require('../posts/articles/meta.json')
         const getPostName = this.getPostName(posts, basename)
 
-        require('../posts/articles' + getPostName)((exports) => {
+        require('../posts/articles' + getPostName)((post) => {
           transition.next({
-            content: md.render(exports.rawContent),
-            date: exports.metaData.date,
-            tags: exports.metaData.tags,
-            title: exports.metaData.title
+            content: md.render(post.rawContent),
+            date: post.metaData.date,
+            tags: post.metaData.tags,
+            title: post.metaData.title,
+            disqus: post.metaData.disqus
           })
         })
       })

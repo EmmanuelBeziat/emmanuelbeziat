@@ -2,11 +2,6 @@ html
 	box-sizing border-box
 	overflow-y scroll
 
-*
-*::before
-*::after
-	box-sizing inherit
-
 ::selection
 	background $color-blue
 	color $color-text
@@ -62,6 +57,8 @@ blockquote::before
 	color lighten($color-background, 25%)
 
 q
+	font-style italic
+	color $color-yellow
 	quotes "« " " »"
 
 // Layout base

@@ -1,20 +1,23 @@
-var reg = /^(-{3,}|;{3,})\n([\s\S]+?)\n\1(?:$|\n([\s\S]*)$)/
-var yaml = require('js-yaml')
+var markdown = require('markdown-parse')
+var metaData = {}
+var rawContent
 
-module.exports = function (content) {
-  var match = reg.exec(content)
-  var metaData
-  if (!match) {
-    throw new Error('post not valid')
-  }
-  var rawMeta = match[2]
-  var rawContent = match[3]
+module.exports = function (post) {
 
-  try {
-    metaData = yaml.load(rawMeta)
-  } catch (e) {
-    throw new Error(rawMeta)
-  }
+  markdown(post, function(err, result) {
+    rawContent = result.body
+    metaData.title = result.attributes.title
+    metaData.image = result.attributes.image || 'https://images.emmanuelbeziat.com/social-thumbnail.jpg'
+    metaData.date = result.attributes.date || new Date()
+    metaData.tags = result.attributes.tags || ['']
+    metaData.clients = result.attributes.clients || ['']
+    metaData.categories = result.attributes.categories || ['non-classe']
+    metaData.template = result.attributes.template || 'post'
+    metaData.description = result.attributes.description || ''
+    metaData.disqus = result.attributes.disqus || true
+    metaData.publish = result.attributes.publish || true
+  });
+
   return JSON.stringify({
     rawContent: rawContent,
     metaData: metaData

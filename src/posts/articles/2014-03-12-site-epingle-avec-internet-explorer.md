@@ -11,7 +11,7 @@ categories:
 
 Avec Windows 7 est apparue la possibilité d’épingler des programmes dans la barre des tâches. Internet Explorer (depuis la version 9) propose une fonctionnalité d’épinglage avancé : il suffit de déplacer l’onglet d’une page vers la barre des tâches pour y trouver de nouvelles actions possibles. Ces fonctionnalités se paramètrent sur votre propre site, nous allons donc voir comment.
 
-![sites-epingles](https://www.emmanuelbeziat.com/wp-content/uploads/2013/07/sites-epingles.jpg)
+![sites-epingles](https://www.emmanuelbeziat.com/wp-content/uploads/2013/07/sites-epingles.jpg) { .text-align-center }
 
 Pour la première partie, un minimum de connaissances en HTML est requis. Les parties HTML seront suffisamment détaillées pour que les moins expérimentés s’y retrouvent.
 
@@ -25,7 +25,7 @@ Il existe plusieurs façons pour un utilisateur d’épingler un site.
 
 Dans Windows 7 et 8 (en mode bureau), il suffit de faire glisser l’onglet du site ou le favicon (icône du site) vers la barre des tâches pour que le site s’épingle seul. Il est également possible d’utiliser le menu Outils (`Alt` + `o`), puis de sélectionner "_Ajouter le site au menu démarrer_", mais le raccourci se place dans le menu et non sur la barre des tâches.
 
-![épinglage](https://www.emmanuelbeziat.com/wp-content/uploads/2013/07/epinglage.jpg)
+![épinglage](https://www.emmanuelbeziat.com/wp-content/uploads/2013/07/epinglage.jpg) { .text-align-center }
 
 Dans Windows 8 (en mode ModernUI), il y a un bouton "_Épingler à l’écran d’accueil_" dans la barre de navigation en bas de la fenêtre d’Internet Explorer.
 
@@ -35,13 +35,13 @@ Il est également possible de créer des outils d’épinglage (boutons, barres)
 
 Lorsqu’un site est lancé depuis un raccourci épinglé, l’interface change légèrement par rapport à une fenêtre normale d’Internet Explorer. Le bouton accueil à droite disparaît, l’icône du site est affichée à gauche des boutons de navigation, et ceux-ci adoptent une couleur différente.
 
-![Un exemple de site épinglé](https://www.emmanuelbeziat.com/wp-content/uploads/2013/07/exemple-site-epingle.jpg)
+![Un exemple de site épinglé](https://www.emmanuelbeziat.com/wp-content/uploads/2013/07/exemple-site-epingle.jpg) { .text-align-center }
 
 ### La barre des tâches, mais pas seulement !
 
 Il existe également une petite subtilité : si vous glissez le site non pas sur la barre des tâches mais sur le bouton du menu Démarrer (uniquement pour Windows 7 donc), votre site et ses raccourcis apparaîtront dans celui-ci.
 
-![epinglage menu démarrer](https://www.emmanuelbeziat.com/wp-content/uploads/2013/07/menu-demarrer.jpg)
+![epinglage menu démarrer](https://www.emmanuelbeziat.com/wp-content/uploads/2013/07/menu-demarrer.jpg) { .text-align-center }
 
 La théorie étant vue, place à l’action.
 
@@ -266,7 +266,7 @@ window.onload = function() {
 
 ### Ajouter des éléments à la liste
 
-Maintenant que la liste est prête, nous allons y ajouter des éléments le plus simplement du monde, grâce à la fonction [`msSiteModeAddJumpListItem()`]( "MSDN").
+Maintenant que la liste est prête, nous allons y ajouter des éléments le plus simplement du monde, grâce à la fonction [`msSiteModeAddJumpListItem()`]("MSDN").
 
 ```javascript
 window.onload = function() {
@@ -278,7 +278,7 @@ window.onload = function() {
 			window.external.msSiteModeCreateJumpList('Liste Dynamique');
 
 			// Créer les nouveaux éléments
-			window.external.msSiteModeAddJumpListItem('Ma Page', 'page.html’, 'page2.ico');
+			window.external.msSiteModeAddJumpListItem('Ma Page', 'page.html', 'page2.ico');
 			window.external.msSiteModeAddJumpListItem('Mon blog', '/blog/', 'blog.ico');
 
 			// Créer les nouveaux éléments
@@ -301,7 +301,7 @@ On pourrait par exemple imaginer créer un bouton pour l’ajout d’une fiche d
 var site = null;
 function AjouterMembreListe(nomMembre, adresseMembre) {
 	site = window.external;
-	site.msSiteModeCreateJumpList('Mes membres favoris’);
+	site.msSiteModeCreateJumpList('Mes membres favoris');
 	site.msSiteModeAddJumpListItem(nomMembre, adresseMembre, 'images/membre.ico');
 }
 ```
@@ -314,7 +314,7 @@ Puisque l’on a ajouté des éléments de manière dynamique, il peut être uti
 
 Une technique qui peut-être très pratique pour indiquer qu’un certain type d’événement s’est produit. Par exemple, que l’utilisateur a reçu un certain nombre de messages.
 
-![notification-facebook](https://www.emmanuelbeziat.com/wp-content/uploads/2014/03/notif-fb.jpg)
+![notification-facebook](https://www.emmanuelbeziat.com/wp-content/uploads/2014/03/notif-fb.jpg) { .text-align-center }
 
 Cela se fait avec la méthode [`msSiteModeSetIconOverlay()`](http://msdn.microsoft.com/fr-fr/library/ff976316%28v=vs.85%29.aspx "MSDN"), qui attend deux paramètres : l’adresse de l’image (obligatoire), et un texte descriptif de la notification (optionnel).
 
@@ -368,7 +368,7 @@ function modifierIcone(statut) {
 
 Utile pour attirer rapidement l’attention, il faut néanmoins se demander s’il n’est pas plus pertinent d’utiliser une image superposée à l’icône. En effet, il n’y a rien de plus agaçant pour un utilisateur qu’un élément qui clignote toutes les deux minutes. Il sera par exemple préférable de mettre un chiffre en image pour signaler que de nouveaux commentaires ont été postés, plutôt que de flasher l’utilisateur à chaque fois. { .c-note .c-note--important }
 
-![clignotement](https://www.emmanuelbeziat.com/wp-content/uploads/2014/03/clignotement.jpg)
+![clignotement](https://www.emmanuelbeziat.com/wp-content/uploads/2014/03/clignotement.jpg) { .text-align-center }
 
 Le clignotement se fait au moyen de la méthode [`msSiteModeActivate()`](http://msdn.microsoft.com/fr-fr/library/ff975166%28v=vs.85%29.aspx "MSDN"). Celle-ci ne prend aucun paramètre, et ne fait rien d’autre que faire clignoter l’icône jusqu’à ce que l’utilisateur ait ouvert la fenêtre.
 
@@ -378,7 +378,7 @@ Pour aller plus loin, il est également possible d’ajouter des fonctionnalité
 
 Au-delà de boutons de lecture, on peut imaginer ajouter un bouton pour accéder directement à une liste de favoris, un bouton de partage sur les réseaux sociaux, modifier un état (en ligne/hors ligne), ou bien accéder aux informations de localisation d’une entreprise ; bref, un véritable petit contrôle à distance de votre site.
 
-![barre d’outils](https://www.emmanuelbeziat.com/wp-content/uploads/2014/03/barre-outils.jpg)
+![barre d’outils](https://www.emmanuelbeziat.com/wp-content/uploads/2014/03/barre-outils.jpg) { .text-align-center }
 
 #### À retenir avant toute chose
 
@@ -393,14 +393,16 @@ Contrairement aux tâches, les boutons de la barre d’outils doivent être cré
 ```javascript
 var btnFacebook = window.external.msSiteModeAddThumbBarButton('facebook.ico', 'Facebook');
 var btnTwitter = window.external.msSiteModeAddThumbBarButton('twitter.ico', 'Twitter');
-var btnGoogle = window.external.msSiteModeAddThumbBarButton('googleplus.ico', 'Google+');```
+var btnGoogle = window.external.msSiteModeAddThumbBarButton('googleplus.ico', 'Google+');
+```
 
 Le "nom" des boutons (c’est un identifiant) sera utile pour leur attribuer des actions.
 
 Il reste ensuite à afficher la barre avec la fonction [`msSiteModeShowThumbBar()`](http://msdn.microsoft.com/fr-fr/library/ff976319%28v=vs.85%29.aspx "MSDN"). Comme signalé en début de chapitre, une fois passée cette étape, il ne sera pas possible d’ajouter de boutons supplémentaires.
 
 ```javascript
-window.external.msSiteModeShowThumbBar();```
+window.external.msSiteModeShowThumbBar();
+```
 
 ### Donner des actions aux boutons
 
@@ -410,7 +412,8 @@ Rendus ici, nous avons trois jolis boutons affichés sous notre site, mais qui n
 
 En fonction du mode de document (je vous passe les détails), la méthode d’appel au gestionnaire peut changer. Il faut donc prévoir les deux cas possibles :
 
-```if (document.addEventListener) {
+```javascript
+if (document.addEventListener) {
 	document.addEventListener('msthumbnailclick', actionBouton, false);
 }
 else if (document.attachEvent) {
@@ -420,7 +423,8 @@ else if (document.attachEvent) {
 
 Avec ceci, vous n’aurez pas de problème. Continuons donc : on peut maintenant créer la fonction adéquate. Lors de l’étape précédente, nous avons donné des identifiants à chaque bouton, c’est ce qui est passé en paramètre ici :
 
-```function actionBouton(bouton) {
+```javascript
+function actionBouton(bouton) {
 	switch (bouton.buttonID) {
 		case btnFacebook: action; break;
 		case btnTwitter: action; break;
@@ -431,7 +435,8 @@ Avec ceci, vous n’aurez pas de problème. Continuons donc : on peut maintenan
 
 Il ne reste plus qu’à définir les actions en questions, par exemple en faisant des appels de fonctions que vous aurez préalablement créées (ou que vous allez créer par la suite) :
 
-```function actionBouton(bouton) {
+```javascript
+function actionBouton(bouton) {
 	switch (bouton.buttonID) {
 		case btnFacebook: actionFB(); break;
 		case btnTwitter: actionTwitt(); break;
@@ -484,7 +489,8 @@ function boutonChange() {
 Parfois, il peut être utile de masquer un bouton. On utilise donc la même méthode ([`msSiteModeUpdateThumbBarButton()`](http://msdn.microsoft.com/fr-fr/library/ff976320%28v=vs.85%29.aspx "MSDN")) que pour l’activation et la désactivation, mais cette fois nous nous intéressons au dernier paramètre attendu par la méthode. Il suffit donc de mettre le dernier paramètre sur false pour masquer un bouton :
 
 ```javascript
-window.external.msSiteModeUpdateThumbBarButton(boutonID, true, false);```
+window.external.msSiteModeUpdateThumbBarButton(boutonID, true, false);
+```
 
 Lorsqu’on change de page au sein d’un site en mode site, la barre d’outils reste visible tant que la fenêtre épinglée est ouverte, mais les boutons risquent de cesser de fonctionner. En effet, si l’utilisateur va sur un autre site, le gestionnaire d’événements ne sera plus présent. Il peut donc être utile de les masquer lorsque la page où le code se trouve est déchargée.
 
@@ -532,7 +538,7 @@ Et voilà pour cette partie.
 
 Comme je vous le disais au début, il est possible de créer des images dans votre site que l’utilisateur aura simplement à déplacer vers la barre des tâches au lieu de l’onglet, vous donnant ainsi la possibilité d’expliquer simplement à vos utilisateurs de quoi il retourne. c’est ainsi que sur certains sites comme HtmlGoodies, les utilisateurs d’Internet Explorer 9 ou plus ont une petite barre affichée indiquant qu’il suffit de la déplacer dans la barre des tâches (l’image étant explicite) pour bénéficier de nouvelles fonctionnalités.
 
-![htmlgoodies](https://www.emmanuelbeziat.com/wp-content/uploads/2014/03/htmlgoodies.jpg)
+![htmlgoodies](https://www.emmanuelbeziat.com/wp-content/uploads/2014/03/htmlgoodies.jpg) { .text-align-center }
 
 Faire ceci est très simple, car il suffit d’ajouter à une image la classe `msPinSite` pour que le navigateur sache quoi faire de cette image et comment la traiter. N’importe quel format d’image web peut-être utilisé (JPG, GIF, PNG).
 
@@ -573,7 +579,8 @@ Tout d’abord, il faut [télécharger Pinify](http://polyfillsbook.com/pinify/ 
 Ensuite, il suffit d’appeler la fonction `.pinify();` :
 
 ```javascript
-$('head’).pinify();```
+$('head').pinify();
+```
 
 À partir de là, le plugin inclus automatiquement les balises meta de base. Nous allons maintenant voir comment les personnaliser.
 
@@ -603,15 +610,16 @@ $("head").pinify({
 	window: 'width=1024;height=768',
 	tasks: [{
 		'name': 'Lire le site',
-		'action’: 'http://www.monsite.com/mapage.html’,
-		'icon’: 'favicon.ico'
+		'action': 'http://www.monsite.com/mapage.html’,
+		'icon': 'favicon.ico'
 	},
 	{
 		'name': 'Afficher mon blog',
-		'action’: 'http://www.monsite.com/monblog/',
-		'icon’: 'blog.ico'
+		'action': 'http://www.monsite.com/monblog/',
+		'icon': 'blog.ico'
 	}]
-});```
+});
+```
 
 ### La partie dynamique
 
@@ -625,8 +633,8 @@ $("#menu a").each(data, function (key, val) {
 	// On crée un objet dans lequel on stocke le nom, l’adresse et l’adresse de l’icône
 	var item = {
 		'name': $this.html(),
-		'url’: $this.attr('href'),
-		'icon’: 'favicon.ico'
+		'url': $this.attr('href'),
+		'icon': 'favicon.ico'
 	};
 	// l’objet est ensuite ajouté à l’array que nous avons créé plus haut
 	menuItem.push(item);
@@ -636,7 +644,8 @@ $("#menu a").each(data, function (key, val) {
 $.pinify.addJumpList ({
 	title: 'Mon menu',
 	items: menuItem
-});```
+});
+```
 
 ### Les notifications
 
@@ -647,20 +656,23 @@ Encore plus simple que dans la version d’origine, jQuery oblige :
 ```javascript
 $.pinify.addOverlay ({
 	icon: 'iconeNotif.ico',
-	title: 'Nouvelle notification’
-});```
+	title: 'Nouvelle notification'
+});
+```
 
 Par opposition, vous pouvez utiliser la fonction `clearOverlay()` pour retirer une icône.
 
 ```javascript
-$.pinify.clearOverlay();```
+$.pinify.clearOverlay();
+```
 
 #### Méthode du clignotement
 
 Tout aussi simplement que la méthode initiale :
 
 ```javascript
-$.pinify.flashTaskbar();```
+$.pinify.flashTaskbar();
+```
 
 ### Les aperçus
 
@@ -682,7 +694,8 @@ $.pinify.createThumbbarButtons({
 			// Gérer la fonction ici
 		}
 	}]
-});```
+});
+```
 
 ## Conclusion
 

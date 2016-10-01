@@ -18,15 +18,15 @@ Tout d’abord, comprenons bien de quoi l’on parle dans ce tutoriel, et pour c
 
 Lorsqu’un site possède une hauteur totale plus grande que l’écran sur lequel il est vu, on peut alors descendre la page vers le bas, jusqu’au bas de la page en question ; là, le défilement est arrêté, le pied-de-page, ou "footer" en anglais, est alors fixé naturellement au bas de la page et de l’écran.
 
-![Illustration du tutoriel](https://images.emmanuelbeziat.com/tuto1-01.png) ![Illustration du tutoriel](https://images.emmanuelbeziat.com/tuto1-02.png)
+![Illustration du tutoriel](https://images.emmanuelbeziat.com/tuto1-01.png) ![Illustration du tutoriel](https://images.emmanuelbeziat.com/tuto1-02.png) { .text-align-center }
 
 Mais dans le cas où la hauteur totale de la page est inférieure à la hauteur de l’écran, alors le pied-de-page, toujours placé au bas de la page, n’atteint pas le bas de l’écran.
 
-![Illustration du tutoriel](https://images.emmanuelbeziat.com/tuto1-03.png)
+![Illustration du tutoriel](https://images.emmanuelbeziat.com/tuto1-03.png) { .text-align-center }
 
 Si certains design ne sont pas gênés par cette éventualité, ce n’est pas le cas de tous. Pour palier à ce problème, nous allons devoir faire en sorte que le design adopte la taille du contenu si la taille de la page est supérieure à la taille de l’écran, mais que la taille minimale de la page ne puisse pas être inférieure cette dernière.
 
-![Illustration du tutoriel](https://images.emmanuelbeziat.com/tuto1-04.png)
+![Illustration du tutoriel](https://images.emmanuelbeziat.com/tuto1-04.png) { .text-align-center }
 
 Nous allons maintenant voir comment faire ceci.
 
@@ -51,7 +51,7 @@ Nous partons sur cette base html :
 
 Ce n’est qu’un exemple de site de base ; vous pouvez bien sûr utiliser votre propre site.
 
-![Illustration du tutoriel](https://images.emmanuelbeziat.com/tuto1-05.png)
+![Illustration du tutoriel](https://images.emmanuelbeziat.com/tuto1-05.png) { .text-align-center }
 
 Pourquoi mettre le pied de page (footer) en dehors du bloc principal ? {.c-note .c-note--question}
 

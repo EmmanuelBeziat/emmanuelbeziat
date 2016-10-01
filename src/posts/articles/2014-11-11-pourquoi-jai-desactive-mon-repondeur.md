@@ -12,7 +12,7 @@ On <del>m’emmerde</del> me demande souvent pourquoi on ne peut pas me laisser 
 
 ## Je déteste le téléphone
 
-![phones-icons](https://images.emmanuelbeziat.com/phones-icons.png)
+![phones-icons](https://images.emmanuelbeziat.com/phones-icons.png) { .text-align-center }
 
 Certains adolescents passent / ont passé leur vie l’oreille vissée à des appareils plus ou moins évolués. Je me souviens encore de ma sœur qui, dans les années 90 et à la maison, monopolisait la ligne pendant des heures. Je n’ai jamais compris pourquoi, quel plaisir elle pouvait bien en retirer. Cette machine infernale m’a toujours fait flipper. D’un seul coup, sans prévenir, ça gueule dans la maison sa sonnerie ignoble. Ça fait sursauter, ça brise le calme et ça stresse d’un coup.
 
@@ -43,7 +43,7 @@ Tant qu’on y est, voici un florilège des messages que j’ai déjà reçu (et
 *   <q>Oui Jeanette, c’est Marie-Clothilde, je voulais te reparler de la réunion à la chapelle Saint-Molusque pour le 12 […]</q> → Rappeler pour signifier que c’était un faux numéro ? Allons donc.
 *   <q>Allô ? Allô ?</q> → Le cas classique du gars qui n’a pas encore assimilé ce qu’est un répondeur.
 *   <q>c’est votre banque, vous êtes à découvert depuis 11 mois. Merci de nous rappeler au plus vite.</q> →  Rappeler un numéro surtaxé qui va me prendre le pognon que je n’ai pas, pour vous confirmer que j’ai pas un copeck et vous entendre me conseiller de vite renflouer mon compte (comme si je trouvais régulièrement des liasses de 500 dans les replis de mon canapé) ? J’en rêve !
-*   **Cas particulier : ** <q>Ouais.</q> → Mon père, ce héro, qui adore signifier que les longues annonces de répondeur l’emmerdent, et compense le temps passé en omettant de préciser le motif de son coup de bigot. Alors je le rappelle, mais il ne répond pas non plus ; du coup je lui laisse un message pour demander pourquoi il a appelé.
+*   **Cas particulier :** <q>Ouais.</q> → Mon père, ce héro, qui adore signifier que les longues annonces de répondeur l’emmerdent, et compense le temps passé en omettant de préciser le motif de son coup de bigot. Alors je le rappelle, mais il ne répond pas non plus ; du coup je lui laisse un message pour demander pourquoi il a appelé.
 
 c’est bien sûr un échantillon, mais c’est assez parlant.
 

@@ -14,7 +14,7 @@ Plus sérieusement, très régulièrement il m’arrive sur de très nombreux fo
 
 ## Le cas Vista
 
-![Windows vista](https://images.emmanuelbeziat.com/windows-vista-logo.png)
+![Windows vista](https://images.emmanuelbeziat.com/windows-vista-logo.png) { .text-align-center }
 
 Avant de commencer avec le cas Windows 8, je vais d’abord me pencher sur Vista et m’atteler tout d’abord à détruire un bon gros à-priori (à tel point que j’ai même la prétention de l’écrire en gras !) : **Vista était un très bon OS**.
 
@@ -44,7 +44,7 @@ Il n’empêche que Vista a apporté, avec NT6, de nombreuses améliorations sur
 
 ## L’arrivée de 7
 
-![Windows 7](https://images.emmanuelbeziat.com/windows-7-logo.png)
+![Windows 7](https://images.emmanuelbeziat.com/windows-7-logo.png) { .text-align-center }
 
 En voilà un Windows qu’il a été bien accueilli ! c’est même le premier Windows à l’être. Ses ventes exceptionnelles sont un record absolu pour Microsoft : 100 millions de licences écoulées en 6 mois, 525 millions en deux ans. À titre de comparaison, Windows XP a s’est écoulé à 20 millions d’unités en 6 mois, et 400 millions en 6 ans.
 
@@ -54,7 +54,7 @@ c’est quand même bien moins fourni que Vista… Normal, puisque celui-ci a d�
 
 ## Bonjour Windows 8
 
-![Windows 8](https://images.emmanuelbeziat.com/windows-8-logo.png)
+![Windows 8](https://images.emmanuelbeziat.com/windows-8-logo.png) { .text-align-center }
 
 c’est donc naturellement que Windows 7 se devait d’avoir un successeur. À défaut de pouvoir réitérer l’exploit commercial de 7 (en sachant que le marché du PC s’essouffle désormais face aux smartphones et aux tablettes), il s’appuie toujours sur les acquis précédents (Noyau NT6.2 puis 6.3 pour Windows 8.1). On trouve encore quelques nouveautés et optimisations : prise en charge native de l’USB3, des téléviseurs 3D, montage natif des images ISO, interface ruban dans l’explorateur, meilleure gestion des transferts de fichiers, possibilité de rétablir les réglages d’usine, chiffrement des disques, meilleur _versionning_, gestion plus avancée du multi-écrans, sécurité accrue, nouveau gestionnaire de tâches, optimisation du démarrage, meilleur accès au matériel, synchronisation des paramètres, meilleure utilisation des profils…
 
@@ -148,27 +148,26 @@ Mon préféré. c’est bien connu, les feignasses qui passent onze heures par j
 
 Je pourrais en rajouter davantage pour montrer à quel point la réflexion est stupide, mais soit. Observons <del>deux papillons</del> les procédures standards sous Windows 7, comptons le nombre d’actions et de clics, et comparons avec Windows 8.
 
-*   Lancer un programme du menu démarrer.
+#### Lancer un programme du menu démarrer.
 
 **Windows 7 :**
-
 1.  Amener son curseur en bas à gauche de l’écran
 2.  Cliquer
 3.  Diriger sa souris vers un programme épinglé
 4.  Cliquer
+
 **Windows 8 :**
-
 1.  Amener son curseur en bas à gauche de l’écran
 2.  Cliquer
 3.  Diriger sa souris vers un programme épinglé
 4.  Cliquer
+
 **Verdict :** Stricte égalité (je déconnais pas quand je disais que c’était pareil).
 
 NB: Dans les deux cas, on peut aussi appuyer sur la touche <kbd>Windows</kbd> et enlever un clic et un déplacement de souris !
 
-*   Lancer un programme dans la liste des programmes installés
+#### Lancer un programme dans la liste des programmes installés
 **Windows 7 :**
-
 1.  Amener son curseur en bas à gauche de l’écran
 2.  Cliquer
 3.  Diriger sa souris vers "Tous les programmes"
@@ -178,42 +177,45 @@ NB: Dans les deux cas, on peut aussi appuyer sur la touche <kbd>Windows</kbd> et
 7.  Cliquer pour ouvrir le dossier
 8.  Déplacer le curseur sur l’icone du programme
 9.  Cliquer sur le programme
-**Windows 8 :**
 
+**Windows 8 :**
 1.  Amener son curseur en bas à gauche de l’écran
 2.  Cliquer
 3.  Diriger sa souris vers "Tous les programmes"
 4.  Cliquer
 5.  Déplacer sa souris vers le programme
 6.  Cliquer sur le programme
+
 **Verdict :** Gros avantage Windows 8.
 
-*   Éteindre le PC (oui, il y a des gens qui me soutiennent que c’est plus compliqué sur W8 !)
+#### Éteindre le PC (oui, il y a des gens qui me soutiennent que c’est plus compliqué sur W8 !)
+
 **Windows 7 :**
-
 1.  Appuyer sur le bouton Power
+
 **Windows 8 :**
-
 1.  Appuyer sur le bouton Power
+
 **Verdict :** _Are you fucking kiddin’ me ?!_
 
-*   Redémarrer le PC (ou éteindre via le menu, mettre en veille, etc)
-**Windows 7 :**
+#### Redémarrer le PC (ou éteindre via le menu, mettre en veille, etc)
 
+**Windows 7 :**
 1.  Amener son curseur en bas à gauche de l’écran
 2.  Cliquer
 3.  Diriger sa souris vers la petite flèche à coté de "Arrêter"
 4.  Cliquer
 5.  Déplacer sa souris vers la fenêtre de choix
 6.  Cliquer sur le choix
-**Windows 8 :**
 
+**Windows 8 :**
 1.  Amener son curseur en bas à gauche de l’écran
 2.  Cliquer avec le bouton droit (OMG, tant de difficulté dans ta vie !) pour ouvrir un menu contextuel
 3.  Diriger sa souris vers "Arrêter ou se déconnecter"
 4.  Cliquer
 5.  Déplacer sa souris vers le lien du choix
 6.  Cliquer sur le choix
+
 **Verdict :** Stricte égalité
 
 Bon, oùkèlé la grosse perte de temps et de clic ?
@@ -230,7 +232,7 @@ Inexact. Dans le cas d’un compte local, on peut se connecter sans aucun mot de
 
 Ça, c’est ce que j’appelle l’effet Iceberg. Il y a énormément plus de sujets concernant des problèmes avec Windows 7 puisque celui-ci est présent depuis plus longtemps. Donc la plupart des gens qui ont un problème dessus vont trouver une réponse existante à leur question ou leur problème. Il y a encore régulièrement des sujets de problèmes avec d’autres OS, du reste. Mais c’est une partie que les gens occultent souvent.
 
-![Effet Iceberg](https://images.emmanuelbeziat.com/effeticeberg.jpg)
+![Effet Iceberg](https://images.emmanuelbeziat.com/effeticeberg.jpg) { .text-align-center }
 
 De plus, fait intéressant, quand un utilisateur sous Windows 7 expose un problème quelconque, les autres cherchent des causes probables (défaillance matérielle, drivers, etc.) ; quand un utilisateur sous Windows 8 expose un problème quelconque, les autres mettent directement en cause l’OS, sans chercher de causes. Étrange, hein ?
 

@@ -53,8 +53,22 @@ module.exports = {
       {
         test: /\.js$/,
         loader: 'babel',
-        include: projectRoot,
-        exclude: /node_modules/
+        include: [
+          projectRoot,
+          './node_modules/markdown-it-block-embed/',
+        ],
+        exclude: /node_modules/,
+        query: {
+          presets: ['es2015']
+        },
+      },
+      {
+        test: /\.es6$/,
+        exclude: /node_modules/,
+        loader: 'babel',
+        query: {
+          presets: ['es2015']
+        }
       },
       {
         test: /\.json$/,

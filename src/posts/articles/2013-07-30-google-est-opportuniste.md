@@ -5,6 +5,7 @@ tags:
 - brand
 categories:
 - Diatribes
+publish: false
 ---
 
 Google dispose des plus grands espaces publicitaires du monde, et s’en sert pour promouvoir son navigateur ; et c’est normal. Ce qui l’est moins, c’est de brandir le talent des gens comme s’il était de leur fait.

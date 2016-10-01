@@ -8,6 +8,7 @@ tags:
 - workflow
 categories:
 - Diatribes
+publish: false
 ---
 
 Ces dernières années, pas mal d’avancées ont été faites dans le domaine du web. L’arrivée de html5 mais surtout de CSS3, de nouvelles API, les nouvelles possibilités au sein des navigateurs, le versionning (svn, git), les _fonticons_, les préprocesseurs et la pléthore de nouveaux outils comme les _task-runners_ ont permis de faire de grosses avancées en matière de _workflow_, de productivité et de possibilités.
@@ -15,7 +16,7 @@ Ces dernières années, pas mal d’avancées ont été faites dans le domaine d
 Pour autant, il me semble que tout ne soit pas rose… Petite réaction à chaud.
 
 
-![web-moderne](https://images.emmanuelbeziat.com/web-moderne.png)
+![web-moderne](https://images.emmanuelbeziat.com/web-moderne.png) { .text-align-center }
 
 ## Je suis un dinosaure, mais je me soigne
 
