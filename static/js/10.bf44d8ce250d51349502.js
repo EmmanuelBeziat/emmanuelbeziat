@@ -1,0 +1,2 @@
+webpackJsonp([10,4],{203:function(e,t){e.exports={rawContent:"\r\nCe projet est encore un peu récent, je le mettrais à jour dans quelques temps. { .c-note .c-note--info }\r\n",metaData:{title:"Giorgio Armani",image:"armani",date:"2015-08-26 00:00:00",tags:["html/css","facebook"],clients:["Giorgio Armani","Kassius","Italic"],categories:["non-classe"],template:"post",description:"",disqus:!0,publish:!0}}}});
+//# sourceMappingURL=10.bf44d8ce250d51349502.js.map
