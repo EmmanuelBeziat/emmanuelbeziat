@@ -6,6 +6,7 @@ var merge = require('webpack-merge')
 var baseWebpackConfig = require('./webpack.base.conf')
 var ExtractTextPlugin = require('extract-text-webpack-plugin')
 var HtmlWebpackPlugin = require('html-webpack-plugin')
+var CopyWebpackPlugin = require('copy-webpack-plugin')
 var ImageminPlugin = require('imagemin-webpack-plugin').default
 var env = process.env.NODE_ENV === 'testing'
   ? require('../config/test.env')
@@ -89,6 +90,11 @@ var webpackConfig = merge(baseWebpackConfig, {
       name: 'manifest',
       chunks: ['vendor']
     }),
+
+    // Copy files for dist root
+    new CopyWebpackPlugin([
+      { from: 'gh-pages' }
+    ]),
 
     new ImageminPlugin({
       disable: false,
