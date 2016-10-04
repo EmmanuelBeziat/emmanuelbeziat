@@ -51,7 +51,6 @@ function generateMetaData () {
             'disqus': result.attributes.disqus || true,
             'publish': result.attributes.publish === undefined ? true : false
           })
-          console.log(result.attributes.publish)
         }
         else if (directory === 'portfolio') {
           fileContent.unshift({
