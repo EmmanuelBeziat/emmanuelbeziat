@@ -7,6 +7,7 @@
   "scripts": {
     "dev": "node build/dev-server.js",
     "build": "node build/build.js",
+    "post": "node build/new-post.js",
     "unit": "karma start test/unit/karma.conf.js --single-run",
     "test": "npm run unit",
     "lint": "eslint --ext .js,.vue src test/unit/specs test/e2e/specs",
@@ -55,6 +56,7 @@
     "http-proxy-middleware": "^0.12.0",
     "imagemin-webpack-plugin": "^1.2.0",
     "inject-loader": "^2.0.1",
+    "inquirer": "^1.2.1",
     "isparta-loader": "^2.0.0",
     "js-yaml": "^3.6.1",
     "json-loader": "^0.5.4",
