@@ -22,7 +22,8 @@ Vous devez donc savoir qu’il y a trois façons "basiques" de cibler un éléme
 ```css
 element { color: red } /* nom */
 .element { color: red } /* classe */
-#element { color: red } /* identifiant */```
+#element { color: red } /* identifiant */
+```
 
 Hé bien ces trois sélecteurs ont chacun un poids :
 
@@ -60,7 +61,8 @@ _"Mais à quoi ça nous sert ?"_, vous demandez-vous sûrement. Hé bien c’es
 
 Jusqu’ici, vous saviez que l’ordre des déclarations influait sur leur emploi :
 
-```span { color: red }
+```css
+span { color: red }
 span { color: blue }
 span { color: green }
 ```
@@ -103,7 +105,8 @@ Sur ce, vous voulez que le lien dont la liste porte la classe "color" s’affich
 Surprise ! Ça ne fonctionne pas. En effet, cette déclaration n’a un poids que de 11, donc il ne surclasse pas la précédente de 102 même en étant placé après. Il faut donc écrire une déclaration dont le poids surpassera la première :
 
 ```css
-#menu .color a```
+#menu .color a
+```
 
 Cette déclaration fait donc 111 (identifiant + classe + element), son poids est supérieur à la première, et notre lien s’affiche en vert.
 
