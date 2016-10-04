@@ -6,7 +6,7 @@
     </div>
 
     <div class="post-list" v-if="!$loadingRouteData">
-      <article class="post-list__item" v-for="post in postList" v-if="datePast(post.date)">
+      <article class="post-list__item" v-for="post in postList" v-if="datePast(post.date)" v-if="post.publish">
         <h1 class="post-list__title"><a v-link="{ name: 'blog-post', params: { slug: post.basename } }">{{ post.title }}</a></h1>
 
         <div class="post-list__infos">

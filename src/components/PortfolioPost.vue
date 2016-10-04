@@ -38,6 +38,7 @@ var md = require('markdown-it')({
   breaks: true,
   linkify: true
 })
+.use(require('markdown-it-attrs'))
 .use(require('markdown-it-block-embed'), {
   containerClassName: 'video',
   serviceClassPrefix: 'video--',
