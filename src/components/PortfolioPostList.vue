@@ -6,7 +6,7 @@
     </div>
 
     <div class="portfolio__list" v-if="!$loadingRouteData">
-      <div class="portfolio__item" v-for="post in postList" v-if="datePast(post.date)">
+      <div class="portfolio__item" v-for="post in postList">
         <div class="portfolio__layer portfolio__layer--{{ post.color }}">
           <svg class="portfolio__image icon" v-svg :sprite="post.image"></svg>
         </div>
@@ -41,11 +41,21 @@ export default {
 
   methods: {
     extractList: function (posts) {
-      this.postList = posts
+      var that = this
+      posts.forEach(function (post) {
+        if (!that.datePast(post.date)) return
+        if (!that.isPublished(post.publish)) return
+
+        that.postList.push(post)
+      })
     },
 
     datePast: function (date) {
       return Moment(date).isBefore(Moment().format('YYYY-MM-DD hh:mm:ss'))
+    },
+
+    isPublished: function (publish) {
+      return publish || false
     }
   },
 

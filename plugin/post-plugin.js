@@ -49,8 +49,9 @@ function generateMetaData () {
             'path': element.split('/').pop(),
             'description': result.attributes.description || '',
             'disqus': result.attributes.disqus || true,
-            'publish': result.attributes.publish || true
+            'publish': result.attributes.publish === undefined ? true : false
           })
+          console.log(result.attributes.publish)
         }
         else if (directory === 'portfolio') {
           fileContent.unshift({
@@ -63,7 +64,7 @@ function generateMetaData () {
             'template': result.attributes.template || 'portfolio',
             'basename': result.attributes.basename || slug(result.attributes.title, { lower: true }),
             'path': element.split('/').pop(),
-            'publish': result.attributes.publish || true
+            'publish': result.attributes.publish === undefined ? true : false
           })
         }
       })

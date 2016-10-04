@@ -6,7 +6,7 @@
     </div>
 
     <div class="post-list" v-if="!$loadingRouteData">
-      <article class="post-list__item" v-for="post in postList" v-if="datePast(post.date)" v-if="post.publish">
+      <article class="post-list__item" v-for="post in postList">
         <h1 class="post-list__title"><a v-link="{ name: 'blog-post', params: { slug: post.basename } }">{{ post.title }}</a></h1>
 
         <div class="post-list__infos">
@@ -33,11 +33,21 @@ export default {
 
   methods: {
     extractList: function (posts) {
-      this.postList = posts
+      var that = this
+      posts.forEach(function (post) {
+        if (!that.datePast(post.date)) return
+        if (!that.isPublished(post.publish)) return
+
+        that.postList.push(post)
+      })
     },
 
     datePast: function (date) {
       return Moment(date).isBefore(Moment().format('YYYY-MM-DD hh:mm:ss'))
+    },
+
+    isPublished: function (publish) {
+      return publish || false
     }
   },
 
