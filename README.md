@@ -1,27 +1,10 @@
-# emmanuelbeziat
+# Emmanuel Béziat
 
-> My personal website, with vue.js
+![Website](https://img.shields.io/website-up-down-green-red/http/shields.io.svg?maxAge=2592000) ![Built With](https://img.shields.io/badge/style-flat-green.svg?bui withlt_with=vue.js
+) ![Built with](https://img.shields.io/badge/style-flat-green.svg?built_with=stylus) ![Built with](https://img.shields.io/badge/style-flat-green.svg?built_with=webpack)
 
-## Build Setup
+> This is my website. There are many like these, but this one’s mine.
 
-``` bash
-# install dependencies
-npm install
+## Thanks
 
-# serve with hot reload at localhost:8080
-npm run dev
-
-# build for production with minification
-npm run build
-
-# run unit tests
-npm run unit
-
-# run e2e tests
-npm run e2e
-
-# run all tests
-npm test
-```
-
-For detailed explanation on how things work, checkout the [guide](http://vuejs-templates.github.io/webpack/) and [docs for vue-loader](http://vuejs.github.io/vue-loader).
+[leny](https://github.com/leny), [reverland](https://github.com/reverland), and many others! ♥
