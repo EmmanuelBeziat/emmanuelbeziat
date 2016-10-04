@@ -53,6 +53,7 @@
     "function-bind": "^1.0.2",
     "html-webpack-plugin": "^2.8.1",
     "http-proxy-middleware": "^0.12.0",
+    "imagemin-webpack-plugin": "^1.2.0",
     "inject-loader": "^2.0.1",
     "isparta-loader": "^2.0.0",
     "js-yaml": "^3.6.1",
@@ -77,6 +78,7 @@
     "stylus": "^0.54.5",
     "stylus-loader": "^2.3.1",
     "svg-url-loader": "^1.1.0",
+    "uglify-js": "git://github.com/mishoo/UglifyJS2#harmony",
     "url-loader": "^0.5.7",
     "vue-disqus": "^1.0.2",
     "vue-head": "^2.0.6",
@@ -88,7 +90,6 @@
     "webpack": "^1.12.2",
     "webpack-dev-middleware": "^1.4.0",
     "webpack-hot-middleware": "^2.6.0",
-    "webpack-merge": "^0.8.3",
-    "uglify-js": "git://github.com/mishoo/UglifyJS2#harmony"
+    "webpack-merge": "^0.8.3"
   }
 }

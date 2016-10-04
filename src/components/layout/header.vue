@@ -2,7 +2,7 @@
   <header class="site-header">
     <h1 class="site-header__title"><a class="site-header__link" v-link="{ name: 'home', exact: true, classActive: 'site-header__link--active' }">Emmanuel Béziat</a></h1>
 
-    <img src="../../assets/images/emmanuelb.jpg" alt="Emmanuel Béziat" class="site-header__picture">
+    <img src="../../assets/images/emmanuelb.jpg" alt="Emmanuel Béziat" class="site-header__picture" width="220" height="220">
 
     <div class="social">
       <a href="{{ social.twitter }}" class="social__link social__link--twitter">

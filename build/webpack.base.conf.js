@@ -112,6 +112,6 @@ module.exports = {
   },
   plugins: [
     new PostPlugin(),
-    new SvgPlugin()
+    // new SvgPlugin()
   ]
 }

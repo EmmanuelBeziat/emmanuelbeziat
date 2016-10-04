@@ -6,6 +6,7 @@ var merge = require('webpack-merge')
 var baseWebpackConfig = require('./webpack.base.conf')
 var ExtractTextPlugin = require('extract-text-webpack-plugin')
 var HtmlWebpackPlugin = require('html-webpack-plugin')
+var ImageminPlugin = require('imagemin-webpack-plugin').default
 var env = process.env.NODE_ENV === 'testing'
   ? require('../config/test.env')
   : config.build.env
@@ -87,6 +88,23 @@ var webpackConfig = merge(baseWebpackConfig, {
     new webpack.optimize.CommonsChunkPlugin({
       name: 'manifest',
       chunks: ['vendor']
+    }),
+
+    new ImageminPlugin({
+      disable: false,
+      optipng: {
+        optimizationLevel: 3
+      },
+      gifsicle: {
+        optimizationLevel: 1
+      },
+      jpegtran: {
+        progressive: false
+      },
+      svgo: {
+      },
+      pngquant: null, // pngquant is not run unless you pass options here
+      plugins: []
     })
   ]
 })
