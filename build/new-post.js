@@ -3,10 +3,11 @@ require('shelljs/global')
 var fs = require('fs-extra')
 var path = require('path')
 var slug = require('slug')
+var color = require('color')
 var moment = require('moment')
 var inquirer = require('inquirer')
 
-console.log('New post creation command…')
+console.log('New post creation command…'.yellow)
 
 var questions = [
   {
@@ -71,6 +72,6 @@ inquirer.prompt(questions).then(function (answers) {
   fs.writeFile(filePath + fileName, fileContent, (err) => {
     if (err) throw err
 
-    console.log('File created')
+    console.log('File succesfully created'.green)
   })
 });
