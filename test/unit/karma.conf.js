@@ -56,9 +56,11 @@ module.exports = function (config) {
     browsers: ['PhantomJS'],
     frameworks: ['mocha', 'sinon-chai'],
     reporters: ['spec', 'coverage'],
-    files: ['./index.js'],
+    files: [
+      './index.js'],
     preprocessors: {
-      './index.js': ['webpack', 'sourcemap']
+      './index.js': ['webpack', 'sourcemap'],
+      '../../src/assets/stylus/**/*.styl': ['stylus']
     },
     webpack: webpackConfig,
     webpackMiddleware: {
@@ -70,6 +72,9 @@ module.exports = function (config) {
         { type: 'lcov', subdir: '.' },
         { type: 'text-summary' }
       ]
-    }
+    },
+    plugins: [
+      'karma-stylus-preprocessor'
+    ]
   })
 }
