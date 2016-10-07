@@ -7,4 +7,4 @@
 
 ## Thanks
 
-[leny](https://github.com/leny), [reverland](https://github.com/reverland), and many others! ♥
+[@leny](https://github.com/leny), [@simmstein](https://github.com/simmstein/), [@reverland](https://github.com/reverland), and many others! ♥
