@@ -77,7 +77,7 @@ Honnêtement, qu’en a-t-on à fiche que le rendu d’un bout de code soit iden
 
 Encore une fois, il ne s’agit pas ici de dire que les autres ont tort.
 
-Seulement, il m’est déjà arrivé de me faire insulter parce que je code ainsi. Insulter, oui oui. Parce que pour certains, aller à l’encontre des conventions, c’est passible d’un <p>fils de pute</q> (Y a pas une _guideline_ qui dit <q>pas les mamans</q> ?).
+Seulement, il m’est déjà arrivé de me faire insulter parce que je code ainsi. Insulter, oui oui. Parce que pour certains, aller à l’encontre des conventions, c’est passible d’un <q>fils de pute</q> (Y a pas une _guideline_ qui dit <q>pas les mamans</q> ?).
 
 Alors que moi, j’ai juste fait le choix qui me semble le plus approprié pour que chacun puisse avoir le rendu qu’il veut. De fait, il me semblait important de donner mon point de vue. Parce qu’imposer sa vision aux autres, c’est pas très Charlie.
 
