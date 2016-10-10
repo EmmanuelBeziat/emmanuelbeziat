@@ -40,6 +40,11 @@ module.exports = {
 			component: require('../components/BlogPost')
 		},
 
+		'/search': {
+			name: 'search',
+			component: require('../components/Search')
+		},
+
 		'*': {
 			name: 'not-found',
 			title: 'Page non trouvée !',
