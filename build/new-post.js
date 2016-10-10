@@ -3,13 +3,10 @@ require('shelljs/global')
 var fs = require('fs-extra')
 var path = require('path')
 var slug = require('slug')
-var color = require('color')
 var moment = require('moment')
 var inquirer = require('inquirer')
 
-console.log('New post creation command…'.yellow)
-
-var  questions = [
+var questions = [
 	{
 		type: 'list',
 		name: 'type',
@@ -152,7 +149,9 @@ function postType (type) {
 	}
 }
 
+console.log('New post creation command…')
 inquirer.prompt(questions).then(function (answers) {
+
 	var filePath = 'src/posts/' + answers.type + '/'
 	var fileName = answers.date + '-' + slug(answers.title, [{ lower: true }]).toLowerCase() + '.md'
 	var fileContent = ''
@@ -166,8 +165,7 @@ inquirer.prompt(questions).then(function (answers) {
 			'\ncategories: ' + JSON.stringify(answers.categories) +
 			'\ndisqus: ' + answers.disqus +
 			'\npublish: ' + answers.publish +
-			'\n---' +
-			'\n\n### ' + answers.title
+			'\n---\n\n'
 	}
 	else {
 		fileContent = '---' +
@@ -181,8 +179,12 @@ inquirer.prompt(questions).then(function (answers) {
 	}
 
 	fs.writeFile(filePath + fileName, fileContent, (err) => {
-		if (err) throw err
-
-		console.log('File succesfully created'.green)
+		if (err) {
+			console.log('Error during file creation')
+			throw err
+		}
+		else {
+			console.log('File succesfully created')
+		}
 	})
 });
