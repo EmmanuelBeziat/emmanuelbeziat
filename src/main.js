@@ -11,9 +11,9 @@ Vue.use(VueHead)
 Vue.use(VueRouter)
 
 Vue.use(svg, {
-  sprites: '/static/temp.sprite.svg',
-  prefix: '',
-  class: 'icon'
+	sprites: '/static/temp.sprite.svg',
+	prefix: '',
+	class: 'icon'
 })
 
 require('./app/boot')

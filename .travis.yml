@@ -1,18 +1,18 @@
 language: node_js
 node_js:
-  - '5'
+	- '5'
 matrix:
-  fast_finis: true
+	fast_finis: true
 cache:
-  directories:
-    - node_modules
+	directories:
+		- node_modules
 before_install:
-  - npm prune
+	- npm prune
 before_script:
-  - 'export DISPLAY=:99.0'
-  - sh -e /etc/init.d/xvfb start
+	- 'export DISPLAY=:99.0'
+	- sh -e /etc/init.d/xvfb start
 env:
-  global:
-    - NODE_ENV=production
-    - secure: >-
-        6eDQ57s5tMO3bNX6k7YQ+JK5dgaGIXzuF277d4yWyYRwCXuI6+ZKResHtk+2NpczRKkc71DTxLVkoGODx3xqY4Bli/b5PXAZbulh5WkYGLK/T65TqTtsDtKEZ//DmM1sVEFt5zOrs4qxKibElkc/yyou4Duoju+iyEJX16zJIFpMx8MEqDzVyHud7vmQ/+aQZUnnKUkGoQi6Hh+MO6RXPpPyOLkopGbn+mEz1+bW3gXxNMDERNZUOtDmwxvOUhhijkSRV5zKXk3j39MLfi8ZNuslNSawCgtvekLPJmoQfwwRrY6J8JpZ6JN5aXuWG43NlHWrQJtCqPn4w8DGkhoW2jx2vTEEo8F/ULaF7+R4shPW75qIaMvSPwvDFYCS6VnX/HtZPVV8pao7WPKKZ3mK1wewXyvrvLlHk+l7mUzff9NlLlHKrw1YWxYCxpaSongMAin1xU6feRdOtgfDVGXqqfNasz1G7lplxhbgTc03bf70DBrXh+lRBw+kUUNrD2z7qYf6JvE92FO2M9P+zIFzDHlK3GGv8Ze+ayAoKFD42Lq+B/1qD2eZj+mpdmapwl77TatF91tQQo/eMFsZYZ0BCXsrla7O/VoqNQ0ek85l7J5VMdg/Q8b/pp5W9DTm51tDWdHhtjVAH+mhO7ujOff+zEiCD+4b27wcNGSeCC3Ibjk=
+	global:
+		- NODE_ENV=production
+		- secure: >-
+				6eDQ57s5tMO3bNX6k7YQ+JK5dgaGIXzuF277d4yWyYRwCXuI6+ZKResHtk+2NpczRKkc71DTxLVkoGODx3xqY4Bli/b5PXAZbulh5WkYGLK/T65TqTtsDtKEZ//DmM1sVEFt5zOrs4qxKibElkc/yyou4Duoju+iyEJX16zJIFpMx8MEqDzVyHud7vmQ/+aQZUnnKUkGoQi6Hh+MO6RXPpPyOLkopGbn+mEz1+bW3gXxNMDERNZUOtDmwxvOUhhijkSRV5zKXk3j39MLfi8ZNuslNSawCgtvekLPJmoQfwwRrY6J8JpZ6JN5aXuWG43NlHWrQJtCqPn4w8DGkhoW2jx2vTEEo8F/ULaF7+R4shPW75qIaMvSPwvDFYCS6VnX/HtZPVV8pao7WPKKZ3mK1wewXyvrvLlHk+l7mUzff9NlLlHKrw1YWxYCxpaSongMAin1xU6feRdOtgfDVGXqqfNasz1G7lplxhbgTc03bf70DBrXh+lRBw+kUUNrD2z7qYf6JvE92FO2M9P+zIFzDHlK3GGv8Ze+ayAoKFD42Lq+B/1qD2eZj+mpdmapwl77TatF91tQQo/eMFsZYZ0BCXsrla7O/VoqNQ0ek85l7J5VMdg/Q8b/pp5W9DTm51tDWdHhtjVAH+mhO7ujOff+zEiCD+4b27wcNGSeCC3Ibjk=

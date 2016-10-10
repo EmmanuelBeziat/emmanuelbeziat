@@ -5,20 +5,20 @@ var color = require('color')
 var inquirer = require('inquirer')
 
 var questions = [
-  {
-    type: 'input',
-    name: 'commit',
-    message: 'Add a commit message: '
-  }
+	{
+		type: 'input',
+		name: 'commit',
+		message: 'Add a commit message: '
+	}
 ]
 
 // Ask for commit message, then push
 inquirer.prompt(questions).then(function (answers) {
-  console.log('Starting to publish…')
+	console.log('Starting to publish…')
 
-  ghpages.publish(path.join(__dirname, 'dist'), {
-    message: 'test message'
-  })
+	ghpages.publish(path.join(__dirname, 'dist'), {
+		message: 'test message'
+	})
 
-  console.log('Publish complete!')
+	console.log('Publish complete!')
 })

@@ -6,10 +6,10 @@
 import Moment from 'moment'
 
 export default {
-  data () {
-    return {
-      year: Moment().format('YYYY')
-    }
-  }
+	data () {
+		return {
+			year: Moment().format('YYYY')
+		}
+	}
 }
 </script>

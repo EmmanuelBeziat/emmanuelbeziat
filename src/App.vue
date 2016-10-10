@@ -1,16 +1,16 @@
 <template>
-  <div class="site">
-    <layout-header></layout-header>
+	<div class="site">
+		<layout-header></layout-header>
 
-    <div class="site-content">
-      <layout-menu></layout-menu>
-      <main class="site-main">
-        <router-view transition="fade" transition-mode="out-in"></router-view>
-      </main>
-    </div>
+		<div class="site-content">
+			<layout-menu></layout-menu>
+			<main class="site-main">
+				<router-view transition="fade" transition-mode="out-in"></router-view>
+			</main>
+		</div>
 
-    <layout-footer></layout-footer>
-  </div>
+		<layout-footer></layout-footer>
+	</div>
 </template>
 
 <script>
@@ -19,11 +19,11 @@ import layoutMenu from 'components/layout/Menu'
 import layoutFooter from 'components/layout/Footer'
 
 export default {
-  components: {
-    layoutHeader,
-    layoutMenu,
-    layoutFooter
-  }
+	components: {
+		layoutHeader,
+		layoutMenu,
+		layoutFooter
+	}
 }
 </script>
 
