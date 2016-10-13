@@ -39,7 +39,7 @@ Maintenant, un peu de Javascript :
 var body = document.body,
 	timer;
 
-window.addEventListener('scroll’, function() {
+window.addEventListener('scroll', function() {
 
 	clearTimeout(timer);
 
