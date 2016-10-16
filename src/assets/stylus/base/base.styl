@@ -61,32 +61,7 @@ q
 	color $color-yellow
 	quotes "« " " »"
 
-// Layout base
-.site
-	min-height $size-viewport-height
-	display flex
-	flex-direction row
-	align-items stretch
-	overflow-x hidden
-
-	@media (max-width $breakpoint-tablet)
-		flex-direction column
-
-.site-content
-	padding 2em
-	width $size-content
-	margin 0 auto
-
-	@media (max-width $breakpoint-tablet)
-		width 100%
-
-.site-main
-	margin 6rem auto 4rem
-
-	@media (max-width $breakpoint-tablet)
-		margin 2rem auto
-
-.flex
-	display flex
-	justify-content space-between
-	align-items center
+kbd
+pre
+code
+	font-family $font-stack-code
