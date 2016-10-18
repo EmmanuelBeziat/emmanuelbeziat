@@ -68,23 +68,41 @@ module.exports = {
 		}
 	},
 
+	head: {
+		title: function () {
+			return {
+				inner: this.title + ' [Portfolio]',
+				separator: '—'
+			}
+		}
+	},
+
 	route: {
 		data (transition) {
+			const that = this
+			let interval
 			let basename = transition.to.params.slug
 
 			require.ensure('../posts/portfolio/meta.json', (require) => {
 				const posts = require('../posts/portfolio/meta.json')
 				const getPostName = this.getPostName(posts, basename)
 
-				require('../posts/portfolio' + getPostName)((exports) => {
+				require('../posts/portfolio' + getPostName)((post) => {
 					transition.next({
-						content: md.render(exports.rawContent),
-						clients: exports.metaData.clients,
-						tags: exports.metaData.tags,
-						title: exports.metaData.title
+						content: md.render(post.rawContent),
+						clients: post.metaData.clients,
+						tags: post.metaData.tags,
+						title: post.metaData.title
 					})
 				})
 			})
+
+			interval = setInterval(function () {
+				if (that.title !== null) {
+					clearInterval(interval)
+					that.$emit('updateHead')
+				}
+			}, 100)
 		}
 	}
 }

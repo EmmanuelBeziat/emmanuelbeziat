@@ -196,7 +196,7 @@ async-each@^1.0.0:
   version "1.0.1"
   resolved "https://registry.yarnpkg.com/async-each/-/async-each-1.0.1.tgz#19d386a1d9edc6e7c1c85d388aedbcc56d33602d"
 
-"async-throttle@github:zeit/async-throttle#596dc23b4ac2598cfed4d30289fb75c29f8d57fe":
+async-throttle@zeit/async-throttle#596dc23b4ac2598cfed4d30289fb75c29f8d57fe:
   version "0.0.1"
   resolved "https://codeload.github.com/zeit/async-throttle/tar.gz/596dc23b4ac2598cfed4d30289fb75c29f8d57fe"
 
@@ -6440,6 +6440,10 @@ vue-loader@^8.3.0:
     postcss-selector-parser "^1.1.2"
     source-map "^0.5.3"
     vue-template-validator "^1.0.0"
+
+vue-resource:
+  version "1.0.3"
+  resolved "https://registry.yarnpkg.com/vue-resource/-/vue-resource-1.0.3.tgz#8d52d0d8a9ed5f2ae704c68d530c84ceaf97be14"
 
 vue-router@^0.7.13:
   version "0.7.13"

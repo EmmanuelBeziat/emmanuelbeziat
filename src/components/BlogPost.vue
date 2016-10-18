@@ -58,7 +58,7 @@ import Prism from 'prismjs'
 import 'prismjs/plugins/show-language/prism-show-language.min.js'
 import 'prismjs/components/prism-bash.min.js'
 
-var md = require('markdown-it')({
+const md = require('markdown-it')({
 	html: true,
 	breaks: true,
 	linkify: true
@@ -81,6 +81,8 @@ module.exports = {
 		return {
 			content: null,
 			title: null,
+			description: null,
+			image: null,
 			date: null,
 			tags: null,
 			disqus: null
@@ -104,8 +106,32 @@ module.exports = {
 		}
 	},
 
+	head: {
+		title: function () {
+			return {
+				inner: this.title,
+				separator: '—'
+			}
+		},
+		meta: function () {
+			return [
+				{ property: 'description', content: this.description, id: 'description' },
+				{ property: 'og:title', content: this.title, id: 'fbTitle' },
+				{ property: 'og:url', content: document.URL, id: 'fbUrl' },
+				{ property: 'og:image', content: this.image, id: 'fbImage' },
+				{ property: 'og:description', content: this.description, id: 'fbDescription' },
+				{ property: 'twitter:title', content: this.title, id: 'twTitle' },
+				{ property: 'twitter:url', content: document.URL, id: 'twUrl' },
+				{ property: 'twitter:image', content: this.image, id: 'twImage' },
+				{ property: 'twitter:description', content: this.description, id: 'twDescription' }
+			]
+		}
+	},
+
 	route: {
 		data (transition) {
+			const that = this
+			let interval
 			let basename = transition.to.params.slug
 
 			require.ensure('../posts/articles/meta.json', (require) => {
@@ -116,12 +142,21 @@ module.exports = {
 					transition.next({
 						content: md.render(post.rawContent),
 						date: post.metaData.date,
+						description: post.metaData.description,
+						image: post.metaData.image,
 						tags: post.metaData.tags,
 						title: post.metaData.title,
 						disqus: post.metaData.disqus
 					})
 				})
 			})
+
+			interval = setInterval(function () {
+				if (that.title !== null) {
+					clearInterval(interval)
+					that.$emit('updateHead')
+				}
+			}, 100)
 		}
 	},
 

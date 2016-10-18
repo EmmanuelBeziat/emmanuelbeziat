@@ -51,6 +51,13 @@ export default {
 		}
 	},
 
+	head: {
+		title: {
+			inner: 'Blog',
+			separator: '—'
+		}
+	},
+
 	route: {
 		data (transition) {
 			require.ensure('../posts/articles/meta.json', (require) => {

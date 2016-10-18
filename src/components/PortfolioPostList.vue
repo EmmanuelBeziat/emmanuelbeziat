@@ -59,6 +59,13 @@ export default {
 		}
 	},
 
+	head: {
+		title: {
+			inner: 'Portfolio',
+			separator: '—'
+		}
+	},
+
 	route: {
 		data (transition) {
 			require.ensure('../posts/portfolio/meta.json', (require) => {

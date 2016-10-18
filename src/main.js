@@ -1,5 +1,6 @@
 import Vue from 'vue'
 import VueRouter from 'vue-router'
+import VueResource from 'vue-resource'
 import VueHead from 'vue-head'
 
 import { redirects, routes } from './app/routes'
@@ -9,6 +10,7 @@ import svg from 'vue-svg-directive'
 
 Vue.use(VueHead)
 Vue.use(VueRouter)
+Vue.use(VueResource)
 
 Vue.use(svg, {
 	sprites: '/static/temp.sprite.svg',

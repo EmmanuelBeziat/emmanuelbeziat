@@ -8,6 +8,14 @@
 <script>
 export default {
 	methods: {
+		short: function (url) {
+			this.$http.post('https://larahh.xyz/u?', { url: url }).then((response) => {
+				return response.url
+			}, (response) => {
+				return url
+			})
+		},
+
 		sharePopup: function (url, title, width, height) {
 			let popupWidth = width || 640
 			let popupHeight = height || 320
@@ -21,7 +29,7 @@ export default {
 
 		share: function (social) {
 			let shareUrl = ''
-			const pageUrl = encodeURIComponent(window.location.href)
+			const pageUrl = this.short(encodeURIComponent(window.location.href))
 			const pageTitle = encodeURIComponent(document.title)
 
 			switch (social) {
