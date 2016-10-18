@@ -5,13 +5,15 @@ var path = require('path')
 var jsonfile = require('jsonfile')
 var markdown = require('markdown-parse')
 var folders =  path.resolve(__dirname, '../src/posts')
+var blogConfig = require('../config/blog-config')
+var shorturl = require('shorturl')
 
 function PostPlugin (options) {
 	// Configure options
 }
 
 PostPlugin.prototype.apply = function (compiler) {
-	compiler.plugin("entry-option", function (){
+	compiler.plugin('entry-option', function () {
 		generateMetaData()
 	})
 }
@@ -37,6 +39,9 @@ function generateMetaData () {
 			var post = fs.readFileSync(path.resolve(folder, element), 'utf8')
 
 			markdown(post, function (err, result) {
+				var postSlug = result.attributes.basename || slug(result.attributes.title, { lower: true })
+				var postUrl = blogConfig.scheme + '://' + blogConfig.host + '/blog/' + postSlug
+
 				if (directory === 'articles') {
 					fileContent.unshift({
 						'title': result.attributes.title,
@@ -45,7 +50,7 @@ function generateMetaData () {
 						'tags': result.attributes.tags || [''],
 						'categories': result.attributes.categories || ['non-classe'],
 						'template': result.attributes.template || 'blog',
-						'basename': result.attributes.basename || slug(result.attributes.title, { lower: true }),
+						'basename': postSlug,
 						'path': element.split('/').pop(),
 						'description': result.attributes.description || '',
 						'disqus': result.attributes.disqus || true,

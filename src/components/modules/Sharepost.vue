@@ -8,10 +8,6 @@
 <script>
 export default {
 	methods: {
-		short: function (url) {
-			return url
-		},
-
 		sharePopup: function (url, title, width, height) {
 			let popupWidth = width || 640
 			let popupHeight = height || 320
@@ -25,7 +21,7 @@ export default {
 
 		share: function (social) {
 			let shareUrl = ''
-			const pageUrl = this.short(encodeURIComponent(window.location.href))
+			const pageUrl = encodeURIComponent(window.location.href)
 			const pageTitle = encodeURIComponent(document.title)
 
 			switch (social) {
