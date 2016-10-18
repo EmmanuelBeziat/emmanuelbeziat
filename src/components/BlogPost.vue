@@ -45,7 +45,7 @@
 		</article>
 
 		<div class="comments" v-if="!$loadingRouteData" v-if="disqus">
-			<disqus shortname="emmanuelbeziat"></disqus>
+			<disqus :shortname="disqusShortname"></disqus>
 		</div>
 	</div>
 </template>
@@ -85,7 +85,8 @@ module.exports = {
 			image: null,
 			date: null,
 			tags: null,
-			disqus: null
+			disqus: null,
+			disqusShortname: process.env.SHORT_NAME
 		}
 	},
 

@@ -2,9 +2,9 @@
 <html lang="fr-FR" dir="ltr" prefix="og: http://ogp.me/ns#">
 	<head>
 		<meta charset="utf-8">
-		<title>Emmanuel Béziat</title>
+		<title><%= webpackConfig.blog.title %></title>
 		<meta name="viewport" content="width=device-width, initial-scale=1.0, shrink-to-fit=no">
-		<meta name="application-name" content="Emmanuel Béziat">
+		<meta name="application-name" content="<%= webpackConfig.blog.title %>">
 		<meta name="format-detection" content="telephone=no">
 		<meta name="description" content="Portfolio en ligne d’un développeur web du sud. Billets de blogs, tutoriels, astuces, diatribes et réflexions sur le métier, le code et plein d’autres choses." id="description">
 
@@ -14,14 +14,14 @@
 		<!-- Twitter -->
 		<meta name="twitter:card" content="summary_large_image">
 		<meta name="twitter:site" content="@EmmanuelBeziat">
-		<meta name="twitter:title" content="Emmanuel Béziat" id="twTitle">
+		<meta name="twitter:title" content="<%= webpackConfig.blog.title %>" id="twTitle">
 		<meta name="twitter:url" content="https://www.emmanuelbeziat.com/" id="twUrl">
 		<meta name="twitter:image" content="https://images.emmanuelbeziat.com/social-default-tw.jpg" id="twImage">
 		<meta name="twitter:description" content="Portfolio en ligne d'un développeur web du sud. Billets de blogs, tutoriels, astuces, diatribes et réflexions sur le métier, le code et plein d'autres choses." id="twDescription">
 
 		<!-- Facebook -->
-		<meta property="og:title" content="Emmanuel Béziat" id="fbTitle">
-		<meta property="og:site_name" content="Emmanuel Béziat">
+		<meta property="og:title" content="<%= webpackConfig.blog.title %>" id="fbTitle">
+		<meta property="og:site_name" content="<%= webpackConfig.blog.title %>">
 		<meta property="og:type" content="article">
 		<meta property="og:url" content="https://www.emmanuelbeziat.com/" id="fbUrl">
 		<meta property="og:locale:alternate" content="fr_FR">
@@ -31,7 +31,7 @@
 		<!-- Apple -->
 		<meta name="apple-mobile-web-app-capable" content="yes">
 		<meta name="apple-mobile-web-app-status-bar-style" content="black">
-		<meta name="apple-mobile-web-app-title" content="Emmanuel Béziat">
+		<meta name="apple-mobile-web-app-title" content="<%= webpackConfig.blog.title %>">
 
 		<!-- Android -->
 		<meta name="theme-color" content="#c3e88d">

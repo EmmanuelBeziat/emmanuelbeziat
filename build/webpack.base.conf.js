@@ -2,6 +2,7 @@ var path = require('path')
 var config = require('../config')
 var utils = require('./utils')
 var projectRoot = path.resolve(__dirname, '../')
+var blogConfig = require('../config/blog-config')
 var PostPlugin = require('../plugin/post-plugin.js')
 var SvgPlugin = require('../plugin/svg-plugin.js')
 
@@ -113,5 +114,6 @@ module.exports = {
 	plugins: [
 		new PostPlugin(),
 		// new SvgPlugin()
-	]
+	],
+	blog: blogConfig
 }

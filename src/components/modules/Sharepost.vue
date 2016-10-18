@@ -9,11 +9,7 @@
 export default {
 	methods: {
 		short: function (url) {
-			this.$http.post('https://larahh.xyz/u?', { url: url }).then((response) => {
-				return response.url
-			}, (response) => {
-				return url
-			})
+			return url
 		},
 
 		sharePopup: function (url, title, width, height) {
