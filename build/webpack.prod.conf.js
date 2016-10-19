@@ -8,6 +8,7 @@ var ExtractTextPlugin = require('extract-text-webpack-plugin')
 var HtmlWebpackPlugin = require('html-webpack-plugin')
 var CopyWebpackPlugin = require('copy-webpack-plugin')
 var ImageminPlugin = require('imagemin-webpack-plugin').default
+var FeedPlugin = require('../plugin/feed-plugin.js')
 var env = process.env.NODE_ENV === 'testing'
 	? require('../config/test.env')
 	: config.build.env
@@ -69,6 +70,13 @@ var webpackConfig = merge(baseWebpackConfig, {
 				collapseWhitespace: true,
 				removeAttributeQuotes: true
 			}
+		}),
+		new FeedPlugin(),
+		new HtmlWebpackPlugin({
+			filename: 'atom.xml',
+			template: 'atom.ejs',
+			inject: false,
+			xhtml: true
 		}),
 		// split vendor js into its own file
 		new webpack.optimize.CommonsChunkPlugin({
