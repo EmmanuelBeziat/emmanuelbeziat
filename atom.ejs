@@ -15,8 +15,8 @@
       <title><%= post.title %></title>
       <link href="<%= webpackConfig.blog.scheme + '://' + webpackConfig.blog.host + '/' + post.path %>"/>
       <id><%= webpackConfig.blog.scheme + '://' + webpackConfig.blog.host + '/' +  post.path %></id>
-      <published><%= post.date.toISOString() %></published>
-      <updated><%= post.updated.toISOString() %></updated>
+      <published><%= post.date %></published>
+      <updated><%= post.updated %></updated>
       <summary type="html">
         <% if (post.description) { %>
           <%= post.description %>

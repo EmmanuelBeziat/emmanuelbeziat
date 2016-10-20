@@ -1,6 +1,8 @@
 require('shelljs/global')
 var fs = require('fs-extra')
 var path = require('path')
+var slug = require('slug')
+var moment = require('moment')
 var markdown = require('markdown-parse')
 var blogConfig = require('../config/blog-config')
 
@@ -22,18 +24,19 @@ function generateFeedData (feeds, n) {
 
 	ls(path.resolve(folder, '*.md')).reverse().slice(0, n).forEach(function (post) {
 		var feed = {}
+		var element = fs.readFileSync(path.resolve(folder, post), 'utf8')
 
-		markdown(post, function (err, result) {
+		markdown(element, function (err, result) {
 			if (result.attributes.publish === false) {
 				return
 			}
 
 			feed.title = result.attributes.title
-			feed.date = result.attributes.date || new Date()
-			feed.updated = result.attributes.date || new Date()
+			feed.date = moment(result.attributes.date).format('YYYY-MM-DD[T]HH:mm:ss.SSSZZ') || new Date()
+			feed.updated = moment(result.attributes.date).format('YYYY-MM-DD[T]HH:mm:ss.SSSZZ') || new Date()
 			feed.tags = result.attributes.tags || ['']
 			feed.categories = result.attributes.categories || ['non-classe']
-			feed.path = post.split('/').pop(),
+			//eed.path = result.attributes.basename || slug(result.attributes.title, { lower: true })
 			feed.description = result.attributes.description || ''
 		})
 
