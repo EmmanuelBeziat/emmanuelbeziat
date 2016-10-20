@@ -36,7 +36,7 @@ function generateFeedData (feeds, n) {
 			feed.updated = moment(result.attributes.date).format('YYYY-MM-DD[T]HH:mm:ss.SSSZZ') || new Date()
 			feed.tags = result.attributes.tags || ['']
 			feed.categories = result.attributes.categories || ['non-classe']
-			//eed.path = result.attributes.basename || slug(result.attributes.title, { lower: true })
+			feed.path = result.attributes.basename || slug(result.attributes.title, { lower: true })
 			feed.description = result.attributes.description || ''
 		})
 
