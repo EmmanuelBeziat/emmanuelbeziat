@@ -13,8 +13,8 @@
   <% compilation.feed.forEach(function (post) { %>
     <entry>
       <title><%= post.title %></title>
-      <link href="<%= webpackConfig.blog.scheme + '://' + webpackConfig.blog.host + '/' + post.path %>"/>
-      <id><%= webpackConfig.blog.scheme + '://' + webpackConfig.blog.host + '/' +  post.path %></id>
+      <link href="<%= webpackConfig.blog.scheme + '://' + webpackConfig.blog.host + '/blog/' + post.path %>"/>
+      <id><%= webpackConfig.blog.scheme + '://' + webpackConfig.blog.host + '/blog/' +  post.path %></id>
       <published><%= post.date %></published>
       <updated><%= post.updated %></updated>
       <summary type="html">
