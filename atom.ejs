@@ -10,13 +10,13 @@
     <email>contact@emmanuelbeziat.com</email>
   </author>
   <generator uri="<%= webpackConfig.blog.scheme + '://' + webpackConfig.blog.host %>"></generator>
-  <% compilation.feed.forEach(function(post){ %>
+  <% compilation.feed.forEach(function (post) { %>
     <entry>
       <title><%= post.title %></title>
       <link href="<%= webpackConfig.blog.scheme + '://' + webpackConfig.blog.host + post.path %>"/>
       <id><%= webpackConfig.blog.scheme + '://' + webpackConfig.blog.host + post.path %></id>
-      <published><%= post.date %></published>
-      <updated><%= post.updated %></updated>
+      <published><%= post.date.toISOString() %></published>
+      <updated><%= post.updated.toISOString() %></updated>
       <summary type="html">
         <% if (post.description) { %>
           <%= post.description %>
@@ -28,10 +28,10 @@
           No summary
         <% } %>
       </summary>
-      //<category term="<%= post.category %>" scheme="<%= webpackConfig.blog.scheme + '://' + webpackConfig.blog.host + '/categories?category=' + post.category %>"/>
+      /*<category term="<%= post.category %>" scheme="<%= webpackConfig.blog.scheme + '://' + webpackConfig.blog.host + '/categories?category=' + post.category %>"/>
       <% post.tags.forEach(function (tag) { %>
         <category term="<%= tag %>" scheme="<%= webpackConfig.blog.scheme + '://' + webpackConfig.blog.host + '/tags?tag=' + tag %>"/>
-      <% }) %>
+      <% }) %>*/
     </entry>
   <% }) %>
 </feed>

@@ -20,8 +20,7 @@ function generateFeedData (feeds, n) {
 	console.log('[rss feed] starting…')
 	var folder = path.resolve(__dirname, '../src/posts/articles')
 
-	ls(path.resolve(folder, '*.md')).forEach(function (element, index, fileArray) {
-		var post = fs.readFileSync(path.resolve(folder, element), 'utf8')
+	ls(path.resolve(folder, '*.md')).reverse().slice(0, n).forEach(function (post) {
 		var feed = {}
 
 		markdown(post, function (err, result) {
@@ -33,9 +32,9 @@ function generateFeedData (feeds, n) {
 			feed.date = result.attributes.date || new Date()
 			feed.updated = result.attributes.date || new Date()
 			feed.tags = result.attributes.tags || ['']
-			//feed.categories = result.attributes.categories || ['non-classe']
-			feed.path = element.split('/').pop(),
-			feed.excerpt = result.attributes.description || ''
+			feed.categories = result.attributes.categories || ['non-classe']
+			feed.path = post.split('/').pop(),
+			feed.description = result.attributes.description || ''
 		})
 
 		feeds.push(feed)
