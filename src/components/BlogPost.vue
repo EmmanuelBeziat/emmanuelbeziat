@@ -61,7 +61,13 @@ import 'prismjs/components/prism-bash.min.js'
 const md = require('markdown-it')({
 	html: true,
 	breaks: true,
-	linkify: true
+	linkify: true,
+	highlight: function (str, lang) {
+		setTimeout(function () {
+			Prism.highlightAll()
+		}, 10)
+		return '<pre class="language-' + lang + '"><code class="language-' + lang + '">' + md.utils.escapeHtml(str) + '</code></pre>'
+	}
 })
 .use(require('markdown-it-attrs'))
 .use(require('markdown-it-block-embed'), {
@@ -162,11 +168,6 @@ module.exports = {
 	},
 
 	ready () {
-		// Ignitiate code hightlighting with PrismJS
-		setTimeout(function () {
-			Prism.highlightAll()
-		}, 1000)
-
 		// Smooth Scroll
 		SmoothScroll.init()
 	}
