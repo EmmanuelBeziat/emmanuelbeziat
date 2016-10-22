@@ -123,10 +123,10 @@ module.exports = {
 		meta: function () {
 			return [
 				{ property: 'description', content: this.description, id: 'description' },
-				{ property: 'og:title', content: this.title, id: 'fbTitle' },
-				{ property: 'og:url', content: document.URL, id: 'fbUrl' },
-				{ property: 'og:image', content: this.image, id: 'fbImage' },
-				{ property: 'og:description', content: this.description, id: 'fbDescription' },
+				{ property: 'og:title', content: this.title, id: 'ogTitle' },
+				{ property: 'og:url', content: document.URL, id: 'ogUrl' },
+				{ property: 'og:image', content: this.image, id: 'ogImage' },
+				{ property: 'og:description', content: this.description, id: 'ogDescription' },
 				{ property: 'twitter:title', content: this.title, id: 'twTitle' },
 				{ property: 'twitter:url', content: document.URL, id: 'twUrl' },
 				{ property: 'twitter:image', content: this.image, id: 'twImage' },
