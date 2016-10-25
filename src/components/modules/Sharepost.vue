@@ -36,7 +36,7 @@ export default {
 				break
 
 			case 'google':
-				shareUrl = 'https://plus.google.com/?url=' + pageUrl
+				shareUrl = 'https://plus.google.com/share?url=' + pageUrl
 				this.sharePopup(shareUrl, 'Partager sur Google+')
 				break
 
