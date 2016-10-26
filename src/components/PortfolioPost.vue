@@ -1,8 +1,7 @@
 <template>
 	<div class="blog">
-		<div v-if="$loadingRouteData" class="loader">
-			<div class="loader__item"></div>
-			<div class="loader__title">Chargement</div>
+		<div v-if="$loadingRouteData">
+			<module-loader></module-loader>
 		</div>
 
 		<article class="post portfolio" v-if="!$loadingRouteData">
@@ -33,6 +32,8 @@
 </template>
 
 <script>
+import moduleLoader from '../components/modules/Loader.vue'
+
 var md = require('markdown-it')({
 	html: true,
 	breaks: true,
@@ -54,6 +55,10 @@ module.exports = {
 			tags: null,
 			clients: null
 		}
+	},
+
+	components: {
+		moduleLoader
 	},
 
 	methods: {

@@ -1,8 +1,7 @@
 <template>
 	<section class="blog">
-		<div v-if="$loadingRouteData" class="loader">
-			<div class="loader__item"></div>
-			<div class="loader__title">Chargement</div>
+		<div v-if="$loadingRouteData">
+			<module-loader></module-loader>
 		</div>
 
 		<div class="post-list" v-if="!$loadingRouteData">
@@ -23,12 +22,17 @@
 
 <script>
 import Moment from 'moment'
+import moduleLoader from '../components/modules/Loader.vue'
 
 export default {
 	data () {
 		return {
 			postList: []
 		}
+	},
+
+	components: {
+		moduleLoader
 	},
 
 	methods: {

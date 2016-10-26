@@ -1,8 +1,7 @@
 <template>
 	<section class="home">
-		<div v-if="$loadingRouteData" class="loader">
-			<div class="loader__item"></div>
-			<div class="loader__title">Chargement</div>
+		<div v-if="$loadingRouteData">
+			<module-loader></module-loader>
 		</div>
 
 		<div class="presentation" v-if="!$loadingRouteData">
@@ -23,6 +22,7 @@ import Moment from 'moment'
 import 'moment/locale/fr'
 import moduleUpdates from '../components/modules/Updates'
 import moduleCodehome from '../components/modules/Codehome'
+import moduleLoader from '../components/modules/Loader.vue'
 
 export default {
 	data () {
@@ -34,7 +34,8 @@ export default {
 
 	components: {
 		moduleCodehome,
-		moduleUpdates
+		moduleUpdates,
+		moduleLoader
 	},
 
 	route: {

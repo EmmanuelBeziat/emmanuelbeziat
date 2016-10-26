@@ -1,8 +1,7 @@
 <template>
 	<div class="blog">
-		<div v-if="$loadingRouteData" class="loader">
-			<div class="loader__item"></div>
-			<div class="loader__title">Chargement</div>
+		<div v-if="$loadingRouteData">
+			<module-loader></module-loader>
 		</div>
 
 		<article class="post" v-if="!$loadingRouteData">
@@ -53,6 +52,7 @@
 <script>
 import Disqus from 'vue-disqus'
 import moduleShare from '../components/modules/Sharepost.vue'
+import moduleLoader from '../components/modules/Loader.vue'
 import SmoothScroll from 'smooth-scroll'
 import Prism from 'prismjs'
 import 'prismjs/plugins/show-language/prism-show-language.min.js'
@@ -98,7 +98,8 @@ module.exports = {
 
 	components: {
 		Disqus,
-		moduleShare
+		moduleShare,
+		moduleLoader
 	},
 
 	methods: {
