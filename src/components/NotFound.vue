@@ -1,7 +1,7 @@
 <template>
 	<section class="not-found">
 		<div class="not-found__image {{ image }}"></div>
-		<div class="not-found__404">{{ title }}</div>
+		<div class="not-found__404">{{{ title }}}</div>
 
 		<h1 class="not-found__title">Page introuvable</h1>
 		<div class="not-found__content">
@@ -14,8 +14,8 @@
 
 <script>
 const erreurs = {
-	images: ['doctor-who', 'the-office', 'south-park', 'mario'],
-	titles: ['What?!', 'God please no!', 'We’re sorry…', 'Page is in another castle']
+	images: ['doctor-who', 'the-office', 'south-park', 'mario', 'obiwan'],
+	titles: ['What?!', 'God please no!', 'We’re sorry…', 'Page is in another castle', 'This is not the page <br>you’re looking for…']
 }
 
 export default {
