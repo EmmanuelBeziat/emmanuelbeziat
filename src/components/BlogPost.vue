@@ -66,6 +66,11 @@ const md = require('markdown-it')({
 		setTimeout(function () {
 			Prism.highlightAll()
 		}, 10)
+		// Hacky ugly stuff to ensure that even if the connexion is slow, the highlighting is done
+		// TODO: Find a better solution
+		setTimeout(function () {
+			Prism.highlightAll()
+		}, 250)
 		return '<pre class="language-' + lang + '"><code class="language-' + lang + '">' + md.utils.escapeHtml(str) + '</code></pre>'
 	}
 })
