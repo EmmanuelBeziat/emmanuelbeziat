@@ -1,6 +1,6 @@
 ---
 title: Pourquoi j’indente avec « tab »
-date: 2016-10-10 00-00-00
+date: 2016-10-10 00:00:00
 description: Au sein de la communauté des dev’ web, une guerre fait rage pour savoir s’il convient d’indenter son code avec deux espaces ou une tabulation.
 image: https://images.emmanuelbeziat.com/social-default-fb.jpg
 tags: ["workflow","bonnes pratiques"]
