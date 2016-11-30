@@ -1,6 +1,6 @@
 ---
 title: Pourquoi on ne parle pas de « CSS4 »
-date: 2016-10-21 00-00-00
+date: 2016-10-21 00:00:00
 image: https://images.emmanuelbeziat.com/css4.jpg
 description: Le CSS3 nous a été vendu comme une révolution de l’intégration il y a quelques années. Aussi, tout le monde semble attendre le CSS4… Qui ne viendra jamais.
 tags: ["html/css"]
