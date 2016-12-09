@@ -9,6 +9,7 @@ categories:
 
 Mon site te plait, internaute ? Tu es jaloux-se de ma colonne latérale qui prend toute la hauteur de la page et tu cherches désespérément comment faire ? Tu as de la chance, tu es pile au bon endroit !
 
+## Ancienne méthode (avant Flexbox)
 
 Toute l’astuce repose sur un trompe-l’œil. Vous pouvez donc commencer par faire votre colonne tout à fait normalement.
 
@@ -35,8 +36,8 @@ Vous pouvez bien sûr ajouter vos fioritures et votre contenu, mais globalement,
 Pour l’instant, votre colonne ne va pas jusqu’en bas de votre écran, à moins que vous n’ayez beaucoup de contenu à l’intérieur. Alors pour ça, nous allons créer un petit trompe-l’œil au moyen d’un **pseudo-élément** (Si vous ne savez pas de quoi je parle, direction '[Principes du CSS - Les sélecteurs](http://www.emmanuelbeziat.com/blog/principes-du-css-les-selecteurs-partie1-css2/)').
 
 ```css
-.colonne:after {
-	content: ""
+.colonne::after {
+	content: "";
 	position: fixed;
 	width: inherit;
 	background: inherit;
@@ -68,3 +69,41 @@ Comme quoi, le CSS, c’est aussi de la magie !
 Vous pouvez voir l’exemple en action sur [ce Codepen](http://codepen.io/EmmanuelB/pen/zGMxEN){ target="_blank" }.
 
 Merci à [Lamecarlate](http://lamecarlate.net/){ target="_blank" } et [Clément](http://clement-galidie.fr/){ target="_blank" } pour leurs ajouts.
+
+## Nouvelle méthode (avec Flexbox)
+
+Hé oui ! On peut faciliter tout ça grâce au [module Flexbox](https://developer.mozilla.org/fr/docs/Web/CSS/Disposition_des_bo%C3%AEtes_flexibles_CSS/Utilisation_des_flexbox_en_CSS).
+
+```markup
+<div class="site">
+	<div class="colonne">
+		Ma colonne !
+	</div>
+	<div class="content">
+		Le contenu de ma page
+	</div>
+</div>
+```
+
+```css
+.site {
+	display: flex;
+	flex-direction: row;
+	align-items: stretch;
+	min-height: 100vh;
+}
+```
+
+Qu’est-ce qu’on fait ici ? Dans l’ordre, on dit d’abord à notre élément d’adopter la mise en forme `flex` (appelons ça comme ça). Ce faisant, on peut lui attribuer les deux propriétés que sont `flex-direction` et `align-items` pour respectivement l’obliger à aligner ses descendants directs sur une ligne, et obliger ceux-ci à faire toute la hauteur du conteneur (pour nous, `.site`).
+Enfin, on dit au conteneur de faire au minimum la hauteur de la fenêtre du navigateur avec [l’unité `vh` (viewport height)](https://developer.mozilla.org/fr/docs/Web/CSS/length).
+
+Bien, maintenant il ne reste qu’à personnaliser sa colonne, en n’oubliant pas notamment de lui donner une largeur :
+
+```css
+.colonne {
+	width: 20rem;
+	/* Tout ce que vous voulez */
+}
+```
+
+Elle est pas belle la vie ?

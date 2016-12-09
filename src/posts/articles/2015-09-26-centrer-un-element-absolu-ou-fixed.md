@@ -40,3 +40,5 @@ element {
 ```
 
 Il est possible de faire de même verticalement avec `top` et `translateY`. Ainsi, l’élément est centré sans avoir besoin de préciser une largeur ou une hauteur.
+
+Et si vous voulez centrer un élément qui ne soit pas positionné de façon absolue (ou fixe), alors [utilisez flexbox](https://codepen.io/EmmanuelBeziat/pen/zKXdoa) !

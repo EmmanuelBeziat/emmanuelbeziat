@@ -105,7 +105,7 @@ Sur ce, vous voulez que le lien dont la liste porte la classe "color" s’affich
 Surprise ! Ça ne fonctionne pas. En effet, cette déclaration n’a un poids que de 11, donc il ne surclasse pas la précédente de 102 même en étant placé après. Il faut donc écrire une déclaration dont le poids surpassera la première :
 
 ```css
-#menu .color a
+#menu .color a { }
 ```
 
 Cette déclaration fait donc 111 (identifiant + classe + element), son poids est supérieur à la première, et notre lien s’affiche en vert.
