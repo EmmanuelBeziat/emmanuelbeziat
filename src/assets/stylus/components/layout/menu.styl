@@ -3,8 +3,13 @@
 	justify-content flex-end
 
 	@media (max-width $breakpoint-mobile)
-		justify-content center
-		flex-direction column
+		justify-content space-between
+		position fixed
+		background darken($color-background, 10%)
+		left 0
+		right 0
+		bottom 0
+		z-index 50
 
 .site-menu__link
 	font 400 $font-size-menu/1 $font-stack-heading
@@ -15,9 +20,7 @@
 		font-size $font-size-heading-2
 		line-height 1.45em
 		text-align center
-		opacity 0
-		max-height 0
-		overflow hidden
+		flex 1
 
 	&::before
 	&::after
@@ -30,25 +33,43 @@
 		content "<"
 		transform translateX(20px)
 		padding-right .125em
+		@media (max-width $breakpoint-mobile)
+			content "\e800"
+			font-family "Icons"
+			transform none
+			padding 0
+			opacity 1
+			font-size $font-size-heading
 	&::after
 		content "/>"
 		transform translateX(-20px)
 		padding-left .1875em
+		@media (max-width $breakpoint-mobile)
+			display none
 
 	&:nth-of-type(1)
 		&:hover
 		&:focus
 			color $color-green
+		&::before
+			@media (max-width $breakpoint-mobile)
+				content "\e800"
 
 	&:nth-of-type(2)
 		&:hover
 		&:focus
 			color $color-blue
+		&::before
+			@media (max-width $breakpoint-mobile)
+				content "\e800"
 
 	&:nth-of-type(3)
 		&:hover
 		&:focus
 			color $color-red
+		&::before
+			@media (max-width $breakpoint-mobile)
+				content "\e800"
 
 .site-menu__link--active
 	&:hover
@@ -72,35 +93,6 @@
 	&::after
 		opacity 1
 		transform translateX(0)
-
-.site-menu__button
-	border 0
-	background none
-	outline 0
-	color $color-text
-	position relative
-	z-index 10
-	white-space nowrap
-	padding 0 0 rem(10px)
-	font 400 $font-size-heading-2/1 $font-stack-heading
-	display flex
-	align-items center
-	transition .3s ease-in-out
-
-	&::after
-		content ""
-		position absolute
-		left 0
-		right 0
-		bottom 0
-		height 1px
-		background $color-text
-		transition inherit
-		transform scale(0)
-		transform-origin 0 0
-
-	@media (min-width $breakpoint-mobile)
-		display none
 
 .site-menu__icon
 	display inline-block
@@ -128,25 +120,3 @@
 
 	&::after
 		transform translateY(10px)
-
-@media (max-width $breakpoint-mobile)
-	.site-menu--is-open
-		.site-menu__button
-			margin-bottom rem(20px)
-			&::after
-				transform scale(1)
-
-		.site-menu__icon
-			transform rotate(-45deg)
-
-			&::before
-			&::after
-				transform translateY(0) scale(.5)
-				opacity 0
-
-			span
-				transform rotate(90deg)
-
-		.site-menu__link
-			opacity 1
-			max-height $font-size-heading-1
