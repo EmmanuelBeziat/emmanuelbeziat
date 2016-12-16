@@ -152,13 +152,13 @@ console.log('New post creation command…')
 inquirer.prompt(questions).then(function(answers) {
 
     var filePath = 'src/posts/' + answers.type + '/'
-    var fileName = answers.date + '-' + slug(answers.title, [{ lower: true }]).toLowerCase() + '.md'
+	var fileName = moment(answers.date).format('YYYY-MM-DD') + '-' + slug(answers.title, [{ lower: true }]).toLowerCase() + '.md'
     var fileContent = ''
 
     if (answers.type === 'articles') {
         fileContent = '---' +
             '\ntitle: ' + answers.title +
-            '\ndate: ' + answers.date + ' 00-00-00' +
+            '\ndate: ' + answers.date +
             '\nimage: ' + answers.image +
             '\ntags: ' + JSON.stringify(answers.tags) +
             '\ncategories: ' + JSON.stringify(answers.categories) +
@@ -168,7 +168,7 @@ inquirer.prompt(questions).then(function(answers) {
     } else {
         fileContent = '---' +
             '\ntitle: ' + answers.title +
-            '\ndate: ' + answers.date + ' 00-00-00' +
+            '\ndate: ' + answers.date +
             '\nimage: ' + answers.image +
             '\ncolor: ' + answers.color +
             '\nclients: ' +
