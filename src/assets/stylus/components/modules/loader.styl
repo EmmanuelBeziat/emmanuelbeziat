@@ -1,0 +1,37 @@
+.loader
+	display flex
+	flex-direction column
+	align-items center
+	padding 2rem 0
+
+.loader__item
+	text-align center
+	font $font-size-heading-1/1.5 $font-stack-heading
+	color $color-yellow
+
+.loader__dot
+	color $color-green
+	display inline-block
+	transform translateY(-10px)
+	opacity 0
+	animation pulsate 1s ease-out
+	animation-iteration-count infinite
+
+.loader__dot:nth-of-type(2)
+	animation-delay .1s
+
+.loader__dot:nth-of-type(3)
+	animation-delay .2s
+
+.loader__title
+	text-align center
+	color $color-white
+	margin-top rem(10px)
+	text-transform lowercase
+	font-size $font-size-heading-3
+	line-height 1.25
+
+	small
+		color $color-red
+		display block
+		font-size rem(16px)

@@ -1,0 +1,95 @@
+.portfolio__list
+	display flex
+	flex-flow row wrap
+
+	@media (max-width $breakpoint-mobile)
+		justify-content center
+
+.portfolio__item
+	flex 0 0 calc(33% - 6px)
+	position relative
+	margin 0 3px 6px
+
+	@media (max-width $breakpoint-mobile)
+		min-width rem(240px)
+
+.portfolio__layer
+	background $color-separator
+	position relative
+	height rem(240px)
+	display flex
+	justify-content center
+	align-items center
+	z-index 10
+	transform-origin 50% 20px
+	transition .2s ease-in-out
+	backface-visibility hidden
+
+.portfolio__image
+	size rem(128px)
+	fill $color-text
+	backface-visibility hidden
+	transition .2s ease-in-out .1s
+
+.portfolio__caption
+	z-index 5
+	position absolute
+	top 0
+	right 0
+	bottom 0
+	left 0
+	padding rem(20px)
+	background darken($color-background, 10%)
+	display flex
+	flex-direction column
+	justify-content flex-end
+	overflow hidden
+	text-align center
+
+.portfolio__title
+	margin 0 0 .5em
+	line-height 1.5
+	font-size rem(28px)
+	font-weight 400
+
+.portfolio__item:hover
+	.portfolio__layer
+		transform scale(.4) translateZ(0)
+		border-radius 50%
+
+	.portfolio__layer--blue
+		background $color-blue
+
+	.portfolio__layer--red
+		background $color-red
+
+	.portfolio__layer--violet
+		background $color-violet
+
+	.portfolio__layer--yellow
+		background darken($color-yellow, 10%)
+
+	.portfolio__layer--green
+		background $color-green
+
+	.portfolio__layer--black
+		background darken($color-grey, 50%)
+
+	.portfolio__image
+		transform scale(1.1) translateZ(0)
+
+.portfolio__see-more
+	display inline-block
+	background $color-red
+	color $color-text
+	padding .25em .75em
+
+	&:hover
+		color inherit
+		background $color-grey
+
+.portfolio__thanks
+	font-size $font-size-heading-4
+
+	.icon-heart
+		color $color-red

@@ -15,3 +15,7 @@ export default {
 	}
 }
 </script>
+
+<style lang="stylus">
+@require './assets/stylus/main.styl'
+</style>
