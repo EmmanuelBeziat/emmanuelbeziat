@@ -1,4 +1,2 @@
 build/*.js
 config/*.js
-plugin/*.js
-loader/*.js
