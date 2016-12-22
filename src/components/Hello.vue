@@ -14,9 +14,3 @@ export default {
 	}
 }
 </script>
-
-<!-- Add "scoped" attribute to limit CSS to this component only -->
-<style lang="stylus">
-h1, h2
-	font-weight normal
-</style>
