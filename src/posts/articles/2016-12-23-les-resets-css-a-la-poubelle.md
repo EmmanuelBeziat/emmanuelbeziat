@@ -5,7 +5,6 @@ image: https://images.emmanuelbeziat.com/social-default-fb.jpg
 tags: ["html/css"]
 categories: ["Diatribes"]
 disqus: true
-publish: true
 ---
 
 Je ne sais pas ce que le web a encore produit de tutoriel médiocre, mais en ce moment il y a une résurgence de ces immondices que sont les reset CSS.
@@ -18,7 +17,7 @@ Bref, cette technique a été créée, soit-disant, pour gommer les différences
 
 Voilà le but d’un reset CSS : tout péter comme un gros babouin. Il n’y a AUCUNE uniformisation là-dedans, juste de la destruction systématique.
 
-## Y a pis !
+## Y a pire !
 
 En plus de ne servir à rien, c’est aussi gourmand en ressources et stupidement chronophage.
 
