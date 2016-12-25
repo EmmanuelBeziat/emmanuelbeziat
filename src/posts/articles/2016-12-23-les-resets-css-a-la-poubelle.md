@@ -9,6 +9,14 @@ disqus: true
 
 Je ne sais pas ce que le web a encore produit de tutoriel médiocre, mais en ce moment il y a une résurgence de ces immondices que sont les reset CSS.
 
+Je veux parler de ceci :
+
+```css
+* { margin: 0; padding: 0; }
+```
+
+Et toutes les variables existantes…
+
 ## C’est quoi le problème ?
 
 Un peu d’histoire : les techniques de reset CSS viennent du fin fond des âges (2000, par là…), un temps où les normes web n’existaient pratiquement pas. Netscape venait de sortir le navigateur le plus mauvais de son histoire (à tel point qu’on ne le revit plus), laissant Internet Explorer comme seule monture des chevaliers du web (et ne râlez pas, IE6 était excellent et ce sont les développeurs qui en ont fait ce qu’il a été par la suite. Pas Microsoft).
