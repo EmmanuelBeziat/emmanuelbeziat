@@ -8,7 +8,7 @@ categories:
 - Tutoriels
 ---
 
-Je suis récemment tombé sur un joli traité des bonnes manières et autres politesses lorsqu’on est développeur, écrit par [Pierre-Antoine "Lisarael" Delnatte](http://leny.me "Pierre-Antoine Delnatte"){ target="_blank" } et que je vais repomper joyeusement ici (avec son aimable autorisation), parce que les conventions, c’est important.
+Je suis récemment tombé sur un joli traité des bonnes manières et autres politesses lorsqu’on est développeur, écrit par [Pierre-Antoine "Lisarael" Delnatte](http://leny.me "Pierre-Antoine Delnatte"){ target="_blank" rel="noopener" } et que je vais repomper joyeusement ici (avec son aimable autorisation), parce que les conventions, c’est important.
 
 
 ## Principes généraux
@@ -18,7 +18,7 @@ Je suis récemment tombé sur un joli traité des bonnes manières et autres pol
 *   Les commentaires sont importants, mais il faut commenter intelligemment : un commentaire inutile prend de la place pour rien.
 *   On nomme toutes les variables / classes en **anglais**
 *   Les _TODO_ sont conseillés, mais il faut les détailler : rien ne dit que c’est vous qui repasserez dessus.
-*   Tout projet de code devrait être stocké sur un gestionnaire de version comme _Git_, via la plateforme [GitHub](http://github.com/){ target="_blank" }.
+*   Tout projet de code devrait être stocké sur un gestionnaire de version comme _Git_, via la plateforme [GitHub](http://github.com/){ target="_blank" rel="noopener" }.
 *   Corriger un fichier qui ne respecte pas les conventions n’est **jamais** une perte de temps.
 
 ### KISS: Keep it simple, stupid!
@@ -49,13 +49,13 @@ Il ne devrait jamais y avoir une portion de code qui ne soit pas couverte par au
 *   Le contenu d’un élément block doit être à la ligne, celui d’un élément inline peut être au choix à la ligne ou non. (exception acceptable pour la balise `
 &lt;p&gt;`).
 *   À l’exception notable d’_html5shiv_ pour IE, les balises `&lt;script&gt;` sont déclarées en fin de `&lt;body&gt;`.
-*   Validez toujours votre code avec le [validateur w3c](http://validator.w3.org/ "Validator W3C"){ target="_blank" }.
+*   Validez toujours votre code avec le [validateur w3c](http://validator.w3.org/ "Validator W3C"){ target="_blank" rel="noopener" }.
 
 ## CSS et dérivés
 
 *   Indentation stricte.
 *   Préférer les propriétés raccourcies (`font`, `background`, `margin`…).
-*   Quand on utilise des propriétés `-vendor-prefix`, on n’oublie pas de mettre la propriété finale de la spec à la fin. Et surtout, on vérifie si c’est nécessaire (voir l’article [Préfixes CSS : jusqu’à quand](http://www.emmanuelbeziat.com/blog/prefixes-css-jusqua-quand/ "Préfixes CSS, jusqu’à quand ?"){ target="_blank" }) !
+*   Quand on utilise des propriétés `-vendor-prefix`, on n’oublie pas de mettre la propriété finale de la spec à la fin. Et surtout, on vérifie si c’est nécessaire (voir l’article [Préfixes CSS : jusqu’à quand](http://www.emmanuelbeziat.com/blog/prefixes-css-jusqua-quand/ "Préfixes CSS, jusqu’à quand ?"){ target="_blank" rel="noopener" }) !
 *   Pas de hack, sauf si _vraiment_ pas le choix. Préférer les _commentaires conditionnels_ de HTML pour rajouter des feuilles de styles spécifiques ou des classes sur l’élément `<html>`.
 *   En _Less_, _Sass_ ou _Stylus_ :
 *   On utilise des variables explicites, et si elles sont globales, on les définit en tête de module ou dans un fichier séparé pour les _superglobales_.
@@ -92,7 +92,7 @@ var test = function( param ) {
 *   Les variables sont nommées en **camelCase**, les classes en **PascalCase**.
 *   Si on veut stocker des données dans le code HTML (avec parcimonie et sagesse), on utilise les attributs `data-`.
 *   Attention à ne pas laisser des appels à la `console` dans les fichiers en production.
-*   Les scripts doivent être validés par [JSHint](http://www.jshint.com/ "JSHint"){ target="_blank" } avant mise en production.
+*   Les scripts doivent être validés par [JSHint](http://www.jshint.com/ "JSHint"){ target="_blank" rel="noopener" } avant mise en production.
 
 Vous pouvez retrouver l’ensemble de ces conseils (et d’autres) sur [ces Guidelines](https://github.com/EmmanuelBeziat/guidelines/) { .c-note .c--info }
 

@@ -59,4 +59,4 @@ Et voilà !
 
 Je n’avais jamais été confronté moi-même à ce "bug", attendu que mon navigateur principal (IE) désactive de lui-même les _pointer events_ lorsqu’on fait défiler une page. Piqué de curiosité en lisant l’article, j’ai donc fait le test sur Chrome et Firefox, pour constater qu’effectivement… Ouch. Je reprend donc ici la moelle de l’article en question, d’une part afin de ne pas oublier cette astuce, d’autre part afin que les anglophobes puissent en bénéficier aussi.
 
-Source : [TheCSSNinja.com](http://www.thecssninja.com/javascript/pointer-events-60fps){ target="_blank" } - Thanks !
+Source : [TheCSSNinja.com](http://www.thecssninja.com/javascript/pointer-events-60fps){ target="_blank" rel="noopener" } - Thanks !

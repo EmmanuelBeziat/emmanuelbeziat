@@ -12,14 +12,14 @@ Au programme aujourd’hui : des astuces en CSS, un mythe qui s’effondre et u
 
 ### Grille CSS toujours pleine
 
-Une petite astuce sympathique à voir sur [heydonwork](http://www.heydonworks.com/article/tetris-the-power-of-css){ target="_blank" }.
+Une petite astuce sympathique à voir sur [heydonwork](http://www.heydonworks.com/article/tetris-the-power-of-css){ target="_blank" rel="noopener" }.
 
 ### "Les utilisateurs ne scrollent pas"
 
-Idée reçue ayant la vie dure, [UxMyths](http://uxmyths.com/post/654047943/myth-people-dont-scroll){ target="_blank" } nous propose de quoi y mettre un bon coup de clavier sur le coin de la gueule.
+Idée reçue ayant la vie dure, [UxMyths](http://uxmyths.com/post/654047943/myth-people-dont-scroll){ target="_blank" rel="noopener" } nous propose de quoi y mettre un bon coup de clavier sur le coin de la gueule.
 
 ### CSS-Prefix
 
-Vous est-il déjà arrivé de devoir reprendre votre CSS pour copier-coller un sélecteur supplémentaire sur une quarantaines de déclarations, pas toutes sur différentes lignes ? Hé bien pas de panique, la solution s’appelle [CSS-Prefix](http://www.css-prefix.com/){ target="_blank" }.
+Vous est-il déjà arrivé de devoir reprendre votre CSS pour copier-coller un sélecteur supplémentaire sur une quarantaines de déclarations, pas toutes sur différentes lignes ? Hé bien pas de panique, la solution s’appelle [CSS-Prefix](http://www.css-prefix.com/){ target="_blank" rel="noopener" }.
 
 c’est tout !

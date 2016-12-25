@@ -16,7 +16,7 @@ Ou plus exactement, comment savoir s’il est pertinent d’utiliser une tartine
 
 Pour ceux d’entre toi, lecteur, qui ne comprendrais pas de quoi je parle, voici un chouette petit résumé explicatif !
 
-Les "**préfixes propriétaires**" (aussi connus sous le sobriquet de "préfixes vendeurs"), sont apparus afin d’intégrer dans le CSS des propriétés non-standardisées (la standardisation étant le travail du [W3C](http://www.w3.org/){ target="_blank" }, l’organisme chargé de chapeauter les technologies html/css). On ajoute donc un préfixe devant la propriété CSS, comme ça : `-prefixe-propriété`. En sachant qu’il y a plusieurs préfixes existants, on se retrouve souvent avec ceci :
+Les "**préfixes propriétaires**" (aussi connus sous le sobriquet de "préfixes vendeurs"), sont apparus afin d’intégrer dans le CSS des propriétés non-standardisées (la standardisation étant le travail du [W3C](http://www.w3.org/){ target="_blank" rel="noopener" }, l’organisme chargé de chapeauter les technologies html/css). On ajoute donc un préfixe devant la propriété CSS, comme ça : `-prefixe-propriété`. En sachant qu’il y a plusieurs préfixes existants, on se retrouve souvent avec ceci :
 
 ```css
 élément {
@@ -45,7 +45,7 @@ Mettez toujours la propriété finale (donc sans préfixes) après les propriét
 
 ### Une solution : se renseigner
 
-Un site référence quelles propriétés sont disponibles avec ou sans préfixes, et pour quels navigateurs. Il s’agit de [Can I Use](http://caniuse.com/){ target="_blank" }. Il permet de voir, pour chaque propriété, la prise en charge pour chaque navigateur principal. Maintenant, voyons comment tirer parti de ces informations. Nous allons prendre pour ça l’exemple de la propriété `transition`, dont [la page est ici](http://caniuse.com/#feat=css-transitions){ target="_blank" }. On constate que :
+Un site référence quelles propriétés sont disponibles avec ou sans préfixes, et pour quels navigateurs. Il s’agit de [Can I Use](http://caniuse.com/){ target="_blank" rel="noopener" }. Il permet de voir, pour chaque propriété, la prise en charge pour chaque navigateur principal. Maintenant, voyons comment tirer parti de ces informations. Nous allons prendre pour ça l’exemple de la propriété `transition`, dont [la page est ici](http://caniuse.com/#feat=css-transitions){ target="_blank" rel="noopener" }. On constate que :
 
 *   Il n’y a eu aucun préfixe pour aucune version d’IE, on peut donc se passer du préfixe `-ms-`
 *   Firefox supporte la propriété finale depuis plus de 5 version, on peut donc raisonnablement se passer de `-moz-`
@@ -69,13 +69,13 @@ Notez bien que les informations de cet articles sont valables à sa date de réd
 
 ### Un peu de javascript
 
-**Léa Verou** propose un petit fichier Javascript de sa création [à télécharger ici](http://leaverou.github.io/prefixfree/){ target="_blank" }, qui va s’occuper de gérer les préfixes à votre place ; la contrepartie, c’est que vous n’aurez pas la même finesse qu’en faisant le choix manuellement.
+**Léa Verou** propose un petit fichier Javascript de sa création [à télécharger ici](http://leaverou.github.io/prefixfree/){ target="_blank" rel="noopener" }, qui va s’occuper de gérer les préfixes à votre place ; la contrepartie, c’est que vous n’aurez pas la même finesse qu’en faisant le choix manuellement.
 
 ### Les _Task Runners_
 
-Les _task runners_ ont envahi le petit monde du front-end il y a maintenant quelques années. Les plus connus sont [Grunt](http://gruntjs.com/){ target="_blank" }, [Gulp](http://gulpjs.com/){ target="_blank" } et [Brunch](http://brunch.io/){ target="_blank" }. Leur rôle est de réaliser des tâches rébarbatives pour nous faciliter la vie : compiler des préprocesseurs (Sass, Less, Stylus, Jade, CoffeeScript), minifier et concaténer des fichiers, optimiser des images, etc. Mais ils peuvent également préfixer automatiquement les propriétés d’un CSS, en se basant sur CanIUse, avec une petite configuration pour régler le niveau de support qu’on souhaite avoir.
+Les _task runners_ ont envahi le petit monde du front-end il y a maintenant quelques années. Les plus connus sont [Grunt](http://gruntjs.com/){ target="_blank" rel="noopener" }, [Gulp](http://gulpjs.com/){ target="_blank" rel="noopener" } et [Brunch](http://brunch.io/){ target="_blank" rel="noopener" }. Leur rôle est de réaliser des tâches rébarbatives pour nous faciliter la vie : compiler des préprocesseurs (Sass, Less, Stylus, Jade, CoffeeScript), minifier et concaténer des fichiers, optimiser des images, etc. Mais ils peuvent également préfixer automatiquement les propriétés d’un CSS, en se basant sur CanIUse, avec une petite configuration pour régler le niveau de support qu’on souhaite avoir.
 
-Je ne rentrerais pas ici dans les détails, pour en savoir plus : [AutoPrefixer](https://github.com/postcss/autoprefixer "AutoPrefixer sur GitHub"){ target="_blank" }
+Je ne rentrerais pas ici dans les détails, pour en savoir plus : [AutoPrefixer](https://github.com/postcss/autoprefixer "AutoPrefixer sur GitHub"){ target="_blank" rel="noopener" }
 
 ## Aide-mémoire
 
@@ -83,13 +83,13 @@ Parce qu’un peu de généralités ne fait pas de mal !
 
 ### Propriétés CSS3 qui ne nécessitent plus de préfixes
 
-*   [border-radius](http://caniuse.com/#feat=border-radius){ target="_blank" }
-*   [box-shadow](http://caniuse.com/#feat=css-boxshadow){ target="_blank" }
-*   [text-shadow](http://caniuse.com/#feat=css-textshadow){ target="_blank" }
-*   [opacity](http://caniuse.com/#feat=css-opacity){ target="_blank" }
-*   [background-size](http://caniuse.com/#feat=background-img-opts){ target="_blank" }
-*   [box-sizing](http://caniuse.com/#feat=css3-boxsizing){ target="_blank" }
-*   [transition](http://caniuse.com/#feat=css-transitions){ target="_blank" }
-*   [gradient](http://caniuse.com/#feat=css-gradients){ target="_blank" } (à utiliser toutefois avec un fallback)
+*   [border-radius](http://caniuse.com/#feat=border-radius){ target="_blank" rel="noopener" }
+*   [box-shadow](http://caniuse.com/#feat=css-boxshadow){ target="_blank" rel="noopener" }
+*   [text-shadow](http://caniuse.com/#feat=css-textshadow){ target="_blank" rel="noopener" }
+*   [opacity](http://caniuse.com/#feat=css-opacity){ target="_blank" rel="noopener" }
+*   [background-size](http://caniuse.com/#feat=background-img-opts){ target="_blank" rel="noopener" }
+*   [box-sizing](http://caniuse.com/#feat=css3-boxsizing){ target="_blank" rel="noopener" }
+*   [transition](http://caniuse.com/#feat=css-transitions){ target="_blank" rel="noopener" }
+*   [gradient](http://caniuse.com/#feat=css-gradients){ target="_blank" rel="noopener" } (à utiliser toutefois avec un fallback)
 
 Je ne mets ici que les propriétés qui ont longtemps été préfixées, pas la liste complète des propriétés CSS3 qui n’ont pas besoin de préfixes. {.c-note .c-note--info}

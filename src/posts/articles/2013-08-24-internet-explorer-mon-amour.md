@@ -26,9 +26,9 @@ Pour ceux qui veulent entendre un autre que moi en parler, il y a cette vidéo (
 
 _"Internet Explorer ne respecte pas les standards !"_ peut-on entendre çà et là sur la toile (surtout de la bouche - enfin du clavier - de ceux qui ne connaissent pas lesdits standards).
 
-Je crois que la réponse la plus pertinente dans ce genre de cas reste _"Euh, si"_. Mais je te vois déjà, lecteur, rire derrière ton écran en allant vérifier le score d’IE sur [html5test](http://html5test.com){ target="_blank" }. Alors je sens qu’il va me falloir t’apporter des preuves de ce que j’avance. Et ça tombe bien, parce que j’ai tout ce qu’il faut pour ça.
+Je crois que la réponse la plus pertinente dans ce genre de cas reste _"Euh, si"_. Mais je te vois déjà, lecteur, rire derrière ton écran en allant vérifier le score d’IE sur [html5test](http://html5test.com){ target="_blank" rel="noopener" }. Alors je sens qu’il va me falloir t’apporter des preuves de ce que j’avance. Et ça tombe bien, parce que j’ai tout ce qu’il faut pour ça.
 
-Je vais commencer par une preuve qui fait très mal, et du coup je vais l’écrire en gras-qui-te-pète-bien-la-rétine : **Chrome et Firefox galèrent à gérer un border tout simple**. Bon, j’exagère un poil, mais ce n’est pas si loin de la vérité. Plus exactement, **WebKit** (le moteur de rendu qui équipe Chrome, Safari, Opera et Maxthon - entre autres), **Gecko** (Firefox) et **Trident** (Internet Explorer) ont tous une façon différente de gérer les éléments, et sur border on remarque aisément des difficultés sur certains. Pour vérifier ça, vous pouvez vous rendre sur [ce jsfiddle](https://jsfiddle.net/3hs1ftmo/2/){ target="_blank" }, et constater par vous-même.
+Je vais commencer par une preuve qui fait très mal, et du coup je vais l’écrire en gras-qui-te-pète-bien-la-rétine : **Chrome et Firefox galèrent à gérer un border tout simple**. Bon, j’exagère un poil, mais ce n’est pas si loin de la vérité. Plus exactement, **WebKit** (le moteur de rendu qui équipe Chrome, Safari, Opera et Maxthon - entre autres), **Gecko** (Firefox) et **Trident** (Internet Explorer) ont tous une façon différente de gérer les éléments, et sur border on remarque aisément des difficultés sur certains. Pour vérifier ça, vous pouvez vous rendre sur [ce jsfiddle](https://jsfiddle.net/3hs1ftmo/2/){ target="_blank" rel="noopener" }, et constater par vous-même.
 
 Les résultats sont les suivants. À noter que le code est tout à fait identique pour chaque navigateur.
 
@@ -42,7 +42,7 @@ La question du test ACID3 a un moment été un centre d’intérêt, avant que t
 
 ![acid3-chrome10](https://images.emmanuelbeziat.com/acid3-chrome10.jpg)
 
-Résultat affiché de 100%, alors que le rendu est très loin de celui qui est censé être le [gage d’un résultat correct](http://acid3.acidtests.org/ "Test Acid3"){ target="_blank" }.
+Résultat affiché de 100%, alors que le rendu est très loin de celui qui est censé être le [gage d’un résultat correct](http://acid3.acidtests.org/ "Test Acid3"){ target="_blank" rel="noopener" }.
 
 c’est exactement le même genre de soucis avec html5test : ce genre de sites ne fait que vérifier si une fonctionnalité est présente, elle ne teste pas son implémentation. De fait, Chrome prétend gérer les nouveaux paramètres de la propriété `background-position` introduits en CSS3, alors que ce n’est absolument pas le cas dans les faits.
 
@@ -69,7 +69,7 @@ On vante souvent les fonctionnalités des autres navigateurs mais IE offre gén�
 
 Microsoft propose en sus des outils d’intégration à Windows assez intéressant, il est dommage que les autres navigateurs ne suivent pas le mouvement. On peut en effet épingler un site de façon plus ou moins avancée dans la barre des tâches avec divers raccourcis, et sur les tuiles de l’interface Modern UI de Windows 8.
 
-J’ai écrit un [tutoriel sur le sujet](http://www.emmanuelbeziat.com/blog/site-epingle-avec-internet-explorer/ "Site épinglé avec Internet Explorer"){ target="_blank" } qui vous permettra d’en savoir plus si ça vous intéresse.
+J’ai écrit un [tutoriel sur le sujet](http://www.emmanuelbeziat.com/blog/site-epingle-avec-internet-explorer/ "Site épinglé avec Internet Explorer"){ target="_blank" rel="noopener" } qui vous permettra d’en savoir plus si ça vous intéresse.
 
 ## Alors pourquoi tant de haine ?
 

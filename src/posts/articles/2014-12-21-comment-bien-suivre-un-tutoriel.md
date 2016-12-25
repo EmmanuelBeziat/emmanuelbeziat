@@ -24,7 +24,7 @@ Très souvent, le contenu textuel est aussi riche en informations essentielles q
 
 ## Essayer le code fourni
 
-Une erreur courante est de vouloir adapter directement le code proposé en exemple sur leur propre code. Ce faisant, le risque de rater une étape est beaucoup plus grand. Prenez toujours le temps de tester uniquement le code fourni, dans une page à part ou sur un site comme [Codepen](http://codepen.io/pen/){ target="_blank" }, [Dabblet ](http://dabblet.com/){ target="_blank" }ou [JSfiddle](http://jsfiddle.net/){ target="_blank" }, selon vos besoins.
+Une erreur courante est de vouloir adapter directement le code proposé en exemple sur leur propre code. Ce faisant, le risque de rater une étape est beaucoup plus grand. Prenez toujours le temps de tester uniquement le code fourni, dans une page à part ou sur un site comme [Codepen](http://codepen.io/pen/){ target="_blank" rel="noopener" }, [Dabblet ](http://dabblet.com/){ target="_blank" rel="noopener" }ou [JSfiddle](http://jsfiddle.net/){ target="_blank" rel="noopener" }, selon vos besoins.
 
 Si le code seul ne marche pas, c’est que vous avez peut-être manqué une information textuelle (voir point précédent). Si malgré une relecture attentive (du code comme des explications) vous ne voyez pas ce qui manque, vous pouvez fournir le lien de votre essai à l’auteur-e du tutoriel, qui vérifiera votre exemple et vous indiquera si vous vous êtes trompé ou corrigera son tutoriel s’il y a effectivement un problème.
 

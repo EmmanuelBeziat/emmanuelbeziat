@@ -66,9 +66,9 @@ Et c’est tout ! Votre colonne fonctionne maintenant. En effet, votre "vraie" 
 
 Comme quoi, le CSS, c’est aussi de la magie !
 
-Vous pouvez voir l’exemple en action sur [ce Codepen](http://codepen.io/EmmanuelB/pen/zGMxEN){ target="_blank" }.
+Vous pouvez voir l’exemple en action sur [ce Codepen](http://codepen.io/EmmanuelB/pen/zGMxEN){ target="_blank" rel="noopener" }.
 
-Merci à [Lamecarlate](http://lamecarlate.net/){ target="_blank" } et [Clément](http://clement-galidie.fr/){ target="_blank" } pour leurs ajouts.
+Merci à [Lamecarlate](http://lamecarlate.net/){ target="_blank" rel="noopener" } et [Clément](http://clement-galidie.fr/){ target="_blank" rel="noopener" } pour leurs ajouts.
 
 ## Nouvelle méthode (avec Flexbox)
 

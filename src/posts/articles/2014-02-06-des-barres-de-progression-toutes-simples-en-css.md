@@ -28,7 +28,7 @@ Alors on va la faire simple. Pour moi j’ai utilisé une liste non-ordonnée ht
 
 Alors certains se posent peut-être une question intéressante, par exemple "mais kaisseucé ?".
 
-L’attribut `data-` permet de stocker des données sur des éléments, tout simplement. [D’autres en parlent bien mieux que moi](http://www.alsacreations.com/article/lire/1397-html5-attribut-data-dataset.html){ target="_blank" } !
+L’attribut `data-` permet de stocker des données sur des éléments, tout simplement. [D’autres en parlent bien mieux que moi](http://www.alsacreations.com/article/lire/1397-html5-attribut-data-dataset.html){ target="_blank" rel="noopener" } !
 
 c’est arbitraire, j’aurais aussi bien pu utiliser une classe, mais je trouvais ça tellement plus _pimp_ d’utiliser de beaux `data-` que j’y ai été à cœur joie. Dans les faits, ça se prête très bien au CSS avec les [sélecteurs d’attributs](http://www.emmanuelbeziat.com/blog/principes-du-css-les-selecteurs-partie1-css2/#selecteur-attribut) (va lire mon tutoriel sur les sélecteurs, va !).
 
@@ -80,4 +80,4 @@ Reste ensuite à leur attribuer une largeur, en fonction de la valeur de notre `
 
 Et voilà ! On peut imaginer des animations pour remplir les barres petit à petit, récupérer la valeur de data-length en js dynamiquement et tout ça, mais c’était juste pour expliquer le principe.
 
-Pour voir le tout en action, vous pouvez aller sur [mon CodePen](http://codepen.io/EmmanuelB/pen/nwivz "CodePen"){ target="_blank" }.
+Pour voir le tout en action, vous pouvez aller sur [mon CodePen](http://codepen.io/EmmanuelB/pen/nwivz "CodePen"){ target="_blank" rel="noopener" }.

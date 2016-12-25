@@ -148,4 +148,4 @@ Voilà, maintenant vous savez tout sur le poids des déclarations en CSS.
 
 #### Edit du 7 Avril
 
-Si vous n’avez rien compris, si vous pensez que des métaphores avec des animaux mignons et des gifs animés vous aideront à mieux appréhender le concept, ou tout simplement si vous trouvez que j’explique mal, **Lamecarlate** a fait un bon article qu’elle a sobrement (Et honteusement, c’était mon idée !) nommé  [Sélecteurs CSS : poids des déclarations](http://informatique.lamecarlate.net/blog/articles/selecteurs-css-poids "Lamecarlate"){ target="_blank" }
+Si vous n’avez rien compris, si vous pensez que des métaphores avec des animaux mignons et des gifs animés vous aideront à mieux appréhender le concept, ou tout simplement si vous trouvez que j’explique mal, **Lamecarlate** a fait un bon article qu’elle a sobrement (Et honteusement, c’était mon idée !) nommé  [Sélecteurs CSS : poids des déclarations](http://informatique.lamecarlate.net/blog/articles/selecteurs-css-poids "Lamecarlate"){ target="_blank" rel="noopener" }

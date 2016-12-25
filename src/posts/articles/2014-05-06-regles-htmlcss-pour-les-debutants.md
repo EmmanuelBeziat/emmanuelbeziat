@@ -69,7 +69,7 @@ Mauvais :
 
 On est en 2014 au moment de la rédaction de cet article, et je vois encore régulièrement du code obsolète depuis l’arrivée du xhtml (2001). Il est important de noter que désormais (et depuis longtemps maintenant), on sépare la structure et le contenu (html) de la mise en forme (css).
 
-Il est primordial de comprendre ce principe de sémantique du HTML. Lorsque qu’on utilise une balise `<em>`, ce n’est pas pour mettre du texte en italique, c’est pour créer une [emphase](https://fr.wiktionary.org/wiki/emphase "emphase — Wiktionnaire"){ target="_blank" } ; or, il se trouve que dans les règles d’écriture occidentale, l’emphase est exprimée en italique. Exemple : "Tu es _vraiment_ sûr de ton coup ?".
+Il est primordial de comprendre ce principe de sémantique du HTML. Lorsque qu’on utilise une balise `<em>`, ce n’est pas pour mettre du texte en italique, c’est pour créer une [emphase](https://fr.wiktionary.org/wiki/emphase "emphase — Wiktionnaire"){ target="_blank" rel="noopener" } ; or, il se trouve que dans les règles d’écriture occidentale, l’emphase est exprimée en italique. Exemple : "Tu es _vraiment_ sûr de ton coup ?".
 
 On retient : on n’utilise pas des balises pour leur rendu, mais pour leur **sens sémantique**. { .c-note .c-note--important }
 
@@ -97,7 +97,7 @@ Parmi ces attributs, on trouve notamment `onclick`, `onblur`, `onmouseover`, `on
 
 ### Les mots à rallonge
 
-Très souvent, on tombe sur des sujets rapportant des comportements étranges de texte qui dépasse de leur contenu. Et le texte en question, est une ligne infinie de caractères, soit du "aaaaaaaaaaaaaaaaaaaaaaaaa" (beaucoup plus long, entendons-nous), soit du "oihoihgopizeagjae". Le fait est qu’aucun mot n’est aussi long, et que le texte se met en forme aux espaces qui le composent. Donc sans espace, il n’ira jamais à la ligne sans une propriété pour l’y forcer. Donc avant de songer à l’y forcer, utilisez du vrai texte factice avec un [générateur de lipsum](http://fr.lipsum.com/ "Lipsum"){ target="_blank" }, qui sert justement à ça.
+Très souvent, on tombe sur des sujets rapportant des comportements étranges de texte qui dépasse de leur contenu. Et le texte en question, est une ligne infinie de caractères, soit du "aaaaaaaaaaaaaaaaaaaaaaaaa" (beaucoup plus long, entendons-nous), soit du "oihoihgopizeagjae". Le fait est qu’aucun mot n’est aussi long, et que le texte se met en forme aux espaces qui le composent. Donc sans espace, il n’ira jamais à la ligne sans une propriété pour l’y forcer. Donc avant de songer à l’y forcer, utilisez du vrai texte factice avec un [générateur de lipsum](http://fr.lipsum.com/ "Lipsum"){ target="_blank" rel="noopener" }, qui sert justement à ça.
 
 ### Les balises structurantes
 
@@ -125,15 +125,15 @@ L’erreur la plus répandue est de croire qu’utiliser la propriété `positio
 
 ### Les pourcentages
 
-Une autre croyance qui a la vie dure : mettre toutes les valeurs en % serait mieux. Ce n’est pas le cas. Il n’y a que de rares cas où l’utilisation des % se justifie (notamment les grilles CSS, comme [960.gz](http://960.gs/){ target="_blank" } ou celles utilisé par [Bootstrap](http://getbootstrap.com/){ target="_blank" } ou [Foundation](http://foundation.zurb.com/){ target="_blank" }).
+Une autre croyance qui a la vie dure : mettre toutes les valeurs en % serait mieux. Ce n’est pas le cas. Il n’y a que de rares cas où l’utilisation des % se justifie (notamment les grilles CSS, comme [960.gz](http://960.gs/){ target="_blank" rel="noopener" } ou celles utilisé par [Bootstrap](http://getbootstrap.com/){ target="_blank" rel="noopener" } ou [Foundation](http://foundation.zurb.com/){ target="_blank" rel="noopener" }).
 
 Vous pouvez très bien faire un site extensible en n’utilisant qu’un minimum de valeurs en % (un exemple : [Aligner trois colonnes proprement](http://www.emmanuelbeziat.com/blog/aligner-trois-colonnes-proprement/ "Aligner trois colonnes proprement"). Et même dans ces cas-là, n’utilisez pas les % pour des marges, elles n’ont pas à être extensibles !
 
-Les pourcentages apportent beaucoup plus de problèmes et de problématiques que de solutions, alors il faut être parfaitement certain de maîtriser son environnement avant de s’en servir. [Voici un exemple concret](https://jsfiddle.net/ee944u5t/){ target="_blank" }, rencontré par un internaute d’OpenClassrooms : lorsqu’on agrandi la fenêtre de rendu, on remarque un dépassement vertical (en bas). Les marges ayant été définies de façon relative (avec des pourcentages), celles-ci sont calculées par rapport à la largeur du parent, même pour les marges verticales. Donc en étirant la largeur du conteneur, on étire la marge verticale du bloc enfant… Bref, n’importe quoi.
+Les pourcentages apportent beaucoup plus de problèmes et de problématiques que de solutions, alors il faut être parfaitement certain de maîtriser son environnement avant de s’en servir. [Voici un exemple concret](https://jsfiddle.net/ee944u5t/){ target="_blank" rel="noopener" }, rencontré par un internaute d’OpenClassrooms : lorsqu’on agrandi la fenêtre de rendu, on remarque un dépassement vertical (en bas). Les marges ayant été définies de façon relative (avec des pourcentages), celles-ci sont calculées par rapport à la largeur du parent, même pour les marges verticales. Donc en étirant la largeur du conteneur, on étire la marge verticale du bloc enfant… Bref, n’importe quoi.
 
 Et pensez aux propriétés `min-width` et `max-width`.
 
-Et `width: 100%;`, [n’y pensez même pas](http://blog.goetter.fr/articles/width-100-tu-es-le-mal/ "Width 100%, tu es le mal !"){ target="_blank" }.
+Et `width: 100%;`, [n’y pensez même pas](http://blog.goetter.fr/articles/width-100-tu-es-le-mal/ "Width 100%, tu es le mal !"){ target="_blank" rel="noopener" }.
 
 ### Les hauteurs
 

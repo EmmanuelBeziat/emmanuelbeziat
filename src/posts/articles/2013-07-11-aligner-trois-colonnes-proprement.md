@@ -24,7 +24,7 @@ La première chose, c’est d’abord de placer les trois colonnes dans un conte
 </div>
 ```
 
-Comme toujours, essayez d’ajouter un peu de contenu pour pouvoir voir les effets ; utilisez par exemple le [générateur de lipsum](http://fr.lipsum.com/ "Générateur de lipsum"){ target="_blank" }.
+Comme toujours, essayez d’ajouter un peu de contenu pour pouvoir voir les effets ; utilisez par exemple le [générateur de lipsum](http://fr.lipsum.com/ "Générateur de lipsum"){ target="_blank" rel="noopener" }.
 
 ## Le CSS
 
@@ -84,6 +84,6 @@ Enfin, on ne précise aucune largeur à cet élément afin qu’il s’adapte au
 
 ## Conclusion
 
-Avec cette méthode, si votre design est évolutif ou que la mise en page change (une colonne ou une autre ou bien les deux ou aucune en fonction des pages visitées, par exemple), la colonne centrale sera toujours adaptée correctement, ainsi que son contenu. Vous pouvez voir le gabarit en action et le tester sur [ce pen](http://codepen.io/EmmanuelB/pen/qniHp "CodePen"){ target="_blank" }.
+Avec cette méthode, si votre design est évolutif ou que la mise en page change (une colonne ou une autre ou bien les deux ou aucune en fonction des pages visitées, par exemple), la colonne centrale sera toujours adaptée correctement, ainsi que son contenu. Vous pouvez voir le gabarit en action et le tester sur [ce pen](http://codepen.io/EmmanuelB/pen/qniHp "CodePen"){ target="_blank" rel="noopener" }.
 
-Si vous voulez plus d’explication sur le fonctionnement des flottants et des _overflow_, je vous conseille un bon article : [Le contexte de formatage block en CSS](http://www.alsacreations.com/astuce/lire/1543-le-contexte-de-formatage-block-en-css.html "Alsacréations"){ target="_blank" }.
+Si vous voulez plus d’explication sur le fonctionnement des flottants et des _overflow_, je vous conseille un bon article : [Le contexte de formatage block en CSS](http://www.alsacreations.com/astuce/lire/1543-le-contexte-de-formatage-block-en-css.html "Alsacréations"){ target="_blank" rel="noopener" }.

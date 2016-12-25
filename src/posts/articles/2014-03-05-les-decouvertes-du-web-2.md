@@ -12,10 +12,10 @@ Aujourd’hui, deux petits liens bien pratiques !
 
 ## "Dois-je utiliser ?"
 
-Pour tous vos projets web, pour tous vos clients aux idées farfelues, voici un condensé des mauvaises pratiques à la mode, avec des arguments imparables pour dire **non** : [DoisJeUtiliser.fr](http://www.doisjeutiliser.fr/){ target="_blank" }
+Pour tous vos projets web, pour tous vos clients aux idées farfelues, voici un condensé des mauvaises pratiques à la mode, avec des arguments imparables pour dire **non** : [DoisJeUtiliser.fr](http://www.doisjeutiliser.fr/){ target="_blank" rel="noopener" }
 
 ## Ridiculement responsive
 
-De bien joli boutons qui changent de taille et de forme en fonction du contenu : [Ridiculously Responsive Social Sharing Buttons](http://kurtnoble.com/labs/rrssb/ "Kurt Noble"){ target="_blank" }
+De bien joli boutons qui changent de taille et de forme en fonction du contenu : [Ridiculously Responsive Social Sharing Buttons](http://kurtnoble.com/labs/rrssb/ "Kurt Noble"){ target="_blank" rel="noopener" }
 
 c’est tout !

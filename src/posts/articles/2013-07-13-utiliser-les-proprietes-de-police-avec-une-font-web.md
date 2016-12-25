@@ -8,7 +8,7 @@ categories:
 - Tutoriels
 ---
 
-Il vous est peut-être déjà arrivé d’utiliser `@font-face` ? Cette propriété permet l’ajout de polices (_typos_, _fonts_…) sur vos sites web sans que le visiteur n’ait besoin de les installer sur son ordinateur. De nombreux sites, tels que [FontSquirrel](http://www.fontsquirrel.com/){ target="_blank" } permettent de générer le CSS nécessaire tout en convertissant les fichiers aux formats appropriés.
+Il vous est peut-être déjà arrivé d’utiliser `@font-face` ? Cette propriété permet l’ajout de polices (_typos_, _fonts_…) sur vos sites web sans que le visiteur n’ait besoin de les installer sur son ordinateur. De nombreux sites, tels que [FontSquirrel](http://www.fontsquirrel.com/){ target="_blank" rel="noopener" } permettent de générer le CSS nécessaire tout en convertissant les fichiers aux formats appropriés.
 
 
 Mais les CSS proposés par défaut séparent les différents styles d’une même police, en la traitant comme des polices différentes (et donc séparées). Il faut donc, en fonction de vos besoins, non pas utiliser les propriétés `font-weight` ou `font-style` pour modifier l’épaisseur ou la mise en italique d’un texte, mais carrément demander à utiliser une autre police avec `font-family`, tout en gérant quand même ces propriétés pour les polices "_fallback_".
@@ -85,4 +85,4 @@ De cette façon, vous pouvez appliquer les propriétés à votre police "MaPolic
 
 ## Un exemple ?
 
-Voici [une page d’exemple](http://lab.infographizm.com/css/fonts/webfonts-tests-weight/){ target="_blank" } si vous souhaitez voir le code d’un peu plus près.
+Voici [une page d’exemple](http://lab.infographizm.com/css/fonts/webfonts-tests-weight/){ target="_blank" rel="noopener" } si vous souhaitez voir le code d’un peu plus près.
