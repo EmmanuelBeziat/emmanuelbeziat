@@ -1,5 +1,7 @@
 {
 	"name": "Emmanuel B\u00e9ziat",
+	"background_color": "263238",
+	"theme_color": "#263238",
 	"icons": [
 		{
 			"src": "\/static\/touch\/android-chrome-192x192.png",
@@ -12,6 +14,5 @@
 			"type": "image\/png"
 		}
 	],
-	"theme_color": "#263238",
 	"display": "standalone"
 }
