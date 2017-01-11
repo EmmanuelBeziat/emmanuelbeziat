@@ -25,12 +25,14 @@ Une des grandes nouveautés apportées par cette nouvelle version est la gestion
 **Exemple :** Définissons un espace de nom pour une page particulière :
 
 ```css
-@namespace produits url(http://www.monsite.com/produits.html);```
+@namespace produits url(http://www.monsite.com/produits.html);
+```
 
 Puis un espace de nom pour une autre page :
 
 ```css
-@namespace membre url(http://www.monsite.com/membre.html);```
+@namespace membre url(http://www.monsite.com/membre.html);
+```
 
 Il est désormais possible d’appliquer des modifications qui ne seront spécifiques qu’à ces pages :
 
@@ -56,7 +58,8 @@ h1 {color: red}
 À noter qu’il est possible de définir un nom d’espace par défaut :
 
 ```css
-@namespace "http://www.monsite.com"```
+@namespace "http://www.monsite.com"
+```
 
 Tous les sélecteurs css qui n’ont pas d’espace de nom spécifié seront donc attribués à celui-ci.
 
@@ -125,7 +128,7 @@ Celui-ci enfin, permet de sélectionner l’élément dont l’attribut désign�
 
 ## Les pseudo-classes
 
-### :last-child
+### last-child
 
 À la manière de `:first-child`, cette pseudo-classe cible un élément s’il est le dernier enfant de son parent.
 
@@ -156,7 +159,7 @@ Si on voit maintenant, pour le même code CSS, ce code HTML :
 
 Rien ne va se passer. En effet, le code CSS signifie "cibler tous les éléments `p` s’il s’agit du dernier enfant de leur parent" et non "cibler tous les éléments `p` qui sont les derniers de ce éléments de type `p` enfants". Or dans ce cas, c’est `h2` qui est le dernier enfant.
 
-### :first-of-type
+### first-of-type
 
 L’élément manquant à `:first-child`. Cette pseudo-classe permet cette fois-ci de cibler chaque premier élément d’un type donné, pour son parent (par exemple, le premier <span> dans un paragraphe).
 
@@ -183,7 +186,7 @@ div *:first-of-type {
 </div>
 ```
 
-### :last-of-type
+### last-of-type
 
 Le parfait opposé de `:first-of-type`. Cette pseudo-classe permet cette fois-ci de cibler chaque dernier élément d’un type donné, pour son parent.
 
@@ -208,7 +211,7 @@ div p:last-of-type {
 </div>
 ```
 
-### :only-of-type
+### only-of-type
 
 Un peu plus particulier cette-fois ci, cette pseudo-classe permet d’affecter un élément qui est le seul de son type par rapport à son parent.
 
@@ -232,7 +235,7 @@ div p:only-of-type {
 </div>
 ```
 
-### :only-child
+### only-child
 
 Comme son nom l’indique, cette pseudo-classe n’agit que sur un élément qui est le seul enfant de son parent.
 
@@ -253,7 +256,7 @@ div p:only-child {
 </div>
 ```
 
-### :nth-child(n)
+### nth-child(n)
 
 Un peu particulier, cette pseudo-classe permet de cibler un élément qui est le _n_ième enfant de son parent. Par exemple, si on veut choisir le second élément d’une liste :
 
@@ -271,7 +274,7 @@ li:nth-child(2) {
 </ul>
 ```
 
-### :nth-last-child(n)
+### nth-last-child(n)
 
 Même chose que précédement, mais cette fois le décompte de _n_ commence en partant du dernier enfant. Par exemple, si on veut cibler l’avant-dernier élément d’une liste :
 
@@ -291,7 +294,7 @@ li:nth-last-child(2) {
 </ul>
 ```
 
-### :nth-of-type(n)
+### nth-of-type(n)
 
 Similaire à `:nth-child(_n_)` , celle-ci permet de cibler le _n_ième enfant d’un type défini. Par exemple, si on veut choisir le troisième paragraphe :
 
@@ -324,7 +327,7 @@ Sachant qu’il s’agit de type et non de nombre d’enfant, on peut s’en ser
 </div>
 ```
 
-### :nth-last-of-type(n)
+### nth-last-of-type(n)
 
 Cette fois-ci, vous pouvez cibler le dernier d’un type, en partant du dernier de ce même type. Par exemple pour un avant-dernier paragraphe :
 
@@ -357,7 +360,7 @@ Sachant qu’il s’agit de type et non de nombre d’enfant, on peut s’en ser
 </div>
 ```
 
-### :not(selecteur)
+### not(selecteur)
 
 Un peu particulier encore une fois, cette pseudo-classe permet d’affecter tout élément qui n’est pas du type spécifié. Un exemple :
 
@@ -378,7 +381,7 @@ Un peu particulier encore une fois, cette pseudo-classe permet d’affecter tout
 </div>
 ```
 
-### :empty
+### empty
 
 Une pseudo-classe toute simple qui permet de cibler tout élément qui n’a aucun enfant.
 
@@ -397,7 +400,7 @@ p:empty {
 </div>
 ```
 
-### :enabled
+### enabled
 
 Celle-ci permet de cibler tout élément qui est, soit par défaut, soit précisément via html, défini comme "actif". c’est surtout utile pour les éléments de formulaire.
 
@@ -413,7 +416,7 @@ Celle-ci permet de cibler tout élément qui est, soit par défaut, soit précis
 <input type="text" disabled="disabled" />
 ```
 
-### :disabled
+### disabled
 
 À l’inverse, cette pseudo-classe permet de cibler un élément défini comme désactivé.
 
