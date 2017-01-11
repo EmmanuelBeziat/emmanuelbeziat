@@ -268,7 +268,7 @@ a[rel][target=_blank][title] { color: red }
 
 Les pseudo-classes désignent des éléments que l’on n’aurait pas pu cibler sans ajouter une classe particulière.
 
-### :first-child
+### first-child
 
 Très pratique dans certains cas, cette pseudo-classe cible un élément s’il est le premier enfant de son parent. Il faut donc bien faire attention, car il s’agit bien du premier enfant, et non du premier enfant d’un tel type. Par exemple :
 
@@ -297,7 +297,7 @@ Si on voit maintenant, pour le même code CSS, ce code HTML :
 
 Rien ne va se passer. En effet, le code CSS signifie "cibler tous les éléments `p` s’il s’agit du premier enfant de leur parent" et non "cibler tous les éléments `p` qui sont les premiers de ces éléments de type `p` enfants". Or dans ce cas, c’est `h2` qui est le premier enfant.
 
-### :active
+### active
 
 Cette pseudo-classe est de moins en moins utilisée. Elle est héritée de la première version du CSS et servait à cibler un lien "actif" (donc un lien au moment où il était cliqué). On peut maintenant l’utiliser sur n’importe quel élément, mais c’est assez peu usité.
 
@@ -305,7 +305,7 @@ Cette pseudo-classe est de moins en moins utilisée. Elle est héritée de la pr
 a:active { color: white }
 ```
 
-### :link
+### link
 
 Cette pseudo-classe est de moins en moins utilisée. Elle sert à cibler un lien qui n’a pas encore été visité par le visiteur actuel.
 
@@ -313,7 +313,7 @@ Cette pseudo-classe est de moins en moins utilisée. Elle sert à cibler un lien
 a:link { color: white }
 ```
 
-### :visited
+### visited
 
 Cette pseudo-classe est de moins en moins utilisée. À l’inverse du précédent, elle sert à cibler un lien qui a déjà été visité par le visiteur actuel.
 
@@ -321,7 +321,7 @@ Cette pseudo-classe est de moins en moins utilisée. À l’inverse du précéde
 a:visited { color: violet }
 ```
 
-### :focus
+### focus
 
 Cette pseudo-classe permet de cibler un élément qui a actuellement le "focus". Par exemple, lorsque vous cliquez dans un champ de texte, celui-ci prend automatiquement cette valeur dynamique de focus. c’est aussi le cas des liens, lorsqu’on navigue avec la touche "tab".
 
@@ -329,7 +329,7 @@ Cette pseudo-classe permet de cibler un élément qui a actuellement le "focus".
 input:focus { background: green }
 ```
 
-### :hover
+### hover
 
 Cette pseudo-classe est très utilisée. Elle déclenche un ensemble de propriétés au survol d’un élément par la souris. c’est par exemple très utilisé pour les menus, qui vont se dérouler ou changer de couleur au survol. On peut l’appliquer à tout élément html.
 
@@ -347,25 +347,28 @@ div:hover li a { background: white }
 
 Les pseudo-éléments s’utilisent de la même manière que les pseudo-classes ; cette appellation désigne simplement des éléments que l’on n’aurait pas pu identifier sans ajouter un autre élément (comme span ou div, par exemple).
 
-### :first-letter
+### first-letter
 
 On peut se servir de `:first-letter` pour créer des lettrines. c’est d’ailleurs sa principale utilité. Dans l’exemple suivant, tous les éléments `p` verront leur première lettre affichée en rouge.
 
-```p:first-letter { color: red }
+```css
+p:first-letter { color: red }
 ```
 
-### :first-line
+### first-line
 
 Peu utilisé, ce pseudo-élément va agir sur la première ligne de texte d’un élément.
 
-```p:first-line { color: red }
+```css
+p:first-line { color: red }
 ```
 
-### :after et :before
+### after et before
 
 Voici deux pseudo-éléments complémentaires très utiles. Ils s’utilisent avec la propriété `content` et servent à rajouter un élément avant (pour `:before`) ou après (pour `:after`) un autre élément.
 
-```span:before{ content: "→ " }
+```css
+span:before{ content: "→ " }
 ```
 
 Ainsi pour ce code :
@@ -377,6 +380,7 @@ Ainsi pour ce code :
 On obtiendra ce résultat :
 
 <div class="showcode">→ Test</div>
+
 ```css
 a:after{ content: " >>" }
 ```
