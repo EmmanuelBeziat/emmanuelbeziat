@@ -18,7 +18,7 @@
 		bonus: competences(graphiste);
 	}
 
-	caburant {
+	carburant {
 		boisson: "Coca-cola";
 	}</code></pre>
 
