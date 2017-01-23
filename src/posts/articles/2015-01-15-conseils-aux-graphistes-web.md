@@ -119,7 +119,7 @@ Il se peut que l’intégrateur-trice doive copier-coller les textes que vous au
 
 Photoshop propose différents modes de fonctionnement des calques entre eux :
 
-![Modes de fusion Photoshop](https://www.emmanuelbeziat.com/wp-content/uploads/2015/09/modes-de-fusion.jpg) { .text-align-center }
+![Modes de fusion Photoshop](https://images.emmanuelbeziat.com/photoshop-problem-6.jpg) { .text-align-center }
 
 Vous voyez de quoi je parle ? c’est un outil très cool, pour faire plein d’effets sympatoches. Hé bien **vous n’y touchez pas !** Il est strictement impossible de reproduire ces effets en web. Alors n’en faites rien, sauf si vous pouvez aplatir le résultat final (et dans le doute, demandez, encore une fois).
 
