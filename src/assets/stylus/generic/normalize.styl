@@ -15,6 +15,8 @@ html
 	line-height 1.15 /* 2 */
 	-ms-text-size-adjust 100% /* 3 */
 	-webkit-text-size-adjust 100% /* 3 */
+	box-sizing border-box
+	overflow-y scroll
 
 /* Sections
 	 ========================================================================== */
@@ -81,15 +83,6 @@ pre
 
 /* Text-level semantics
 	 ========================================================================== */
-
-/**
- * 1. Remove the gray background on active links in IE 10.
- * 2. Remove gaps in links underline in iOS 8+ and Safari 8+.
- */
-
-a
-	background-color transparent /* 1 */
-	-webkit-text-decoration-skip objects /* 2 */
 
 /**
  * Remove the outline on focused links when they are also active or hovered
@@ -195,13 +188,6 @@ video
 audio:not([controls])
 	display none
 	height 0
-
-/**
- * Remove the border on images inside links in IE 10-.
- */
-
-img
-	border-style none
 
 /**
  * Hide the overflow in IE.
