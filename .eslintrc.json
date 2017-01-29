@@ -54,10 +54,6 @@
         "jsx-quotes": "error",
         "key-spacing": "off",
         "keyword-spacing": "error",
-        "linebreak-style": [
-            "error",
-            "unix"
-        ],
         "lines-around-comment": "error",
         "max-depth": "error",
         "max-len": "off",
