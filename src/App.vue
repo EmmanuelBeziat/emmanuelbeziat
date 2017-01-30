@@ -6,7 +6,9 @@
 			<layout-menu></layout-menu>
 
 			<main class="site-main">
-				<router-view></router-view>
+				<transition :name="transitionName">
+					<router-view></router-view>
+				</transition>
 			</main>
 		</div>
 
@@ -20,6 +22,12 @@ import layoutMenu from 'components/layout/Menu'
 import layoutFooter from 'components/layout/footer'
 
 export default {
+	data () {
+		return {
+			transitionName: 'slide-left'
+		}
+	},
+
 	components: {
 		layoutHeader,
 		layoutMenu,

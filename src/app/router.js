@@ -2,7 +2,8 @@ import Vue from 'vue'
 import VueRouter from 'vue-router'
 
 import Home from '../components/Home.vue'
-import BlogList from '../components/BlogPostList.vue'
+// import BlogList from '../components/BlogPostList.vue'
+import Test from '../components/modules/Test.vue'
 import NotFound from '../components/NotFound.vue'
 
 Vue.use(VueRouter)
@@ -37,7 +38,7 @@ const routes = [
 		path: '/blog',
 		name: 'blog',
 		title: 'Blog — Emmanuel Béziat',
-		component: BlogList,
+		component: Test,
 		children: [
 			{
 				path: ':slug',
