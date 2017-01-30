@@ -28,6 +28,7 @@ module.exports = {
             "error",
             "never"
         ],
+		"no-undef": 0,
 		"no-console": 0,
 		// allow paren-less arrow functions
 		'arrow-parens': 0,

@@ -2,6 +2,8 @@ var path = require('path')
 var config = require('../config')
 var utils = require('./utils')
 var projectRoot = path.resolve(__dirname, '../')
+var blogConfig = require('../config/blog-config.js')
+var postPlugin = require('../plugin/post-plugin.js')
 
 var env = process.env.NODE_ENV
 // check env & config/index.js to decide whether to enable CSS source maps for the
@@ -52,6 +54,10 @@ module.exports = {
         test: /\.vue$/,
         loader: 'vue'
       },
+	  {
+        test: /\.md$/,
+        loader: 'bundle-loader!json-loader!../../loader/post-loader.js'
+      },
       {
         test: /\.js$/,
         loader: 'babel',
@@ -90,5 +96,9 @@ module.exports = {
         browsers: ['last 2 versions']
       })
     ]
-  }
+  },
+  plugins: [
+	  new postPlugin(),
+  ],
+  blog: blogConfig
 }

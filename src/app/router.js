@@ -2,8 +2,9 @@ import Vue from 'vue'
 import VueRouter from 'vue-router'
 
 import Home from '../components/Home.vue'
-// import BlogList from '../components/BlogPostList.vue'
-import Test from '../components/modules/Test.vue'
+import BlogList from '../components/BlogPostList.vue'
+import BlogPost from '../components/BlogPost.vue'
+import PortfolioList from '../components/PortfolioPostList.vue'
 import NotFound from '../components/NotFound.vue'
 
 Vue.use(VueRouter)
@@ -17,8 +18,7 @@ const routes = [
 	{
 		path: '/portfolio',
 		name: 'portfolio',
-		title: 'Portfolio — Emmanuel Béziat',
-		component: Home,
+		component: PortfolioList,
 		children: [
 			{
 				path: ':slug',
@@ -26,37 +26,25 @@ const routes = [
 				component: {
 					template: '<h2> test {{ slug }}</h2>'
 				}
-			},
-			{
-				path: '*',
-				title: 'Page non trouvée !',
-				component: NotFound
 			}
 		]
 	},
 	{
 		path: '/blog',
 		name: 'blog',
-		title: 'Blog — Emmanuel Béziat',
-		component: Test,
+		component: BlogList,
 		children: [
-			{
-				path: ':slug',
-				name: 'blog-post',
-				component: {
-					template: '<h2> test{{ slug }}</h2>'
-				}
-			},
-			{
-				path: '*',
-				title: 'Page non trouvée !',
-				component: NotFound
-			}
+
 		]
 	},
 	{
+		path: '/blog/:slug',
+		name: 'blog-post',
+		props: true,
+		component: BlogPost
+	},
+	{
 		path: '*',
-		title: 'Page non trouvée !',
 		component: NotFound
 	}
 ]
