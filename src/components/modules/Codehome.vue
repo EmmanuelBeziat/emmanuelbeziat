@@ -84,13 +84,10 @@ export default {
 		getHomeCode: function () {
 			const selectedCode = codes[Math.floor(Math.random() * codes.length)]
 			this.code = selectedCode
+			setTimeout(function () {
+				Prism.highlightAll()
+			}, 10)
 		}
-	},
-
-	ready () {
-		setTimeout(function () {
-			Prism.highlightAll()
-		}, 10)
 	}
 }
 </script>

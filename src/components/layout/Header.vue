@@ -1,6 +1,6 @@
 <template>
 	<header class="site-header">
-		<h1 class="site-header__title"><a class="site-header__link" href="NIQUETA RACE">Emmanuel Béziat</a></h1>
+		<h1 class="site-header__title"><router-link :to="{ name: 'home' }" class="site-header__link" exact>Emmanuel Béziat</router-link></h1>
 
 		<img class="site-header__picture" src="../../assets/images/emmanuelb.jpg" alt="Emmanuel Béziat" width="220" height="220">
 

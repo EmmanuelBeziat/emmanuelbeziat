@@ -5,6 +5,7 @@ import Home from '../components/Home.vue'
 import BlogList from '../components/BlogPostList.vue'
 import BlogPost from '../components/BlogPost.vue'
 import PortfolioList from '../components/PortfolioPostList.vue'
+import PortfolioPost from '../components/PortfolioPost.vue'
 import NotFound from '../components/NotFound.vue'
 
 Vue.use(VueRouter)
@@ -24,7 +25,7 @@ const routes = [
 				path: ':slug',
 				name: 'portfolio-post',
 				component: {
-					template: '<h2> test {{ slug }}</h2>'
+					template: PortfolioPost
 				}
 			}
 		]
