@@ -2,13 +2,13 @@ import Vue from 'vue'
 import router from './app/router.js'
 import App from './App'
 
-/* import svg from 'vue-svg-directive'
+import vSvg from 'v-svg-directive'
 
-Vue.use(svg, {
-	sprites: '/static/temp.sprite.svg',
+Vue.use(vSvg, {
+	path: '/static/sprite.svg',
 	prefix: '',
 	class: 'icon'
-})*/
+})
 
 require('./app/boot')
 

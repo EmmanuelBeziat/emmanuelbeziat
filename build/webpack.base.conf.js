@@ -4,6 +4,7 @@ var utils = require('./utils')
 var projectRoot = path.resolve(__dirname, '../')
 var blogConfig = require('../config/blog-config.js')
 var postPlugin = require('../plugin/post-plugin.js')
+var svgPlugin = require('../plugin/svg-plugin.js')
 
 var env = process.env.NODE_ENV
 // check env & config/index.js to decide whether to enable CSS source maps for the
@@ -99,6 +100,7 @@ module.exports = {
   },
   plugins: [
 	  new postPlugin(),
+	  new svgPlugin()
   ],
   blog: blogConfig
 }

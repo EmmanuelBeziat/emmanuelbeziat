@@ -1,9 +1,9 @@
 <template>
 	<div class="module-share">
-		<button @click="share('twitter')" class="c-social--twitter"><svg v-svg class="icon social__icon" sprite="twitter"></svg><span class="sr-only">Twitter</span></button>
-		<button @click="share('facebook')" class="c-social--facebook"><svg v-svg class="icon social__icon" sprite="facebook"></svg><span class="sr-only">Facebook</span></button>
-		<button @click="share('google')" class="c-social--google-plus"><svg v-svg class="icon social__icon" sprite="google-plus"></svg><span class="sr-only">Google+</span></button>
-		<button @click="share('linkedin')" class="c-social--linkedin"><svg v-svg class="icon social__icon" sprite="linkedin"></svg><span class="sr-only">LinkedIn</span></button>
+		<button @click="share('twitter')" class="c-social--twitter"><svg v-svg="'twitter'" class="icon social__icon"></svg><span class="sr-only">Twitter</span></button>
+		<button @click="share('facebook')" class="c-social--facebook"><svg v-svg="'facebook'" class="icon social__icon"></svg><span class="sr-only">Facebook</span></button>
+		<button @click="share('google')" class="c-social--google-plus"><svg v-svg="'google-plus'" class="icon social__icon"></svg><span class="sr-only">Google+</span></button>
+		<button @click="share('linkedin')" class="c-social--linkedin"><svg v-svg="'linkedin'" class="icon social__icon"></svg><span class="sr-only">LinkedIn</span></button>
 	</div>
 </template>
 
