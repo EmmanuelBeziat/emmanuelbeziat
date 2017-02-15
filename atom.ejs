@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom">
+  <title><%= webpackConfig.blog.title %></title>
+  <link href="/atom.xml" rel="self"/>
+  <link href="<%= webpackConfig.blog.scheme + '://' + webpackConfig.blog.host %>"/>
+  <updated><%= new Date().toISOString() %></updated>
+  <id><%= webpackConfig.blog.scheme + '://' + webpackConfig.blog.host %></id>
+  <author>
+    <name>Emmanuel Béziat</name>
+    <email>contact@emmanuelbeziat.com</email>
+  </author>
+  <generator uri="<%= webpackConfig.blog.scheme + '://' + webpackConfig.blog.host %>"></generator>
+  <% compilation.feed.forEach(function (post) { %>
+    <entry>
+      <title><%= post.title %></title>
+      <link href="<%= webpackConfig.blog.scheme + '://' + webpackConfig.blog.host + '/blog/' + post.path %>"/>
+      <id><%= webpackConfig.blog.scheme + '://' + webpackConfig.blog.host + '/blog/' +  post.path %></id>
+      <published><%= post.date %></published>
+      <updated><%= post.updated %></updated>
+      <summary type="html">
+        <% if (post.description) { %>
+          <%= post.description %>
+        <% } else if (post.excerpt) { %>
+          <%= post.excerpt %>
+        <% } else if (post.content) { %>
+          <%= post.content %>
+        <% } else { %>
+          No summary
+        <% } %>
+      </summary>
+    </entry>
+  <% }) %>
+</feed>

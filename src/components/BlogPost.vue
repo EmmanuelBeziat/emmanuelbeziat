@@ -23,7 +23,7 @@
 				</div>
 			</header>
 
-			<div class="post__content" v-html="rawHtml">{{ content }}</div>
+			<div class="post__content" v-html="content"></div>
 
 			<footer class="post__footer">
 				<div class="flex">

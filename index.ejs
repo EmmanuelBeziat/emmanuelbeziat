@@ -1,0 +1,67 @@
+<!doctype html>
+<html lang="fr-FR" dir="ltr" prefix="og: http://ogp.me/ns#">
+	<head>
+		<meta charset="utf-8">
+		<title><%= webpackConfig.blog.title %></title>
+		<meta name="viewport" content="width=device-width, initial-scale=1.0, shrink-to-fit=no">
+		<meta name="application-name" content="<%= webpackConfig.blog.title %>">
+		<meta name="format-detection" content="telephone=no">
+		<meta name="description" content="Portfolio en ligne d’un développeur web du sud. Billets de blogs, tutoriels, astuces, diatribes et réflexions sur le métier, le code et plein d’autres choses." id="description">
+
+		<!-- Google -->
+		<meta name="google-site-verification" content="r-jxizeApI9fc9d0Lz8hsK4L_PFTuQdtzQ2AvWM7S-g">
+
+		<!-- Twitter -->
+		<meta name="twitter:card" content="summary_large_image">
+		<meta name="twitter:site" content="@EmmanuelBeziat">
+		<meta name="twitter:title" content="<%= webpackConfig.blog.title %>" id="twTitle">
+		<meta name="twitter:url" content="https://www.emmanuelbeziat.com/" id="twUrl">
+		<meta name="twitter:image" content="https://images.emmanuelbeziat.com/social-default-tw.jpg" id="twImage">
+		<meta name="twitter:description" content="Portfolio en ligne d'un développeur web du sud. Billets de blogs, tutoriels, astuces, diatribes et réflexions sur le métier, le code et plein d'autres choses." id="twDescription">
+
+		<!-- Facebook -->
+		<meta property="og:title" content="<%= webpackConfig.blog.title %>" id="ogTitle">
+		<meta property="og:site_name" content="<%= webpackConfig.blog.title %>">
+		<meta property="og:type" content="article" id="ogType">
+		<meta property="og:url" content="https://www.emmanuelbeziat.com/" id="ogUrl">
+		<meta property="og:locale:alternate" content="fr_FR" id="ogLocale">
+		<meta property="og:image" content="https://images.emmanuelbeziat.com/social-default-fb.jpg" id="ogImage">
+		<meta property="og:description" content="Portfolio en ligne d'un développeur web du sud. Billets de blogs, tutoriels, astuces, diatribes et réflexions sur le métier, le code et plein d'autres choses." id="ogDescription">
+
+		<!-- Apple -->
+		<meta name="apple-mobile-web-app-capable" content="yes">
+		<meta name="apple-mobile-web-app-status-bar-style" content="black">
+		<meta name="apple-mobile-web-app-title" content="<%= webpackConfig.blog.title %>">
+
+		<link rel="apple-touch-icon" sizes="180x180" href="/static/touch/apple-touch-icon.png">
+		<link rel="mask-icon" href="/static/touch/safari-pinned-tab.svg" color="#f77669">
+		<link rel="icon" type="image/png" href="/static/touch/favicon-32x32.png" sizes="32x32">
+		<link rel="icon" type="image/png" href="/static/touch/favicon-16x16.png" sizes="16x16">
+		<link rel="manifest" href="/static/touch/manifest.json">
+		<meta name="msapplication-config" content="/static/touch/browserconfig.xml">
+
+		<!-- Android -->
+		<meta name="mobile-web-app-capable" content="yes">
+
+		<link rel="profile" href="http://gmpg.org/xfn/11">
+		<link rel="shortcut icon" href="/static/touch/emmanuelb-favicon.ico">
+
+		<!-- Google -->
+		<link rel="publisher" href="https://plus.google.com/+Emmanuelbeziat-web">
+		<meta name="theme-color" content="#c3e88d">
+
+		<!-- atom rss -->
+		<link rel="alternate" type="application/atom+xml" title="Emanuel Béziat :: Actualité du blog" href="https://www.emmanuelbeziat.com/atom.xml">
+
+		<!-- Start Single Page Apps for GitHub Pages -->
+		<script>(function(l){if(l.search){var q={};l.search.slice(1).split('&').forEach(function(v){var a=v.split('=');q[a[0]]=a.slice(1).join('=').replace(/~and~/g,'&');});if(q.p!==undefined){window.history.replaceState(null,null,(q.p||'')+(q.q?('?'+q.q):'')+l.hash);}}}(window.location))</script>
+		<!-- End Single Page Apps for GitHub Pages -->
+	</head>
+	<body>
+		<app></app>
+		<!-- built files will be auto injected -->
+		<noscript class="noscript">
+			Ce site ne peut pas être consulté si Javascript est désactivé.
+		</noscript>
+	</body>
+</html>
