@@ -6,7 +6,7 @@
 
 		<div class="post-list" v-else>
 			<article class="post-list__item" v-for="post in postList">
-				<h1 class="post-list__title"><router-link :to="{ name: 'blog-post', params: { slug: post.basename } }">{{ post.title }}</router-link></h1>
+				<h1 class="post-list__title"><router-link :to="{ name: 'portfolio-post', params: { slug: post.basename } }">{{ post.title }}</router-link></h1>
 
 				<div class="post-list__infos">
 					<div class="post-list__date">Posté le <time>{{ post.date | moment('dddd Do MMM YYYY') }}</time></div>

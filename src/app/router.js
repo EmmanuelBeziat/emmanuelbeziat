@@ -19,24 +19,18 @@ const routes = [
 	{
 		path: '/portfolio',
 		name: 'portfolio',
-		component: PortfolioList,
-		children: [
-			{
-				path: ':slug',
-				name: 'portfolio-post',
-				component: {
-					template: PortfolioPost
-				}
-			}
-		]
+		component: PortfolioList
+	},
+	{
+		path: '/portfolio/:slug',
+		name: 'portfolio-post',
+		props: true,
+		component: PortfolioPost
 	},
 	{
 		path: '/blog',
 		name: 'blog',
-		component: BlogList,
-		children: [
-
-		]
+		component: BlogList
 	},
 	{
 		path: '/blog/:slug',

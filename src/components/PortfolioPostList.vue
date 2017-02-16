@@ -5,18 +5,17 @@
 		</div>
 
 		<div class="portfolio__list" v-else>
-			<div class="portfolio__item" v-for="post in postList">
+			<router-link v-for="post in postList" class="portfolio__item" :to="{ name: 'portfolio-post', params: { slug: post.basename } }" >
+				<div class="portfolio__layer" :class="post.color">
+					<svg class="portfolio__image icon" v-svg="post.image"></svg>
+				</div>
 
-				<router-link class="portfolio__image icon" :to="{ name: 'portfolio-post', params: { slug: post.basename } }" >
-					<svg class="portfolio__image icon" :v-svg="post.image"></svg>
+				<div class="portfolio__caption">
+					<h2 class="portfolio__title">{{ post.title }}</h2>
 
-					<div class="portfolio__caption">
-						<h2 class="portfolio__title">{{ post.title }}</h2>
-
-						<div class="portfolio__see-more">Jeter un oeil</div>
-					</div>
-				</router-link>
-			</div>
+					<div class="portfolio__see-more">Jeter un oeil</div>
+				</div>
+			</router-link>
 		</div>
 
 		<div class="c-note c-note--success" v-if="postList.length === 0">

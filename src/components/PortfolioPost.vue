@@ -64,11 +64,11 @@ export default {
 			const that = this
 			let basename = this.$route.params.slug
 
-			require.ensure('../posts/articles/meta.json', (require) => {
-				const posts = require('../posts/articles/meta.json')
+			require.ensure('../posts/portfolio/meta.json', (require) => {
+				const posts = require('../posts/portfolio/meta.json')
 				const getPostName = this.getPostName(posts, basename)
 
-				require('../posts/articles' + getPostName)((post) => {
+				require('../posts/portfolio' + getPostName)((post) => {
 					that.content = md.render(post.rawContent),
 					that.clients = post.metaData.clients,
 					that.tags = post.metaData.tags,
