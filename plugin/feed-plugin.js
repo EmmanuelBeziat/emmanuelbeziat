@@ -3,8 +3,8 @@ var fs = require('fs-extra')
 var path = require('path')
 var slug = require('slug')
 var moment = require('moment')
-var markdown = require('markdown-parse')
-var blogConfig = require('../config/blog-config')
+var markdown = require('markdown-parse')
+// var blogConfig = require('../config/blog-config')
 
 function FeedPlugin (options) {
 	// Configure options
@@ -24,9 +24,9 @@ function generateFeedData (feeds, n) {
 
 	ls(path.resolve(folder, '*.md')).reverse().slice(0, n).forEach(function (post) {
 		var feed = {}
-		var element = fs.readFileSync(path.resolve(folder, post), 'utf8')
+		var element = fs.readFileSync(path.resolve(folder, post), 'utf8')
 
-		markdown(element, function (err, result) {
+		markdown(element, function (err, result) {
 			if (result.attributes.publish === false) {
 				return
 			}

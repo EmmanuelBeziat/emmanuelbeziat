@@ -2,10 +2,10 @@ import Vue from 'vue'
 import VueRouter from 'vue-router'
 
 import Home from '../components/Home.vue'
-import BlogList from '../components/BlogPostList.vue'
 import BlogPost from '../components/BlogPost.vue'
-import PortfolioList from '../components/PortfolioPostList.vue'
+import BlogList from '../components/BlogPostList.vue'
 import PortfolioPost from '../components/PortfolioPost.vue'
+import PortfolioList from '../components/PortfolioPostList.vue'
 import NotFound from '../components/NotFound.vue'
 
 Vue.use(VueRouter)
