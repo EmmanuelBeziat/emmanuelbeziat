@@ -1,7 +1,7 @@
 require('shelljs/global')
 var fs = require('fs-extra')
 var exec = require('child_process').exec
-var cmd = 'svg-sprite-generate -d ./src/assets/icons -o ./static/temp.sprite.svg'
+var cmd = 'svg-sprite-generate -d ./src/assets/icons -o ./static/sprite.svg'
 
 function SvgPlugin (options) {
 	// Configure options

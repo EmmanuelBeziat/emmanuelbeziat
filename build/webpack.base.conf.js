@@ -2,118 +2,105 @@ var path = require('path')
 var config = require('../config')
 var utils = require('./utils')
 var projectRoot = path.resolve(__dirname, '../')
-var blogConfig = require('../config/blog-config')
-var PostPlugin = require('../plugin/post-plugin.js')
-var SvgPlugin = require('../plugin/svg-plugin.js')
+var blogConfig = require('../config/blog-config.js')
+var postPlugin = require('../plugin/post-plugin.js')
+var svgPlugin = require('../plugin/svg-plugin.js')
+
+var env = process.env.NODE_ENV
+// check env & config/index.js to decide whether to enable CSS source maps for the
+// various preprocessor loaders added to vue-loader at the end of this file
+var cssSourceMapDev = (env === 'development' && config.dev.cssSourceMap)
+var cssSourceMapProd = (env === 'production' && config.build.productionSourceMap)
+var useCssSourceMap = cssSourceMapDev || cssSourceMapProd
 
 module.exports = {
-	entry: {
-		app: './src/main.js'
-	},
-	output: {
-		path: config.build.assetsRoot,
-		publicPath: process.env.NODE_ENV === 'production' ? config.build.assetsPublicPath : config.dev.assetsPublicPath,
-		filename: '[name].js'
-	},
-	resolve: {
-		extensions: ['', '.js', '.vue'],
-		fallback: [path.join(__dirname, '../node_modules')],
-		alias: {
-			'src': path.resolve(__dirname, '../src'),
-			'assets': path.resolve(__dirname, '../src/assets'),
-			'components': path.resolve(__dirname, '../src/components')
-		}
-	},
-	resolveLoader: {
-		fallback: [path.join(__dirname, '../node_modules')]
-	},
-	module: {
-		preLoaders: [
-			{
-				test: /\.vue$/,
-				loader: 'eslint',
-				include: projectRoot,
-				exclude: /node_modules/
-			},
-			{
-				test: /\.js$/,
-				loader: 'eslint',
-				include: projectRoot,
-				exclude: /node_modules/
-			}
-		],
-		loaders: [
-			{
-				test: /\.vue$/,
-				loader: 'vue'
-			},
-			{
-				test: /\.md$/,
-				loader: 'bundle-loader!json-loader!../../loader/post-loader.js'
-			},
-			{
-				test: /\.js$/,
-				loader: 'babel',
-				include: [
-					projectRoot,
-					'./node_modules/markdown-it-block-embed/',
-				],
-				exclude: /node_modules/,
-				query: {
-					presets: ['es2015']
-				},
-			},
-			{
-				test: /\.es6$/,
-				exclude: /node_modules/,
-				loader: 'babel',
-				query: {
-					presets: ['es2015']
-				}
-			},
-			{
-				test: /\.json$/,
-				loader: 'json'
-			},
-			{
-				test: /\.html$/,
-				loader: 'vue-html'
-			},
-			{
-				test: /\.(png|jpe?g|gif|svg)(\?.*)?$/,
-				loader: 'url',
-				query: {
-					limit: 10000,
-					name: utils.assetsPath('images/[name].[hash:7].[ext]')
-				}
-			},
-			{
-				test: /\.svg/,
-				loader: 'svg-url-loader',
-				query: {
-					limit: 10000,
-					name:utils.assetsPath('images/[name].[hash:7].[ext]')
-				}
-			},
-			{
-				test: /\.(woff2?|eot|ttf|otf)(\?.*)?$/,
-				loader: 'url',
-				query: {
-					limit: 10000,
-					name: utils.assetsPath('fonts/[name].[hash:7].[ext]')
-				}
-			}
-		]
-	},
-	eslint: {
-		formatter: require('eslint-friendly-formatter')
-	},
-	vue: {
-		loaders: utils.cssLoaders()
-	},
-	plugins: [
-		new PostPlugin(),
-		// new SvgPlugin()
-	],
-	blog: blogConfig
+  entry: {
+    app: './src/main.js'
+  },
+  output: {
+    path: config.build.assetsRoot,
+    publicPath: process.env.NODE_ENV === 'production' ? config.build.assetsPublicPath : config.dev.assetsPublicPath,
+    filename: '[name].js'
+  },
+  resolve: {
+    extensions: ['', '.js', '.vue', '.json'],
+    fallback: [path.join(__dirname, '../node_modules')],
+    alias: {
+      'vue$': 'vue/dist/vue.common.js',
+      'src': path.resolve(__dirname, '../src'),
+      'assets': path.resolve(__dirname, '../src/assets'),
+      'components': path.resolve(__dirname, '../src/components')
+    }
+  },
+  resolveLoader: {
+    fallback: [path.join(__dirname, '../node_modules')]
+  },
+  module: {
+    preLoaders: [
+      {
+        test: /\.vue$/,
+        loader: 'eslint',
+        include: projectRoot,
+        exclude: /node_modules/
+      },
+      {
+        test: /\.js$/,
+        loader: 'eslint',
+        include: projectRoot,
+        exclude: /node_modules/
+      }
+    ],
+    loaders: [
+      {
+        test: /\.vue$/,
+        loader: 'vue'
+      },
+	  {
+        test: /\.md$/,
+        loader: 'bundle-loader!json-loader!../../loader/post-loader.js'
+      },
+      {
+        test: /\.js$/,
+        loader: 'babel',
+        include: projectRoot,
+        exclude: /node_modules/
+      },
+      {
+        test: /\.json$/,
+        loader: 'json'
+      },
+      {
+        test: /\.(png|jpe?g|gif|svg)(\?.*)?$/,
+        loader: 'url',
+        query: {
+          limit: 10000,
+          name: utils.assetsPath('img/[name].[hash:7].[ext]')
+        }
+      },
+      {
+        test: /\.(woff2?|eot|ttf|otf)(\?.*)?$/,
+        loader: 'url',
+        query: {
+          limit: 10000,
+          name: utils.assetsPath('fonts/[name].[hash:7].[ext]')
+        }
+      }
+    ]
+  },
+  eslint: {
+    formatter: require('eslint-friendly-formatter')
+  },
+  vue: {
+    loaders: utils.cssLoaders({ sourceMap: useCssSourceMap }),
+    postcss: [
+      require('autoprefixer')({
+        browsers: ['last 2 versions']
+      })
+    ]
+  },
+  plugins: [
+	  new postPlugin(),
+	  new svgPlugin()
+  ],
+  blog: blogConfig
 }

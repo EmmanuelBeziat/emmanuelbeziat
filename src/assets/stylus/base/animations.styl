@@ -1,14 +1,26 @@
 // Pages transitions
-.fade-transition
-	transition transform .2s ease-in-out, opacity .2s ease-in-out
-
-.fade-enter
-.fade-leave
-	transform translateX(-15%)
+.slide-left-enter
+.slide-right-leave-to
 	opacity 0
+	transform translateX(-15%)
 
-.fade-enter
+.slide-right-enter
+.slide-left-leave-to
+	opacity 0
 	transform translateX(15%)
+
+.slide-left-enter-active
+.slide-right-enter-active
+.slide-left-leave-active
+.slide-right-leave-active
+	transition transform .25s ease-in-out, opacity .25s ease-in-out
+	position relative
+	z-index 5
+
+.slide-left-enter-to
+.slide-right-enter-to
+	transform translateX(0)
+	opacity 1
 
 // Animation icons
 .animate-spin

@@ -8,6 +8,7 @@
 import moduleCopyright from '../modules/Copyright'
 
 export default {
+	name: 'footer',
 	components: {
 		moduleCopyright
 	}

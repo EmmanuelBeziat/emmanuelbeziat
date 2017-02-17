@@ -1,10 +1,10 @@
 <template>
 	<div class="blog">
-		<div v-if="$loadingRouteData">
+		<div v-if="!content">
 			<module-loader></module-loader>
 		</div>
 
-		<article class="post portfolio" v-if="!$loadingRouteData">
+		<article class="post" v-else>
 			<header class="post__header">
 				<h1 class="post__title">{{ title }}</h1>
 
@@ -21,10 +21,10 @@
 				</div>
 			</header>
 
-			<div class="post__content" v-linkable>{{{ content }}}</div>
+			<div class="post__content" v-html="content"></div>
 
 			<footer class="post__footer">
-				<a class="post__navigation post__navigation--previous icon-arrow-left" v-link="{ name: 'portfolio', activeClass: '' }">Revenir au portfolio</a>
+				<router-link :to="{ name: 'portfolio' }" class="post__navigation--previous icon-arrow-left">Revenir au portfolio</router-link>
 			</footer>
 
 		</article>
@@ -33,25 +33,15 @@
 
 <script>
 import moduleLoader from '../components/modules/Loader.vue'
+import md from '../app/render.js'
 
-var md = require('markdown-it')({
-	html: true,
-	breaks: true,
-	linkify: true
-})
-.use(require('markdown-it-attrs'))
-.use(require('markdown-it-block-embed'), {
-	containerClassName: 'video',
-	serviceClassPrefix: 'video--',
-	outputPlayerSize: false,
-	allowFullScreen: true
-})
-
-module.exports = {
+export default {
+	name: 'blog-post',
 	data () {
 		return {
 			content: null,
 			title: null,
+			image: null,
 			tags: null,
 			clients: null
 		}
@@ -61,7 +51,32 @@ module.exports = {
 		moduleLoader
 	},
 
+	created: function () {
+		this.getPost()
+	},
+
+	watch: {
+		'$router': 'getPost'
+	},
+
 	methods: {
+		getPost: function () {
+			const that = this
+			let basename = this.$route.params.slug
+
+			require.ensure('../posts/portfolio/meta.json', (require) => {
+				const posts = require('../posts/portfolio/meta.json')
+				const getPostName = this.getPostName(posts, basename)
+
+				require('../posts/portfolio' + getPostName)((post) => {
+					that.content = md.render(post.rawContent),
+					that.clients = post.metaData.clients,
+					that.tags = post.metaData.tags,
+					that.title = post.metaData.title
+				})
+			})
+		},
+
 		getPostName: function (posts, basename) {
 			let fileName
 			posts.forEach(function (post) {
@@ -73,42 +88,9 @@ module.exports = {
 		}
 	},
 
-	head: {
-		title: function () {
-			return {
-				inner: this.title + ' [Portfolio]',
-				separator: '—'
-			}
-		}
-	},
-
-	route: {
-		data (transition) {
-			const that = this
-			let interval
-			let basename = transition.to.params.slug
-
-			require.ensure('../posts/portfolio/meta.json', (require) => {
-				const posts = require('../posts/portfolio/meta.json')
-				const getPostName = this.getPostName(posts, basename)
-
-				require('../posts/portfolio' + getPostName)((post) => {
-					transition.next({
-						content: md.render(post.rawContent),
-						clients: post.metaData.clients,
-						tags: post.metaData.tags,
-						title: post.metaData.title
-					})
-				})
-			})
-
-			interval = setInterval(function () {
-				if (that.title !== null) {
-					clearInterval(interval)
-					that.$emit('updateHead')
-				}
-			}, 100)
-		}
+	ready () {
+		// Smooth Scroll
+		// SmoothScroll.init()
 	}
 }
 </script>

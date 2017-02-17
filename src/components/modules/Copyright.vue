@@ -1,10 +1,9 @@
 <template>
-© {{ year }} Emmanuel Béziat
+	<div>© {{ year }} Emmanuel Béziat</div>
 </template>
 
 <script>
 import Moment from 'moment'
-
 export default {
 	data () {
 		return {

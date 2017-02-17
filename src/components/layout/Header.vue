@@ -1,24 +1,24 @@
 <template>
 	<header class="site-header">
-		<h1 class="site-header__title"><a class="site-header__link" v-link="{ name: 'home', exact: true, classActive: 'site-header__link--active' }">Emmanuel Béziat</a></h1>
+		<h1 class="site-header__title"><router-link :to="{ name: 'home' }" class="site-header__link" exact>Emmanuel Béziat</router-link></h1>
 
 		<img class="site-header__picture" src="../../assets/images/emmanuelb.jpg" alt="Emmanuel Béziat" width="220" height="220">
 
 		<div class="social">
-			<a href="{{ social.twitter }}" class="social__link social__link--twitter">
-				<svg v-svg class="icon social__icon" sprite="twitter"></svg><span class="sr-only">Twitter</span>
+			<a :href="social.twitter" class="social__link social__link--twitter">
+				<svg v-svg="'twitter'" class="icon social__icon"></svg><span class="sr-only">Twitter</span>
 			</a>
-			<a href="{{ social.facebook }}" class="social__link social__link--facebook">
-				<svg v-svg class="icon social__icon" sprite="facebook"></svg><span class="sr-only">Facebook</span>
+			<a :href="social.facebook" class="social__link social__link--facebook">
+				<svg v-svg="'facebook'" class="icon social__icon"></svg><span class="sr-only">Facebook</span>
 			</a>
-			<a href="{{ social.github }}" class="social__link social__link--github">
-				<svg v-svg class="icon social__icon" sprite="github"></svg><span class="sr-only">Github</span>
+			<a :href="social.github" class="social__link social__link--github">
+				<svg v-svg="'github'" class="icon social__icon"></svg><span class="sr-only">Github</span>
 			</a>
-			<a href="{{ social.linkedin }}" class="social__link social__link--linkedin">
-				<svg v-svg class="icon social__icon" sprite="linkedin"></svg><span class="sr-only">LinkedIn</span>
+			<a :href="social.linkedin" class="social__link social__link--linkedin">
+				<svg v-svg="'linkedin'" class="icon social__icon"></svg><span class="sr-only">LinkedIn</span>
 			</a>
-			<a href="{{ social.codepen }}" class="social__link social__link--codepen">
-				<svg v-svg class="icon social__icon" sprite="codepen"></svg><span class="sr-only">Codepen</span>
+			<a :href="social.codepen" class="social__link social__link--codepen">
+				<svg v-svg="'codepen'" class="icon social__icon"></svg><span class="sr-only">Codepen</span>
 			</a>
 		</div>
 
@@ -38,6 +38,7 @@
 import moduleCopyright from '../modules/Copyright'
 
 export default {
+	name: 'header',
 	data () {
 		return {
 			social: {

@@ -1,7 +1,7 @@
 <template>
 	<section class="not-found">
-		<div class="not-found__image {{ image }}"></div>
-		<div class="not-found__404">{{{ title }}}</div>
+		<div class="not-found__image" :class="image"></div>
+		<div class="not-found__404">nop</div>
 
 		<h1 class="not-found__title">Page introuvable</h1>
 		<div class="not-found__content">
@@ -19,15 +19,12 @@ const erreurs = {
 }
 
 export default {
+	name: 'notfound',
 	data () {
 		return {
 			title: null,
 			image: null
 		}
-	},
-
-	created: function () {
-		this.errorSet()
 	},
 
 	methods: {

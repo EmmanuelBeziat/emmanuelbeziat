@@ -1,26 +1,24 @@
 <template>
 	<section class="portfolio">
-		<div v-if="$loadingRouteData">
+		<div v-if="postList.length === 0">
 			<module-loader></module-loader>
 		</div>
 
-		<div class="portfolio__list" v-if="!$loadingRouteData">
-			<div class="portfolio__item" v-for="post in postList">
-				<div class="portfolio__layer portfolio__layer--{{ post.color }}">
-					<svg class="portfolio__image icon" v-svg :sprite="post.image"></svg>
+		<div class="portfolio__list" v-else>
+			<router-link v-for="post in postList" class="portfolio__item" :to="{ name: 'portfolio-post', params: { slug: post.basename } }" >
+				<div class="portfolio__layer" :class="post.color">
+					<svg class="portfolio__image icon" v-svg="post.image"></svg>
 				</div>
 
 				<div class="portfolio__caption">
 					<h2 class="portfolio__title">{{ post.title }}</h2>
 
-					<div class="portfolio__infos">
-						<a v-link="{ name: 'portfolio-post', params: { slug: post.basename} }" class="portfolio__see-more">Jeter un oeil</a>
-					</div>
+					<div class="portfolio__see-more">Jeter un oeil</div>
 				</div>
-			</div>
+			</router-link>
 		</div>
 
-		<div class="c-note c-note--success" v-if="!$loadingRouteData">
+		<div class="c-note c-note--success" v-if="postList.length === 0">
 			<div class="portfolio__thanks">
 				Et bien d’autres au fil des ans <small>(merci, hé ! <i class="icon-heart"></i>)</small>
 			</div>
@@ -43,9 +41,26 @@ export default {
 		moduleLoader
 	},
 
+	created: function () {
+		this.getFile()
+	},
+
+	watch: {
+		'$route': 'getFile'
+	},
+
 	methods: {
+		getFile: function () {
+			require.ensure('../posts/portfolio/meta.json', (require) => {
+				const posts = require('../posts/portfolio/meta.json')
+				const extractList = this.extractList(posts)
+
+				extractList
+			})
+		},
+
 		extractList: function (posts) {
-			var that = this
+			const that = this
 			posts.forEach(function (post) {
 				if (!that.datePast(post.date)) return
 				if (!that.isPublished(post.publish)) return
@@ -60,26 +75,6 @@ export default {
 
 		isPublished: function (publish) {
 			return publish || false
-		}
-	},
-
-	head: {
-		title: {
-			inner: 'Portfolio',
-			separator: '—'
-		}
-	},
-
-	route: {
-		data (transition) {
-			require.ensure('../posts/portfolio/meta.json', (require) => {
-				const posts = require('../posts/portfolio/meta.json')
-				const extractList = this.extractList(posts)
-
-				transition.next({
-					extractList
-				})
-			})
 		}
 	}
 }

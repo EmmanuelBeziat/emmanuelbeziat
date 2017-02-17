@@ -1,33 +1,19 @@
 import Vue from 'vue'
-import VueRouter from 'vue-router'
-import VueResource from 'vue-resource'
-import VueHead from 'vue-head'
+import router from './app/router.js'
+import App from './App'
 
-import { redirects, routes } from './app/routes'
-import { config, before, after } from './app/router'
+import vSvg from 'v-svg-directive'
 
-import svg from 'vue-svg-directive'
-
-Vue.use(VueHead)
-Vue.use(VueRouter)
-Vue.use(VueResource)
-
-Vue.use(svg, {
-	sprites: '/static/temp.sprite.svg',
+Vue.use(vSvg, {
+	path: '/static/sprite.svg',
 	prefix: '',
 	class: 'icon'
 })
 
 require('./app/boot')
 
-// Initialize router with options
-const Router = new VueRouter(config)
+const app = new Vue(
+	Vue.util.extend({ router }, App)
+).$mount('#app')
 
-Router.map(routes)
-Router.redirect(redirects)
-Router.beforeEach(before)
-Router.afterEach(after)
-
-// Initialize the whole thing
-import App from './app'
-Router.start(App, 'app')
+export { app, router }
