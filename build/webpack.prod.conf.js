@@ -51,7 +51,7 @@ var webpackConfig = merge(baseWebpackConfig, {
       filename: process.env.NODE_ENV === 'testing'
         ? 'index.html'
         : config.build.index,
-      template: 'index.ejs',
+      template: 'src/templates/index.ejs',
       inject: true,
       minify: {
         removeComments: true,
@@ -76,14 +76,14 @@ var webpackConfig = merge(baseWebpackConfig, {
 	new FeedPlugin(),
 	new HtmlWebpackPlugin({
 		filename: 'atom.xml',
-		template: 'atom.ejs',
+		template: '!!pug-loader!src/templates/atom.pug',
 		inject: false,
 		xhtml: true
 	}),
 	new SitemapPlugin(),
 	new HtmlWebpackPlugin({
 		filename: 'sitemap.xml',
-		template: 'sitemap.ejs',
+		template: '!!pug-loader!src/templates/sitemap.pug',
 		inject: false,
 		xhtml: true
 	}),
@@ -109,7 +109,7 @@ var webpackConfig = merge(baseWebpackConfig, {
     }),
 	// Copy files for dist root
 	new CopyWebpackPlugin([
-	  { from: 'gh-pages' }
+	  { from: 'root' }
 	]),
 
 	new ImageminPlugin({

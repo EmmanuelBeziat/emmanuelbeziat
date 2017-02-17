@@ -1,0 +1,7 @@
+- var site = { url: webpackConfig.blog.scheme + '://' + webpackConfig.blog.host }
+
+doctype xml
+urlset( xmlns="http://www.sitemaps.org/schemas/sitemap/0.9")
+	each postUrl in compilation.sitemaps
+		url
+			loc= site.url + '/blog/' + postUrl
