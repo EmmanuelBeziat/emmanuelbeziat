@@ -61,8 +61,6 @@ carburant {
 
 <script>
 const codes = ['html', 'css', 'javascript', 'php']
-import Prism from 'prismjs'
-import 'prismjs/components/prism-php.min.js'
 
 export default {
 	name: 'codehome',

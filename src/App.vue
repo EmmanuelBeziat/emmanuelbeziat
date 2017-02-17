@@ -6,7 +6,7 @@
 			<layout-menu></layout-menu>
 
 			<main class="site-main">
-				<transition :name="transitionName">
+				<transition :name="transitionName" mode="out-in">
 					<router-view></router-view>
 				</transition>
 			</main>
@@ -25,6 +25,14 @@ export default {
 	data () {
 		return {
 			transitionName: 'slide-left'
+		}
+	},
+
+	watch: {
+		'$route' (to, from) {
+			const toDepth = to.path.split('/').length
+			const fromDepth = from.path.split('/').length
+			this.transitionName = toDepth < fromDepth ? 'slide-right' : 'slide-left'
 		}
 	},
 
