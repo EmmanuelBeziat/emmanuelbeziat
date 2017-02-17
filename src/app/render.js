@@ -1,4 +1,5 @@
 import Prism from 'prismjs'
+import 'prismjs/plugins/toolbar/prism-toolbar.js'
 import 'prismjs/plugins/show-language/prism-show-language.min.js'
 import 'prismjs/components/prism-bash.min.js'
 

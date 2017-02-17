@@ -45,6 +45,7 @@ pre[class*="language-"]
 	margin 2em 0
 	overflow auto
 	border-radius .2em
+	position relative
 
 	@media (max-width $breakpoint-mobile)
 		margin 2em -2rem
@@ -158,26 +159,22 @@ pre[data-line]
 	top auto
 	bottom .4em
 
-div.prism-show-language
-	position relative
+pre.code-toolbar > .toolbar
+	position absolute
+	right 0
+	top 0
 
-	& > div.prism-show-language-label
-		color $color-text
-		background-color lighten($color-background, 10%)
-		border-radius 0 3px 0 3px
-		display inline-block
-		position absolute
-		top 16px
-		right 0
-		width auto
-		height auto
-		font-size .7em
-		padding 0 .6em
-		text-shadow none
-		z-index 1
-		box-shadow none
-		transform none
-
-		@media (max-width $breakpoint-mobile)
-			right -2rem
-			top 0
+pre.code-toolbar .toolbar-item
+	color $color-text
+	background-color lighten($color-background, 10%)
+	border-radius 0 3px 0 3px
+	display inline-block
+	position absolute
+	top 0
+	right 0
+	font-size .75rem
+	padding .25em .6em
+	text-shadow none
+	z-index 1
+	box-shadow none
+	transform none

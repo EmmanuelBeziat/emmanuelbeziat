@@ -6,6 +6,10 @@ var merge = require('webpack-merge')
 var baseWebpackConfig = require('./webpack.base.conf')
 var ExtractTextPlugin = require('extract-text-webpack-plugin')
 var HtmlWebpackPlugin = require('html-webpack-plugin')
+var CopyWebpackPlugin = require('copy-webpack-plugin')
+var ImageminPlugin = require('imagemin-webpack-plugin').default
+var FeedPlugin = require('../plugin/feed-plugin.js')
+var SitemapPlugin = require('../plugin/sitemap-plugin.js')
 var env = process.env.NODE_ENV === 'testing'
   ? require('../config/test.env')
   : config.build.env
@@ -46,7 +50,7 @@ var webpackConfig = merge(baseWebpackConfig, {
       filename: process.env.NODE_ENV === 'testing'
         ? 'index.html'
         : config.build.index,
-      template: 'index.html',
+      template: 'index.ejs',
       inject: true,
       minify: {
         removeComments: true,
@@ -58,6 +62,30 @@ var webpackConfig = merge(baseWebpackConfig, {
       // necessary to consistently work with multiple chunks via CommonsChunkPlugin
       chunksSortMode: 'dependency'
     }),
+	/* new HtmlWebpackPlugin({
+		filename: '404.html',
+		template: '404.html',
+		inject: false,
+		minify: {
+			removeComments: true,
+			collapseWhitespace: true,
+			removeAttributeQuotes: true
+		}
+	}), */
+	new FeedPlugin(),
+	new HtmlWebpackPlugin({
+		filename: 'atom.xml',
+		template: 'atom.ejs',
+		inject: false,
+		xhtml: true
+	}),
+	new SitemapPlugin(),
+	new HtmlWebpackPlugin({
+		filename: 'sitemap.xml',
+		template: 'sitemap.ejs',
+		inject: false,
+		xhtml: true
+	}),
     // split vendor js into its own file
     new webpack.optimize.CommonsChunkPlugin({
       name: 'vendor',
@@ -77,7 +105,27 @@ var webpackConfig = merge(baseWebpackConfig, {
     new webpack.optimize.CommonsChunkPlugin({
       name: 'manifest',
       chunks: ['vendor']
-    })
+    }),
+	// Copy files for dist root
+	new CopyWebpackPlugin([
+	  { from: 'gh-pages' }
+	]),
+
+	new ImageminPlugin({
+		disable: false,
+		optipng: {
+			optimizationLevel: 3
+		},
+		gifsicle: {
+			optimizationLevel: 1
+		},
+		jpegtran: {
+			progressive: false
+		},
+		svgo: {},
+		pngquant: null, // pngquant is not run unless you pass options here
+		plugins: []
+	})
   ]
 })
 
