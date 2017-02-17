@@ -19,15 +19,9 @@
 	bonus: competences(graphiste);
 }
 
-<<<<<<< HEAD
-	carburant {
-		boisson: "Coca-cola";
-	}</code></pre>
-=======
 carburant {
-	boisson: "Coca-cola";
+	boisson: 'Coca-cola';
 }</code></pre>
->>>>>>> vue2
 
 <pre class="language-javascript" v-else-if="code == 'javascript'"><code>const metiers = {
 	developpeur: [ 'web', 'front-end' ],

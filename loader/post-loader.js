@@ -1,10 +1,10 @@
-var markdown = require('markdown-parse')
+var markdown = require('markdown-parse')
 var metaData = {}
 var rawContent
 
 module.exports = function (post) {
 
-	markdown(post, function(err, result) {
+	markdown(post, function(err, result) {
 		rawContent = result.body
 		metaData.title = result.attributes.title
 		metaData.image = result.attributes.image || 'https://images.emmanuelbeziat.com/social-default-fb.jpg'
@@ -16,7 +16,7 @@ module.exports = function (post) {
 		metaData.description = result.attributes.description || ''
 		metaData.disqus = result.attributes.disqus || true
 		metaData.publish = result.attributes.publish || true
-	});
+	})
 
 	return JSON.stringify({
 		rawContent: rawContent,

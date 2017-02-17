@@ -1,11 +1,7 @@
 {
   "name": "emmanuelbeziat",
   "version": "2.0.0",
-<<<<<<< HEAD
-  "description": "My personal website, with vue.js",
-=======
   "description": "My website, now powered by VueJS 2. So 2017!",
->>>>>>> vue2
   "author": "Emmanuel Béziat <contact@emmanuelbeziat.com>",
   "private": true,
   "scripts": {
