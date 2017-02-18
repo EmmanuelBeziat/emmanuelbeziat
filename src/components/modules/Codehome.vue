@@ -20,7 +20,7 @@
 }
 
 carburant {
-	boisson: 'Coca-cola';
+	boisson: "Coca-cola";
 }</code></pre>
 
 <pre class="language-javascript" v-else-if="code == 'javascript'"><code>const metiers = {

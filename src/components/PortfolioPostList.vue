@@ -18,7 +18,7 @@
 			</router-link>
 		</div>
 
-		<div class="c-note c-note--success" v-if="postList.length === 0">
+		<div class="c-note c-note--success" v-if="postList.length !== 0">
 			<div class="portfolio__thanks">
 				Et bien d’autres au fil des ans <small>(merci, hé ! <i class="icon-heart"></i>)</small>
 			</div>
