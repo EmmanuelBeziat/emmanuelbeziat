@@ -1,4 +1,8 @@
-// Pages transitions
+/**
+ * Pages transitions
+ **/
+
+// Slide
 .slide-left-enter
 .slide-right-leave-to
 	opacity 0
@@ -14,13 +18,12 @@
 .slide-left-leave-active
 .slide-right-leave-active
 	transition transform .25s ease-in-out, opacity .25s ease-in-out
-	position relative
-	z-index 5
 
 .slide-left-enter-to
 .slide-right-enter-to
 	transform translateX(0)
 	opacity 1
+
 
 // Animation icons
 .animate-spin
