@@ -86,11 +86,6 @@ export default {
 			})
 			return fileName
 		}
-	},
-
-	ready () {
-		// Smooth Scroll
-		// SmoothScroll.init()
 	}
 }
 </script>

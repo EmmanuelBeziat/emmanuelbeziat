@@ -3,16 +3,21 @@
   "version": "2.0.0",
   "description": "My website, now powered by VueJS 2. So 2017!",
   "author": "Emmanuel Béziat <contact@emmanuelbeziat.com>",
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "git+https://emmanuelbeziat@github.com/EmmanuelBeziat/vscode-great-icons.git"
+  },
   "private": false,
   "scripts": {
-	"start": "sudo npm i && sudo npm run postinstall",
+    "start": "sudo npm i && sudo npm run postinstall",
     "dev": "node build/dev-server.js",
     "build": "node build/build.js",
     "unit": "karma start test/unit/karma.conf.js --single-run",
     "test": "npm run unit",
     "lint": "eslint --ext .js,.vue src test/unit/specs",
-	"postinstall": "rm -rf node_modules/webpack/node_modules/uglify-js",
-	"post": "node build/new-post.js"
+    "postinstall": "rm -rf node_modules/webpack/node_modules/uglify-js",
+    "post": "node build/new-post.js"
   },
   "dependencies": {
     "markdown-it": "^8.3.0",
@@ -81,8 +86,10 @@
     "sinon": "^1.17.7",
     "sinon-chai": "^2.8.0",
     "slug": "^0.9.1",
+    "smooth-scroll": "github:cferdinandi/smooth-scroll",
     "stylus": "^0.54.5",
     "stylus-loader": "^2.5.0",
+    "uglify-js": "git://github.com/mishoo/UglifyJS2#harmony",
     "url-loader": "^0.5.7",
     "vue-loader": "^11.0.0",
     "vue-style-loader": "^2.0.0",
@@ -91,8 +98,7 @@
     "webpack": "1.13.1",
     "webpack-dev-middleware": "^1.10.0",
     "webpack-hot-middleware": "^2.17.0",
-    "webpack-merge": "^2.6.1",
-	"uglify-js": "git://github.com/mishoo/UglifyJS2#harmony"
+    "webpack-merge": "^2.6.1"
   },
   "engines": {
     "node": ">= 4.0.0",

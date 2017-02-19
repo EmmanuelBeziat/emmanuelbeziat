@@ -23,6 +23,7 @@
 <script>
 import Moment from 'moment'
 import moduleLoader from '../components/modules/Loader.vue'
+import smoothScroll from 'smoothScroll'
 
 export default {
 	data () {
