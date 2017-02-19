@@ -89,6 +89,7 @@ export default {
 	},
 
 	ready () {
+		// Smooth Scroll
 		// SmoothScroll.init()
 	}
 }
