@@ -27,6 +27,14 @@ export default {
 		}
 	},
 
+	created () {
+		this.errorSet()
+	},
+
+	watch: {
+		'$route': 'errorSet'
+	},
+
 	methods: {
 		errorSet: function () {
 			const i = Math.floor(Math.random() * erreurs.images.length)
