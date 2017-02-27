@@ -25,7 +25,7 @@ function generateSprite () {
 
 	exec(cmd, function (error, stdout, stderr) {
 		if (error) {
-			console.log('[svg sprite] error')
+			console.log('[svg sprite] error: ' + stderr)
 		}
 		else {
 			console.log('[svg sprite] complete!')

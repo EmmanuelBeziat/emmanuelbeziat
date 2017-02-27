@@ -10,7 +10,8 @@
   },
   "private": false,
   "scripts": {
-    "start": "sudo npm i && sudo npm run postinstall",
+    "start": "npm i && npm run postinstall",
+	"reset": "rm -rf node_modules && npm run start",
     "dev": "node build/dev-server.js",
     "build": "node build/build.js",
     "unit": "karma start test/unit/karma.conf.js --single-run",
