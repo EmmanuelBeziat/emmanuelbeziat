@@ -14,6 +14,10 @@ require('./app/boot')
 
 const app = new Vue(
 	Vue.util.extend({ router }, App)
-).$mount('#app')
+)
+
+document.addEventListener('DOMContentLoaded', function () {
+	app.$mount('#app')
+})
 
 export { app, router }

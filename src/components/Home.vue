@@ -45,7 +45,7 @@ export default {
 
 	methods: {
 		checkAge () {
-			const date = '16.09.1987-02:26'
+			const date = '16.09.1988-02:26'
 			const format = 'DD.MM.YYYY-HH:mm'
 			const birthday = Moment(date, format)
 			const nextbd = Moment(date, format).set({ 'year': Moment().year() })
