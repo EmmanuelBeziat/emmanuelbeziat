@@ -5,7 +5,7 @@
 		</div>
 
 		<div class="portfolio__list" v-else>
-			<router-link v-for="post in postList" class="portfolio__item" :to="{ name: 'portfolio-post', params: { slug: post.basename } }" >
+			<router-link v-for="post in postList" :key="post.date" class="portfolio__item" :to="{ name: 'portfolio-post', params: { slug: post.basename } }" >
 				<div class="portfolio__layer" :class="post.color">
 					<svg class="portfolio__image icon" v-svg="post.image"></svg>
 				</div>

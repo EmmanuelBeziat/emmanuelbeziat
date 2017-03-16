@@ -5,7 +5,7 @@
 		</div>
 
 		<div class="post-list" v-else>
-			<article class="post-list__item" v-for="post in postList">
+			<article class="post-list__item" v-for="post in postList" :key="post.date">
 				<h1 class="post-list__title"><router-link :to="{ name: 'blog-post', params: { slug: post.basename } }">{{ post.title }}</router-link></h1>
 
 				<div class="post-list__infos">
