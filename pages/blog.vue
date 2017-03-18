@@ -1,9 +1,19 @@
 <template>
-	<div class="blog">
-		<div v-for="post in posts">
-			<nuxt-link :to="'/blog/'+post.id">{{ post.title }}</nuxt-link>
+	<section class="blog">
+		<div class="post-list">
+			<article class="post-list__item" v-for="post in posts">
+				<h1 class="post-list__title"><nuxt-link :to="'/blog/'+post.slug">{{ post.title }}</nuxt-link></h1>
+
+				<div class="post-list__infos">
+					<div class="post-list__date">Posté le <time>{{ post.date }}</time></div>
+
+					<div class="post-list__tags">
+						<span class="c-tag" v-for="tag in post.tags">{{ tag }}</span>
+					</div>
+				</div>
+			</article>
 		</div>
-	</div>
+	</section>
 </template>
 
 <script>
@@ -11,7 +21,7 @@ import axios from 'axios'
 
 export default {
 	data () {
-		return axios.get('https://jsonplaceholder.typicode.com/posts')
+		return axios.get('http://localhost:3001/posts')
 		.then((res) => {
 			return { posts: res.data }
 		})

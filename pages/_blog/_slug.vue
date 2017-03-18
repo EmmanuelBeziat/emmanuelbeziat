@@ -10,11 +10,12 @@ import axios from 'axios'
 
 export default {
 	validate ({ params }) {
-		return !isNaN(+params.id)
+		console.log(+params)
+		return !isNaN(+params.slug)
 	},
 
 	data ({ params, error }) {
-		return axios.get(`https://jsonplaceholder.typicode.com/posts/${+params.id}`)
+		return axios.get(`http://localhost:3001/posts/${+params.slug}`)
 		.then((res) => res.data)
 		.catch(() => {
 			error({ message: 'Post introuvable', statusCode: 404 })
