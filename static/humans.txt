@@ -21,5 +21,5 @@
 /* SITE */
 	Language: French
 	Doctype: HTML5
-	Components: Vue.js, Stylus, EJS, Webpack
-	Software: VisualStudio Code, SourceTree, CMDer/iTerm
+	Components: Vue.js, Nuxt, Stylus, Webpack
+	Software: VisualStudio Code, SourceTree, CMDer/iTerm2

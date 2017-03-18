@@ -60,11 +60,11 @@ carburant {
 </template>
 
 <script>
-/* import Prism from 'prismjs'
+import Prism from 'prismjs'
 import 'prismjs/plugins/toolbar/prism-toolbar.js'
 import 'prismjs/plugins/show-language/prism-show-language.min.js'
 import 'prismjs/components/prism-bash.min.js'
-import 'prismjs/components/prism-php.min.js' */
+import 'prismjs/components/prism-php.min.js'
 
 const codes = ['html', 'css', 'javascript', 'php']
 
@@ -88,9 +88,11 @@ export default {
 		getHomeCode: function () {
 			const selectedCode = codes[Math.floor(Math.random() * codes.length)]
 			this.code = selectedCode
-			/* setTimeout(function () {
-				Prism.highlightAll()
-			}, 10) */
+			if (process.BROWSER_BUILD) {
+				setTimeout(function () {
+					Prism.highlightAll()
+				}, 10)
+			}
 		}
 	}
 }
