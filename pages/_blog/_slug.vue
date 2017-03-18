@@ -10,7 +10,6 @@ import axios from 'axios'
 
 export default {
 	validate ({ params }) {
-		console.log(+params)
 		return !isNaN(+params.slug)
 	},
 
