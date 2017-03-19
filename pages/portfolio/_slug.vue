@@ -40,10 +40,6 @@ export default {
 
 	async data ({ params, error }) {
 		const { data } = await axios.get(`http://localhost:3001/portfolio/${params.slug}`)
-			.then((res) => res.data)
-			.catch(() => {
-				error({ message: 'Cet article n’existe pas', statusCode: 404 })
-			})
 		data.content = markdown.render(data.content)
 
 		return data
