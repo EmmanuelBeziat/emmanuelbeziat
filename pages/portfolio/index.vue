@@ -3,7 +3,7 @@
 		<div class="portfolio__list">
 			<router-link v-for="post in posts" class="portfolio__item" :to="'/portfolio/'+post.slug" >
 				<div class="portfolio__layer" :class="post.color">
-					<svg class="portfolio__image icon" :v-svg="post.image"></svg>
+					<svg class="portfolio__image icon" v-svg="post.image"></svg>
 				</div>
 
 				<div class="portfolio__caption">
