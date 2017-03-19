@@ -19,6 +19,7 @@ import ModuleCodehome from '~components/Codehome'
 
 export default {
 	name: 'home',
+
 	data () {
 		return {
 			age: null,

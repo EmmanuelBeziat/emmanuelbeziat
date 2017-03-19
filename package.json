@@ -32,6 +32,7 @@
     "prismjs": "^1.6.0",
     "stylus": "^0.54.5",
     "stylus-loader": "^3.0.1",
-    "v-svg-directive": "^1.1.0"
+    "v-svg-directive": "^1.1.0",
+    "vue-disqus": "^2.0.2"
   }
 }

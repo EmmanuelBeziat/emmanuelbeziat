@@ -20,6 +20,8 @@
 import axios from 'axios'
 
 export default {
+	name: 'blogList',
+
 	data () {
 		return axios.get('http://localhost:3001/posts')
 		.then((res) => {

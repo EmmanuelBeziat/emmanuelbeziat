@@ -1,24 +1,52 @@
 <template>
-	<article class="post">
-		<h1>{{ title }}</h1>
-		{{ body }}
-	</article>
+	<div class="blog">
+		<article class="post">
+			<header class="post__header">
+				<h1 class="post__title">{{ title }}</h1>
+
+				<div class="post__infos">
+					<div class="flex">
+						<div class="post__tags">
+							<span class="c-tag" v-for="tag in tags">{{ tag }}</span>
+						</div>
+
+						<div class="post__tags">
+							<span class="c-tag" v-for="client in clients">{{ client }}</span>
+						</div>
+					</div>
+				</div>
+			</header>
+
+			<div class="post__content" v-html="content"></div>
+
+			<footer class="post__footer">
+				<router-link :to="'/portfolio'" class="post__navigation--previous icon-arrow-left">Revenir au portfolio</router-link>
+			</footer>
+
+		</article>
+	</div>
 </template>
 
 <script>
 import axios from 'axios'
+import markdown from '~plugins/vue-md-render'
 
 export default {
+	name: 'portfolioSingle',
+
 	validate ({ params }) {
 		return isNaN(params.slug)
 	},
 
-	data ({ params, error }) {
-		return axios.get(`http://localhost:3001/portfolio/${params.slug}`)
-		.then((res) => res.data)
-		.catch(() => {
-			error({ message: 'Post introuvable', statusCode: 404 })
-		})
+	async data ({ params, error }) {
+		const { data } = await axios.get(`http://localhost:3001/portfolio/${params.slug}`)
+			.then((res) => res.data)
+			.catch(() => {
+				error({ message: 'Cet article n’existe pas', statusCode: 404 })
+			})
+		data.content = markdown.render(data.content)
+
+		return data
 	},
 
 	transition (to, from) {

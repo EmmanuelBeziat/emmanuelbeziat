@@ -26,6 +26,8 @@
 import axios from 'axios'
 
 export default {
+	name: 'portfolioList',
+
 	data () {
 		return axios.get('http://localhost:3001/portfolio')
 		.then((res) => {
