@@ -48,6 +48,23 @@ export default {
 	transition (to, from) {
 		if (!from) return 'slide-left'
 		return +to.query.page < +from.query.page ? 'slide-right' : 'slide-left'
+	},
+
+	head () {
+		return {
+			title: this.title,
+			meta: [
+				{ hid: 'description', name: 'description', content: 'Portfolio en ligne d’un développeur web du sud. Billets de blogs, tutoriels, astuces, diatribes et réflexions sur le métier, le code et plein d’autres choses.' },
+				{ name: 'twitter:title', content: this.title, hid: 'twTitle' },
+				{ name: 'twitter:url', content: 'https://www.emmanuelbeziat.com/portfolio/'+this.slug, hid: 'twUrl' },
+				{ name: 'twitter:description', content: this.description, hid: 'twDesc'},
+
+				// Facebook
+				{ property: 'og:title', content: this.title, hid: 'ogTitle' },
+				{ property: 'og:url', content: 'https://www.emmanuelbeziat.com/portfolio/'+this.slug, hid: 'ogUrl' },
+				{ property: 'og:description', content: this.description, hid: 'ogDesc' }
+			]
+		}
 	}
 }
 </script>
