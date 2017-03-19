@@ -5,7 +5,7 @@
 				<h1 class="post__title">{{ title }}</h1>
 
 				<div class="post__infos">
-					<div class="post__date">Posté le <time>{{ date }}</time></div>
+					<div class="post__date">Posté le <time>{{ date | moment('ddd Do MMM YYYY') }}</time></div>
 
 					<div class="flex">
 						<div class="post__tags">

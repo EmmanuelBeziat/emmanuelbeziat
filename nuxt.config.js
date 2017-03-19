@@ -97,7 +97,8 @@ module.exports = {
 	 */
 	plugins: [
 		'~plugins/vue-md-render.js',
-		'~plugins/vue-svg.js'
+		'~plugins/vue-svg.js',
+		'~plugins/vue-filters.js'
 	],
 
 	/*
@@ -117,6 +118,6 @@ module.exports = {
 				})
 			}
 		},
-		vendor: ['axios', 'prismjs']
+		vendor: ['axios', 'prismjs', 'moment', 'vue-disqus']
 	}
 }

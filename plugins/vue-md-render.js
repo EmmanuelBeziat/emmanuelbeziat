@@ -4,20 +4,23 @@ import 'prismjs/plugins/show-language/prism-show-language.min.js'
 import 'prismjs/components/prism-bash.min.js'
 import 'prismjs/components/prism-php.min.js'
 
-const md = require('markdown-it')({
+const markdown = require('markdown-it')({
 	html: true,
 	breaks: true,
 	linkify: true,
 	highlight: function (str, lang) {
-		setTimeout(function () {
+		if (process.BROWSER_BUILD) {
 			Prism.highlightAll()
-		}, 10)
-		// Hacky ugly stuff to ensure that even if the connexion is slow, the highlighting is done
-		// TODO: Find a better solution
-		setTimeout(function () {
-			Prism.highlightAll()
-		}, 250)
-		return '<pre class="language-' + lang + '"><code class="language-' + lang + '">' + md.utils.escapeHtml(str) + '</code></pre>'
+
+			setTimeout(function () {
+				Prism.highlightAll()
+			}, 10)
+
+			setTimeout(function () {
+				Prism.highlightAll()
+			}, 250)
+		}
+		return '<pre class="language-' + lang + '"><code class="language-' + lang + '">' + markdown.utils.escapeHtml(str) + '</code></pre>'
 	}
 })
 .use(require('markdown-it-attrs'))
@@ -33,4 +36,4 @@ const md = require('markdown-it')({
 	permalinkSymbol: ''
 })
 
-export default md
+export default markdown
