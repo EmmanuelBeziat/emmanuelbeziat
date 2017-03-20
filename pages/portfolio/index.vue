@@ -29,7 +29,7 @@ export default {
 	name: 'portfolioList',
 
 	data () {
-		return axios.get('http://localhost:3001/portfolio')
+		return axios.get('https://rest.emmanuelbeziat.com/portfolio')
 		.then((res) => {
 			return { posts: res.data }
 		})

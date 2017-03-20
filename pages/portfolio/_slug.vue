@@ -39,7 +39,7 @@ export default {
 	},
 
 	async data ({ params, error }) {
-		const { data } = await axios.get(`http://localhost:3001/portfolio/${params.slug}`)
+		const { data } = await axios.get(`https://rest.emmanuelbeziat.com/portfolio/${params.slug}`)
 		data.content = markdown.render(data.content)
 
 		return data

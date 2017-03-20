@@ -23,7 +23,7 @@ export default {
 	name: 'blogList',
 
 	data () {
-		return axios.get('http://localhost:3001/posts')
+		return axios.get('https://rest.emmanuelbeziat.com/posts')
 		.then((res) => {
 			return { posts: res.data }
 		})
