@@ -1,18 +1,36 @@
+const axios = require('axios')
+
 module.exports = {
+	srcDir: 'src/',
+
 	generate: {
-		routeParams: {
-			'/blog/:slug': [],
-			'/portfolio/:slug': []
+		routes: {
+			'/blog/:slug': function () {
+				return axios.get('https://rest.emmanuelbeziat.com/posts')
+				.then((response) => {
+					return response.data.map((post) => {
+						return { slug: post.slug }
+					})
+				})
+			},
+			'/portfolio/:slug': function () {
+				return axios.get('https://rest.emmanuelbeziat.com/portfolio')
+				.then((response) => {
+					return response.data.map((portfolio) => {
+						return { slug: portfolio.slug }
+					})
+				})
+			}
 		}
 	},
+
 	/*
 	** Headers of the page
 	*/
 	head: {
 		htmlAttrs: {
-			lang: 'fr',
-			dir: 'ltr',
-			prefix: 'og: http://ogp.me/ns#'
+			lang: 'fr-FR',
+			prefix: 'og:http://ogp.me/ns#'
 		},
 
 		title: '',
@@ -21,7 +39,7 @@ module.exports = {
 		meta: [
 			{ charset: 'utf-8' },
 			{ name: 'viewport', content: 'width=device-width, initial-scale=1, shrink-to-fit=no' },
-			{ hid: 'description', name: 'description', content: 'Portfolio en ligne d’un développeur web du sud. Billets de blogs, tutoriels, astuces, diatribes et réflexions sur le métier, le code et plein d’autres choses.' },
+			{ id: 'description', name: 'description', content: 'Portfolio en ligne d’un développeur web du sud. Billets de blogs, tutoriels, astuces, diatribes et réflexions sur le métier, le code et plein d’autres choses.' },
 			{ name: 'application-name', content: 'Emmanuel Béziat' },
 			{ name: 'format-detection', content: 'telephone-no' },
 
@@ -32,19 +50,20 @@ module.exports = {
 			// twitter
 			{ name: 'twitter:card', content: 'summary_large_image' },
 			{ name: 'twitter:site', content: '@EmmanuelBeziat' },
-			{ name: 'twitter:title', content: 'Emmanuel Béziat', hid: 'twTitle' },
-			{ name: 'twitter:url', content: 'https://www.emmanuelbeziat.com', hid: 'twUrl' },
-			{ name: 'twitter:image', content: 'https://images.emmanuelbeziat.com/social-default-tw.jpg', hid: 'twImage' },
-			{ name: 'twitter:description', content: 'Portfolio en ligne d’un développeur web du sud. Billets de blogs, tutoriels, astuces, diatribes et réflexions sur le métier, le code et plein d’autres choses.', hid: 'twDesc'},
+			{ name: 'twitter:title', content: 'Emmanuel Béziat', id: 'twTitle' },
+			{ name: 'twitter:url', content: 'https://www.emmanuelbeziat.com', id: 'twUrl' },
+			{ name: 'twitter:image', content: 'https://images.emmanuelbeziat.com/social-default-tw.jpg', id: 'twImage' },
+			{ name: 'twitter:description', content: 'Portfolio en ligne d’un développeur web du sud. Billets de blogs, tutoriels, astuces, diatribes et réflexions sur le métier, le code et plein d’autres choses.', id: 'twDesc'},
 
 			// Facebook
-			{ property: 'og:title', content: 'Emmanuel Béziat', hid: 'ogTitle' },
+			{ property: 'og:app_id', content: '665950303526184' },
+			{ property: 'og:title', content: 'Emmanuel Béziat', id: 'ogTitle' },
 			{ property: 'og:site_name', content: 'Emmanuel Béziat' },
 			{ property: 'og:type', content: 'article' },
-			{ property: 'og:url', content: 'https://www.emmanuelbeziat.com', hid: 'ogUrl' },
+			{ property: 'og:url', content: 'https://www.emmanuelbeziat.com', id: 'ogUrl' },
 			{ property: 'og:locale:alternate', content: 'fr_FR' },
-			{ property: 'og:image', content: 'https://images.emmanuelbeziat.com/social-default-fb.jpg', hid: 'ogImage' },
-			{ property: 'og:description', content: 'Portfolio en ligne d’un développeur web du sud. Billets de blogs, tutoriels, astuces, diatribes et réflexions sur le métier, le code et plein d’autres choses.', hid: 'ogDesc' },
+			{ property: 'og:image', content: 'https://images.emmanuelbeziat.com/social-default-fb.jpg', id: 'ogImage' },
+			{ property: 'og:description', content: 'Portfolio en ligne d’un développeur web du sud. Billets de blogs, tutoriels, astuces, diatribes et réflexions sur le métier, le code et plein d’autres choses.', id: 'ogDesc' },
 
 			// Apple
 			{ name: 'apple-mobile-web-app-capable', content: 'yes' },
@@ -77,6 +96,15 @@ module.exports = {
 	css: [
 		{ src: '~assets/stylus/main.styl', lang: 'stylus' }
 	],
+
+	minify: {
+		removeEmptyAttributes: false,
+		collapseWhitespace: true,
+		conservativeCollapse: true,
+		collapseBooleanAttributes: true,
+		removeTagWhitespace: false,
+		removeStyleLinkTypeAttributes: true
+	},
 
 	/*
 	** Customize the loader
@@ -128,6 +156,6 @@ module.exports = {
 		extend (config) {
 			config.plugins = config.plugins.filter((plugin) => plugin.constructor.name !== 'UglifyJsPlugin')
 		},
-		vendor: ['axios', 'prismjs', 'moment']
+		vendor: ['axios', 'moment']
 	}
 }

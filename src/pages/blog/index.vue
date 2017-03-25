@@ -1,7 +1,7 @@
 <template>
 	<section class="blog">
 		<div class="post-list">
-			<article class="post-list__item" v-for="post in posts">
+			<article class="post-list__item" v-for="post in posts" :key="post.slug">
 				<h1 class="post-list__title"><nuxt-link :to="'/blog/'+post.slug">{{ post.title }}</nuxt-link></h1>
 
 				<div class="post-list__infos">
@@ -22,7 +22,7 @@ import axios from 'axios'
 export default {
 	name: 'blogList',
 
-	data () {
+	asyncData () {
 		return axios.get('https://rest.emmanuelbeziat.com/posts')
 		.then((res) => {
 			return { posts: res.data }

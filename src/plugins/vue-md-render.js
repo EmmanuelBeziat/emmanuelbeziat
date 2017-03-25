@@ -1,3 +1,4 @@
+import Vue from 'vue'
 import Prism from 'prismjs'
 import 'prismjs/plugins/toolbar/prism-toolbar.js'
 import 'prismjs/plugins/show-language/prism-show-language.min.js'
@@ -9,17 +10,6 @@ const markdown = require('markdown-it')({
 	breaks: true,
 	linkify: true,
 	highlight: function (str, lang) {
-		if (process.BROWSER_BUILD) {
-			Prism.highlightAll()
-
-			setTimeout(function () {
-				Prism.highlightAll()
-			}, 10)
-
-			setTimeout(function () {
-				Prism.highlightAll()
-			}, 250)
-		}
 		return '<pre class="language-' + lang + '"><code class="language-' + lang + '">' + markdown.utils.escapeHtml(str) + '</code></pre>'
 	}
 })
@@ -36,4 +26,6 @@ const markdown = require('markdown-it')({
 	permalinkSymbol: ''
 })
 
+// Export as a vue filter or a method
+Vue.filter('markdown', (value) => markdown.render('' + value))
 export default markdown
