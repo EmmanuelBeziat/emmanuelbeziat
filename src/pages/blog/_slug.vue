@@ -78,17 +78,17 @@ export default {
 		return {
 			title: this.post.title,
 			meta: [
-				{ hid: 'description', name: 'description', content: 'Portfolio en ligne d’un développeur web du sud. Billets de blogs, tutoriels, astuces, diatribes et réflexions sur le métier, le code et plein d’autres choses.' },
-				{ name: 'twitter:title', content: this.post.title, hid: 'twTitle' },
-				{ name: 'twitter:url', content: 'https://www.emmanuelbeziat.com/blog/'+this.post.slug, hid: 'twUrl' },
-				{ name: 'twitter:image', content: this.post.image, hid: 'twImage' },
-				{ name: 'twitter:description', content: this.post.description, hid: 'twDesc'},
+				{ name: 'description', content: this.post.description, id: 'description' },
+				{ name: 'twitter:title', content: this.post.title, id: 'twTitle' },
+				{ name: 'twitter:url', content: 'https://www.emmanuelbeziat.com/blog/'+this.post.slug, id: 'twUrl' },
+				{ name: 'twitter:image', content: this.post.image, id: 'twImage' },
+				{ name: 'twitter:description', content: this.post.description, id: 'twDesc'},
 
 				// Facebook
-				{ property: 'og:title', content: this.post.title, hid: 'ogTitle' },
-				{ property: 'og:url', content: 'https://www.emmanuelbeziat.com/blog/'+this.post.slug, hid: 'ogUrl' },
-				{ property: 'og:image', content: this.post.image, hid: 'ogImage' },
-				{ property: 'og:description', content: this.post.description, hid: 'ogDesc' }
+				{ property: 'og:title', content: this.post.title, id: 'ogTitle' },
+				{ property: 'og:url', content: 'https://www.emmanuelbeziat.com/blog/'+this.post.slug, id: 'ogUrl' },
+				{ property: 'og:image', content: this.post.image, id: 'ogImage' },
+				{ property: 'og:description', content: this.post.description, id: 'ogDesc' }
 			]
 		}
 	}

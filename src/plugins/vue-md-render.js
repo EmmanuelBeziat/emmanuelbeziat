@@ -10,6 +10,15 @@ const markdown = require('markdown-it')({
 	breaks: true,
 	linkify: true,
 	highlight: function (str, lang) {
+		if (process.BROWSER_BUILD) {
+			setTimeout(function () {
+				Prism.highlightAll()
+			}, 10)
+
+			setTimeout(function () {
+				Prism.highlightAll()
+			}, 500)
+		}
 		return '<pre class="language-' + lang + '"><code class="language-' + lang + '">' + markdown.utils.escapeHtml(str) + '</code></pre>'
 	}
 })
@@ -20,11 +29,11 @@ const markdown = require('markdown-it')({
 	outputPlayerSize: false,
 	allowFullScreen: true
 })
-.use(require('markdown-it-anchor'), {
+/* .use(require('markdown-it-anchor'), {
 	permalink: false,
 	permalinkClass: 'icon-link post__anchor',
 	permalinkSymbol: ''
-})
+}) */
 
 // Export as a vue filter or a method
 Vue.filter('markdown', (value) => markdown.render('' + value))

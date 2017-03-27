@@ -88,6 +88,12 @@ export default {
 		getHomeCode: function () {
 			const selectedCode = codes[Math.floor(Math.random() * codes.length)]
 			this.code = selectedCode
+
+			if (process.BROWSER_BUILD) {
+				setTimeout(function () {
+					Prism.highlightAll()
+				}, 10)
+			}
 		}
 	}
 }

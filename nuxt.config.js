@@ -4,23 +4,12 @@ module.exports = {
 	srcDir: 'src/',
 
 	generate: {
-		routes: {
-			'/blog/:slug': function () {
-				return axios.get('https://rest.emmanuelbeziat.com/posts')
-				.then((response) => {
-					return response.data.map((post) => {
-						return { slug: post.slug }
-					})
-				})
-			},
-			'/portfolio/:slug': function () {
-				return axios.get('https://rest.emmanuelbeziat.com/portfolio')
-				.then((response) => {
-					return response.data.map((portfolio) => {
-						return { slug: portfolio.slug }
-					})
-				})
-			}
+		async routes () {
+			const blogs = await axios.get('https://rest.emmanuelbeziat.com/posts')
+			const portfolios = await axios.get('https://rest.emmanuelbeziat.com/portfolio')
+			const b_slugs = blogs.data.map(post => `/blog/${post.slug}`)
+			const p_slugs = portfolios.data.map(portfolio => `/portfolio/${portfolio.slug}`)
+			return [...b_slugs, ...p_slugs]
 		}
 	},
 
@@ -30,7 +19,7 @@ module.exports = {
 	head: {
 		htmlAttrs: {
 			lang: 'fr-FR',
-			prefix: 'og:http://ogp.me/ns#'
+			prefix: 'og: http://ogp.me/ns#'
 		},
 
 		title: '',
@@ -39,7 +28,7 @@ module.exports = {
 		meta: [
 			{ charset: 'utf-8' },
 			{ name: 'viewport', content: 'width=device-width, initial-scale=1, shrink-to-fit=no' },
-			{ id: 'description', name: 'description', content: 'Portfolio en ligne d’un développeur web du sud. Billets de blogs, tutoriels, astuces, diatribes et réflexions sur le métier, le code et plein d’autres choses.' },
+			{ name: 'description', content: 'Portfolio en ligne d’un développeur web du sud. Billets de blogs, tutoriels, astuces, diatribes et réflexions sur le métier, le code et plein d’autres choses.', id: 'description' },
 			{ name: 'application-name', content: 'Emmanuel Béziat' },
 			{ name: 'format-detection', content: 'telephone-no' },
 
@@ -53,10 +42,10 @@ module.exports = {
 			{ name: 'twitter:title', content: 'Emmanuel Béziat', id: 'twTitle' },
 			{ name: 'twitter:url', content: 'https://www.emmanuelbeziat.com', id: 'twUrl' },
 			{ name: 'twitter:image', content: 'https://images.emmanuelbeziat.com/social-default-tw.jpg', id: 'twImage' },
-			{ name: 'twitter:description', content: 'Portfolio en ligne d’un développeur web du sud. Billets de blogs, tutoriels, astuces, diatribes et réflexions sur le métier, le code et plein d’autres choses.', id: 'twDesc'},
+			{ name: 'twitter:description', content: 'Portfolio en ligne d’un développeur web du sud. Billets de blogs, tutoriels, astuces, diatribes et réflexions sur le métier, le code et plein d’autres choses.', id: 'twDesc' },
 
 			// Facebook
-			{ property: 'og:app_id', content: '665950303526184' },
+			// { property: 'fb:app_id', content: '665950303526184' },
 			{ property: 'og:title', content: 'Emmanuel Béziat', id: 'ogTitle' },
 			{ property: 'og:site_name', content: 'Emmanuel Béziat' },
 			{ property: 'og:type', content: 'article' },
@@ -115,7 +104,8 @@ module.exports = {
 	 * Router
 	 */
 	router: {
-		linkActiveClass: '-active'
+		linkActiveClass: '-active',
+		base: '/'
 	},
 
 	/**
@@ -130,9 +120,9 @@ module.exports = {
 	 * PLugins
 	 */
 	plugins: [
-		'~plugins/vue-md-render.js',
 		'~plugins/vue-svg.js',
-		'~plugins/vue-filters.js'
+		'~plugins/vue-filters.js',
+		'~plugins/vue-md-render.js'
 	],
 
 	/*
@@ -156,6 +146,14 @@ module.exports = {
 		extend (config) {
 			config.plugins = config.plugins.filter((plugin) => plugin.constructor.name !== 'UglifyJsPlugin')
 		},
-		vendor: ['axios', 'moment']
+		vendor: [
+			'axios',
+			'moment',
+			'prismjs',
+			'prismjs/plugins/toolbar/prism-toolbar.js',
+			'prismjs/plugins/show-language/prism-show-language.min.js',
+			'prismjs/components/prism-bash.min.js',
+			'prismjs/components/prism-php.min.js'
+		]
 	}
 }
