@@ -18,6 +18,10 @@
 	Twitter: @SimonVieille
 	From: Besançon, France
 
+	羅 常瑋 "ausir0726"
+	tWitter: @ausir0726
+	From: Taiwan, Taipei
+
 /* SITE */
 	Language: French
 	Doctype: HTML5
