@@ -59,7 +59,7 @@ export default {
 	},
 
 	async asyncData ({ params }) {
-		let { data } = await axios.get(`https://rest.emmanuelbeziat.com/posts/${params.slug}`)
+		let { data } = await axios.get(`https://rest.emmanuelbeziat.com/posts/${params.slug}/`)
 		data.content = markdown.render(data.content)
 		return { post: data }
 	},
