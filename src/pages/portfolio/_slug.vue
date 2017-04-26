@@ -53,15 +53,15 @@ export default {
 		return {
 			title: this.post.title,
 			meta: [
-				{ name: 'description', content: this.post.description, id: 'description' },
-				{ name: 'twitter:title', content: this.post.title, id: 'twTitle' },
-				{ name: 'twitter:url', content: 'https://www.emmanuelbeziat.com/portfolio/'+this.post.slug, id: 'twUrl' },
-				{ name: 'twitter:description', content: this.description, id: 'twDesc'},
+				{ name: 'description', content: this.post.description, hid: 'description' },
+				{ name: 'twitter:title', content: this.post.title, hid: 'twTitle' },
+				{ name: 'twitter:url', content: 'https://www.emmanuelbeziat.com/portfolio/'+this.post.slug, hid: 'twUrl' },
+				{ name: 'twitter:description', content: this.description, hid: 'twDesc'},
 
 				// Facebook
-				{ property: 'og:title', content: this.post.title, id: 'ogTitle' },
-				{ property: 'og:url', content: 'https://www.emmanuelbeziat.com/portfolio/'+this.post.slug, id: 'ogUrl' },
-				{ property: 'og:description', content: this.post.description, id: 'ogDesc' }
+				{ property: 'og:title', content: this.post.title, hid: 'ogTitle' },
+				{ property: 'og:url', content: 'https://www.emmanuelbeziat.com/portfolio/'+this.post.slug, hid: 'ogUrl' },
+				{ property: 'og:description', content: this.post.description, hid: 'ogDesc' }
 			]
 		}
 	}
