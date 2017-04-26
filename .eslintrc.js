@@ -1,40 +1,23 @@
 module.exports = {
 	root: true,
 	parser: 'babel-eslint',
-	parserOptions: {
-		sourceType: 'module'
+	env: {
+		browser: true,
+		node: true
 	},
-    "env": {
-        "browser": true,
-        "es6": true
-    },
-    "extends": "eslint:recommended",
-    "parserOptions": {
-        "sourceType": "module"
-    },
+	extends: 'standard',
+	// required to lint *.vue files
 	plugins: [
 		'html'
 	],
-    "rules": {
-        "indent": [
-            "error",
-            "tab"
-        ],
-        "quotes": [
-            "error",
-            "single"
-        ],
-        "semi": [
-            "error",
-            "never"
-        ],
-		"no-undef": 0,
+	// add your custom rules here
+	rules: {
+		"indent": [
+			"error",
+			"tab"
+		],
 		"no-console": 0,
-		// allow paren-less arrow functions
-		'arrow-parens': 0,
-		// allow async-await
-		'generator-star-spacing': 0,
-		// allow debugger during development
-		'no-debugger': process.env.NODE_ENV === 'production' ? 2 : 0,
-    }
-};
+		"no-tabs": 0
+	},
+	globals: {}
+}
