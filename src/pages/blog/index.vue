@@ -5,7 +5,7 @@
 				<h1 class="post-list__title"><nuxt-link :to="'/blog/'+post.slug">{{ post.title }}</nuxt-link></h1>
 
 				<div class="post-list__infos">
-					<div class="post-list__date">Posté le <time>{{ post.date | moment('ddd Do MMM YYYY') }}</time></div>
+					<div class="post-list__date">Posté le <time>{{ post.date | moment('Do MMMM YYYY') }}</time></div>
 
 					<div class="post-list__tags">
 						<span class="c-tag" v-for="tag in post.tags">{{ tag }}</span>
