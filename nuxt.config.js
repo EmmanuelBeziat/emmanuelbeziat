@@ -12,7 +12,8 @@ module.exports = {
 			const b_slugs = blogs.data.map(post => `/blog/${post.slug}`)
 			const p_slugs = portfolios.data.map(portfolio => `/portfolio/${portfolio.slug}`)
 			return [...b_slugs, ...p_slugs]
-		}
+		},
+		dir: '../site'
 	},
 
 	/*
