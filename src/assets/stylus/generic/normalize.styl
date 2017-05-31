@@ -1,25 +1,30 @@
-/*! normalize.styl v5.0.0 | MIT License | https://github.com/EmmanuelBeziat/normalize.styl */
-
-/**
- * 1. Change the default font family in all browsers (opinionated).
- * 2. Correct the line height in all browsers.
- * 3. Prevent adjustments of font size after orientation changes in
- *    IE on Windows Phone and in iOS.
- */
+/*! normalize.styl v7.0.0 | MIT License | https://github.com/EmmanuelBeziat/normalize.styl */
 
 /* Document
 	 ========================================================================== */
 
+/**
+ * 1. Correct the line height in all browsers.
+ * 2. Prevent adjustments of font size after orientation changes in
+ *    IE on Windows Phone and in iOS.
+ */
+
 html
-	font-family sans-serif /* 1 */
-	line-height 1.15 /* 2 */
-	-ms-text-size-adjust 100% /* 3 */
-	-webkit-text-size-adjust 100% /* 3 */
+	line-height 1.15 /* 1 */
+	-ms-text-size-adjust 100% /* 2 */
+	-webkit-text-size-adjust 100% /* 2 */
 	box-sizing border-box
 	overflow-y scroll
 
 /* Sections
 	 ========================================================================== */
+
+/**
+ * Remove the margin in all browsers (opinionated).
+ */
+
+body
+	margin 0
 
 /**
  * Add the correct display in IE 9-.
@@ -85,16 +90,16 @@ pre
 	 ========================================================================== */
 
 /**
- * Remove the outline on focused links when they are also active or hovered
- * in all browsers (opinionated).
+ * 1. Remove the gray background on active links in IE 10.
+ * 2. Remove gaps in links underline in iOS 8+ and Safari 8+.
  */
 
-a:active
-a:hover
-	outline-width 0
+a
+	background-color transparent /* 1 */
+	-webkit-text-decoration-skip objects /* 2 */
 
 /**
- * 1. Remove the bottom border in Firefox 39-.
+ * 1. Remove the bottom border in Chrome 57- and Firefox 39-.
  * 2. Add the correct text decoration in Chrome, Edge, IE, Opera, and Safari.
  */
 
@@ -107,7 +112,7 @@ abbr[title]
  * Prevent the duplicate application of `bolder` by the next rule in Safari 6.
  */
 
-b,
+b
 strong
 	font-weight inherit
 
@@ -190,6 +195,13 @@ audio:not([controls])
 	height 0
 
 /**
+ * Remove the border on images inside links in IE 10-.
+ */
+
+img
+	border-style none
+
+/**
  * Hide the overflow in IE.
  */
 
@@ -266,13 +278,11 @@ button:-moz-focusring
 	outline 1px dotted ButtonText
 
 /**
- * Change the border, margin, and padding in all browsers (opinionated).
+ * Correct the padding in Firefox.
  */
 
 fieldset
-	border 1px solid #c0c0c0
-	margin 0 2px
-	padding 0.35em 0.625em 0.75em
+	padding 0.35em 0.75em 0.625em
 
 /**
  * 1. Correct the text wrapping in Edge and IE.
