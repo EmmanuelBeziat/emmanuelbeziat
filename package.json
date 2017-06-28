@@ -43,7 +43,7 @@
     "stylus": "^0.54.5",
     "stylus-loader": "^3.0.1",
     "uglify-js": "git://github.com/mishoo/UglifyJS2#harmony",
-    "uglifyjs-webpack-plugin": "^0.4.3",
+    "uglifyjs-webpack-plugin": "^0.4.6",
     "v-svg-directive": "^1.1.0",
     "vue-disqus": "^2.0.3"
   },
