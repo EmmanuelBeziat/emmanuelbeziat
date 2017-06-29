@@ -38,6 +38,7 @@
     "markdown-it-anchor": "^4.0.0",
     "markdown-it-attrs": "^0.9.0",
     "markdown-it-block-embed": "0.0.3",
+    "markdown-it-prism": "^1.1.1",
     "moment": "^2.18.1",
     "prismjs": "^1.6.0",
     "stylus": "^0.54.5",

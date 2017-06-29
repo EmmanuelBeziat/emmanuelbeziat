@@ -14,12 +14,7 @@ const markdown = require('markdown-it')({
 			setTimeout(function () {
 				Prism.highlightAll()
 			}, 10)
-
-			setTimeout(function () {
-				Prism.highlightAll()
-			}, 500)
 		}
-		return '<pre class="language-' + lang + '"><code class="language-' + lang + '">' + markdown.utils.escapeHtml(str) + '</code></pre>'
 	}
 })
 .use(require('markdown-it-attrs'))
@@ -29,11 +24,20 @@ const markdown = require('markdown-it')({
 	outputPlayerSize: false,
 	allowFullScreen: true
 })
-/* .use(require('markdown-it-anchor'), {
+.use(require('markdown-it-anchor'), {
 	permalink: false,
 	permalinkClass: 'icon-link post__anchor',
 	permalinkSymbol: ''
-}) */
+})
+.use(require('markdown-it-prism'), {
+	plugins: ['show-language']
+})
+.use(require('markdown-it-smart-arrows'))
+
+/* Ideas of plugins:
+ - markdown-it-highlighted
+ - markdown-it-kbd
+ */
 
 // Export as a vue filter or a method
 Vue.filter('markdown', (value) => markdown.render('' + value))
