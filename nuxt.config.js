@@ -1,6 +1,6 @@
 const axios = require('axios')
 const webpack = require('webpack')
-const UglifyJSPlugin = require('uglifyjs-webpack-plugin')
+const BabiliPlugin = require('babili-webpack-plugin')
 
 module.exports = {
 	srcDir: 'src/',
@@ -153,23 +153,13 @@ module.exports = {
 			config.plugins = config.plugins.filter((plugin) => plugin.constructor.name !== 'UglifyJsPlugin')
 
 			if (!isDev) {
+				let babiliOptions = {
+					removeConsole: true
+				}
+				let babiliOverrides = {}
 				config.devtool = false
 				config.plugins.push(
-					new webpack.optimize.UglifyJsPlugin({
-						parse: {
-							strict: true
-						},
-						compress: {
-							unsafe: true,
-							warnings: false,
-							drop_console:true
-						},
-						output: {
-							comments: false,
-							ascii_only: true
-						},
-						mangle: true
-					})
+					new BabiliPlugin(babiliOptions, babiliOverrides)
 				)
 			}
 		},

@@ -6,7 +6,7 @@
   "private": true,
   "dependencies": {
     "axios": "^0.16.2",
-    "nuxt": "^0.10.6"
+    "nuxt": "^0.10.7"
   },
   "config": {
     "nuxt": {
