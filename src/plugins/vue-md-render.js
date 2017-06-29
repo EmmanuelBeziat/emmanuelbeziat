@@ -32,7 +32,7 @@ const markdown = require('markdown-it')({
 .use(require('markdown-it-prism'), {
 	plugins: ['show-language']
 })
-.use(require('markdown-it-smart-arrows'))
+.use(require('markdown-it-smartarrows'))
 
 /* Ideas of plugins:
  - markdown-it-highlighted
