@@ -14,6 +14,9 @@ const markdown = require('markdown-it')({
 			setTimeout(function () {
 				Prism.highlightAll()
 			}, 10)
+			setTimeout(function () {
+				Prism.highlightAll()
+			}, 100)
 		}
 	}
 })
@@ -29,9 +32,9 @@ const markdown = require('markdown-it')({
 	permalinkClass: 'icon-link post__anchor',
 	permalinkSymbol: ''
 })
-.use(require('markdown-it-prism'), {
+/*.use(require('markdown-it-prism'), {
 	plugins: ['show-language']
-})
+})*/
 .use(require('markdown-it-smartarrows'))
 
 /* Ideas of plugins:
