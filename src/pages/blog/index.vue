@@ -8,7 +8,7 @@
 					<div class="post-list__date">Posté le <time>{{ post.date | moment('Do MMMM YYYY') }}</time></div>
 
 					<div class="post-list__tags">
-						<span class="c-tag" v-for="tag in post.tags">{{ tag }}</span>
+						<span class="c-tag" v-for="tag in post.tags" :key="tag">{{ tag }}</span>
 					</div>
 				</div>
 			</article>

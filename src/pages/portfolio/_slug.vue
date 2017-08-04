@@ -7,11 +7,11 @@
 				<div class="post__infos">
 					<div class="flex">
 						<div class="post__tags">
-							<span class="c-tag" v-for="tag in post.tags">{{ tag }}</span>
+							<span class="c-tag" v-for="tag in post.tags" :key="tag">{{ tag }}</span>
 						</div>
 
 						<div class="post__tags">
-							<span class="c-tag" v-for="client in post.clients">{{ client }}</span>
+							<span class="c-tag" v-for="client in post.clients" :key="client">{{ client }}</span>
 						</div>
 					</div>
 				</div>

@@ -9,7 +9,7 @@
 
 					<div class="flex">
 						<div class="post__tags">
-							<span class="c-tag" v-for="tag in post.tags">{{ tag }}</span>
+							<span class="c-tag" v-for="tag in post.tags" :key="tag">{{ tag }}</span>
 						</div>
 
 						<div class="post__share">
@@ -24,7 +24,7 @@
 			<footer class="post__footer">
 				<div class="flex">
 					<div class="post__tags">
-						<span class="c-tag" v-for="tag in post.tags">{{ tag }}</span>
+						<span class="c-tag" v-for="tag in post.tags" :key="tag">{{ tag }}</span>
 					</div>
 
 					<div class="post__share">

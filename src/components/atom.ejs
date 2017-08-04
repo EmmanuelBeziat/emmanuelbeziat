@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom">
+	<title>Emmanuel Béziat</title>
+	<link href="/atom.xml" rel="self" />
+	<link href="https://www.emmanuelbeziat.com" />
+	<updated>
+		<%= new Date().toISOString() %>
+	</updated>
+	<id>https://www.emmanuelbeziat.com</id>
+	<author>
+		<name>Emmanuel Béziat</name>
+		<email>contact@emmanuelbeziat.com</email>
+	</author>
+	<generator uri="https://www.emmanuelbeziat.com"></generator>
+	<% compilation.feed.forEach(function (post) { %>
+		<entry>
+			<title>
+				<%= post.title %>
+			</title>
+			<link href="<%= 'https://www.emmanuelbeziat.com/blog/' + post.path %>" />
+			<id><%= 'https://www.emmanuelbeziat.com/blog/' + post.path %></id>
+			<published>
+				<%= post.date %>
+			</published>
+			<updated>
+				<%= post.updated %>
+			</updated>
+			<summary type="html">
+				<% if (post.description) { %>
+					<%= post.description %>
+				<% } else if (post.excerpt) { %>
+					<%= post.excerpt %>
+				<% } else if (post.content) { %>
+					<%= post.content %>
+				<% } else { %>
+					No summary
+				<% } %>
+			</summary>
+		</entry>
+		<% }) %>
+</feed>

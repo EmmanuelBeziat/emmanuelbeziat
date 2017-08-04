@@ -1,6 +1,8 @@
 const axios = require('axios')
 const webpack = require('webpack')
 const BabiliPlugin = require('babili-webpack-plugin')
+// const FeedPlugin = require('~middleware/feed.js')
+// const SitemapPlugin = require('~middleware/sitemap.js')
 
 module.exports = {
 	srcDir: 'src/',
@@ -162,6 +164,24 @@ module.exports = {
 					new BabiliPlugin(babiliOptions, babiliOverrides)
 				)
 			}
+
+			/*
+			new FeedPlugin(),
+			new HtmlWebpackPlugin({
+				filename: 'atom.xml',
+				template: '~components/atom.ejs',
+				inject: false,
+				xhtml: true
+			}),
+
+			new SitemapPlugin(),
+			new HtmlWebpackPlugin({
+				filename: 'sitemap.xml',
+				template: '~components/sitemap.ejs',
+				inject: false,
+				xhtml: true
+			})
+			*/
 		},
 
 		vendor: [
