@@ -15,11 +15,7 @@ const markdown = require('markdown-it')({
 				Prism.highlightAll()
 			}, 10)
 
-			setTimeout(function () {
-				Prism.highlightAll()
-			}, 100)
-
-			return '<pre class="language-' + lang + '"><code class="language-' + lang + '">' + markdown.utils.escapeHtml(str) + '</code></pre>'
+			// return '<pre class="language-' + lang + '"><code class="language-' + lang + '">' + markdown.utils.escapeHtml(str) + '</code></pre>'
 		}
 	}
 })
@@ -35,9 +31,9 @@ const markdown = require('markdown-it')({
 	permalinkClass: 'icon-link post__anchor',
 	permalinkSymbol: ''
 })
-/*.use(require('markdown-it-prism'), {
+.use(require('markdown-it-prism'), {
 	plugins: ['show-language']
-})*/
+})
 .use(require('markdown-it-smartarrows'))
 
 /* Ideas of plugins:
