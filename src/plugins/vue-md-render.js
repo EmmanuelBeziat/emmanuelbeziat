@@ -14,9 +14,12 @@ const markdown = require('markdown-it')({
 			setTimeout(function () {
 				Prism.highlightAll()
 			}, 10)
+
 			setTimeout(function () {
 				Prism.highlightAll()
 			}, 100)
+
+			return '<pre class="language-' + lang + '"><code class="language-' + lang + '">' + markdown.utils.escapeHtml(str) + '</code></pre>'
 		}
 	}
 })
