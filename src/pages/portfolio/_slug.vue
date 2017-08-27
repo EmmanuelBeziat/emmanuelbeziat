@@ -40,6 +40,12 @@ export default {
 
 	async asyncData ({ params }) {
 		let { data } = await axios.get(`https://rest.emmanuelbeziat.com/portfolio/${params.slug}/`)
+
+		// No return datas
+		if (!data) {
+			res.statusCode = 404
+		}
+
 		data.content = markdown.render(data.content)
 		return { post: data }
 	},

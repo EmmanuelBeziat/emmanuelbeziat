@@ -14,8 +14,8 @@
 
 <script>
 const erreurs = {
-	images: ['doctor-who', 'the-office', 'south-park', 'mario', 'obiwan'],
-	titles: ['What?!', 'God please no!', 'We’re sorry…', 'Page is in another castle', 'This is not the page <br>you’re looking for…']
+	images: ['doctor-who', 'south-park', 'mario', 'obiwan'],
+	titles: ['What?!', 'We’re sorry…', 'Page is in another castle', 'This is not the page <br>you’re looking for…']
 }
 
 export default {

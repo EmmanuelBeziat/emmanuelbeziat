@@ -1,8 +1,9 @@
 <template>
-	<h1 class="presentation__title">
-		<span class="presentation__name">Emmanuel Béziat</span>
-		<span class="presentation__age"><span>{{ age }}</span> ({{ nextBirthday }})</span>
-	</h1>
+	<div class="card">
+		<h1 class="presentation__title">Emmanuel Béziat</h1>
+		<div class="presentation__age"><span>{{ age }}</span> ({{ nextBirthday }})</div>
+		<div class="presentation__birthday" v-if="isBirthdayMonth">Si vous voulez m’offrir un petit cadeau, <br>vous pouvez consulter ma <a :href="amazonLink">liste de souhaits Amazon</a> !</div>
+	</div>
 </template>
 
 <script>
@@ -13,7 +14,12 @@ export default {
 	data () {
 		return {
 			age: null,
-			nextBirthday: null
+			nextBirthday: null,
+			amazonLink: 'http://amzn.eu/clQRFv6',
+			isBirthdayMonth: false,
+			test1: null,
+			test2: null,
+			test3: null
 		}
 	},
 
@@ -31,6 +37,8 @@ export default {
 			const format = 'DD.MM.YYYY-HH:mm'
 			const birthday = Moment(date, format)
 			const nextbd = Moment(date, format).set({ 'year': Moment().year() })
+			const rangeMin = Moment(nextbd).subtract(1, 'month')
+			const rangeMax =  Moment(nextbd).add(1, 'month')
 
 			Moment.updateLocale('fr', {
 				relativeTime: {
@@ -38,6 +46,10 @@ export default {
 					past: 'depuis %s'
 				}
 			})
+
+			if (Moment().isBetween(rangeMin, rangeMax)) {
+				this.isBirthdayMonth = true
+			}
 
 			this.age = birthday.fromNow(true)
 			this.nextBirthday = nextbd.fromNow()

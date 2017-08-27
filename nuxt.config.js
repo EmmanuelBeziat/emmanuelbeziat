@@ -8,7 +8,7 @@ module.exports = {
 	srcDir: 'src/',
 
 	generate: {
-		async routes () {
+		async routes() {
 			const blogs = await axios.get('https://rest.emmanuelbeziat.com/posts')
 			const portfolios = await axios.get('https://rest.emmanuelbeziat.com/portfolio')
 			const b_slugs = blogs.data.map(post => `/blog/${post.slug}`)
@@ -73,7 +73,7 @@ module.exports = {
 			{ rel: 'mask-icon', href: '/touch/safari-pinned-tab.svg', color: '#f77669' },
 			{ rel: 'icon', href: '/touch/favicon-32x32.png', sizes: '32x32', type: 'image/png' },
 			{ rel: 'icon', href: '/touch/favicon-16x16.png', sizes: '16x16', type: 'image/png' },
-			{ rel: 'manifest', href:'/touch/manifest.json' },
+			{ rel: 'manifest', href: '/touch/manifest.json' },
 			{ rel: 'profile', href: 'http://gmpg.org/xfn/11' },
 			{ rel: 'publisher', href: 'https://plus.google.com/+Emmanuelbeziat-web' },
 			{ rel: 'alternate', href: '/atom.xml', type: 'application/atom+xml', title: 'Emmanuel Béziat :: Actualité du blog' }
@@ -122,12 +122,19 @@ module.exports = {
 	},
 
 	/**
-	 * PLugins
+	 * Plugins
 	 */
 	plugins: [
 		'~plugins/vue-svg.js',
 		'~plugins/vue-filters.js',
 		'~plugins/vue-md-render.js'
+	],
+
+	/**
+	 * Modules
+	 */
+	modules: [
+		'@nuxtjs/sitemap'
 	],
 
 	/*
@@ -140,7 +147,7 @@ module.exports = {
 		/*
 		** Run ESLINT on save
 		*/
-		extend (config, ctx) {
+		extend(config, ctx) {
 			if (ctx.isClient) {
 				config.module.rules.push({
 					enforce: 'pre',
@@ -151,7 +158,7 @@ module.exports = {
 			}
 		},
 
-		extend (config, { isDev, isClient }) {
+		extend(config, { isDev, isClient }) {
 			config.plugins = config.plugins.filter((plugin) => plugin.constructor.name !== 'UglifyJsPlugin')
 
 			if (!isDev) {
@@ -182,6 +189,22 @@ module.exports = {
 				xhtml: true
 			})
 			*/
+		},
+
+		sitemap: {
+			path: '/sitemap.xml',
+			hostname: 'https://www.emmanuelbeziat.com',
+			cacheTime: 1000 * 60 * 15,
+			generate: true,
+			exclude: [
+			],
+			async routes() {
+				const blogs = await axios.get('https://rest.emmanuelbeziat.com/posts')
+				const portfolios = await axios.get('https://rest.emmanuelbeziat.com/portfolio')
+				const b_slugs = blogs.data.map(post => `/blog/${post.slug}`)
+				const p_slugs = portfolios.data.map(portfolio => `/portfolio/${portfolio.slug}`)
+				return [...b_slugs, ...p_slugs]
+			}
 		},
 
 		vendor: [
