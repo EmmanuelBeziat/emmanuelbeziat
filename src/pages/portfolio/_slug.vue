@@ -29,7 +29,7 @@
 
 <script>
 import axios from 'axios'
-import markdown from '~plugins/vue-md-render'
+import markdown from '~/plugins/vue-md-render'
 
 export default {
 	name: 'portfolioSingle',

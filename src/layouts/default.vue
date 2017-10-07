@@ -14,9 +14,9 @@
 </template>
 
 <script>
-import ModuleHeader from '~components/Header.vue'
-import ModuleMenu from '~components/Menu.vue'
-import ModuleFooter from '~components/Footer.vue'
+import ModuleHeader from '~/components/Header.vue'
+import ModuleMenu from '~/components/Menu.vue'
+import ModuleFooter from '~/components/Footer.vue'
 
 export default {
 	components: {

@@ -125,9 +125,9 @@ module.exports = {
 	 * Plugins
 	 */
 	plugins: [
-		'~plugins/vue-svg.js',
-		'~plugins/vue-filters.js',
-		'~plugins/vue-md-render.js'
+		'~/plugins/vue-svg.js',
+		'~/plugins/vue-filters.js',
+		'~/plugins/vue-md-render.js'
 	],
 
 	/**
@@ -176,7 +176,7 @@ module.exports = {
 			new FeedPlugin(),
 			new HtmlWebpackPlugin({
 				filename: 'atom.xml',
-				template: '~components/atom.ejs',
+				template: '~/components/atom.ejs',
 				inject: false,
 				xhtml: true
 			}),
@@ -184,7 +184,7 @@ module.exports = {
 			new SitemapPlugin(),
 			new HtmlWebpackPlugin({
 				filename: 'sitemap.xml',
-				template: '~components/sitemap.ejs',
+				template: '~/components/sitemap.ejs',
 				inject: false,
 				xhtml: true
 			})

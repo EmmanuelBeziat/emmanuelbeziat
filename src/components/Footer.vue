@@ -5,7 +5,7 @@
 </template>
 
 <script>
-import moduleCopyright from '~components/Copyright'
+import moduleCopyright from '~/components/Copyright'
 
 export default {
 	name: 'footer',

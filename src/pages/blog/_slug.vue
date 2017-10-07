@@ -47,9 +47,9 @@
 
 <script>
 import axios from 'axios'
-import markdown from '~plugins/vue-md-render'
-import Disqus from 'vue-disqus/VueDisqus'
-import ModuleShare from '~components/Share'
+import markdown from '~/plugins/vue-md-render'
+import Disqus from 'vue-disqus/VueDisqus.vue'
+import ModuleShare from '~/components/Share'
 
 export default {
 	name: 'blogSingle',

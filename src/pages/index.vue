@@ -9,8 +9,8 @@
 </template>
 
 <script>
-import ModulePresentation from '~components/Presentation'
-import ModuleCodehome from '~components/Codehome'
+import ModulePresentation from '~/components/Presentation'
+import ModuleCodehome from '~/components/Codehome'
 
 export default {
 	name: 'home',
