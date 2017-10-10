@@ -10,7 +10,7 @@ const markdown = require('markdown-it')({
 	breaks: true,
 	linkify: true,
 	highlight: function (str, lang) {
-		if (process.BROWSER_BUILD) {
+		if (process.BROWSER_BUILD || process.browser) {
 			setTimeout(function () {
 				Prism.highlightAll()
 			}, 10)

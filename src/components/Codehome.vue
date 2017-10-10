@@ -89,7 +89,7 @@ export default {
 			const selectedCode = codes[Math.floor(Math.random() * codes.length)]
 			this.code = selectedCode
 
-			if (process.BROWSER_BUILD) {
+			if (process.BROWSER_BUILD || process.browser) {
 				setTimeout(function () {
 					Prism.highlightAll()
 				}, 10)
