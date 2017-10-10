@@ -63,8 +63,12 @@ export default {
 
 		// No return datas
 		if (!data) {
-			res.statusCode = 404
+			error({
+				statusCode: 204,
+				message: 'No content reached'
+			})
 		}
+
 
 		data.content = markdown.render(data.content)
 		return { post: data }

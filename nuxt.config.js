@@ -18,6 +18,8 @@ module.exports = {
 		dir: '../site'
 	},
 
+	mode: 'spa',
+
 	/*
 	** Headers of the page
 	*/
