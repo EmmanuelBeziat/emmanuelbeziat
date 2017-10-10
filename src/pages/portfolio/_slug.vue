@@ -39,18 +39,17 @@ export default {
 	},
 
 	async asyncData ({ params }) {
-		let { data } = await axios.get(`https://rest.emmanuelbeziat.com/portfolio/${params.slug}/`)
-
-		// No return datas
-		if (!data) {
+		try {
+			let { data } = await axios.get(`https://rest.emmanuelbeziat.com/portfolio/${params.slug}/`)
+			data.content = markdown.render(data.content)
+			return { post: data }
+		}
+		catch (e) {
 			error({
 				statusCode: 204,
 				message: 'No content reached'
 			})
 		}
-
-		data.content = markdown.render(data.content)
-		return { post: data }
 	},
 
 	transition (to, from) {
