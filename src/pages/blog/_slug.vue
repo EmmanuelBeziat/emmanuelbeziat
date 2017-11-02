@@ -88,13 +88,13 @@ export default {
 			meta: [
 				{ name: 'description', content: this.post.description, hid: 'description' },
 				{ name: 'twitter:title', content: this.post.title, hid: 'twTitle' },
-				{ name: 'twitter:url', content: 'https://www.emmanuelbeziat.com/blog/'+this.post.slug, hid: 'twUrl' },
+				{ name: 'twitter:url', content: 'https://www.emmanuelbeziat.com/blog/' + this.post.slug, hid: 'twUrl' },
 				{ name: 'twitter:image', content: this.post.image, hid: 'twImage' },
 				{ name: 'twitter:description', content: this.post.description, hid: 'twDesc'},
 
 				// Facebook
 				{ property: 'og:title', content: this.post.title, hid: 'ogTitle' },
-				{ property: 'og:url', content: 'https://www.emmanuelbeziat.com/blog/'+this.post.slug, hid: 'ogUrl' },
+				{ property: 'og:url', content: 'https://www.emmanuelbeziat.com/blog/' + this.post.slug, hid: 'ogUrl' },
 				{ property: 'og:image', content: this.post.image, hid: 'ogImage' },
 				{ property: 'og:description', content: this.post.description, hid: 'ogDesc' }
 			]

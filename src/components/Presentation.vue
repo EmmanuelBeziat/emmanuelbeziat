@@ -15,16 +15,13 @@ export default {
 		return {
 			age: null,
 			nextBirthday: null,
-			amazonLink: 'http://amzn.eu/clQRFv6',
 			isBirthdayMonth: false,
-			test1: null,
-			test2: null,
-			test3: null
+			amazonLink: 'http://amzn.eu/clQRFv6'
 		}
 	},
 
 	created () {
-		this.checkAge()
+		this.checkAge('16.09.1987-02:26')
 	},
 
 	watch: {
@@ -32,9 +29,7 @@ export default {
 	},
 
 	methods: {
-		checkAge () {
-			const date = '16.09.1987-02:26'
-			const format = 'DD.MM.YYYY-HH:mm'
+		checkAge (date, format = 'DD.MM.YYYY-HH:mm') {
 			const birthday = Moment(date, format)
 			const nextbd = Moment(date, format).set({ 'year': Moment().year() })
 			const rangeMin = Moment(nextbd).subtract(1, 'month')

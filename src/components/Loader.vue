@@ -8,11 +8,9 @@
 <script>
 export default {
 	name: 'loader',
-	data () {
-		return {
-			loading: false
-		}
-	},
+	data: () => ({
+		loading: false
+	}),
 
 	methods: {
 		start () {

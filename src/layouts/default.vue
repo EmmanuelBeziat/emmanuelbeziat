@@ -15,7 +15,7 @@
 
 <script>
 import ModuleHeader from '~/components/Header.vue'
-import ModuleMenu from '~/components/Menu.vue'
+import ModuleMenu from '~/components/HeaderNav.vue'
 import ModuleFooter from '~/components/Footer.vue'
 
 export default {
