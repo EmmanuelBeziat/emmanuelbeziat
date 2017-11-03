@@ -1,14 +1,15 @@
 .portfolio__list
 	display flex
 	flex-flow row wrap
+	margin 0 -2px
 
 	@media (max-width $breakpoint-mobile)
 		justify-content center
 
 .portfolio__item
-	flex 0 0 calc(33% - 6px)
+	flex 0 0 calc(100% / 3 - 4px)
 	position relative
-	margin 0 3px 6px
+	margin 0 2px 4px
 	color $color-text
 
 	@media (max-width $breakpoint-mobile)

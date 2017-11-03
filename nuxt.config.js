@@ -105,7 +105,7 @@ module.exports = {
 	/*
 	** Customize the loader
 	*/
-	loading: '~/components/Loader.vue',
+	loading: false,
 
 	/**
 	 * Router

@@ -2,7 +2,7 @@
 	<section class="portfolio">
 		<div class="portfolio__list">
 			<router-link v-for="post in posts" :key="post.slug" class="portfolio__item" :to="'/portfolio/'+post.slug" >
-				<div class="portfolio__layer" :class="post.color">
+				<div :class="['portfolio__layer', post.color]">
 					<svg class="portfolio__image icon" v-svg="post.image"></svg>
 				</div>
 
@@ -31,6 +31,7 @@ export default {
 	asyncData () {
 		return axios.get('https://rest.emmanuelbeziat.com/portfolio')
 		.then((res) => {
+			console.info(res.data)
 			return { posts: res.data }
 		})
 	},
