@@ -174,7 +174,7 @@ import 'prismjs/plugins/show-language/prism-show-language.min.js'
 import 'prismjs/components/prism-bash.min.js'
 import 'prismjs/components/prism-php.min.js'
 import 'prismjs/components/prism-markdown.min.js'
-import 'prismjs/components/prism-jade.min.js'
+import 'prismjs/components/prism-pug.min.js'
 
 const codes = ['html', 'css', 'javascript', 'php', 'markdown', 'pug']
 
