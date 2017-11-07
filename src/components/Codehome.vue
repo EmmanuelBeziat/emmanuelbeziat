@@ -22,7 +22,6 @@
 &lt;/section&gt;
 </code></pre>
 
-
 <pre class="language-css" v-else-if="code === 'css'"><code>.metiers {
 	developpeur: web front-end;
 	formateur: html-css javascript workflow wordpress;
