@@ -140,7 +140,7 @@ Compétences de graphiste
 ### Carburant
 Coca-cola</code></pre>
 
-<pre class="language-jade" v-if="code === 'pug'"><code>section.metier
+<pre class="language-pug" v-if="code === 'pug'"><code>section.metier
 	h2 Développeur
 	| Web, Front-end
 
