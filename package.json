@@ -22,7 +22,7 @@
 		"axios": "^0.17.0",
 		"moment": "^2.19.1",
 		"nuxt": "^1.0.0-rc11",
-		"prismjs": "^1.8.3"
+		"prismjs": "^1.8.4"
 	},
 	"devDependencies": {
 		"autoprefixer": "^7.1.6",
