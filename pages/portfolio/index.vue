@@ -3,7 +3,9 @@
 		<div class="portfolio__list">
 			<router-link v-for="ref in refs" :key="ref.slug" class="portfolio__item" :to="'/portfolio/'+ref.slug" >
 				<div :class="['portfolio__layer', ref.color]">
-					<svg class="portfolio__image icon" v-svg="ref.image"></svg>
+					<svg viewBox="0 0 100 100" class="portfolio__image icon">
+						<use :xlink:href="'/sprite.svg#' + ref.image"></use>
+					</svg>
 				</div>
 
 				<div class="portfolio__caption">

@@ -98,34 +98,34 @@ module.exports = {
 			// Microsoft
 			{
 				name: 'msapplication-config',
-				content: '/touch/browserconfig.xml'
+				content: '/favicons/browserconfig.xml'
 			}
 		],
 		link: [
-			{ rel: 'shortcut icon', href: '/touch/emmanuelb-favicon.ico' },
+			{ rel: 'shortcut icon', href: '/favicons/emmanuelb-favicon.ico' },
 			{
-				rel: 'apple-touch-icon',
+				rel: 'apple-favicons-icon',
 				sizes: '180x100',
-				href: '/touch/apple-touch-icon.png'
+				href: '/favicons/apple-favicons-icon.png'
 			},
 			{
 				rel: 'mask-icon',
-				href: '/touch/safari-pinned-tab.svg',
+				href: '/favicons/safari-pinned-tab.svg',
 				color: '#f77669'
 			},
 			{
 				rel: 'icon',
-				href: '/touch/favicon-32x32.png',
+				href: '/favicons/favicon-32x32.png',
 				sizes: '32x32',
 				type: 'image/png'
 			},
 			{
 				rel: 'icon',
-				href: '/touch/favicon-16x16.png',
+				href: '/favicons/favicon-16x16.png',
 				sizes: '16x16',
 				type: 'image/png'
 			},
-			{ rel: 'manifest', href: '/touch/manifest.json' },
+			{ rel: 'manifest', href: '/favicons/manifest.json' },
 			{ rel: 'profile', href: 'http://gmpg.org/xfn/11' },
 			{
 				rel: 'publisher',

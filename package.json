@@ -11,7 +11,7 @@
 		"generate": "nuxt generate",
 		"lint": "eslint --ext .js,.vue --ignore-path .gitignore .",
 		"precommit": "npm run lint",
-		"sprites": "svg-sprite --dest=static 'assets/img/icons/refs/*.svg'"
+		"sprites": "svg-sprite-generate -d /assets/img/icons/refs/*.svg -o /static/sprite.svg"
 	},
 	"dependencies": {
 		"@nuxtjs/axios": "^5.0.0",
@@ -33,7 +33,7 @@
 		"eslint-plugin-vue": "^4.0.0",
 		"stylus": "^0.54.5",
 		"stylus-loader": "^3.0.1",
-		"svg-sprite": "^1.3.7",
+		"svg-sprite-generator": "^0.0.7",
 		"vue-disqus": "^2.0.4",
 		"vue-svg-loader": "^0.5.0"
 	}
