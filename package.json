@@ -26,6 +26,7 @@
 	},
 	"devDependencies": {
 		"autoprefixer": "^8.0.0",
+		"axios": "^0.17.1",
 		"babel-eslint": "^8.2.1",
 		"cross-env": "^5.0.1",
 		"eslint": "^4.15.0",

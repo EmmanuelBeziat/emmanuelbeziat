@@ -1,7 +1,24 @@
 const pkg = require('./package')
+const axios = require('axios')
 
 module.exports = {
 	mode: 'spa',
+
+	/*
+	 ** Static
+	 */
+	generate: {
+		async routes() {
+			const blogs = await axios.get(`https://rest.emmanuelbeziat.com/posts`)
+			const portfolios = await axios.get(`https://rest.emmanuelbeziat.com/portfolio`)
+			const b_slugs = blogs.data.map(post => `/blog/${post.slug}`)
+			const p_slugs = portfolios.data.map(
+				portfolio => `/portfolio/${portfolio.slug}`
+			)
+			return [...b_slugs, ...p_slugs]
+		},
+		dir: '../site'
+	},
 
 	/*
 	 ** Headers of the page
@@ -206,7 +223,6 @@ module.exports = {
 		typographer: true,
 		langPrefix: 'language-',
 		highlight: function(str, lang) {
-
 			return ''
 		},
 		use: [
