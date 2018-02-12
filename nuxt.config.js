@@ -1,28 +1,11 @@
-const axios = require('axios')
-const webpack = require('webpack')
-const BabiliPlugin = require('babili-webpack-plugin')
-// const FeedPlugin = require('~middleware/feed.js')
-// const SitemapPlugin = require('~middleware/sitemap.js')
+const pkg = require('./package')
 
 module.exports = {
-	srcDir: 'src/',
-
-	generate: {
-		async routes() {
-			const blogs = await axios.get('https://rest.emmanuelbeziat.com/posts')
-			const portfolios = await axios.get('https://rest.emmanuelbeziat.com/portfolio')
-			const b_slugs = blogs.data.map(post => `/blog/${post.slug}`)
-			const p_slugs = portfolios.data.map(portfolio => `/portfolio/${portfolio.slug}`)
-			return [...b_slugs, ...p_slugs]
-		},
-		dir: '../site'
-	},
-
 	mode: 'spa',
 
 	/*
-	** Headers of the page
-	*/
+	 ** Headers of the page
+	 */
 	head: {
 		htmlAttrs: {
 			lang: 'fr-FR',
@@ -31,35 +14,81 @@ module.exports = {
 
 		title: '',
 		titleTemplate: 'Emmanuel Béziat :: %s',
-
 		meta: [
 			{ charset: 'utf-8' },
-			{ name: 'viewport', content: 'width=device-width, initial-scale=1, shrink-to-fit=no' },
-			{ name: 'description', content: 'Portfolio en ligne d’un développeur web du sud. Billets de blogs, tutoriels, astuces, diatribes et réflexions sur le métier, le code et plein d’autres choses.', hid: 'description' },
+			{
+				name: 'viewport',
+				content: 'width=device-width, initial-scale=1, shrink-to-fit=no'
+			},
+			{
+				name: 'description',
+				content:
+					'Portfolio en ligne d’un développeur web du sud. Billets de blogs, tutoriels, astuces, diatribes et réflexions sur le métier, le code et plein d’autres choses.',
+				hid: 'description'
+			},
 			{ name: 'application-name', content: 'Emmanuel Béziat' },
 			{ name: 'format-detection', content: 'telephone-no' },
 
 			// Google
-			{ name: 'google-site-verification', content: 'r-jxizeApI9fc9d0Lz8hsK4L_PFTuQdtzQ2AvWM7S-g' },
+			{
+				name: 'google-site-verification',
+				content: 'r-jxizeApI9fc9d0Lz8hsK4L_PFTuQdtzQ2AvWM7S-g'
+			},
 			{ name: 'theme-color', content: '#c3e88d' },
 
 			// twitter
 			{ name: 'twitter:card', content: 'summary_large_image' },
 			{ name: 'twitter:site', content: '@EmmanuelBeziat' },
-			{ name: 'twitter:title', content: 'Emmanuel Béziat', hid: 'twTitle' },
-			{ name: 'twitter:url', content: 'https://www.emmanuelbeziat.com', hid: 'twUrl' },
-			{ name: 'twitter:image', content: 'https://images.emmanuelbeziat.com/social-default-tw.jpg', hid: 'twImage' },
-			{ name: 'twitter:description', content: 'Portfolio en ligne d’un développeur web du sud. Billets de blogs, tutoriels, astuces, diatribes et réflexions sur le métier, le code et plein d’autres choses.', hid: 'twDesc' },
+			{
+				name: 'twitter:title',
+				content: 'Emmanuel Béziat',
+				hid: 'twTitle'
+			},
+			{
+				name: 'twitter:url',
+				content: 'https://www.emmanuelbeziat.com',
+				hid: 'twUrl'
+			},
+			{
+				name: 'twitter:image',
+				content:
+					'https://images.emmanuelbeziat.com/social-default-tw.jpg',
+				hid: 'twImage'
+			},
+			{
+				name: 'twitter:description',
+				content:
+					'Portfolio en ligne d’un développeur web du sud. Billets de blogs, tutoriels, astuces, diatribes et réflexions sur le métier, le code et plein d’autres choses.',
+				hid: 'twDesc'
+			},
 
 			// Facebook
 			// { property: 'fb:app_id', content: '665950303526184' },
-			{ property: 'og:title', content: 'Emmanuel Béziat', hid: 'ogTitle' },
+			{
+				property: 'og:title',
+				content: 'Emmanuel Béziat',
+				hid: 'ogTitle'
+			},
 			{ property: 'og:site_name', content: 'Emmanuel Béziat' },
 			{ property: 'og:type', content: 'article' },
-			{ property: 'og:url', content: 'https://www.emmanuelbeziat.com', hid: 'ogUrl' },
+			{
+				property: 'og:url',
+				content: 'https://www.emmanuelbeziat.com',
+				hid: 'ogUrl'
+			},
 			{ property: 'og:locale:alternate', content: 'fr_FR' },
-			{ property: 'og:image', content: 'https://images.emmanuelbeziat.com/social-default-fb.jpg', hid: 'ogImage' },
-			{ property: 'og:description', content: 'Portfolio en ligne d’un développeur web du sud. Billets de blogs, tutoriels, astuces, diatribes et réflexions sur le métier, le code et plein d’autres choses.', hid: 'ogDesc' },
+			{
+				property: 'og:image',
+				content:
+					'https://images.emmanuelbeziat.com/social-default-fb.jpg',
+				hid: 'ogImage'
+			},
+			{
+				property: 'og:description',
+				content:
+					'Portfolio en ligne d’un développeur web du sud. Billets de blogs, tutoriels, astuces, diatribes et réflexions sur le métier, le code et plein d’autres choses.',
+				hid: 'ogDesc'
+			},
 
 			// Apple
 			{ name: 'apple-mobile-web-app-capable', content: 'yes' },
@@ -67,18 +96,47 @@ module.exports = {
 			{ name: 'apple-mobile-web-app-title', content: 'Emmanuel Béziat' },
 
 			// Microsoft
-			{ name: 'msapplication-config', content: '/touch/browserconfig.xml' }
+			{
+				name: 'msapplication-config',
+				content: '/touch/browserconfig.xml'
+			}
 		],
 		link: [
 			{ rel: 'shortcut icon', href: '/touch/emmanuelb-favicon.ico' },
-			{ rel: 'apple-touch-icon', sizes: '180x100', href: '/touch/apple-touch-icon.png' },
-			{ rel: 'mask-icon', href: '/touch/safari-pinned-tab.svg', color: '#f77669' },
-			{ rel: 'icon', href: '/touch/favicon-32x32.png', sizes: '32x32', type: 'image/png' },
-			{ rel: 'icon', href: '/touch/favicon-16x16.png', sizes: '16x16', type: 'image/png' },
+			{
+				rel: 'apple-touch-icon',
+				sizes: '180x100',
+				href: '/touch/apple-touch-icon.png'
+			},
+			{
+				rel: 'mask-icon',
+				href: '/touch/safari-pinned-tab.svg',
+				color: '#f77669'
+			},
+			{
+				rel: 'icon',
+				href: '/touch/favicon-32x32.png',
+				sizes: '32x32',
+				type: 'image/png'
+			},
+			{
+				rel: 'icon',
+				href: '/touch/favicon-16x16.png',
+				sizes: '16x16',
+				type: 'image/png'
+			},
 			{ rel: 'manifest', href: '/touch/manifest.json' },
 			{ rel: 'profile', href: 'http://gmpg.org/xfn/11' },
-			{ rel: 'publisher', href: 'https://plus.google.com/+Emmanuelbeziat-web' },
-			{ rel: 'alternate', href: '/atom.xml', type: 'application/atom+xml', title: 'Emmanuel Béziat :: Actualité du blog' }
+			{
+				rel: 'publisher',
+				href: 'https://plus.google.com/+Emmanuelbeziat-web'
+			},
+			{
+				rel: 'alternate',
+				href: '/atom.xml',
+				type: 'application/atom+xml',
+				title: 'Emmanuel Béziat :: Actualité du blog'
+			}
 		],
 
 		noScript: [
@@ -87,12 +145,18 @@ module.exports = {
 	},
 
 	/*
-	** Global CSS
-	*/
-	css: [
-		{ src: '~assets/stylus/main.styl', lang: 'stylus' }
-	],
+	 ** Customize the progress-bar color
+	 */
+	loading: { color: '#c3e88d' },
 
+	/*
+	 ** Global CSS
+	 */
+	css: [{ src: '~assets/fonts/fonts.styl', lang: 'stylus' }],
+
+	/**
+	 * Minification options
+	 */
 	minify: {
 		removeEmptyAttributes: false,
 		collapseWhitespace: true,
@@ -102,55 +166,95 @@ module.exports = {
 		removeStyleLinkTypeAttributes: true
 	},
 
-	/*
-	** Customize the loader
-	*/
-	loading: false,
-
 	/**
-	 * Router
+	 * Router configuration
 	 */
 	router: {
 		linkActiveClass: '-active',
 		base: '/'
 	},
 
-	/**
-	 * Transition
+	/*
+	 ** Plugins to load before mounting the App
 	 */
-	transition: {
-		name: 'page',
-		mode: 'out-in'
-	},
+	plugins: ['~/plugins/filters.js'],
 
-	/**
-	 * Plugins
-	 */
-	plugins: [
-		'~/plugins/vue-svg.js',
-		'~/plugins/vue-filters.js',
-		'~/plugins/vue-md-render.js'
-	],
-
-	/**
-	 * Modules
+	/*
+	 ** Nuxt.js modules
 	 */
 	modules: [
-		'@nuxtjs/sitemap'
+		// Doc: https://github.com/nuxt-community/axios-module#usage
+		'@nuxtjs/axios',
+		// Doc: https://github.com/nuxt-community/modules/tree/master/packages/markdownit
+		'@nuxtjs/markdownit'
 	],
 
 	/*
-	** Build configuration
-	*/
+	 ** Axios module configuration
+	 */
+	axios: {
+		// See https://github.com/nuxt-community/axios-module#options
+	},
+
+	/**
+	 * MarkdownIt module configuration
+	 */
+	markdownit: {
+		html: true,
+		injected: true,
+		breaks: true,
+		typographer: true,
+		langPrefix: 'language-',
+		highlight: function(str, lang) {
+
+			return ''
+		},
+		use: [
+			'markdown-it-attrs',
+			[
+				'markdown-it-block-embed',
+				{
+					containerClassName: 'video',
+					serviceClassPrefix: 'video--',
+					outputPlayerSize: false,
+					allowFullScreen: true
+				}
+			],
+			[
+				'markdown-it-anchor',
+				{
+					permalink: false,
+					permalinkClass: 'icon-link post__anchor',
+					permalinkSymbol: ''
+				}
+			],
+			'markdown-it-prism',
+			'markdown-it-smartarrows'
+		]
+	},
+
+	/**
+	 * Variables environment
+	 * https://fr.nuxtjs.org/api/configuration-env/
+	 */
+	env: {
+		api: {
+			posts: `https://rest.emmanuelbeziat.com/posts`,
+			refs: `https://rest.emmanuelbeziat.com/portfolio`
+		}
+	},
+
+	/*
+	 ** Build configuration
+	 */
 	build: {
-		postcss: [
-			require('autoprefixer')
-		],
+		postcss: [require('autoprefixer')],
 		/*
-		** Run ESLINT on save
-		*/
+		 ** You can extend webpack config here
+		 */
 		extend(config, ctx) {
-			if (ctx.isClient) {
+			// Run ESLint on save
+			if (ctx.isDev && ctx.isClient) {
 				config.module.rules.push({
 					enforce: 'pre',
 					test: /\.(js|vue)$/,
@@ -158,65 +262,27 @@ module.exports = {
 					exclude: /(node_modules)/
 				})
 			}
-		},
 
-		extend(config, { isDev, isClient }) {
-			config.plugins = config.plugins.filter((plugin) => plugin.constructor.name !== 'UglifyJsPlugin')
+			const urlLoader = config.module.rules.find(
+				rule => rule.loader === 'url-loader'
+			)
+			urlLoader.test = /\.(png|jpe?g|gif)$/
 
-			if (!isDev) {
-				let babiliOptions = {
-					removeConsole: true
+			config.module.rules.push({
+				test: /\.svg$/,
+				loader: 'vue-svg-loader',
+				exclude: /node_modules/,
+				options: {
+					svgo: {
+						plugins: [
+							{ removeDoctype: true },
+							{ removeComments: true }
+						]
+					}
 				}
-				let babiliOverrides = {}
-				config.devtool = false
-				config.plugins.push(
-					new BabiliPlugin(babiliOptions, babiliOverrides)
-				)
-			}
-
-			/*
-			new FeedPlugin(),
-			new HtmlWebpackPlugin({
-				filename: 'atom.xml',
-				template: '~/components/atom.ejs',
-				inject: false,
-				xhtml: true
-			}),
-
-			new SitemapPlugin(),
-			new HtmlWebpackPlugin({
-				filename: 'sitemap.xml',
-				template: '~/components/sitemap.ejs',
-				inject: false,
-				xhtml: true
 			})
-			*/
 		},
 
-		sitemap: {
-			path: '/sitemap.xml',
-			hostname: 'https://www.emmanuelbeziat.com',
-			cacheTime: 1000 * 60 * 15,
-			generate: true,
-			exclude: [
-			],
-			async routes() {
-				const blogs = await axios.get('https://rest.emmanuelbeziat.com/posts')
-				const portfolios = await axios.get('https://rest.emmanuelbeziat.com/portfolio')
-				const b_slugs = blogs.data.map(post => `/blog/${post.slug}`)
-				const p_slugs = portfolios.data.map(portfolio => `/portfolio/${portfolio.slug}`)
-				return [...b_slugs, ...p_slugs]
-			}
-		},
-
-		vendor: [
-			'axios',
-			'moment',
-			'prismjs',
-			'prismjs/plugins/toolbar/prism-toolbar.js',
-			'prismjs/plugins/show-language/prism-show-language.min.js',
-			'prismjs/components/prism-bash.min.js',
-			'prismjs/components/prism-php.min.js'
-		]
+		vendor: ['moment']
 	}
 }

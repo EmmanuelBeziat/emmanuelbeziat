@@ -1,0 +1,152 @@
+<template>
+	<section class="portfolio">
+		<div class="portfolio__list">
+			<router-link v-for="ref in refs" :key="ref.slug" class="portfolio__item" :to="'/portfolio/'+ref.slug" >
+				<div :class="['portfolio__layer', ref.color]">
+					<svg class="portfolio__image icon" v-svg="ref.image"></svg>
+				</div>
+
+				<div class="portfolio__caption">
+					<h2 class="portfolio__title">{{ ref.title }}</h2>
+
+					<div class="portfolio__see-more">Jeter un oeil</div>
+				</div>
+			</router-link>
+		</div>
+
+		<div class="c-note c-note--success">
+			<div class="portfolio__thanks">
+				Et bien d’autres au fil des ans <small>(merci, hé ! <i class="icon-heart"></i>)</small>
+			</div>
+		</div>
+	</section>
+</template>
+
+<script>
+export default {
+	name: 'Portfolio',
+
+	asyncData ({ params, app}) {
+		return app.$axios.get(process.env.api.refs)
+			.then((res) => {
+				return { refs: res.data }
+			})
+	},
+	transition (to, from) {
+		if (!from) return 'slide-left'
+		return +to.query.page < +from.query.page ? 'slide-right' : 'slide-left'
+	},
+
+	head () {
+		return {
+			title: 'Portfolio'
+		}
+	}
+}
+</script>
+
+
+<style lang="stylus">
+@require '~assets/styles/variables.styl'
+@require '~assets/styles/mixins.styl'
+
+.portfolio__list
+	display flex
+	flex-flow row wrap
+	margin 0 -3px
+
+	@media (max-width $breakpoint-mobile)
+		justify-content center
+
+.portfolio__item
+	flex 0 0 calc(100% / 3 - 4px)
+	position relative
+	margin 0 2px 4px
+	color $color-text
+
+	@media (max-width $breakpoint-mobile)
+		min-width rem(240px)
+
+.portfolio__layer
+	background $color-separator
+	position relative
+	height rem(240px)
+	display flex
+	justify-content center
+	align-items center
+	z-index 10
+	transform-origin 50% 20px
+	transition .2s ease-in-out
+	backface-visibility hidden
+
+.portfolio__image
+	size rem(128px)
+	fill $color-text
+	backface-visibility hidden
+	transition .2s ease-in-out .1s
+
+.portfolio__caption
+	z-index 5
+	position absolute
+	top 0
+	right 0
+	bottom 0
+	left 0
+	padding rem(20px)
+	background darken($color-background, 10%)
+	display flex
+	flex-direction column
+	justify-content flex-end
+	overflow hidden
+	text-align center
+
+.portfolio__title
+	margin 0 0 .5em
+	line-height 1.5
+	font-size rem(28px)
+	font-weight 400
+
+.portfolio__item:hover
+	.portfolio__layer
+		transform scale(.4) translateZ(0)
+		border-radius 50%
+
+		&.blue
+			background $color-blue
+
+		&.red
+			background $color-red
+
+		&.violet
+			background $color-violet
+
+		&.yellow
+			background darken($color-yellow, 10%)
+
+		&.green
+			background $color-green
+
+		&.black
+			background darken($color-grey, 50%)
+
+	.portfolio__image
+		transform scale(1.1) translateZ(0)
+
+.portfolio__see-more
+	display inline-block
+	background $color-red
+	color $color-text
+	padding .25em .75em
+
+	&:hover
+		color inherit
+		background $color-grey
+
+.portfolio__thanks
+	font-size $font-size-heading-4
+
+	.icon-heart
+		color $color-red
+
+@require '~assets/styles/modules/notes.styl'
+</style>
