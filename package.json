@@ -8,10 +8,12 @@
 		"dev": "nuxt",
 		"build": "nuxt build",
 		"start": "nuxt start",
+		"pm2": "pm2 start ./node_modules/nuxt/bin/nuxt-start -i max --attach",
 		"generate": "nuxt generate",
 		"lint": "eslint --ext .js,.vue --ignore-path .gitignore .",
 		"precommit": "npm run lint",
-		"sprites": "svg-sprite-generate -d /assets/img/icons/refs/*.svg -o /static/sprite.svg"
+		"sprites":
+			"svg-sprite-generate -d /assets/img/icons/refs/*.svg -o /static/sprite.svg"
 	},
 	"dependencies": {
 		"@nuxtjs/axios": "^5.0.0",
