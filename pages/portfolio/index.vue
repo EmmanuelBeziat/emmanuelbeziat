@@ -10,8 +10,12 @@
 
 				<div class="portfolio__caption">
 					<h2 class="portfolio__title">{{ ref.title }}</h2>
-
-					<div class="portfolio__see-more">Jeter un oeil</div>
+					<div class="portfolio-tags">
+						<i class="icon-tag" aria-hidde="true"></i>
+						<div class="portfolio-tags__list">
+							<span class="portfolio-tags__item" v-for="tag in ref.tags" :key="tag">{{ tag }}</span>
+						</div>
+					</div>
 				</div>
 			</router-link>
 		</div>
@@ -53,21 +57,20 @@ export default {
 @require '~assets/styles/mixins.styl'
 
 .portfolio__list
-	display flex
-	flex-flow row wrap
-	margin 0 -3px
+	display grid
+	grid-template-columns 1fr 1fr 1fr
+	grid-column-gap 4px
+	grid-row-gap 4px
+
+	@media (max-width $breakpoint-tablet)
+		grid-template-columns 1fr 1fr
 
 	@media (max-width $breakpoint-mobile)
-		justify-content center
+		grid-template-columns 1fr
 
 .portfolio__item
-	flex 0 0 calc(100% / 3 - 4px)
 	position relative
-	margin 0 2px 4px
 	color $color-text
-
-	@media (max-width $breakpoint-mobile)
-		min-width rem(240px)
 
 .portfolio__layer
 	background $color-separator
@@ -112,6 +115,8 @@ export default {
 	.portfolio__layer
 		transform scale(.4) translateZ(0)
 		border-radius 50%
+		size rem(240px)
+		margin auto
 
 		&.blue
 			background $color-blue
@@ -134,15 +139,24 @@ export default {
 	.portfolio__image
 		transform scale(1.1) translateZ(0)
 
-.portfolio__see-more
-	display inline-block
-	background $color-red
-	color $color-text
-	padding .25em .75em
+.portfolio-tags
+	display flex
+	align-items center
+	justify-content center
 
-	&:hover
-		color inherit
-		background $color-grey
+	i
+		margin-right rem(10px)
+
+.portfolio-tags__list
+	text-align left
+	line-height 1.15
+
+.portfolio-tags__item
+	font-size rem(14px)
+	color $color-text
+
+	&:not(:last-child)::after
+		content ", "
 
 .portfolio__thanks
 	font-size $font-size-heading-4

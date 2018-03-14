@@ -35,6 +35,7 @@ export default {
 	text-decoration none
 	color $color-text
 	position relative
+
 	@media (max-width $breakpoint-mobile)
 		font-weight 300
 		font-size rem(16px)
@@ -53,6 +54,7 @@ export default {
 		content "<"
 		transform translateX(20px)
 		padding-right .125em
+
 		@media (max-width $breakpoint-mobile)
 			display block
 			font-family "Icons"

@@ -45,6 +45,7 @@ export default {
 
 html
 	box-sizing border-box
+	overflow-y scroll
 
 body
 	margin 0
@@ -115,13 +116,15 @@ code
 
 .site
 	min-height $size-viewport-height
-	display flex
-	flex-direction row
-	align-items stretch
 	overflow-x hidden
+	display grid
+	grid-template-areas "sidebar content"
+	grid-template-columns $size-header 1fr
 
 	@media (max-width $breakpoint-tablet)
-		flex-direction column
+		display block
+
+	@media (max-width $breakpoint-mobile)
 		padding-bottom rem(80px)
 
 .site-content
@@ -129,8 +132,10 @@ code
 	width $size-content
 	margin 0 auto
 
+	@media (max-width rem(1130px))
+		width $size-content - 5rem
+
 	@media (max-width $breakpoint-tablet)
-		min-width 100%
 		width auto
 
 .main

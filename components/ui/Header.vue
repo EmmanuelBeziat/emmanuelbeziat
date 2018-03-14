@@ -12,7 +12,7 @@
 				<i class="social__icon icon-facebook" aria-hidden="true"></i><span class="sr-only">Facebook</span>
 			</a>
 			<a :href="social.github" class="social__link social__link--github">
-				<i class="social__icon icon-github" aria-hidden="true"></i><span class="sr-only">Github</span>
+				<i class="social__icon icon-github-circled" aria-hidden="true"></i><span class="sr-only">Github</span>
 			</a>
 			<a :href="social.linkedin" class="social__link social__link--linkedin">
 				<i class="social__icon icon-linkedin" aria-hidden="true"></i><span class="sr-only">LinkedIn</span>
@@ -24,8 +24,8 @@
 
 		<div class="header__bio">
 			<p>jeune développeur web perpignanais passionné de geekeries</p>
-			<p>je travaille chez <a href="http://www.italic.fr/">Italic</a>, une chouette web-agency à paris</p>
-			<p>et je suis également formateur web à l’<a href="http://www.lidem.eu/">IDEM</a>, dans le sud plein de soleil</p>
+			<p>je travaille chez <a href="http://www.italic.fr/">Italic</a>, une chouette web-agency à Paris</p>
+			<p>je fus également formateur web à l’<a href="http://www.lidem.eu/">IDEM</a>, dans le sud plein de soleil</p>
 		</div>
 
 		<div class="header__copyright">
@@ -36,12 +36,6 @@
 
 <script>
 import Copyright from '~/components/Copyright'
-
-import IconTwitter from '~/assets/img/icons/social/twitter.svg'
-import IconFacebook from '~/assets/img/icons/social/facebook.svg'
-import IconGithub from '~/assets/img/icons/social/github.svg'
-import IconLinkedin from '~/assets/img/icons/social/linkedin.svg'
-import IconCodepen from '~/assets/img/icons/social/codepen.svg'
 
 export default {
 	name: 'Header',
@@ -58,12 +52,7 @@ export default {
 	},
 
 	components: {
-		Copyright,
-		IconTwitter,
-		IconFacebook,
-		IconGithub,
-		IconLinkedin,
-		IconCodepen
+		Copyright
 	}
 }
 </script>
@@ -75,14 +64,9 @@ export default {
 .header
 	padding 2rem
 	background darken($color-background, 10%)
-	width $size-header
-	min-width $size-header
 	position relative
 	z-index 10
 	text-align center
-
-	@media (max-width $breakpoint-tablet)
-		width auto
 
 .header__title
 	margin 0
