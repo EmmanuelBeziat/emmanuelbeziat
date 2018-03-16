@@ -9,8 +9,12 @@ module.exports = {
 	 */
 	generate: {
 		async routes() {
-			const blogs = await axios.get(`https://rest.emmanuelbeziat.com/posts`)
-			const portfolios = await axios.get(`https://rest.emmanuelbeziat.com/portfolio`)
+			const blogs = await axios.get(
+				`https://rest.emmanuelbeziat.com/posts`
+			)
+			const portfolios = await axios.get(
+				`https://rest.emmanuelbeziat.com/portfolio`
+			)
 			const b_slugs = blogs.data.map(post => `/blog/${post.slug}`)
 			const p_slugs = portfolios.data.map(
 				portfolio => `/portfolio/${portfolio.slug}`
@@ -264,7 +268,7 @@ module.exports = {
 	 ** Build configuration
 	 */
 	build: {
-		postcss: [require('autoprefixer')],
+		postcss: [require('autoprefixer'), require('css-mqpacker')],
 		/*
 		 ** You can extend webpack config here
 		 */

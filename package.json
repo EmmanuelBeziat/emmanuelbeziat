@@ -12,30 +12,30 @@
 		"generate": "nuxt generate",
 		"lint": "eslint --ext .js,.vue --ignore-path .gitignore .",
 		"precommit": "npm run lint",
-		"sprites":
-			"svg-sprite-generate -d /assets/img/icons/refs/*.svg -o /static/sprite.svg"
+		"sprites": "svg-sprite-generate -d /assets/img/icons/refs/*.svg -o /static/sprite.svg"
 	},
 	"dependencies": {
-		"@nuxtjs/axios": "^5.0.0",
+		"@nuxtjs/axios": "^5.1.1",
 		"@nuxtjs/markdownit": "^1.2.0",
 		"markdown-it-anchor": "^4.0.0",
 		"markdown-it-attrs": "^1.2.1",
 		"markdown-it-block-embed": "^0.0.3",
 		"markdown-it-prism": "^1.1.1",
 		"markdown-it-smartarrows": "^1.0.1",
-		"moment": "^2.20.1",
-		"nuxt": "^1.0.0"
+		"moment": "^2.21.0",
+		"nuxt": "^1.4.0"
 	},
 	"devDependencies": {
-		"autoprefixer": "^8.0.0",
-		"axios": "^0.17.1",
-		"babel-eslint": "^8.2.1",
-		"cross-env": "^5.0.1",
-		"eslint": "^4.15.0",
-		"eslint-loader": "^1.7.1",
-		"eslint-plugin-vue": "^4.0.0",
+		"autoprefixer": "^8.1.0",
+		"axios": "^0.18.0",
+		"babel-eslint": "^8.2.2",
+		"cross-env": "^5.1.4",
+		"css-mqpacker": "^6.0.2",
+		"eslint": "^4.18.2",
+		"eslint-loader": "^2.0.0",
+		"eslint-plugin-vue": "^4.3.0",
 		"stylus": "^0.54.5",
-		"stylus-loader": "^3.0.1",
+		"stylus-loader": "^3.0.2",
 		"svg-sprite-generator": "^0.0.7",
 		"vue-disqus": "^2.0.4",
 		"vue-svg-loader": "^0.5.0"
