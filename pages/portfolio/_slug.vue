@@ -58,14 +58,9 @@ export default {
 			title: this.ref.title,
 			meta: [
 				{ name: 'description', content: this.ref.description, hid: 'description' },
-				{ name: 'twitter:title', content: this.ref.title, hid: 'twTitle' },
-				{ name: 'twitter:url', content: 'https://www.emmanuelbeziat.com/portfolio/'+this.ref.slug, hid: 'twUrl' },
-				{ name: 'twitter:description', content: this.description, hid: 'twDesc'},
-
-				// Facebook
-				{ property: 'og:title', content: this.ref.title, hid: 'ogTitle' },
-				{ property: 'og:url', content: 'https://www.emmanuelbeziat.com/portfolio/'+this.ref.slug, hid: 'ogUrl' },
-				{ property: 'og:description', content: this.ref.description, hid: 'ogDesc' }
+				{ property: 'og:title', content: this.ref.title, hid: 'og:title' },
+				{ property: 'og:url', content: 'https://www.emmanuelbeziat.com/portfolio/'+this.ref.slug, hid: 'og:url' },
+				{ property: 'og:description', content: this.ref.description, hid: 'og:description' }
 			]
 		}
 	}

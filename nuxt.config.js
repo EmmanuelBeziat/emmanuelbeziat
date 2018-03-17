@@ -58,29 +58,13 @@ module.exports = {
 			{ name: 'theme-color', content: '#c3e88d' },
 
 			// twitter
-			{ name: 'twitter:card', content: 'summary_large_image' },
-			{ name: 'twitter:site', content: '@EmmanuelBeziat' },
-			{
-				name: 'twitter:title',
-				content: 'Emmanuel Béziat',
-				hid: 'twTitle'
-			},
-			{
-				name: 'twitter:url',
-				content: 'https://www.emmanuelbeziat.com',
-				hid: 'twUrl'
-			},
+			{ name: 'twitter:card', content: 'summary_large_image', hid: 'twitter:card' },
+			{ name: 'twitter:site', content: '@EmmanuelBeziat', hid: 'twitter:site' },
 			{
 				name: 'twitter:image',
 				content:
 					'https://images.emmanuelbeziat.com/social-default-tw.jpg',
-				hid: 'twImage'
-			},
-			{
-				name: 'twitter:description',
-				content:
-					'Portfolio en ligne d’un développeur web du sud. Billets de blogs, tutoriels, astuces, diatribes et réflexions sur le métier, le code et plein d’autres choses.',
-				hid: 'twDesc'
+				hid: 'twitter:image'
 			},
 
 			// Facebook
@@ -88,27 +72,27 @@ module.exports = {
 			{
 				property: 'og:title',
 				content: 'Emmanuel Béziat',
-				hid: 'ogTitle'
+				hid: 'og:title'
 			},
 			{ property: 'og:site_name', content: 'Emmanuel Béziat' },
 			{ property: 'og:type', content: 'article' },
 			{
 				property: 'og:url',
 				content: 'https://www.emmanuelbeziat.com',
-				hid: 'ogUrl'
+				hid: 'og:url'
 			},
 			{ property: 'og:locale:alternate', content: 'fr_FR' },
 			{
 				property: 'og:image',
 				content:
 					'https://images.emmanuelbeziat.com/social-default-fb.jpg',
-				hid: 'ogImage'
+				hid: 'og:image'
 			},
 			{
 				property: 'og:description',
 				content:
 					'Portfolio en ligne d’un développeur web du sud. Billets de blogs, tutoriels, astuces, diatribes et réflexions sur le métier, le code et plein d’autres choses.',
-				hid: 'ogDesc'
+				hid: 'og:description'
 			},
 
 			// Apple
