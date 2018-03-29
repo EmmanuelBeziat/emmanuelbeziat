@@ -132,9 +132,6 @@ code
 	width $size-content
 	margin 0 auto
 
-	@media (max-width rem(1130px))
-		width $size-content - 5rem
-
 	@media (max-width $breakpoint-tablet)
 		width auto
 
