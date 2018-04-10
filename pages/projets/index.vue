@@ -25,7 +25,7 @@ export default {
 
 	head() {
 		return {
-			title: 'Blog'
+			title: 'Projets'
 		};
 	}
 };
