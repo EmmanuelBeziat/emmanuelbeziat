@@ -8,18 +8,24 @@ module.exports = {
 	 ** Static
 	 */
 	generate: {
-		async routes() {
+		async routes () {
 			const blogs = await axios.get(
 				`https://rest.emmanuelbeziat.com/posts`
 			)
 			const portfolios = await axios.get(
 				`https://rest.emmanuelbeziat.com/portfolio`
 			)
-			const b_slugs = blogs.data.map(post => `/blog/${post.slug}`)
-			const p_slugs = portfolios.data.map(
+			const projets = await axios.get(
+				`https://rest.emmanuelbeziat.com/projects`
+			)
+			const postSlugs = blogs.data.map(post => `/blog/${post.slug}`)
+			const portfolioSlugs = portfolios.data.map(
 				portfolio => `/portfolio/${portfolio.slug}`
 			)
-			return [...b_slugs, ...p_slugs]
+			const projetSlugs = projets.data.map(
+				projet => `/projets/${project.slug}`
+			)
+			return [...postSlugs, ...portfolioSlugs, ...projetSlugs]
 		},
 		dir: '../site'
 	},
@@ -210,7 +216,7 @@ module.exports = {
 		breaks: true,
 		typographer: true,
 		langPrefix: 'language-',
-		highlight: function(str, lang) {
+		highlight: function (str, lang) {
 			return ''
 		},
 		use: [
@@ -244,7 +250,8 @@ module.exports = {
 	env: {
 		api: {
 			posts: `https://rest.emmanuelbeziat.com/posts`,
-			refs: `https://rest.emmanuelbeziat.com/portfolio`
+			refs: `https://rest.emmanuelbeziat.com/portfolio`,
+			projects: `https://rest.emmanuelbeziat.com/projects`,
 		}
 	},
 
@@ -256,7 +263,7 @@ module.exports = {
 		/*
 		 ** You can extend webpack config here
 		 */
-		extend(config, ctx) {
+		extend (config, ctx) {
 			// Run ESLint on save
 			if (ctx.isDev && ctx.isClient) {
 				config.module.rules.push({
