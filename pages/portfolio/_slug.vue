@@ -20,7 +20,7 @@
 			<div class="post__content" v-html="$md.render(ref.content)"></div>
 
 			<footer class="post__footer">
-				<router-link :to="'/portfolio'" class="post__navigation--previous icon-arrow-left">Revenir au portfolio</router-link>
+				<router-link :to="'/portfolio'" class="post__navigation--previous icon-arrow-left"> Revenir au portfolio</router-link>
 			</footer>
 
 		</article>

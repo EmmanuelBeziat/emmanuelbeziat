@@ -1,7 +1,11 @@
 <template>
 	<section class="blog">
+		<div class="c-search">
+			<input class="c-search__input" type="search" placeholder="Recherche…" v-model="search">
+		</div>
+
 		<div class="post-list">
-			<article class="post-list__item" v-for="post in posts" :key="post.slug">
+			<article class="post-list__item" v-for="post in filteredList" :key="post.slug">
 				<h1 class="post-list__title"><nuxt-link :to="'/blog/'+post.slug">{{ post.title }}</nuxt-link></h1>
 
 				<div class="post-list__infos">
@@ -23,8 +27,17 @@ export default {
 	asyncData ({ params, app}) {
 		return app.$axios.get(process.env.api.posts)
 			.then((res) => {
-				return { posts: res.data }
+				return {
+					posts: res.data,
+					search: ''
+				}
 			})
+	},
+
+	computed: {
+		filteredList () {
+			return this.posts.filter(post => post.title.toLowerCase().includes(this.search.toLowerCase()))
+		}
 	},
 
 	transition (to, from) {
@@ -98,4 +111,5 @@ export default {
 		display none
 
 @require '~assets/styles/modules/tags.styl'
+@require '~assets/styles/modules/search.styl'
 </style>

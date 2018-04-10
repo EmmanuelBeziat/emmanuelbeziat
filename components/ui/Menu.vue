@@ -2,6 +2,7 @@
 	<nav class="menu">
 		<nuxt-link to="/" class="menu__link" exact>Accueil</nuxt-link>
 		<nuxt-link to="/portfolio" class="menu__link">Portfolio</nuxt-link>
+		<nuxt-link to="/projets" class="menu__link">Projets</nuxt-link>
 		<nuxt-link to="/blog" class="menu__link">Blog</nuxt-link>
 	</nav>
 </template>
@@ -9,7 +10,7 @@
 <script>
 export default {
 	name: 'Menu'
-}
+};
 </script>
 
 <style lang="stylus">
@@ -73,7 +74,7 @@ export default {
 		@media (max-width $breakpoint-mobile)
 			display none
 
-	&:nth-of-type(1)
+	&[href="/"]
 		&:hover
 		&:focus
 			color $color-green
@@ -81,7 +82,7 @@ export default {
 			@media (max-width $breakpoint-mobile)
 				content "\e800"
 
-	&:nth-of-type(2)
+	&[href="/portfolio"]
 		&:hover
 		&:focus
 			color $color-blue
@@ -89,7 +90,15 @@ export default {
 			@media (max-width $breakpoint-mobile)
 				content "\e801"
 
-	&:nth-of-type(3)
+	&[href="/projets"]
+		&:hover
+		&:focus
+			color $color-yellow
+		&::before
+			@media (max-width $breakpoint-mobile)
+				content "\e80e"
+
+	&[href="/blog"]
 		&:hover
 		&:focus
 			color $color-red
@@ -103,13 +112,16 @@ export default {
 		&::after
 			color inherit
 
-	&:nth-of-type(1)
+	&[href="/"]
 		color $color-green
 
-	&:nth-of-type(2)
+	&[href="/portfolio"]
 		color $color-blue
 
-	&:nth-of-type(3)
+	&[href="/projets"]
+		color $color-yellow
+
+	&[href="/blog"]
 		color $color-red
 
 .-active
