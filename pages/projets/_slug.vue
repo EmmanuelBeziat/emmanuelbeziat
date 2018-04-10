@@ -12,7 +12,7 @@
 			<div class="post__content" v-html="$md.render(post.content)"></div>
 
 			<footer class="post__footer">
-				<router-link :to="'/projets'" class="post__navigation--previous icon-arrow-left">Revenir aux projets</router-link>
+				<router-link :to="'/projets'" class="post__navigation--previous icon-arrow-left"> Revenir aux projets</router-link>
 			</footer>
 		</article>
 	</div>
