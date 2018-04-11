@@ -21,6 +21,8 @@
 </template>
 
 <script>
+import slug from 'slug'
+
 export default {
 	name: 'Blog',
 
@@ -36,7 +38,7 @@ export default {
 
 	computed: {
 		filteredList () {
-			return this.posts.filter(post => post.title.toLowerCase().includes(this.search.toLowerCase()))
+			return this.posts.filter(post => slug(post.title.toLowerCase()).includes(slug(this.search.toLowerCase())))
 		}
 	},
 
