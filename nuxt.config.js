@@ -252,6 +252,7 @@ module.exports = {
 			posts: `https://rest.emmanuelbeziat.com/posts`,
 			refs: `https://rest.emmanuelbeziat.com/portfolio`,
 			projects: `https://rest.emmanuelbeziat.com/projects`,
+			github: `https://api.github.com/users/emmanuelbeziat/repos`
 		}
 	},
 
