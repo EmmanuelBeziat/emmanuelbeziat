@@ -15,9 +15,6 @@ module.exports = {
 			const portfolios = await axios.get(
 				`https://rest.emmanuelbeziat.com/portfolio`
 			)
-			const projets = await axios.get(
-				`https://rest.emmanuelbeziat.com/projects`
-			)
 			const postSlugs = blogs.data.map(post => `/blog/${post.slug}`)
 			const portfolioSlugs = portfolios.data.map(
 				portfolio => `/portfolio/${portfolio.slug}`
