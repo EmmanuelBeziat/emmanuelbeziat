@@ -22,10 +22,7 @@ module.exports = {
 			const portfolioSlugs = portfolios.data.map(
 				portfolio => `/portfolio/${portfolio.slug}`
 			)
-			const projetSlugs = projets.data.map(
-				projet => `/projets/${projet.slug}`
-			)
-			return [...postSlugs, ...portfolioSlugs, ...projetSlugs]
+			return [...postSlugs, ...portfolioSlugs]
 		},
 		dir: '../site'
 	},
