@@ -276,7 +276,6 @@ module.exports = {
 		 */
 		extend (config, ctx) {
 			// Run ESLint on save
-			/*
 			if (ctx.isDev && ctx.isClient) {
 				config.module.rules.push({
 					enforce: 'pre',
@@ -285,7 +284,6 @@ module.exports = {
 					exclude: /(node_modules)/
 				})
 			}
-			*/
 
 			const urlLoader = config.module.rules.find(
 				rule => rule.loader === 'url-loader'
