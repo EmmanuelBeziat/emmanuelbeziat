@@ -4,6 +4,11 @@
 	"description": "My website, 2018 version.",
 	"author": "Emmanuel Béziat",
 	"private": true,
+	"config": {
+		"nuxt": {
+			"port": "3033"
+		}
+	},
 	"scripts": {
 		"dev": "nuxt",
 		"build": "nuxt build",
