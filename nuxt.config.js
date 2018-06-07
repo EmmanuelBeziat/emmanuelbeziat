@@ -2,11 +2,23 @@ const pkg = require('./package')
 const axios = require('axios')
 
 module.exports = {
-	mode: 'spa',
+	// mode: 'spa',
+
+	/**
+	 * SSR
+	 */
+	mode: 'universal',
+
+	buildDir: '../site',
+	build: {
+		publicPath: '../site/dist/'
+	},
+
 
 	/*
 	 ** Static
 	 */
+	/*
 	generate: {
 		async routes () {
 			const blogs = await axios.get(
@@ -23,6 +35,7 @@ module.exports = {
 		},
 		dir: '../site'
 	},
+	*/
 
 	/*
 	 ** Headers of the page

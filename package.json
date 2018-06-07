@@ -1,6 +1,6 @@
 {
 	"name": "emmanuelbeziat",
-	"version": "3.0.0",
+	"version": "4.0.0",
 	"description": "My website, 2018 version.",
 	"author": "Emmanuel Béziat",
 	"private": true,
@@ -8,7 +8,7 @@
 		"dev": "nuxt",
 		"build": "nuxt build",
 		"start": "nuxt start",
-		"pm2": "pm2 start ./node_modules/nuxt/bin/nuxt-start -i max --attach",
+		"pm2": "pm2 start npm --name 'emmanuelb-live' -- start",
 		"generate": "nuxt generate",
 		"lint": "eslint --ext .js,.vue --ignore-path .gitignore .",
 		"precommit": "npm run lint",
