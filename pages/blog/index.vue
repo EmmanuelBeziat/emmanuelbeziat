@@ -24,6 +24,7 @@
 
 <script>
 import slug from 'slug'
+import moment from 'moment'
 
 export default {
 	name: 'Blog',
@@ -31,8 +32,15 @@ export default {
 	asyncData ({ params, app}) {
 		return app.$axios.get(process.env.api.posts)
 			.then((res) => {
+				let postList = []
+				res.data.forEach(item => {
+					if (item.publish !== false && moment().diff(item.date, 'days') > 1) {
+						postList.push(item)
+					}
+				})
+
 				return {
-					posts: res.data,
+					posts: postList,
 					search: ''
 				}
 			})

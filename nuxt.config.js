@@ -10,10 +10,6 @@ module.exports = {
 	mode: 'universal',
 
 	buildDir: '../site',
-	build: {
-		publicPath: '../site/dist/'
-	},
-
 
 	/*
 	 ** Static
@@ -270,6 +266,7 @@ module.exports = {
 	 ** Build configuration
 	 */
 	build: {
+		publicPath: '../site/dist/',
 		postcss: [require('autoprefixer'), require('css-mqpacker')],
 		/*
 		 ** You can extend webpack config here
