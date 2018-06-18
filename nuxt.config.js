@@ -266,13 +266,16 @@ module.exports = {
 	 ** Build configuration
 	 */
 	build: {
-		publicPath: '../site/dist/',
-		postcss: [require('autoprefixer'), require('css-mqpacker')],
 		/*
-		 ** You can extend webpack config here
-		 */
+		** You can extend webpack config here
+		*/
 		extend (config, ctx) {
+			if (!ctx.isDev) {
+				publicPath: '../site/dist/'
+			}
+
 			// Run ESLint on save
+			/*
 			if (ctx.isDev && ctx.isClient) {
 				config.module.rules.push({
 					enforce: 'pre',
@@ -299,9 +302,10 @@ module.exports = {
 						]
 					}
 				}
-			})
+			})*/
 		},
 
+		postcss: [require('autoprefixer'), require('css-mqpacker')],
 		vendor: ['moment']
 	}
 }
