@@ -20,7 +20,7 @@
 			<div class="post__content" v-html="$md.render(ref.content)"></div>
 
 			<footer class="post__footer">
-				<router-link :to="'/portfolio'" class="post__navigation--previous icon-arrow-left"> Revenir au portfolio</router-link>
+				<nuxt-link exact :to="'/portfolio'" class="post__navigation--previous icon-arrow-left">Revenir au portfolio</nuxt-link>
 			</footer>
 
 		</article>
@@ -71,5 +71,6 @@ export default {
 @require '~assets/styles/variables.styl'
 @require '~assets/styles/mixins.styl'
 
+@require '~assets/styles/components/posts.styl'
 @require '~assets/styles/modules/tags.styl'
 </style>

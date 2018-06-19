@@ -61,7 +61,9 @@ export default {
 				facebook: 'https://www.facebook.com/EmmanuelBeziat',
 				github: 'https://github.com/EmmanuelBeziat',
 				linkedin: 'https://www.linkedin.com/in/emmanuel-b-54242949',
-				codepen: 'http://codepen.io/EmmanuelBeziat/'
+				codepen: 'https://codepen.io/EmmanuelBeziat/',
+				instagram: 'https://www.instagram.com/emmanuelbeziat/',
+				youtube: 'https://www.youtube.com/c/EmmanuelB'
 			}
 		}
 	},
