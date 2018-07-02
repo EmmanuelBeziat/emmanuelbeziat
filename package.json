@@ -13,7 +13,7 @@
 		"dev": "nuxt",
 		"build": "nuxt build",
 		"start": "nuxt start",
-		"pm2": "pm2 start npm --name 'emmanuelb-live' -- start",
+		"pm2": "pm2 start npm --name 'emmanuelb-live' -- start && cp -r /var/www/emmanuelbeziat/nuxt/favicons /var/www/emmanuelbeziat/site/dist/favicons",
 		"generate": "nuxt generate",
 		"lint": "eslint --ext .js,.vue --ignore-path .gitignore .",
 		"precommit": "npm run lint",
