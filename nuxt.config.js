@@ -192,8 +192,8 @@ module.exports = {
 	 ** Plugins to load before mounting the App
 	 */
 	plugins: [
-		'~/plugins/filters.js',
-		// '~/plugins/disqus'
+		'~/plugins/filters',
+		'~/plugins/disqus'
 	],
 
 	/*

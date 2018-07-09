@@ -40,13 +40,12 @@
 		</article>
 
 		<div class="comments">
-			<disqus shortname="emmanuelbeziat" :identifier="post.slug"></disqus>
+			<vue-disqus shortname="emmanuelbeziat" :identifier="post.slug"></vue-disqus>
 		</div>
 	</div>
 </template>
 
 <script>
-import Disqus from 'vue-disqus/VueDisqus.vue'
 import Share from '~/components/Share'
 
 export default {
@@ -70,7 +69,6 @@ export default {
 	},
 
 	components: {
-		Disqus,
 		Share
 	},
 
