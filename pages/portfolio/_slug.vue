@@ -70,7 +70,6 @@ export default {
 <style lang="stylus">
 @require '~assets/styles/variables.styl'
 @require '~assets/styles/mixins.styl'
-
 @require '~assets/styles/components/posts.styl'
 @require '~assets/styles/modules/tags.styl'
 </style>
