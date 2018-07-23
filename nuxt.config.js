@@ -193,7 +193,6 @@ module.exports = {
 	 */
 	plugins: [
 		'~/plugins/filters',
-		'~/plugins/disqus'
 	],
 
 	/*
