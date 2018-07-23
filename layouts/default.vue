@@ -118,8 +118,7 @@ code
 	min-height $size-viewport-height
 	overflow-x hidden
 	display grid
-	grid-template-areas "sidebar content"
-	grid-template-columns $size-header 1fr
+	grid-template-columns $size-header auto
 
 	@media (max-width $breakpoint-tablet)
 		display block
