@@ -13,7 +13,7 @@
 						</div>
 
 						<div class="post__share">
-							<share/>
+							<Share />
 						</div>
 					</div>
 				</div>
@@ -41,7 +41,7 @@
 </template>
 
 <script>
-import Share from '~/components/Share'
+import Share from '~/components/share/Share'
 
 export default {
 	name: 'blogSingle',

@@ -9,3 +9,7 @@ npm-debug.log
 
 # Nuxt generate
 dist
+
+package-lock.json
+yarn-error.log
+yarn.lock

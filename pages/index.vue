@@ -1,16 +1,16 @@
 <template>
 	<section class="home">
 		<div class="presentation">
-			<presentation/>
+			<Presentation />
 
-			<codehome/>
+			<CodeHome />
 		</div>
 	</section>
 </template>
 
 <script>
-import Presentation from '~/components/Presentation'
-import Codehome from '~/components/CodeHome'
+import Presentation from '~/components/home/Presentation'
+import Codehome from '~/components/home/Code'
 
 export default {
 	name: 'home',
