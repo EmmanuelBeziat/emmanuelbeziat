@@ -1,5 +1,6 @@
 const pkg = require('./package')
 const axios = require('axios')
+const webpack = require('webpack')
 
 module.exports = {
 	// mode: 'spa',
@@ -265,6 +266,9 @@ module.exports = {
 	 ** Build configuration
 	 */
 	build: {
+		plugins: [
+			new webpack.IgnorePlugin(/^\.\/locale$/, /moment$/)
+		],
 		/*
 		** You can extend webpack config here
 		*/
@@ -305,6 +309,6 @@ module.exports = {
 		},
 
 		postcss: [require('autoprefixer'), require('css-mqpacker')],
-		vendor: ['moment']
+		vendor: ['moment'],
 	}
 }

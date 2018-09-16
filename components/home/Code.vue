@@ -13,7 +13,7 @@
 const codes = ['html', 'css', 'javascript', 'php', 'markdown', 'pug']
 
 export default {
-	name: 'codehome',
+	name: 'code-home',
 
 	data () {
 		return {

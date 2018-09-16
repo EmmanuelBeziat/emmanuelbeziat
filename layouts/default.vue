@@ -1,29 +1,31 @@
 <template>
 	<div class="site">
-		<ui-header/>
+		<Header />
 
 		<div class="site-content">
-			<ui-menu/>
+			<Menu />
 			<main class="main">
-				<nuxt/>
+				<transition name="slide" mode="out-in">
+					<nuxt />
+				</transition>
 			</main>
 		</div>
 
-		<ui-footer/>
+		<Footer />
 	</div>
 </template>
 
 <script>
-import UiHeader from '~/components/ui/Header.vue'
-import UiMenu from '~/components/ui/Menu.vue'
-import UiFooter from '~/components/ui/Footer.vue'
+import Header from '~/components/ui/Header.vue'
+import Menu from '~/components/ui/Menu.vue'
+import Footer from '~/components/ui/Footer.vue'
 
 export default {
 	components: {
-		UiHeader,
-		UiMenu,
-		UiFooter
-	}
+		Header,
+		Menu,
+		Footer
+	},
 }
 </script>
 
@@ -140,7 +142,7 @@ code
 	@media (max-width $breakpoint-tablet)
 		margin 2rem auto
 
+@require '~assets/styles/components/transitions.styl'
 @require '~assets/styles/vendors/prism.styl'
-
 @require '~assets/styles/helpers.styl'
 </style>

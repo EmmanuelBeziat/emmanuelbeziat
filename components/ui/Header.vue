@@ -44,7 +44,7 @@
 		</div>
 
 		<div class="header__copyright">
-			<copyright/>
+			<Copyright />
 		</div>
 	</header>
 </template>

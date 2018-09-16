@@ -1,16 +1,16 @@
 <template>
 	<footer class="footer">
-		<module-copyright/>
+		<Copyright/>
 	</footer>
 </template>
 
 <script>
-import moduleCopyright from '~/components/copyright/Copyright'
+import Copyright from '~/components/copyright/Copyright'
 
 export default {
 	name: 'Footer',
 	components: {
-		moduleCopyright
+		Copyright
 	}
 }
 </script>

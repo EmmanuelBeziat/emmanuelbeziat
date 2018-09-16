@@ -5,11 +5,11 @@
 				<h1 class="post__title">{{ post.title }}</h1>
 
 				<div class="post__infos">
-					<div class="post__date">Posté le <time>{{ post.date | moment('ddd Do MMM YYYY') }}</time></div>
+					<div class="post__date">Posté le <time>{{ post.date | date('ddd Do MMM YYYY') }}</time></div>
 
 					<div class="flex">
 						<div class="post__tags">
-							<span class="c-tag" v-for="tag in post.tags" :key="tag">{{ tag }}</span>
+							<Tag v-for="tag in post.tags" :key="tag" :value="tag" />
 						</div>
 
 						<div class="post__share">
@@ -24,11 +24,11 @@
 			<footer class="post__footer">
 				<div class="flex">
 					<div class="post__tags">
-						<span class="c-tag" v-for="tag in post.tags" :key="tag">{{ tag }}</span>
+						<Tag v-for="tag in post.tags" :key="tag" :value="tag" />
 					</div>
 
 					<div class="post__share">
-						<share/>
+						<Share />
 					</div>
 				</div>
 
@@ -42,6 +42,7 @@
 
 <script>
 import Share from '~/components/share/Share'
+import Tag from '~/components/tags/Tag'
 
 export default {
 	name: 'blogSingle',
@@ -64,12 +65,8 @@ export default {
 	},
 
 	components: {
-		Share
-	},
-
-	transition (to, from) {
-		if (!from) return 'slide-left'
-		return +to.query.page < +from.query.page ? 'slide-right' : 'slide-left'
+		Share,
+		Tag
 	},
 
 	head () {
@@ -83,7 +80,7 @@ export default {
 				{ property: 'og:description', content: this.post.description, hid: 'og:description' }
 			]
 		}
-	}
+	},
 }
 </script>
 
@@ -92,7 +89,6 @@ export default {
 @require '~assets/styles/variables.styl'
 @require '~assets/styles/mixins.styl'
 @require '~assets/styles/components/posts.styl'
-@require '~assets/styles/modules/tags.styl'
 
 .comments
 	margin-top 2rem

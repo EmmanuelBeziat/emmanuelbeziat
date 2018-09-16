@@ -94,5 +94,4 @@ export default {
 	&.obiwan
 		background-image url('~assets/img/404/obiwan.gif')
 
-@require '~assets/styles/modules/tags.styl'
 </style>

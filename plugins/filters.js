@@ -9,4 +9,4 @@ Moment.locale('fr')
  * @param {String} format
  * @return {String}
  */
-Vue.filter('moment', (value, format) => Moment(value).format(format))
+Vue.filter('date', (value, format) => Moment(value).format(format))

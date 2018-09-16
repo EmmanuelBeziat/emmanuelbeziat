@@ -27,7 +27,7 @@
 
 		<div class="c-note c-note--success">
 			<div class="showcase__thanks">
-				Et bien d’autres au fil des ans <small>(merci, hé ! <i class="icon-heart"></i>)</small>
+				Et bien d’autres au fil des ans <small>(merci, hé ! <i class="icon-heart" aria-hidden="true"></i>)</small>
 			</div>
 		</div>
 	</section>
@@ -43,16 +43,12 @@ export default {
 				return { refs: res.data }
 			})
 	},
-	transition (to, from) {
-		if (!from) return 'slide-left'
-		return +to.query.page < +from.query.page ? 'slide-right' : 'slide-left'
-	},
 
 	head () {
 		return {
 			title: 'Portfolio'
 		}
-	}
+	},
 }
 </script>
 

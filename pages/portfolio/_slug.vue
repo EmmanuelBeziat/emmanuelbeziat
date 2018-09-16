@@ -7,11 +7,11 @@
 				<div class="post__infos">
 					<div class="flex">
 						<div class="post__tags">
-							<span class="c-tag" v-for="tag in ref.tags" :key="tag">{{ tag }}</span>
+							<Tag v-for="tag in ref.tags" :key="tag" :value="tag" />
 						</div>
 
 						<div class="post__tags">
-							<span class="c-tag" v-for="client in ref.clients" :key="client">{{ client }}</span>
+							<Tag v-for="client in ref.clients" :key="client" :value="client" />
 						</div>
 					</div>
 				</div>
@@ -28,6 +28,8 @@
 </template>
 
 <script>
+import Tag from '~/components/tags/Tag'
+
 export default {
 	name: 'portfolioSingle',
 
@@ -48,9 +50,8 @@ export default {
 		}
 	},
 
-	transition (to, from) {
-		if (!from) return 'slide-left'
-		return +to.query.page < +from.query.page ? 'slide-right' : 'slide-left'
+	components: {
+		Tag
 	},
 
 	head () {
@@ -63,7 +64,7 @@ export default {
 				{ property: 'og:description', content: this.ref.description, hid: 'og:description' }
 			]
 		}
-	}
+	},
 }
 </script>
 
@@ -71,5 +72,4 @@ export default {
 @require '~assets/styles/variables.styl'
 @require '~assets/styles/mixins.styl'
 @require '~assets/styles/components/posts.styl'
-@require '~assets/styles/modules/tags.styl'
 </style>
