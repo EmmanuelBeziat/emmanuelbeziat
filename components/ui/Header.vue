@@ -50,7 +50,7 @@
 </template>
 
 <script>
-import Copyright from '~/components/Copyright'
+import Copyright from '~/components/copyright/Copyright'
 
 export default {
 	name: 'Header',
