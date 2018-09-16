@@ -21,7 +21,7 @@ export default {
 	},
 
 	created () {
-		this.checkAge('16.09.1988-02:26')
+		this.checkAge('16.09.1987-02:26')
 	},
 
 	watch: {
