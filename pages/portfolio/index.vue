@@ -1,7 +1,7 @@
 <template>
 	<section class="portfolio">
 		<div class="showcase__list">
-			<router-link v-for="ref in refs" :key="ref.slug" class="showcase__item" :to="'/portfolio/'+ref.slug" >
+			<router-link v-for="ref in refs" :key="ref.slug" class="showcase__item" :to="`/portfolio/${ref.slug}/`" >
 				<div :class="['showcase__layer', ref.color]">
 					<svg viewBox="0 0 100 100" class="showcase__image icon">
 						<use :xlink:href="'/sprite.svg#' + ref.image"></use>

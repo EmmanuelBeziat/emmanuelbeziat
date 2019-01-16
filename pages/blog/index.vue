@@ -4,7 +4,7 @@
 
 		<div class="post-list">
 			<article class="post-list__item" v-for="post in filteredList" :key="post.slug">
-				<h1 class="post-list__title"><nuxt-link :to="'/blog/'+post.slug">{{ post.title }}</nuxt-link></h1>
+				<h1 class="post-list__title"><nuxt-link :to="`/blog/${post.slug}/`">{{ post.title }}</nuxt-link></h1>
 
 				<div class="post-list__infos">
 					<div class="post-list__date">Posté le <time>{{ post.date | date('Do MMMM YYYY') }}</time></div>
