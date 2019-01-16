@@ -119,7 +119,7 @@ module.exports = {
 		link: [
 			{ rel: 'shortcut icon', href: '/favicons/emmanuelb-favicon.ico' },
 			{
-				rel: 'apple-favicons-icon',
+				rel: 'icon',
 				sizes: '180x100',
 				href: '/favicons/apple-favicons-icon.png'
 			},
@@ -309,6 +309,5 @@ module.exports = {
 		},
 
 		postcss: [require('autoprefixer'), require('css-mqpacker')],
-		vendor: ['moment'],
 	}
 }
