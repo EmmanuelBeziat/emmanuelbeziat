@@ -20,30 +20,30 @@
 		"sprites": "svg-sprite-generate -d /assets/img/icons/refs/*.svg -o /static/sprite.svg"
 	},
 	"dependencies": {
-		"@nuxtjs/axios": "^5.3.2",
-		"@nuxtjs/markdownit": "^1.2.0",
+		"@nuxtjs/axios": "^5.3.6",
+		"@nuxtjs/markdownit": "^1.2.3",
 		"markdown-it-anchor": "^5.0.2",
-		"markdown-it-attrs": "^2.3.1",
+		"markdown-it-attrs": "^2.3.2",
 		"markdown-it-block-embed": "^0.0.3",
 		"markdown-it-prism": "^1.1.2",
 		"markdown-it-smartarrows": "^1.0.1",
-		"moment": "^2.22.2",
-		"nuxt": "^2.0.0",
-		"slug": "^0.9.1"
+		"moment": "^2.23.0",
+		"nuxt": "^2.3.4",
+		"slug": "^0.9.3"
 	},
 	"devDependencies": {
 		"@nuxtjs/markdownit-loader": "^1.1.1",
-		"autoprefixer": "^9.1.5",
+		"autoprefixer": "^9.4.5",
 		"axios": "^0.18.0",
 		"babel-eslint": "^9.0.0",
 		"cross-env": "^5.2.0",
 		"css-mqpacker": "^7.0.0",
-		"eslint": "^5.6.0",
+		"eslint": "^5.12.0",
 		"eslint-loader": "^2.1.1",
 		"eslint-plugin-vue": "^4.7.1",
 		"stylus": "^0.54.5",
 		"stylus-loader": "^3.0.2",
 		"svg-sprite-generator": "^0.0.7",
-		"vue-svg-loader": "^0.10.0"
+		"vue-svg-loader": "^0.11.0"
 	}
 }
