@@ -119,7 +119,7 @@ module.exports = {
 			{
 				rel: 'icon',
 				sizes: '180x100',
-				href: '/favicons/apple-favicons-icon.png'
+				href: '/favicons/apple-touch-icon.png'
 			},
 			{
 				rel: 'mask-icon',
