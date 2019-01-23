@@ -1,0 +1,109 @@
+<template>
+	<div class="post">
+		<transition mode="out-in" name="fade">
+			<article class="post" v-if="post">
+				<header class="post__header">
+					<h1 class="post__title">{{ post.title }}</h1>
+
+					<div class="post__infos">
+						<div class="post__date">Posté le <time>{{ post.date | date('ddd Do MMM YYYY') }}</time></div>
+
+						<div class="flex">
+							<div class="post__tags">
+								<Tag v-for="tag in post.tags" :key="tag" :value="tag" />
+							</div>
+
+							<div class="post__share">
+								<Share />
+							</div>
+						</div>
+					</div>
+				</header>
+
+				<Markdown class="post__content" :source="post.content" />
+
+				<footer class="post__footer">
+					<div class="flex">
+						<div class="post__tags">
+							<Tag v-for="tag in post.tags" :key="tag" :value="tag" />
+						</div>
+
+						<div class="post__share">
+							<Share />
+						</div>
+					</div>
+
+					<div class="post__help">
+						Un problème ? Une question ? <br>Vous pouvez me contacter sur <a href="https://www.twitter.com/EmmanuelBeziat" target="_blank" rel="noopener">Twitter</a>, poster un ticket sur <a href="https://github.com/EmmanuelBeziat/emmanuelbeziat/issues" target="_blank" rel="noopener">Github</a>, ou bien créer un sujet sur un forum d’entraide comme <a href="https://zestedesavoir.com/" target="_blank" rel="noopener">ZesteDeSavoir</a>, <a href="https://openclassrooms.com/dashboard" target="_blank" rel="noopener">OpenClassrooms</a>, <a href="http://www.alsacreations.com/" target="_blank" rel="noopener">Alsacréations</a>…
+					</div>
+				</footer>
+			</article>
+
+			<Loader v-else />
+		</transition>
+	</div>
+</template>
+
+<script>
+import { api } from '@/config'
+import Loader from '@/components/loader/Loader'
+import Markdown from '@/components/markdown/Markdown'
+import Share from '@/components/share/Share'
+import Tag from '@/components/tags/Tag'
+
+export default {
+	name: 'blogSingle',
+
+	data () {
+		return {
+			post: null
+		}
+	},
+
+	mounted () {
+		this.getPost()
+	},
+
+	watch: {
+		'$route.params.slug': 'getPost'
+	},
+
+	methods: {
+		getPost () {
+			this.axios.get(`${api.posts}/${this.$route.params.slug}/`)
+				.then(response => {
+					this.post = response.data
+				})
+				.catch(error => {
+					this.$router.push('/404')
+				})
+		}
+	},
+
+	components: {
+		Markdown,
+		Loader,
+		Share,
+		Tag
+	},
+
+	head: {
+		title: {
+			inner: 'Blog'
+		}
+	},
+}
+</script>
+
+
+<style lang="stylus" scoped>
+@require '~@/assets/styles/variables.styl'
+@require '~@/assets/styles/mixins.styl'
+@require '~@/assets/styles/components/posts.styl'
+
+.comments
+	margin-top 2rem
+	padding-top 2rem
+	border-top 1px solid var(--color-separator)
+
+</style>

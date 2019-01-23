@@ -1,0 +1,51 @@
+/**
+ * Pages transitions
+ **/
+.page-enter-active
+.page-leave-active
+	transition .5s ease
+
+.page-enter
+.page-leave-active
+	opacity 0
+
+// Slide
+.slide-left-enter
+.slide-right-leave-to
+	opacity 0
+	transform translateY(-50px)
+
+.slide-right-enter
+.slide-left-leave-to
+	opacity 0
+	transform translateY(-50px)
+
+.slide-left-enter-active
+.slide-right-enter-active
+.slide-left-leave-active
+.slide-right-leave-active
+	transition transform .18s ease-in-out, opacity .18s ease-in-out
+
+.slide-left-enter-to
+.slide-right-enter-to
+	transform translateY(0)
+	opacity 1
+
+.slide-fade-enter-active
+	transition .18s ease
+
+.slide-fade-leave-active
+	transition .25s cubic-bezier(1.0, 0.5, 0.8, 1.0)
+
+.slide-fade-enter
+.slide-fade-leave-to
+	transform translateY(-50px)
+	opacity 0
+
+.fade-enter-active
+.fade-leave-active
+	transition opacity .5s
+
+.fade-enter
+.fade-leave-to
+	opacity 0

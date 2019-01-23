@@ -1,50 +1,43 @@
 {
 	"name": "emmanuelbeziat",
-	"version": "4.0.0",
-	"description": "My website, 2018 version.",
-	"author": "Emmanuel Béziat",
+	"version": "5.0.0",
+	"description": "My website, 2019 version.",
+	"author": "Emmanuel Béziat <contact@emmanuelbeziat.com>",
+	"repository": "https://github.com/EmmanuelBeziat/emmanuelbeziat.git",
 	"private": true,
-	"config": {
-		"nuxt": {
-			"port": "3033"
-		}
-	},
 	"scripts": {
-		"dev": "nuxt",
-		"build": "nuxt build",
-		"start": "nuxt start",
-		"pm2": "pm2 start npm --name 'emmanuelb-live' -- start && cp -r /var/www/emmanuelbeziat/nuxt/static/favicons /var/www/emmanuelbeziat/site/dist/client/favicons",
-		"generate": "nuxt generate",
-		"lint": "eslint --ext .js,.vue --ignore-path .gitignore .",
-		"precommit": "npm run lint",
-		"sprites": "svg-sprite-generate -d /assets/img/icons/refs/*.svg -o /static/sprite.svg"
+		"serve": "vue-cli-service serve",
+		"build": "vue-cli-service build",
+		"lint": "vue-cli-service lint"
 	},
 	"dependencies": {
-		"@nuxtjs/axios": "^5.3.6",
-		"@nuxtjs/markdownit": "^1.2.3",
+		"axios": "^0.18.0",
+		"markdown-it": "^8.4.2",
 		"markdown-it-anchor": "^5.0.2",
 		"markdown-it-attrs": "^2.3.2",
-		"markdown-it-block-embed": "^0.0.3",
+		"markdown-it-block-embed": "0.0.3",
 		"markdown-it-prism": "^2.0.1",
 		"markdown-it-smartarrows": "^1.0.1",
 		"moment": "^2.23.0",
-		"nuxt": "^2.3.4",
-		"slug": "^0.9.3"
+		"register-service-worker": "^1.5.2",
+		"remove-accents": "^0.4.2",
+		"slug": "^0.9.3",
+		"vue": "^2.5.21",
+		"vue-axios": "^2.1.4",
+		"vue-head": "^2.1.0",
+		"vue-router": "^3.0.1",
+		"vuex": "^3.0.1"
 	},
 	"devDependencies": {
-		"@nuxtjs/markdownit-loader": "^1.1.1",
-		"autoprefixer": "^9.4.5",
-		"axios": "^0.18.0",
+		"@vue/cli-plugin-babel": "^3.3.0",
+		"@vue/cli-plugin-eslint": "^3.3.0",
+		"@vue/cli-plugin-pwa": "^3.3.0",
+		"@vue/cli-service": "^3.3.0",
 		"babel-eslint": "^10.0.1",
-		"cross-env": "^5.2.0",
-		"css-mqpacker": "^7.0.0",
-		"eslint": "^5.12.0",
-		"eslint-loader": "^2.1.1",
-		"eslint-plugin-vue": "^5.1.0",
+		"eslint": "^5.8.0",
+		"eslint-plugin-vue": "^5.0.0",
 		"stylus": "^0.54.5",
 		"stylus-loader": "^3.0.2",
-		"svg-sprite-generator": "^0.0.7",
-		"vue-svg-loader": "^0.11.0",
-		"vue-template-compiler": "^2.5.22"
+		"vue-template-compiler": "^2.5.21"
 	}
 }

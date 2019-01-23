@@ -1,0 +1,58 @@
+.c-note
+	margin 2rem auto
+	background var(--color-background-light)
+	padding 1em 2em 1em 2em
+	border-left 3px solid transparent
+	position relative
+
+	@media $mq-tablet
+		margin 2rem -2rem
+		padding-top 2em
+		margin-top 2.5rem
+		border-left 0
+		border-top 3px solid transparent
+
+.c-note::before
+	font 1rem/1.75 "Icons"
+	position absolute
+	left -2px
+	transform translateX(-50%)
+	size rem(28px)
+	text-align center
+	border-radius 50%
+	color var(--color-background)
+
+	@media $mq-tablet
+		left 50%
+		top 0
+		transform translate(-50%, -50%)
+
+.c-note--info
+	border-color var(--color-blue)
+	&::before
+		content '\f129'
+		background var(--color-blue)
+
+.c-note--success
+	border-color var(--color-green)
+	&::before
+		content '\e81f'
+		background var(--color-green)
+
+.c-note--question
+	border-color var(--color-violet)
+	&::before
+		content '\f128'
+		background var(--color-violet)
+
+.c-note--important
+	border-color var(--color-yellow)
+	&::before
+		content '\f12a'
+		background var(--color-yellow)
+
+.c-note--alert
+	border-color var(--color-red)
+	&::before
+		content '\f0f3'
+		background var(--color-red)

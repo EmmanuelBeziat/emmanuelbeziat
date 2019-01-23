@@ -17,7 +17,8 @@ module.exports = {
 	// add your custom rules here
 	rules: {
 		indent: ['error', 'tab'],
-		'no-console': 0,
+		'no-console': process.env.NODE_ENV === 'production' ? 'error' : 'off',
+		'no-debugger': process.env.NODE_ENV === 'production' ? 'error' : 'off',
 		'no-tabs': 0,
 		'no-undef': 0,
 		'brace-style': 0,

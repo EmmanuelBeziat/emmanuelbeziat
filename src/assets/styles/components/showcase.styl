@@ -1,0 +1,100 @@
+.showcase__list
+	display grid
+	grid-template-columns repeat(auto-fit, minmax(240px, 1fr))
+	grid-gap 4px
+
+.showcase__item
+	position relative
+	color var(--color-text)
+
+.showcase__layer
+	background var(--color-separator)
+	position relative
+	height rem(240px)
+	display flex
+	justify-content center
+	align-items center
+	z-index 10
+	transform-origin 50% 20px
+	transition .2s ease-in-out
+	backface-visibility hidden
+
+.showcase__image
+	size rem(128px)
+	fill var(--color-text)
+	backface-visibility hidden
+	transition .2s ease-in-out .1s
+
+.showcase__caption
+	z-index 5
+	position absolute
+	top 0
+	right 0
+	bottom 0
+	left 0
+	padding rem(20px)
+	background var(--color-background-dark)
+	display flex
+	flex-direction column
+	justify-content flex-end
+	overflow hidden
+	text-align center
+
+.showcase__title
+	margin 0 0 .5em
+	line-height 1.5
+	font-size rem(28px)
+	font-weight 400
+
+.showcase__item:hover
+	.showcase__layer
+		transform scale(.4) translateZ(0)
+		border-radius 50%
+		size rem(240px)
+		margin auto
+
+		&.blue
+			background var(--color-blue)
+
+		&.red
+			background var(--color-red)
+
+		&.violet
+			background var(--color-violet)
+
+		&.yellow
+			background var(--color-yellow)
+
+		&.green
+			background var(--color-green)
+
+		&.black
+			background darken($color-grey, 50%)
+
+	.showcase__image
+		transform scale(1.1) translateZ(0)
+
+.showcase-tags
+	display flex
+	align-items center
+	justify-content center
+
+	i
+		margin-right rem(10px)
+
+.showcase-tags__list
+	text-align left
+	line-height 1.15
+
+.showcase-tags__item
+	font-size rem(14px)
+	color var(--color-text)
+
+	&:not(:last-child)::after
+		content ", "
+
+.showcase__thanks
+	font-size var(--font-size-heading-4)
+
+	.icon-heart
+		color var(--color-red)
