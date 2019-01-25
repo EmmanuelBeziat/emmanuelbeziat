@@ -20,7 +20,7 @@
 					</div>
 				</header>
 
-				<Markdown class="post__content" :source="post.content" />
+				<Markdown class="post__content" :source="post.content" :options="{ anchorPermalink: true }" />
 
 				<footer class="post__footer">
 					<div class="flex">

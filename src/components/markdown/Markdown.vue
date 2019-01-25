@@ -3,6 +3,7 @@
 </template>
 
 <script>
+import slug from 'slug'
 import MarkdownIt from 'markdown-it'
 import MarkdownItPrism from 'markdown-it-prism'
 import MarkdownItAttrs from 'markdown-it-attrs'
@@ -15,7 +16,7 @@ import 'prismjs/components/prism-php'
 
 export default {
 	name: 'markdown',
-	props: ['source'],
+	props: ['source', 'options'],
 
 	data () {
 		const md = new MarkdownIt({
@@ -32,7 +33,8 @@ export default {
 				allowFullScreen: true
 			})
 			.use(MarkdownItAnchor, {
-				permalink: false,
+				permalink: this.$props.options !== undefined && this.$props.options.anchorPermalink !== undefined ? this.$props.options.anchorPermalink : false,
+				slugify: value => slug(value).toLowerCase(),
 				permalinkClass: 'icon-link post__anchor',
 				permalinkSymbol: ''
 			})

@@ -65,13 +65,15 @@
 		size 1em
 		display inline-block
 
-	h2, h3, h4
+	h2
+	h3
+	h4
 		position relative
 
 		&:hover
-			.post__anchor::before
+			.post__anchor
 				opacity 1
-				transform translateX(0)
+				transform translateX(-110%)
 
 .post__title
 	margin 0
@@ -111,7 +113,9 @@
 	font-size .9rem
 	margin-top 2rem
 
-.post__anchor::before
+.post__anchor
+	position absolute
+	left 0
 	opacity 0
 	transition .2s ease-in-out
 	transform translateX(-75%)

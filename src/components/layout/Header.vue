@@ -11,11 +11,19 @@
 				</svg>
 				<span class="sr-only">Twitter</span>
 			</a>
-			<a :href="social.facebook" class="social__link social__link--facebook">
+			<!-- <a :href="social.facebook" class="social__link social__link--facebook">
 				<svg role="img" viewBox="0 0 24 24">
 					<path d="M18.83,7.86H15.06V5.39a1,1,0,0,1,1-1.15h2.66V.15H15.1c-4.07,0-5,3.05-5,5V7.86H7.75v4.22h2.36V24h5V12.08H18.4Z"/>
 				</svg>
 				<span class="sr-only">Facebook</span>
+			</a> -->
+			<a :href="social.instagram" class="social__link social__link--instagram">
+				<svg role="img" viewBox="0 0 24 24">
+					<path d="m16.569616,2.139245a5.291136,5.291136 0 0 1 5.291136,5.291136l0,9.13924a5.291136,5.291136 0 0 1 -5.291136,5.291136l-9.139239,0a5.291136,5.291136 0 0 1 -5.29113,-5.291136l0,-9.13924a5.291136,5.291136 0 0 1 5.29113,-5.291136l9.139239,0m0,-1.92405l-9.139239,0a7.236831,7.236831 0 0 0 -7.215181,7.215186l0,9.13924a7.236831,7.236831 0 0 0 7.215181,7.215187l9.139239,0a7.236831,7.236831 0 0 0 7.215187,-7.215187l0,-9.13924a7.236831,7.236831 0 0 0 -7.215187,-7.215186z"/>
+					<path d="m18.286835,4.303799a1.3781,1.3781 0 1 0 1.378103,1.378101a1.3781,1.3781 0 0 0 -1.378103,-1.378101z"/>
+					<path d="m12.064935,7.783923a4.252149,4.252149 0 1 1 -4.249743,4.249747a4.256959,4.256959 0 0 1 4.249743,-4.249747m0,-1.924048a6.176199,6.176199 0 1 0 6.188231,6.173796a6.176199,6.176199 0 0 0 -6.188231,-6.173796z"/>
+				</svg>
+				<span class="sr-only">Instagram</span>
 			</a>
 			<a :href="social.github" class="social__link social__link--github">
 				<svg role="img" viewBox="0 0 24 24">
@@ -50,21 +58,14 @@
 </template>
 
 <script>
+import { social } from '@/config'
 import Copyright from '@/components/copyright/Copyright'
 
 export default {
 	name: 'Header',
 	data () {
 		return {
-			social: {
-				twitter: 'https://twitter.com/EmmanuelBeziat',
-				facebook: 'https://www.facebook.com/EmmanuelBeziat',
-				github: 'https://github.com/EmmanuelBeziat',
-				linkedin: 'https://www.linkedin.com/in/emmanuel-b-54242949',
-				codepen: 'https://codepen.io/EmmanuelBeziat/',
-				instagram: 'https://www.instagram.com/emmanuelbeziat/',
-				youtube: 'https://www.youtube.com/c/EmmanuelB'
-			}
+			social: social
 		}
 	},
 
@@ -112,9 +113,11 @@ export default {
 .social
 	--color-brand-twitter $color-brand-twitter
 	--color-brand-facebook $color-brand-facebook
+	--color-brand-instagram $color-brand-instagram
 	--color-brand-codepen $color-brand-codepen
 	--color-brand-github $color-brand-github
 	--color-brand-linkedin $color-brand-linkedin
+	--color-brand-youtube $color-brand-youtube
 
 	display flex
 	flex-flow row wrap
@@ -150,8 +153,7 @@ export default {
 			margin-left 0
 
 brand-icon(social__link--twitter, var(--color-brand-twitter))
-brand-icon(social__link--facebook, var(--color-brand-facebook))
-brand-icon(social__link--google-plus, var(--color-brand-google-plus))
+brand-icon(social__link--instagram, var(--color-brand-instagram))
 brand-icon(social__link--linkedin, var(--color-brand-linkedin))
 brand-icon(social__link--codepen, var(--color-brand-codepen))
 brand-icon(social__link--github, var(--color-brand-github))
