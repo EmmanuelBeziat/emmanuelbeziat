@@ -1,9 +1,9 @@
 <template>
 	<section class="not-found">
-		<div class="not-found__image" :class="error.image"></div>
+		<div class="not-found__image" :class="error.class"></div>
 		<div class="not-found__404" v-html="error.title"></div>
 
-		<h1 class="not-found__title" v-if="errorNumber.statusCode === 404">Page introuvable</h1>
+		<h1 class="not-found__title">Page introuvable</h1>
 		<div class="not-found__content">
 			<p>Et voilà, vous avez tout cassé… Et qui c’est qui doit réparer tout ça maintenant ?</p>
 			<p>Oooh, mais c’est pas grave, hein ? Y’a toujours un « informaticien » pour tout régler, pas vrai ?! <br>Après tout, c’est mon métier, alors ça n’a rien de compliqué… En plus c’est même pas un vrai métier : c’est l’ordinateur qui fait tout.</p>
@@ -13,35 +13,20 @@
 </template>
 
 <script>
-export default {
-	name: 'error',
-	props: ['errorNumber'],
+const errors = [
+	{ class: 'doctor-who', title: 'What?!' },
+	{ class: 'south-park', title: 'We’re sorry…' },
+	{ class: 'mario', title: 'Sorry, but your page <br>is in another castle' },
+	{ class: 'obiwan', title: 'This is not the page <br>you’re looking for…' },
+]
 
-	data () {
-		const errors = {
-			images: ['doctor-who', 'south-park', 'mario', 'obiwan'],
-			titles: ['What?!', 'We’re sorry…', 'Sorry, but your page <br>is in another castle', 'This is not the page <br>you’re looking for…']
-		}
-	},
+export default {
+	name: 'not-found',
 
 	computed: {
 		error () {
-			return errorSet()
-		}
-	},
-
-	watch: {
-		'$route': 'errorSet'
-	},
-
-	methods: {
-		errorSet: () => {
-			const i = Math.floor(Math.random() * this.errors.images.length)
-
-			return {
-				image: images[i],
-				title: titles[i]
-			}
+			const i = Math.floor(Math.random() * errors.length)
+			return errors[i]
 		}
 	},
 }

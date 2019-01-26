@@ -44,13 +44,13 @@ export default new Router({
 			component: Projects,
 		},
 		{
-			path: '/404',
-			name: 'notfound',
+			path: '/not-found',
+			name: 'not-found',
 			component: NotFound
 		},
 		{
 			path: '*',
-			redirect: '/404'
+			redirect: '/not-found'
 		}
 	]
 })
