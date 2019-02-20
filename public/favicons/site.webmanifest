@@ -3,13 +3,13 @@
     "short_name": "Emmanuel B\u00e9ziat",
     "icons": [
         {
-            "src": "android-chrome-192x192.png?v=XBJAxg9y23",
+            "src": "android-chrome-192x192.png?v=PYewnY7bMz",
             "sizes": "192x192",
             "type": "image/png"
         },
         {
-            "src": "android-chrome-256x256.png?v=XBJAxg9y23",
-            "sizes": "256x256",
+            "src": "android-chrome-512x512.png?v=PYewnY7bMz",
+            "sizes": "512x512",
             "type": "image/png"
         }
     ],
