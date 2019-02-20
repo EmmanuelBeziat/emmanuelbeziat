@@ -1,20 +1,20 @@
 {
-    "name": "Emmanuel B\u00e9ziat",
-    "short_name": "Emmanuel B\u00e9ziat",
-    "icons": [
-        {
-            "src": "android-chrome-192x192.png?v=PYewnY7bMz",
-            "sizes": "192x192",
-            "type": "image/png"
-        },
-        {
-            "src": "android-chrome-512x512.png?v=PYewnY7bMz",
-            "sizes": "512x512",
-            "type": "image/png"
-        }
-    ],
-    "theme_color": "#233238",
-    "background_color": "#233238",
-    "start_url": "https://www.emmanuelbeziat.com",
-    "display": "standalone"
+	"name": "Emmanuel Béziat",
+	"short_name": "Emmanuel Béziat",
+	"icons": [
+		{
+			"src": "android-chrome-192x192.png?v=PYewnY7bMz",
+			"sizes": "192x192",
+			"type": "image/png"
+		},
+		{
+			"src": "android-chrome-512x512.png?v=PYewnY7bMz",
+			"sizes": "512x512",
+			"type": "image/png"
+		}
+	],
+	"theme_color": "#233238",
+	"background_color": "#233238",
+	"start_url": "https://www.emmanuelbeziat.com",
+	"display": "standalone"
 }
