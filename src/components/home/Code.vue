@@ -190,19 +190,6 @@ section.metier
 		}
 	},
 
-	/* mounted () {
-		this.getCode()
-	},
-
-	methods: {
-		getCode () {
-			const random = this.codes[Math.floor(Math.random() * this.codes.length)]
-			this.axios.get('@/assets/markdown/code-html.md')
-				.then(response => this.code = response.data)
-				.catch(error => this.code = error.message)
-		}
-	}, */
-
 	components: {
 		Markdown
 	}

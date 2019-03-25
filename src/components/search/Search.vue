@@ -1,6 +1,6 @@
 <template>
-	<div class="c-search">
-		<input class="c-search__input" type="search" :placeholder="placeholder" @input="$emit('input', $event.target.value)">
+	<div class="c-search" role="search">
+		<input class="c-search__input" :title="placeholder" type="search" :placeholder="placeholder" @input="$emit('input', $event.target.value)">
 	</div>
 </template>
 

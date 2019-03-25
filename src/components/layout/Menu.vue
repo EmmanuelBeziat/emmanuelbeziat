@@ -1,5 +1,5 @@
 <template>
-	<nav class="menu">
+	<nav class="menu" id="#menu">
 		<router-link to="/" class="menu__link" exact>Accueil</router-link>
 		<router-link to="/portfolio" class="menu__link">Portfolio</router-link>
 		<router-link to="/projets" class="menu__link">Projets</router-link>

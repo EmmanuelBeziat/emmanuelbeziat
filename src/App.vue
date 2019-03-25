@@ -3,13 +3,17 @@
 		<Header />
 
 		<div class="site-content">
+			<SkipLinks />
+
 			<Menu />
 
-			<main class="main">
+			<main class="main" id="content" tabindex="-1">
 				<transition mode="out-in" name="fade">
 					<router-view />
 				</transition>
 			</main>
+
+			<SkipLinks />
 		</div>
 
 		<Footer />
@@ -20,12 +24,14 @@
 import Header from '@/components/layout/Header'
 import Footer from '@/components/layout/Footer'
 import Menu from '@/components/layout/Menu'
+import SkipLinks from '@/components/skip-links/SkipLinks'
 
 export default {
 	components: {
 		Header,
 		Menu,
 		Footer,
+		SkipLinks,
 	}
 }
 </script>
@@ -117,6 +123,9 @@ h2
 h3
 	font 700 var(--font-size-heading-3)/1.5 var(--font-stack-common)
 
+i[lang]
+	font-style normal
+
 // Links
 a
 	background-color transparent
@@ -185,6 +194,7 @@ code
 
 .main
 	margin 6rem auto 4rem
+	outline 0
 
 	@media $mq-desktop
 		margin 2rem auto
