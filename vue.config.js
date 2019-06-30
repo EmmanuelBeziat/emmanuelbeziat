@@ -1,7 +1,7 @@
 const webpack = require('webpack')
 
 module.exports = {
-	lintOnSave: process.env.NODE_ENV !== 'production',
+	productionSourceMap: false,
 	configureWebpack: {
 		devtool: 'source-map',
 		plugins: [
