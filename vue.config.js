@@ -1,8 +1,9 @@
 const webpack = require('webpack')
 
 module.exports = {
+	productionSourceMap: false,
 	configureWebpack: {
-		devtool: 'process.env' ? 'eval-source-map' : 'source-map',
+		devtool: 'source-map',
 		plugins: [
 			new webpack.DefinePlugin({
 				'process.env': {
