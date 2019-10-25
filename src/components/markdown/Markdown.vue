@@ -13,6 +13,8 @@ import MarkdownItSmartArrows from 'markdown-it-smartarrows'
 
 import 'prismjs/components/prism-markup-templating'
 import 'prismjs/components/prism-php'
+import 'prismjs/components/prism-markdown'
+import 'prismjs/components/prism-pug'
 
 export default {
 	name: 'markdown',

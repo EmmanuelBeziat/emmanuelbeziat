@@ -1,6 +1,14 @@
 <template>
 	<div class="cv-code">
-		<Markdown :source="code" />
+		<div class="cv-code__header">
+			<div class="cv-code__buttons">
+				<span class="fake-btn close"></span>
+				<span class="fake-btn minify"></span>
+				<span class="fake-btn expand"></span>
+			</div>
+			<span class="cv-code__title">emmanuel@code: ~/{{ code.name }} </span>
+		</div>
+		<Markdown :source="code.content" />
 	</div>
 </template>
 
@@ -12,7 +20,7 @@ export default {
 
 	data () {
 		return {
-			codes: ['html', 'css', 'js', 'php', 'md', 'pug'],
+			codes: ['html', 'css', 'javascript', 'php', 'markdown', 'pug'],
 			html: `\`\`\`html
 <section class="metier">
 	<h2>Développeur</h2>
@@ -63,7 +71,7 @@ export default {
 	boisson: "Coca-cola";
 }
 \`\`\``,
-			js: `\`\`\`javascript
+			javascript: `\`\`\`javascript
 const metiers = {
 	developpeur: [ 'web', 'front-end' ],
 
@@ -128,7 +136,7 @@ $hobbies = [
 
 $carburant = 'Coca-cola';
 \`\`\``,
-			md: `\`\`\`markdown
+			markdown: `\`\`\`markdown
 ## Développeur
 Web, Front-end
 
@@ -186,7 +194,10 @@ section.metier
 	computed: {
 		code () {
 			const random = this.codes[Math.floor(Math.random() * this.codes.length)]
-			return this[random]
+			return {
+				name: random,
+				content: this[random]
+			}
 		}
 	},
 
@@ -195,3 +206,41 @@ section.metier
 	}
 }
 </script>
+
+<style lang="stylus">
+.cv-code__header
+	display flex
+	background var(--color-background-light)
+	color var(--color-text)
+	text-align center
+	padding 5px 10px
+	border-radius .5rem .5rem 0 0
+	position relative
+	font-family var(--font-stack-code)
+
+.cv-code__buttons
+	.fake-btn
+		width .7rem
+		height .7rem
+		border-radius 50%
+		margin-right 6px
+		display inline-block
+
+	.close
+		background var(--color-red)
+	.minify
+		background var(--color-yellow)
+	.expand
+		background var(--color-green)
+
+.cv-code__title
+	margin auto
+	transform translateX(-32px)
+
+.cv-code pre
+	margin-top 0
+	border-radius 0 0 .5rem .5rem
+
+	&::after
+		content none
+</style>

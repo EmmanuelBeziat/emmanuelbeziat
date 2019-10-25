@@ -2,6 +2,7 @@
 	<div class="card">
 		<h1 class="presentation__title">Emmanuel Béziat</h1>
 		<div class="presentation__age"><span>{{ age }} ans</span> ({{ nextBirthday }})</div>
+		<div class="presentation__job">Développeur web <span>front-end</span></div>
 		<div class="presentation__birthday" v-if="isBirthdayMonth">Si vous voulez m’offrir un petit cadeau, <br>vous pouvez consulter ma <a :href="amazonLink">liste de souhaits Amazon</a> !</div>
 	</div>
 </template>
@@ -58,10 +59,10 @@ export default {
 @require '~@/assets/styles/mixins.styl'
 
 .card
-	margin-bottom rem(60px)
+	margin-bottom rem(80px)
+	text-align center
 
 .presentation__title
-	text-align center
 	margin 0
 	font 400 rem(82px)/1 var(--font-stack-heading)
 	color var(--color-blue)
@@ -71,7 +72,6 @@ export default {
 
 .presentation__age
 	display block
-	text-align center
 	font 400 var(--font-size-heading-1)/1 var(--font-stack-heading)
 
 	@media $mq-tablet
@@ -79,6 +79,13 @@ export default {
 
 	span
 		color var(--color-red)
+
+.presentation__job
+	font 400 var(--font-size-heading-1)/1 var(--font-stack-heading)
+	color var(--color-green)
+	margin-top .25em
+	span
+		color var(--color-green)
 
 .presentation__birthday
 	text-align center
