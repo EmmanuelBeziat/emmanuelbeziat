@@ -62,20 +62,23 @@ export default {
 	margin-bottom rem(80px)
 	text-align center
 
+	@media $mq-tablet
+		margin-bottom rem(60px)
+
 .presentation__title
 	margin 0
 	font 400 rem(82px)/1 var(--font-stack-heading)
 	color var(--color-blue)
 
 	@media $mq-tablet
-		font-size var(--font-size-heading-3)
+		font-size var(--font-size-heading-2)
 
 .presentation__age
 	display block
 	font 400 var(--font-size-heading-1)/1 var(--font-stack-heading)
 
 	@media $mq-tablet
-		font-size var(--font-size-heading-3)
+		font-size var(--font-size-heading-2)
 
 	span
 		color var(--color-red)
@@ -84,9 +87,11 @@ export default {
 	font 400 var(--font-size-heading-1)/1 var(--font-stack-heading)
 	color var(--color-green)
 	margin-top .25em
+	span
+		white-space nowrap
 
 	@media $mq-tablet
-		font-size var(--font-size-heading-3)
+		font-size var(--font-size-heading-2)
 
 .presentation__birthday
 	text-align center

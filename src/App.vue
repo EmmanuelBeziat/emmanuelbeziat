@@ -185,12 +185,15 @@ code
 		padding-bottom rem(80px)
 
 .site-content
-	padding 2em
+	padding 2rem
 	width 50rem
 	margin 0 auto
 
 	@media $mq-desktop
 		width auto
+
+	@media $mq-tablet
+		padding 2rem 1rem
 
 .main
 	margin 6rem auto 4rem

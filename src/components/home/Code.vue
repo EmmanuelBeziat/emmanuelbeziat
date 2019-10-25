@@ -208,6 +208,9 @@ section.metier
 </script>
 
 <style lang="stylus">
+@require '~@/assets/styles/variables.styl'
+@require '~@/assets/styles/mixins.styl'
+
 .cv-code__header
 	display flex
 	background var(--color-background-light)
@@ -218,7 +221,12 @@ section.metier
 	position relative
 	font-family var(--font-stack-code)
 
+	@media $mq-tablet
+		margin 0 -1rem
+
 .cv-code__buttons
+	margin-right 1rem
+
 	.fake-btn
 		width .7rem
 		height .7rem
@@ -236,6 +244,9 @@ section.metier
 .cv-code__title
 	margin auto
 	transform translateX(-32px)
+	@media $mq-desktop
+		margin 0
+		transform none
 
 .cv-code pre
 	margin-top 0
