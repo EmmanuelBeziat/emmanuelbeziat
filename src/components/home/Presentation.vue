@@ -84,8 +84,9 @@ export default {
 	font 400 var(--font-size-heading-1)/1 var(--font-stack-heading)
 	color var(--color-green)
 	margin-top .25em
-	span
-		color var(--color-green)
+
+	@media $mq-tablet
+		font-size var(--font-size-heading-3)
 
 .presentation__birthday
 	text-align center
