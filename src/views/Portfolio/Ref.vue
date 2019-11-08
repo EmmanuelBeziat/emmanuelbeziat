@@ -74,13 +74,7 @@ export default {
 		Markdown,
 		Loader,
 		Tag
-	},
-
-	head: {
-		title: {
-			inner: 'Portfolio'
-		}
-	},
+	}
 }
 </script>
 
