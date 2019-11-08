@@ -49,3 +49,85 @@
 .fade-enter
 .fade-leave-to
 	opacity 0
+
+/**
+ * Items transitions
+ */
+.list-enter-to
+.list-leave
+	opacity 1
+
+.list-enter
+.list-leave-to
+	opacity 0
+
+.list-complete-leave-active
+.list-complete-enter-active
+	position absolute
+
+/**
+ * Sequential entrances
+ */
+.entranceFromTop
+	animation-duration 2s
+	animation-name entranceFromTop
+
+@keyframes entranceFromTop
+	from
+		opacity 0
+		transform translateY(-80px)
+	to
+		opacity 1
+		transform translateY(0)
+
+.entranceFromBottom
+	animation-duration 2s
+	animation-name entranceFromBottom
+
+@keyframes entranceFromBottom
+	from
+		opacity 0
+		transform translateY(80px)
+
+	to
+		opacity 1
+		transform translateY(0)
+
+.entranceFromLeft
+	animation-name entranceFromLeft
+	animation-duration 1s
+
+@keyframes entranceFromLeft
+	from
+		opacity 0
+		transform translate3d(-100%, 0, 0)
+
+	to
+		opacity 1
+		transform translate3d(0, 0, 0)
+
+.entranceFromRight
+	animation-name entranceFromRight
+	animation-duration 1s
+
+@keyframes entranceFromRight
+	from
+		opacity 0
+		transform translate3d(100%, 0, 0)
+
+	to
+		opacity 1
+		transform translate3d(0, 0, 0)
+
+.entranceFadeIn
+	animation-name entranceFadeIn
+	animation-duration .5s
+
+@keyframes entranceFadeIn
+	from
+		opacity 0
+		transform scale(.95)
+
+	to
+		opacity 1
+		transform scale(1)

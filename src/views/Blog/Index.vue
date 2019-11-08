@@ -6,7 +6,7 @@
 			<div v-else>
 				<Search placeholder="Recherche…" v-model="searchTerms" />
 
-				<div class="post-list">
+				<transition-group name="list" tag="div" class="post-list">
 					<article class="post-list__item" v-for="post in filteredList" :key="post.slug">
 						<h1 class="post-list__title"><router-link :to="`/blog/${post.slug}/`">{{ post.title }}</router-link></h1>
 
@@ -20,7 +20,7 @@
 
 						<div class="post-list__description">{{ post.description }}</div>
 					</article>
-				</div>
+				</transition-group>
 			</div>
 		</transition>
 	</section>

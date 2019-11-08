@@ -6,7 +6,7 @@
 			<div v-else>
 				<Search placeholder="Recherche…" v-model="searchTerms" />
 
-				<div class="post-list">
+				<transition-group name="list" tag="div" class="post-list">
 					<article class="post-list__item" v-for="projet in filteredList" :key="projet.id">
 						<h1 class="post-list__title"><a :href="projet.html_url">{{ projet.name }}</a></h1>
 
@@ -21,7 +21,7 @@
 
 						<div class="post-list__description">{{ projet.description }}</div>
 					</article>
-				</div>
+				</transition-group>
 			</div>
 		</transition>
 	</section>

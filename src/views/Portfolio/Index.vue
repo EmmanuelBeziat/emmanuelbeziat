@@ -4,7 +4,7 @@
 			<Loader v-if="loading" />
 			<div v-else-if="error"></div>
 			<div v-else>
-				<div class="showcase__list">
+				<sequential-entrance tag="div" animation="entranceFadeIn" delay="50" class="showcase__list">
 					<router-link v-for="ref in refs" :key="ref.slug" class="showcase__item" :to="`/portfolio/${ref.slug}/`" >
 						<div :class="['showcase__layer', ref.color]">
 							<svg viewBox="0 0 100 100" class="showcase__image icon">
@@ -27,7 +27,7 @@
 							</div>
 						</div>
 					</router-link>
-				</div>
+				</sequential-entrance>
 
 				<div class="c-note c-note--success">
 					<div class="showcase__thanks">
@@ -53,6 +53,7 @@ export default {
 			head: {
 				title: 'Portfolio'
 			},
+			test: true,
 			refs: null,
 			error: null,
 			loading: true,
