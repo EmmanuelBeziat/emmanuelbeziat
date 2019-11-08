@@ -5,4 +5,4 @@ import Vue from 'vue'
  * @return {String}
  */
 
-Vue.filter('date', (value) => new Intl.DateTimeFormat('fr-FR').format(new Date(value)))
+Vue.filter('date', (value, options) => new Intl.DateTimeFormat('fr-FR', options).format(new Date(value)))

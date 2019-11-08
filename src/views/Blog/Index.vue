@@ -11,7 +11,7 @@
 						<h1 class="post-list__title"><router-link :to="`/blog/${post.slug}/`">{{ post.title }}</router-link></h1>
 
 						<div class="post-list__infos">
-							<div class="post-list__date">Posté le <time>{{ post.date | date('Do MMMM YYYY') }}</time></div>
+							<div class="post-list__date">Posté le <time>{{ post.date | date({ year: 'numeric', month: 'long', day: 'numeric' }) }}</time></div>
 
 							<div class="post-list__tags">
 								<Tag v-for="tag in post.tags" :key="tag" :value="tag" />

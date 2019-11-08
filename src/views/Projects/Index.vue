@@ -11,7 +11,7 @@
 						<h1 class="post-list__title"><a :href="projet.html_url">{{ projet.name }}</a></h1>
 
 						<div class="post-list__infos">
-							<div class="post-list__date">Créé le <time>{{ projet.created_at | date('Do MMMM YYYY') }}</time> — Dernière mise à jour le <time>{{ projet.updated_at | date('Do MMMM YYYY') }}</time></div>
+							<div class="post-list__date">Créé le <time>{{ projet.created_at | date({ year: 'numeric', month: 'long', day: 'numeric' }) }}</time> — Dernière mise à jour le <time>{{ projet.updated_at | date({ year: 'numeric', month: 'long', day: 'numeric' }) }}</time></div>
 
 							<div class="post-list__tags">
 								<Tag :value="projet.language" />
