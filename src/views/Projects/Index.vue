@@ -29,6 +29,7 @@
 
 <script>
 import { api } from '@/config'
+import { meta } from '@/plugins/mixins/meta'
 import slug from 'slug'
 import Search from '@/components/search/Search'
 import Loader from '@/components/loader/Loader'
@@ -36,9 +37,13 @@ import Tag from '@/components/tags/Tag'
 
 export default {
 	name: 'Projets',
+	mixins: [meta],
 
 	data () {
 		return {
+			head: {
+				title: 'Projets'
+			},
 			projects: null,
 			error: null,
 			loading: true,
@@ -64,13 +69,7 @@ export default {
 		filteredList () {
 			return this.projects.filter(project => slug(project.name).includes(slug(this.searchTerms.toLowerCase())))
 		}
-	},
-
-	head: {
-		title: {
-			inner: 'Projets'
-		}
-	},
+	}
 }
 </script>
 

@@ -6,7 +6,7 @@
 					<h1 class="post__title">{{ post.title }}</h1>
 
 					<div class="post__infos">
-						<div class="post__date">Posté le <time>{{ post.date | date('ddd Do MMM YYYY') }}</time></div>
+						<div class="post__date">Posté le <time>{{ post.date | date({ year: 'numeric', month: 'long', day: 'numeric' }) }}</time></div>
 
 						<div class="flex">
 							<div class="post__tags">
@@ -46,6 +46,7 @@
 
 <script>
 import { api } from '@/config'
+import { meta } from '@/plugins/mixins/meta'
 import Loader from '@/components/loader/Loader'
 import Markdown from '@/components/markdown/Markdown'
 import Share from '@/components/share/Share'
@@ -53,10 +54,11 @@ import Tag from '@/components/tags/Tag'
 
 export default {
 	name: 'blogSingle',
+	mixins: [meta],
 
 	data () {
 		return {
-			post: null
+			post: null,
 		}
 	},
 
@@ -73,6 +75,11 @@ export default {
 			this.axios.get(`${api.posts}/${this.$route.params.slug}/`)
 				.then(response => {
 					this.post = response.data
+					this.head.title = response.data.title || this.head.title
+					this.head.image = response.data.image || this.head.image
+					this.head.description = response.data.description || this.head.description
+					this.head.url = `https://www.emmanuelbeziat.com/blog/${this.$route.params.slug}/`
+					this.$emit('updateHead')
 				})
 				.catch(error => {
 					this.$router.push('/404')
@@ -85,12 +92,6 @@ export default {
 		Loader,
 		Share,
 		Tag
-	},
-
-	head: {
-		title: {
-			inner: 'Blog'
-		}
 	},
 }
 </script>

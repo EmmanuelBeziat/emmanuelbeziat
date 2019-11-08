@@ -41,13 +41,18 @@
 
 <script>
 import { api } from '@/config'
+import { meta } from '@/plugins/mixins/meta'
 import Loader from '@/components/loader/Loader'
 
 export default {
 	name: 'Portfolio',
+	mixins: [meta],
 
 	data () {
 		return {
+			head: {
+				title: 'Portfolio'
+			},
 			refs: null,
 			error: null,
 			loading: true,
@@ -65,13 +70,7 @@ export default {
 			.then(response => this.refs = response.data)
 			.catch(error => this.error = error.message)
 			.finally(() => this.loading = false)
-	},
-
-	head: {
-		title: {
-			inner: 'Portfolio'
-		}
-	},
+	}
 }
 </script>
 

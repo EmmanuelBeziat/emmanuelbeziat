@@ -13,6 +13,8 @@
 </template>
 
 <script>
+import { meta } from '@/plugins/mixins/meta'
+
 const errors = [
 	{ class: 'doctor-who', title: 'What?!' },
 	{ class: 'south-park', title: 'We’re sorry…' },
@@ -22,6 +24,15 @@ const errors = [
 
 export default {
 	name: 'not-found',
+	mixins: [meta],
+
+	data () {
+		return {
+			head: {
+				title: 'Page introuvable'
+			}
+		}
+	},
 
 	computed: {
 		error () {

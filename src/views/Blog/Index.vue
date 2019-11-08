@@ -28,6 +28,7 @@
 
 <script>
 import { api } from '@/config'
+import { meta } from '@/plugins/mixins/meta'
 import slug from 'slug'
 import Moment from 'moment'
 import Loader from '@/components/loader/Loader'
@@ -36,9 +37,13 @@ import Tag from '@/components/tags/Tag'
 
 export default {
 	name: 'Blog',
+	mixins: [meta],
 
 	data () {
 		return {
+			head: {
+				title: 'Blog'
+			},
 			posts: null,
 			error: null,
 			loading: true,
@@ -71,13 +76,7 @@ export default {
 		filteredList () {
 			return this.posts.filter(post => slug(post.title.toLowerCase()).includes(slug(this.searchTerms.toLowerCase())))
 		}
-	},
-
-	head: {
-		title: {
-			inner: 'Blog'
-		}
-	},
+	}
 }
 </script>
 

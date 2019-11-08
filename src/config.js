@@ -22,3 +22,10 @@ export const social = {
 	instagram: 'https://www.instagram.com/EmmanuelBeziat',
 	youtube: 'https://www.youtube.com/c/EmmanuelB'
 }
+
+export const openGraph = {
+	title: '',
+	url: 'https://www.emmanuelbeziat.com',
+	image: '/branding/opengraph-facebook.jpg',
+	description: 'Portfolio en ligne d’un développeur web du sud. Billets de blogs, tutoriels, astuces, diatribes et réflexions sur le métier, le code et plein d’autres choses.'
+}

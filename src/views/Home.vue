@@ -8,22 +8,26 @@
 </template>
 
 <script>
+import { meta } from '@/plugins/mixins/meta'
 import Presentation from '@/components/home/Presentation'
 import CodeHome from '@/components/home/Code'
 
 export default {
 	name: 'home',
+	mixins: [meta],
+
+	data () {
+		return {
+			head: {
+				title: 'Accueil'
+			}
+		}
+	},
 
 	components: {
 		Presentation,
 		CodeHome
-	},
-
-	head: {
-		title: {
-			inner: 'Accueil'
-		}
-	},
+	}
 }
 </script>
 

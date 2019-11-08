@@ -33,12 +33,14 @@
 
 <script>
 import { api } from '@/config'
+import { meta } from '@/plugins/mixins/meta'
 import Markdown from '@/components/markdown/Markdown'
 import Loader from '@/components/loader/Loader'
 import Tag from '@/components/tags/Tag'
 
 export default {
 	name: 'portfolioSingle',
+	mixins: [meta],
 
 	data () {
 		return {
@@ -48,7 +50,6 @@ export default {
 
 	mounted () {
 		this.getRef()
-
 	},
 
 	watch: {
@@ -58,7 +59,13 @@ export default {
 	methods: {
 		getRef () {
 			this.axios.get(`${api.refs}/${this.$route.params.slug}/`)
-				.then(response => this.ref = response.data)
+				.then(response => {
+					this.ref = response.data
+					this.head.title = response.data.title || this.head.title
+					this.head.description = response.data.description || this.head.description
+					this.head.url = `https://www.emmanuelbeziat.com/portfolio/${this.$route.params.slug}/`
+					this.$emit('updateHead')
+				})
 				.catch(error => this.$router.push('/404'))
 		}
 	},
