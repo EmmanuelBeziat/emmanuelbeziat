@@ -6,6 +6,7 @@
 .showcase__item
 	position relative
 	color var(--color-text)
+	background var(--color-background-dark)
 
 .showcase__layer
 	background var(--color-separator)
@@ -14,7 +15,7 @@
 	display flex
 	justify-content center
 	align-items center
-	z-index 5
+	z-index 10
 	transform-origin 50% 20px
 	transition .2s ease-in-out
 	backface-visibility hidden
@@ -26,14 +27,14 @@
 	transition .2s ease-in-out .1s
 
 .showcase__caption
-	z-index 10
+	z-index 5
 	position absolute
 	top auto
-	right .5rem
-	bottom .5rem
-	left .5rem
+	right 0
+	bottom 0
+	left 0
 	padding 1rem
-	background var(--color-background-dark)
+	// background var(--color-background-dark)
 	display flex
 	flex-direction column
 	justify-content flex-end
@@ -41,21 +42,21 @@
 	text-align center
 	opacity 0
 	visibility hidden
-	transform translateY(20px)
+	transform translateY(10px)
 	transition .25s ease-in-out 0s
 
 .showcase__title
 	margin 0 0 .35em
 	line-height 1
-	font-size rem(26px)
+	font-size rem(28px)
 	font-weight 400
 
 .showcase__item:hover
 	.showcase__layer
-		/* transform scale(.4) translateZ(0)
+		transform scale(.4) translateZ(0)
 		border-radius 50%
 		size rem(240px)
-		margin auto */
+		margin auto
 
 		&.blue
 			background var(--color-blue)
@@ -76,7 +77,8 @@
 			background darken($color-grey, 50%)
 
 	.showcase__image
-		transform translate(0, -60px) scale(.6)
+		transform scale(1.2)
+		// transform translate(0, -60px) scale(.6)
 
 	.showcase__caption
 		opacity 1

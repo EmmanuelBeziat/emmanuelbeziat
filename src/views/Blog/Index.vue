@@ -6,6 +6,8 @@
 			<div v-else>
 				<Search placeholder="Recherche…" v-model="searchTerms" />
 
+				<!-- <filters icon="icon-tag" :filters="tagsList" @on-filter="filterByTag" /> -->
+
 				<transition-group name="list" tag="div" class="post-list">
 					<article class="post-list__item" v-for="post in filteredList" :key="post.slug">
 						<h1 class="post-list__title"><router-link :to="`/blog/${post.slug}/`">{{ post.title }}</router-link></h1>
@@ -34,6 +36,7 @@ import Moment from 'moment'
 import Loader from '@/components/loader/Loader'
 import Search from '@/components/search/Search'
 import Tag from '@/components/tags/Tag'
+// import Filters from '@/components/filters/Filters'
 
 export default {
 	name: 'Blog',
@@ -69,14 +72,33 @@ export default {
 	components: {
 		Search,
 		Loader,
-		Tag
+		Tag,
+		// Filters
 	},
 
 	computed: {
 		filteredList () {
 			return this.posts.filter(post => slug(post.title.toLowerCase()).includes(slug(this.searchTerms.toLowerCase())))
+		},
+
+		tagsList () {
+			let tags = []
+			this.posts.forEach(post => tags = [...tags, ...post.tags])
+			return [...new Set(tags)]
+		},
+
+		categoryList () {
+			let categories = []
+			this.posts.forEach(post => categories = [...categories, ...post.categories])
+			return [...new Set(categories)]
 		}
-	}
+	},
+
+	/* methods: {
+		filterByTag (tag) {
+			return tag === '' ? false : this.filteredList.filter(post => post.tags.includes(tag))
+		}
+	} */
 }
 </script>
 
