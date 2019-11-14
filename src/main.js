@@ -1,5 +1,6 @@
 import Vue from 'vue'
 import VueHead from 'vue-head'
+import Notifications from 'vue-notification'
 
 import App from './App.vue'
 import router from './router'
@@ -12,6 +13,8 @@ Vue.use(VueHead, {
 	complement: 'Emmanuel Beziat',
 	separator: ' :: ',
 })
+
+Vue.use(Notifications)
 
 new Vue({
 	router,

@@ -14,6 +14,7 @@
 			</main>
 
 			<SkipLinks position="bottom" />
+			<notifications group="share" position="top right" :max="3" />
 		</div>
 
 		<Footer />
