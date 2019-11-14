@@ -1,5 +1,5 @@
 <template>
-	<nav id="access-shortcuts-wrapper" class="skip-link">
+	<nav :id="`access-shortcuts-wrapper-${position}`" class="skip-link">
 		<a href="#content" id="skiplink-go-to-content" class="sr-only sr-only-focusable">Aller au contenu</a>
 		<a href="#menu" id="skiplink-go-to-menu" class="sr-only sr-only-focusable">Aller au menu</a>
 	</nav>
@@ -7,7 +7,8 @@
 
 <script>
 export default {
-	name: 'SkipLinks'
+	name: 'SkipLinks',
+	props: ['position']
 }
 </script>
 

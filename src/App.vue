@@ -3,7 +3,7 @@
 		<Header />
 
 		<div class="site-content">
-			<SkipLinks />
+			<SkipLinks position="top" />
 
 			<Menu />
 
@@ -13,7 +13,7 @@
 				</transition>
 			</main>
 
-			<SkipLinks />
+			<SkipLinks position="bottom" />
 		</div>
 
 		<Footer />
