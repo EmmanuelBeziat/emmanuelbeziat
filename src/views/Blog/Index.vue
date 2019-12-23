@@ -9,18 +9,18 @@
 				<!-- <filters icon="icon-tag" :filters="tagsList" @on-filter="filterByTag" /> -->
 
 				<transition-group name="list" tag="div" class="post-list">
-					<article class="post-list__item" v-for="post in filteredList" :key="post.slug">
-						<h1 class="post-list__title"><router-link :to="`/blog/${post.slug}/`">{{ post.title }}</router-link></h1>
+					<article class="post-list__item post" v-for="post in filteredList" :key="post.slug">
+						<h1 class="post__title --small"><router-link :to="`/blog/${post.slug}/`">{{ post.title }}</router-link></h1>
 
-						<div class="post-list__infos">
-							<div class="post-list__date">Posté le <time>{{ post.date | date({ year: 'numeric', month: 'long', day: 'numeric' }) }}</time></div>
+						<div class="post__infos flex">
+							<div class="post__date">Posté le <time>{{ post.date | date({ year: 'numeric', month: 'long', day: 'numeric' }) }}</time></div>
 
-							<div class="post-list__tags">
+							<div class="post__tags">
 								<Tag v-for="tag in post.tags" :key="tag" :value="tag" />
 							</div>
 						</div>
 
-						<div class="post-list__description">{{ post.description }}</div>
+						<div class="post__description">{{ post.description }}</div>
 					</article>
 				</transition-group>
 			</div>

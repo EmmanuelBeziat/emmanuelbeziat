@@ -1,34 +1,33 @@
 <template>
-	<div class="blog">
-		<transition mode="out-in" name="fade">
+	<transition mode="out-in" name="fade">
 
-			<article class="post" v-if="ref">
-				<header class="post__header">
-					<h1 class="post__title">{{ ref.title }}</h1>
+		<article class="post" v-if="ref">
+			<header class="post__header">
+				<h1 class="post__title">{{ ref.title }}</h1>
 
-					<div class="post__infos">
-						<div class="flex">
-							<div class="post__tags">
-								<Tag v-for="tag in ref.tags" :key="tag" :value="tag" />
-							</div>
+				<div class="post__infos">
+					<div class="flex">
+						<div class="post__tags">
+							<Tag v-for="tag in ref.tags" :key="tag" :value="tag" />
+						</div>
 
-							<div class="post__tags">
-								<Tag v-for="client in ref.clients" :key="client" :value="client" />
-							</div>
+						<div class="post__tags">
+							<Tag v-for="client in ref.clients" :key="client" :value="client" />
 						</div>
 					</div>
-				</header>
+				</div>
+			</header>
 
-				<Markdown class="post__content" :source="ref.content" />
+			<Markdown class="post__content" :source="ref.content" />
 
-				<footer class="post__footer">
-					<router-link exact :to="'/portfolio'" class="post__navigation--previous icon-arrow-left">Revenir au portfolio</router-link>
-				</footer>
-			</article>
+			<footer class="post__footer">
+				<router-link exact :to="'/portfolio'" class="navigation-previous icon-arrow-left">Revenir au portfolio</router-link>
+			</footer>
+		</article>
 
-			<Loader v-else />
-		</transition>
-	</div>
+		<Loader v-else />
+
+	</transition>
 </template>
 
 <script>

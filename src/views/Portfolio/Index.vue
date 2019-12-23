@@ -1,5 +1,5 @@
 <template>
-	<section class="portfolio">
+	<section class="showcase">
 		<transition mode="out-in" name="fade">
 			<Loader v-if="loading" />
 			<div v-else-if="error"></div>

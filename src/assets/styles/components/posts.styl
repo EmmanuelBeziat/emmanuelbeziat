@@ -1,48 +1,18 @@
+.post-list
+	display grid
+
 .post-list__item
 	transition .25s 0s
 	background var(--color-background)
+
+	.post__tags
+		@media $mq-tablet
+			margin .5em 0
 
 .post-list__item + .post-list__item
 	margin-top 2.5em
 	padding-top 2.5em
 	border-top 1px solid var(--color-separator)
-
-.post-list__title
-	margin 0
-	font 400 var(--font-size-article-title-small)/1.5 var(--font-stack-heading)
-
-	@media $mq-tablet
-		line-height 1.25
-		overflow auto
-
-.post-list__infos
-	font-size var(--font-size-article-infos)
-	display flex
-	justify-content space-between
-	align-items center
-
-	@media $mq-tablet
-		flex-direction column
-		align-items flex-start
-
-.post-list__date
-	@media $mq-tablet
-		margin .5em 0
-
-.post-list__tags
-	max-width 50%
-
-	@media $mq-tablet
-		max-width none
-
-.post-list__description
-	margin-top 10px
-
-.post-list__header
-	margin-bottom 1em
-
-.post-list__content
-	margin-bottom 1em
 
 .post-list__top-link
 	float right
@@ -69,6 +39,11 @@
 		size 1em
 		display inline-block
 
+	.flex
+		@media $mq-tablet
+			flex-direction column
+			align-items flex-start
+
 	h2
 	h3
 	h4
@@ -82,26 +57,20 @@
 .post__title
 	margin 0
 	color var(--color-red)
-	font 400 var(--font-size-article-title)/1.5 var(--font-stack-heading)
+	font 400 var(--font-size-article-title)/1.25 var(--font-stack-heading)
+	overflow auto
 
-	@media $mq-tablet
-		line-height 1.25
+	&.--small
+		font-size var(--font-size-article-title-small)
 
 .post__date
-	font-size .8em
-	color var(--color-yellow)
+	color var(--color-blue)
 
 	@media $mq-tablet
 		margin .5em 0
 
-.post
-	.flex
-		@media $mq-tablet
-			flex-direction column
-			align-items flex-start
-
 .post__tags
-	margin .5em 0
+		margin .5em 0
 
 .post__header
 	margin-bottom 2rem
@@ -117,6 +86,9 @@
 	font-size .9rem
 	margin-top 2rem
 
+.post__description
+	margin-top 1em
+
 .post__anchor
 	position absolute
 	left 0
@@ -124,18 +96,18 @@
 	transition .2s ease-in-out
 	transform translateX(-75%)
 
-.post__navigation--previous::before
+.navigation-previous::before
 	transform translateX(-4px)
 	transition transform .25s ease-in-out
 
-.post__navigation--previous:hover::before
-.post__navigation--previous:focus::before
+.navigation-previous:hover::before
+.navigation-previous:focus::before
 	transform translateX(-8px)
 
-.post__navigation--next::before
+.navigation-next::before
 	transform translateX(4px)
 	transition transform .25s ease-in-out
 
-.post__navigation--next:hover::before
-.post__navigation--next:focus::before
+.navigation-next:hover::before
+.navigation-next:focus::before
 	transform translateX(8px)

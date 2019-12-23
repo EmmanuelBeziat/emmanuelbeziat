@@ -1,28 +1,12 @@
 <template>
-	<div class="post">
-		<transition mode="out-in" name="fade">
-			<article class="post" v-if="post">
-				<header class="post__header">
-					<h1 class="post__title">{{ post.title }}</h1>
+	<transition mode="out-in" name="fade">
+		<article class="post" v-if="post">
+			<header class="post__header">
+				<h1 class="post__title">{{ post.title }}</h1>
 
-					<div class="post__infos">
-						<div class="post__date">Posté le <time>{{ post.date | date({ year: 'numeric', month: 'long', day: 'numeric' }) }}</time></div>
+				<div class="post__infos">
+					<div class="post__date">Posté le <time>{{ post.date | date({ year: 'numeric', month: 'long', day: 'numeric' }) }}</time></div>
 
-						<div class="flex">
-							<div class="post__tags">
-								<Tag v-for="tag in post.tags" :key="tag" :value="tag" />
-							</div>
-
-							<div class="post__share">
-								<Share />
-							</div>
-						</div>
-					</div>
-				</header>
-
-				<Markdown class="post__content" :source="post.content" :options="{ anchorPermalink: true }" />
-
-				<footer class="post__footer">
 					<div class="flex">
 						<div class="post__tags">
 							<Tag v-for="tag in post.tags" :key="tag" :value="tag" />
@@ -32,16 +16,30 @@
 							<Share />
 						</div>
 					</div>
+				</div>
+			</header>
 
-					<div class="post__help">
-						Un problème ? Une question ? <br>Vous pouvez me contacter sur <a href="https://www.twitter.com/EmmanuelBeziat" target="_blank" rel="noopener">Twitter</a>, poster un ticket sur <a href="https://github.com/EmmanuelBeziat/emmanuelbeziat/issues" target="_blank" rel="noopener">Github</a>, ou bien créer un sujet sur un forum d’entraide comme <a href="https://zestedesavoir.com/" target="_blank" rel="noopener">ZesteDeSavoir</a>, <a href="https://openclassrooms.com/dashboard" target="_blank" rel="noopener">OpenClassrooms</a>, <a href="http://www.alsacreations.com/" target="_blank" rel="noopener">Alsacréations</a>…
+			<Markdown class="post__content" :source="post.content" :options="{ anchorPermalink: true }" />
+
+			<footer class="post__footer">
+				<div class="flex">
+					<div class="post__tags">
+						<Tag v-for="tag in post.tags" :key="tag" :value="tag" />
 					</div>
-				</footer>
-			</article>
 
-			<Loader v-else />
-		</transition>
-	</div>
+					<div class="post__share">
+						<Share />
+					</div>
+				</div>
+
+				<div class="post__help">
+					Un problème ? Une question ? <br>Vous pouvez me contacter sur <a href="https://www.twitter.com/EmmanuelBeziat" target="_blank" rel="noopener">Twitter</a>, poster un ticket sur <a href="https://github.com/EmmanuelBeziat/emmanuelbeziat/issues" target="_blank" rel="noopener">Github</a>, ou bien créer un sujet sur un forum d’entraide comme <a href="https://zestedesavoir.com/" target="_blank" rel="noopener">ZesteDeSavoir</a>, <a href="https://openclassrooms.com/dashboard" target="_blank" rel="noopener">OpenClassrooms</a>, <a href="http://www.alsacreations.com/" target="_blank" rel="noopener">Alsacréations</a>…
+				</div>
+			</footer>
+		</article>
+
+		<Loader v-else />
+	</transition>
 </template>
 
 <script>
