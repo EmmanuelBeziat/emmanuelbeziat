@@ -41,8 +41,8 @@ export default {
 	mixins: [meta],
 
 	computed: {
-		refs () {
-			return this.$store.getter['portfolio/getRef'](this.$route.params.slug)
+		ref () {
+			return this.$store.getters['portfolio/getRef'](this.$route.params.slug)
 		}
 	},
 

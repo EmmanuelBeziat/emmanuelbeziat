@@ -55,7 +55,7 @@ export default {
 
 	computed: {
 		post () {
-			return this.$store.getter['posts/getPost'](this.$route.params.slug)
+			return this.$store.getters['posts/getPost'](this.$route.params.slug)
 		}
 	},
 
