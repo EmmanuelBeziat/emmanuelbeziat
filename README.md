@@ -14,10 +14,6 @@ Porfolio / Blog / CV
 * [Source Sans Pro](https://github.com/adobe-fonts/source-sans-pro) as a main font, [Yanone Kaffeesatz](https://www.yanone.de/fonts/kaffeesatz/) for titles, and [Source Code Pro](https://github.com/adobe-fonts/source-code-pro) for code parts
 * [Webpack](https://webpack.github.io/docs/) to build and pack everything
 
-# Test
-
-Testing…
-
 ## Thanks
 
 [@leny](https://github.com/leny), [@simmstein](https://github.com/simmstein/), [@reverland](https://github.com/reverland), [@ausir0726](https://github.com/ausir0726) and many others! ♥
