@@ -1,13 +1,11 @@
 <template>
 	<section class="projects">
 		<transition mode="out-in" name="fade">
-			<Loader v-if="loading" />
-			<div v-else-if="error">{{ error }}</div>
-			<div v-else>
+			<div v-if="projects">
 				<Search placeholder="Recherche…" v-model="searchTerms" />
 
 				<transition-group name="list" tag="div" class="post-list">
-					<article class="post-list__item post" v-for="projet in filteredList" :key="projet.id">
+					<article class="post-list__item post" v-for="projet in projects" :key="projet.id">
 						<h1 class="post__title --small"><a :href="projet.html_url">{{ projet.name }}</a></h1>
 
 						<div class="post__infos flex">
@@ -23,12 +21,13 @@
 					</article>
 				</transition-group>
 			</div>
+
+			<Loader v-else />
 		</transition>
 	</section>
 </template>
 
 <script>
-import { api } from '@/config'
 import { meta } from '@/plugins/mixins/meta'
 import slug from 'slug'
 import Search from '@/components/search/Search'
@@ -44,31 +43,20 @@ export default {
 			head: {
 				title: 'Projets'
 			},
-			projects: null,
-			error: null,
-			loading: true,
 			searchTerms: ''
 		}
 	},
 
-	mounted () {
-		this.axios.get(`${api.projects}?sort=updated`)
-			.then(response => this.projects = response.data)
-			.catch(error => this.error = error.message)
-			.finally(() => this.loading = false)
+	computed: {
+		projects () {
+			return this.$store.getters['projects/list'].filter(project => slug(project.name).includes(slug(this.searchTerms.toLowerCase())))
+		}
 	},
-
 
 	components: {
 		Search,
 		Loader,
 		Tag
-	},
-
-	computed: {
-		filteredList () {
-			return this.projects.filter(project => slug(project.name).includes(slug(this.searchTerms.toLowerCase())))
-		}
 	}
 }
 </script>

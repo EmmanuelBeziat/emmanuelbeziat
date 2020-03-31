@@ -1,9 +1,7 @@
 <template>
 	<section class="showcase">
 		<transition mode="out-in" name="fade">
-			<Loader v-if="loading" />
-			<div v-else-if="error"></div>
-			<div v-else>
+			<div v-if="refs">
 				<sequential-entrance tag="div" animation="entranceFadeIn" delay="50" class="showcase__list">
 					<router-link v-for="ref in refs" :key="ref.slug" class="showcase__item" :to="`/portfolio/${ref.slug}/`" >
 						<div :class="['showcase__layer', ref.color]">
@@ -35,12 +33,13 @@
 					</div>
 				</div>
 			</div>
+
+			<Loader v-else />
 		</transition>
 	</section>
 </template>
 
 <script>
-import { api } from '@/config'
 import { meta } from '@/plugins/mixins/meta'
 import Loader from '@/components/loader/Loader'
 
@@ -53,25 +52,20 @@ export default {
 			head: {
 				title: 'Portfolio'
 			},
-			test: true,
-			refs: null,
-			error: null,
-			loading: true,
 			searchTerms: '',
 			publicPath: process.env.BASE_URL
+		}
+	},
+
+	computed: {
+		refs () {
+			return this.$store.getters['portfolio/list']
 		}
 	},
 
 	components: {
 		Loader
 	},
-
-	mounted () {
-		this.axios.get(api.refs)
-			.then(response => this.refs = response.data)
-			.catch(error => this.error = error.message)
-			.finally(() => this.loading = false)
-	}
 }
 </script>
 

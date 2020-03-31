@@ -31,7 +31,6 @@
 </template>
 
 <script>
-import { api } from '@/config'
 import { meta } from '@/plugins/mixins/meta'
 import Markdown from '@/components/markdown/Markdown'
 import Loader from '@/components/loader/Loader'
@@ -41,31 +40,9 @@ export default {
 	name: 'portfolioSingle',
 	mixins: [meta],
 
-	data () {
-		return {
-			ref: null
-		}
-	},
-
-	mounted () {
-		this.getRef()
-	},
-
-	watch: {
-		'$route.params.slug': 'getRef'
-	},
-
-	methods: {
-		getRef () {
-			this.axios.get(`${api.refs}/${this.$route.params.slug}/`)
-				.then(response => {
-					this.ref = response.data
-					this.head.title = response.data.title || this.head.title
-					this.head.description = response.data.description || this.head.description
-					this.head.url = `https://www.emmanuelbeziat.com/portfolio/${this.$route.params.slug}/`
-					this.$emit('updateHead')
-				})
-				.catch(error => this.$router.push('/404'))
+	computed: {
+		refs () {
+			return this.$store.getter['portfolio/getRef'](this.$route.params.slug)
 		}
 	},
 

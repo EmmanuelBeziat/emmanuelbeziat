@@ -43,7 +43,6 @@
 </template>
 
 <script>
-import { api } from '@/config'
 import { meta } from '@/plugins/mixins/meta'
 import Loader from '@/components/loader/Loader'
 import Markdown from '@/components/markdown/Markdown'
@@ -54,34 +53,9 @@ export default {
 	name: 'blogSingle',
 	mixins: [meta],
 
-	data () {
-		return {
-			post: null,
-		}
-	},
-
-	mounted () {
-		this.getPost()
-	},
-
-	watch: {
-		'$route.params.slug': 'getPost'
-	},
-
-	methods: {
-		getPost () {
-			this.axios.get(`${api.posts}/${this.$route.params.slug}/`)
-				.then(response => {
-					this.post = response.data
-					this.head.title = response.data.title || this.head.title
-					this.head.image = response.data.image || this.head.image
-					this.head.description = response.data.description || this.head.description
-					this.head.url = `https://www.emmanuelbeziat.com/blog/${this.$route.params.slug}/`
-					this.$emit('updateHead')
-				})
-				.catch(error => {
-					this.$router.push('/404')
-				})
+	computed: {
+		post () {
+			return this.$store.getter['posts/getPost'](this.$route.params.slug)
 		}
 	},
 

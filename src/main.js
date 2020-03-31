@@ -4,9 +4,14 @@ import Notifications from 'vue-notification'
 
 import App from './App.vue'
 import router from './router'
+import store from './store.js'
 
 import './registerServiceWorker'
 import './plugins/index'
+
+store.dispatch('posts/init')
+store.dispatch('portfolio/init')
+store.dispatch('projects/init')
 
 Vue.config.productionTip = false
 Vue.use(VueHead, {
@@ -18,5 +23,6 @@ Vue.use(Notifications)
 
 new Vue({
 	router,
+	store,
 	render: h => h(App)
 }).$mount('#app')

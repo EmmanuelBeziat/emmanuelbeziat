@@ -1,15 +1,13 @@
 <template>
 	<section class="blog">
 		<transition mode="out-in" name="fade">
-			<Loader v-if="loading" />
-			<div v-else-if="error"></div>
-			<div v-else>
+			<div v-if="posts">
 				<Search placeholder="Recherche…" v-model="searchTerms" />
 
 				<!-- <filters icon="icon-tag" :filters="tagsList" @on-filter="filterByTag" /> -->
 
 				<transition-group name="list" tag="div" class="post-list">
-					<article class="post-list__item post" v-for="post in filteredList" :key="post.slug">
+					<article class="post-list__item post" v-for="post in posts" :key="post.slug">
 						<h1 class="post__title --small"><router-link :to="`/blog/${post.slug}/`">{{ post.title }}</router-link></h1>
 
 						<div class="post__infos flex">
@@ -24,12 +22,13 @@
 					</article>
 				</transition-group>
 			</div>
+
+			<Loader v-else />
 		</transition>
 	</section>
 </template>
 
 <script>
-import { api } from '@/config'
 import { meta } from '@/plugins/mixins/meta'
 import slug from 'slug'
 import Moment from 'moment'
@@ -47,38 +46,13 @@ export default {
 			head: {
 				title: 'Blog'
 			},
-			posts: null,
-			error: null,
-			loading: true,
 			searchTerms: ''
 		}
 	},
 
-	mounted () {
-		this.axios.get(api.posts)
-			.then(response => {
-				let postList = []
-				response.data.forEach(item => {
-					if (item.publish !== false && Moment().diff(item.date, 'days') > 1) {
-						postList.push(item)
-					}
-				})
-				this.posts = postList
-			})
-			.catch(error => this.error = error.message)
-			.finally(() => this.loading = false)
-	},
-
-	components: {
-		Search,
-		Loader,
-		Tag,
-		// Filters
-	},
-
 	computed: {
-		filteredList () {
-			return this.posts.filter(post => slug(post.title.toLowerCase()).includes(slug(this.searchTerms.toLowerCase())))
+		posts () {
+			return this.$store.getters['posts/list'].filter(post => slug(post.title.toLowerCase()).includes(slug(this.searchTerms.toLowerCase())))
 		},
 
 		tagsList () {
@@ -92,6 +66,13 @@ export default {
 			this.posts.forEach(post => categories = [...categories, ...post.categories])
 			return [...new Set(categories)]
 		}
+	},
+
+	components: {
+		Search,
+		Loader,
+		Tag,
+		// Filters
 	},
 
 	/* methods: {
