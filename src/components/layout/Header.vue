@@ -2,8 +2,8 @@
 	<header class="header">
 		<h1 class="header__title"><router-link to="/">Emmanuel Béziat</router-link></h1>
 
-		<img v-if="$route.name === 'not-found'" class="header__picture" src="~@/assets/img/emmanuelb-error.jpg" alt="Emmanuel Béziat" width="220" height="220">
-		<img v-else class="header__picture" src="~@/assets/img/emmanuelb.jpg" alt="Emmanuel Béziat" width="220" height="220">
+		<img v-if="$route.name === 'not-found'" class="header__picture" src="~@/assets/img/emmanuelb-error.jpg" alt="Emmanuel Béziat" width="220" height="220" loading="lazy">
+		<img v-else class="header__picture" src="~@/assets/img/emmanuelb.jpg" alt="Emmanuel Béziat" width="220" height="220" loading="lazy">
 
 		<div class="social">
 			<a :href="social.twitter" class="social__link social__link--twitter" title="Twitter" aria-label="Twitter">
