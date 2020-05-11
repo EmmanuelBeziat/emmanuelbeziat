@@ -26,7 +26,21 @@ module.exports = {
 			favicon16: 'favicon-16x16.png',
 			appleTouchIcon: 'apple-touch-icon.png',
 			maskIcon: 'safari-pinned-tab.svg',
-			msTileImage: 'mstile-144x144.png'
+			msTileImage: 'mstile-150x150.png'
+		},
+		manifestOptions: {
+			icons: [
+				{
+					'src': '/favicons/android-chrome-192x192.png',
+					'sizes': '192x192',
+					'type': 'image/png'
+				},
+				{
+					'src': '/favicons/android-chrome-512x512.png',
+					'sizes': '512x512',
+					'type': 'image/png'
+				}
+			]
 		}
 	},
 
