@@ -20,6 +20,7 @@ const errors = [
 	{ class: 'south-park', title: 'We’re sorry…' },
 	{ class: 'mario', title: 'Sorry, but your page <br>is in another castle' },
 	{ class: 'obiwan', title: 'This is not the page <br>you’re looking for…' },
+	{ class: 'pulpfiction', title: '…?'}
 ]
 
 export default {
@@ -82,5 +83,8 @@ export default {
 
 	&.obiwan
 		background-image url('~@/assets/img/404/obiwan.gif')
+
+	&.pulpfiction
+		background-image url('~@/assets/img/404/pulp.gif')
 
 </style>
