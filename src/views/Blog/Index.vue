@@ -29,7 +29,7 @@
 </template>
 
 <script>
-import { meta } from '@/plugins/mixins/meta'
+import meta from '@/plugins/mixins/meta'
 import slug from 'slug'
 import Moment from 'moment'
 import Loader from '@/components/loader/Loader'

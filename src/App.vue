@@ -102,6 +102,10 @@ export default {
 html
 	box-sizing border-box
 	overflow-y scroll
+	scroll-behavior smooth
+
+	@media (prefers-reduced-motion reduce)
+		scroll-behavior auto
 
 body
 	margin 0

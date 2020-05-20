@@ -33,7 +33,7 @@
 				</div>
 
 				<div class="post__help">
-					Un problème ? Une question ? <br>Vous pouvez me contacter sur <a href="https://www.twitter.com/EmmanuelBeziat" target="_blank" rel="noopener">Twitter</a>, poster un ticket sur <a href="https://github.com/EmmanuelBeziat/emmanuelbeziat/issues" target="_blank" rel="noopener">Github</a>, ou bien créer un sujet sur un forum d’entraide comme <a href="https://zestedesavoir.com/" target="_blank" rel="noopener">ZesteDeSavoir</a>, <a href="https://openclassrooms.com/dashboard" target="_blank" rel="noopener">OpenClassrooms</a>, <a href="http://www.alsacreations.com/" target="_blank" rel="noopener">Alsacréations</a>…
+					Un problème ? Une question ? <br>Vous pouvez me contacter sur <a href="https://www.twitter.com/EmmanuelBeziat" target="_blank" rel="noopener">Twitter</a>, poster un ticket sur <a href="https://github.com/EmmanuelBeziat/emmanuelbeziat/issues" target="_blank" rel="noopener">Github</a>, ou bien créer un sujet sur un forum d’entraide comme <a href="https://zestedesavoir.com/" target="_blank" rel="noopener">ZesteDeSavoir</a>, <a href="https://openclassrooms.com/forum/" target="_blank" rel="noopener">OpenClassrooms</a>, <a href="http://www.alsacreations.com/" target="_blank" rel="noopener">Alsacréations</a>…
 				</div>
 			</footer>
 		</article>
@@ -43,8 +43,9 @@
 </template>
 
 <script>
-import { meta } from '@/plugins/mixins/meta'
-import { titles } from '@/plugins/mixins/titles'
+import meta from '@/plugins/mixins/meta'
+import titles from '@/plugins/mixins/titles'
+import scroll from '@/plugins/mixins/scroll'
 import Loader from '@/components/loader/Loader'
 import Markdown from '@/components/markdown/Markdown'
 import Share from '@/components/share/Share'
@@ -52,7 +53,7 @@ import Tag from '@/components/tags/Tag'
 
 export default {
 	name: 'blogSingle',
-	mixins: [meta, titles],
+	mixins: [meta, titles, scroll],
 
 	computed: {
 		post () {

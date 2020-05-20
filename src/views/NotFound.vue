@@ -13,7 +13,7 @@
 </template>
 
 <script>
-import { meta } from '@/plugins/mixins/meta'
+import meta from '@/plugins/mixins/meta'
 
 const errors = [
 	{ class: 'doctor-who', title: 'What?!' },

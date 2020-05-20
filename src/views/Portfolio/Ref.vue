@@ -31,8 +31,8 @@
 </template>
 
 <script>
-import { meta } from '@/plugins/mixins/meta'
-import { titles } from '@/plugins/mixins/titles'
+import meta from '@/plugins/mixins/meta'
+import titles from '@/plugins/mixins/titles'
 import Markdown from '@/components/markdown/Markdown'
 import Loader from '@/components/loader/Loader'
 import Tag from '@/components/tags/Tag'

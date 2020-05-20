@@ -8,7 +8,7 @@
 </template>
 
 <script>
-import { meta } from '@/plugins/mixins/meta'
+import meta from '@/plugins/mixins/meta'
 import Presentation from '@/components/home/Presentation'
 import CodeHome from '@/components/home/Code'
 

@@ -1,6 +1,6 @@
 import { openGraph } from '@/config'
 
-export const meta = {
+export default {
 	data () {
 		return {
 			head: {

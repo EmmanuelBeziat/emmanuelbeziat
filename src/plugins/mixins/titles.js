@@ -1,4 +1,4 @@
-export const titles = {
+export default {
 	methods: {
 		getDynamicTitle (title) {
 			this.head.title = title

@@ -28,7 +28,7 @@
 </template>
 
 <script>
-import { meta } from '@/plugins/mixins/meta'
+import meta from '@/plugins/mixins/meta'
 import slug from 'slug'
 import Search from '@/components/search/Search'
 import Loader from '@/components/loader/Loader'

@@ -40,7 +40,7 @@
 </template>
 
 <script>
-import { meta } from '@/plugins/mixins/meta'
+import meta from '@/plugins/mixins/meta'
 import Loader from '@/components/loader/Loader'
 
 export default {
