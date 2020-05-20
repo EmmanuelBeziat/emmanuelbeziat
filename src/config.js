@@ -3,6 +3,7 @@ const env = JSON.parse(unescape(process.env.PACKAGE_JSON || '%7B%7D'))
 export const api = {
 	posts: 'https://rest.emmanuelbeziat.com/posts',
 	refs: 'https://rest.emmanuelbeziat.com/portfolio',
+	codes: 'https://rest.emmanuelbeziat.com/codes',
 	projects: 'https://api.github.com/users/emmanuelbeziat/repos',
 }
 

@@ -2,6 +2,11 @@ const webpack = require('webpack')
 
 module.exports = {
 	productionSourceMap: false,
+	configureWebpack: config => {
+		config.module
+			.rule('/\.md$')
+			.use('raw-loader')
+	},
 	configureWebpack: {
 		devtool: 'source-map',
 		plugins: [

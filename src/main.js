@@ -9,6 +9,7 @@ import store from './store.js'
 import './registerServiceWorker'
 import './plugins/index'
 
+store.dispatch('codes/init')
 store.dispatch('posts/init')
 store.dispatch('portfolio/init')
 store.dispatch('projects/init')
