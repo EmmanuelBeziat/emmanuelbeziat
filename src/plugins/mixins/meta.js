@@ -24,6 +24,7 @@ export const meta = {
 				inner: `${this.head.title}`
 			}
 		},
+
 		meta () {
 			return [
 				{ id: 'og:description', property: 'og:description', content: this.head.description },

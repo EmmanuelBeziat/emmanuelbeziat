@@ -2,7 +2,7 @@
 	<transition mode="out-in" name="fade">
 		<article class="post" v-if="post">
 			<header class="post__header">
-				<h1 class="post__title">{{ post.title }}</h1>
+				<h1 class="post__title">{{ title }}</h1>
 
 				<div class="post__infos">
 					<div class="post__date">Posté le <time>{{ post.date | date({ year: 'numeric', month: 'long', day: 'numeric' }) }}</time></div>
@@ -44,6 +44,7 @@
 
 <script>
 import { meta } from '@/plugins/mixins/meta'
+import { titles } from '@/plugins/mixins/titles'
 import Loader from '@/components/loader/Loader'
 import Markdown from '@/components/markdown/Markdown'
 import Share from '@/components/share/Share'
@@ -51,11 +52,15 @@ import Tag from '@/components/tags/Tag'
 
 export default {
 	name: 'blogSingle',
-	mixins: [meta],
+	mixins: [meta, titles],
 
 	computed: {
 		post () {
 			return this.$store.getters['posts/getPost'](this.$route.params.slug)
+		},
+
+		title () {
+			return this.getDynamicTitle(this.post.title)
 		}
 	},
 

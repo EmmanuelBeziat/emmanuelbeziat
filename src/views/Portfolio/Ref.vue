@@ -3,7 +3,7 @@
 
 		<article class="post" v-if="ref">
 			<header class="post__header">
-				<h1 class="post__title">{{ ref.title }}</h1>
+				<h1 class="post__title">{{ title }}</h1>
 
 				<div class="post__infos">
 					<div class="flex">
@@ -32,17 +32,22 @@
 
 <script>
 import { meta } from '@/plugins/mixins/meta'
+import { titles } from '@/plugins/mixins/titles'
 import Markdown from '@/components/markdown/Markdown'
 import Loader from '@/components/loader/Loader'
 import Tag from '@/components/tags/Tag'
 
 export default {
 	name: 'portfolioSingle',
-	mixins: [meta],
+	mixins: [meta, titles],
 
 	computed: {
 		ref () {
 			return this.$store.getters['portfolio/getRef'](this.$route.params.slug)
+		},
+
+		title () {
+			return this.getDynamicTitle(this.ref.title)
 		}
 	},
 
