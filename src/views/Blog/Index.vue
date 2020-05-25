@@ -31,7 +31,6 @@
 <script>
 import meta from '@/plugins/mixins/meta'
 import slug from 'slug'
-import Moment from 'moment'
 import Loader from '@/components/loader/Loader'
 import Search from '@/components/search/Search'
 import Tag from '@/components/tags/Tag'

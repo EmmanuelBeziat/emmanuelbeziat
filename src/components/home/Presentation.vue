@@ -9,7 +9,7 @@
 
 <script>
 import Moment from 'moment'
-import 'moment/locale/fr'
+moment.locale('fr')
 
 export default {
 	data () {

@@ -1,4 +1,5 @@
 const webpack = require('webpack')
+const BundleAnalyzerPlugin = require('webpack-bundle-analyzer').BundleAnalyzerPlugin
 
 module.exports = {
 	productionSourceMap: false,
@@ -15,7 +16,9 @@ module.exports = {
 					PACKAGE_JSON: '"' + escape(JSON.stringify(require('./package.json'))) + '"'
 				}
 			}),
-			new webpack.IgnorePlugin(/^\.\/locale\/(en|fr)\.js$/, /moment$/)
+			// new webpack.IgnorePlugin(/^\.\/locale$/, /moment$/),
+			new webpack.ContextReplacementPlugin(/moment[/\\]locale$/, /fr/),
+			new BundleAnalyzerPlugin()
 		]
 	},
 
