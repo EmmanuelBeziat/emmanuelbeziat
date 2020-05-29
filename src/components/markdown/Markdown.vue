@@ -10,6 +10,7 @@ import MarkdownItAttrs from 'markdown-it-attrs'
 import MarkdownItBlockEmbed from 'markdown-it-block-embed'
 import MarkdownItAnchor from 'markdown-it-anchor'
 import MarkdownItSmartArrows from 'markdown-it-smartarrows'
+import MarkdownItLazyLoading from 'markdown-it-image-lazy-loading'
 
 import 'prismjs/components/prism-markup-templating'
 import 'prismjs/components/prism-php'
@@ -28,6 +29,7 @@ export default {
 			typographer: true,
 		})
 			.use(MarkdownItAttrs)
+			.use(MarkdownItLazyLoading)
 			.use(MarkdownItBlockEmbed, {
 				containerClassName: 'video',
 				serviceClassPrefix: 'video--',
@@ -42,6 +44,7 @@ export default {
 			})
 			.use(MarkdownItPrism)
 			.use(MarkdownItSmartArrows)
+
 		return {
 			md: md
 		}
