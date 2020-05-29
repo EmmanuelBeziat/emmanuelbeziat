@@ -11,37 +11,37 @@ export default new Router({
 		{
 			path: '/',
 			name: 'home',
-			component: () => import(/* webpackChunkName: "home" */ './views/Home')
+			component: () => import(/* webpackChunkName: "home" */ '@/views/Home')
 		},
 		{
 			path: '/blog',
 			name: 'blog',
-			component: () => import(/* webpackChunkName: "blog" */ './views/Blog/Index'),
+			component: () => import(/* webpackChunkName: "blog" */ '@/views/Blog/Index'),
 		},
 		{
 			path: '/blog/:slug',
 			name: 'post',
-			component: () => import(/* webpackChunkName: "post" */ './views/Blog/Post')
+			component: () => import(/* webpackChunkName: "post" */ '@/views/Blog/Post')
 		},
 		{
 			path: '/portfolio',
 			name: 'portfolio',
-			component: () => import(/* webpackChunkName: "portfolio" */ './views/Portfolio/Index'),
+			component: () => import(/* webpackChunkName: "portfolio" */ '@/views/Portfolio/Index'),
 		},
 		{
 			path: '/portfolio/:slug',
 			name: 'reference',
-			component: () => import(/* webpackChunkName: "ref" */ './views/Portfolio/Ref')
+			component: () => import(/* webpackChunkName: "ref" */ '@/views/Portfolio/Ref')
 		},
 		{
 			path: '/projets',
 			name: 'projects',
-			component: () => import(/* webpackChunkName: "projects" */ './views/Projects/Index'),
+			component: () => import(/* webpackChunkName: "projects" */ '@/views/Projects/Index'),
 		},
 		{
 			path: '/not-found',
 			name: 'not-found',
-			component: () => import(/* webpackChunkName: "not-found" */ './views/NotFound')
+			component: () => import(/* webpackChunkName: "not-found" */ '@/views/NotFound')
 		},
 		{
 			path: '*',
