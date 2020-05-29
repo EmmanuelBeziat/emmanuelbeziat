@@ -1,10 +1,5 @@
 import Vue from 'vue'
 import Router from 'vue-router'
-import Home from './views/Home'
-import Blog from './views/Blog/Index'
-import Portfolio from './views/Portfolio/Index'
-import Projects from './views/Projects/Index'
-import NotFound from './views/NotFound'
 
 Vue.use(Router)
 
@@ -16,12 +11,12 @@ export default new Router({
 		{
 			path: '/',
 			name: 'home',
-			component: Home
+			component: () => import('@/components/views/Home')
 		},
 		{
 			path: '/blog',
 			name: 'blog',
-			component: Blog,
+			component: () => import('@/components/views/Blog/Index'),
 		},
 		{
 			path: '/blog/:slug',
@@ -31,7 +26,7 @@ export default new Router({
 		{
 			path: '/portfolio',
 			name: 'portfolio',
-			component: Portfolio,
+			component: () => import('@/components/views/Portfolio/Index'),
 		},
 		{
 			path: '/portfolio/:slug',
@@ -41,12 +36,12 @@ export default new Router({
 		{
 			path: '/projets',
 			name: 'projects',
-			component: Projects,
+			component: () => import('@/components/views/Projects/Index'),
 		},
 		{
 			path: '/not-found',
 			name: 'not-found',
-			component: NotFound
+			component: () => import('@/components/views/NotFound')
 		},
 		{
 			path: '*',
