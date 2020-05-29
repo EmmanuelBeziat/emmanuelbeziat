@@ -11,12 +11,12 @@ export default new Router({
 		{
 			path: '/',
 			name: 'home',
-			component: () => import('@/components/views/Home')
+			component: () => import(/* webpackChunkName: "home" */ './views/Home')
 		},
 		{
 			path: '/blog',
 			name: 'blog',
-			component: () => import('@/components/views/Blog/Index'),
+			component: () => import(/* webpackChunkName: "blog" */ './views/Blog/Index'),
 		},
 		{
 			path: '/blog/:slug',
@@ -26,7 +26,7 @@ export default new Router({
 		{
 			path: '/portfolio',
 			name: 'portfolio',
-			component: () => import('@/components/views/Portfolio/Index'),
+			component: () => import(/* webpackChunkName: "portfolio" */ './views/Portfolio/Index'),
 		},
 		{
 			path: '/portfolio/:slug',
@@ -36,12 +36,12 @@ export default new Router({
 		{
 			path: '/projets',
 			name: 'projects',
-			component: () => import('@/components/views/Projects/Index'),
+			component: () => import(/* webpackChunkName: "projects" */ './views/Projects/Index'),
 		},
 		{
 			path: '/not-found',
 			name: 'not-found',
-			component: () => import('@/components/views/NotFound')
+			component: () => import(/* webpackChunkName: "not-found" */ './views/NotFound')
 		},
 		{
 			path: '*',
