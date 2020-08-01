@@ -33,12 +33,12 @@
 <script>
 import meta from '@/plugins/mixins/meta'
 import titles from '@/plugins/mixins/titles'
-import Markdown from '@/components/markdown/Markdown'
+import Markdown from '@/components/markdown/MarkdownRender'
 import Loader from '@/components/loader/Loader'
 import Tag from '@/components/tags/Tag'
 
 export default {
-	name: 'portfolioSingle',
+	name: 'PortfolioSingle',
 	mixins: [meta, titles],
 
 	computed: {

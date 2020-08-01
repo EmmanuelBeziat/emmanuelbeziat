@@ -13,7 +13,8 @@ import Presentation from '@/components/home/Presentation'
 import CodeHome from '@/components/home/Code'
 
 export default {
-	name: 'home',
+	name: 'Home',
+
 	mixins: [meta],
 
 	data () {

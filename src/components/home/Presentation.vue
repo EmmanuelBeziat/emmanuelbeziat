@@ -12,6 +12,8 @@ import Moment from 'moment'
 Moment.locale('fr')
 
 export default {
+	name: 'HomePresentation',
+
 	data () {
 		return {
 			age: null,

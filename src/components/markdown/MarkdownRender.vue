@@ -18,8 +18,17 @@ import 'prismjs/components/prism-markdown'
 import 'prismjs/components/prism-pug'
 
 export default {
-	name: 'markdown',
-	props: ['source', 'options'],
+	name: 'MarkdownRender',
+
+	props: {
+		source: {
+			type: String,
+			required: true
+		},
+		options: {
+			type: Object
+		}
+	},
 
 	data () {
 		const md = new MarkdownIt({
@@ -46,7 +55,7 @@ export default {
 			.use(MarkdownItSmartArrows)
 
 		return {
-			md: md
+			md
 		}
 	},
 

@@ -8,7 +8,21 @@
 <script>
 export default {
 	name: 'ShareButton',
-	props: ['type', 'icon', 'name']
+
+	props: {
+		type: {
+			type: String,
+			required: true
+		},
+		icon: {
+			type: String,
+			required: true
+		},
+		name: {
+			type: String,
+			required: true
+		}
+	}
 }
 </script>
 

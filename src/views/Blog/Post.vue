@@ -9,7 +9,7 @@
 
 					<div class="flex">
 						<div class="post__tags">
-							<Tag v-for="tag in post.tags" :key="tag" :value="tag" />
+							<Tag v-for="(tag, index) in post.tags" :key="`tag-${index}`" :value="tag" />
 						</div>
 
 						<div class="post__share">
@@ -24,7 +24,7 @@
 			<footer class="post__footer">
 				<div class="flex">
 					<div class="post__tags">
-						<Tag v-for="tag in post.tags" :key="tag" :value="tag" />
+						<Tag v-for="(tag, index) in post.tags" :key="`tag-${index}`" :value="tag" />
 					</div>
 
 					<div class="post__share">
@@ -47,12 +47,13 @@ import meta from '@/plugins/mixins/meta'
 import titles from '@/plugins/mixins/titles'
 import scroll from '@/plugins/mixins/scroll'
 import Loader from '@/components/loader/Loader'
-import Markdown from '@/components/markdown/Markdown'
+import Markdown from '@/components/markdown/MarkdownRender'
 import Share from '@/components/share/Share'
 import Tag from '@/components/tags/Tag'
 
 export default {
-	name: 'blogSingle',
+	name: 'BlogSingle',
+
 	mixins: [meta, titles, scroll],
 
 	computed: {
@@ -70,19 +71,11 @@ export default {
 		Loader,
 		Share,
 		Tag
-	},
+	}
 }
 </script>
 
 
-<style lang="stylus" scoped>
-@require '~@/assets/styles/variables.styl'
-@require '~@/assets/styles/mixins.styl'
+<style lang="stylus">
 @require '~@/assets/styles/components/posts.styl'
-
-.comments
-	margin-top 2rem
-	padding-top 2rem
-	border-top 1px solid var(--color-separator)
-
 </style>

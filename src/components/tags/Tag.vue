@@ -4,7 +4,15 @@
 
 <script>
 export default {
-	props: ['value', 'icon']
+	name: 'Tag',
+
+	props: {
+		value: {
+			type: null,
+			required: true
+		},
+		icon: String
+	}
 }
 </script>
 
@@ -19,10 +27,6 @@ export default {
 	padding 0 .5em
 	margin 0 rem(4px) .35em 0
 	color var(--color-text)
-
-/*.c-tag:hover
-	background var(--color-background-darker)
-	color inherit*/
 
 .c-tag:last-of-type
 	margin-right 0

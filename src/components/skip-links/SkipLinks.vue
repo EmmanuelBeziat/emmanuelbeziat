@@ -8,11 +8,13 @@
 <script>
 export default {
 	name: 'SkipLinks',
-	props: ['position']
+
+	props: {
+		position: {
+			type: String,
+			default: 'top',
+			validator: value => ['top', 'bottom'].indexOf(value) !== -1
+		}
+	}
 }
 </script>
-
-
-<style lang="stylus" scoped>
-
-</style>

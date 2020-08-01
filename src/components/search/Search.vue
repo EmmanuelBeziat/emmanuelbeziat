@@ -6,13 +6,17 @@
 
 <script>
 export default {
-	props: ['placeholder'],
+	name: 'Search',
+
+	props: {
+		placeholder: String
+	},
 
 	data () {
 		return {
 			inputValue: this.value
 		}
-	},
+	}
 }
 </script>
 

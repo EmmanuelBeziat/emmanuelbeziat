@@ -6,6 +6,8 @@
 import Moment from 'moment'
 
 export default {
+	name: 'Copyright',
+
 	data () {
 		return {
 			year: Moment().format('YYYY')

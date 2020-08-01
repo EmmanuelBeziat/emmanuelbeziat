@@ -24,7 +24,8 @@ const errors = [
 ]
 
 export default {
-	name: 'not-found',
+	name: 'NotFound',
+
 	mixins: [meta],
 
 	data () {
@@ -40,7 +41,7 @@ export default {
 			const i = Math.floor(Math.random() * errors.length)
 			return errors[i]
 		}
-	},
+	}
 }
 </script>
 

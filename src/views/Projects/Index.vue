@@ -35,7 +35,8 @@ import Loader from '@/components/loader/Loader'
 import Tag from '@/components/tags/Tag'
 
 export default {
-	name: 'Projets',
+	name: 'Projects',
+
 	mixins: [meta],
 
 	data () {

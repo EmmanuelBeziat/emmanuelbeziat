@@ -7,10 +7,21 @@
 
 <script>
 export default {
-	props: ['filters', 'icon']
+	name: 'Filters',
+
+	props: {
+		filters: {
+			type: Array,
+			required: true,
+			validator: value => value.length
+		},
+		icon: {
+			type: String,
+			required: true
+		}
+	}
 }
 </script>
-
 
 <style lang="stylus" scoped>
 @require '~@/assets/styles/variables.styl'

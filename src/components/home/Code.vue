@@ -14,10 +14,10 @@
 </template>
 
 <script>
-import Markdown from '@/components/markdown/Markdown'
+import Markdown from '@/components/markdown/MarkdownRender'
 
 export default {
-	name: 'code-home',
+	name: 'HomeCode',
 
 	computed: {
 		codes () {

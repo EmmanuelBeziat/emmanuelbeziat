@@ -10,8 +10,9 @@
 
 <script>
 import ShareButton from '@/components/share/ShareButton'
+
 export default {
-	name: 'Sharepost',
+	name: 'Share',
 
 	components: {
 		ShareButton
