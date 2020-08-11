@@ -76,6 +76,6 @@ export default {
 </script>
 
 
-<style lang="stylus">
+<style lang="stylus" scoped>
 @require '~@/assets/styles/components/posts.styl'
 </style>

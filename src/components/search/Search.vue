@@ -1,6 +1,6 @@
 <template>
 	<div class="c-search" role="search">
-		<input class="c-search__input" :title="placeholder" type="search" :placeholder="placeholder" @input="$emit('input', $event.target.value)">
+		<input class="c-search__input" :title="placeholder" type="search" :placeholder="placeholder" @input="search($event.target.value)">
 	</div>
 </template>
 
@@ -15,6 +15,12 @@ export default {
 	data () {
 		return {
 			inputValue: this.value
+		}
+	},
+
+	methods: {
+		search (value) {
+			setTimeout(() => this.$emit('input', value), 150)
 		}
 	}
 }

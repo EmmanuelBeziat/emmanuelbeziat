@@ -44,7 +44,7 @@ export default {
 }
 </script>
 
-<style lang="stylus">
+<style lang="stylus" scoped>
 @require '~@/assets/styles/variables.styl'
 @require '~@/assets/styles/mixins.styl'
 
@@ -85,7 +85,7 @@ export default {
 		margin 0
 		transform none
 
-.cv-code pre
+.cv-code >>> pre
 	margin-top 0
 	border-radius 0 0 .5rem .5rem
 

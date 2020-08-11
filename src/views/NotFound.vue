@@ -1,6 +1,6 @@
 <template>
 	<section class="not-found">
-		<div class="not-found__image" :class="error.class"></div>
+		<div class="not-found__image" :class="error.class" @click="$router.go()"></div>
 		<div class="not-found__404" v-html="error.title"></div>
 
 		<h1 class="not-found__title">Page introuvable</h1>

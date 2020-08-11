@@ -210,4 +210,5 @@ code
 @require '~@/assets/styles/modules/notes.styl'
 @require '~@/assets/styles/modules/transitions.styl'
 @require '~@/assets/styles/helpers.styl'
+// @require '~@/assets/styles/easters.styl' // maybe someday…
 </style>
