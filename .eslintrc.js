@@ -16,7 +16,7 @@ module.exports = {
 	plugins: ['vue'],
 	// add your custom rules here
 	rules: {
-		indent: ['error', 'tab'],
+		indent: ['error', 'tab', { 'SwitchCase': 1 }],
 		'no-console': process.env.NODE_ENV === 'production' ? 'error' : 'off',
 		'no-debugger': process.env.NODE_ENV === 'production' ? 'error' : 'off',
 		'no-tabs': 0,
