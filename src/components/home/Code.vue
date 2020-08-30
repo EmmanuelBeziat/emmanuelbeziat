@@ -20,12 +20,12 @@ export default {
 	name: 'HomeCode',
 
 	computed: {
-		codes () {
+		codesList () {
 			return this.$store.getters['codes/list']
 		},
 
 		code () {
-			return this.getCode(this.codes)
+			return this.getCode(this.codesList)
 		}
 	},
 

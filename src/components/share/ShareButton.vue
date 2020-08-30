@@ -1,6 +1,6 @@
 <template>
 	<button @click="$emit('on-click', type)" :class="`c-share--${icon}`">
-		<i :class="`icon-${icon} c-share__icon`" aria-hidden="true"></i>
+		<i :class="`icon-${icon} c-share__icon`" aria-hidden="true" />
 		<span class="sr-only">{{ name }}</span>
 	</button>
 </template>
@@ -51,8 +51,9 @@ export default {
 
 brand-icon(c-share--twitter, var(--color-brand-twitter))
 brand-icon(c-share--facebook, var(--color-brand-facebook))
-brand-icon(c-share--link, var(--color-violet))
 brand-icon(c-share--linkedin, var(--color-brand-linkedin))
+brand-icon(c-share--link, var(--color-violet))
+brand-icon(c-share--share, var(--color-blue))
 
 .c-share__icon
 	color var(--color-text)

@@ -1,10 +1,15 @@
 <template>
 	<div class="module-share">
 		<span class="sr-only">Partager cet article :</span>
-		<ShareButton icon="twitter" name="Twitter" type="twitter" @on-click="share" />
-		<ShareButton icon="facebook" name="Facebook" type="facebook" @on-click="share" />
-		<ShareButton icon="linkedin" name="LinkedIn" type="linkedin" @on-click="share" />
-		<ShareButton icon="link" name="Copier URL" type="link" @on-click="share" />
+		<template v-if="canShare">
+			<ShareButton icon="share" name="Partager" type="share" @on-click="shareAuto" />
+		</template>
+		<template v-else>
+			<ShareButton icon="twitter" name="Twitter" type="twitter" @on-click="shareManual" />
+			<ShareButton icon="facebook" name="Facebook" type="facebook" @on-click="shareManual" />
+			<ShareButton icon="linkedin" name="LinkedIn" type="linkedin" @on-click="shareManual" />
+			<ShareButton icon="link" name="Copier URL" type="link" @on-click="shareManual" />
+		</template>
 	</div>
 </template>
 
@@ -16,6 +21,12 @@ export default {
 
 	components: {
 		ShareButton
+	},
+
+	computed: {
+		canShare () {
+			return navigator.share
+		}
 	},
 
 	methods: {
@@ -30,7 +41,15 @@ export default {
 			return true
 		},
 
-		share (social) {
+		shareAuto () {
+			navigator.share({
+				title: 'Via @EmmanuelBeziat',
+				text: document.title,
+				url: window.location.href,
+			})
+		},
+
+		shareManual (social) {
 			let shareUrl = ''
 			const pageUrl = encodeURIComponent(window.location.href)
 			const pageTitle = encodeURIComponent(document.title)
