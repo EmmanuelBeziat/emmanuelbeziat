@@ -9,6 +9,7 @@ import Copyright from '@/components/copyright/Copyright'
 
 export default {
 	name: 'Footer',
+
 	components: {
 		Copyright
 	}

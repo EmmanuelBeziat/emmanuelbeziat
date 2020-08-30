@@ -36,34 +36,34 @@ export default {
 			const pageTitle = encodeURIComponent(document.title)
 
 			switch (social) {
-			case 'twitter':
-				shareUrl = `https://twitter.com/intent/tweet?text=${pageTitle} — ${pageUrl}&via=EmmanuelBeziat`
-				this.sharePopup(shareUrl, 'Partager sur Twitter')
-				break
+				case 'twitter':
+					shareUrl = `https://twitter.com/intent/tweet?text=${pageTitle} — ${pageUrl}&via=EmmanuelBeziat`
+					this.sharePopup(shareUrl, 'Partager sur Twitter')
+					break
 
-			case 'facebook':
-				shareUrl = `https://www.facebook.com/sharer/sharer.php?u=${pageUrl}`
-				this.sharePopup(shareUrl, 'Partager sur Facebook')
-				break
+				case 'facebook':
+					shareUrl = `https://www.facebook.com/sharer/sharer.php?u=${pageUrl}`
+					this.sharePopup(shareUrl, 'Partager sur Facebook')
+					break
 
-			case 'linkedin':
-				shareUrl = `https://www.linkedin.com/shareArticle?url=${pageUrl}`
-				this.sharePopup(shareUrl, 'Partager sur LinkedIn')
-				break
+				case 'linkedin':
+					shareUrl = `https://www.linkedin.com/shareArticle?url=${pageUrl}`
+					this.sharePopup(shareUrl, 'Partager sur LinkedIn')
+					break
 
-			case 'link':
-				const dummyShare = document.createElement('input')
-				document.body.appendChild(dummyShare)
-				dummyShare.value = window.location.href
-				dummyShare.select()
-				document.execCommand('copy')
-				document.body.removeChild(dummyShare)
-				this.$notify({
-					group: 'share',
-					title: 'URL copiée dans le presse papier',
-					text: window.location.href
-				})
-				break
+				case 'link':
+					const dummyShare = document.createElement('input')
+					document.body.appendChild(dummyShare)
+					dummyShare.value = window.location.href
+					dummyShare.select()
+					document.execCommand('copy')
+					document.body.removeChild(dummyShare)
+					this.$notify({
+						group: 'share',
+						title: 'URL copiée dans le presse papier',
+						text: window.location.href
+					})
+					break
 			}
 		}
 	}
