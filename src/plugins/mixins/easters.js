@@ -13,10 +13,10 @@ export const easterSearch = {
 				this.easterEggReset()
 
 				switch (value) {
-				case 'tilt':
-				case 'zoom':
-				case 'roll': this.easterEgg(value)
-					break
+					case 'tilt':
+					case 'zoom':
+					case 'roll': this.easterEgg(value)
+						break
 				}
 			}, 150)
 		},
