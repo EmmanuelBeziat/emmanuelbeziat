@@ -1,5 +1,5 @@
 <template>
-	<span class="c-tag"><i v-if="icon" :class="icon" aria-hidden="true"></i> {{ value }}</span>
+	<span class="c-tag"><i v-if="icon" :class="icon.toLowerCase()" aria-hidden="true"></i> {{ value }}</span>
 </template>
 
 <script>

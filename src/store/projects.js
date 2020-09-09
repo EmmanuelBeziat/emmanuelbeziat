@@ -15,6 +15,14 @@ const actions = {
 	async init ({ commit }) {
 		const { data } = await axios.get(`${api.projects}?sort=updated`)
 		commit('SET_PROJECTS', data)
+	},
+
+	languages ({ commit }) {
+		state.projects.forEach(project => {
+			axios.get(project.languages_url).then(response => {
+				return commit('SET_LANGUAGES', project.id, response.data)
+			})
+		})
 	}
 }
 
@@ -25,11 +33,15 @@ const mutations = {
 				id: key.id,
 				name: key.name,
 				html_url: key.html_url,
-				description:  key.description,
+				description: key.description,
 				created_at: key.created_at,
 				updated_at: key.updated_at,
 				language: key.language,
-				stargazers_count: key.stargazers_count
+				languages_url: key.languages_url,
+				stargazers: key.stargazers_count,
+				license: key.license ? key.license.key : null,
+				forks: key.forks_count,
+				issues: key.open_issues_count
 			}
 		})
 	}

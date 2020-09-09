@@ -5,19 +5,21 @@
 				<Search placeholder="Recherche…" v-model="searchTerms" />
 
 				<transition-group name="list" tag="div" class="post-list">
-					<article class="post-list__item post" v-for="projet in projects" :key="projet.id">
-						<h1 class="post__title --small"><a :href="projet.html_url">{{ projet.name }}</a></h1>
+					<article class="post-list__item post" v-for="repo in projects" :key="repo.id">
+						<h1 class="post__title --small"><a :href="repo.html_url">{{ repo.name }}</a></h1>
 
 						<div class="post__infos flex">
-							<div class="post__date">Créé le <time>{{ projet.created_at | date({ year: 'numeric', month: 'long', day: 'numeric' }) }}</time> — Dernière mise à jour le <time>{{ projet.updated_at | date({ year: 'numeric', month: 'long', day: 'numeric' }) }}</time></div>
+							<div class="post__date">Créé le <time>{{ repo.created_at | date({ year: 'numeric', month: 'long', day: 'numeric' }) }}</time> — Dernière mise à jour le <time>{{ repo.updated_at | date({ year: 'numeric', month: 'long', day: 'numeric' }) }}</time></div>
 
 							<div class="post__tags">
-								<Tag :value="projet.language" />
-								<Tag :value="projet.stargazers_count" icon="icon-star" />
+								<Tag :value="repo.language" />
+								<Tag :value="repo.stargazers" icon="icon-star" />
+								<Tag :value="repo.forks" icon="icon-fork" />
+								<!-- <Tag :value="repo.issues" icon="icon-bug" /> -->
 							</div>
 						</div>
 
-						<div class="post__description">{{ projet.description }}</div>
+						<div class="post__description">{{ repo.description }}</div>
 					</article>
 				</transition-group>
 			</div>
@@ -42,7 +44,7 @@ export default {
 	data () {
 		return {
 			head: {
-				title: 'Projets'
+				title: 'repos'
 			},
 			searchTerms: ''
 		}

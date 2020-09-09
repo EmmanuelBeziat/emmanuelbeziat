@@ -1,6 +1,6 @@
 <template>
 	<div class="c-search" role="search">
-		<input class="c-search__input" :title="placeholder" type="search" :placeholder="placeholder" @input="search($event.target.value)">
+		<input class="c-search__input" :title="placeholder" ref="search" type="search" :placeholder="placeholder" @input="search($event.target.value)">
 	</div>
 </template>
 
@@ -18,9 +18,17 @@ export default {
 		}
 	},
 
+	mounted () {
+		this.giveFocus()
+	},
+
 	methods: {
 		search (value) {
 			setTimeout(() => this.$emit('input', value), 150)
+		},
+
+		giveFocus () {
+			this.$refs.search.focus()
 		}
 	}
 }

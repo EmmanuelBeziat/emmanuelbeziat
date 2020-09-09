@@ -25,6 +25,9 @@ export default {
 </script>
 
 <style lang="stylus" scoped>
+@require '~@/assets/styles/variables.styl'
+@require '~@/assets/styles/mixins.styl'
+
 .header__picture
 	margin 2rem auto
 	position relative
