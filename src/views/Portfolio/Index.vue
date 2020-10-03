@@ -1,17 +1,17 @@
 <template>
 	<section class="showcase">
 		<transition mode="out-in" name="fade">
-			<div v-if="refs">
+			<div v-if="references">
 				<sequential-entrance tag="div" animation="entranceFadeIn" delay="50" class="showcase__list">
-					<router-link v-for="ref in refs" :key="ref.slug" class="showcase__item" :to="`/portfolio/${ref.slug}/`" >
-						<div :class="['showcase__layer', ref.color]">
+					<router-link v-for="item in references" :key="`ref-${item.slug}`" class="showcase__item" :to="`/portfolio/${item.slug}/`" >
+						<div :class="['showcase__layer', item.color]">
 							<svg viewBox="0 0 100 100" class="showcase__image icon">
-								<use :xlink:href="`${publicPath}img/sprite.svg#${ref.image}`"></use>
+								<use :xlink:href="`${publicPath}img/sprite.svg#${item.image}`"></use>
 							</svg>
 						</div>
 
 						<div class="showcase__caption">
-							<h2 class="showcase__title">{{ ref.title }}</h2>
+							<h2 class="showcase__title">{{ item.title }}</h2>
 							<div class="portfolio-tags">
 								<svg class="portfolio-tags__icon" width="1em" viewBox="0 0 24 24">
 									<path d="M18.7,10.9l-7.9-7.9c-0.3-0.3-0.8-0.5-1.3-0.5H1.8C0.8,2.4,0,3.2,0,4.2v7.7c0,0.5,0.2,0.9,0.5,1.3l7.9,7.9
@@ -20,7 +20,7 @@
 									l-7.4-7.4h1.8c0.5,0,0.9,0.2,1.3,0.5l7.9,7.9C24.2,11.6,24.2,12.7,23.5,13.4L23.5,13.4z"/>
 								</svg>
 								<div class="showcase-tags__list">
-									<span class="showcase-tags__item" v-for="tag in ref.tags" :key="tag">{{ tag }}</span>
+									<span class="showcase-tags__item" v-for="tag in item.tags" :key="`tag-${tag}`">{{ tag }}</span>
 								</div>
 							</div>
 						</div>
@@ -58,7 +58,7 @@ export default {
 	},
 
 	computed: {
-		refs () {
+		references () {
 			return this.$store.getters['portfolio/list']
 		}
 	},

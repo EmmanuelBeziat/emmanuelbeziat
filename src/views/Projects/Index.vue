@@ -2,10 +2,10 @@
 	<section class="projects">
 		<transition mode="out-in" name="fade">
 			<div v-if="projects">
-				<Search placeholder="Recherche…" v-model="searchTerms" />
+				<Search placeholder="Recherche…" label="Rechercher" v-model="searchTerms" />
 
 				<transition-group name="list" tag="div" class="post-list">
-					<article class="post-list__item post" v-for="repo in projects" :key="repo.id">
+					<article class="post-list__item post" v-for="repo in projects" :key="`repo-${repo.id}`">
 						<h1 class="post__title --small"><a :href="repo.html_url">{{ repo.name }}</a></h1>
 
 						<div class="post__infos flex">
@@ -44,7 +44,7 @@ export default {
 	data () {
 		return {
 			head: {
-				title: 'repos'
+				title: 'Projets'
 			},
 			searchTerms: ''
 		}

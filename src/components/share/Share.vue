@@ -1,9 +1,11 @@
 <template>
 	<div class="module-share">
 		<span class="sr-only">Partager cet article :</span>
+
 		<template v-if="canShare">
 			<ShareButton icon="share" name="Partager" type="share" @on-click="shareAuto" />
 		</template>
+
 		<template v-else>
 			<ShareButton icon="twitter" name="Twitter" type="twitter" @on-click="shareManual" />
 			<ShareButton icon="facebook" name="Facebook" type="facebook" @on-click="shareManual" />

@@ -1,7 +1,7 @@
 <template>
 	<div class="filters">
 		<button class="c-filter" @click="$emit('on-filter', '')"><i v-if="icon" :class="icon" aria-hidden="true"></i> tous</button>
-		<button class="c-filter" v-for="filter in filters" :key="filter" @click="$emit('on-filter', filter)"><i v-if="icon" :class="icon" aria-hidden="true"></i> {{ filter }}</button>
+		<button class="c-filter" v-for="filter in filters" :key="`filter-${filter}`" @click="$emit('on-filter', filter)"><i v-if="icon" :class="icon" aria-hidden="true"></i> {{ filter }}</button>
 	</div>
 </template>
 

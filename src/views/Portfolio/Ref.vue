@@ -1,24 +1,24 @@
 <template>
 	<transition mode="out-in" name="fade">
 
-		<article class="post" v-if="ref">
+		<article class="post" v-if="reference">
 			<header class="post__header">
 				<h1 class="post__title">{{ title }}</h1>
 
 				<div class="post__infos">
 					<div class="flex">
 						<div class="post__tags">
-							<Tag v-for="tag in ref.tags" :key="tag" :value="tag" />
+							<Tag v-for="tag in reference.tags" :key="`tag-${tag}`" :value="tag" />
 						</div>
 
 						<div class="post__tags">
-							<Tag v-for="client in ref.clients" :key="client" :value="client" />
+							<Tag v-for="client in reference.clients" :key="`client-${client}`" :value="client" />
 						</div>
 					</div>
 				</div>
 			</header>
 
-			<Markdown class="post__content" :source="ref.content" />
+			<Markdown class="post__content" :source="reference.content" />
 
 			<footer class="post__footer">
 				<router-link exact :to="'/portfolio'" class="navigation-previous icon-arrow-left">Revenir au portfolio</router-link>
@@ -42,7 +42,7 @@ export default {
 	mixins: [meta, titles],
 
 	computed: {
-		ref () {
+		reference () {
 			return this.$store.getters['portfolio/getRef'](this.$route.params.slug)
 		},
 

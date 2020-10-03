@@ -2,9 +2,9 @@
 	<div class="cv-code" v-if="code">
 		<div class="cv-code__header">
 			<div class="cv-code__buttons">
-				<span class="fake-btn close"></span>
-				<span class="fake-btn minify"></span>
-				<span class="fake-btn expand"></span>
+				<span class="fake-btn close" />
+				<span class="fake-btn minify" />
+				<span class="fake-btn expand" />
 			</div>
 			<span class="cv-code__title">emmanuel@code: ~/{{ code.slug }} </span>
 		</div>

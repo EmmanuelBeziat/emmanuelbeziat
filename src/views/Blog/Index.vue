@@ -2,19 +2,19 @@
 	<section class="blog">
 		<transition mode="out-in" name="fade">
 			<div v-if="posts">
-				<Search placeholder="Recherche…" v-model="searchTerms" />
+				<Search placeholder="Recherche…" label="Rechercher" v-model="searchTerms" />
 
 				<!-- <filters icon="icon-tag" :filters="tagsList" @on-filter="filterByTag" /> -->
 
 				<transition-group name="list" tag="div" class="post-list">
-					<article class="post-list__item post" v-for="post in posts" :key="post.slug">
+					<article class="post-list__item post" v-for="post in posts" :key="`post-${post.slug}`">
 						<h1 class="post__title --small"><router-link :to="`/blog/${post.slug}/`">{{ post.title }}</router-link></h1>
 
 						<div class="post__infos flex">
 							<div class="post__date">Posté le <time>{{ post.date | date({ year: 'numeric', month: 'long', day: 'numeric' }) }}</time></div>
 
 							<div class="post__tags">
-								<Tag v-for="tag in post.tags" :key="tag" :value="tag" />
+								<Tag v-for="tag in post.tags" :key="`tag-${tag}`" :value="tag" />
 							</div>
 						</div>
 

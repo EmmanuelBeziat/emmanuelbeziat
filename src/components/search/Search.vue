@@ -1,6 +1,6 @@
 <template>
 	<div class="c-search" role="search">
-		<input class="c-search__input" :title="placeholder" ref="search" type="search" :placeholder="placeholder" @input="search($event.target.value)">
+		<input class="c-search__input" :title="placeholder" ref="search" type="search" :placeholder="placeholder" @input="search($event.target.value)" :aria-label="label">
 	</div>
 </template>
 
@@ -9,6 +9,10 @@ export default {
 	name: 'Search',
 
 	props: {
+		label: {
+			type: String,
+			required: true
+		},
 		placeholder: String
 	},
 
