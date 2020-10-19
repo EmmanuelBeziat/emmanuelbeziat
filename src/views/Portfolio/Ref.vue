@@ -47,7 +47,7 @@ export default {
 		},
 
 		title () {
-			return this.getDynamicTitle(this.ref.title)
+			return this.getDynamicTitle(this.reference.title)
 		}
 	},
 
