@@ -43,7 +43,6 @@ export default {
 @require '~@/assets/styles/vendors/normalize.styl'
 @require '~@/assets/styles/vendors/prism.styl'
 
-@require '~@/assets/fonts/icons/icons.styl'
 @require '~@/assets/fonts/source-code-pro/source-code-pro.styl'
 @require '~@/assets/fonts/source-sans-pro/source-sans-pro.styl'
 @require '~@/assets/fonts/yanone-kaffeesatz/yanone-kaffeesatz.styl'

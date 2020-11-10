@@ -100,4 +100,6 @@ export default {
 	--color-brand-codepen $color-brand-codepen
 	--color-brand-github $color-brand-github
 	--color-brand-linkedin $color-brand-linkedin
+	display flex
+	gap 4px
 </style>

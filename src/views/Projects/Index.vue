@@ -13,9 +13,9 @@
 
 							<div class="post__tags">
 								<Tag :value="repo.language" />
-								<Tag :value="repo.stargazers" icon="icon-star" />
-								<Tag :value="repo.forks" icon="icon-fork" />
-								<!-- <Tag :value="repo.issues" icon="icon-bug" /> -->
+								<Tag :value="repo.stargazers" icon="star" />
+								<Tag :value="repo.forks" icon="fork" />
+								<!-- <Tag :value="repo.issues" icon="bug" /> -->
 							</div>
 						</div>
 

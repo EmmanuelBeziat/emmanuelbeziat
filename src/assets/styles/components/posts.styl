@@ -97,18 +97,22 @@
 	transition .2s ease-in-out
 	transform translateX(-75%)
 
-.navigation-previous::before
-	transform translateX(-4px)
+.navigation-previous svg
+	width 1.25em
+	stroke var(--color-green)
+	transform translate(-4px, 5px)
 	transition transform .25s ease-in-out
 
-.navigation-previous:hover::before
-.navigation-previous:focus::before
-	transform translateX(-8px)
+.navigation-previous:hover svg
+.navigation-previous:focus svg
+	transform translate(-8px, 5px)
+	stroke var(--color-yellow)
 
-.navigation-next::before
-	transform translateX(4px)
+.navigation-next svg
+	transform translate(4px, 5px)
 	transition transform .25s ease-in-out
 
-.navigation-next:hover::before
-.navigation-next:focus::before
-	transform translateX(8px)
+.navigation-next:hover svg
+.navigation-next:focus svg
+	transform translate(8px, 5px)
+	stroke var(--color-yellow)

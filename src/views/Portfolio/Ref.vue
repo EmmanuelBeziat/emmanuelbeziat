@@ -21,7 +21,10 @@
 			<Markdown class="post__content" :source="reference.content" />
 
 			<footer class="post__footer">
-				<router-link exact :to="'/portfolio'" class="navigation-previous icon-arrow-left">Revenir au portfolio</router-link>
+				<router-link exact :to="'/portfolio'" class="navigation-previous">
+					<svg viewBox="0 0 128 128"><g><g><line style="stroke-width:12;stroke-linecap:square;stroke-miterlimit:10;" x1="57.12" x2="17.787" y1="103.334" y2="64"/><line style="stroke-width:12;stroke-linecap:square;stroke-miterlimit:10;" x1="17.787" x2="57.12" y1="64" y2="24.666"/></g><line style="stroke-width:12;stroke-miterlimit:10;" x1="17.787" x2="118.213" y1="64" y2="64"/></g></svg>
+					Revenir au portfolio
+				</router-link>
 			</footer>
 		</article>
 
