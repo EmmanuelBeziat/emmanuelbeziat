@@ -171,6 +171,15 @@ pre
 code
 	font-family var(--font-stack-code)
 
+kbd
+	background var(--color-separator)
+	font-size .85rem
+	border-radius .2em
+	display inline-block
+	padding 0 .35em
+	border-bottom 1px solid var(--color-background-darker)
+	margin 0 .05em
+
 .flex
 	display flex
 	justify-content space-between
