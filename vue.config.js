@@ -8,6 +8,7 @@ module.exports = {
 			.rule('/\.md$')
 			.use('raw-loader')
 	},
+
 	configureWebpack: {
 		devtool: 'source-map',
 		plugins: [

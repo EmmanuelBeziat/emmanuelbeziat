@@ -39,6 +39,11 @@ export default new Router({
 			component: () => import(/* webpackChunkName: "projects" */ '@/views/Projects/Index'),
 		},
 		{
+			path: '/moi',
+			name: 'me',
+			component: () => import(/* webpackChunkName: "me" */ '@/views/Me'),
+		},
+		{
 			path: '/not-found',
 			name: 'not-found',
 			component: () => import(/* webpackChunkName: "not-found" */ '@/views/NotFound')
