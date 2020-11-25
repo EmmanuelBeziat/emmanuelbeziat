@@ -125,7 +125,8 @@ h2
 	color var(--color-green)
 
 h3
-	font 700 var(--font-size-heading-3)/1.5 var(--font-stack-common)
+	font-size var(--font-size-heading-3)
+	line-height 1.5
 
 i[lang]
 	font-style normal
