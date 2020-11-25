@@ -4,11 +4,7 @@
 			<div v-if="references">
 				<sequential-entrance tag="div" animation="entranceFadeIn" delay="50" class="showcase__list">
 					<router-link v-for="item in references" :key="`ref-${item.slug}`" class="showcase__item" :to="`/portfolio/${item.slug}/`" >
-						<div :class="['showcase__layer', item.color]">
-							<svg viewBox="0 0 100 100" class="showcase__image icon">
-								<use :xlink:href="`${publicPath}img/sprite.svg#${item.image}`"></use>
-							</svg>
-						</div>
+						<div :class="['showcase__layer', item.color]" v-html="item.image" />
 
 						<div class="showcase__caption">
 							<h2 class="showcase__title">{{ item.title }}</h2>
