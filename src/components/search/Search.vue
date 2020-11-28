@@ -36,7 +36,6 @@ export default {
 		},
 
 		giveFocus () {
-			console.log('focus')
 			this.$refs.search.focus()
 		}
 	}
