@@ -20,11 +20,11 @@
 	transition .2s ease-in-out
 	backface-visibility hidden
 
-.showcase__image
-	size rem(128px)
-	fill var(--color-text)
-	backface-visibility hidden
-	transition .2s ease-in-out .1s
+	& >>> svg
+		size rem(128px)
+		fill var(--color-text)
+		backface-visibility hidden
+		transition .2s ease-in-out .1s
 
 .showcase__caption
 	z-index 5
@@ -86,7 +86,6 @@
 		transform translateY(0)
 		transition .25s ease-in-out .1s
 
-
 .showcase-tags
 	display flex
 	align-items center
@@ -109,5 +108,9 @@
 .showcase__thanks
 	font-size var(--font-size-heading-4)
 
-	.icon-heart
-		color var(--color-red)
+	.heart
+		fill var(--color-red)
+		width 1em
+		margin 0 .15em
+		vertical-align baseline
+		transform translateY(2px)

@@ -13,20 +13,20 @@
 </template>
 
 <script>
-import meta from '@/plugins/mixins/meta'
+// import meta from '@/plugins/mixins/meta'
 
 const errors = [
 	{ class: 'doctor-who', title: 'What?!' },
 	{ class: 'south-park', title: 'We’re sorry…' },
 	{ class: 'mario', title: 'Sorry, but your page <br>is in another castle' },
 	{ class: 'obiwan', title: 'This is not the page <br>you’re looking for…' },
-	{ class: 'pulp-fiction', title: '…?'}
+	{ class: 'pulp-fiction', title: '…?' }
 ]
 
 export default {
 	name: 'NotFound',
 
-	mixins: [meta],
+	// mixins: [meta],
 
 	data () {
 		return {

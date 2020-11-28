@@ -17,7 +17,7 @@ module.exports = {
 				}
 			}),
 			// new webpack.IgnorePlugin(/^\.\/locale$/, /moment$/),
-			new webpack.ContextReplacementPlugin(/moment[/\\]locale$/, /fr/),
+			// new webpack.ContextReplacementPlugin(/moment[/\\]locale$/, /fr/),
 			// new BundleAnalyzerPlugin()
 		]
 	},

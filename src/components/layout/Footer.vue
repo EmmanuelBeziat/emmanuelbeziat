@@ -5,7 +5,7 @@
 </template>
 
 <script>
-import Copyright from '@/components/copyright/Copyright'
+import Copyright from '@/components/Copyright'
 
 export default {
 	name: 'Footer',

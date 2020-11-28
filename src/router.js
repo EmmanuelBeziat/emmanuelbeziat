@@ -1,62 +1,53 @@
-import Vue from 'vue'
-import Router from 'vue-router'
+import { createRouter, createWebHistory } from 'vue-router'
+import Home from './views/home/Index'
 
-Vue.use(Router)
-
-export default new Router({
-	mode: 'history',
-	linkActiveClass: '-active',
-	base: process.env.BASE_URL,
-	routes: [
-		{
-			path: '/',
-			name: 'home',
-			component: () => import(/* webpackChunkName: "home" */ '@/views/Home')
-		},
-		{
-			path: '/blog',
-			name: 'blog',
-			component: () => import(/* webpackChunkName: "blog" */ '@/views/Blog/Index'),
-		},
-		{
-			path: '/blog/:slug',
-			name: 'post',
-			component: () => import(/* webpackChunkName: "post" */ '@/views/Blog/Post')
-		},
-		{
-			path: '/portfolio',
-			name: 'portfolio',
-			component: () => import(/* webpackChunkName: "portfolio" */ '@/views/Portfolio/Index'),
-		},
-		{
-			path: '/portfolio/:slug',
-			name: 'reference',
-			component: () => import(/* webpackChunkName: "ref" */ '@/views/Portfolio/Ref')
-		},
-		{
-			path: '/projets',
-			name: 'projects',
-			component: () => import(/* webpackChunkName: "projects" */ '@/views/Projects/Index'),
-		},
-		{
-			path: '/not-found',
-			name: 'not-found',
-			component: () => import(/* webpackChunkName: "not-found" */ '@/views/NotFound')
-		},
-		{
-			path: '*',
-			redirect: '/not-found'
-		}
-	],
-	scrollBehavior (to, from, savedPosition) {
-		if (savedPosition) {
-			return savedPosition
-		}
-
-		if (to.hash) {
-			return { selector: to.hash }
-		}
-
-		return { x: 0, y: 0 }
+const routes = [
+	{
+		path: '/',
+		name: 'Home',
+		component: Home
+	},
+	{
+		path: '/blog',
+		name: 'Blog',
+		component: () => import(/* webpackChunkName: "blog" */ '@/views/blog/Index')
+	},
+	{
+		path: '/blog/:slug',
+		name: 'Post',
+		component: () => import(/* webpackChunkName: "post" */ '@/views/blog/Post')
+	},
+	{
+		path: '/portfolio',
+		name: 'Portfolio',
+		component: () => import(/* webpackChunkName: "portfolio" */ '@/views/portfolio/Index')
+	},
+	{
+		path: '/portfolio/:slug',
+		name: 'Reference',
+		component: () => import(/* webpackChunkName: "ref" */ '@/views/portfolio/Ref')
+	},
+	{
+		path: '/projets',
+		name: 'Projects',
+		component: () => import(/* webpackChunkName: "projects" */ '@/views/projects/Index')
+	},
+	{
+		path: '/moi',
+		name: 'Me',
+		component: () => import(/* webpackChunkName: "me" */ '@/views/Me')
+	},
+	{
+		path: '/:pathMatch(.*)*',
+		name: 'NotFound',
+		component: () => import(/* webpackChunkName: "not-found" */ '@/views/NotFound')
 	}
+]
+
+const router = createRouter({
+	history: createWebHistory(process.env.BASE_URL),
+	linkActiveClass: '-active',
+	routes
 })
+
+export default router

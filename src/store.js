@@ -1,19 +1,20 @@
-import Vue from 'vue'
-import Vuex from 'vuex'
+import { createStore } from 'vuex'
+import posts from './store/posts'
+import codes from './store/codes'
+import projects from './store/projects'
+import portfolio from './store/portfolio'
 
-// Modules
-import posts from '@/store/posts'
-import portfolio from '@/store/portfolio'
-import projects from '@/store/projects'
-import codes from '@/store/codes'
-
-Vue.use(Vuex)
-
-export default new Vuex.Store({
+export default createStore({
+	state: {
+	},
+	mutations: {
+	},
+	actions: {
+	},
 	modules: {
 		posts,
-		portfolio,
+		codes,
 		projects,
-		codes
+		portfolio
 	}
 })

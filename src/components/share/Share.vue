@@ -1,9 +1,11 @@
 <template>
 	<div class="module-share">
 		<span class="sr-only">Partager cet article :</span>
+
 		<template v-if="canShare">
 			<ShareButton icon="share" name="Partager" type="share" @on-click="shareAuto" />
 		</template>
+
 		<template v-else>
 			<ShareButton icon="twitter" name="Twitter" type="twitter" @on-click="shareManual" />
 			<ShareButton icon="facebook" name="Facebook" type="facebook" @on-click="shareManual" />
@@ -31,11 +33,11 @@ export default {
 
 	methods: {
 		sharePopup (url, title, width, height) {
-			let popupWidth = width || 640
-			let popupHeight = height || 320
-			let popupPosX = window.screenX + window.innerWidth / 2 - popupWidth / 2
-			let popupPosY = window.screenY + window.innerHeight / 2 - popupHeight / 2
-			let popup = window.open(url, title, 'scrollbars=yes, menubar=0, location=0, status=0, width=' + popupWidth + ', height=' + popupHeight + ', top=' + popupPosY + ', left=' + popupPosX)
+			const popupWidth = width || 640
+			const popupHeight = height || 320
+			const popupPosX = window.screenX + window.innerWidth / 2 - popupWidth / 2
+			const popupPosY = window.screenY + window.innerHeight / 2 - popupHeight / 2
+			const popup = window.open(url, title, 'scrollbars=yes, menubar=0, location=0, status=0, width=' + popupWidth + ', height=' + popupHeight + ', top=' + popupPosY + ', left=' + popupPosX)
 
 			popup.focus()
 			return true
@@ -70,7 +72,7 @@ export default {
 					this.sharePopup(shareUrl, 'Partager sur LinkedIn')
 					break
 
-				case 'link':
+				case 'link': {
 					const dummyShare = document.createElement('input')
 					document.body.appendChild(dummyShare)
 					dummyShare.value = window.location.href
@@ -83,6 +85,7 @@ export default {
 						text: window.location.href
 					})
 					break
+				}
 			}
 		}
 	}
@@ -98,4 +101,6 @@ export default {
 	--color-brand-codepen $color-brand-codepen
 	--color-brand-github $color-brand-github
 	--color-brand-linkedin $color-brand-linkedin
+	display flex
+	gap 4px
 </style>

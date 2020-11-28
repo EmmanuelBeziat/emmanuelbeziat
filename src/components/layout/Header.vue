@@ -19,9 +19,9 @@
 </template>
 
 <script>
-import Picture from '@/components/layout/HeaderPicture'
-import SocialLinks from '@/components/layout/HeaderSocial'
-import Copyright from '@/components/copyright/Copyright'
+import Picture from '@/components/layout/Picture'
+import SocialLinks from '@/components/layout/Social'
+import Copyright from '@/components/Copyright'
 
 export default {
 	name: 'Header',

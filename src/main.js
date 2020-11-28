@@ -1,29 +1,14 @@
-import Vue from 'vue'
-import VueHead from 'vue-head'
-import Notifications from 'vue-notification'
-
-import App from './App.vue'
+import { createApp } from 'vue'
+import App from './App'
 import router from './router'
 import store from './store.js'
-
 import './registerServiceWorker'
 import './plugins/index'
+import sequentialEntrance from './plugins/modules/sequential-entrance'
 
 store.dispatch('codes/init')
 store.dispatch('posts/init')
-store.dispatch('portfolio/init')
 store.dispatch('projects/init')
+store.dispatch('portfolio/init')
 
-Vue.config.productionTip = false
-Vue.use(VueHead, {
-	complement: 'Emmanuel Beziat',
-	separator: ' :: ',
-})
-
-Vue.use(Notifications)
-
-new Vue({
-	router,
-	store,
-	render: h => h(App)
-}).$mount('#app')
+createApp(App).use(store).use(router).use(sequentialEntrance).mount('#app')

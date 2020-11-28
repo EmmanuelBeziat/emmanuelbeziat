@@ -15,7 +15,7 @@ export default {
 	mounted () {
 		this.head.url = `${this.head.url}${this.$route.fullPath}`
 		this.head.image = `${openGraph.url}${this.head.image}`
-		this.$emit('updateHead')
+		this.$emit('update-head')
 	},
 
 	head: {

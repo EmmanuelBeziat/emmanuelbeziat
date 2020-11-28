@@ -8,13 +8,14 @@
 			<Menu />
 
 			<main class="main" id="content" tabindex="-1">
-				<transition mode="out-in" name="fade">
-					<router-view />
-				</transition>
+				<router-view v-slot="{ Component }">
+					<transition mode="out-in" :name="$route.meta.transition || 'fade'">
+						<component :is="Component" />
+					</transition>
+				</router-view>
 			</main>
 
 			<SkipLinks position="bottom" />
-			<notifications group="share" position="top right" :max="3" />
 		</div>
 
 		<Footer />
@@ -25,7 +26,7 @@
 import Header from '@/components/layout/Header'
 import Footer from '@/components/layout/Footer'
 import Menu from '@/components/layout/Menu'
-import SkipLinks from '@/components/skip-links/SkipLinks'
+import SkipLinks from '@/components/SkipLinks'
 
 export default {
 	components: {
@@ -43,8 +44,7 @@ export default {
 @require '~@/assets/styles/vendors/normalize.styl'
 @require '~@/assets/styles/vendors/prism.styl'
 
-@require '~@/assets/fonts/icons/icons.styl'
-@require '~@/assets/fonts/source-code-pro/source-code-pro.styl'
+@require '~@/assets/fonts/jetbrains-mono/jetbrains-mono.styl'
 @require '~@/assets/fonts/source-sans-pro/source-sans-pro.styl'
 @require '~@/assets/fonts/yanone-kaffeesatz/yanone-kaffeesatz.styl'
 
@@ -126,7 +126,8 @@ h2
 	color var(--color-green)
 
 h3
-	font 700 var(--font-size-heading-3)/1.5 var(--font-stack-common)
+	font-size var(--font-size-heading-3)
+	line-height 1.5
 
 i[lang]
 	font-style normal
@@ -142,6 +143,7 @@ a
 	&:hover
 	&:focus
 		color var(--color-yellow)
+		outline none
 
 img
 	max-width 100%
@@ -171,6 +173,15 @@ kbd
 pre
 code
 	font-family var(--font-stack-code)
+
+kbd
+	background var(--color-separator)
+	font-size .85rem
+	border-radius .2em
+	display inline-block
+	padding 0 .35em
+	border-bottom 1px solid var(--color-background-darker)
+	margin 0 .05em
 
 .flex
 	display flex
