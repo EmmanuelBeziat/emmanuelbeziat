@@ -1,56 +1,35 @@
 <template>
-	<article class="post" v-if="reference">
-		<header class="post__header">
-			<h1 class="post__title">{{ title }}</h1>
+	<router-link class="showcase__item" :to="`/portfolio/${reference.slug}/`">
+		<div :class="['showcase__layer', reference.color]" v-html="reference.image" />
 
-			<div class="post__infos">
-				<div class="flex">
-					<div class="post__tags">
-						<Tag v-for="tag in reference.tags" :key="`tag-${tag}`" :value="tag" />
-					</div>
+		<div class="showcase__caption">
+			<h2 class="showcase__title">{{ reference.title }}</h2>
 
-					<div class="post__tags">
-						<Tag v-for="client in reference.clients" :key="`client-${client}`" :value="client" />
-					</div>
+			<div class="portfolio-tags">
+				<svg class="portfolio-tags__icon" width="1em" viewBox="0 0 24 24">
+					<path d="M18.7,10.9l-7.9-7.9c-0.3-0.3-0.8-0.5-1.3-0.5H1.8C0.8,2.4,0,3.2,0,4.2v7.7c0,0.5,0.2,0.9,0.5,1.3l7.9,7.9
+					c0.7,0.7,1.8,0.7,2.5,0l7.7-7.7C19.4,12.7,19.4,11.6,18.7,10.9L18.7,10.9z M4.2,8.4c-1,0-1.8-0.8-1.8-1.8s0.8-1.8,1.8-1.8
+					S6,5.6,6,6.6S5.2,8.4,4.2,8.4z M23.5,13.4l-7.7,7.7c-0.7,0.7-1.8,0.7-2.5,0l0,0l6.5-6.5c0.6-0.6,1-1.5,1-2.4c0-0.9-0.4-1.7-1-2.4
+					l-7.4-7.4h1.8c0.5,0,0.9,0.2,1.3,0.5l7.9,7.9C24.2,11.6,24.2,12.7,23.5,13.4L23.5,13.4z"/>
+				</svg>
+
+				<div class="showcase-tags__list">
+					<span class="showcase-tags__item" v-for="tag in reference.tags" :key="`tag-${tag}`">{{ tag }}</span>
 				</div>
 			</div>
-		</header>
-
-		<!-- <Markdown class="post__content" :source="reference.content" /> -->
-
-		<footer class="post__footer">
-			<router-link exact :to="'/portfolio'" class="navigation-previous">
-				<svg viewBox="0 0 128 128"><g><g><line style="stroke-width:12;stroke-linecap:square;stroke-miterlimit:10;" x1="57.12" x2="17.787" y1="103.334" y2="64"/><line style="stroke-width:12;stroke-linecap:square;stroke-miterlimit:10;" x1="17.787" x2="57.12" y1="64" y2="24.666"/></g><line style="stroke-width:12;stroke-miterlimit:10;" x1="17.787" x2="118.213" y1="64" y2="64"/></g></svg>
-				Revenir au portfolio
-			</router-link>
-		</footer>
-	</article>
+		</div>
+	</router-link>
 </template>
 
 <script>
-// import meta from '@/plugins/mixins/meta'
-import titles from '@/plugins/mixins/titles'
-// import Markdown from '@/components/markdown/MarkdownRender'
-import Tag from '@/components/Tag'
-
 export default {
-	name: 'PortfolioSingle',
+	name: 'Reference',
 
-	mixins: [titles],
-
-	computed: {
-		reference () {
-			return this.$store.getters['portfolio/getRef'](this.$route.params.slug)
-		},
-
-		title () {
-			return this.getDynamicTitle(this.reference.title)
+	props: {
+		reference: {
+			type: Object,
+			required: true
 		}
-	},
-
-	components: {
-		// Markdown,
-		Tag
 	}
 }
 </script>
@@ -58,5 +37,13 @@ export default {
 <style lang="stylus" scoped>
 @require '~@/assets/styles/variables.styl'
 @require '~@/assets/styles/mixins.styl'
-@require '~@/assets/styles/components/posts.styl'
+@require '~@/assets/styles/components/showcase.styl'
+
+.portfolio-tags
+	display flex
+
+.portfolio-tags__icon
+	size 1em
+	fill var(--color-yellow)
+	margin-right 10px
 </style>

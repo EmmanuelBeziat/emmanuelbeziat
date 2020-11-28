@@ -8,15 +8,10 @@
 </template>
 
 <script>
-import meta from '@/plugins/mixins/meta'
 // import Presentation from '@/views/home/Presentation'
 // import CodeHome from '@/views/home/Code'
-
 export default {
 	name: 'Home',
-
-	mixins: [meta],
-
 	data () {
 		return {
 			head: {

@@ -6,19 +6,7 @@
 			<!-- <filters icon="icon-tag" :filters="tagsList" @on-filter="filterByTag" /> -->
 
 			<transition-group name="list" tag="div" class="post-list">
-				<article class="post-list__item post" v-for="post in posts" :key="`post-${post.slug}`">
-					<h1 class="post__title --small"><router-link :to="`/blog/${post.slug}/`">{{ post.title }}</router-link></h1>
-
-					<div class="post__infos flex">
-						<div class="post__date">Posté le <time>{{ dateFormat(post.date, { year: 'numeric', month: 'long', day: 'numeric' }) }}</time></div>
-
-						<div class="post__tags">
-							<Tag v-for="tag in post.tags" :key="`tag-${tag}`" :value="tag" />
-						</div>
-					</div>
-
-					<div class="post__description">{{ post.description }}</div>
-				</article>
+				<Post v-for="post in posts" :key="`post-${post.slug}`" :post="post" />
 			</transition-group>
 		</template>
 	</section>
@@ -26,16 +14,11 @@
 
 <script>
 import slug from 'slug'
-// import meta from '@/plugins/mixins/meta'
 import Search from '@/components/Search'
-import Tag from '@/components/Tag'
-import dateFormat from '@/plugins/mixins/date'
-// import Filters from '@/components/filters/Filters'
+import Post from '@/views/blog/Post'
 
 export default {
 	name: 'Blog',
-	// mixins: [meta],
-	mixins: [dateFormat],
 
 	data () {
 		return {
@@ -66,21 +49,7 @@ export default {
 
 	components: {
 		Search,
-		// Loader,
-		Tag,
-		// Filters
-	},
-
-	/* methods: {
-		filterByTag (tag) {
-			return tag === '' ? false : this.filteredList.filter(post => post.tags.includes(tag))
-		}
-	} */
+		Post
+	}
 }
 </script>
-
-<style lang="stylus" scoped>
-@require '~@/assets/styles/variables.styl'
-@require '~@/assets/styles/mixins.styl'
-@require '~@/assets/styles/components/posts.styl'
-</style>

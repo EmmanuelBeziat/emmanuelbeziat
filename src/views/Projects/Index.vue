@@ -12,7 +12,6 @@
 
 <script>
 import slug from 'slug'
-// import Meta from '@/plugins/mixins/meta'
 import Project from '@/views/projects/Project'
 import Search from '@/components/Search'
 
@@ -40,9 +39,3 @@ export default {
 	}
 }
 </script>
-
-<style lang="stylus" scoped>
-@require '~@/assets/styles/variables.styl'
-@require '~@/assets/styles/mixins.styl'
-@require '~@/assets/styles/components/posts.styl'
-</style>

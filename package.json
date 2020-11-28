@@ -15,6 +15,7 @@
 		"lint": "vue-cli-service lint"
 	},
 	"dependencies": {
+		"@egoist/vue-head": "^0.1.8",
 		"axios": "^0.21.0",
 		"core-js": "^3.6.5",
 		"mobile-device-detect": "^0.4.3",
@@ -23,6 +24,7 @@
 		"slug": "^4.0.2",
 		"vue": "^3.0.0",
 		"vue-router": "^4.0.0-0",
+		"vue3-sequential-entrance": "^2.0.2",
 		"vuex": "^4.0.0-0"
 	},
 	"devDependencies": {

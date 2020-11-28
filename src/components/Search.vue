@@ -10,6 +10,8 @@ import { isMobile } from 'mobile-device-detect'
 export default {
 	name: 'Search',
 
+	emits: ['update:modelValue'],
+
 	props: {
 		label: {
 			type: String,
@@ -32,7 +34,7 @@ export default {
 
 	methods: {
 		search (value) {
-			setTimeout(() => this.$emit('input', value), 150)
+			setTimeout(() => this.$emit('update:modelValue', value), 150)
 		},
 
 		giveFocus () {

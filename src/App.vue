@@ -34,6 +34,15 @@ export default {
 		Menu,
 		Footer,
 		SkipLinks,
+	},
+
+	watch: {
+		$route: {
+			handler: (to, from) => {
+				document.title = 'Emmanuel Béziat :: ' + to.meta.title
+			},
+			immediate: true
+		}
 	}
 }
 </script>

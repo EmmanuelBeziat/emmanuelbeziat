@@ -15,14 +15,12 @@ export default {
 	mounted () {
 		this.head.url = `${this.head.url}${this.$route.fullPath}`
 		this.head.image = `${openGraph.url}${this.head.image}`
-		this.$emit('update-head')
+		// this.$emit('update-head')
 	},
 
-	head: {
+	computed: {
 		title () {
-			return {
-				inner: `${this.head.title}`
-			}
+			return `${this.head.title}`
 		},
 
 		meta () {
