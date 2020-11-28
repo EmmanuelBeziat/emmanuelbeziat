@@ -5,6 +5,8 @@
 </template>
 
 <script>
+import { isMobile } from 'mobile-device-detect'
+
 export default {
 	name: 'Search',
 
@@ -22,9 +24,11 @@ export default {
 		}
 	},
 
-	/* mounted () {
-		this.giveFocus()
-	}, */
+	mounted () {
+		if (!isMobile) {
+			this.giveFocus()
+		}
+	},
 
 	methods: {
 		search (value) {
@@ -32,6 +36,7 @@ export default {
 		},
 
 		giveFocus () {
+			console.log('focus')
 			this.$refs.search.focus()
 		}
 	}

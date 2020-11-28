@@ -142,6 +142,10 @@ a
 	&:hover
 	&:focus
 		color var(--color-yellow)
+		outline none
+
+	&:focus
+		text-decoration underline
 
 img
 	max-width 100%
