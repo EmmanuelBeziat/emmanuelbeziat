@@ -21,7 +21,8 @@ const routes = [
 	{
 		path: '/blog/:slug',
 		name: 'Post',
-		component: () => import(/* webpackChunkName: "post" */ '@/views/blog/Single')
+		component: () => import(/* webpackChunkName: "post" */ '@/views/blog/Single'),
+		props: true
 	},
 	{
 		path: '/portfolio',
@@ -34,7 +35,8 @@ const routes = [
 	{
 		path: '/portfolio/:slug',
 		name: 'Reference',
-		component: () => import(/* webpackChunkName: "ref" */ '@/views/portfolio/Single')
+		component: () => import(/* webpackChunkName: "ref" */ '@/views/portfolio/Single'),
+		props: true
 	},
 	{
 		path: '/projets',

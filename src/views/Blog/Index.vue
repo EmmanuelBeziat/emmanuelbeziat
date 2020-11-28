@@ -3,8 +3,6 @@
 		<template v-if="posts">
 			<Search placeholder="Recherche…" label="Rechercher" v-model="searchTerms" />
 
-			<!-- <filters icon="icon-tag" :filters="tagsList" @on-filter="filterByTag" /> -->
-
 			<transition-group name="list" tag="div" class="post-list">
 				<Post v-for="post in posts" :key="`post-${post.slug}`" :post="post" />
 			</transition-group>

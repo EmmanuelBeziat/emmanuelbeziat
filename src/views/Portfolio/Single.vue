@@ -1,7 +1,7 @@
 <template>
 	<article class="post" v-if="reference">
 		<header class="post__header">
-			<h1 class="post__title">{{ title }}</h1>
+			<h1 class="post__title">{{ reference.title }}</h1>
 
 			<div class="post__infos">
 				<div class="flex">
@@ -34,13 +34,16 @@ import Tag from '@/components/Tag'
 export default {
 	name: 'PortfolioSingle',
 
+	props: {
+		slug: {
+			type: String,
+			required: true
+		}
+	},
+
 	computed: {
 		reference () {
-			return this.$store.getters['portfolio/getRef'](this.$route.params.slug)
-		},
-
-		title () {
-			return this.getDynamicTitle(this.reference.title)
+			return this.$store.getters['portfolio/getRef'](this.$props.slug)
 		}
 	},
 

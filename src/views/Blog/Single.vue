@@ -51,9 +51,16 @@ export default {
 
 	mixins: [scroll, dateFormat],
 
+	props: {
+		slug: {
+			type: String,
+			required: true
+		}
+	},
+
 	computed: {
 		post () {
-			return this.$store.getters['posts/getPost'](this.$route.params.slug)
+			return this.$store.getters['posts/getPost'](this.$props.slug)
 		},
 
 		title () {
