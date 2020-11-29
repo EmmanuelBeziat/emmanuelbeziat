@@ -1,34 +1,34 @@
 import { openGraph } from '@/config'
+import { Head } from '@egoist/vue-head'
 
 export default {
+	name: 'Head',
+
 	data () {
 		return {
 			head: {
-				title: openGraph.title,
-				url: openGraph.url,
-				image: openGraph.image,
-				description: openGraph.description
+				title: ''
 			}
 		}
 	},
 
 	mounted () {
-		this.head.url = `${this.head.url}${this.$route.fullPath}`
-		this.head.image = `${openGraph.url}${this.head.image}`
-		// this.$emit('update-head')
+		this.getMetaData()
+		this.$emit('update-head')
 	},
 
-	computed: {
-		title () {
-			return `${this.head.title}`
-		},
+	components: {
+		Head
+	},
 
-		meta () {
-			return [
-				{ id: 'og:description', property: 'og:description', content: this.head.description },
-				{ id: 'og:image', property: 'og:image', content: this.head.image },
-				{ id: 'og:url', property: 'og:url', content: this.head.url }
-			]
+	methods: {
+		getMetaData () {
+			const title = this.head.title || this.$route.meta.title || 'fallback'
+			console.log(title)
+			this.head.title = `Emmanuel Béziat :: ${title}`
+			this.head.url = `${openGraph.url}${this.$route.fullPath}` || openGraph.url
+			this.head.image = `${openGraph.url}${this.head.image}` || openGraph.image
+			this.head.description = openGraph.description
 		}
 	}
 }

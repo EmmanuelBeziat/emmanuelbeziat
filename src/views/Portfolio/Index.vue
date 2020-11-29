@@ -15,7 +15,6 @@
 </template>
 
 <script>
-// import Loader from '@/components/loader/Loader'
 import Reference from '@/views/portfolio/Ref'
 
 export default {
@@ -39,7 +38,6 @@ export default {
 
 	components: {
 		Reference
-		// Loader
 	},
 }
 </script>

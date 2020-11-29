@@ -18,23 +18,26 @@ export default {
 
 	data () {
 		return {
-			head: {
-				title: openGraph.title,
-				url: openGraph.url,
-				image: openGraph.image,
-				description: openGraph.description
-			}
+			head: {}
 		}
 	},
 
 	mounted () {
-		this.head.url = `${this.head.url}${this.$route.fullPath}`
-		this.head.image = `${openGraph.url}${this.head.image}`
+		this.getMetaData()
 		this.$emit('update-head')
 	},
 
 	components: {
 		Head
+	},
+
+	methods: {
+		getMetaData () {
+			this.head.title = this.$props.title || openGraph.title
+			this.head.url = `${this.head.url}${this.$route.fullPath}` || openGraph.url
+			this.head.image = `${openGraph.url}${this.head.image}` || openGraph.image
+			this.head.description = openGraph.description
+		}
 	}
 }
 </script>

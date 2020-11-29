@@ -27,6 +27,7 @@ export default {
 	},
 
 	created () {
+		dayjs.locale(fr)
 		this.checkAge('1987-09-16T02:26:00')
 	},
 
@@ -41,7 +42,6 @@ export default {
 			const rangeMin = dayjs(nextBirthday).subtract(1, 'month')
 			const rangeMax = dayjs(nextBirthday).add(1, 'month')
 
-			dayjs.locale('fr')
 			dayjs.extend(isBetween)
 			dayjs.extend(relativeTime)
 			dayjs.extend(updateLocale)
@@ -59,25 +59,6 @@ export default {
 
 			this.age = Math.abs(dayjs(birthday).diff(dayjs(), 'years'))
 			this.nextBirthday = dayjs(nextBirthday).fromNow()
-
-			/* const birthday = Moment(date, format)
-			const nextBirthday = Moment(date, format).set({ year: Moment().year() })
-			const rangeMin = Moment(nextBirthday).subtract(1, 'month')
-			const rangeMax = Moment(nextBirthday).add(1, 'month')
-
-			Moment.updateLocale('fr', {
-				relativeTime: {
-					future: 'pour encore %s',
-					past: 'depuis %s'
-				}
-			})
-
-			if (Moment().isBetween(rangeMin, rangeMax)) {
-				this.isBirthdayMonth = true
-			}
-
-			this.age = Math.abs(birthday.diff(Moment(), 'years'))
-			this.nextBirthday = nextBirthday.fromNow() */
 		}
 	}
 }

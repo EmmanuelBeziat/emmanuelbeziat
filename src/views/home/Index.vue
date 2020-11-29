@@ -13,13 +13,6 @@ import CodeHome from '@/views/home/Code'
 
 export default {
 	name: 'Home',
-	data () {
-		return {
-			head: {
-				title: 'Accueil'
-			}
-		}
-	},
 
 	components: {
 		Presentation,
