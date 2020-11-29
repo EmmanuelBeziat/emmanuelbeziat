@@ -3,15 +3,15 @@ import Vue from 'vue'
 const SequentialEntrance = {
 	functional: true,
 
-	render(createElement, { props, data, children }) {
-		let delay = props.delay || 250
-		let tag = props.tag || 'span'
+	render (createElement, { props, data, children }) {
+		const delay = props.delay || 250
+		const tag = props.tag || 'span'
 		let animation = props.animation || 'entranceFromRight'
 
-		if (props.fromTop != undefined) animation = 'entranceFromTop'
-		if (props.fromRight != undefined) animation = 'entranceFromRight'
-		if (props.fromBottom != undefined) animation = 'entranceFromBottom'
-		if (props.fromLeft != undefined) animation = 'entranceFromLeft'
+		if (props.fromTop !== undefined) animation = 'entranceFromTop'
+		if (props.fromRight !== undefined) animation = 'entranceFromRight'
+		if (props.fromBottom !== undefined) animation = 'entranceFromBottom'
+		if (props.fromLeft !== undefined) animation = 'entranceFromLeft'
 
 		if (children) {
 			children.forEach((child, index) => {
@@ -33,7 +33,7 @@ const SequentialEntrance = {
 }
 
 const VueSequentialEntrance = {
-	install(Vue, options) {
+	install (Vue, options) {
 		Vue.component('sequential-entrance', SequentialEntrance)
 	}
 }

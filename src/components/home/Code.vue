@@ -9,7 +9,7 @@
 			<span class="cv-code__title">emmanuel@code: ~/{{ code.slug }} </span>
 		</div>
 
-		<Markdown :source="code.content" />
+		<Markdown :source="code.markdown" />
 	</div>
 </template>
 

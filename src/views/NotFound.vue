@@ -20,7 +20,7 @@ const errors = [
 	{ class: 'south-park', title: 'We’re sorry…' },
 	{ class: 'mario', title: 'Sorry, but your page <br>is in another castle' },
 	{ class: 'obiwan', title: 'This is not the page <br>you’re looking for…' },
-	{ class: 'pulp-fiction', title: '…?'}
+	{ class: 'pulp-fiction', title: '…?' }
 ]
 
 export default {

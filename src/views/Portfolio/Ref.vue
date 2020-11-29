@@ -18,7 +18,7 @@
 				</div>
 			</header>
 
-			<Markdown class="post__content" :source="reference.content" />
+			<Markdown class="post__content" :source="reference.markdown" />
 
 			<footer class="post__footer">
 				<router-link exact :to="'/portfolio'" class="navigation-previous">

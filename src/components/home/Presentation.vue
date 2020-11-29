@@ -28,15 +28,15 @@ export default {
 	},
 
 	watch: {
-		'$route': 'checkAge'
+		$route: 'checkAge'
 	},
 
 	methods: {
 		checkAge (date, format = 'DD.MM.YYYY-HH:mm') {
 			const birthday = Moment(date, format)
-			const nextBirthday = Moment(date, format).set({ 'year': Moment().year() })
+			const nextBirthday = Moment(date, format).set({ year: Moment().year() })
 			const rangeMin = Moment(nextBirthday).subtract(1, 'month')
-			const rangeMax =  Moment(nextBirthday).add(1, 'month')
+			const rangeMax = Moment(nextBirthday).add(1, 'month')
 
 			Moment.updateLocale('fr', {
 				relativeTime: {
