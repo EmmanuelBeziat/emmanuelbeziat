@@ -18,7 +18,7 @@ export default {
 
 	computed: {
 		picture () {
-			return this.$route.name === 'not-found' ? require('@/assets/img/emmanuelb-error.jpg') : require('@/assets/img/emmanuelb.jpg')
+			return this.$route.name === 'NotFound' ? require('@/assets/img/emmanuelb-error.jpg') : require('@/assets/img/emmanuelb.jpg')
 		}
 	}
 }

@@ -1,11 +1,10 @@
 import { createRouter, createWebHistory } from 'vue-router'
-import Home from './views/home/Index'
 
 const routes = [
 	{
 		path: '/',
 		name: 'Home',
-		component: Home,
+		component: () => import(/* webpackChunkName: "home" */ '@/views/home/Index'),
 		meta: {
 			title: 'Accueil'
 		}
@@ -22,7 +21,7 @@ const routes = [
 		path: '/blog/:slug',
 		name: 'Post',
 		component: () => import(/* webpackChunkName: "post" */ '@/views/blog/Single'),
-		props: true
+		props: true,
 	},
 	{
 		path: '/portfolio',

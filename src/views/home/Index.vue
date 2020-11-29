@@ -1,15 +1,16 @@
 <template>
 	<section class="home">
 		<div class="presentation">
-			<!-- <Presentation /> -->
-			<!-- <CodeHome /> -->
+			<Presentation />
+			<CodeHome />
 		</div>
 	</section>
 </template>
 
 <script>
-// import Presentation from '@/views/home/Presentation'
-// import CodeHome from '@/views/home/Code'
+import Presentation from '@/views/home/Presentation'
+import CodeHome from '@/views/home/Code'
+
 export default {
 	name: 'Home',
 	data () {
@@ -21,8 +22,8 @@ export default {
 	},
 
 	components: {
-		// Presentation,
-		// CodeHome
+		Presentation,
+		CodeHome
 	}
 }
 </script>

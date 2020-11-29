@@ -9,13 +9,11 @@
 			<span class="cv-code__title">emmanuel@code: ~/{{ code.slug }} </span>
 		</div>
 
-		<Markdown :source="code.content" />
+		<div v-html="code.markup" />
 	</div>
 </template>
 
 <script>
-import Markdown from '@/components/markdown/MarkdownRender'
-
 export default {
 	name: 'Code',
 
@@ -36,10 +34,6 @@ export default {
 				return codes[Math.floor(Math.random() * codes.length)]
 			}
 		}
-	},
-
-	components: {
-		Markdown
 	}
 }
 </script>

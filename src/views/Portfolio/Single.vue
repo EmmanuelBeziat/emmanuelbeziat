@@ -16,7 +16,7 @@
 			</div>
 		</header>
 
-		<!-- <Markdown class="post__content" :source="reference.content" /> -->
+		<div class="post__content" v-html="reference.markup" />
 
 		<footer class="post__footer">
 			<router-link exact :to="'/portfolio'" class="navigation-previous">
@@ -28,7 +28,6 @@
 </template>
 
 <script>
-// import Markdown from '@/components/markdown/MarkdownRender'
 import Tag from '@/components/Tag'
 
 export default {
@@ -48,7 +47,6 @@ export default {
 	},
 
 	components: {
-		// Markdown,
 		Tag
 	}
 }

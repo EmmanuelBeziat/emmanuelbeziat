@@ -18,7 +18,7 @@
 			</div>
 		</header>
 
-		<!-- <Markdown class="post__content" :source="post.content" :options="{ anchorPermalink: true }" /> -->
+		<div class="post__content" v-html="post.markup" />
 
 		<footer class="post__footer">
 			<div class="flex">
@@ -41,8 +41,6 @@
 <script>
 import scroll from '@/plugins/mixins/scroll'
 import dateFormat from '@/plugins/mixins/date'
-// import Loader from '@/components/Loader'
-// import Markdown from '@/components/MarkdownRender'
 import Share from '@/components/share/Share'
 import Tag from '@/components/Tag'
 
@@ -69,7 +67,6 @@ export default {
 	},
 
 	components: {
-		// Markdown,
 		Share,
 		Tag
 	}

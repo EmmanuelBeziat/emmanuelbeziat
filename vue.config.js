@@ -16,8 +16,6 @@ module.exports = {
 					PACKAGE_JSON: '"' + escape(JSON.stringify(require('./package.json'))) + '"'
 				}
 			}),
-			// new webpack.IgnorePlugin(/^\.\/locale$/, /moment$/),
-			// new webpack.ContextReplacementPlugin(/moment[/\\]locale$/, /fr/),
 			// new BundleAnalyzerPlugin()
 		]
 	},
@@ -39,14 +37,14 @@ module.exports = {
 		manifestOptions: {
 			icons: [
 				{
-					'src': '/favicons/android-chrome-192x192.png',
-					'sizes': '192x192',
-					'type': 'image/png'
+					src: '/favicons/android-chrome-192x192.png',
+					sizes: '192x192',
+					type: 'image/png'
 				},
 				{
-					'src': '/favicons/android-chrome-512x512.png',
-					'sizes': '512x512',
-					'type': 'image/png'
+					src: '/favicons/android-chrome-512x512.png',
+					sizes: '512x512',
+					type: 'image/png'
 				}
 			]
 		}

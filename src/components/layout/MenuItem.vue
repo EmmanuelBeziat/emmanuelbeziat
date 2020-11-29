@@ -1,5 +1,5 @@
 <template>
-	<router-link class="menu__link" :to="to" v-html="icon + label" />
+	<router-link class="menu__link" :class="!isActive || '-active'" :to="to" v-html="icon + label" />
 </template>
 
 <script>
@@ -22,7 +22,15 @@ export default {
 			type: String,
 			required: true
 		}
-	}
+	},
+
+	computed: {
+		isActive () {
+			const path = this.$router.resolve(this.$props.to).path
+			const route = this.$route.path.split('/')[1]
+			return path === '/' + route
+		}
+	},
 }
 </script>
 

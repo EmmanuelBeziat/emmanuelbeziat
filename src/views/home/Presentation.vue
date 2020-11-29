@@ -8,8 +8,11 @@
 </template>
 
 <script>
-import Moment from 'moment'
-Moment.locale('fr')
+import dayjs from 'dayjs'
+import fr from 'dayjs/locale/fr'
+import isBetween from 'dayjs/plugin/isBetween'
+import relativeTime from 'dayjs/plugin/relativeTime'
+import updateLocale from 'dayjs/plugin/updateLocale'
 
 export default {
 	name: 'Presentation',
@@ -24,7 +27,7 @@ export default {
 	},
 
 	created () {
-		this.checkAge('16.09.1987-02:26')
+		this.checkAge('1987-09-16T02:26:00')
 	},
 
 	watch: {
@@ -33,7 +36,31 @@ export default {
 
 	methods: {
 		checkAge (date, format = 'DD.MM.YYYY-HH:mm') {
-			const birthday = Moment(date, format)
+			const birthday = dayjs(date)
+			const nextBirthday = dayjs(date).set('year', dayjs().format('YYYY'))
+			const rangeMin = dayjs(nextBirthday).subtract(1, 'month')
+			const rangeMax = dayjs(nextBirthday).add(1, 'month')
+
+			dayjs.locale('fr')
+			dayjs.extend(isBetween)
+			dayjs.extend(relativeTime)
+			dayjs.extend(updateLocale)
+
+			dayjs.updateLocale(fr, {
+				relativeTime: {
+					future: 'pour encore %s',
+					past: 'depuis %s'
+				}
+			})
+
+			if (dayjs().isBetween(rangeMin, rangeMax)) {
+				this.isBirthdayMonth = true
+			}
+
+			this.age = Math.abs(dayjs(birthday).diff(dayjs(), 'years'))
+			this.nextBirthday = dayjs(nextBirthday).fromNow()
+
+			/* const birthday = Moment(date, format)
 			const nextBirthday = Moment(date, format).set({ year: Moment().year() })
 			const rangeMin = Moment(nextBirthday).subtract(1, 'month')
 			const rangeMax = Moment(nextBirthday).add(1, 'month')
@@ -50,7 +77,7 @@ export default {
 			}
 
 			this.age = Math.abs(birthday.diff(Moment(), 'years'))
-			this.nextBirthday = nextBirthday.fromNow()
+			this.nextBirthday = nextBirthday.fromNow() */
 		}
 	}
 }

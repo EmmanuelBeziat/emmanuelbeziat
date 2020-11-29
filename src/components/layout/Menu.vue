@@ -1,6 +1,6 @@
 <template>
 	<nav class="menu" id="#menu">
-		<MenuItem :to="{ name: 'Home', }" label="Accueil" :icon="icons.home" />
+		<MenuItem :to="{ name: 'Home' }" label="Accueil" :icon="icons.home" />
 		<MenuItem :to="{ name: 'Portfolio' }" label="Portfolio" :icon="icons.case" />
 		<MenuItem :to="{ name: 'Projects' }" label="Projets" :icon="icons.laptop" />
 		<MenuItem :to="{ name: 'Blog' }" label="Blog" :icon="icons.comments" />
