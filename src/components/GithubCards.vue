@@ -34,6 +34,8 @@ export default {
 </script>
 
 <style lang="stylus" scoped>
+.github-card
+	margin-bottom 1rem
 .card-center
 	text-align center
 
