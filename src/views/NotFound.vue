@@ -24,14 +24,6 @@ const errors = [
 export default {
 	name: 'NotFound',
 
-	data () {
-		return {
-			head: {
-				title: 'Page introuvable'
-			}
-		}
-	},
-
 	computed: {
 		error () {
 			const i = Math.floor(Math.random() * errors.length)
