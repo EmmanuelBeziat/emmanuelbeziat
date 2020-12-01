@@ -4,7 +4,7 @@
 			<Search placeholder="Recherche…" label="Rechercher" v-model="searchTerms" />
 
 			<keep-alive>
-				<GithubCards :card="{ languages: false }" />
+				<GithubCards :cards="{ stats: true, languages: false }" />
 			</keep-alive>
 
 			<transition-group name="list" tag="div" class="post-list">
