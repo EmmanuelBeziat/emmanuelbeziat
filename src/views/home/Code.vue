@@ -79,7 +79,7 @@ export default {
 		margin 0
 		transform none
 
-.cv-code >>> pre
+.cv-code :deep(pre)
 	margin-top 0
 	border-radius 0 0 .5rem .5rem
 

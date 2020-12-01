@@ -20,7 +20,7 @@ const actions = {
 
 const mutations = {
 	SET_POSTS (state, posts) {
-		state.posts = posts.filter(item.publish !== false)
+		state.posts = posts.filter(item => item.publish !== false)
 	}
 }
 

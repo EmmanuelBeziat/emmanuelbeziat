@@ -66,7 +66,7 @@ export default {
 		@media $mq-tablet
 			content none
 
-	& >>> svg
+	& :deep(svg)
 		display none
 		transform none
 		padding 0
@@ -120,31 +120,31 @@ export default {
 	&[href="/"]
 		color var(--color-green)
 
-		& >>> svg
+		& :deep(svg)
 			fill var(--color-green)
 
 	&[href="/portfolio"]
 		color var(--color-blue)
 
-		& >>> svg
+		& :deep(svg)
 			fill var(--color-blue)
 
 	&[href="/projets"]
 		color var(--color-yellow)
 
-		& >>> svg
+		& :deep(svg)
 			fill var(--color-yellow)
 
 	&[href="/blog"]
 		color var(--color-red)
 
-		& >>> svg
+		& :deep(svg)
 			fill var(--color-red)
 
 	&[href="/moi"]
 		color var(--color-violet)
 
-		& >>> svg
+		& :deep(svg)
 			fill var(--color-violet)
 
 .-active
