@@ -3,6 +3,10 @@
 		<template v-if="projects">
 			<Search placeholder="Recherche…" label="Rechercher" v-model="searchTerms" />
 
+			<keep-alive>
+				<GithubCards :card="{ languages: false }" />
+			</keep-alive>
+
 			<transition-group name="list" tag="div" class="post-list">
 				<Project v-for="repo in projects" :key="`repo-${repo.id}`" :repo="repo" />
 			</transition-group>
@@ -14,15 +18,13 @@
 import slug from 'slug'
 import Project from '@/views/projects/Project'
 import Search from '@/components/Search'
+import GithubCards from '@/components/GithubCards'
 
 export default {
 	name: 'Projects',
 
 	data () {
 		return {
-			head: {
-				title: 'Projets'
-			},
 			searchTerms: ''
 		}
 	},
@@ -35,7 +37,8 @@ export default {
 
 	components: {
 		Search,
-		Project
+		Project,
+		GithubCards
 	}
 }
 </script>

@@ -22,9 +22,6 @@ export default {
 
 	data () {
 		return {
-			head: {
-				title: 'Portfolio'
-			},
 			searchTerms: '',
 			publicPath: process.env.BASE_URL
 		}

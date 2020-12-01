@@ -59,11 +59,11 @@ export default {
 	computed: {
 		post () {
 			return this.$store.getters['posts/getPost'](this.$props.slug)
-		},
-
-		title () {
-			return this.getDynamicTitle(this.post.title)
 		}
+	},
+
+	mounted () {
+		window.document.title = `Emmanuel Béziat :: ${this.post.title}`
 	},
 
 	components: {

@@ -13,8 +13,15 @@
 			<p>
 				<img src="https://images.emmanuelbeziat.com/Home-2020---01-min.jpg" alt="Home" loading="lazy">
 			</p>
+			<p>C’est mon bureau. Y en a plein comme ça, mais celui-là c’est le mien. 😍</p>
 
-			<h2>À quoi tu joues ?</h2>
+			<h3>Et tu fais quoi ?</h3>
+			<keep-alive>
+				<GithubCards align="left" />
+			</keep-alive>
+			<p>En gros, surtout du Javascript. Parfois avec Vue.js, parfois sans.</p>
+
+			<h2>À quoi tu joues ? 🎮</h2>
 			<p>
 				<img src="https://i1.trueachievements.com/infog-story/760992.png" alt="Xbox" loading="lazy">
 			</p>
@@ -23,6 +30,8 @@
 </template>
 
 <script>
+import GithubCards from '@/components/GithubCards'
+
 export default {
 	name: 'Me',
 
@@ -36,6 +45,10 @@ export default {
 		picture () {
 			return require(`@/assets/img/emmanuelb-draw-${this.hairs}.png`)
 		}
+	},
+
+	components: {
+		GithubCards
 	}
 }
 </script>

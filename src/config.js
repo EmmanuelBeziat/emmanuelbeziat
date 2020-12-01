@@ -27,6 +27,12 @@ export const social = {
 export const openGraph = {
 	title: '',
 	url: 'https://www.emmanuelbeziat.com',
-	image: '/branding/opengraph-facebook.jpg',
+	image: '/branding/opengraph-longs.jpg',
 	description: 'Portfolio en ligne d’un développeur web du sud. Billets de blogs, tutoriels, astuces, diatribes et réflexions sur le métier, le code et plein d’autres choses.'
+}
+
+export const github = {
+	profile: 'https://github.com/EmmanuelBeziat',
+	stats: 'https://github-readme-stats.vercel.app/api?username=emmanuelbeziat&show_icons=true&theme=dracula&locale=fr&bg_color=233238&hide_border=true&title_color=f77669&text_color=eeeeee&icon_color=c3e88d&count_private=true',
+	languages: 'https://github-readme-stats.vercel.app/api/top-langs/?username=emmanuelbeziat&layout=compact&locale=fr&bg_color=233238&hide_border=true&title_color=f77669&text_color=eeeeee&icon_color=c3e88d'
 }

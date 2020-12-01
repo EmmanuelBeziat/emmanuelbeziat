@@ -20,9 +20,6 @@ export default {
 
 	data () {
 		return {
-			head: {
-				title: 'Blog'
-			},
 			searchTerms: ''
 		}
 	},

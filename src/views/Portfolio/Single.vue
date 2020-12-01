@@ -46,6 +46,10 @@ export default {
 		}
 	},
 
+	mounted () {
+		window.document.title = `Emmanuel Béziat :: ${this.reference.title}`
+	},
+
 	components: {
 		Tag
 	}

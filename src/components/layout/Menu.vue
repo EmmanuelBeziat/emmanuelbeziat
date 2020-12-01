@@ -4,7 +4,7 @@
 		<MenuItem :to="{ name: 'Portfolio' }" label="Portfolio" :icon="icons.case" />
 		<MenuItem :to="{ name: 'Projects' }" label="Projets" :icon="icons.laptop" />
 		<MenuItem :to="{ name: 'Blog' }" label="Blog" :icon="icons.comments" />
-		<!-- <MenuItem :to="{ name: 'Me' }" label="À propos" :icon="icons.user" /> -->
+		<MenuItem :to="{ name: 'Me' }" label="Moi" :icon="icons.user" />
 	</nav>
 </template>
 
