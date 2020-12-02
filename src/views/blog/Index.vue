@@ -1,12 +1,14 @@
 <template>
 	<section class="blog">
-		<template v-if="posts">
-			<Search placeholder="Recherche…" label="Rechercher" v-model="searchTerms" />
+		<Search placeholder="Recherche…" label="Rechercher" v-model="searchTerms" />
 
+		<template v-if="posts">
 			<transition-group name="list" tag="div" class="post-list">
 				<Post v-for="post in posts" :key="`post-${post.slug}`" :post="post" />
 			</transition-group>
 		</template>
+
+		<Loader v-else />
 	</section>
 </template>
 
@@ -14,6 +16,7 @@
 import slug from 'slug'
 import Search from '@/components/Search'
 import Post from '@/views/blog/Post'
+import Loader from '@/components/Loader'
 
 export default {
 	name: 'Blog',
@@ -44,7 +47,8 @@ export default {
 
 	components: {
 		Search,
-		Post
+		Post,
+		Loader
 	}
 }
 </script>

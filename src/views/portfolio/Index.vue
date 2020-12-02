@@ -11,11 +11,14 @@
 				</div>
 			</div>
 		</template>
+
+		<Loader v-else />
 	</section>
 </template>
 
 <script>
 import Reference from '@/views/portfolio/Ref'
+import Loader from '@/components/Loader'
 
 export default {
 	name: 'Portfolio',
@@ -34,7 +37,8 @@ export default {
 	},
 
 	components: {
-		Reference
+		Reference,
+		Loader
 	},
 }
 </script>

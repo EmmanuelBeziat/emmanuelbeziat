@@ -1,16 +1,18 @@
 <template>
 	<section class="projects">
+		<Search placeholder="Recherche…" label="Rechercher" v-model="searchTerms" />
+
+		<keep-alive>
+			<GithubCards :cards="{ stats: true, languages: false }" />
+		</keep-alive>
+
 		<template v-if="projects">
-			<Search placeholder="Recherche…" label="Rechercher" v-model="searchTerms" />
-
-			<keep-alive>
-				<GithubCards :cards="{ stats: true, languages: false }" />
-			</keep-alive>
-
 			<transition-group name="list" tag="div" class="post-list">
 				<Project v-for="repo in projects" :key="`repo-${repo.id}`" :repo="repo" />
 			</transition-group>
 		</template>
+
+		<Loader v-else />
 	</section>
 </template>
 
@@ -19,6 +21,7 @@ import slug from 'slug'
 import Project from '@/views/projects/Project'
 import Search from '@/components/Search'
 import GithubCards from '@/components/GithubCards'
+import Loader from '@/components/Loader'
 
 export default {
 	name: 'Projects',
@@ -38,7 +41,8 @@ export default {
 	components: {
 		Search,
 		Project,
-		GithubCards
+		GithubCards,
+		Loader
 	}
 }
 </script>

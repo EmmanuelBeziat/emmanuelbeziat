@@ -1,19 +1,27 @@
 <template>
-	<div class="cv-code" v-if="code">
+	<div class="cv-code">
 		<div class="cv-code__header">
 			<div class="cv-code__buttons">
 				<span class="fake-btn close" />
 				<span class="fake-btn minify" />
 				<span class="fake-btn expand" />
 			</div>
-			<span class="cv-code__title">emmanuel@code: ~/{{ code.slug }} </span>
+			<span class="cv-code__title" v-if="code">emmanuel@code: ~/{{ code.slug }} </span>
 		</div>
 
-		<div v-html="code.markup" />
+		<div class="cv-code__body">
+			<transition mode="out-in" name="fade">
+				<div v-if="code" v-html="code.markup" />
+
+				<Loader v-else />
+			</transition>
+		</div>
 	</div>
 </template>
 
 <script>
+import Loader from '@/components/Loader'
+
 export default {
 	name: 'Code',
 
@@ -34,6 +42,10 @@ export default {
 				return codes[Math.floor(Math.random() * codes.length)]
 			}
 		}
+	},
+
+	components: {
+		Loader
 	}
 }
 </script>
@@ -41,6 +53,17 @@ export default {
 <style lang="stylus" scoped>
 @require '~@/assets/styles/variables.styl'
 @require '~@/assets/styles/mixins.styl'
+
+.cv-code
+	border-radius .5rem
+	overflow hidden
+	background var(--color-background-dark)
+
+	& :deep(pre)
+		margin 0
+
+		&::after
+			content none
 
 .cv-code__header
 	display flex
@@ -78,11 +101,4 @@ export default {
 	@media $mq-desktop
 		margin 0
 		transform none
-
-.cv-code :deep(pre)
-	margin-top 0
-	border-radius 0 0 .5rem .5rem
-
-	&::after
-		content none
 </style>
