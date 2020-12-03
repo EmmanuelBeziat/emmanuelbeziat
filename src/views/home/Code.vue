@@ -11,7 +11,7 @@
 
 		<div class="cv-code__body">
 			<transition mode="out-in" name="fade">
-				<div v-if="code" v-html="code.markup" />
+				<template v-if="code" v-html="code.markup" />
 
 				<Loader v-else />
 			</transition>
@@ -64,7 +64,8 @@ export default {
 
 	& :deep(pre)
 		margin 0
-		padding 1.5em 1em
+		@media $mq-tablet
+			padding 1.5em 1em
 
 		&::after
 			content none
