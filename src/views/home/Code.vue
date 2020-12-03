@@ -59,8 +59,12 @@ export default {
 	overflow hidden
 	background var(--color-background-dark)
 
+	@media $mq-tablet
+		margin 0 -1rem
+
 	& :deep(pre)
 		margin 0
+		padding 1.5em 1em
 
 		&::after
 			content none
@@ -74,9 +78,6 @@ export default {
 	border-radius .5rem .5rem 0 0
 	position relative
 	font-family var(--font-stack-code)
-
-	@media $mq-tablet
-		margin 0 -1rem
 
 .cv-code__buttons
 	margin-right 1rem

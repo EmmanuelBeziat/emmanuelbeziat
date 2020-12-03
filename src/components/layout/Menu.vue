@@ -48,5 +48,5 @@ export default {
 		right 0
 		bottom 0
 		z-index 50
-		padding 0 rem(32px)
+		padding 0
 </style>
