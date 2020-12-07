@@ -26,9 +26,7 @@ export default {
 	},
 
 	computed: {
-		canShare () {
-			return navigator.share
-		}
+		canShare: () => navigator.share
 	},
 
 	methods: {
@@ -37,7 +35,7 @@ export default {
 			const popupHeight = height || 320
 			const popupPosX = window.screenX + window.innerWidth / 2 - popupWidth / 2
 			const popupPosY = window.screenY + window.innerHeight / 2 - popupHeight / 2
-			const popup = window.open(url, title, 'scrollbars=yes, menubar=0, location=0, status=0, width=' + popupWidth + ', height=' + popupHeight + ', top=' + popupPosY + ', left=' + popupPosX)
+			const popup = window.open(url, title, `scrollbars=yes, menubar=0, location=0, status=0, width=${popupWidth}, height=${popupHeight}, top=${popupPosY}, left=${popupPosX}`)
 
 			popup.focus()
 			return true
@@ -46,8 +44,8 @@ export default {
 		shareAuto () {
 			navigator.share({
 				title: 'Via @EmmanuelBeziat',
-				text: document.title,
-				url: window.location.href,
+				text: encodeURIComponent(document.title),
+				url: encodeURIComponent(window.location.href),
 			})
 		},
 
@@ -58,7 +56,7 @@ export default {
 
 			switch (social) {
 				case 'twitter':
-					shareUrl = `https://twitter.com/intent/tweet?text=${pageTitle} — ${pageUrl}&via=EmmanuelBeziat`
+					shareUrl = `https://twitter.com/intent/tweet?text=${pageTitle} — ${pageUrl}&via=@EmmanuelBeziat`
 					this.sharePopup(shareUrl, 'Partager sur Twitter')
 					break
 
@@ -79,11 +77,13 @@ export default {
 					dummyShare.select()
 					document.execCommand('copy')
 					document.body.removeChild(dummyShare)
-					this.$notify({
-						group: 'share',
-						title: 'URL copiée dans le presse papier',
-						text: window.location.href
-					})
+					if (this.$notify) {
+						this.$notify({
+							group: 'share',
+							title: 'URL copiée dans le presse papier',
+							text: window.location.href
+						})
+					}
 					break
 				}
 			}

@@ -37,7 +37,7 @@ export default {
 
 	data () {
 		return {
-			hairs: 'long'
+			hairs: 'short'
 		}
 	},
 
