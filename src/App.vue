@@ -38,7 +38,7 @@ export default {
 
 	watch: {
 		$route: {
-			handler: (to, from) => {
+			handler (to, from) {
 				document.title = 'Emmanuel Béziat :: ' + to.meta.title
 			},
 			immediate: true
