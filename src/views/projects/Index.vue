@@ -8,7 +8,7 @@
 
 		<template v-if="projects">
 			<transition-group name="list" tag="div" class="post-list">
-				<Project v-for="repo in projects" :key="`repo-${repo.id}`" :repo="repo" />
+				<Project v-for="project in projects" :key="`repo-${project.id}`" :project="project" />
 			</transition-group>
 		</template>
 

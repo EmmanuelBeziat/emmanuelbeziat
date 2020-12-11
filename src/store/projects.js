@@ -28,20 +28,23 @@ const actions = {
 
 const mutations = {
 	SET_PROJECTS (state, projects) {
-		state.projects = projects.map(key => {
+		state.projects = projects.map(repo => {
 			return {
-				id: key.id,
-				name: key.name,
-				html_url: key.html_url,
-				description: key.description,
-				created_at: key.created_at,
-				updated_at: key.updated_at,
-				language: key.language,
-				languages_url: key.languages_url,
-				stargazers: key.stargazers_count,
-				license: key.license ? key.license.key : null,
-				forks: key.forks_count,
-				issues: key.open_issues_count
+				id: repo.id,
+				name: repo.name,
+				url: repo.html_url,
+				homepage: repo.homepage,
+				description: repo.description,
+				created_at: repo.created_at,
+				updated_at: repo.updated_at,
+				language: repo.language,
+				languages_url: repo.languages_url,
+				stargazers: repo.stargazers_count,
+				watchers: repo.watchers_count,
+				license: repo.license ? repo.license.key : null,
+				forks: repo.forks_count,
+				issues: repo.open_issues_count,
+				archived: repo.archived
 			}
 		})
 	}
