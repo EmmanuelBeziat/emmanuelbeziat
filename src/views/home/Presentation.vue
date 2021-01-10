@@ -43,13 +43,23 @@ export default {
 			const rangeMax = dayjs(nextBirthday).add(1, 'month')
 
 			dayjs.extend(isBetween)
-			dayjs.extend(relativeTime)
 			dayjs.extend(updateLocale)
+			dayjs.extend(relativeTime)
 
-			dayjs.updateLocale(fr, {
+			dayjs.updateLocale('fr', {
 				relativeTime: {
 					future: 'pour encore %s',
-					past: 'depuis %s'
+					past: 'depuis %s',
+					s: 'quelques secondes',
+					m: 'une minute',
+					mm: '%d minutes',
+					h: 'une heure',
+					hh: '%d heures',
+					dd: '%d jours',
+					M: 'un moish',
+					MM: '%d mois',
+					y: 'un an',
+					yy: '%d ans'
 				}
 			})
 
