@@ -14,7 +14,6 @@ const getters = {
 const actions = {
 	async init ({ commit }) {
 		const { data } = await axios.get(`${api.projects}?sort=updated`)
-		console.log(data)
 		commit('SET_PROJECTS', data)
 	},
 
