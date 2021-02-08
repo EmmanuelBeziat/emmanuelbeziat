@@ -3,11 +3,13 @@ const webpack = require('webpack')
 
 module.exports = {
 	productionSourceMap: false,
+
 	configureWebpack: config => {
 		config.module
 			.rule('/\.md$')
 			.use('raw-loader')
 	},
+
 	configureWebpack: {
 		devtool: 'source-map',
 		plugins: [
@@ -18,6 +20,12 @@ module.exports = {
 			}),
 			// new BundleAnalyzerPlugin()
 		]
+	},
+
+	pluginOptions: {
+		extendServer: app => {
+			app.disable('x-powered-by')
+		}
 	},
 
 	pwa: {
@@ -35,6 +43,7 @@ module.exports = {
 			msTileImage: 'mstile-150x150.png'
 		},
 		manifestOptions: {
+			shortName: 'EmmanuelB',
 			icons: [
 				{
 					src: '/favicons/android-chrome-192x192.png',
@@ -51,6 +60,7 @@ module.exports = {
 	},
 
 	outputDir: '../site',
+
 	devServer: {
 		port: 3033
 	}
