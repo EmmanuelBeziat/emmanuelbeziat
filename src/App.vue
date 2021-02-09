@@ -144,7 +144,6 @@ i[lang]
 // Links
 a
 	background-color transparent
-	-webkit-text-decoration-skip objects
 	transition .2s ease-in-out
 	color var(--color-green)
 	text-decoration none
