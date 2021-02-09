@@ -43,7 +43,7 @@ module.exports = {
 			msTileImage: 'mstile-150x150.png'
 		},
 		manifestOptions: {
-			shortName: 'EmmanuelB',
+			short_name: 'EmmanuelB',
 			icons: [
 				{
 					src: '/favicons/android-chrome-192x192.png',
