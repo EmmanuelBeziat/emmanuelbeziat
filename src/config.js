@@ -18,7 +18,7 @@ export const social = {
 	twitter: 'https://twitter.com/EmmanuelBeziat',
 	facebook: 'https://www.facebook.com/EmmanuelBeziat',
 	github: 'https://github.com/EmmanuelBeziat',
-	linkedin: 'https://www.linkedin.com/in/emmanuel-b-54242949',
+	linkedin: 'https://www.linkedin.com/in/emmanuel-b%C3%A9ziat-54242949/',
 	codepen: 'https://codepen.io/EmmanuelBeziat/',
 	instagram: 'https://www.instagram.com/EmmanuelBeziat',
 	youtube: 'https://www.youtube.com/c/EmmanuelB'
