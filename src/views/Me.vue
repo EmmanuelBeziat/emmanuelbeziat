@@ -1,7 +1,7 @@
 <template>
 	<section class="me">
 		<div class="me__drawing">
-			<img :src="picture" alt="Emmanuel Béziat (Drawing by Marie-Laure Rouzier)">
+			<img :src="picture" alt="Emmanuel Béziat (Drawing by Marie-Laure Rouzier)" loading="lazy">
 		</div>
 
 		<div class="me__interview">
