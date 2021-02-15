@@ -36,11 +36,11 @@ module.exports = {
 		appleMobileWebAppStatusBarStyle: 'white',
 		manifestPath: 'favicons/site.webmanifest',
 		iconPaths: {
-			favicon32: 'favicon-32x32.png',
-			favicon16: 'favicon-16x16.png',
-			appleTouchIcon: 'apple-touch-icon.png',
-			maskIcon: 'safari-pinned-tab.svg',
-			msTileImage: 'mstile-150x150.png'
+			favicon32: 'favicons/favicon-32x32.png',
+			favicon16: 'favicons/favicon-16x16.png',
+			appleTouchIcon: 'favicons/apple-touch-icon.png',
+			maskIcon: 'favicons/safari-pinned-tab.svg',
+			msTileImage: 'favicons/mstile-150x150.png'
 		},
 		manifestOptions: {
 			short_name: 'EmmanuelB',
