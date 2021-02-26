@@ -1,6 +1,8 @@
 <template>
 	<section class="not-found">
-		<div class="not-found__image" :class="error.class" @click="$router.go()"></div>
+		<div class="not-found__image" @click="$router.go()">
+			<img :src="error.image" alt="error" loading="lazy">
+		</div>
 		<div class="not-found__404" v-html="error.title"></div>
 
 		<h1 class="not-found__title">Page introuvable</h1>
@@ -14,11 +16,11 @@
 
 <script>
 const errors = [
-	{ class: 'doctor-who', title: 'What?!' },
-	{ class: 'south-park', title: 'We’re sorry…' },
-	{ class: 'mario', title: 'Sorry, but your page <br>is in another castle' },
-	{ class: 'obiwan', title: 'This is not the page <br>you’re looking for…' },
-	{ class: 'pulp-fiction', title: '…?' }
+	{ image: 'doctor-who.webp', title: 'What?!' },
+	{ image: 'south-park.webp', title: 'We’re sorry…' },
+	{ image: 'mario.png', title: 'Sorry, but your page <br>is in another castle' },
+	{ image: 'obiwan.webp', title: 'This is not the page <br>you’re looking for…' },
+	{ image: 'pulp-fiction.webp', title: '…?' }
 ]
 
 export default {
@@ -27,7 +29,10 @@ export default {
 	computed: {
 		error () {
 			const i = Math.floor(Math.random() * errors.length)
-			return errors[i]
+			return {
+				title: errors[i].title,
+				image: require(`@/assets/img/404/${errors[i].image}`)
+			}
 		}
 	}
 }
@@ -60,20 +65,11 @@ export default {
 	margin 4rem auto 0
 	background transparent 50% 50% no-repeat
 	background-size cover
+	overflow hidden
 
-	&.doctor-who
-		background-image url('~@/assets/img/404/doctor-who.gif')
-
-	&.south-park
-		background-image url('~@/assets/img/404/south-park.gif')
-
-	&.mario
-		background-image url('~@/assets/img/404/mario.png')
-
-	&.obiwan
-		background-image url('~@/assets/img/404/obiwan.gif')
-
-	&.pulp-fiction
-		background-image url('~@/assets/img/404/pulp-fiction.gif')
-
+	img
+		display block
+		object-fit cover
+		min-width 100%
+		min-height 100%
 </style>

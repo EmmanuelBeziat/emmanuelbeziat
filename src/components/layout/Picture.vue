@@ -3,7 +3,7 @@
 		<img :src="picture" alt="Emmanuel Béziat" width="220" height="220" loading="lazy" @click="pictureOnClick()">
 
 		<div class="easter-picture" v-if="pictureEasterIsOn">
-			<img src="~@/assets/img/criquette.gif" width="220" height="220" loading="lazy">
+			<img src="~@/assets/img/criquette.webp" width="220" height="220" loading="lazy">
 		</div>
 	</div>
 </template>
@@ -18,7 +18,7 @@ export default {
 
 	computed: {
 		picture () {
-			return this.$route.name === 'NotFound' ? require('@/assets/img/emmanuelb-error.jpg') : require('@/assets/img/emmanuelb.jpg')
+			return this.$route.name === 'NotFound' ? require('@/assets/img/emmanuelb-error.webp') : require('@/assets/img/emmanuelb.webp')
 		}
 	}
 }
