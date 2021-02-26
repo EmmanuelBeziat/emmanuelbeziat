@@ -43,7 +43,7 @@ export default {
 
 	computed: {
 		picture () {
-			return require(`@/assets/img/emmanuelb-draw-${this.hairs}.png`)
+			return require(`@/assets/img/emmanuelb-draw-${this.hairs}.webp`)
 		}
 	},
 
