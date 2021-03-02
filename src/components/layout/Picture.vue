@@ -39,6 +39,8 @@ export default {
 		vertical-align top
 		border-radius 50%
 		max-width 100%
+		@supports (aspect-ratio 1 / 1)
+			aspect-ratio 1 / 1
 
 .easter-picture
 	position absolute
@@ -46,4 +48,6 @@ export default {
 	width 220px
 	left 50%
 	transform translateX(-50%)
+	@supports (aspect-ratio 1 / 1)
+		aspect-ratio 1 / 1
 </style>
