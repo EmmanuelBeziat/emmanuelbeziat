@@ -36,6 +36,8 @@ export default {
 <style lang="stylus" scoped>
 .github-card
 	margin-bottom 1rem
+	@supports (content-visibility auto)
+		content-visibility auto
 
 .card-center
 	text-align center

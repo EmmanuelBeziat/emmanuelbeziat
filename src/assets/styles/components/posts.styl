@@ -4,6 +4,8 @@
 .post-list__item
 	transition .25s 0s
 	background var(--color-background)
+	@supports (content-visibility auto)
+		content-visibility auto
 
 	.post__tags
 		max-width 50%

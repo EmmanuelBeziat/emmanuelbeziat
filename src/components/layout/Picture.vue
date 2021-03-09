@@ -32,6 +32,9 @@ export default {
 	margin 2rem auto
 	position relative
 
+	@supports (content-visibility auto)
+		content-visibility auto
+
 	@media $mq-desktop
 		display none
 

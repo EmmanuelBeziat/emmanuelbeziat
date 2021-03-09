@@ -25,6 +25,9 @@ export default {
 	padding 1em 0
 	display none
 
+	@supports (content-visibility auto)
+		content-visibility auto
+
 	@media $mq-desktop
 		display block
 </style>

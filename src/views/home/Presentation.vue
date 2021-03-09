@@ -81,6 +81,8 @@ export default {
 .card
 	margin-bottom rem(80px)
 	text-align center
+	@supports (content-visibility auto)
+		content-visibility auto
 
 	@media $mq-tablet
 		margin-bottom rem(60px)

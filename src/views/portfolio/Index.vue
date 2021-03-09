@@ -55,6 +55,8 @@ export default {
 
 .thanks
 	font-size var(--font-size-heading-4)
+	@supports (content-visibility auto)
+		content-visibility auto
 
 	.heart
 		fill var(--color-red)

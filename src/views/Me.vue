@@ -69,4 +69,8 @@ export default {
 
 h2
 	font 400 var(--font-size-article-title)/1.25 var(--font-stack-heading)
+
+.me__interview
+	@supports (content-visibility auto)
+		content-visibility auto
 </style>

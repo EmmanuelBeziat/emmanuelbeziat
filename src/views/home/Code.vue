@@ -58,6 +58,8 @@ export default {
 	border-radius .5rem
 	overflow hidden
 	background var(--color-background-dark)
+	@supports (content-visibility auto)
+		content-visibility auto
 
 	@media $mq-tablet
 		margin 0 -1rem
