@@ -1,26 +1,8 @@
 const webpack = require('webpack')
-// const ImageminWebpWebpackPlugin = require('imagemin-webp-webpack-plugin')
 // const BundleAnalyzerPlugin = require('webpack-bundle-analyzer').BundleAnalyzerPlugin
 
 module.exports = {
 	productionSourceMap: false,
-
-	/* configureWebpack: config => {
-		config.module
-			// .rule('/.md$')
-			// .use('raw-loader')
-			.rule('images')
-			.test('/.(png|jpe?g|webp|gif|svg|)$/i')
-			.use('img-optimize-loader')
-			.loader('img-optimize-loader')
-			.options({
-				compress: {
-					// webp: true,
-					disableOnDevelopment: true,
-					svgo: true
-				}
-			})
-	}, */
 
 	configureWebpack: {
 		devtool: 'source-map',
@@ -30,19 +12,6 @@ module.exports = {
 					PACKAGE_JSON: '"' + escape(JSON.stringify(require('./package.json'))) + '"'
 				}
 			}),
-			/* new ImageminWebpWebpackPlugin({
-				config: [{
-					test: /\.(jpe?g|png|gif)/,
-					options: {
-						quality: 75,
-						lossless: false
-					}
-				}],
-				overrideExtension: true,
-				detailedLogs: false,
-				silent: false,
-				strict: true
-			}) */
 			// new BundleAnalyzerPlugin()
 		]
 	},
