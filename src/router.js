@@ -72,6 +72,7 @@ const routes = [
 
 const router = createRouter({
 	history: createWebHistory(process.env.BASE_URL),
+	strict: true,
 	linkActiveClass: '-active',
 	scrollBehavior (to, from, savedPosition) {
 		if (savedPosition) {
