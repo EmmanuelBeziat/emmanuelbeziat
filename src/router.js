@@ -19,7 +19,7 @@ const routes = [
 		}
 	},
 	{
-		path: '/blog/:slug',
+		path: '/blog/:slug/',
 		name: 'Post',
 		component: () => import(/* webpackChunkName: "post" */ '@/views/blog/Single'),
 		props: true,
@@ -36,7 +36,7 @@ const routes = [
 		}
 	},
 	{
-		path: '/portfolio/:slug',
+		path: '/portfolio/:slug/',
 		name: 'Reference',
 		component: () => import(/* webpackChunkName: "ref" */ '@/views/portfolio/Single'),
 		props: true,
@@ -72,7 +72,7 @@ const routes = [
 
 const router = createRouter({
 	history: createWebHistory(process.env.BASE_URL),
-	strict: true,
+	// strict: true,
 	linkActiveClass: '-active',
 	scrollBehavior (to, from, savedPosition) {
 		if (savedPosition) {
