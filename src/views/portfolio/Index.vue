@@ -5,7 +5,7 @@
 				<Reference v-for="ref in references" :key="`ref-${ref.slug}`" :reference="ref" class="showcase__item" />
 			</sequential-entrance>
 
-			<div class="c-note c-note--success">
+			<div class="note --success">
 				<div class="thanks">
 					Et bien d’autres au fil des ans <small>(merci, hé ! <svg class="heart" viewBox="0 0 512 512"><path d="M462.3 62.6C407.5 15.9 326 24.3 275.7 76.2L256 96.5l-19.7-20.3C186.1 24.3 104.5 15.9 49.7 62.6c-62.8 53.6-66.1 149.8-9.9 207.9l193.5 199.8c12.5 12.9 32.8 12.9 45.3 0l193.5-199.8c56.3-58.1 53-154.3-9.8-207.9z" /></svg>)</small>
 				</div>
@@ -17,7 +17,7 @@
 </template>
 
 <script>
-import Reference from '@/views/portfolio/Ref'
+import Reference from '@/views/portfolio/Reference'
 import Loader from '@/components/Loader'
 
 export default {
@@ -46,7 +46,6 @@ export default {
 <style lang="stylus" scoped>
 @require '~@/assets/styles/variables.styl'
 @require '~@/assets/styles/mixins.styl'
-@require '~@/assets/styles/modules/notes.styl'
 
 .showcase__list
 	display grid

@@ -1,10 +1,10 @@
 <template>
 	<section class="me">
-		<div class="me__drawing">
+		<div class="drawing">
 			<img :src="picture" alt="Emmanuel Béziat (Drawing by Marie-Laure Rouzier)" loading="lazy">
 		</div>
 
-		<div class="me__interview">
+		<div class="interview">
 			<h2>Et sinon …?</h2>
 
 			<p>J’ai pas d’idée pour me présenter.</p>
@@ -54,10 +54,7 @@ export default {
 </script>
 
 <style lang="stylus" scoped>
-@require '~@/assets/styles/variables.styl'
-@require '~@/assets/styles/mixins.styl'
-
-.me__drawing
+.drawing
 	text-align center
 	padding 0 2rem
 	max-width 38rem
@@ -70,7 +67,7 @@ export default {
 h2
 	font 400 var(--font-size-article-title)/1.25 var(--font-stack-heading)
 
-.me__interview
+.interview
 	@supports (content-visibility auto)
 		content-visibility auto
 </style>

@@ -3,32 +3,28 @@
 		<header class="post__header">
 			<h1 class="post__title">{{ post.title }}</h1>
 
-			<div class="post__infos">
+			<div class="post-infos">
 				<div class="post__date">Posté le <time>{{ dateFormat(post.date, { year: 'numeric', month: 'long', day: 'numeric' }) }}</time></div>
 
 				<div class="flex">
-					<div class="post__tags">
+					<div class="tags">
 						<Tag v-for="(tag, index) in post.tags" :key="`tag-${index}`" :value="tag" />
 					</div>
 
-					<div class="post__share">
-						<Share />
-					</div>
+					<Share />
 				</div>
 			</div>
 		</header>
 
-		<div class="post__content" v-html="post.markup" />
+		<div class="post-content" v-html="post.markup" />
 
 		<footer class="post__footer">
 			<div class="flex">
-				<div class="post__tags">
+				<div class="tags">
 					<Tag v-for="(tag, index) in post.tags" :key="`tag-${index}`" :value="tag" />
 				</div>
 
-				<div class="post__share">
-					<Share />
-				</div>
+				<Share />
 			</div>
 
 			<div class="post__help">
@@ -59,11 +55,13 @@ export default {
 	computed: {
 		post () {
 			return this.$store.getters['posts/getPost'](this.$props.slug)
-		}
+		},
 	},
 
 	mounted () {
-		window.document.title = `Emmanuel Béziat :: ${this.post.title}`
+		if (this.post) {
+			document.title = `Emmanuel Béziat :: ${this.post.title}`
+		}
 	},
 
 	components: {
@@ -73,7 +71,7 @@ export default {
 }
 </script>
 
-<style lang="stylus">
+<style lang="stylus" scoped>
 @require '~@/assets/styles/variables.styl'
 @require '~@/assets/styles/mixins.styl'
 @require '~@/assets/styles/components/posts.styl'

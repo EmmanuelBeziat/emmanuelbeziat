@@ -7,9 +7,9 @@ Porfolio / Blog / Projects / CV
 
 > This is my website. There are many like these, but this one’s mine. 😊
 
-**Decembre 2020** version is using:
+**May 2021** version is using:
 * [Vue.js](http://v3.vuejs.org/) as a main template pattern
-* [Stylus](http://stylus-lang.com/) for stylesheets with [Kouto-Swiss](http://kouto-swiss.io/) parts
+* [Stylus](http://stylus-lang.com/) for stylesheets
 * [Source Sans Pro](https://github.com/adobe-fonts/source-sans-pro) as a main font, [Yanone Kaffeesatz](https://www.yanone.de/fonts/kaffeesatz/) for titles, and [Source Code Pro](https://github.com/adobe-fonts/source-code-pro) for code parts
 * [Webpack](https://webpack.github.io/docs/) to build and pack everything
 * [Webhook](https://github.com/adnanh/webhook) to deploy everything

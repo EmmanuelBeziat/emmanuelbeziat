@@ -3,32 +3,32 @@
 		<header class="post__header">
 			<h1 class="post__title">{{ reference.title }}</h1>
 
-			<div class="post__infos">
+			<div class="post-infos">
 				<div class="flex">
-					<div class="post__tags">
+					<div class="tags">
 						<Tag v-for="tag in reference.tags" :key="`tag-${tag}`" :value="tag" />
 					</div>
 
-					<div class="post__tags">
+					<div class="tags">
 						<Tag v-for="client in reference.clients" :key="`client-${client}`" :value="client" />
 					</div>
 				</div>
 			</div>
 		</header>
 
-		<div class="post__content" v-html="reference.markup" />
+		<div class="post-content" v-html="reference.markup" />
 
 		<footer class="post__footer">
-			<router-link exact :to="'/portfolio'" class="navigation-previous">
-				<svg viewBox="0 0 128 128"><g><g><line style="stroke-width:12;stroke-linecap:square;stroke-miterlimit:10;" x1="57.12" x2="17.787" y1="103.334" y2="64"/><line style="stroke-width:12;stroke-linecap:square;stroke-miterlimit:10;" x1="17.787" x2="57.12" y1="64" y2="24.666"/></g><line style="stroke-width:12;stroke-miterlimit:10;" x1="17.787" x2="118.213" y1="64" y2="64"/></g></svg>
-				Revenir au portfolio
-			</router-link>
+			<nav class="post-navigation">
+				<Navigation type="previous" :to="{ name: 'Portfolio' }" label="Revenir au portfolio" />
+			</nav>
 		</footer>
 	</article>
 </template>
 
 <script>
 import Tag from '@/components/Tag'
+import Navigation from '@/components/Navigation'
 
 export default {
 	name: 'PortfolioSingle',
@@ -47,11 +47,14 @@ export default {
 	},
 
 	mounted () {
-		window.document.title = `Emmanuel Béziat :: ${this.reference.title}`
+		if (this.reference) {
+			document.title = `Emmanuel Béziat :: ${this.reference.title}`
+		}
 	},
 
 	components: {
-		Tag
+		Tag,
+		Navigation
 	}
 }
 </script>

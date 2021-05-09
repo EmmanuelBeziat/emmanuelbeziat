@@ -7,8 +7,12 @@
 	@supports (content-visibility auto)
 		content-visibility auto
 
-	.post__tags
+	.tags
 		max-width 50%
+		display flex
+		flex-wrap wrap
+		gap 4px
+
 		@media $mq-tablet
 			margin .5em 0
 			max-width none
@@ -17,20 +21,6 @@
 	margin-top 2.5em
 	padding-top 2.5em
 	border-top 1px solid var(--color-separator)
-
-.post-list__top-link
-	float right
-	background var(--color-green)
-	margin-top rem(10px)
-	color var(--color-background)
-	border-radius rem(2px)
-
-	&:hover
-		background var(--color-red)
-		color var(--color-background)
-
-	@media (min-width $breakpoint-mobile)
-		display none
 
 .post
 	[target="_blank"]::after
@@ -71,8 +61,8 @@
 	@media $mq-tablet
 		margin .5em 0
 
-.post__tags
-		margin .5em 0
+.tags
+	margin .5em 0
 
 .post__header
 	margin-bottom 2rem
@@ -97,23 +87,3 @@
 	opacity 0
 	transition .2s ease-in-out
 	transform translateX(-75%)
-
-.navigation-previous svg
-	width 1.25em
-	stroke var(--color-green)
-	transform translate(-4px, 5px)
-	transition transform .25s ease-in-out
-
-.navigation-previous:hover svg
-.navigation-previous:focus svg
-	transform translate(-8px, 5px)
-	stroke var(--color-yellow)
-
-.navigation-next svg
-	transform translate(4px, 5px)
-	transition transform .25s ease-in-out
-
-.navigation-next:hover svg
-.navigation-next:focus svg
-	transform translate(8px, 5px)
-	stroke var(--color-yellow)

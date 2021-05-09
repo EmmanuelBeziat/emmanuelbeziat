@@ -20,9 +20,3 @@ export default {
 	}
 }
 </script>
-
-<style lang="stylus" scoped>
-.presentation
-	.prism-show-language
-		display none
-</style>

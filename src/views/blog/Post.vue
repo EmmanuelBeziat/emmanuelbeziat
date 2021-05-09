@@ -2,10 +2,10 @@
 	<article class="post-list__item post">
 		<h1 class="post__title --small"><router-link :to="{ name: 'Post', params: { slug: post.slug }}">{{ post.title }}</router-link></h1>
 
-		<div class="post__infos flex">
+		<div class="post-infos flex">
 			<div class="post__date">Posté le <time>{{ dateFormat(post.date, { year: 'numeric', month: 'long', day: 'numeric' }) }}</time></div>
 
-			<div class="post__tags">
+			<div class="tags">
 				<Tag v-for="tag in post.tags" :key="`tag-${tag}`" :value="tag" />
 			</div>
 		</div>
@@ -37,5 +37,7 @@ export default {
 </script>
 
 <style lang="stylus" scoped>
+@require '~@/assets/styles/variables.styl'
+@require '~@/assets/styles/mixins.styl'
 @require '~@/assets/styles/components/posts.styl'
 </style>

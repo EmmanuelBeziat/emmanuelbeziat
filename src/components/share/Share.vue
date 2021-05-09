@@ -1,28 +1,28 @@
 <template>
-	<div class="module-share">
+	<div class="share">
 		<span class="sr-only">Partager cet article :</span>
 
 		<template v-if="canShare">
-			<ShareButton icon="share" name="Partager" type="share" @on-click="shareAuto" />
+			<Button icon="native" name="Partager" @on-click="shareNative" />
 		</template>
 
 		<template v-else>
-			<ShareButton icon="twitter" name="Twitter" type="twitter" @on-click="shareManual" />
-			<ShareButton icon="facebook" name="Facebook" type="facebook" @on-click="shareManual" />
-			<ShareButton icon="linkedin" name="LinkedIn" type="linkedin" @on-click="shareManual" />
-			<ShareButton icon="link" name="Copier URL" type="link" @on-click="shareManual" />
+			<Button icon="twitter" name="Twitter" @on-click="shareManual" />
+			<Button icon="facebook" name="Facebook" @on-click="shareManual" />
+			<Button icon="linkedin" name="LinkedIn" @on-click="shareManual" />
+			<Button icon="link" name="Copier URL" @on-click="shareManual" />
 		</template>
 	</div>
 </template>
 
 <script>
-import ShareButton from '@/components/share/ShareButton'
+import Button from '@/components/share/Button'
 
 export default {
 	name: 'Share',
 
 	components: {
-		ShareButton
+		Button
 	},
 
 	computed: {
@@ -41,7 +41,7 @@ export default {
 			return true
 		},
 
-		shareAuto () {
+		shareNative () {
 			navigator.share({
 				title: 'Via @EmmanuelBeziat',
 				text: encodeURIComponent(document.title),
@@ -93,14 +93,7 @@ export default {
 </script>
 
 <style lang="stylus" scoped>
-@require '~@/assets/styles/variables.styl'
-
 .module-share
-	--color-brand-twitter $color-brand-twitter
-	--color-brand-facebook $color-brand-facebook
-	--color-brand-codepen $color-brand-codepen
-	--color-brand-github $color-brand-github
-	--color-brand-linkedin $color-brand-linkedin
 	display flex
 	gap 4px
 </style>

@@ -1,5 +1,5 @@
 <template>
-	<div class="header__picture">
+	<div class="picture">
 		<img :src="picture" alt="Emmanuel Béziat" width="220" height="220" loading="lazy" @click="pictureOnClick()">
 
 		<div class="easter-picture" v-if="pictureEasterIsOn">
@@ -28,7 +28,7 @@ export default {
 @require '~@/assets/styles/variables.styl'
 @require '~@/assets/styles/mixins.styl'
 
-.header__picture
+.picture
 	margin 2rem auto
 	position relative
 

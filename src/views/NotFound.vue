@@ -39,28 +39,26 @@ export default {
 </script>
 
 <style lang="stylus" scoped>
-@require '~@/assets/styles/variables.styl'
-@require '~@/assets/styles/mixins.styl'
-
 .not-found
 	text-align center
 
 .not-found__404
-	font 400 rem(82px)/1 var(--font-stack-heading)
+	font 400 5.125rem/1 var(--font-stack-heading)
 	margin .5em 0 .25em
 	color var(--color-green)
 
 .not-found__title
-	font 400 var--(font-size-heading-2)/1.5 var(--font-stack-heading)
+	font 400 var(--font-size-heading-2)/1.5 var(--font-stack-heading)
 	margin-top 0
 
 .not-found__content
-	max-width rem(280px)
+	max-width 17.5rem
 	text-align justify
 	margin auto
 
 .not-found__image
-	size rem(256px)
+	width 16rem
+	aspect-ratio 1 / 1
 	border-radius 50%
 	margin 4rem auto 0
 	background transparent 50% 50% no-repeat

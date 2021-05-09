@@ -106,7 +106,12 @@ export default {
 ::selection
 	background var(--color-blue)
 	color var(--color-text)
-	text-shadow 0 1px 0 darken($color-blue, 50%)
+	text-shadow 0 1px 0 rgba(0, 0, 0, .5)
+
+@media (prefers-reduced-motion no-preference)
+	:focus
+		transition outline-offset .25s ease
+		outline-offset 5px
 
 html
 	box-sizing border-box

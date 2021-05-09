@@ -6,13 +6,13 @@
 
 		<SocialLinks class="social" />
 
-		<div class="header__bio">
+		<div class="bio">
 			<p>Développeur web front-end passionné de geekeries, de cinéma et de sport</p>
 			<p>Je travaille actuellement chez <a href="https://www.italic.fr/">Italic</a>, une chouette <i lang="en">web-agency</i> à Paris</p>
 			<p>Ex-formateur web (adoré de tous) à l’<a href="https://www.lidem.eu/">IDEM</a>, dans le sud plein de soleil</p>
 		</div>
 
-		<div class="header__copyright">
+		<div class="copyright">
 			<Copyright />
 		</div>
 	</header>
@@ -51,13 +51,13 @@ export default {
 	line-height 1
 	font-weight 400
 
-.header__bio
+.bio
 	margin 2rem 0
 
 	@media $mq-desktop
 		display none
 
-.header__copyright
+.copyright
 	@media $mq-desktop
 		display none
 </style>

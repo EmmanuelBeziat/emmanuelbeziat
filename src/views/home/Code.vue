@@ -2,9 +2,9 @@
 	<div class="cv-code">
 		<div class="cv-code__header">
 			<div class="cv-code__buttons">
-				<span class="fake-btn close" />
-				<span class="fake-btn minify" />
-				<span class="fake-btn expand" />
+				<span class="fake-button --close" />
+				<span class="fake-button --minify" />
+				<span class="fake-button --expand" />
 			</div>
 			<span class="cv-code__title" v-if="code">emmanuel@code: ~/{{ code.slug }} </span>
 		</div>
@@ -74,6 +74,7 @@ export default {
 
 .cv-code__header
 	display flex
+	align-items center
 	background var(--color-background-light)
 	color var(--color-text)
 	text-align center
@@ -84,24 +85,26 @@ export default {
 
 .cv-code__buttons
 	margin-right 1rem
+	display flex
+	gap 6px
 
-	.fake-btn
+	.fake-button
 		width .7rem
 		height .7rem
 		border-radius 50%
-		margin-right 6px
-		display inline-block
+		background var(--bg-button)
 
-	.close
-		background var(--color-red)
-	.minify
-		background var(--color-yellow)
-	.expand
-		background var(--color-green)
+	.--close
+		--bg-button var(--color-red)
+	.--minify
+		--bg-button var(--color-yellow)
+	.--expand
+		--bg-button var(--color-green)
 
 .cv-code__title
 	margin auto
 	transform translateX(-32px)
+
 	@media $mq-desktop
 		margin 0
 		transform none

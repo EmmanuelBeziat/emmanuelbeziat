@@ -31,10 +31,6 @@ export default {
 		this.checkAge('1987-09-16T02:26:00')
 	},
 
-	watch: {
-		$route: 'checkAge'
-	},
-
 	methods: {
 		checkAge (date, format = 'DD.MM.YYYY-HH:mm') {
 			const birthday = dayjs(date)
@@ -109,6 +105,7 @@ export default {
 	font 400 var(--font-size-heading-1)/1 var(--font-stack-heading)
 	color var(--color-green)
 	margin-top .25em
+
 	span
 		white-space nowrap
 
