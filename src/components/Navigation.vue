@@ -47,22 +47,19 @@ export default {
 		margin-right 6px
 
 	&.--previous
-		svg
-			--transform translateX(-4px)
+		--transform translateX(-4px)
 
 		&:hover
 		&:focus
-			svg
-				--transform translateX(-8px)
+			--transform translateX(-8px)
 
 	&.--next
+		--transform translateX(4px)
 		svg
-			--transform translateX(4px)
 			transform var(--transform) rotate(180deg)
 			order 2
 
 		&:hover
 		&:focus
-			svg
-				--transform translateX(8px)
+			--transform translateX(8px)
 </style>
