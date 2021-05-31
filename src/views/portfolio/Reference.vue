@@ -64,6 +64,10 @@ export default {
 	transition .2s ease-in-out
 	backface-visibility hidden
 
+	@supports (aspect-ratio 1 / 1)
+		aspect-ratio 1 / 1
+		height auto
+
 	& :deep(svg)
 		width 128px
 		aspect-ratio 1 / 1
