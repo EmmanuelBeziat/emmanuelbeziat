@@ -42,9 +42,10 @@ export default {
 @require '~@/assets/styles/mixins.styl'
 
 .menu__item
+	--link-color var(--color-text)
 	font 400 var(--font-size-menu)/1 var(--font-stack-heading)
 	text-decoration none
-	color var(--color-text)
+	color var(--link-color)
 	position relative
 
 	@media $mq-tablet
@@ -61,13 +62,18 @@ export default {
 		transition .3s ease-in-out
 		color var(--color-text)
 
+		@media $mq-tablet
+			content none
+
 	&::before
 		content "<"
 		transform translateX(20px)
 		padding-right .125em
 
-		@media $mq-tablet
-			content none
+	&::after
+		content "/>"
+		transform translateX(-20px)
+		padding-left .1875em
 
 	& :deep(svg)
 		display none
@@ -82,59 +88,38 @@ export default {
 		@media $mq-tablet
 			display block
 
-	&::after
-		content "/>"
-		transform translateX(-20px)
-		padding-left .1875em
+	&:hover
+	&:focus
+		color var(--link-color-hover)
 
-		@media $mq-tablet
-			content none
+.-active
+		color var(--link-color-active)
 
 	&[href="/"]
-		&:hover
-		&:focus
-			color var(--color-green)
+		--link-color-hover var(--color-green)
+		--link-color-active var(--color-green)
 
 	&[href="/portfolio"]
-		&:hover
-		&:focus
-			color var(--color-blue)
+		--link-color-hover var(--color-blue)
+		--link-color-active var(--color-blue)
 
 	&[href="/projets"]
-		&:hover
-		&:focus
-			color var(--color-yellow)
+		--link-color-hover var(--color-yellow)
+		--link-color-active var(--color-yellow)
 
 	&[href="/blog"]
-		&:hover
-		&:focus
-			color var(--color-red)
+		--link-color-hover var(--color-red)
+		--link-color-active var(--color-red)
 
 	&[href="/moi"]
-		&:hover
-		&:focus
-			color var(--color-violet)
+		--link-color-hover var(--color-violet)
+		--link-color-active var(--color-violet)
 
 .-active
 	&:hover
 		&::before
 		&::after
-			color inherit
-
-	&[href="/"]
-		color var(--color-green)
-
-	&[href="/portfolio"]
-		color var(--color-blue)
-
-	&[href="/projets"]
-		color var(--color-yellow)
-
-	&[href="/blog"]
-		color var(--color-red)
-
-	&[href="/moi"]
-		color var(--color-violet)
+			color var(--link-color-hover)
 
 .-active
 .menu__item:hover

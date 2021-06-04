@@ -54,7 +54,6 @@ export default {
 .showcase__layer
 	background var(--color-separator)
 	position relative
-	height rem(240px)
 	color var(--color-text)
 	display flex
 	justify-content center
@@ -63,10 +62,7 @@ export default {
 	transform-origin 50% 20px
 	transition .2s ease-in-out
 	backface-visibility hidden
-
-	@supports (aspect-ratio 1 / 1)
-		aspect-ratio 1 / 1
-		height auto
+	aspect-ratio 1 / 1
 
 	& :deep(svg)
 		width 128px
@@ -107,24 +103,25 @@ export default {
 		width rem(240px)
 		aspect-ratio 1 / 1
 		margin auto
+		background var(--showcase-color)
 
 		&.blue
-			background var(--color-blue)
+			--showcase-color var(--color-blue)
 
 		&.red
-			background var(--color-red)
+			--showcase-color var(--color-red)
 
 		&.violet
-			background var(--color-violet)
+			--showcase-color var(--color-violet)
 
 		&.yellow
-			background var(--color-yellow)
+			--showcase-color var(--color-yellow)
 
 		&.green
-			background var(--color-green)
+			--showcase-color var(--color-green)
 
 		&.black
-			background darken($color-grey, 50%)
+			--showcase-color darken($color-grey, 50%)
 
 	.showcase__image
 		transform scale(1.2)
