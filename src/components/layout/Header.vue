@@ -1,5 +1,5 @@
 <template>
-	<header class="header">
+	<header class="header" v-once>
 		<h1 class="header__title"><router-link to="/">Emmanuel Béziat</router-link></h1>
 
 		<Picture />

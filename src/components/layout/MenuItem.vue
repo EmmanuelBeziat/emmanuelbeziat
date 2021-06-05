@@ -61,17 +61,18 @@ export default {
 		opacity 0
 		transition .3s ease-in-out
 		color var(--color-text)
+		content var(--content)
 
 		@media $mq-tablet
-			content none
+			display none
 
 	&::before
-		content "<"
+		--content "<"
 		transform translateX(20px)
 		padding-right .125em
 
 	&::after
-		content "/>"
+		--content "/>"
 		transform translateX(-20px)
 		padding-left .1875em
 

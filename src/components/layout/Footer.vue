@@ -1,5 +1,5 @@
 <template>
-	<footer class="footer">
+	<footer class="footer" v-once>
 		<Copyright />
 	</footer>
 </template>

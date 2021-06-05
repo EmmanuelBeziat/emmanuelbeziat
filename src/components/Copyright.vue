@@ -1,5 +1,5 @@
 <template>
-	<div>© {{ year }} Emmanuel Béziat</div>
+	<div v-once>© {{ year }} Emmanuel Béziat</div>
 </template>
 
 <script>
