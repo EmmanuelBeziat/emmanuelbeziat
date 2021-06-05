@@ -12,7 +12,7 @@ export default {
 
 	props: {
 		value: {
-			type: String,
+			type: [Number, String],
 			required: true
 		},
 		icon: String

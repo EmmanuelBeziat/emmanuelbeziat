@@ -17,6 +17,7 @@
 </template>
 
 <script>
+import { mapGetters } from 'vuex'
 import slug from 'slug'
 import Project from '@/views/projects/Project'
 import Search from '@/components/Search'
@@ -33,8 +34,10 @@ export default {
 	},
 
 	computed: {
+		...mapGetters('projects', ['list']),
+
 		projects () {
-			return this.$store.getters['projects/list'].filter(project => slug(project.name).includes(slug(this.searchTerms.toLowerCase())))
+			return this.list.filter(project => slug(project.name).includes(slug(this.searchTerms.toLowerCase())))
 		}
 	},
 

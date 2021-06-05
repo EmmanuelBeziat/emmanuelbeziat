@@ -20,7 +20,8 @@
 			</div>
 		</div>
 
-		<div class="post__description">{{ project.description }}
+		<div class="post__description">
+			{{ project.description }}
 			<template v-if="project.homepage">
 				— <a :href="project.homepage"> {{ project.homepage }}</a>
 			</template>

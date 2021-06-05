@@ -20,7 +20,7 @@ const actions = {
 
 const mutations = {
 	SET_POSTS (state, codes) {
-		state.codes = codes
+		state.codes = Object.values(codes)
 	}
 }
 

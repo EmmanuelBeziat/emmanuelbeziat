@@ -20,27 +20,23 @@
 </template>
 
 <script>
+import { mapGetters } from 'vuex'
 import Loader from '@/components/Loader'
 
 export default {
 	name: 'Code',
 
 	computed: {
-		codesList () {
-			return this.$store.getters['codes/list']
-		},
+		...mapGetters('codes', ['list']),
 
 		code () {
-			return this.getCode(this.codesList)
+			return this.getCode(this.list)
 		}
 	},
 
 	methods: {
 		getCode (list) {
-			if (list) {
-				const codes = JSON.parse(JSON.stringify(list))
-				return codes[Math.floor(Math.random() * codes.length)]
-			}
+			return list[Math.floor(Math.random() * list.length)] || []
 		}
 	},
 

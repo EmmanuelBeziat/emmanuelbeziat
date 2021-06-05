@@ -1,8 +1,8 @@
 <template>
 	<section class="showcase">
-		<template v-if="references">
+		<template v-if="list">
 			<sequential-entrance animation="entranceFadeIn" delay="25" class="showcase__list">
-				<Reference v-for="ref in references" :key="`ref-${ref.slug}`" :reference="ref" class="showcase__item" />
+				<Reference v-for="ref in list" :key="`ref-${ref.slug}`" :reference="ref" class="showcase__item" />
 			</sequential-entrance>
 
 			<div class="note --success">
@@ -17,6 +17,7 @@
 </template>
 
 <script>
+import { mapGetters } from 'vuex'
 import Reference from '@/views/portfolio/Reference'
 import Loader from '@/components/Loader'
 
@@ -31,9 +32,7 @@ export default {
 	},
 
 	computed: {
-		references () {
-			return this.$store.getters['portfolio/list']
-		}
+		...mapGetters('portfolio', ['list'])
 	},
 
 	components: {

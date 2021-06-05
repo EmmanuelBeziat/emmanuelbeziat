@@ -13,6 +13,7 @@
 </template>
 
 <script>
+import { mapGetters } from 'vuex'
 import slug from 'slug'
 import Search from '@/components/Search'
 import Post from '@/views/blog/Post'
@@ -28,8 +29,10 @@ export default {
 	},
 
 	computed: {
+		...mapGetters('posts', ['list']),
+
 		posts () {
-			return this.$store.getters['posts/list'].filter(post => slug(post.title.toLowerCase()).includes(slug(this.searchTerms.toLowerCase())))
+			return this.list.filter(post => slug(post.title.toLowerCase()).includes(slug(this.searchTerms.toLowerCase())))
 		},
 
 		tagsList () {
