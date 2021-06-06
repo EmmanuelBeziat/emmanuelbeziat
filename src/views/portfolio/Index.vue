@@ -1,8 +1,8 @@
 <template>
 	<section class="showcase">
-		<template v-if="list">
+		<template v-if="references && references.length">
 			<sequential-entrance animation="entranceFadeIn" delay="25" class="showcase__list">
-				<Reference v-for="ref in list" :key="`ref-${ref.slug}`" :reference="ref" class="showcase__item" />
+				<Reference v-for="ref in references" :key="`ref-${ref.slug}`" :reference="ref" class="showcase__item" />
 			</sequential-entrance>
 
 			<div class="note --success">
@@ -12,7 +12,7 @@
 			</div>
 		</template>
 
-		<Loader v-else />
+		<Loader mini v-else />
 	</section>
 </template>
 
@@ -32,7 +32,11 @@ export default {
 	},
 
 	computed: {
-		...mapGetters('portfolio', ['list'])
+		...mapGetters('portfolio', ['list']),
+
+		references () {
+			return this.list
+		}
 	},
 
 	components: {

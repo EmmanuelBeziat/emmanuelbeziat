@@ -11,9 +11,9 @@
 
 		<div class="cv-code__body">
 			<transition mode="out-in" name="fade">
-				<div v-if="code" v-html="code.markup" />
+				<div v-if="code && list.length" v-html="code.markup" />
 
-				<Loader v-else />
+				<Loader mini v-else />
 			</transition>
 		</div>
 	</div>

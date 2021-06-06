@@ -2,13 +2,13 @@
 	<section class="blog">
 		<Search placeholder="Recherche…" label="Rechercher" v-model="searchTerms" />
 
-		<template v-if="posts">
+		<template v-if="posts && posts.length">
 			<transition-group name="list" tag="div" class="post-list">
 				<Post v-for="post in posts" :key="`post-${post.slug}`" :post="post" />
 			</transition-group>
 		</template>
 
-		<Loader v-else />
+		<Loader mini v-else />
 	</section>
 </template>
 

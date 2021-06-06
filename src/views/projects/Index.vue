@@ -6,13 +6,13 @@
 			<GithubCards :cards="{ stats: true, languages: false }" />
 		</keep-alive>
 
-		<template v-if="projects">
+		<template v-if="projects && projects.length">
 			<transition-group name="list" tag="div" class="post-list">
 				<Project v-for="project in projects" :key="`repo-${project.id}`" :project="project" />
 			</transition-group>
 		</template>
 
-		<Loader v-else />
+		<Loader mini v-else />
 	</section>
 </template>
 
