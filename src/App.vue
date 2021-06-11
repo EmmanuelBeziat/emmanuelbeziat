@@ -235,4 +235,6 @@ kbd
 @require '~@/assets/styles/modules/transitions.styl'
 @require '~@/assets/styles/helpers.styl'
 // @require '~@/assets/styles/easters.styl' // maybe someday…
+
+@require '~@/assets/styles/components/posts.styl'
 </style>

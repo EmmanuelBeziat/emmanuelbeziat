@@ -23,10 +23,19 @@
 				<Navigation type="previous" :to="{ name: 'Portfolio' }" label="Revenir au portfolio" />
 			</nav>
 		</footer>
+
+		<Head>
+			<title>Emmanuel Béziat :: {{ reference.title }} — Portfolio</title>
+			<meta property="og:title" :content="`Emmanuel Béziat :: ${reference.title} — Portfolio`">
+			<meta property="og:url" :content="fullURL">
+		</Head>
 	</article>
 </template>
 
 <script>
+import { openGraph } from '@/config'
+import { Head } from '@vueuse/head'
+
 import Tag from '@/components/Tag'
 import Navigation from '@/components/Navigation'
 
@@ -40,21 +49,22 @@ export default {
 		}
 	},
 
+	data () {
+		return {
+			fullURL: openGraph.url + this.$route.fullPath
+		}
+	},
+
 	computed: {
 		reference () {
 			return this.$store.getters['portfolio/getRef'](this.$props.slug)
 		}
 	},
 
-	mounted () {
-		if (this.reference) {
-			document.title = `Emmanuel Béziat :: ${this.reference.title}`
-		}
-	},
-
 	components: {
 		Tag,
-		Navigation
+		Navigation,
+		Head
 	}
 }
 </script>

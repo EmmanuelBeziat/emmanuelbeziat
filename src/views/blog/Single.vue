@@ -31,10 +31,22 @@
 				Un problème ? Une question ? <br>Vous pouvez me contacter sur <a href="https://www.twitter.com/EmmanuelBeziat" target="_blank" rel="noopener">Twitter</a>, poster un ticket sur <a href="https://github.com/EmmanuelBeziat/emmanuelbeziat/issues" target="_blank" rel="noopener">Github</a>, ou bien créer un sujet sur un forum d’entraide comme <a href="https://zestedesavoir.com/" target="_blank" rel="noopener">ZesteDeSavoir</a>, <a href="https://openclassrooms.com/forum/" target="_blank" rel="noopener">OpenClassrooms</a>, <a href="http://www.alsacreations.com/" target="_blank" rel="noopener">Alsacréations</a>…
 			</div>
 		</footer>
+
+		<Head>
+			<title>Emmanuel Béziat :: {{ post.title }} — Blog</title>
+			<meta property="og:title" :content="`Emmanuel Béziat :: ${post.title} — Blog`">
+			<meta property="og:url" :content="fullURL">
+			<meta property="og:image" :content="post.image">
+			<meta property="og:description" :content="post.description">
+			<meta name="description" :content="post.description">
+		</Head>
 	</article>
 </template>
 
 <script>
+import { openGraph } from '@/config'
+import { Head } from '@vueuse/head'
+
 import scroll from '@/plugins/mixins/scroll'
 import dateFormat from '@/plugins/mixins/date'
 import Share from '@/components/share/Share'
@@ -52,27 +64,22 @@ export default {
 		}
 	},
 
+	data () {
+		return {
+			fullURL: openGraph.url + this.$route.fullPath
+		}
+	},
+
 	computed: {
 		post () {
 			return this.$store.getters['posts/getPost'](this.$props.slug)
 		},
 	},
 
-	mounted () {
-		if (this.post) {
-			document.title = `Emmanuel Béziat :: ${this.post.title}`
-		}
-	},
-
 	components: {
 		Share,
-		Tag
+		Tag,
+		Head
 	}
 }
 </script>
-
-<style lang="stylus" scoped>
-@require '~@/assets/styles/variables.styl'
-@require '~@/assets/styles/mixins.styl'
-@require '~@/assets/styles/components/posts.styl'
-</style>

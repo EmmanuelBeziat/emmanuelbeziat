@@ -1,4 +1,5 @@
 import { createApp } from 'vue'
+import { createHead } from '@vueuse/head'
 import App from './App'
 import router from './router'
 import store from './store.js'
@@ -11,8 +12,10 @@ store.dispatch('projects/init')
 store.dispatch('portfolio/init')
 
 const app = createApp(App)
+const head = createHead()
 
 app.use(store)
 app.use(router)
+app.use(head)
 app.use(sequentialEntrance)
 app.mount('#app')
