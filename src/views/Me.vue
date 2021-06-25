@@ -23,7 +23,7 @@
 
 			<h2>À quoi tu joues ? 🎮</h2>
 			<p>
-				<img src="https://i1.trueachievements.com/infog-story/760992.png" alt="Xbox" loading="lazy">
+				<img src="https://i2.trueachievements.com/infog-story/760992.png?v=2" alt="Xbox" loading="lazy">
 			</p>
 		</div>
 	</section>
