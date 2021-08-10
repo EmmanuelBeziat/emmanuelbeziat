@@ -52,7 +52,7 @@ export default {
 					h: 'une heure',
 					hh: '%d heures',
 					dd: '%d jours',
-					M: 'un moish',
+					M: 'un mois',
 					MM: '%d mois',
 					y: 'un an',
 					yy: '%d ans'
