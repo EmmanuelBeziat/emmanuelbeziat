@@ -19,3 +19,5 @@ app.use(router)
 app.use(head)
 app.use(sequentialEntrance)
 app.mount('#app')
+
+console.log('%c Made with 🕑 by Emmanuel Béziat', 'background: #233238; color: #eee;')
