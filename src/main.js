@@ -20,4 +20,5 @@ app.use(head)
 app.use(sequentialEntrance)
 app.mount('#app')
 
+/* eslint-disable no-debugger, no-console */
 console.log('%c Made with 🕑 by Emmanuel Béziat', 'background: #233238; color: #eee;')
