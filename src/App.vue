@@ -123,7 +123,7 @@ html
 		background none
 
 	&::-webkit-scrollbar
-		width 8px
+		width 12px
 		background none
 
 	&::-webkit-scrollbar-thumb

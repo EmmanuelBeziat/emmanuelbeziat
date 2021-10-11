@@ -30,7 +30,6 @@ export default {
 	data () {
 		return {
 			namespace: 'portfolio',
-			searchTerms: '',
 			publicPath: process.env.BASE_URL
 		}
 	},
