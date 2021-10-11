@@ -114,9 +114,35 @@ export default {
 		outline-offset 5px
 
 html
+	--color-thumb var(--color-green)
 	box-sizing border-box
-	overflow-y scroll
 	scroll-behavior smooth
+	scrollbar-gutter stable
+
+	&::-webkit-scrollbar-track
+		background none
+
+	&::-webkit-scrollbar
+		width 8px
+		background none
+
+	&::-webkit-scrollbar-thumb
+		border 2px solid var(--color-background)
+		border-radius .5rem
+		transition .25s ease-in-out
+		background var(--color-thumb)
+
+	&.portfolio
+		--color-thumb var(--color-blue)
+
+	&.projects
+		--color-thumb var(--color-yellow)
+
+	&.blog
+		--color-thumb var(--color-red)
+
+	&.me
+		--color-thumb var(--color-violet)
 
 	@media (prefers-reduced-motion reduce)
 		scroll-behavior auto
@@ -205,6 +231,7 @@ kbd
 	min-height 100vh
 	overflow-x hidden
 	display grid
+	grid-template-areas "header content"
 	grid-template-columns 20rem auto
 
 	@media $mq-desktop
@@ -217,6 +244,7 @@ kbd
 	padding 2rem
 	width 50rem
 	margin 0 auto
+	grid-area content
 
 	@media $mq-desktop
 		width auto

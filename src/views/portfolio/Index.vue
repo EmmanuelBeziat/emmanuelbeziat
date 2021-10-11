@@ -20,12 +20,16 @@
 import { mapGetters } from 'vuex'
 import Reference from '@/views/portfolio/Reference'
 import Loader from '@/components/Loader'
+import namespace from '@/plugins/mixins/namespace'
 
 export default {
 	name: 'Portfolio',
 
+	mixins: [namespace],
+
 	data () {
 		return {
+			namespace: 'portfolio',
 			searchTerms: '',
 			publicPath: process.env.BASE_URL
 		}
@@ -42,7 +46,7 @@ export default {
 	components: {
 		Reference,
 		Loader
-	},
+	}
 }
 </script>
 

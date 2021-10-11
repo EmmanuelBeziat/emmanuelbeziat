@@ -18,3 +18,9 @@ export default {
 	}
 }
 </script>
+
+<style lang="stylus" scoped>
+.skip-link
+	position absolute
+	z-index 10
+</style>

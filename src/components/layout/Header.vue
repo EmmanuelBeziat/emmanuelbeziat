@@ -44,6 +44,7 @@ export default {
 	position relative
 	z-index 10
 	text-align center
+	grid-area header
 
 .header__title
 	margin 0

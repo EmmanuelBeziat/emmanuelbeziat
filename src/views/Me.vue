@@ -31,12 +31,16 @@
 
 <script>
 import GithubCards from '@/components/GithubCards'
+import namespace from '@/plugins/mixins/namespace'
 
 export default {
 	name: 'Me',
 
+	mixins: [namespace],
+
 	data () {
 		return {
+			namespace: 'me',
 			hairs: 'mid'
 		}
 	},

@@ -38,9 +38,12 @@ import { Head } from '@vueuse/head'
 
 import Tag from '@/components/Tag'
 import Navigation from '@/components/Navigation'
+import namespace from '@/plugins/mixins/namespace'
 
 export default {
 	name: 'PortfolioSingle',
+
+	mixins: [namespace],
 
 	props: {
 		slug: {
@@ -51,6 +54,7 @@ export default {
 
 	data () {
 		return {
+			namespace: 'portfolio',
 			fullURL: openGraph.url + this.$route.fullPath
 		}
 	},

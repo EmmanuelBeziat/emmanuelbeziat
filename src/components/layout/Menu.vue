@@ -39,6 +39,7 @@ export default {
 @require '~@/assets/styles/mixins.styl'
 
 .menu
+	grid-area menu
 	display flex
 	justify-content flex-end
 

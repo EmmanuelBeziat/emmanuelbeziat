@@ -18,12 +18,16 @@ import slug from 'slug'
 import Search from '@/components/Search'
 import Post from '@/views/blog/Post'
 import Loader from '@/components/Loader'
+import namespace from '@/plugins/mixins/namespace'
 
 export default {
 	name: 'Blog',
 
+	mixins: [namespace],
+
 	data () {
 		return {
+			namespace: 'blog',
 			searchTerms: ''
 		}
 	},

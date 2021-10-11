@@ -23,12 +23,16 @@ import Project from '@/views/projects/Project'
 import Search from '@/components/Search'
 import GithubCards from '@/components/GithubCards'
 import Loader from '@/components/Loader'
+import namespace from '@/plugins/mixins/namespace'
 
 export default {
 	name: 'Projects',
 
+	mixins: [namespace],
+
 	data () {
 		return {
+			namespace: 'projects',
 			searchTerms: ''
 		}
 	},

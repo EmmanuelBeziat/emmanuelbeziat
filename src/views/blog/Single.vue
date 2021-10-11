@@ -51,11 +51,12 @@ import scroll from '@/plugins/mixins/scroll'
 import dateFormat from '@/plugins/mixins/date'
 import Share from '@/components/share/Share'
 import Tag from '@/components/Tag'
+import namespace from '@/plugins/mixins/namespace'
 
 export default {
 	name: 'BlogSingle',
 
-	mixins: [scroll, dateFormat],
+	mixins: [scroll, dateFormat, namespace],
 
 	props: {
 		slug: {
@@ -66,6 +67,7 @@ export default {
 
 	data () {
 		return {
+			namespace: 'blog',
 			fullURL: openGraph.url + this.$route.fullPath
 		}
 	},
