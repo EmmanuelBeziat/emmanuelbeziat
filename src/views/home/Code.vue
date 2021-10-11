@@ -59,6 +59,7 @@ export default {
 
 	@media $mq-tablet
 		margin 0 -1rem
+		border-radius 0
 
 	& :deep(pre)
 		margin 0
@@ -78,6 +79,9 @@ export default {
 	border-radius .5rem .5rem 0 0
 	position relative
 	font-family var(--font-stack-code)
+
+	@media $mq-tablet
+		border-radius 0
 
 .cv-code__buttons
 	margin-right 1rem
