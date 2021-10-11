@@ -114,8 +114,11 @@ export default {
 		outline-offset 5px
 
 html
-	--color-thumb var(--color-green)
 	box-sizing border-box
+	scrollbar-gutter stable
+
+body
+	--color-thumb var(--color-green)
 	scroll-behavior smooth
 	scrollbar-gutter stable
 
