@@ -1,10 +1,12 @@
-const webpack = require('webpack')
+const { defineConfig } = require('@vue/cli-service')
+// const webpack = require('webpack')
 // const BundleAnalyzerPlugin = require('webpack-bundle-analyzer').BundleAnalyzerPlugin
 
-module.exports = {
+module.exports = defineConfig({
+	transpileDependencies: true,
 	productionSourceMap: false,
 
-	configureWebpack: {
+	/* configureWebpack: {
 		devtool: 'source-map',
 		plugins: [
 			new webpack.DefinePlugin({
@@ -14,7 +16,7 @@ module.exports = {
 			}),
 			// new BundleAnalyzerPlugin()
 		]
-	},
+	}, */
 
 	pluginOptions: {
 		extendServer: app => {
@@ -58,4 +60,4 @@ module.exports = {
 	devServer: {
 		port: 3033
 	}
-}
+})

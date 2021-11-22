@@ -32,7 +32,7 @@ export default {
 	},
 
 	methods: {
-		checkAge (date, format = 'DD.MM.YYYY-HH:mm') {
+		checkAge (date) {
 			const birthday = dayjs(date)
 			const nextBirthday = dayjs(date).set('year', dayjs().format('YYYY'))
 			const rangeMin = dayjs(nextBirthday).subtract(1, 'month')

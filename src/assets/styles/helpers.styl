@@ -45,18 +45,23 @@
 
 // Video responsive (ratio 16/9)
 .video
-	position relative
-	padding-bottom 56.25%
-	margin 2rem auto
-	height 0
+	@supports not (aspect-ratio: 16/9)
+		position relative
+		padding-bottom 56.25%
+		margin 2rem auto
+		height 0
 
-.video iframe
-	position absolute
-	top 0
-	left 0
-	width 100%
-	height 100%
-	border 0
+	iframe
+		width 100%
+		vertical-align top
+		aspect-ratio 16/9
+
+		@supports not (aspect-ratio: 16/9)
+			position absolute
+			top 0
+			left 0
+			height 100%
+			border 0
 
 .noscript
 	max-width rem(480px)

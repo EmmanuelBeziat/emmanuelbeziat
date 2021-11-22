@@ -54,6 +54,11 @@ pre[class*="language-"]
 		border-radius 0
 
 code[class*="language-"]
+	&::selection
+		background var(--color-red)
+		color var(--color-text)
+		text-shadow 0 1px 0 rgba(0, 0, 0, .5)
+
 	@media $mq-tablet
 		display block
 
@@ -143,8 +148,8 @@ pre[data-line]
 	line-height inherit
 	white-space pre
 
-.line-highlight:before
-.line-highlight[data-end]:after
+.line-highlight::before
+.line-highlight[data-end]::after
 	content attr(data-start)
 	position absolute
 	top .4em
@@ -160,7 +165,7 @@ pre[data-line]
 	text-shadow none
 	box-shadow 0 1px white
 
-.line-highlight[data-end]:after
+.line-highlight[data-end]::after
 	content attr(data-end)
 	top auto
 	bottom .4em

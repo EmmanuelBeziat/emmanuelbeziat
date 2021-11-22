@@ -9,6 +9,8 @@
 import { github } from '@/config'
 
 export default {
+	name: 'GithubCards',
+
 	props: {
 		align: {
 			type: String,

@@ -38,7 +38,7 @@ export default {
 
 	watch: {
 		$route: {
-			handler (to, from) {
+			handler (to) {
 				document.title = `Emmanuel Béziat :: ${to.meta.title}`
 			},
 			immediate: true
@@ -171,6 +171,7 @@ h2
 h3
 	font-size var(--font-size-heading-3)
 	line-height 1.5
+	color var(--color-yellow)
 
 i[lang]
 	font-style normal

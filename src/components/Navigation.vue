@@ -11,7 +11,7 @@
 
 <script>
 export default {
-	name: 'Navigation',
+	name: 'NavigationArrows',
 
 	props: {
 		to: {
