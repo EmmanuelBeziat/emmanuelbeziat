@@ -1,6 +1,6 @@
 <template>
 	<div class="search" role="search">
-		<input class="search__field" :title="placeholder" ref="search" type="search" :placeholder="placeholder" @input="search($event.target.value)" :aria-label="label">
+		<input class="search__field" ref="search" type="search" :placeholder="placeholder" @input="search($event.target.value)" :aria-label="label">
 	</div>
 </template>
 

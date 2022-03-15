@@ -1,5 +1,5 @@
 <template>
-	<a :href="url" :class="`social__item --${name.toLowerCase()}`" :title="name" :aria-label="name">
+	<a :href="url" :class="`social__item --${name.toLowerCase()}`" :aria-label="name">
 		<svg role="img" viewBox="0 0 24 24">
 			<title>{{ name }}</title>
 			<slot />
