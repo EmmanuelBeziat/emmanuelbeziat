@@ -19,7 +19,7 @@
 		<div class="post-content" v-html="reference.markup" />
 
 		<footer class="post__footer">
-			<nav class="post-navigation">
+			<nav class="post-navigation" aria-label="Navigation du portfolio">
 				<Navigation type="previous" :to="{ name: 'Portfolio' }" label="Revenir au portfolio" />
 			</nav>
 		</footer>

@@ -93,7 +93,7 @@ export default {
 </script>
 
 <style lang="stylus" scoped>
-.module-share
+.share
 	display flex
 	gap 4px
 </style>

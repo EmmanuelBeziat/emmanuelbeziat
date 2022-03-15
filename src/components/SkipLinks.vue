@@ -1,5 +1,5 @@
 <template>
-	<nav :id="`access-shortcuts-wrapper-${position}`" class="skip-link">
+	<nav :id="`access-shortcuts-wrapper-${position}`" class="skip-link" :aria-label="label">
 		<a href="#content" :id="`skiplink-go-to-content-from-${position}`" class="sr-only sr-only-focusable">Aller au contenu</a>
 		<a href="#menu" :id="`skiplink-go-to-menu-from-${position}`" class="sr-only sr-only-focusable">Aller au menu</a>
 	</nav>
@@ -14,6 +14,12 @@ export default {
 			type: String,
 			default: 'top',
 			validator: value => ['top', 'bottom'].indexOf(value) !== -1
+		}
+	},
+
+	computed: {
+		label() {
+			return this.position === 'top' ? 'Accès rapide (haut de page)' : 'Accès rapide (bas de page)';
 		}
 	}
 }
