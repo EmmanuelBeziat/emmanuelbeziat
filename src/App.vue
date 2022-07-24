@@ -5,8 +5,6 @@
 		<div class="site-content">
 			<SkipLinks position="top" />
 
-			<ReloadPWA />
-
 			<Menu />
 
 			<main class="main" id="content" tabindex="-1">
@@ -35,7 +33,7 @@ import Header from '@/components/layout/Header.vue'
 import Footer from '@/components/layout/Footer.vue'
 import Menu from '@/components/layout/Menu.vue'
 import SkipLinks from '@/components/SkipLinks.vue'
-import ReloadPWA from '@/components/ReloadPWA.vue'
+// import ReloadPWA from '@/components/ReloadPWA.vue'
 
 useCodesStore().fetch()
 usePostsStore().fetch()
