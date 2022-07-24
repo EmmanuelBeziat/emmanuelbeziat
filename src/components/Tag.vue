@@ -6,18 +6,14 @@
 	</span>
 </template>
 
-<script>
-export default {
-	name: 'Tag',
-
-	props: {
-		value: {
-			type: [Number, String],
-			required: true
-		},
-		icon: String
-	}
-}
+<script setup>
+defineProps({
+	value: {
+		type: [Number, String],
+		required: true
+	},
+	icon: String
+})
 </script>
 
 <style lang="stylus" scoped>

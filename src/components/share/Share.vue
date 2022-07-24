@@ -15,78 +15,61 @@
 	</div>
 </template>
 
-<script>
-import Button from '@/components/share/Button'
+<script setup>
+import Button from '@/components/share/Button.vue'
 
-export default {
-	name: 'Share',
+const canShare = navigator.share
 
-	components: {
-		Button
-	},
+const shareNative = () => {
+	navigator.share({
+		title: 'Via @EmmanuelBeziat',
+		text: encodeURIComponent(document.title),
+		url: encodeURIComponent(window.location.href),
+	})
+}
 
-	computed: {
-		canShare: () => navigator.share
-	},
+const sharePopup = (url, title, width, height) => {
+	const popupWidth = width || 640
+	const popupHeight = height || 320
+	const popupPosX = window.screenX + window.innerWidth / 2 - popupWidth / 2
+	const popupPosY = window.screenY + window.innerHeight / 2 - popupHeight / 2
+	const popup = window.open(url, title, `scrollbars=yes, menubar=0, location=0, status=0, width=${popupWidth}, height=${popupHeight}, top=${popupPosY}, left=${popupPosX}`)
 
-	methods: {
-		sharePopup (url, title, width, height) {
-			const popupWidth = width || 640
-			const popupHeight = height || 320
-			const popupPosX = window.screenX + window.innerWidth / 2 - popupWidth / 2
-			const popupPosY = window.screenY + window.innerHeight / 2 - popupHeight / 2
-			const popup = window.open(url, title, `scrollbars=yes, menubar=0, location=0, status=0, width=${popupWidth}, height=${popupHeight}, top=${popupPosY}, left=${popupPosX}`)
+	popup.focus()
+	return true
+}
 
-			popup.focus()
-			return true
-		},
+const shareManual = social => {
+	let shareUrl = ''
+	const pageUrl = encodeURIComponent(window.location.href)
+	const pageTitle = encodeURIComponent(document.title)
 
-		shareNative () {
-			navigator.share({
-				title: 'Via @EmmanuelBeziat',
-				text: encodeURIComponent(document.title),
-				url: encodeURIComponent(window.location.href),
-			})
-		},
+	switch (social) {
+		case 'twitter':
+			shareUrl = `https://twitter.com/intent/tweet?text=${pageTitle} — ${pageUrl}&via=@EmmanuelBeziat`
+			sharePopup(shareUrl, 'Partager sur Twitter')
+			break
 
-		shareManual (social) {
-			let shareUrl = ''
-			const pageUrl = encodeURIComponent(window.location.href)
-			const pageTitle = encodeURIComponent(document.title)
+		case 'facebook':
+			shareUrl = `https://www.facebook.com/sharer/sharer.php?u=${pageUrl}`
+			sharePopup(shareUrl, 'Partager sur Facebook')
+			break
 
-			switch (social) {
-				case 'twitter':
-					shareUrl = `https://twitter.com/intent/tweet?text=${pageTitle} — ${pageUrl}&via=@EmmanuelBeziat`
-					this.sharePopup(shareUrl, 'Partager sur Twitter')
-					break
+		case 'linkedin':
+			shareUrl = `https://www.linkedin.com/shareArticle?url=${pageUrl}`
+			sharePopup(shareUrl, 'Partager sur LinkedIn')
+			break
 
-				case 'facebook':
-					shareUrl = `https://www.facebook.com/sharer/sharer.php?u=${pageUrl}`
-					this.sharePopup(shareUrl, 'Partager sur Facebook')
-					break
-
-				case 'linkedin':
-					shareUrl = `https://www.linkedin.com/shareArticle?url=${pageUrl}`
-					this.sharePopup(shareUrl, 'Partager sur LinkedIn')
-					break
-
-				case 'link': {
-					const dummyShare = document.createElement('input')
-					document.body.appendChild(dummyShare)
-					dummyShare.value = window.location.href
-					dummyShare.select()
-					document.execCommand('copy')
-					document.body.removeChild(dummyShare)
-					if (this.$notify) {
-						this.$notify({
-							group: 'share',
-							title: 'URL copiée dans le presse papier',
-							text: window.location.href
-						})
-					}
-					break
-				}
+		case 'link': {
+			if (navigator && navigator.clipboard && navigator.clipboard.writeText) {
+				const url = window.location.href
+				navigator.clipboard.writeText(url)
+				alert(`URL "${url}" copiée dans le presse papier`)
 			}
+			else {
+				alert('L’API clipboard n’est pas compatible avec votre navigateur')
+			}
+			break
 		}
 	}
 }

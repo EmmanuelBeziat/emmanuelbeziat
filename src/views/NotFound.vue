@@ -14,7 +14,10 @@
 	</section>
 </template>
 
-<script>
+<script setup>
+import { computed } from 'vue'
+import { useHead } from '@vueuse/head'
+
 const errors = [
 	{ image: 'doctor-who.webp', title: 'What?!' },
 	{ image: 'south-park.webp', title: 'We’re sorry…' },
@@ -22,20 +25,17 @@ const errors = [
 	{ image: 'obiwan.webp', title: 'This is not the page <br>you’re looking for…' },
 	{ image: 'pulp-fiction.webp', title: '…?' }
 ]
-
-export default {
-	name: 'NotFound',
-
-	computed: {
-		error () {
-			const i = Math.floor(Math.random() * errors.length)
-			return {
-				title: errors[i].title,
-				image: require(`@/assets/img/404/${errors[i].image}`)
-			}
-		}
+const error = computed(() => {
+	const i = Math.floor(Math.random() * errors.length)
+	return {
+		title: errors[i].title,
+		image: new URL(`../assets/img/404/${errors[i].image}`, import.meta.url)
 	}
-}
+})
+
+useHead({
+	title: 'Emmanuel Béziat :: Erreur !'
+})
 </script>
 
 <style lang="stylus" scoped>

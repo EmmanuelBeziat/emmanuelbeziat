@@ -21,22 +21,18 @@
 	</router-link>
 </template>
 
-<script>
-export default {
-	name: 'Reference',
-
-	props: {
-		reference: {
-			type: Object,
-			required: true
-		}
+<script setup>
+defineProps({
+	reference: {
+		type: Object,
+		required: true
 	}
-}
+})
 </script>
 
 <style lang="stylus" scoped>
-@require '~@/assets/styles/variables.styl'
-@require '~@/assets/styles/mixins.styl'
+@require '../../assets/styles/variables.styl'
+@require '../../assets/styles/mixins.styl'
 
 .showcase__list
 	display grid

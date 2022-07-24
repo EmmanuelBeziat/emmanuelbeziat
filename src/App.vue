@@ -5,6 +5,8 @@
 		<div class="site-content">
 			<SkipLinks position="top" />
 
+			<ReloadPWA />
+
 			<Menu />
 
 			<main class="main" id="content" tabindex="-1">
@@ -22,40 +24,34 @@
 	</div>
 </template>
 
-<script>
-import Header from '@/components/layout/Header'
-import Footer from '@/components/layout/Footer'
-import Menu from '@/components/layout/Menu'
-import SkipLinks from '@/components/SkipLinks'
+<script setup>
+import { useCodesStore } from './stores/codes'
+import { usePostsStore } from './stores/posts'
+import { usePortfolioStore } from './stores/portfolio'
+import { useProjectsStore } from './stores/projects'
+import { RouterView } from 'vue-router'
 
-export default {
-	components: {
-		Header,
-		Menu,
-		Footer,
-		SkipLinks,
-	},
+import Header from '@/components/layout/Header.vue'
+import Footer from '@/components/layout/Footer.vue'
+import Menu from '@/components/layout/Menu.vue'
+import SkipLinks from '@/components/SkipLinks.vue'
+import ReloadPWA from '@/components/ReloadPWA.vue'
 
-	watch: {
-		$route: {
-			handler (to) {
-				document.title = `Emmanuel Béziat :: ${to.meta.title}`
-			},
-			immediate: true
-		}
-	}
-}
+useCodesStore().fetch()
+usePostsStore().fetch()
+usePortfolioStore().fetch()
+useProjectsStore().fetch()
 </script>
 
 <style lang="stylus">
-@require '~@/assets/styles/variables.styl'
-@require '~@/assets/styles/mixins.styl'
-@require '~@/assets/styles/vendors/normalize.styl'
-@require '~@/assets/styles/vendors/prism.styl'
+@require './assets/styles/variables.styl'
+@require './assets/styles/mixins.styl'
+@require './assets/styles/vendors/normalize.styl'
+@require './assets/styles/vendors/prism.styl'
 
-@require '~@/assets/fonts/jetbrains-mono/jetbrains-mono.styl'
-@require '~@/assets/fonts/source-sans-pro/source-sans-pro.styl'
-@require '~@/assets/fonts/yanone-kaffeesatz/yanone-kaffeesatz.styl'
+@require './assets/fonts/jetbrains-mono/jetbrains-mono.styl'
+@require './assets/fonts/source-sans-pro/source-sans-pro.styl'
+@require './assets/fonts/yanone-kaffeesatz/yanone-kaffeesatz.styl'
 
 :root
 	// Colors
@@ -116,6 +112,7 @@ export default {
 html
 	box-sizing border-box
 	scrollbar-gutter stable
+	scroll-behavior smooth
 
 body
 	--color-thumb var(--color-green)
@@ -263,10 +260,10 @@ kbd
 	@media $mq-desktop
 		margin 2rem auto
 
-@require '~@/assets/styles/modules/notes.styl'
-@require '~@/assets/styles/modules/transitions.styl'
-@require '~@/assets/styles/helpers.styl'
-// @require '~@/assets/styles/easters.styl' // maybe someday…
+@require './assets/styles/modules/notes.styl'
+@require './assets/styles/modules/transitions.styl'
+@require './assets/styles/helpers.styl'
+// @require './assets/styles/easters.styl' // maybe someday…
 
-@require '~@/assets/styles/components/posts.styl'
+@require './assets/styles/components/posts.styl'
 </style>

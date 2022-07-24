@@ -9,24 +9,20 @@
 	</router-link>
 </template>
 
-<script>
-export default {
-	name: 'NavigationArrows',
-
-	props: {
-		to: {
-			type: [String, Object],
-			required: true
-		},
-		type: {
-			type: String,
-			default: 'previous'
-		},
-		label: {
-			type: String
-		}
+<script setup>
+defineProps({
+	to: {
+		type: [String, Object],
+		required: true
+	},
+	type: {
+		type: String,
+		default: 'previous'
+	},
+	label: {
+		type: String
 	}
-}
+})
 </script>
 
 <style lang="stylus" scoped>

@@ -41,29 +41,20 @@ export const easterSearch = {
 	}
 }
 
-export const easterPicture = {
-	data () {
-		return {
-			pictureCount: 0,
-			pictureEasterIsOn: false
-		}
-	},
+import { ref } from 'vue'
+export const easterPicture = () => {
+	const pictureCount = ref(0)
+	const pictureEasterIsOn = ref(false)
 
-	mounted () {
-		this.pictureCount = 0
-	},
+	const pictureOnClick = () => {
+		pictureCount.value += 1
 
-	methods: {
-		pictureOnClick () {
-			this.pictureCount += 1
-
-			if (this.pictureCount === 5) {
-				this.pictureEasterIsOn = true
-				setTimeout(() => {
-					this.pictureEasterIsOn = false
-					this.pictureCount = 0
-				}, 1920)
-			}
+		if (pictureCount.value === 5) {
+			pictureEasterIsOn.value = true
+			setTimeout(() => {
+				pictureEasterIsOn.value = false
+				pictureCount.value = 0
+			}, 1920)
 		}
 	}
 }

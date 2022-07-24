@@ -1,6 +1,4 @@
-export default {
-	created () {
-		document.body.removeAttribute('class')
-		document.body.classList.add(this.namespace)
-	}
+export const defineNamespace = namespace => {
+	document.body.removeAttribute('class')
+	document.body.classList.add(namespace)
 }

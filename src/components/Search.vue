@@ -1,46 +1,31 @@
 <template>
 	<div class="search" role="search">
-		<input class="search__field" ref="search" type="search" :placeholder="placeholder" @input="search($event.target.value)" :aria-label="label">
+		<input class="search__field" v-focus ref="search" type="search" :placeholder="placeholder" @input="inputSearch($event.target.value)" :aria-label="label">
 	</div>
 </template>
 
-<script>
+<script setup>
+import { ref } from 'vue'
 import { isMobile } from 'mobile-device-detect'
 
-export default {
-	name: 'Search',
-
-	emits: ['update:modelValue'],
-
-	props: {
-		label: {
-			type: String,
-			required: true
-		},
-		placeholder: String
+defineProps({
+	label: {
+		type: String,
+		required: true
 	},
 
-	data () {
-		return {
-			inputValue: this.value
-		}
-	},
+	placeholder: String
+})
 
-	mounted () {
-		if (!isMobile) {
-			this.giveFocus()
-		}
-	},
+const emit = defineEmits(['update:modelValue'])
+const search = ref('search')
 
-	methods: {
-		search (value) {
-			setTimeout(() => this.$emit('update:modelValue', value), 150)
-		},
+const inputSearch = value => {
+	setTimeout(() => emit('update:modelValue', value), 150)
+}
 
-		giveFocus () {
-			this.$refs.search.focus()
-		}
-	}
+const vFocus = {
+	mounted: el => { if (!isMobile) el.focus() }
 }
 </script>
 

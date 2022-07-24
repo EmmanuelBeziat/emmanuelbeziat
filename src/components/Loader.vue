@@ -19,17 +19,13 @@
 	</div>
 </template>
 
-<script>
-export default {
-	name: 'Loader',
-
-	props: {
-		mini: {
-			type: Boolean,
-			default: false
-		}
+<script setup>
+defineProps({
+	mini: {
+		type: Boolean,
+		default: false
 	}
-}
+})
 </script>
 
 <style lang="stylus" scoped>

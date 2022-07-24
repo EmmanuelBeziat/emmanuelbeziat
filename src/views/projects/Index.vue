@@ -6,7 +6,7 @@
 			<GithubCards :cards="{ stats: true, languages: false }" />
 		</keep-alive>
 
-		<template v-if="projects && projects.length">
+		<template v-if="projects">
 			<transition-group name="list" tag="div" class="post-list">
 				<Project v-for="project in projects" :key="`repo-${project.id}`" :project="project" />
 			</transition-group>
@@ -16,40 +16,28 @@
 	</section>
 </template>
 
-<script>
-import { mapGetters } from 'vuex'
+<script setup>
+import { ref, computed, onMounted } from 'vue'
+import { useHead } from '@vueuse/head'
 import slug from 'slug'
-import Project from '@/views/projects/Project'
-import Search from '@/components/Search'
-import GithubCards from '@/components/GithubCards'
-import Loader from '@/components/Loader'
-import namespace from '@/plugins/mixins/namespace'
 
-export default {
-	name: 'Projects',
+import { useProjectsStore } from '@/stores/projects'
+import { defineNamespace } from '@/plugins/mixins/namespace'
 
-	mixins: [namespace],
+import Project from '@/views/projects/Project.vue'
+import Search from '@/components/Search.vue'
+import GithubCards from '@/components/GithubCards.vue'
+import Loader from '@/components/Loader.vue'
 
-	data () {
-		return {
-			namespace: 'projects',
-			searchTerms: ''
-		}
-	},
+const searchTerms = ref('')
+const projectsStore = useProjectsStore()
+const projects = computed(() => projectsStore.list.filter(project => slug(project.name).includes(slug(searchTerms.value.toLowerCase()))))
 
-	computed: {
-		...mapGetters('projects', ['list']),
+onMounted(() => {
+	defineNamespace('projects')
+})
 
-		projects () {
-			return this.list.filter(project => slug(project.name).includes(slug(this.searchTerms.toLowerCase())))
-		}
-	},
-
-	components: {
-		Search,
-		Project,
-		GithubCards,
-		Loader
-	}
-}
+useHead({
+	title: 'Emmanuel Béziat :: Projets'
+})
 </script>

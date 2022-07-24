@@ -4,21 +4,13 @@
 	</footer>
 </template>
 
-<script>
-import Copyright from '@/components/Copyright'
-
-export default {
-	name: 'Footer',
-
-	components: {
-		Copyright
-	}
-}
+<script setup>
+import Copyright from '@/components/Copyright.vue'
 </script>
 
 <style lang="stylus" scoped>
-@require '~@/assets/styles/variables.styl'
-@require '~@/assets/styles/mixins.styl'
+@require '../../assets/styles/variables.styl'
+@require '../../assets/styles/mixins.styl'
 
 .footer
 	text-align center

@@ -9,37 +9,32 @@
 	</router-link>
 </template>
 
-<script>
-export default {
-	name: 'MenuItem',
+<script setup>
+import { computed } from 'vue'
+import { useRoute, useRouter } from 'vue-router'
 
-	props: {
-		to: {
-			type: Object,
-			required: true
-		},
-		exact: {
-			type: Boolean
-		},
-		label: {
-			type: String,
-			required: true
-		}
+const props = defineProps({
+	to: {
+		type: Object,
+		required: true
 	},
+	exact: {
+		type: Boolean
+	},
+	label: {
+		type: String,
+		required: true
+	}
+})
 
-	computed: {
-		isActive () {
-			const path = this.$router.resolve(this.$props.to).path
-			const route = this.$route.path.split('/')[1]
-			return path === '/' + route
-		}
-	},
-}
+const router = useRouter()
+const route = useRoute()
+const isActive = computed(() => router.resolve(props.to).path === '/' + route.path.split('/')[1])
 </script>
 
 <style lang="stylus" scoped>
-@require '~@/assets/styles/variables.styl'
-@require '~@/assets/styles/mixins.styl'
+@require '../../assets/styles/variables.styl'
+@require '../../assets/styles/mixins.styl'
 
 .menu__item
 	--link-color var(--color-text)

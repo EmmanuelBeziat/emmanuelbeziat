@@ -1,5 +1,5 @@
 import { createRouter, createWebHistory } from 'vue-router'
-import Home from '@/views/home/Index'
+import Home from '@/views/home/Index.vue'
 
 const routes = [
 	{
@@ -13,7 +13,7 @@ const routes = [
 	{
 		path: '/blog',
 		name: 'Blog',
-		component: () => import(/* webpackChunkName: "blog" */ '@/views/blog/Index'),
+		component: () => import(/* webpackChunkName: "blog" */ '@/views/blog/Index.vue'),
 		meta: {
 			title: 'Blog'
 		}
@@ -21,7 +21,7 @@ const routes = [
 	{
 		path: '/blog/:slug/',
 		name: 'Post',
-		component: () => import(/* webpackChunkName: "post" */ '@/views/blog/Single'),
+		component: () => import(/* webpackChunkName: "post" */ '@/views/blog/Single.vue'),
 		props: true,
 		meta: {
 			title: 'Blog'
@@ -30,7 +30,7 @@ const routes = [
 	{
 		path: '/portfolio',
 		name: 'Portfolio',
-		component: () => import(/* webpackChunkName: "portfolio" */ '@/views/portfolio/Index'),
+		component: () => import(/* webpackChunkName: "portfolio" */ '@/views/portfolio/Index.vue'),
 		meta: {
 			title: 'Portfolio'
 		}
@@ -38,7 +38,7 @@ const routes = [
 	{
 		path: '/portfolio/:slug/',
 		name: 'Reference',
-		component: () => import(/* webpackChunkName: "ref" */ '@/views/portfolio/Single'),
+		component: () => import(/* webpackChunkName: "ref" */ '@/views/portfolio/Single.vue'),
 		props: true,
 		meta: {
 			title: 'Portfolio'
@@ -47,7 +47,7 @@ const routes = [
 	{
 		path: '/projets',
 		name: 'Projects',
-		component: () => import(/* webpackChunkName: "projects" */ '@/views/projects/Index'),
+		component: () => import(/* webpackChunkName: "projects" */ '@/views/projects/Index.vue'),
 		meta: {
 			title: 'Projets'
 		}
@@ -55,7 +55,7 @@ const routes = [
 	{
 		path: '/moi',
 		name: 'Me',
-		component: () => import(/* webpackChunkName: "me" */ '@/views/Me'),
+		component: () => import(/* webpackChunkName: "me" */ '@/views/Me.vue'),
 		meta: {
 			title: 'À propos de moi…'
 		}
@@ -63,7 +63,7 @@ const routes = [
 	{
 		path: '/:pathMatch(.*)*',
 		name: 'NotFound',
-		component: () => import(/* webpackChunkName: "not-found" */ '@/views/NotFound'),
+		component: () => import(/* webpackChunkName: "not-found" */ '@/views/NotFound.vue'),
 		meta: {
 			title: 'Page non trouvée !'
 		}
@@ -71,7 +71,7 @@ const routes = [
 ]
 
 const router = createRouter({
-	history: createWebHistory(process.env.BASE_URL),
+	history: createWebHistory(import.meta.env.BASE_URL),
 	// strict: true,
 	linkActiveClass: '-active',
 	scrollBehavior (to, from, savedPosition) {

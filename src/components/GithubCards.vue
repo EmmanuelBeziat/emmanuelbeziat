@@ -1,38 +1,32 @@
 <template>
 	<div :class="`github-card card-${align}`">
-		<img :src="github.stats" alt="github stats" loading="lazy" v-if="cards.stats">
-		<img :src="github.languages" alt="Github stats" loading="lazy" v-if="cards.languages">
+		<img :src="card.stats" alt="github stats" loading="lazy" v-if="cards.stats">
+		<img :src="card.languages" alt="Github stats" loading="lazy" v-if="cards.languages">
 	</div>
 </template>
 
-<script>
+<script setup>
+import { ref } from 'vue'
 import { github } from '@/config'
 
-export default {
-	name: 'GithubCards',
-
-	props: {
-		align: {
-			type: String,
-			default: 'center'
-		},
-		cards: {
-			type: Object,
-			default: () => {
-				return {
-					stats: true,
-					languages: true
-				}
-			}
-		}
+defineProps({
+	align: {
+		type: String,
+		default: 'center'
 	},
 
-	data () {
-		return {
-			github
+	cards: {
+		type: Object,
+		default: () => {
+			return {
+				stats: true,
+				languages: true
+			}
 		}
 	}
-}
+})
+
+const card = ref(github)
 </script>
 
 <style lang="stylus" scoped>

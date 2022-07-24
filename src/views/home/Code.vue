@@ -11,7 +11,7 @@
 
 		<div class="cv-code__body">
 			<transition mode="out-in" name="fade">
-				<div v-if="code && list.length" v-html="code.markup" />
+				<div v-if="code" v-html="code.markup" />
 
 				<Loader mini v-else />
 			</transition>
@@ -19,36 +19,18 @@
 	</div>
 </template>
 
-<script>
-import { mapGetters } from 'vuex'
-import Loader from '@/components/Loader'
+<script setup>
+import { computed } from 'vue'
+import { useCodesStore } from '@/stores/codes'
+import Loader from '@/components/Loader.vue'
 
-export default {
-	name: 'Code',
-
-	computed: {
-		...mapGetters('codes', ['list']),
-
-		code () {
-			return this.getCode(this.list)
-		}
-	},
-
-	methods: {
-		getCode (list) {
-			return list[Math.floor(Math.random() * list.length)] || []
-		}
-	},
-
-	components: {
-		Loader
-	}
-}
+const codes = useCodesStore()
+const code = computed(() => codes.list[Math.floor(Math.random() * codes.count)] || [])
 </script>
 
 <style lang="stylus" scoped>
-@require '~@/assets/styles/variables.styl'
-@require '~@/assets/styles/mixins.styl'
+@require '../../assets/styles/variables.styl'
+@require '../../assets/styles/mixins.styl'
 
 .cv-code
 	border-radius .5rem

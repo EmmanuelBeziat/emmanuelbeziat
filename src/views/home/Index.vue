@@ -7,16 +7,20 @@
 	</section>
 </template>
 
-<script>
-import Presentation from '@/views/home/Presentation'
-import CodeHome from '@/views/home/Code'
+<script setup>
+import { onMounted } from 'vue'
+import { useHead } from '@vueuse/head'
 
-export default {
-	name: 'Home',
+import { defineNamespace } from '@/plugins/mixins/namespace'
 
-	components: {
-		Presentation,
-		CodeHome
-	}
-}
+import Presentation from '@/views/home/Presentation.vue'
+import CodeHome from '@/views/home/Code.vue'
+
+onMounted(() => {
+	defineNamespace('home')
+})
+
+useHead({
+	title: 'Emmanuel Béziat'
+})
 </script>

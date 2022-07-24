@@ -24,28 +24,14 @@
 	</nav>
 </template>
 
-<script>
+<script setup>
 import { social } from '@/config'
-import Item from '@/components/layout/SocialItem'
-
-export default {
-	name: 'SocialLinks',
-
-	data () {
-		return {
-			social
-		}
-	},
-
-	components: {
-		Item
-	}
-}
+import Item from '@/components/layout/SocialItem.vue'
 </script>
 
 <style lang="stylus" scoped>
-@require '~@/assets/styles/variables.styl'
-@require '~@/assets/styles/mixins.styl'
+@require '../../assets/styles/variables.styl'
+@require '../../assets/styles/mixins.styl'
 
 .social
 	display flex

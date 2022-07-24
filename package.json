@@ -1,6 +1,6 @@
 {
 	"name": "emmanuelbeziat",
-	"version": "7.0.0",
+	"version": "8.0.0",
 	"description": "My website, 2022 version.",
 	"author": {
 		"name": "Emmanuel Béziat",
@@ -13,38 +13,31 @@
 	},
 	"private": false,
 	"scripts": {
-		"serve": "vue-cli-service serve",
-		"build": "vue-cli-service build",
-		"test:e2e": "vue-cli-service test:e2e",
-		"lint": "vue-cli-service lint"
+		"dev": "vite",
+		"build": "vite build",
+		"preview": "vite preview --port 4173",
+		"lint": "eslint . --ext .vue,.js,.jsx,.cjs,.mjs --fix --ignore-path .gitignore"
 	},
 	"dependencies": {
-    "@vueuse/head": "^0.7.2",
-    "axios": "^0.24.0",
-    "core-js": "^3.8.3",
-    "dayjs": "^1.10.7",
-    "mobile-device-detect": "^0.4.3",
-    "register-service-worker": "^1.7.2",
-    "slug": "^5.1.0",
-    "vue": "^3.2.13",
-    "vue-router": "^4.0.3",
-    "vue3-sequential-entrance": "^2.0.2",
-    "vuex": "^4.0.0"
-  },
-  "devDependencies": {
-    "@babel/core": "^7.12.16",
-    "@babel/eslint-parser": "^7.12.16",
-    "@vue/cli-plugin-babel": "~5.0.0-rc.1",
-    "@vue/cli-plugin-e2e-cypress": "~5.0.0-rc.1",
-    "@vue/cli-plugin-eslint": "~5.0.0-rc.1",
-    "@vue/cli-plugin-pwa": "~5.0.0-rc.1",
-    "@vue/cli-plugin-router": "~5.0.0-rc.1",
-    "@vue/cli-plugin-vuex": "~5.0.0-rc.1",
-    "@vue/cli-service": "~5.0.0-rc.1",
-    "cypress": "^8.3.0",
-    "eslint": "^7.32.0",
-    "eslint-plugin-vue": "^8.0.3",
-    "stylus": "^0.55.0",
-    "stylus-loader": "^6.1.0"
-  }
+		"@vueuse/head": "^0.7.2",
+		"core-js": "^3.8.3",
+		"dayjs": "^1.10.7",
+		"mobile-device-detect": "^0.4.3",
+		"pinia": "^2.0.16",
+		"slug": "^5.1.0",
+		"vue": "^3.2.37",
+		"vue-router": "^4.1.2",
+		"vue3-sequential-entrance": "^2.0.2"
+	},
+	"devDependencies": {
+		"@vitejs/plugin-vue": "^3.0.1",
+		"autoprefixer": "^10.4.7",
+		"eslint": "^8.5.0",
+		"eslint-plugin-vue": "^9.0.0",
+		"stylus": "^0.55.0",
+		"stylus-loader": "^6.1.0",
+		"vite": "^3.0.1",
+		"vite-plugin-pwa": "^0.12.3",
+		"workbox-precaching": "^6.5.3"
+	}
 }

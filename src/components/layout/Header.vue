@@ -18,25 +18,15 @@
 	</header>
 </template>
 
-<script>
-import Picture from '@/components/layout/Picture'
-import SocialLinks from '@/components/layout/Social'
-import Copyright from '@/components/Copyright'
-
-export default {
-	name: 'Header',
-
-	components: {
-		Copyright,
-		SocialLinks,
-		Picture
-	}
-}
+<script setup>
+import Picture from '@/components/layout/Picture.vue'
+import SocialLinks from '@/components/layout/Social.vue'
+import Copyright from '@/components/Copyright.vue'
 </script>
 
 <style lang="stylus" scoped>
-@require '~@/assets/styles/variables.styl'
-@require '~@/assets/styles/mixins.styl'
+@require '../../assets/styles/variables.styl'
+@require '../../assets/styles/mixins.styl'
 
 .header
 	padding 2rem

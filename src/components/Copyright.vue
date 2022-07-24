@@ -2,14 +2,8 @@
 	<div v-once>© {{ year }} Emmanuel Béziat</div>
 </template>
 
-<script>
-export default {
-	name: 'Copyright',
+<script setup>
+import { computed } from 'vue'
 
-	computed: {
-		year () {
-			return Intl.DateTimeFormat(navigator.language, { year: 'numeric' }).format(new Date())
-		}
-	}
-}
+const year = computed(() => Intl.DateTimeFormat(navigator.language, { year: 'numeric' }).format(new Date()))
 </script>

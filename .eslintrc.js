@@ -15,8 +15,8 @@ module.exports = {
 	// plugins: ['vue'],
 	rules: {
 		indent: ['error', 'tab', { 'SwitchCase': 1 }],
-		'no-console': process.env.NODE_ENV === 'production' ? 'warn' : 'off',
-		'no-debugger': process.env.NODE_ENV === 'production' ? 'warn' : 'off',
+		'no-console': import.meta.env.NODE_ENV === 'production' ? 'warn' : 'off',
+		'no-debugger': import.meta.env.NODE_ENV === 'production' ? 'warn' : 'off',
 		'no-return-assign': 0,
 		'no-tabs': 0,
 		'no-undef': 0,

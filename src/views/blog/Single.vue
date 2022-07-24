@@ -35,53 +35,40 @@
 		<Head>
 			<title>Emmanuel Béziat :: {{ post.title }} — Blog</title>
 			<meta property="og:title" :content="`Emmanuel Béziat :: ${post.title} — Blog`">
-			<meta property="og:url" :content="fullURL">
+			<meta property="og:url" :content="fullUrl">
 			<meta property="og:image" :content="post.image">
 			<meta property="og:description" :content="post.description">
-			<meta name="description" :content="post.description">
+			<meta property="description" :content="post.description">
 		</Head>
 	</article>
 </template>
 
-<script>
+<script setup>
+import { computed, ref, onMounted } from 'vue'
 import { openGraph } from '@/config'
+import { useRoute } from 'vue-router'
 import { Head } from '@vueuse/head'
 
-import scroll from '@/plugins/mixins/scroll'
-import dateFormat from '@/plugins/mixins/date'
-import Share from '@/components/share/Share'
-import Tag from '@/components/Tag'
-import namespace from '@/plugins/mixins/namespace'
+import Share from '@/components/share/Share.vue'
+import Tag from '@/components/Tag.vue'
 
-export default {
-	name: 'BlogSingle',
+import { dateFormat } from '@/plugins/mixins/date'
+import { usePostsStore } from '@/stores/posts'
+import { defineNamespace } from '@/plugins/mixins/namespace'
 
-	mixins: [scroll, dateFormat, namespace],
-
-	props: {
-		slug: {
-			type: String,
-			required: true
-		}
-	},
-
-	data () {
-		return {
-			namespace: 'blog',
-			fullURL: openGraph.url + this.$route.fullPath
-		}
-	},
-
-	computed: {
-		post () {
-			return this.$store.getters['posts/getPost'](this.$props.slug)
-		},
-	},
-
-	components: {
-		Share,
-		Tag,
-		Head
+const props = defineProps({
+	slug: {
+		type: String,
+		required: true
 	}
-}
+})
+
+const route = useRoute()
+const fullUrl = ref(openGraph.url + route.fullPath)
+const postsStore = usePostsStore()
+const post = computed(() => postsStore.getPost(props.slug))
+
+onMounted(() => {
+	defineNamespace('blog')
+})
 </script>

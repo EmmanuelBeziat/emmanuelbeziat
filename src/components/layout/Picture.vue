@@ -1,36 +1,44 @@
 <template>
 	<div class="picture">
 		<img :src="picture" alt="Emmanuel Béziat" width="220" height="220" loading="lazy" @click="pictureOnClick()">
-
-		<div class="easter-picture" v-if="pictureEasterIsOn">
-			<img src="~@/assets/img/criquette.webp" width="220" height="220" loading="lazy">
-		</div>
+		<img v-if="pictureEasterIsOn" src="../../assets/img/criquette.webp" width="220" height="220" loading="lazy">
 	</div>
 </template>
 
-<script>
-import { easterPicture } from '@/plugins/mixins/easters'
+<script setup>
+import { ref, computed } from 'vue'
+import { useRoute } from 'vue-router'
+const route = useRoute()
+const picture = computed(() => new URL(`../../assets/img/${route.name === 'NotFound' ? 'emmanuelb-error' : 'emmanuelb'}.webp`, import.meta.url).href)
 
-export default {
-	name: 'Picture',
+const pictureCount = ref(0)
+const pictureEasterIsOn = ref(false)
 
-	mixins: [easterPicture],
+const pictureOnClick = () => {
+	pictureCount.value += 1
 
-	computed: {
-		picture () {
-			return this.$route.name === 'NotFound' ? require('@/assets/img/emmanuelb-error.webp') : require('@/assets/img/emmanuelb.webp')
-		}
+	if (pictureCount.value === 5) {
+		pictureEasterIsOn.value = true
+		setTimeout(() => {
+			pictureEasterIsOn.value = false
+			pictureCount.value = 0
+		}, 1920)
 	}
 }
+
 </script>
 
 <style lang="stylus" scoped>
-@require '~@/assets/styles/variables.styl'
-@require '~@/assets/styles/mixins.styl'
+@require '../../assets/styles/variables.styl'
+@require '../../assets/styles/mixins.styl'
 
 .picture
 	margin 2rem auto
-	position relative
+	display grid
+	grid-template-rows auto
+	grid-template-columns auto
+	grid-template-areas "Picture"
+	justify-content center
 
 	@supports (content-visibility auto)
 		content-visibility auto
@@ -42,13 +50,6 @@ export default {
 		vertical-align top
 		border-radius 50%
 		max-width 100%
+		grid-area Picture
 		aspect-ratio 1 / 1
-
-.easter-picture
-	position absolute
-	top 0
-	width 220px
-	left 50%
-	transform translateX(-50%)
-	aspect-ratio 1 / 1
 </style>

@@ -1,6 +1,6 @@
 <template>
 	<section class="showcase">
-		<template v-if="references && references.length">
+		<template v-if="references">
 			<sequential-entrance animation="entranceFadeIn" delay="25" class="showcase__list">
 				<Reference v-for="ref in references" :key="`ref-${ref.slug}`" :reference="ref" class="showcase__item" />
 			</sequential-entrance>
@@ -16,42 +16,33 @@
 	</section>
 </template>
 
-<script>
-import { mapGetters } from 'vuex'
-import Reference from '@/views/portfolio/Reference'
-import Loader from '@/components/Loader'
-import namespace from '@/plugins/mixins/namespace'
+<script setup>
+import { computed, onMounted } from 'vue'
+import { useHead } from '@vueuse/head'
 
-export default {
-	name: 'Portfolio',
 
-	mixins: [namespace],
+import Reference from '@/views/portfolio/Reference.vue'
+import Loader from '@/components/Loader.vue'
 
-	data () {
-		return {
-			namespace: 'portfolio',
-			publicPath: process.env.BASE_URL
-		}
-	},
+import { usePortfolioStore } from '@/stores/portfolio'
+import { defineNamespace } from '@/plugins/mixins/namespace'
 
-	computed: {
-		...mapGetters('portfolio', ['list']),
+const publicPath = import.meta.env.BASE_URL
+const portfolioStore = usePortfolioStore()
+const references = computed(() => portfolioStore.list)
 
-		references () {
-			return this.list
-		}
-	},
+onMounted(() => {
+	defineNamespace('portfolio')
+})
 
-	components: {
-		Reference,
-		Loader
-	}
-}
+useHead({
+	title: 'Emmanuel Béziat :: Portfolio'
+})
 </script>
 
 <style lang="stylus" scoped>
-@require '~@/assets/styles/variables.styl'
-@require '~@/assets/styles/mixins.styl'
+@require '../../assets/styles/variables.styl'
+@require '../../assets/styles/mixins.styl'
 
 .showcase__list
 	display grid

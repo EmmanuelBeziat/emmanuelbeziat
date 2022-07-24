@@ -32,49 +32,37 @@
 	</article>
 </template>
 
-<script>
+<script setup>
+import { computed, ref, onMounted } from 'vue'
 import { openGraph } from '@/config'
+import { useRoute } from 'vue-router'
 import { Head } from '@vueuse/head'
 
-import Tag from '@/components/Tag'
-import Navigation from '@/components/Navigation'
-import namespace from '@/plugins/mixins/namespace'
+import Tag from '@/components/Tag.vue'
+import Navigation from '@/components/Navigation.vue'
 
-export default {
-	name: 'PortfolioSingle',
+import { usePortfolioStore } from '@/stores/portfolio'
+import { defineNamespace } from '@/plugins/mixins/namespace'
 
-	mixins: [namespace],
-
-	props: {
-		slug: {
-			type: String,
-			required: true
-		}
-	},
-
-	data () {
-		return {
-			namespace: 'portfolio',
-			fullURL: openGraph.url + this.$route.fullPath
-		}
-	},
-
-	computed: {
-		reference () {
-			return this.$store.getters['portfolio/getRef'](this.$props.slug)
-		}
-	},
-
-	components: {
-		Tag,
-		Navigation,
-		Head
+const props = defineProps({
+	slug: {
+		type: String,
+		required: true
 	}
-}
+})
+
+const route = useRoute()
+const fullURL = ref(openGraph.url + route.fullPath)
+const portfolioStore = usePortfolioStore()
+const reference = computed(() => portfolioStore.getRef(props.slug))
+
+onMounted(() => {
+	defineNamespace('portfolio')
+})
 </script>
 
 <style lang="stylus" scoped>
-@require '~@/assets/styles/variables.styl'
-@require '~@/assets/styles/mixins.styl'
-@require '~@/assets/styles/components/posts.styl'
+@require '../../assets/styles/variables.styl'
+@require '../../assets/styles/mixins.styl'
+@require '../../assets/styles/components/posts.styl'
 </style>

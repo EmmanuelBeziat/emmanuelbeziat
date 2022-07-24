@@ -29,30 +29,20 @@
 	</article>
 </template>
 
-<script>
-import Tag from '@/components/Tag'
-import dateFormat from '@/plugins/mixins/date'
+<script setup>
+import { dateFormat } from '@/plugins/mixins/date'
+import Tag from '@/components/Tag.vue'
 
-export default {
-	name: 'Project',
-
-	mixins: [dateFormat],
-
-	props: {
-		project: {
-			type: Object,
-			required: true
-		}
-	},
-
-	components: {
-		Tag
+defineProps({
+	project: {
+		type: Object,
+		required: true
 	}
-}
+})
 </script>
 
 <style lang="stylus" scoped>
-@require '~@/assets/styles/variables.styl'
-@require '~@/assets/styles/mixins.styl'
-@require '~@/assets/styles/components/posts.styl'
+@require '../../assets/styles/variables.styl'
+@require '../../assets/styles/mixins.styl'
+@require '../../assets/styles/components/posts.styl'
 </style>

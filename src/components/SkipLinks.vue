@@ -5,24 +5,18 @@
 	</nav>
 </template>
 
-<script>
-export default {
-	name: 'SkipLinks',
+<script setup>
+import { computed } from '@vue/reactivity';
 
-	props: {
-		position: {
-			type: String,
-			default: 'top',
-			validator: value => ['top', 'bottom'].indexOf(value) !== -1
-		}
-	},
-
-	computed: {
-		label() {
-			return this.position === 'top' ? 'Accès rapide (haut de page)' : 'Accès rapide (bas de page)';
-		}
+const props = defineProps({
+	position: {
+		type: String,
+		default: 'top',
+		validator: value => ['top', 'bottom'].indexOf(value) !== -1
 	}
-}
+})
+
+const label = computed(() => props.position === 'top' ? 'Accès rapide (haut de page)' : 'Accès rapide (bas de page)')
 </script>
 
 <style lang="stylus" scoped>

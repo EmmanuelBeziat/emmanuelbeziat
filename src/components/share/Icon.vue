@@ -5,17 +5,13 @@
 	</svg>
 </template>
 
-<script>
-export default {
-	name: 'ShareIcon',
-
-	props: {
-		title: {
-			type: String,
-			required: true
-		}
+<script setup>
+defineProps({
+	title: {
+		type: String,
+		required: true
 	}
-}
+})
 </script>
 
 <style lang="stylus" scoped>

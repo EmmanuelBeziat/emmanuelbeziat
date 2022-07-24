@@ -22,31 +22,24 @@
 	</button>
 </template>
 
-<script>
-import Icon from '@/components/share/Icon'
-export default {
-	name: 'ShareButton',
+<script setup>
+import Icon from '@/components/share/Icon.vue'
 
-	props: {
-		icon: {
-			type: String,
-			required: true
-		},
-		name: {
-			type: String,
-			required: true
-		}
+defineProps({
+	icon: {
+		type: String,
+		required: true
 	},
-
-	components: {
-		Icon
+	name: {
+		type: String,
+		required: true
 	}
-}
+})
 </script>
 
 <style lang="stylus" scoped>
-@require '~@/assets/styles/variables.styl'
-@require '~@/assets/styles/mixins.styl'
+@require '../../assets/styles/variables.styl'
+@require '../../assets/styles/mixins.styl'
 
 [class^="share__button"]
 	width 36px

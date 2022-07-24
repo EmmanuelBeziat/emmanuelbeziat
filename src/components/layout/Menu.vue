@@ -22,21 +22,13 @@
 	</nav>
 </template>
 
-<script>
-import MenuItem from '@/components/layout/MenuItem'
-
-export default {
-	name: 'Menu',
-
-	components: {
-		MenuItem
-	}
-}
+<script setup>
+import MenuItem from '@/components/layout/MenuItem.vue'
 </script>
 
 <style lang="stylus" scoped>
-@require '~@/assets/styles/variables.styl'
-@require '~@/assets/styles/mixins.styl'
+@require '../../assets/styles/variables.styl'
+@require '../../assets/styles/mixins.styl'
 
 .menu
 	grid-area menu

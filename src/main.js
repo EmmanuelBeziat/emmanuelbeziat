@@ -1,20 +1,15 @@
 import { createApp } from 'vue'
+import { createPinia } from 'pinia'
 import { createHead } from '@vueuse/head'
-import App from './App'
+import App from './App.vue'
 import router from './router'
-import store from './store.js'
 import sequentialEntrance from 'vue3-sequential-entrance'
-import './registerServiceWorker'
-
-store.dispatch('codes/init')
-store.dispatch('posts/init')
-store.dispatch('projects/init')
-store.dispatch('portfolio/init')
 
 const app = createApp(App)
+const pinia = createPinia()
 const head = createHead()
 
-app.use(store)
+app.use(pinia)
 app.use(router)
 app.use(head)
 app.use(sequentialEntrance)

@@ -2,7 +2,7 @@
 	<section class="blog">
 		<Search placeholder="Recherche…" label="Rechercher" v-model="searchTerms" />
 
-		<template v-if="posts && posts.length">
+		<template v-if="posts">
 			<transition-group name="list" tag="div" class="post-list">
 				<Post v-for="post in posts" :key="`post-${post.slug}`" :post="post" />
 			</transition-group>
@@ -12,50 +12,40 @@
 	</section>
 </template>
 
-<script>
-import { mapGetters } from 'vuex'
+<script setup>
+import { ref, computed, onMounted } from 'vue'
+import { usePostsStore } from '@/stores/posts'
+import { useHead } from '@vueuse/head'
 import slug from 'slug'
-import Search from '@/components/Search'
-import Post from '@/views/blog/Post'
-import Loader from '@/components/Loader'
-import namespace from '@/plugins/mixins/namespace'
 
-export default {
-	name: 'Blog',
+import Search from '@/components/Search.vue'
+import Post from '@/views/blog/Post.vue'
+import Loader from '@/components/Loader.vue'
 
-	mixins: [namespace],
+import { defineNamespace } from '@/plugins/mixins/namespace'
 
-	data () {
-		return {
-			namespace: 'blog',
-			searchTerms: ''
-		}
-	},
+const searchTerms = ref('')
+const postsStore = usePostsStore()
 
-	computed: {
-		...mapGetters('posts', ['list']),
+const posts = computed(() => postsStore.list.filter(post => slug(post.title.toLowerCase()).includes(slug(searchTerms.value.toLowerCase()))))
 
-		posts () {
-			return this.list.filter(post => slug(post.title.toLowerCase()).includes(slug(this.searchTerms.toLowerCase())))
-		},
+const tagsList = computed (() => {
+	let tags = []
+	this.posts.forEach(post => tags = [...tags, ...post.tags])
+	return [...new Set(tags)]
+})
 
-		tagsList () {
-			let tags = []
-			this.posts.forEach(post => tags = [...tags, ...post.tags])
-			return [...new Set(tags)]
-		},
+const categoryList = computed (() => {
+	let categories = []
+	this.posts.forEach(post => categories = [...categories, ...post.categories])
+	return [...new Set(categories)]
+})
 
-		categoryList () {
-			let categories = []
-			this.posts.forEach(post => categories = [...categories, ...post.categories])
-			return [...new Set(categories)]
-		}
-	},
+onMounted(() => {
+	defineNamespace('blog')
+})
 
-	components: {
-		Search,
-		Post,
-		Loader
-	}
-}
+useHead({
+	title: 'Emmanuel Béziat :: Blog'
+})
 </script>

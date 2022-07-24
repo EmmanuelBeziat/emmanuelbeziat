@@ -29,32 +29,24 @@
 	</section>
 </template>
 
-<script>
-import GithubCards from '@/components/GithubCards'
-import namespace from '@/plugins/mixins/namespace'
+<script setup>
+import { computed, onMounted } from 'vue'
+import { useHead } from '@vueuse/head'
 
-export default {
-	name: 'Me',
+import { defineNamespace } from '@/plugins/mixins/namespace'
 
-	mixins: [namespace],
+import GithubCards from '@/components/GithubCards.vue'
 
-	data () {
-		return {
-			namespace: 'me',
-			hairs: 'mid'
-		}
-	},
+const hairs = 'mid'
+const picture = computed(() => new URL(`../assets/img/emmanuelb-draw-${hairs}.webp`, import.meta.url).href)
 
-	computed: {
-		picture () {
-			return require(`@/assets/img/emmanuelb-draw-${this.hairs}.webp`)
-		}
-	},
+onMounted(() => {
+	defineNamespace('me')
+})
 
-	components: {
-		GithubCards
-	}
-}
+useHead({
+	title: 'Emmanuel Béziat :: À propos de moi'
+})
 </script>
 
 <style lang="stylus" scoped>

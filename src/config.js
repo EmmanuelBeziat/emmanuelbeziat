@@ -1,4 +1,4 @@
-const env = JSON.parse(unescape(process.env.PACKAGE_JSON || '%7B%7D'))
+const env = JSON.parse(unescape(import.meta.env.PACKAGE_JSON || '%7B%7D'))
 
 export const api = {
 	posts: 'https://rest.emmanuelbeziat.com/posts',

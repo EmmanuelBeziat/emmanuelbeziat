@@ -7,26 +7,23 @@
 	</a>
 </template>
 
-<script>
-export default {
-	name: 'SocialItem',
+<script setup>
+defineProps({
+	name: {
+		type: String,
+		required: true
+	},
 
-	props: {
-		name: {
-			type: String,
-			required: true
-		},
-		url: {
-			type: String,
-			required: true
-		}
+	url: {
+		type: String,
+		required: true
 	}
-}
+})
 </script>
 
 <style lang="stylus" scoped>
-@require '~@/assets/styles/variables.styl'
-@require '~@/assets/styles/mixins.styl'
+@require '../../assets/styles/variables.styl'
+@require '../../assets/styles/mixins.styl'
 
 .social__item
 	display block
