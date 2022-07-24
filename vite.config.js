@@ -19,8 +19,6 @@ const pwa = {
 		theme_color: '#233238',
 		start_url: '/',
 		display: 'standalone',
-		apple_mobile_web_app_capable: 'no',
-		apple_mobile_web_app_status_bar_style: 'white',
 		background_color: '#1f2d32',
 		icons: [
 			{
