@@ -19,7 +19,7 @@ import { useHead } from '@vueuse/head'
 import slug from 'slug'
 
 import Search from '@/components/Search.vue'
-import Post from '@/views/blog/Post.vue'
+import Post from '@/components/Post.vue'
 import Loader from '@/components/Loader.vue'
 
 import { defineNamespace } from '@/plugins/mixins/namespace'

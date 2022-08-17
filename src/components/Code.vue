@@ -29,8 +29,8 @@ const code = computed(() => codes.list[Math.floor(Math.random() * codes.count)] 
 </script>
 
 <style lang="stylus" scoped>
-@require '../../assets/styles/variables.styl'
-@require '../../assets/styles/mixins.styl'
+@require '../assets/styles/variables.styl'
+@require '../assets/styles/mixins.styl'
 
 .cv-code
 	border-radius .5rem

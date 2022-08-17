@@ -21,7 +21,7 @@ import { computed, onMounted } from 'vue'
 import { useHead } from '@vueuse/head'
 
 
-import Reference from '@/views/portfolio/Reference.vue'
+import Reference from '@/components/Reference.vue'
 import Loader from '@/components/Loader.vue'
 
 import { usePortfolioStore } from '@/stores/portfolio'

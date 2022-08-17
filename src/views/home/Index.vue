@@ -13,8 +13,8 @@ import { useHead } from '@vueuse/head'
 
 import { defineNamespace } from '@/plugins/mixins/namespace'
 
-import Presentation from '@/views/home/Presentation.vue'
-import CodeHome from '@/views/home/Code.vue'
+import Presentation from '@/components/Presentation.vue'
+import CodeHome from '@/components/Code.vue'
 
 onMounted(() => {
 	defineNamespace('home')

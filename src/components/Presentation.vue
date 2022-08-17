@@ -71,8 +71,8 @@ export default {
 </script>
 
 <style lang="stylus" scoped>
-@require '../../assets/styles/variables.styl'
-@require '../../assets/styles/mixins.styl'
+@require '../assets/styles/variables.styl'
+@require '../assets/styles/mixins.styl'
 
 .card
 	margin-bottom rem(80px)
