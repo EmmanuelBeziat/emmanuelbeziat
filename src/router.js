@@ -55,7 +55,7 @@ const routes = [
 	{
 		path: '/moi',
 		name: 'Me',
-		component: () => import(/* webpackChunkName: "me" */ '@/views/Me.vue'),
+		component: () => import(/* webpackChunkName: "me" */ '@/views/about/Index.vue'),
 		meta: {
 			title: 'À propos de moi…'
 		}
