@@ -30,9 +30,9 @@ defineProps({
 	width 3rem
 	aspect-ratio 1 / 1
 	color var(--color-text)
-	background var(--color-background-darker)
-	padding .5em
-	border-radius 2px
+	background var(--color-background-dark)
+	padding .55em
+	border-radius 50%
 	transition .5s ease-out
 	overflow hidden
 
@@ -40,6 +40,9 @@ defineProps({
 	&:focus
 		background var(--bg-social-link)
 		transition .2s ease-out
+
+		svg
+			transform scale(.95)
 
 	&.--twitter
 		--bg-social-link $color-brand-twitter
@@ -58,4 +61,5 @@ defineProps({
 
 	svg
 		fill currentColor
+		transition .25s ease-in-out
 </style>
