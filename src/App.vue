@@ -8,11 +8,11 @@
 			<Menu />
 
 			<main class="main" id="content" tabindex="-1">
-				<router-view v-slot="{ Component }">
-					<transition mode="out-in" :name="$route.meta.transition || 'fade'">
+				<RouterView v-slot="{ Component }">
+					<Transition mode="out-in" :name="$route.meta.transition || 'fade'">
 						<component :is="Component" />
-					</transition>
-				</router-view>
+					</Transition>
+				</RouterView>
 			</main>
 
 			<SkipLinks position="bottom" />

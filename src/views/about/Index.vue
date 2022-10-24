@@ -16,9 +16,9 @@
 			<p>C’est mon bureau. Y en a plein comme ça, mais celui-là c’est le mien. 😍</p>
 
 			<h3>Et tu fais quoi ?</h3>
-			<keep-alive>
+			<KeepAlive>
 				<GithubCards align="left" />
-			</keep-alive>
+			</KeepAlive>
 			<p>En gros, surtout du Javascript. Parfois avec Vue.js, parfois sans.</p>
 
 			<h2>À quoi tu joues ? 🎮</h2>

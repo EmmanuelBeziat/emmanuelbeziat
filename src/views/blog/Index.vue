@@ -3,9 +3,9 @@
 		<Search placeholder="Recherche…" label="Rechercher" v-model="searchTerms" />
 
 		<template v-if="posts">
-			<transition-group name="list" tag="div" class="post-list">
+			<TransitionGroup name="list" tag="div" class="post-list">
 				<Post v-for="post in posts" :key="`post-${post.slug}`" :post="post" />
-			</transition-group>
+			</TransitionGroup>
 		</template>
 
 		<Loader mini v-else />
@@ -29,7 +29,7 @@ const postsStore = usePostsStore()
 
 const posts = computed(() => postsStore.list.filter(post => slug(post.title.toLowerCase()).includes(slug(searchTerms.value.toLowerCase()))))
 
-const tagsList = computed (() => {
+/* const tagsList = computed (() => {
 	let tags = []
 	this.posts.forEach(post => tags = [...tags, ...post.tags])
 	return [...new Set(tags)]
@@ -39,7 +39,7 @@ const categoryList = computed (() => {
 	let categories = []
 	this.posts.forEach(post => categories = [...categories, ...post.categories])
 	return [...new Set(categories)]
-})
+}) */
 
 onMounted(() => {
 	defineNamespace('blog')

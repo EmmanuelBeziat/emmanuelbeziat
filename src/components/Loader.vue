@@ -6,6 +6,7 @@
 		</template>
 
 		<svg width="42" viewBox="0 0 52 100">
+			<title>Chargement</title>
 			<circle fill="var(--color-text)" stroke="none" cx="6" cy="50" r="6">
 				<animate attributeName="opacity" dur="1s" values="0;1;0" repeatCount="indefinite" begin="0.1"></animate>
 			</circle>

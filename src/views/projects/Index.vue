@@ -2,14 +2,14 @@
 	<section class="projects">
 		<Search placeholder="Recherche…" label="Rechercher" v-model="searchTerms" />
 
-		<keep-alive>
+		<KeepAlive>
 			<GithubCards :cards="{ stats: true, languages: false }" />
-		</keep-alive>
+		</KeepAlive>
 
 		<template v-if="projects">
-			<transition-group name="list" tag="div" class="post-list">
+			<TransitionGroup name="list" tag="div" class="post-list">
 				<Project v-for="project in projects" :key="`repo-${project.id}`" :project="project" />
-			</transition-group>
+			</TransitionGroup>
 		</template>
 
 		<Loader mini v-else />

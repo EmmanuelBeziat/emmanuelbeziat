@@ -27,7 +27,6 @@ import Loader from '@/components/Loader.vue'
 import { usePortfolioStore } from '@/stores/portfolio'
 import { defineNamespace } from '@/plugins/mixins/namespace'
 
-const publicPath = import.meta.env.BASE_URL
 const portfolioStore = usePortfolioStore()
 const references = computed(() => portfolioStore.list)
 

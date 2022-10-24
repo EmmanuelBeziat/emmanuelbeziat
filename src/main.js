@@ -3,7 +3,7 @@ import { createPinia } from 'pinia'
 import { createHead } from '@vueuse/head'
 import App from './App.vue'
 import router from './router'
-import sequentialEntrance from 'vue3-sequential-entrance'
+import SequentialEntrance from 'vue3-sequential-entrance'
 
 const app = createApp(App)
 const pinia = createPinia()
@@ -12,7 +12,7 @@ const head = createHead()
 app.use(pinia)
 app.use(router)
 app.use(head)
-app.use(sequentialEntrance)
+app.use(SequentialEntrance)
 app.mount('#app')
 
 /* eslint-disable no-debugger, no-console */
