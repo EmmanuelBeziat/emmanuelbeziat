@@ -38,7 +38,7 @@ import { defineNamespace } from '@/plugins/mixins/namespace'
 import GithubCards from '@/components/GithubCards.vue'
 
 const hairs = 'mid'
-const picture = computed(() => new URL(`../assets/img/emmanuelb-draw-${hairs}.webp`, import.meta.url).href)
+const picture = computed(() => new URL(`../../assets/img/emmanuelb-draw-${hairs}.webp`, import.meta.url).href)
 
 onMounted(() => {
 	defineNamespace('me')
