@@ -1,5 +1,4 @@
 <?xml version="1.0" encoding="UTF-8"?>
-
 <clientConfig version="1.1">
   <emailProvider id="emmanuelbeziat.com">
     <domain>emmanuelbeziat.com</domain>
@@ -7,16 +6,16 @@
     <displayShortName>ISPmail</displayShortName>
     <incomingServer type="imap">
       <hostname>mailing.emmanuelbeziat.com</hostname>
-      <port>143</port>
-      <socketType>STARTTLS</socketType>
-      <authentication>password-cleartext</authentication>
+      <port>993</port>
+      <socketType>SSL</socketType>
+      <authentication>password-encrypted</authentication>
       <username>%EMAILADDRESS%</username>
     </incomingServer>
     <outgoingServer type="smtp">
       <hostname>mailing.emmanuelbeziat.com</hostname>
       <port>587</port>
       <socketType>STARTTLS</socketType>
-      <authentication>password-cleartext</authentication>
+      <authentication>password-encrypted</authentication>
       <username>%EMAILADDRESS%</username>
     </outgoingServer>
   </emailProvider>
