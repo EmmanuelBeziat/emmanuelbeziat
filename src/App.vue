@@ -28,6 +28,7 @@ import { usePostsStore } from './stores/posts'
 import { usePortfolioStore } from './stores/portfolio'
 import { useProjectsStore } from './stores/projects'
 import { RouterView } from 'vue-router'
+import { useHead, useSeoMeta } from '@vueuse/head'
 
 import Header from '@/components/layout/Header.vue'
 import Footer from '@/components/layout/Footer.vue'
@@ -39,6 +40,19 @@ useCodesStore().fetch()
 usePostsStore().fetch()
 usePortfolioStore().fetch()
 useProjectsStore().fetch()
+
+useHead({
+	title: 'Hello World',
+	titleTemplate: (title) => `Emmanuel Béziat :: ${title}`,
+})
+
+useSeoMeta({
+	description: 'Portfolio en ligne d’un développeur web du sud. Billets de blogs, tutoriels, astuces, diatribes et réflexions sur le métier, le code et plein d’autres choses.',
+	ogDescription: 'Portfolio en ligne d’un développeur web du sud. Billets de blogs, tutoriels, astuces, diatribes et réflexions sur le métier, le code et plein d’autres choses.',
+	ogImage: `${window.location.origin}/branding/opengraph-longs.jpg`,
+	ogUrl: window.location.origin,
+	ogLocale: 'fr',
+})
 </script>
 
 <style lang="stylus">

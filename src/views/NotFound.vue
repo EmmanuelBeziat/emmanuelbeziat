@@ -34,7 +34,7 @@ const error = computed(() => {
 })
 
 useHead({
-	title: 'Emmanuel Béziat :: Erreur !'
+	title: 'Erreur !'
 })
 </script>
 

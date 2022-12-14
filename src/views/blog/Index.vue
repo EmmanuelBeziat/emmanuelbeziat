@@ -46,6 +46,6 @@ onMounted(() => {
 })
 
 useHead({
-	title: 'Emmanuel Béziat :: Blog'
+	title: 'Blog'
 })
 </script>

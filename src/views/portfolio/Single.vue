@@ -23,12 +23,6 @@
 				<Navigation type="previous" :to="{ name: 'Portfolio' }" label="Revenir au portfolio" />
 			</nav>
 		</footer>
-
-		<Head>
-			<title>Emmanuel Béziat :: {{ reference.title }} — Portfolio</title>
-			<meta property="og:title" :content="`Emmanuel Béziat :: ${reference.title} — Portfolio`">
-			<meta property="og:url" :content="fullURL">
-		</Head>
 	</article>
 </template>
 
@@ -36,7 +30,7 @@
 import { computed, ref, onMounted } from 'vue'
 import { openGraph } from '@/config'
 import { useRoute } from 'vue-router'
-import { Head } from '@vueuse/head'
+import { useHead, useSeoMeta } from '@vueuse/head'
 
 import Tag from '@/components/Tag.vue'
 import Navigation from '@/components/Navigation.vue'
@@ -58,6 +52,15 @@ const reference = computed(() => portfolioStore.getRef(props.slug))
 
 onMounted(() => {
 	defineNamespace('portfolio')
+})
+
+useHead({
+	title: `${reference.value.title} — Portfolio`
+})
+
+useSeoMeta({
+	ogTitle: `${reference.value.title} — Portfolio`,
+	ogUrl: fullURL,
 })
 </script>
 

@@ -31,15 +31,6 @@
 				Un problème ? Une question ? <br>Vous pouvez me contacter sur <a href="https://www.twitter.com/EmmanuelBeziat" target="_blank" rel="noopener noreferrer">Twitter</a>, poster un ticket sur <a href="https://github.com/EmmanuelBeziat/emmanuelbeziat/issues" target="_blank" rel="noopener noreferrer">Github</a>, ou bien créer un sujet sur un forum d’entraide comme <a href="https://zestedesavoir.com/" target="_blank" rel="noopener noreferrer">ZesteDeSavoir</a>, <a href="https://openclassrooms.com/forum/" target="_blank" rel="noopener noreferrer">OpenClassrooms</a>, <a href="http://www.alsacreations.com/" target="_blank" rel="noopener noreferrer">Alsacréations</a>…
 			</div>
 		</footer>
-
-		<Head>
-			<title>Emmanuel Béziat :: {{ post.title }} — Blog</title>
-			<meta property="og:title" :content="`Emmanuel Béziat :: ${post.title} — Blog`">
-			<meta property="og:url" :content="fullUrl">
-			<meta property="og:image" :content="post.image">
-			<meta property="og:description" :content="post.description">
-			<meta property="description" :content="post.description">
-		</Head>
 	</article>
 </template>
 
@@ -47,7 +38,7 @@
 import { computed, ref, onMounted } from 'vue'
 import { openGraph } from '@/config'
 import { useRoute } from 'vue-router'
-import { Head } from '@vueuse/head'
+import { useSeoMeta, useHead } from '@vueuse/head'
 
 import Share from '@/components/share/Share.vue'
 import Tag from '@/components/Tag.vue'
@@ -64,11 +55,23 @@ const props = defineProps({
 })
 
 const route = useRoute()
-const fullUrl = ref(openGraph.url + route.fullPath)
+const fullURL = ref(openGraph.url + route.fullPath)
 const postsStore = usePostsStore()
 const post = computed(() => postsStore.getPost(props.slug))
 
 onMounted(() => {
 	defineNamespace('blog')
+})
+
+useHead({
+	title: `${post.value.title} — Blog`
+})
+
+useSeoMeta({
+	description: post.value.description,
+	ogTitle: `${post.value.title} — Blog`,
+	ogUrl: fullURL,
+	ogImage: post.value.image,
+	ogDescription: post.value.description,
 })
 </script>

@@ -45,7 +45,7 @@ onMounted(() => {
 })
 
 useHead({
-	title: 'Emmanuel Béziat :: À propos de moi'
+	title: 'À propos de moi'
 })
 </script>
 
