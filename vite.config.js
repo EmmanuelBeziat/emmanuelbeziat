@@ -47,6 +47,7 @@ export default defineConfig({
 		port: 3033
 	},
 	build: {
-		outDir: '../site'
+		outDir: '../site',
+		emptyOutDir: true
 	}
 })
