@@ -3,77 +3,65 @@
 		<h1 class="presentation__title">Emmanuel Béziat</h1>
 		<div class="presentation__age"><span>{{ age }} ans</span> ({{ nextBirthday }})</div>
 		<div class="presentation__job">Développeur web <span>front-end</span></div>
-		<div class="presentation__birthday" v-if="isBirthdayMonth">Si vous voulez m’offrir un petit cadeau, <br>vous pouvez consulter ma <a :href="amazonLink">liste de souhaits Amazon</a> !</div>
+		<div class="presentation__birthday" v-if="isBirthdayMonth">Si vous voulez m’offrir un petit cadeau, <br>vous pouvez consulter ma <a :href="personal.amazon">liste de souhaits Amazon</a> !</div>
 	</div>
 </template>
 
-<script>
+<script setup>
+import { personal } from '@/config'
 import dayjs from 'dayjs'
 import fr from 'dayjs/locale/fr'
 import isBetween from 'dayjs/plugin/isBetween'
 import relativeTime from 'dayjs/plugin/relativeTime'
 import updateLocale from 'dayjs/plugin/updateLocale'
 
-export default {
-	name: 'Presentation',
+let age = null
+let nextBirthday = null
+let isBirthdayMonth = false
 
-	data () {
-		return {
-			age: null,
-			nextBirthday: null,
-			isBirthdayMonth: false,
-			amazonLink: 'http://amzn.eu/clQRFv6'
+const checkAge = date => {
+	nextBirthday = dayjs(date).set('year', dayjs().format('YYYY'))
+
+	const birthday = dayjs(date)
+	const rangeMin = dayjs(nextBirthday).subtract(1, 'month')
+	const rangeMax = dayjs(nextBirthday).add(1, 'month')
+
+	dayjs.extend(isBetween)
+	dayjs.extend(updateLocale)
+	dayjs.extend(relativeTime)
+
+	dayjs.updateLocale('fr', {
+		relativeTime: {
+			future: 'pour encore %s',
+			past: 'depuis %s',
+			s: 'quelques secondes',
+			m: 'une minute',
+			mm: '%d minutes',
+			h: 'une heure',
+			hh: '%d heures',
+			dd: '%d jours',
+			M: 'un mois',
+			MM: '%d mois',
+			y: 'un an',
+			yy: '%d ans'
 		}
-	},
+	})
 
-	created () {
-		dayjs.locale(fr)
-		this.checkAge('1987-09-16T02:26:00')
-	},
-
-	methods: {
-		checkAge (date) {
-			const birthday = dayjs(date)
-			const nextBirthday = dayjs(date).set('year', dayjs().format('YYYY'))
-			const rangeMin = dayjs(nextBirthday).subtract(1, 'month')
-			const rangeMax = dayjs(nextBirthday).add(1, 'month')
-
-			dayjs.extend(isBetween)
-			dayjs.extend(updateLocale)
-			dayjs.extend(relativeTime)
-
-			dayjs.updateLocale('fr', {
-				relativeTime: {
-					future: 'pour encore %s',
-					past: 'depuis %s',
-					s: 'quelques secondes',
-					m: 'une minute',
-					mm: '%d minutes',
-					h: 'une heure',
-					hh: '%d heures',
-					dd: '%d jours',
-					M: 'un mois',
-					MM: '%d mois',
-					y: 'un an',
-					yy: '%d ans'
-				}
-			})
-
-			if (dayjs().isBetween(rangeMin, rangeMax)) {
-				this.isBirthdayMonth = true
-			}
-
-			this.age = Math.abs(dayjs(birthday).diff(dayjs(), 'years'))
-			this.nextBirthday = dayjs(nextBirthday).fromNow()
-		}
+	if (dayjs().isBetween(rangeMin, rangeMax)) {
+		isBirthdayMonth = true
 	}
+
+	age = Math.abs(dayjs(birthday).diff(dayjs(), 'years'))
+	nextBirthday = dayjs(nextBirthday).fromNow()
 }
+
+dayjs.locale(fr)
+checkAge(personal.birthday)
 </script>
 
 <style lang="stylus" scoped>
 @require '../assets/styles/variables.styl'
 @require '../assets/styles/mixins.styl'
-
 .card
 	margin-bottom rem(80px)
 	text-align center

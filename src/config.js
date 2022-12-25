@@ -36,3 +36,8 @@ export const github = {
 	stats: 'https://github-readme-stats.vercel.app/api?username=emmanuelbeziat&show_icons=true&theme=dracula&locale=fr&bg_color=233238&hide_border=true&title_color=f77669&text_color=eeeeee&icon_color=c3e88d&count_private=true',
 	languages: 'https://github-readme-stats.vercel.app/api/top-langs/?username=emmanuelbeziat&layout=compact&locale=fr&bg_color=233238&hide_border=true&title_color=f77669&text_color=eeeeee&icon_color=c3e88d'
 }
+
+export const personal = {
+	amazon: 'http://amzn.eu/clQRFv6',
+	birthday: '1987-09-16T02:26:00'
+}
