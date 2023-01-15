@@ -169,7 +169,7 @@ h1
 h2
 h3
 	font-family var(--font-stack-heading)
-	font-weight 200
+	font-weight 300
 	margin 2em 0 .75em
 	line-height 1
 
