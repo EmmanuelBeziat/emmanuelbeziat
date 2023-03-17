@@ -1,0 +1,17 @@
+
+
+Made with ♥ by EmmanuelBeziat
+Twitter: @EmmanuelBeziat
+Github: @EmmanuelBeziat
+
+/* THANKS */
+@leny, @simmstein, @reverland, @ausir0726 and many others! ♥
+
+
+/* SITE */
+March 2023 version is using:
+Vuejs 3 as a main framework and template pattern
+Stylus for stylesheets
+Source Sans Pro as a main font, Yanone Kaffeesatz for titles, and Source Code Pro for code parts
+Vitejs to build and pack everything
+Webhook to deploy everything

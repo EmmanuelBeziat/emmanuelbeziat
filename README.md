@@ -7,7 +7,7 @@ Porfolio / Blog / Projects / CV
 
 > This is my website. There are many like these, but this one’s mine. 😊
 
-**July 2022** version is using:
+**March 2023** version is using:
 * [Vuejs 3](https://vuejs.org/) as a main framework and template pattern
 * [Stylus](http://stylus-lang.com/) for stylesheets
 * [Source Sans Pro](https://github.com/adobe-fonts/source-sans-pro) as a main font, [Yanone Kaffeesatz](https://www.yanone.de/fonts/kaffeesatz/) for titles, and [Source Code Pro](https://github.com/adobe-fonts/source-code-pro) for code parts
