@@ -64,14 +64,15 @@ onMounted(() => {
 })
 
 useHead({
-	title: `${post.value.title} — Blog`
+	// title: post.value ? `${post.value.title} — Blog` : 'Article — Blog'
+	title: `${post.value?.title} — Blog`
 })
 
 useSeoMeta({
-	description: post.value.description,
-	ogTitle: `${post.value.title} — Blog`,
+	description: post.value?.description,
+	ogTitle: `${post.value?.title} — Blog`,
 	ogUrl: fullURL,
-	ogImage: post.value.image,
-	ogDescription: post.value.description,
+	ogImage: post.value?.image,
+	ogDescription: post.value?.description,
 })
 </script>

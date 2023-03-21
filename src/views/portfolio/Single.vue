@@ -55,11 +55,11 @@ onMounted(() => {
 })
 
 useHead({
-	title: `${reference.value.title} — Portfolio`
+	title: `${reference.value?.title} — Portfolio`
 })
 
 useSeoMeta({
-	ogTitle: `${reference.value.title} — Portfolio`,
+	ogTitle: `${reference.value?.title} — Portfolio`,
 	ogUrl: fullURL,
 })
 </script>
