@@ -38,11 +38,11 @@ const pwa = {
 // https://vitejs.dev/config/
 export default defineConfig({
 	plugins: [vue(), VitePWA(pwa)],
-  resolve: {
+	resolve: {
 		alias: {
 			'@': fileURLToPath(new URL('./src', import.meta.url))
-    }
-  },
+		}
+	},
 	server: {
 		port: 3033
 	},
