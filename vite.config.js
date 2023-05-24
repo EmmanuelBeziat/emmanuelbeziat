@@ -47,7 +47,19 @@ export default defineConfig({
 		port: 3033
 	},
 	build: {
+		target: 'es2020',
 		outDir: '../site',
 		emptyOutDir: true
-	}
+	},
+	esbuild: {
+    target: 'es2020'
+  },
+	optimizeDeps: {
+    esbuildOptions: {
+			target: 'es2020',
+			supported: {
+				bigint: true
+			}
+		},
+  },
 })
