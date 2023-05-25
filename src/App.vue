@@ -241,7 +241,7 @@ kbd
 	align-items center
 
 .site
-	min-height 100vh
+	min-height 100dvh
 	overflow-x hidden
 	display grid
 	grid-template-areas "header content"

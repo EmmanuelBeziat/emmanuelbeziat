@@ -47,6 +47,10 @@ useHead({
 	margin .5em 0 .25em
 	color var(--color-green)
 
+	@media (max-width 992px)
+		font-size 3.25rem
+		margin-bottom 2rem
+
 .not-found__title
 	font 400 var(--font-size-heading-2)/1.5 var(--font-stack-heading)
 	margin-top 0
@@ -64,6 +68,9 @@ useHead({
 	background transparent 50% 50% no-repeat
 	background-size cover
 	overflow hidden
+
+	@media (max-width 992px)
+		margin-top 2rem
 
 	img
 		display block

@@ -34,11 +34,6 @@ defineProps({
 @require '../assets/styles/variables.styl'
 @require '../assets/styles/mixins.styl'
 
-.showcase__list
-	display grid
-	grid-template-columns repeat(auto-fit, minmax(240px, 1fr))
-	gap 4px
-
 .showcase__item
 	opacity 0
 	position relative
@@ -46,9 +41,11 @@ defineProps({
 	background var(--color-background-dark)
 	@supports (content-visibility auto)
 		content-visibility auto
-
+	@media (max-width 480px)
+		pointer-events none
 .showcase__layer
 	background var(--color-separator)
+	pointer-events none
 	position relative
 	color var(--color-text)
 	display flex
@@ -61,13 +58,17 @@ defineProps({
 	aspect-ratio 1 / 1
 
 	& :deep(svg)
-		width 128px
-		aspect-ratio 1 / 1
+		width rem(128px)
 		fill currentColor
+		aspect-ratio 1 / 1
 		backface-visibility hidden
 		transition .2s ease-in-out .1s
 
+		@media (max-width 803px)
+			width calc(60%)
+
 .showcase__caption
+	pointer-events none
 	z-index 5
 	position absolute
 	top auto
@@ -96,7 +97,7 @@ defineProps({
 	.showcase__layer
 		transform scale(.4) translateZ(0)
 		border-radius 50%
-		width rem(240px)
+		// width rem(240px)
 		aspect-ratio 1 / 1
 		margin auto
 		background var(--showcase-color)

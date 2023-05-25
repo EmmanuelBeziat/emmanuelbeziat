@@ -48,6 +48,9 @@ useHead({
 	grid-template-columns repeat(auto-fit, minmax(240px, 1fr))
 	gap 4px
 
+	@media (max-width 540px)
+		grid-template-columns repeat(auto-fit, minmax(180px, 1fr))
+
 .thanks
 	font-size var(--font-size-heading-4)
 	@supports (content-visibility auto)
