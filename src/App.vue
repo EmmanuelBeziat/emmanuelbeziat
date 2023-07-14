@@ -106,6 +106,18 @@ useSeoMeta({
 	--font-size-quotes $font-size-quotes
 	--font-size-code $font-size-code
 
+	--transition-xfast .2s
+	--transition-fast .25s
+	--transition-normal .3s
+	--transition-slow .5s
+
+@media (prefers-reduced-motion)
+	:root
+		--transition-xfast 0s
+		--transition-fast 0s
+		--transition-normal 0s
+		--transition-slow 0s
+
 *
 *::before
 *::after
@@ -118,7 +130,7 @@ useSeoMeta({
 
 @media (prefers-reduced-motion no-preference)
 	:focus
-		transition outline-offset .25s ease
+		transition outline-offset var(--transition-fast) ease
 		outline-offset 5px
 
 html
@@ -141,7 +153,7 @@ body
 	&::-webkit-scrollbar-thumb
 		border 2px solid var(--color-background)
 		border-radius .5rem
-		transition .25s ease-in-out
+		transition var(--transition-fast) ease-in-out
 		background var(--color-thumb)
 
 	&.portfolio
@@ -188,7 +200,7 @@ i[lang]
 // Links
 a
 	background-color transparent
-	transition .2s ease-in-out
+	transition var(--transition-xfast) ease-in-out
 	color var(--color-green)
 	text-decoration none
 

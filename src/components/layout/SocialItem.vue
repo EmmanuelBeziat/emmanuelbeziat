@@ -33,13 +33,13 @@ defineProps({
 	background var(--color-background-dark)
 	padding .55em
 	border-radius 50%
-	transition .5s ease-out
+	transition var(--transition-slow) ease-out
 	overflow hidden
 
 	&:hover
 	&:focus
 		background var(--bg-social-link)
-		transition .2s ease-out
+		transition var(--transition-xfast) ease-out
 
 		svg
 			transform scale(.95)
@@ -61,5 +61,5 @@ defineProps({
 
 	svg
 		fill currentColor
-		transition .25s ease-in-out
+		transition var(--transition-fast) ease-in-out
 </style>

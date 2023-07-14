@@ -47,7 +47,7 @@ defineProps({
 	background var(--color-background-darker)
 	color var(--color-text)
 	border-radius 2px
-	transition .5s ease-out
+	transition var(--transition-slow) ease-out
 	overflow hidden
 	padding 0
 	border 0
@@ -57,7 +57,7 @@ defineProps({
 	&:hover
 	&:focus
 		background var(--bg-social-link)
-		transition .2s ease-out
+		transition var(--transition-xfast) ease-out
 
 	&.--twitter
 		--bg-social-link $color-brand-twitter

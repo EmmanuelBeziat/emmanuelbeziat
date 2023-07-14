@@ -39,7 +39,7 @@ defineProps({
 		width 1.25em
 		stroke currentColor
 		transform var(--transform)
-		transition transform .25s ease-in-out
+		transition transform var(--transition-fast) ease-in-out
 		margin-right 6px
 
 	&.--previous

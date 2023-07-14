@@ -53,7 +53,7 @@ defineProps({
 	align-items center
 	z-index 10
 	transform-origin 50% 20px
-	transition .2s ease-in-out
+	transition var(--transition-xfast) ease-in-out
 	backface-visibility hidden
 	aspect-ratio 1 / 1
 
@@ -62,7 +62,7 @@ defineProps({
 		fill currentColor
 		aspect-ratio 1 / 1
 		backface-visibility hidden
-		transition .2s ease-in-out .1s
+		transition var(--transition-xfast) ease-in-out .1s
 
 		@media (max-width 803px)
 			width calc(60%)
@@ -85,7 +85,7 @@ defineProps({
 	opacity 0
 	visibility hidden
 	transform translateY(10px)
-	transition .25s ease-in-out 0s
+	transition var(--transition-fast) ease-in-out 0s
 
 .showcase__title
 	margin 0 0 .35em
@@ -128,7 +128,7 @@ defineProps({
 		opacity 1
 		visibility visible
 		transform translateY(0)
-		transition .25s ease-in-out .1s
+		transition var(--transition-fast) ease-in-out .1s
 
 .showcase-tags
 	display flex

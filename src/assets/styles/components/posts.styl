@@ -2,7 +2,7 @@
 	display grid
 
 .post-list__item
-	transition .25s 0s
+	transition var(--transition-fast) 0s
 	background var(--color-background)
 	@supports (content-visibility auto)
 		content-visibility auto
@@ -42,7 +42,7 @@
 		top .35em
 		opacity 0
 		font-size .65em
-		transition .2s ease-in-out
+		transition var(--transition-xfast) ease-in-out
 		transform translateX(-75%)
 		padding-right 10px
 

@@ -3,7 +3,7 @@
  **/
 .page-enter-active
 .page-leave-active
-	transition .5s ease
+	transition var(--transition-slow) ease
 
 .page-enter
 .page-leave-active
@@ -11,7 +11,7 @@
 
 .fade-enter-active
 .fade-leave-active
-	transition opacity .5s
+	transition opacity var(--transition-slow)
 
 .fade-enter-active
 .fade-enter
@@ -92,7 +92,7 @@
 
 .entranceFadeIn
 	animation-name entranceFadeIn
-	animation-duration .5s
+	animation-duration var(--transition-slow)
 
 @keyframes entranceFadeIn
 	from
