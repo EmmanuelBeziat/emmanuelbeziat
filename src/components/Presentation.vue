@@ -3,12 +3,13 @@
 		<h1 class="presentation__title">Emmanuel Béziat</h1>
 		<div class="presentation__age"><span>{{ age }} ans</span> ({{ nextBirthday }})</div>
 		<div class="presentation__job">Développeur web <span>front-end</span></div>
-		<div class="presentation__birthday" v-if="isBirthdayMonth">Si vous voulez m’offrir un petit cadeau, <br>vous pouvez consulter ma <a :href="personal.amazon">liste de souhaits Amazon</a> !</div>
+		<div class="presentation__birthday" v-if="isBirthdayMonth">Si vous voulez m’offrir un petit cadeau, <br>vous pouvez consulter ma <a :href="amazonList">liste de souhaits Amazon </a>!</div>
 	</div>
 </template>
 
 <script setup>
 import { personal } from '@/config'
+import { computed } from 'vue'
 import dayjs from 'dayjs'
 import fr from 'dayjs/locale/fr'
 import isBetween from 'dayjs/plugin/isBetween'
@@ -18,6 +19,11 @@ import updateLocale from 'dayjs/plugin/updateLocale'
 let age = null
 let nextBirthday = null
 let isBirthdayMonth = false
+
+const amazonList = computed(() => {
+	const i = Math.floor(Math.random() * personal.amazonLists.length)
+	return personal.amazonLists[i].url
+})
 
 const checkAge = date => {
 	nextBirthday = dayjs(date).set('year', dayjs().format('YYYY'))
