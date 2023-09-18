@@ -16,7 +16,8 @@
 		"dev": "vite",
 		"build": "vite build",
 		"preview": "vite preview --port 3033",
-		"lint": "eslint . --ext .vue,.js,.jsx,.cjs,.mjs --fix --ignore-path .gitignore"
+		"lint": "eslint . --ext .vue,.js,.jsx,.cjs,.mjs --fix --ignore-path .gitignore",
+		"test": "cypress run"
 	},
 	"dependencies": {
 		"@vueuse/head": "^1.3.1",
@@ -32,6 +33,8 @@
 	"devDependencies": {
 		"@vitejs/plugin-vue": "^4.2.3",
 		"autoprefixer": "^10.4.15",
+		"cypress": "^13.2.0",
+		"cypress-dotenv": "^2.0.0",
 		"dotenv": "^16.3.1",
 		"eslint": "^8.47.0",
 		"eslint-plugin-vue": "^9.17.0",

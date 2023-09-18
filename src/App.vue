@@ -23,6 +23,7 @@
 </template>
 
 <script setup>
+import { openGraph } from '@/config'
 import { useCodesStore } from './stores/codes'
 import { usePostsStore } from './stores/posts'
 import { usePortfolioStore } from './stores/portfolio'
@@ -43,14 +44,14 @@ useProjectsStore().fetch()
 
 useHead({
 	title: 'Hello World',
-	titleTemplate: (title) => `Emmanuel Béziat :: ${title}`,
+	titleTemplate: (title) => `${openGraph.title} :: ${title}`,
 })
 
 useSeoMeta({
-	description: 'Portfolio en ligne d’un développeur web du sud. Billets de blogs, tutoriels, astuces, diatribes et réflexions sur le métier, le code et plein d’autres choses.',
-	ogDescription: 'Portfolio en ligne d’un développeur web du sud. Billets de blogs, tutoriels, astuces, diatribes et réflexions sur le métier, le code et plein d’autres choses.',
-	ogImage: `${window.location.origin}/branding/opengraph-longs.jpg`,
-	ogUrl: window.location.origin,
+	description: openGraph.description,
+	ogDescription: openGraph.description,
+	ogImage: `${openGraph.url}${openGraph.image}`,
+	ogUrl: openGraph.url,
 	ogLocale: 'fr',
 })
 </script>
@@ -278,7 +279,7 @@ kbd
 		padding 2rem 1rem
 
 .main
-	margin 6rem auto 4rem
+	margin 6rem auto 2rem
 	outline 0
 
 	@media $mq-desktop
