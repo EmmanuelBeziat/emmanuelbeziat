@@ -38,7 +38,7 @@
 import { computed, ref, onMounted } from 'vue'
 import { openGraph } from '@/config'
 import { useRoute } from 'vue-router'
-import { useSeoMeta, useHead } from '@vueuse/head'
+import { useSeoMeta, useHead } from '@unhead/vue'
 
 import Share from '@/components/share/Share.vue'
 import Tag from '@/components/Tag.vue'

@@ -29,7 +29,7 @@ import { usePostsStore } from './stores/posts'
 import { usePortfolioStore } from './stores/portfolio'
 import { useProjectsStore } from './stores/projects'
 import { RouterView } from 'vue-router'
-import { useHead, useSeoMeta } from '@vueuse/head'
+import { useHead, useSeoMeta } from '@unhead/vue'
 
 import Header from '@/components/layout/Header.vue'
 import Footer from '@/components/layout/Footer.vue'

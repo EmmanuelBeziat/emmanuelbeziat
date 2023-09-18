@@ -15,7 +15,7 @@
 <script setup>
 import { ref, computed, onMounted } from 'vue'
 import { usePostsStore } from '@/stores/posts'
-import { useHead } from '@vueuse/head'
+import { useHead } from '@unhead/vue'
 import slug from 'slug'
 
 import Search from '@/components/Search.vue'

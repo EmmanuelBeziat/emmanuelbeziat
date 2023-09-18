@@ -16,7 +16,7 @@
 
 <script setup>
 import { computed } from 'vue'
-import { useHead } from '@vueuse/head'
+import { useHead } from '@unhead/vue'
 
 const errors = [
 	{ image: 'doctor-who.webp', title: 'What?!' },

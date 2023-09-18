@@ -30,7 +30,7 @@
 import { computed, ref, onMounted } from 'vue'
 import { openGraph } from '@/config'
 import { useRoute } from 'vue-router'
-import { useHead, useSeoMeta } from '@vueuse/head'
+import { useHead, useSeoMeta } from '@unhead/vue'
 
 import Tag from '@/components/Tag.vue'
 import Navigation from '@/components/Navigation.vue'

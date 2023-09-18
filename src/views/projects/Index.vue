@@ -18,7 +18,7 @@
 
 <script setup>
 import { ref, computed, onMounted } from 'vue'
-import { useHead } from '@vueuse/head'
+import { useHead } from '@unhead/vue'
 import slug from 'slug'
 
 import { useProjectsStore } from '@/stores/projects'
