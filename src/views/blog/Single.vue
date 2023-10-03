@@ -76,7 +76,3 @@ useSeoMeta({
 	ogDescription: post.value?.description,
 })
 </script>
-
-<style lang="stylus" scoped>
-@require '../assets/styles/modules/transitions.styl'
-</style>
