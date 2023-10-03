@@ -27,3 +27,9 @@ const props = defineProps({
 
 const date = dateFormat(props.post.date, { year: 'numeric', month: 'long', day: 'numeric' })
 </script>
+
+<style lang="stylus" scoped>
+/* @import '../assets/styles/modules/transitions.styl'
+.post
+	@extends .animation-back-slide-in */
+</style>

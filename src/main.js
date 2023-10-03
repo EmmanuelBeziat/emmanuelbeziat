@@ -1,9 +1,15 @@
 import { createApp } from 'vue'
 import { createPinia } from 'pinia'
 import { createHead } from '@unhead/vue'
+
 import App from './App.vue'
 import router from './router'
 import SequentialEntrance from 'vue3-sequential-entrance'
+
+import gsap from 'gsap'
+import { ScrollTrigger } from 'gsap/ScrollTrigger'
+
+gsap.registerPlugin(ScrollTrigger)
 
 const app = createApp(App)
 const pinia = createPinia()

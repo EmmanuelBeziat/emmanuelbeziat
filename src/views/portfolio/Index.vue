@@ -1,7 +1,7 @@
 <template>
 	<section class="showcase">
 		<template v-if="references">
-			<sequential-entrance animation="entranceFadeIn" delay="25" class="showcase__list">
+			<sequential-entrance animation="entranceFadeIn" delay="50" class="showcase__list">
 				<Reference v-for="ref in references" :key="`ref-${ref.slug}`" :reference="ref" class="showcase__item" />
 			</sequential-entrance>
 

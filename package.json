@@ -23,6 +23,7 @@
 		"@unhead/vue": "^1.7.4",
 		"core-js": "^3.32.0",
 		"dayjs": "^1.11.9",
+		"gsap": "^3.12.2",
 		"mobile-device-detect": "^0.4.3",
 		"pinia": "^2.1.6",
 		"slug": "^8.2.3",

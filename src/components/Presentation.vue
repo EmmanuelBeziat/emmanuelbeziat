@@ -1,9 +1,9 @@
 <template>
 	<div class="card">
-		<h1 class="presentation__title">Emmanuel Béziat</h1>
-		<div class="presentation__age"><span>{{ age }} ans</span> ({{ nextBirthday }})</div>
-		<div class="presentation__job">Développeur web <span>front-end</span></div>
-		<div class="presentation__birthday" v-if="isBirthdayMonth">Si vous voulez m’offrir un petit cadeau, <br>vous pouvez consulter ma <a :href="amazonList">liste de souhaits Amazon </a>!</div>
+		<h1 class="presentation__title" ref="name">Emmanuel Béziat</h1>
+		<div class="presentation__age" ref="age"><span>{{ age }} ans</span> ({{ nextBirthday }})</div>
+		<div class="presentation__job" ref="job">Développeur web <span>front-end</span></div>
+		<div class="presentation__birthday" ref="birthday" v-if="isBirthdayMonth">Si vous voulez m’offrir un petit cadeau, <br>vous pouvez consulter ma <a :href="amazonList">liste de souhaits Amazon </a>!</div>
 	</div>
 </template>
 
@@ -68,6 +68,8 @@ checkAge(personal.birthday)
 <style lang="stylus" scoped>
 @require '../assets/styles/variables.styl'
 @require '../assets/styles/mixins.styl'
+@require '../assets/styles/modules/transitions.styl'
+
 .card
 	margin-bottom rem(80px)
 	text-align center
@@ -77,10 +79,14 @@ checkAge(personal.birthday)
 	@media $mq-tablet
 		margin-bottom rem(60px)
 
+	> *
+		@extends .animation-back-slide-in
+
 .presentation__title
 	margin 0
 	font 400 rem(82px)/1 var(--font-stack-heading)
 	color var(--color-blue)
+	animation-delay .45s
 
 	@media $mq-tablet
 		font-size var(--font-size-heading-2)
@@ -88,6 +94,7 @@ checkAge(personal.birthday)
 .presentation__age
 	display block
 	font 400 var(--font-size-heading-1)/1 var(--font-stack-heading)
+	animation-delay .55s
 
 	@media $mq-tablet
 		font-size var(--font-size-heading-2)
@@ -99,6 +106,7 @@ checkAge(personal.birthday)
 	font 400 var(--font-size-heading-1)/1 var(--font-stack-heading)
 	color var(--color-green)
 	margin-top .25em
+	animation-delay .75s
 
 	span
 		white-space nowrap
@@ -109,6 +117,7 @@ checkAge(personal.birthday)
 .presentation__birthday
 	text-align center
 	margin 2em 2rem 0
+	animation-delay .65s
 
 .presentation__dev
 	color var(--color-green)

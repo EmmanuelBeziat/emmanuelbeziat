@@ -6,7 +6,7 @@
 				<span class="fake-button --minify" />
 				<span class="fake-button --expand" />
 			</div>
-			<span class="cv-code__title" v-if="code">emmanuel@code: ~/{{ code.slug }} </span>
+			<span class="cv-code__title" v-if="code">emmanuel@code: ~/{{ code.slug }}</span>
 		</div>
 
 		<div class="cv-code__body">
@@ -31,11 +31,13 @@ const code = computed(() => codes.list[Math.floor(Math.random() * codes.count)] 
 <style lang="stylus" scoped>
 @require '../assets/styles/variables.styl'
 @require '../assets/styles/mixins.styl'
+@require '../assets/styles/modules/transitions.styl'
 
 .cv-code
 	border-radius .5rem
 	overflow hidden
 	background var(--color-background-dark)
+	@extends .animation-back-slide-in
 	@supports (content-visibility auto)
 		content-visibility auto
 
@@ -50,6 +52,10 @@ const code = computed(() => codes.list[Math.floor(Math.random() * codes.count)] 
 
 		&::after
 			content none
+
+	& :deep(code)
+		@extends .animation-back-slide-in
+		animation-delay .5s
 
 .cv-code__header
 	display flex

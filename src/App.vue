@@ -9,7 +9,7 @@
 
 			<main class="main" id="content" tabindex="-1">
 				<RouterView v-slot="{ Component }">
-					<Transition mode="out-in" :name="$route.meta.transition || 'fade'">
+					<Transition @enter="onEnter" @leave="onLeave" mode="out-in" :name="$route.meta.transition || 'routes'">
 						<component :is="Component" />
 					</Transition>
 				</RouterView>
@@ -23,6 +23,7 @@
 </template>
 
 <script setup>
+import { onMounted } from 'vue'
 import { openGraph } from '@/config'
 import { useCodesStore } from './stores/codes'
 import { usePostsStore } from './stores/posts'
@@ -35,12 +36,43 @@ import Header from '@/components/layout/Header.vue'
 import Footer from '@/components/layout/Footer.vue'
 import Menu from '@/components/layout/Menu.vue'
 import SkipLinks from '@/components/SkipLinks.vue'
+import { useTransitionComposable } from '@/plugins/composables/transition-composable'
+import gsap from 'gsap'
 // import ReloadPWA from '@/components/ReloadPWA.vue'
 
 useCodesStore().fetch()
 usePostsStore().fetch()
 usePortfolioStore().fetch()
 useProjectsStore().fetch()
+
+const { toggleTransitionComplete } = useTransitionComposable()
+
+const onLeave = (element, done) => {
+	toggleTransitionComplete(false)
+	gsap
+		.timeline({ paused: true, onComplete: done })
+		.to(element, { xPercent: 0, duration: 0.15, ease: 'expo.inOut' })
+		.to(element, {  autoAlpha: 0, duration: .65, ease: 'expo.inOut' })
+		.play()
+}
+
+const onEnter = (element, done) => {
+	gsap.set(element, { autoAlpha: 0, transformOrigin: '0 0' })
+	gsap
+		.timeline({
+			paused: true,
+			onComplete () {
+				toggleTransitionComplete(true)
+				done()
+			},
+		})
+		.to(element, { autoAlpha: 1, xPercent: 0, duration: .75, ease: 'expo.inOut' })
+		.play()
+}
+
+onMounted(() => {
+	toggleTransitionComplete(true)
+})
 
 useHead({
 	title: 'Hello World',
@@ -111,6 +143,9 @@ useSeoMeta({
 	--transition-fast .25s
 	--transition-normal .3s
 	--transition-slow .5s
+	--transition-xslow .75s
+
+	--ease-back-out cubic-bezier(0.295, 1.750, 0.690, 0.900)
 
 @media (prefers-reduced-motion)
 	:root
@@ -118,6 +153,7 @@ useSeoMeta({
 		--transition-fast 0s
 		--transition-normal 0s
 		--transition-slow 0s
+		--transition-xslow 0s
 
 *
 *::before

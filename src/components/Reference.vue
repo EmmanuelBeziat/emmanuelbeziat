@@ -53,7 +53,7 @@ defineProps({
 	align-items center
 	z-index 10
 	transform-origin 50% 20px
-	transition var(--transition-xfast) ease-in-out
+	transition var(--transition-slow) var(--ease-back-out)
 	backface-visibility hidden
 	aspect-ratio 1 / 1
 
@@ -62,7 +62,7 @@ defineProps({
 		fill currentColor
 		aspect-ratio 1 / 1
 		backface-visibility hidden
-		transition var(--transition-xfast) ease-in-out .1s
+		transition var(--transition-slow) var(--ease-back-out) .1s
 
 		@media (max-width 803px)
 			width calc(60%)
@@ -84,8 +84,8 @@ defineProps({
 	text-align center
 	opacity 0
 	visibility hidden
-	transform translateY(10px)
-	transition var(--transition-fast) ease-in-out 0s
+	transform translateY(15px)
+	transition var(--transition-slow) var(--ease-back-out) 0s
 
 .showcase__title
 	margin 0 0 .35em
@@ -128,7 +128,11 @@ defineProps({
 		opacity 1
 		visibility visible
 		transform translateY(0)
-		transition var(--transition-fast) ease-in-out .1s
+		transition var(--transition-slow) var(--ease-back-out) .1s
+
+		.portfolio-tags
+			transform translateY(0)
+			transition var(--transition-slow) var(--ease-back-out) .025s
 
 .showcase-tags
 	display flex
@@ -151,6 +155,8 @@ defineProps({
 
 .portfolio-tags
 	display flex
+	transform translateY(20px)
+	transition var(--transition-slow) var(--ease-back-out) 0s
 
 .portfolio-tags__icon
 	width 1em
