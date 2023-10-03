@@ -1,9 +1,12 @@
+@import '../modules/transitions.styl'
+
 .post-list
 	display grid
 
 .post-list__item
 	transition var(--transition-fast) 0s
 	background var(--color-background)
+	opacity 0
 	@supports (content-visibility auto)
 		content-visibility auto
 
@@ -98,3 +101,20 @@
 
 .post-content
 	text-align justify
+
+.post
+	.post__header
+	.post__footer
+	// .post-content
+		@extends .animationBounce
+
+	.post-content
+		animation-delay .35s
+
+	.post__footer
+		animation-delay .5s
+
+	.post-content
+		opacity 0
+		@extends .animationFade
+		animation-delay .45s

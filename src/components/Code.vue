@@ -37,7 +37,8 @@ const code = computed(() => codes.list[Math.floor(Math.random() * codes.count)] 
 	border-radius .5rem
 	overflow hidden
 	background var(--color-background-dark)
-	@extends .animation-back-slide-in
+	animation-delay .65s
+	@extends .animationBounce
 	@supports (content-visibility auto)
 		content-visibility auto
 
@@ -54,7 +55,7 @@ const code = computed(() => codes.list[Math.floor(Math.random() * codes.count)] 
 			content none
 
 	& :deep(code)
-		@extends .animation-back-slide-in
+		@extends .animationBounce
 		animation-delay .5s
 
 .cv-code__header

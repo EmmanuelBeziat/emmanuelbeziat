@@ -7,9 +7,9 @@
 		</KeepAlive>
 
 		<template v-if="projects">
-			<TransitionGroup name="list" tag="div" class="post-list">
+			<sequential-entrance animation="animationFade" delay="100" class="post-list">
 				<Project v-for="project in projects" :key="`repo-${project.id}`" :project="project" />
-			</TransitionGroup>
+			</sequential-entrance>
 		</template>
 
 		<Loader mini v-else />

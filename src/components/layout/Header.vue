@@ -1,8 +1,8 @@
 <template>
-	<header class="header" v-once>
+	<header class="header" v-once ref="header">
 		<h1 class="header__title"><router-link to="/">Emmanuel Béziat</router-link></h1>
 
-		<Picture />
+		<Picture class="picture" />
 
 		<SocialLinks class="social" />
 
@@ -19,14 +19,26 @@
 </template>
 
 <script setup>
+import { onMounted, ref } from 'vue'
 import Picture from '@/components/layout/Picture.vue'
 import SocialLinks from '@/components/layout/Social.vue'
 import Copyright from '@/components/Copyright.vue'
+
+const header = ref()
+
+onMounted(() => {
+	header.value.querySelectorAll('& > *').forEach((item, index) => {
+		setTimeout(() => {
+
+		}, 125)
+	})
+})
 </script>
 
 <style lang="stylus" scoped>
 @require '../../assets/styles/variables.styl'
 @require '../../assets/styles/mixins.styl'
+@require '../../assets/styles/modules/transitions.styl'
 
 .header
 	padding 2rem
@@ -41,14 +53,28 @@ import Copyright from '@/components/Copyright.vue'
 	font-size var(--font-size-heading-1)
 	line-height 1
 	font-weight 400
+	animation-delay .25s
+	@extends .animationBounce
+
+.picture
+	animation-delay .35s
+	@extends .animationBounce
+
+.social
+	animation-delay .45s
+	@extends .animationBounce
 
 .bio
 	margin 2rem 0
+	animation-delay .55s
+	@extends .animationBounce
 
 	@media $mq-desktop
 		display none
 
 .copyright
+	animation-delay .65s
+	@extends .animationBounce
 	@media $mq-desktop
 		display none
 </style>

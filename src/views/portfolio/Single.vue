@@ -5,13 +5,13 @@
 
 			<div class="post-infos">
 				<div class="flex">
-					<div class="tags">
+					<sequential-entrance animation="animationBounce" delay="125" class="tags">
 						<Tag v-for="tag in reference.tags" :key="`tag-${tag}`" :value="tag" />
-					</div>
+					</sequential-entrance>
 
-					<div class="tags">
+					<sequential-entrance animation="animationBounce" delay="150" class="tags">
 						<Tag v-for="client in reference.clients" :key="`client-${client}`" :value="client" />
-					</div>
+					</sequential-entrance>
 				</div>
 			</div>
 		</header>

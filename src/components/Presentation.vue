@@ -80,7 +80,7 @@ checkAge(personal.birthday)
 		margin-bottom rem(60px)
 
 	> *
-		@extends .animation-back-slide-in
+		@extends .animationFadeBounce
 
 .presentation__title
 	margin 0
@@ -117,7 +117,7 @@ checkAge(personal.birthday)
 .presentation__birthday
 	text-align center
 	margin 2em 2rem 0
-	animation-delay .65s
+	animation-delay .85s
 
 .presentation__dev
 	color var(--color-green)

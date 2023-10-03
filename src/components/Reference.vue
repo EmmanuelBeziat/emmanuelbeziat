@@ -41,8 +41,6 @@ defineProps({
 	background var(--color-background-dark)
 	@supports (content-visibility auto)
 		content-visibility auto
-	@media (max-width 480px)
-		pointer-events none
 .showcase__layer
 	background var(--color-separator)
 	pointer-events none
@@ -94,45 +92,46 @@ defineProps({
 	font-weight 400
 
 .showcase__item:hover
-	.showcase__layer
-		transform scale(.4) translateZ(0)
-		border-radius 50%
-		// width rem(240px)
-		aspect-ratio 1 / 1
-		margin auto
-		background var(--showcase-color)
+	@media (min-width 481px)
+		.showcase__layer
+			transform scale(.4) translateZ(0)
+			border-radius 50%
+			// width rem(240px)
+			aspect-ratio 1 / 1
+			margin auto
+			background var(--showcase-color)
 
-		&.blue
-			--showcase-color var(--color-blue)
+			&.blue
+				--showcase-color var(--color-blue)
 
-		&.red
-			--showcase-color var(--color-red)
+			&.red
+				--showcase-color var(--color-red)
 
-		&.violet
-			--showcase-color var(--color-violet)
+			&.violet
+				--showcase-color var(--color-violet)
 
-		&.yellow
-			--showcase-color var(--color-yellow)
+			&.yellow
+				--showcase-color var(--color-yellow)
 
-		&.green
-			--showcase-color var(--color-green)
+			&.green
+				--showcase-color var(--color-green)
 
-		&.black
-			--showcase-color darken($color-grey, 50%)
+			&.black
+				--showcase-color darken($color-grey, 50%)
 
-	.showcase__image
-		transform scale(1.2)
-		// transform translate(0, -60px) scale(.6)
+		.showcase__image
+			transform scale(1.2)
+			// transform translate(0, -60px) scale(.6)
 
-	.showcase__caption
-		opacity 1
-		visibility visible
-		transform translateY(0)
-		transition var(--transition-slow) var(--ease-back-out) .1s
-
-		.portfolio-tags
+		.showcase__caption
+			opacity 1
+			visibility visible
 			transform translateY(0)
-			transition var(--transition-slow) var(--ease-back-out) .025s
+			transition var(--transition-slow) var(--ease-back-out) .1s
+
+			.portfolio-tags
+				transform translateY(0)
+				transition var(--transition-slow) var(--ease-back-out) .025s
 
 .showcase-tags
 	display flex

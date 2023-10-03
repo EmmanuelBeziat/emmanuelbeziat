@@ -9,7 +9,7 @@
 
 			<main class="main" id="content" tabindex="-1">
 				<RouterView v-slot="{ Component }">
-					<Transition @enter="onEnter" @leave="onLeave" mode="out-in" :name="$route.meta.transition || 'routes'">
+					<Transition mode="out-in" :name="$route.meta.transition || 'fade'">
 						<component :is="Component" />
 					</Transition>
 				</RouterView>
@@ -23,7 +23,6 @@
 </template>
 
 <script setup>
-import { onMounted } from 'vue'
 import { openGraph } from '@/config'
 import { useCodesStore } from './stores/codes'
 import { usePostsStore } from './stores/posts'
@@ -36,43 +35,12 @@ import Header from '@/components/layout/Header.vue'
 import Footer from '@/components/layout/Footer.vue'
 import Menu from '@/components/layout/Menu.vue'
 import SkipLinks from '@/components/SkipLinks.vue'
-import { useTransitionComposable } from '@/plugins/composables/transition-composable'
-import gsap from 'gsap'
 // import ReloadPWA from '@/components/ReloadPWA.vue'
 
 useCodesStore().fetch()
 usePostsStore().fetch()
 usePortfolioStore().fetch()
 useProjectsStore().fetch()
-
-const { toggleTransitionComplete } = useTransitionComposable()
-
-const onLeave = (element, done) => {
-	toggleTransitionComplete(false)
-	gsap
-		.timeline({ paused: true, onComplete: done })
-		.to(element, { xPercent: 0, duration: 0.15, ease: 'expo.inOut' })
-		.to(element, {  autoAlpha: 0, duration: .65, ease: 'expo.inOut' })
-		.play()
-}
-
-const onEnter = (element, done) => {
-	gsap.set(element, { autoAlpha: 0, transformOrigin: '0 0' })
-	gsap
-		.timeline({
-			paused: true,
-			onComplete () {
-				toggleTransitionComplete(true)
-				done()
-			},
-		})
-		.to(element, { autoAlpha: 1, xPercent: 0, duration: .75, ease: 'expo.inOut' })
-		.play()
-}
-
-onMounted(() => {
-	toggleTransitionComplete(true)
-})
 
 useHead({
 	title: 'Hello World',

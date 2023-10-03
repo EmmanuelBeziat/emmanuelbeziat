@@ -7,9 +7,9 @@
 				<div class="post__date">Posté le <time>{{ dateFormat(post.date, { year: 'numeric', month: 'long', day: 'numeric' }) }}</time></div>
 
 				<div class="flex">
-					<div class="tags">
+					<sequential-entrance animation="animationBounce" delay="125" class="tags">
 						<Tag v-for="(tag, index) in post.tags" :key="`tag-${index}`" :value="tag" />
-					</div>
+					</sequential-entrance>
 
 					<Share />
 				</div>
@@ -20,9 +20,9 @@
 
 		<footer class="post__footer">
 			<div class="flex">
-				<div class="tags">
+				<sequential-entrance animation="animationBounce" delay="125" class="tags">
 					<Tag v-for="(tag, index) in post.tags" :key="`tag-${index}`" :value="tag" />
-				</div>
+				</sequential-entrance>
 
 				<Share />
 			</div>
@@ -76,3 +76,7 @@ useSeoMeta({
 	ogDescription: post.value?.description,
 })
 </script>
+
+<style lang="stylus" scoped>
+@require '../assets/styles/modules/transitions.styl'
+</style>

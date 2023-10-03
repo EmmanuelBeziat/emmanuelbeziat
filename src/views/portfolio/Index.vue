@@ -1,7 +1,7 @@
 <template>
 	<section class="showcase">
 		<template v-if="references">
-			<sequential-entrance animation="entranceFadeIn" delay="50" class="showcase__list">
+			<sequential-entrance animation="animationFade" delay="50" class="showcase__list">
 				<Reference v-for="ref in references" :key="`ref-${ref.slug}`" :reference="ref" class="showcase__item" />
 			</sequential-entrance>
 
@@ -19,7 +19,6 @@
 <script setup>
 import { computed, onMounted } from 'vue'
 import { useHead } from '@unhead/vue'
-
 
 import Reference from '@/components/Reference.vue'
 import Loader from '@/components/Loader.vue'

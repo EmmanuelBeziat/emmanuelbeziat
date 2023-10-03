@@ -39,26 +39,10 @@ useHead({
 </script>
 
 <style lang="stylus" scoped>
+@require '../assets/styles/modules/transitions.styl'
+
 .not-found
 	text-align center
-
-.not-found__404
-	font 400 5.125rem/1 var(--font-stack-heading)
-	margin .5em 0 .25em
-	color var(--color-green)
-
-	@media (max-width 992px)
-		font-size 3.25rem
-		margin-bottom 2rem
-
-.not-found__title
-	font 400 var(--font-size-heading-2)/1.5 var(--font-stack-heading)
-	margin-top 0
-
-.not-found__content
-	max-width 17.5rem
-	text-align justify
-	margin auto
 
 .not-found__image
 	width 16rem
@@ -68,6 +52,7 @@ useHead({
 	background transparent 50% 50% no-repeat
 	background-size cover
 	overflow hidden
+	@extends .animationBounce
 
 	@media (max-width 992px)
 		margin-top 2rem
@@ -77,4 +62,28 @@ useHead({
 		object-fit cover
 		min-width 100%
 		min-height 100%
+
+.not-found__404
+	font 400 5.125rem/1 var(--font-stack-heading)
+	margin .5em 0 .25em
+	color var(--color-green)
+	animation-delay .3s
+	@extends .animationBounce
+
+	@media (max-width 992px)
+		font-size 3.25rem
+		margin-bottom 2rem
+
+.not-found__title
+	font 400 var(--font-size-heading-2)/1.5 var(--font-stack-heading)
+	margin-top 0
+	animation-delay .35s
+	@extends .animationBounce
+
+.not-found__content
+	max-width 17.5rem
+	text-align justify
+	margin auto
+	animation-delay .4s
+	@extends .animationBounce
 </style>

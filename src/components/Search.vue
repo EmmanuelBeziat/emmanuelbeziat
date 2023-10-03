@@ -30,11 +30,11 @@ const vFocus = {
 </script>
 
 <style lang="stylus" scoped>
-@import '../assets/styles/modules/transitions.styl'
+// @import '../assets/styles/modules/transitions.styl'
 .search
 	margin-bottom 2rem
 	display flex
-	@extends .animation-back-slide-in
+	// @extends .animationBounce
 
 .search__field
 	--border-color var(--color-separator)

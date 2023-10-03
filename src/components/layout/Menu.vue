@@ -29,11 +29,13 @@ import MenuItem from '@/components/layout/MenuItem.vue'
 <style lang="stylus" scoped>
 @require '../../assets/styles/variables.styl'
 @require '../../assets/styles/mixins.styl'
+@require '../../assets/styles/modules/transitions.styl'
 
 .menu
 	grid-area menu
 	display flex
 	justify-content flex-end
+	@extends .animationBounce
 
 	@media $mq-tablet
 		justify-content space-between

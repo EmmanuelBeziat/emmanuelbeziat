@@ -14,13 +14,17 @@
 				<img src="https://images.emmanuelbeziat.com/Home-2020---01-min.jpg" alt="Home" loading="lazy">
 			</p>
 			<p>C’est mon bureau. Y en a plein comme ça, mais celui-là c’est le mien. 😍</p>
+		</div>
 
+		<div class="work">
 			<h3>Et tu fais quoi ?</h3>
 			<KeepAlive>
 				<GithubCards align="left" />
 			</KeepAlive>
 			<p>En gros, surtout du Javascript. Parfois avec Vue.js, parfois sans.</p>
+		</div>
 
+		<div class="play">
 			<h2>À quoi tu joues ? 🎮</h2>
 			<p>
 				<img src="https://i2.trueachievements.com/infog-story/760992.png?v=2" alt="Xbox" loading="lazy">
@@ -37,8 +41,7 @@ import { defineNamespace } from '@/plugins/mixins/namespace'
 
 import GithubCards from '@/components/GithubCards.vue'
 
-const hairs = 'mid'
-const picture = computed(() => new URL(`../../assets/img/emmanuelb-draw-${hairs}.webp`, import.meta.url).href)
+const picture = computed(() => new URL(`../../assets/img/emmanuelb-draw.webp`, import.meta.url).href)
 
 onMounted(() => {
 	defineNamespace('me')
@@ -50,6 +53,8 @@ useHead({
 </script>
 
 <style lang="stylus" scoped>
+@require '../../assets/styles/modules/transitions.styl'
+
 .drawing
 	text-align center
 	padding 0 2rem
@@ -63,7 +68,18 @@ useHead({
 h2
 	font 400 var(--font-size-article-title)/1.25 var(--font-stack-heading)
 
-.interview
+div
+	opacity 0
+	@extends .animationBounce
 	@supports (content-visibility auto)
 		content-visibility auto
+
+.interview
+	animation-delay .35s
+
+.work
+	animation-delay .55s
+
+.play
+	animation-delay .85s
 </style>
