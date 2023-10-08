@@ -35,7 +35,7 @@
 </template>
 
 <script setup>
-import { computed, ref, onMounted } from 'vue'
+import { computed, onMounted } from 'vue'
 import { openGraph } from '@/config'
 import { useRoute } from 'vue-router'
 import { useSeoMeta, useHead } from '@unhead/vue'
@@ -55,7 +55,7 @@ const props = defineProps({
 })
 
 const route = useRoute()
-const fullURL = ref(openGraph.url + route.fullPath)
+const fullURL = computed(() => openGraph.url + route.fullPath)
 const postsStore = usePostsStore()
 const post = computed(() => postsStore.getPost(props.slug))
 

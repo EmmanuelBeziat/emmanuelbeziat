@@ -14,8 +14,10 @@
 
 <script setup>
 import { ref, computed, onMounted } from 'vue'
+import { openGraph } from '@/config'
+import { useRoute } from 'vue-router'
 import { usePostsStore } from '@/stores/posts'
-import { useHead } from '@unhead/vue'
+import { useHead, useSeoMeta } from '@unhead/vue'
 import slug from 'slug'
 
 import Search from '@/components/Search.vue'
@@ -28,6 +30,8 @@ const searchTerms = ref('')
 const postsStore = usePostsStore()
 
 const posts = computed(() => postsStore.list.filter(post => slug(post.title.toLowerCase()).includes(slug(searchTerms.value.toLowerCase()))))
+const route = useRoute()
+const fullURL = computed(() => openGraph.url + route.fullPath)
 
 /* const tagsList = computed (() => {
 	let tags = []
@@ -47,5 +51,9 @@ onMounted(() => {
 
 useHead({
 	title: 'Blog'
+})
+
+useSeoMeta({
+	ogUrl: fullURL,
 })
 </script>

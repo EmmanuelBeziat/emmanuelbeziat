@@ -18,7 +18,9 @@
 
 <script setup>
 import { computed, onMounted } from 'vue'
-import { useHead } from '@unhead/vue'
+import { openGraph } from '@/config'
+import { useRoute } from 'vue-router'
+import { useHead, useSeoMeta } from '@unhead/vue'
 
 import Reference from '@/components/Reference.vue'
 import Loader from '@/components/Loader.vue'
@@ -26,8 +28,10 @@ import Loader from '@/components/Loader.vue'
 import { usePortfolioStore } from '@/stores/portfolio'
 import { defineNamespace } from '@/plugins/mixins/namespace'
 
+const route = useRoute()
 const portfolioStore = usePortfolioStore()
 const references = computed(() => portfolioStore.list)
+const fullURL = computed(() => openGraph.url + route.fullPath)
 
 onMounted(() => {
 	defineNamespace('portfolio')
@@ -35,6 +39,10 @@ onMounted(() => {
 
 useHead({
 	title: 'Portfolio'
+})
+
+useSeoMeta({
+	ogUrl: fullURL,
 })
 </script>
 

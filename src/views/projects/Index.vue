@@ -18,7 +18,9 @@
 
 <script setup>
 import { ref, computed, onMounted } from 'vue'
-import { useHead } from '@unhead/vue'
+import { openGraph } from '@/config'
+import { useRoute } from 'vue-router'
+import { useHead, useSeoMeta } from '@unhead/vue'
 import slug from 'slug'
 
 import { useProjectsStore } from '@/stores/projects'
@@ -31,6 +33,8 @@ import Loader from '@/components/Loader.vue'
 
 const searchTerms = ref('')
 const projectsStore = useProjectsStore()
+const route = useRoute()
+const fullURL = computed(() => openGraph.url + route.fullPath)
 const projects = computed(() => projectsStore.list.filter(project => slug(project.name).includes(slug(searchTerms.value.toLowerCase()))))
 
 onMounted(() => {
@@ -39,5 +43,9 @@ onMounted(() => {
 
 useHead({
 	title: 'Projets'
+})
+
+useSeoMeta({
+	ogUrl: fullURL,
 })
 </script>

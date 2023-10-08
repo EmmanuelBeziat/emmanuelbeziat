@@ -34,14 +34,18 @@
 </template>
 
 <script setup>
-import { computed, onMounted } from 'vue'
-import { useHead } from '@unhead/vue'
+import { ref, computed, onMounted } from 'vue'
+import { openGraph } from '@/config'
+import { useRoute } from 'vue-router'
+import { useHead, useSeoMeta } from '@unhead/vue'
 
 import { defineNamespace } from '@/plugins/mixins/namespace'
 
 import GithubCards from '@/components/GithubCards.vue'
 
-const picture = computed(() => new URL(`../../assets/img/emmanuelb-draw.webp`, import.meta.url).href)
+const picture = ref(new URL(`../../assets/img/emmanuelb-draw.webp`, import.meta.url).href)
+const route = useRoute()
+const fullURL = computed(() => openGraph.url + route.fullPath)
 
 onMounted(() => {
 	defineNamespace('me')
@@ -49,6 +53,10 @@ onMounted(() => {
 
 useHead({
 	title: 'À propos de moi'
+})
+
+useSeoMeta({
+	ogUrl: fullURL,
 })
 </script>
 
