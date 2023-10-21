@@ -35,9 +35,7 @@ const pictureOnClick = () => {
 .picture
 	margin 2rem auto
 	display grid
-	grid-template-rows auto
-	grid-template-columns auto
-	grid-template-areas "Picture"
+	grid-template "Picture" / auto
 	justify-content center
 
 	@supports (content-visibility auto)

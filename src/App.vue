@@ -261,8 +261,7 @@ kbd
 	min-height 100dvh
 	overflow-x hidden
 	display grid
-	grid-template-areas "header content"
-	grid-template-columns 20rem auto
+	grid-template "header content" / 20rem auto
 
 	@media $mq-desktop
 		display block
