@@ -27,7 +27,7 @@ import { useProjectsStore } from '@/stores/projects'
 import { defineNamespace } from '@/plugins/mixins/namespace'
 
 import Project from '@/components/Project.vue'
-import Search from '@/components/Search.vue'
+import Search from '@/components/SearchField.vue'
 import GithubCards from '@/components/GithubCards.vue'
 import Loader from '@/components/Loader.vue'
 

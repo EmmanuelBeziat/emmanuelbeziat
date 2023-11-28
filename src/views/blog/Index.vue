@@ -20,7 +20,7 @@ import { usePostsStore } from '@/stores/posts'
 import { useHead, useSeoMeta } from '@unhead/vue'
 import slug from 'slug'
 
-import Search from '@/components/Search.vue'
+import Search from '@/components/SearchField.vue'
 import Post from '@/components/Post.vue'
 import Loader from '@/components/Loader.vue'
 

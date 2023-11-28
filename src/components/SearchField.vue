@@ -1,6 +1,6 @@
 <template>
 	<search class="search">
-		<input class="search__field" v-focus ref="search" type="search" :placeholder="placeholder" @input="inputSearch($event.target.value)" :aria-label="label">
+		<input class="search__field" v-focus ref="searchField" type="search" :placeholder="placeholder" @input="inputSearch($event.target.value)" :aria-label="label">
 	</search>
 </template>
 
@@ -18,7 +18,7 @@ defineProps({
 })
 
 const emit = defineEmits(['update:modelValue'])
-const search = ref('search')
+const searchField = ref('searchField')
 
 const inputSearch = value => {
 	setTimeout(() => emit('update:modelValue', value), 150)
