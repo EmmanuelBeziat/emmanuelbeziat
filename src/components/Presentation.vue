@@ -1,10 +1,11 @@
 <template>
-	<div class="card">
+	<hgroup class="card">
+		<div class="presentation__hello">Hello! Je suis</div>
 		<h1 class="presentation__title" ref="name">Emmanuel Béziat</h1>
-		<div class="presentation__age" ref="age"><span>{{ age }} ans</span> ({{ nextBirthday }})</div>
-		<div class="presentation__job" ref="job">Développeur web <span>front-end</span></div>
-		<div class="presentation__birthday" ref="birthday" v-if="isBirthdayMonth">Si vous voulez m’offrir un petit cadeau, <br>vous pouvez consulter ma <a :href="amazonList">liste de souhaits Amazon </a>!</div>
-	</div>
+		<div class="presentation__job" ref="job">dev <span>full-stack</span> senior</div>
+	</hgroup>
+	<div class="presentation__age" ref="age"><span>{{ age }} ans</span> ({{ nextBirthday }})</div>
+	<div class="presentation__birthday" ref="birthday" v-if="isBirthdayMonth">Si vous voulez m’offrir un petit cadeau, <br>vous pouvez consulter ma <a :href="amazonList">liste de souhaits Amazon </a>!</div>
 </template>
 
 <script setup>
@@ -71,48 +72,48 @@ checkAge(personal.birthday)
 @require '../assets/styles/modules/transitions.styl'
 
 .card
+	color var(--color-subwhite)
+	font 700 var(--font-size-heading-1)/1 var(--font-stack-common)
 	margin-bottom rem(80px)
 	text-align center
+	container-type inline-size
 	@supports (content-visibility auto)
 		content-visibility auto
 
 	@media $mq-tablet
-		margin-bottom rem(60px)
+		font-size var(--font-size-heading-2)
 
 	> *
 		@extends .animationFadeBounce
 
 .presentation__title
 	margin 0
-	font 400 rem(82px)/1 var(--font-stack-heading)
+	font inherit
+	font-size rem(80px)
 	color var(--color-blue)
-	animation-delay .45s
+	animation-delay .55s
+	white-space nowrap
 
-	@media $mq-tablet
-		font-size var(--font-size-heading-2)
+	@supports (font-size 1cqi)
+		font-size clamp(var(--font-size-heading-2), 13cqi, 5ch)
+
+.presentation__hello
+	text-align left
+	animation-delay .45s
 
 .presentation__age
 	display block
-	font 400 var(--font-size-heading-1)/1 var(--font-stack-heading)
 	animation-delay .55s
-
-	@media $mq-tablet
-		font-size var(--font-size-heading-2)
 
 	span
 		color var(--color-red)
 
 .presentation__job
-	font 400 var(--font-size-heading-1)/1 var(--font-stack-heading)
-	color var(--color-green)
-	margin-top .25em
 	animation-delay .75s
+	text-align right
 
 	span
 		white-space nowrap
-
-	@media $mq-tablet
-		font-size var(--font-size-heading-2)
 
 .presentation__birthday
 	text-align center

@@ -1,7 +1,8 @@
 {
 	"name": "emmanuelbeziat",
-	"version": "8.1.0",
-	"description": "My website, 2023 version.",
+	"version": "9.0.0",
+	"description": "My website, 2024 version.",
+	"type": "module",
 	"author": {
 		"name": "Emmanuel Béziat",
 		"email": "contact@emmanuelbeziat.com"
@@ -20,27 +21,27 @@
 		"test": "cypress run"
 	},
 	"dependencies": {
-		"@unhead/vue": "^1.7.4",
-		"core-js": "^3.32.0",
+		"@unhead/vue": "^1.8.8",
+		"core-js": "^3.33.3",
 		"dayjs": "^1.11.9",
 		"mobile-device-detect": "^0.4.3",
-		"pinia": "^2.1.6",
+		"pinia": "^2.1.7",
 		"slug": "^8.2.3",
-		"vue": "^3.3.4",
+		"vue": "^3.3.9",
 		"vue-router": "^4.2.4",
 		"vue3-sequential-entrance": "^2.0.2"
 	},
 	"devDependencies": {
-		"@vitejs/plugin-vue": "^4.2.3",
+		"@vitejs/plugin-vue": "^4.5.0",
 		"autoprefixer": "^10.4.15",
-		"cypress": "^13.2.0",
+		"cypress": "^13.6.0",
 		"cypress-dotenv": "^2.0.0",
-		"eslint": "^8.47.0",
-		"eslint-plugin-vue": "^9.17.0",
-		"stylus": "^0.60.0",
+		"eslint": "^8.54.0",
+		"eslint-plugin-vue": "^9.18.1",
+		"stylus": "^0.62.0",
 		"stylus-loader": "^7.1.3",
-		"vite": "^4.4.9",
-		"vite-plugin-pwa": "^0.16.4",
+		"vite": "^5.0.2",
+		"vite-plugin-pwa": "^0.17.2",
 		"workbox-precaching": "^7.0.0"
 	}
 }

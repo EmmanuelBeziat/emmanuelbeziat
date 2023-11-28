@@ -63,14 +63,15 @@ useSeoMeta({
 @require './assets/styles/vendors/prism.styl'
 
 @require './assets/fonts/jetbrains-mono/jetbrains-mono.styl'
-@require './assets/fonts/source-sans-pro/source-sans-pro.styl'
 @require './assets/fonts/yanone-kaffeesatz/yanone-kaffeesatz.styl'
+@require './assets/fonts/source-sans-3/source-sans-3.styl'
 
 :root
 	// Colors
 	--color-background $color-black
 	--color-text $color-white
 
+	--color-subwhite $color-subwhite
 	--color-green $color-green
 	--color-blue $color-blue
 	--color-violet $color-violet
