@@ -21,12 +21,17 @@ import { useHead } from '@unhead/vue'
 const errors = [
 	{ image: 'doctor-who.webp', title: 'What?!' },
 	{ image: 'south-park.webp', title: 'We’re sorry…' },
-	{ image: 'mario.png', title: 'Sorry, but your page <br>is in another castle' },
+	{ image: 'mario.webp', title: 'Sorry, but your page <br>is in another castle' },
 	{ image: 'obiwan.webp', title: 'This is not the page <br>you’re looking for…' },
-	{ image: 'pulp-fiction.webp', title: '…?' }
+	{ image: 'pulp-fiction.webp', title: '…?' },
+	{ image: 'arya-got.webp', title: 'A page has no name' },
+	// { image: 'jurassic-park.webp', title: 'This page is extinct'},
+	// { image: 'toy-story.webp', title: 'There seem to be no sign of this page anywhere'},
 ]
 const error = computed(() => {
-	const i = Math.floor(Math.random() * errors.length)
+	let i = Number(localStorage.getItem('lastErrorIndex')) || 0
+	i = (i + 1) % errors.length
+	localStorage.setItem('lastErrorIndex', i)
 	return {
 		title: errors[i].title,
 		image: new URL(`../assets/img/404/${errors[i].image}`, import.meta.url)

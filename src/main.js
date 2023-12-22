@@ -14,7 +14,7 @@ app.use(pinia)
 app.use(router)
 app.use(head)
 app.use(SequentialEntrance)
-app.mount('#app')
+app.mount('#emmanuelbeziat')
 
 /* eslint-disable no-debugger, no-console */
 console.log('%c Made with 🕑 and 💖 by Emmanuel Béziat', 'background: #c3e88d; color: #233238; padding: .5em 1em;')

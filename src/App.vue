@@ -265,19 +265,16 @@ kbd
 	grid-template "header content" / 20rem auto
 
 	@media $mq-desktop
-		display block
+		grid-template "header" "content" "footer"
 
 	@media $mq-tablet
 		padding-bottom rem(80px)
 
 .site-content
 	padding 2rem
-	width 50rem
+	width @css{min(50rem, 100%)}
 	margin 0 auto
 	grid-area content
-
-	@media $mq-desktop
-		width auto
 
 	@media $mq-tablet
 		padding 2rem 1rem

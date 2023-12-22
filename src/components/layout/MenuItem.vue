@@ -1,10 +1,6 @@
 <template>
 	<RouterLink class="menu__item" :class="!isActive || '-active'" :to="to">
-		<svg viewBox="0 0 512 512" role="img">
-			<title>{{ label }}</title>
 			<slot />
-		</svg>
-
 		{{ label }}
 	</RouterLink>
 </template>

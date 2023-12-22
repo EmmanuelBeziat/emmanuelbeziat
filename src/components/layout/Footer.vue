@@ -22,4 +22,5 @@ import Copyright from '@/components/Copyright.vue'
 
 	@media $mq-desktop
 		display block
+		grid-area footer
 </style>

@@ -8,8 +8,7 @@
 	width 1px
 	white-space nowrap
 
-.sr-only-focusable:focus
-.sr-only-focusable:active
+.sr-only-focusable:is(:focus, :active)
 	clip-path none
 	height auto
 	overflow visible
@@ -45,7 +44,7 @@
 
 // Video responsive (ratio 16/9)
 .video
-	@supports not (aspect-ratio: 16/9)
+	@supports not (aspect-ratio 16/9)
 		position relative
 		padding-bottom 56.25%
 		margin 2rem auto
@@ -56,7 +55,7 @@
 		vertical-align top
 		aspect-ratio 16/9
 
-		@supports not (aspect-ratio: 16/9)
+		@supports not (aspect-ratio 16/9)
 			position absolute
 			top 0
 			left 0
