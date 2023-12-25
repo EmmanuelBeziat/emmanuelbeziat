@@ -3,6 +3,7 @@ import { fileURLToPath, URL } from 'node:url'
 import vue from '@vitejs/plugin-vue'
 import { defineConfig, loadEnv } from 'vite'
 import { VitePWA } from 'vite-plugin-pwa'
+import path from 'path'
 import svg from 'vite-svg-loader'
 
 const pwa = {
@@ -42,6 +43,16 @@ export default ({ mode }) => {
 
 	return defineConfig({
 		plugins: [vue(), VitePWA(pwa), svg()],
+		css: {
+			preprocessorOptions: {
+				stylus: {
+					import: [
+						path.resolve(__dirname, './src/assets/styles/variables.styl'),
+						path.resolve(__dirname, './src/assets/styles/mixins.styl'),
+					]
+				}
+			}
+		},
 		resolve: {
 			alias: {
 				'@': fileURLToPath(new URL('./src', import.meta.url))

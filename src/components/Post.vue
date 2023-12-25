@@ -15,7 +15,7 @@
 </template>
 
 <script setup>
-import Tag from '@/components/Tag.vue'
+import Tag from '@/components/tags/Tag.vue'
 import { dateFormat } from '@/plugins/mixins/date'
 
 const props = defineProps({

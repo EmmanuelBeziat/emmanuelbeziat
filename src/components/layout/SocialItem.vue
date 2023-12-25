@@ -1,10 +1,12 @@
 <template>
 	<a :href="url" :class="`social__item --${name.toLowerCase()}`" :aria-label="name">
-			<slot />
+		<Icon :name="icon" />
 	</a>
 </template>
 
 <script setup>
+import Icon from '@/components/icon/Icon.vue'
+
 defineProps({
 	name: {
 		type: String,
@@ -14,14 +16,16 @@ defineProps({
 	url: {
 		type: String,
 		required: true
+	},
+
+	icon: {
+		type: String,
+		required: true
 	}
 })
 </script>
 
 <style lang="stylus" scoped>
-@require '../../assets/styles/variables.styl'
-@require '../../assets/styles/mixins.styl'
-
 .social__item
 	display block
 	width 3rem

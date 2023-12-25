@@ -7,9 +7,9 @@
 		<SocialLinks class="social" />
 
 		<div class="bio">
-			<p>Développeur web front-end passionné de geekeries, de cinéma et de sport</p>
-			<p>Je travaille actuellement chez <a href="https://www.italic.fr/">Italic</a>, une chouette <i lang="en">web-agency</i> à Paris</p>
-			<p>Ex-formateur web (adoré de tous) à l’<a href="https://www.lidem.eu/">IDEM</a>, dans le sud plein de soleil</p>
+			<p>Développeur web full-stack, passionné de code optimisé et moderne. Parfois formateur.</p>
+			<p>Musicien à mes heures. Sportif monté en kit. Explorateur urbain.</p>
+			<p>Mon meilleur atout ? L’adaptabilité. Donnez-moi du temps et de la doc, et je suis votre dev. <i class="emoji" role="img" aria-label="Emoji de salut militaire">🫡</i></p>
 		</div>
 
 		<div class="copyright">
@@ -19,25 +19,12 @@
 </template>
 
 <script setup>
-import { onMounted, ref } from 'vue'
 import Picture from '@/components/layout/Picture.vue'
 import SocialLinks from '@/components/layout/Social.vue'
-import Copyright from '@/components/Copyright.vue'
-
-const header = ref()
-
-onMounted(() => {
-	header.value.querySelectorAll('& > *').forEach((item, index) => {
-		setTimeout(() => {
-
-		}, 125)
-	})
-})
+import Copyright from '@/components/layout/Copyright.vue'
 </script>
 
 <style lang="stylus" scoped>
-@require '../../assets/styles/variables.styl'
-@require '../../assets/styles/mixins.styl'
 @require '../../assets/styles/modules/transitions.styl'
 
 .header
@@ -67,6 +54,7 @@ onMounted(() => {
 .bio
 	margin 2rem 0
 	animation-delay .55s
+	text-wrap balance
 	@extends .animationBounce
 
 	@media $mq-desktop

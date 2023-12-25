@@ -34,7 +34,7 @@ import { useHead, useSeoMeta } from '@unhead/vue'
 import Header from '@/components/layout/Header.vue'
 import Footer from '@/components/layout/Footer.vue'
 import Menu from '@/components/layout/Menu.vue'
-import SkipLinks from '@/components/SkipLinks.vue'
+import SkipLinks from '@/components/layout/SkipLinks.vue'
 // import ReloadPWA from '@/components/ReloadPWA.vue'
 
 useCodesStore().fetch()
@@ -272,7 +272,7 @@ kbd
 
 .site-content
 	padding 2rem
-	width @css{min(50rem, 100%)}
+	width @css{min(50rem, 100dvw)}
 	margin 0 auto
 	grid-area content
 
@@ -285,6 +285,10 @@ kbd
 
 	@media $mq-desktop
 		margin 2rem auto
+
+.emoji
+	font-family system-ui
+	font-style inherit
 
 @require './assets/styles/modules/notes.styl'
 @require './assets/styles/modules/transitions.styl'

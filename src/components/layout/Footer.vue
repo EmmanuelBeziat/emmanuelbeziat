@@ -5,13 +5,10 @@
 </template>
 
 <script setup>
-import Copyright from '@/components/Copyright.vue'
+import Copyright from '@/components/layout/Copyright.vue'
 </script>
 
 <style lang="stylus" scoped>
-@require '../../assets/styles/variables.styl'
-@require '../../assets/styles/mixins.styl'
-
 .footer
 	text-align center
 	padding 1em 0

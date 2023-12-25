@@ -22,15 +22,13 @@
 <script setup>
 import { computed } from 'vue'
 import { useCodesStore } from '@/stores/codes'
-import Loader from '@/components/Loader.vue'
+import Loader from '@/components/loader/Loader.vue'
 
 const codes = useCodesStore()
 const code = computed(() => codes.list[Math.floor(Math.random() * codes.count)] || [])
 </script>
 
 <style lang="stylus" scoped>
-@require '../assets/styles/variables.styl'
-@require '../assets/styles/mixins.styl'
 @require '../assets/styles/modules/transitions.styl'
 
 .cv-code

@@ -29,9 +29,6 @@ const pictureOnClick = () => {
 </script>
 
 <style lang="stylus" scoped>
-@require '../../assets/styles/variables.styl'
-@require '../../assets/styles/mixins.styl'
-
 .picture
 	margin 2rem auto
 	display grid

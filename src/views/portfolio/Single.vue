@@ -32,8 +32,8 @@ import { openGraph } from '@/config'
 import { useRoute } from 'vue-router'
 import { useHead, useSeoMeta } from '@unhead/vue'
 
-import Tag from '@/components/Tag.vue'
-import Navigation from '@/components/Navigation.vue'
+import Tag from '@/components/tools/Tag.vue'
+import Navigation from '@/components/BackToPage.vue'
 
 import { usePortfolioStore } from '@/stores/portfolio'
 import { defineNamespace } from '@/plugins/mixins/namespace'
@@ -65,7 +65,5 @@ useSeoMeta({
 </script>
 
 <style lang="stylus" scoped>
-@require '../../assets/styles/variables.styl'
-@require '../../assets/styles/mixins.styl'
 @require '../../assets/styles/components/posts.styl'
 </style>

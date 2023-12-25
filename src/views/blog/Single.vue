@@ -41,7 +41,7 @@ import { useRoute } from 'vue-router'
 import { useSeoMeta, useHead } from '@unhead/vue'
 
 import Share from '@/components/share/Share.vue'
-import Tag from '@/components/Tag.vue'
+import Tag from '@/components/tags/Tag.vue'
 
 import { dateFormat } from '@/plugins/mixins/date'
 import { usePostsStore } from '@/stores/posts'

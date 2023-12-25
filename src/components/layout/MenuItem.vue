@@ -1,6 +1,6 @@
 <template>
 	<RouterLink class="menu__item" :class="!isActive || '-active'" :to="to">
-			<slot />
+			<Icon :name="icon" />
 		{{ label }}
 	</RouterLink>
 </template>
@@ -8,6 +8,7 @@
 <script setup>
 import { computed } from 'vue'
 import { useRoute, useRouter } from 'vue-router'
+import Icon from '@/components/icon/Icon.vue'
 
 const props = defineProps({
 	to: {
@@ -20,6 +21,10 @@ const props = defineProps({
 	label: {
 		type: String,
 		required: true
+	},
+	icon: {
+		type: String,
+		require: true
 	}
 })
 
@@ -29,9 +34,6 @@ const isActive = computed(() => router.resolve(props.to).path === '/' + route.pa
 </script>
 
 <style lang="stylus" scoped>
-@require '../../assets/styles/variables.styl'
-@require '../../assets/styles/mixins.styl'
-
 .menu__item
 	--link-color var(--color-text)
 	font 400 var(--font-size-menu)/1 var(--font-stack-heading)

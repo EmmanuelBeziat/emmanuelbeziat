@@ -1,6 +1,6 @@
 <template>
 	<div class="search">
-		<input class="search__field" v-focus ref="searchField" type="search" :placeholder="placeholder" @input="inputSearch($event.target.value)" :aria-label="label">
+		<input id="searchField" class="search__field" v-focus ref="searchField" type="search" :placeholder="placeholder" @input="inputSearch($event.target.value)" :aria-label="label">
 	</div>
 </template>
 

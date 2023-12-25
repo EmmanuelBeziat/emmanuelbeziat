@@ -1,15 +1,13 @@
 <template>
 	<RouterLink exact :to="to" :class="`navigation --${type}`">
-		<svg viewBox="0 0 128 128" aria-hidden="true">
-			<line style="stroke-width: 12; stroke-linecap: square; stroke-miterlimit: 10;" x1="57.12" x2="17.787" y1="103.334" y2="64"/>
-			<line style="stroke-width: 12; stroke-linecap: square; stroke-miterlimit: 10;" x1="17.787" x2="57.12" y1="64" y2="24.666"/>
-			<line style="stroke-width: 12; stroke-miterlimit: 10;" x1="17.787" x2="118.213" y1="64" y2="64"/>
-		</svg>
+		<Icon name="back" aria-hidden="true" />
 		<template v-if="label">{{ label }}</template>
 	</RouterLink>
 </template>
 
 <script setup>
+import Icon from '@/components/global/Icon.vue'
+
 defineProps({
 	to: {
 		type: [String, Object],

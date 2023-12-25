@@ -1,11 +1,11 @@
 <template>
 	<button @click="$emit('on-click', icon)" :class="`share__button --${icon}`">
-		<ShareIcon />
+		<Icon name="share" />
 	</button>
 </template>
 
 <script setup>
-import ShareIcon from '@/assets/icons/share.svg'
+import Icon from '@/components/icon/Icon.vue'
 
 defineProps({
 	icon: {

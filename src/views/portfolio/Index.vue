@@ -7,7 +7,7 @@
 
 			<div class="note --success">
 				<div class="thanks">
-					Et bien d’autres au fil des ans <small>(merci, hé ! <HeartIcon class="heart" />)</small>
+					Et bien d’autres au fil des ans <small>(merci, hé ! <Icon name="heart" class="heart" />)</small>
 				</div>
 			</div>
 		</template>
@@ -23,9 +23,9 @@ import { useRoute } from 'vue-router'
 import { useHead, useSeoMeta } from '@unhead/vue'
 
 import Reference from '@/components/Reference.vue'
-import Loader from '@/components/Loader.vue'
+import Loader from '@/components/loader/Loader.vue'
+import Icon from '@/components/icon/Icon.vue'
 
-import HeartIcon from '@/assets/icons/heart.svg'
 
 import { usePortfolioStore } from '@/stores/portfolio'
 import { defineNamespace } from '@/plugins/mixins/namespace'
@@ -49,9 +49,6 @@ useSeoMeta({
 </script>
 
 <style lang="stylus" scoped>
-@require '../../assets/styles/variables.styl'
-@require '../../assets/styles/mixins.styl'
-
 .showcase__list
 	display grid
 	grid-template-columns repeat(auto-fit, minmax(240px, 1fr))

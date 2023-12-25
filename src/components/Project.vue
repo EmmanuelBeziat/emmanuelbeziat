@@ -31,7 +31,7 @@
 
 <script setup>
 import { dateFormat } from '@/plugins/mixins/date'
-import Tag from '@/components/Tag.vue'
+import Tag from '@/components/tags/Tag.vue'
 
 defineProps({
 	project: {
@@ -42,7 +42,5 @@ defineProps({
 </script>
 
 <style lang="stylus" scoped>
-@require '../assets/styles/variables.styl'
-@require '../assets/styles/mixins.styl'
 @require '../assets/styles/components/posts.styl'
 </style>

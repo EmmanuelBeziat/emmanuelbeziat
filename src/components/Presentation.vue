@@ -67,8 +67,6 @@ checkAge(personal.birthday)
 </script>
 
 <style lang="stylus" scoped>
-@require '../assets/styles/variables.styl'
-@require '../assets/styles/mixins.styl'
 @require '../assets/styles/modules/transitions.styl'
 
 .card

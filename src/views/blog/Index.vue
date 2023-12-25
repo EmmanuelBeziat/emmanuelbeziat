@@ -20,9 +20,9 @@ import { usePostsStore } from '@/stores/posts'
 import { useHead, useSeoMeta } from '@unhead/vue'
 import slug from 'slug'
 
-import Search from '@/components/Search.vue'
+import Loader from '@/components/loader/Loader.vue'
+import Search from '@/components/search/Search.vue'
 import Post from '@/components/Post.vue'
-import Loader from '@/components/Loader.vue'
 
 import { defineNamespace } from '@/plugins/mixins/namespace'
 
