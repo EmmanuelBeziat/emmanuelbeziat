@@ -14,7 +14,7 @@
 	},
 	"private": false,
 	"scripts": {
-		"dev": "vite --host",
+		"dev": "vite",
 		"build": "vite build",
 		"preview": "vite preview --port 3033",
 		"lint": "eslint . --ext .vue,.js,.jsx,.cjs,.mjs --fix --ignore-path .gitignore",
