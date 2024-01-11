@@ -47,7 +47,7 @@ const pictureOnClick = () => {
   border-radius: 50%;
   max-width: 100%;
   grid-area: Picture;
-  aspect-ratio: 1/1;
+  aspect-ratio: 1;
 }
 
 

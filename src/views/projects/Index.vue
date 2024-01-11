@@ -3,12 +3,12 @@
 		<Search placeholder="Recherche…" label="Rechercher" v-model="searchTerms" />
 
 		<KeepAlive>
-			<GithubCards :cards="{ stats: true, languages: false }" />
+			<GithubCards class="card" :cards="{ stats: true, languages: false }" />
 		</KeepAlive>
 
 		<template v-if="projects">
 			<sequential-entrance animation="animationFade" delay="100" class="post-list">
-				<Project v-for="project in projects" :key="`repo-${project.id}`" :project="project" />
+				<Project v-for="project in projects" :key="`repo-${project.id}`" :project />
 			</sequential-entrance>
 		</template>
 
@@ -49,3 +49,9 @@ useSeoMeta({
 	ogUrl: fullURL,
 })
 </script>
+
+<style scoped>
+.card {
+  margin-bottom: 1rem;
+}
+</style>

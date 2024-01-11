@@ -1,6 +1,6 @@
 <template>
 	<div class="share">
-		<span class="visually-hidden">Partager cet article :</span>
+		<span class="visually-hidden">Partager cet article :</span>
 
 		<Button icon="share" name="Partager" @on-click="dispatch" />
 	</div>
@@ -47,8 +47,9 @@ const dispatch = () => {
 }
 </script>
 
-<style lang="stylus" scoped>
-.share
-	display flex
-	gap 4px
+<style scoped>
+.share {
+  display: flex;
+  gap: 4px;
+}
 </style>

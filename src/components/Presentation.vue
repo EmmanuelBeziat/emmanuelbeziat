@@ -72,7 +72,6 @@ checkAge(personal.birthday)
   font: 700 var(--font-size-heading-1)/1 var(--font-stack-common);
   margin-bottom: 80px;
   text-align: center;
-  container-type: inline-size;
 }
 
 @supports (content-visibility: auto) {
@@ -81,34 +80,36 @@ checkAge(personal.birthday)
   }
 }
 
-@media (width <= 768px) {
+@container (width < 46rem) {
 	.card {
-		font-size: var(--font-size-heading-2);
+		font-size: var(--font-size-heading-3);
 	}
 }
+
 .presentation__title {
   margin: 0;
   font: inherit;
   font-size: 80px;
   color: var(--color-blue);
-  animation-delay: 0.55s;
+  animation-delay: .55s;
   white-space: nowrap;
 }
 
 @supports (font-size: 1cqi) {
   .presentation__title {
-    font-size: clamp(var(--font-size-heading-2), 13cqi, 5ch);
+    font-size: clamp(var(--font-size-heading-3), 13cqi, 5ch);
   }
 }
 
 .presentation__hello {
   text-align: left;
-  animation-delay: 0.45s;
+  animation-delay: .45s;
+	transition: .25s ease-in-out;
 }
 
 .presentation__age {
   display: block;
-  animation-delay: 0.55s;
+  animation-delay: .55s;
 }
 
 .presentation__age span {
@@ -116,8 +117,9 @@ checkAge(personal.birthday)
 }
 
 .presentation__job {
-  animation-delay: 0.75s;
+  animation-delay: .75s;
   text-align: right;
+	transition: .25s ease-in-out;
 }
 
 .presentation__job span {
@@ -127,7 +129,7 @@ checkAge(personal.birthday)
 .presentation__birthday {
   text-align: center;
   margin: 2em 2rem 0;
-  animation-delay: 0.85s;
+  animation-delay: .85s;
 }
 
 .presentation__dev {
@@ -137,5 +139,4 @@ checkAge(personal.birthday)
 .presentation__dev span {
   color: var(--color-yellow);
 }
-
 </style>

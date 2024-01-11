@@ -2,7 +2,7 @@
 	<section class="home">
 		<div class="presentation">
 			<Presentation />
-			<CodeHome />
+			<CodeHome class="code animationFadeBounce" />
 		</div>
 	</section>
 </template>
@@ -18,3 +18,13 @@ onMounted(() => {
 	defineNamespace('home')
 })
 </script>
+
+<style scope>
+.presentation {
+	container: presentation / inline-size;
+}
+
+.code {
+	margin-top: 4rem;
+}
+</style>

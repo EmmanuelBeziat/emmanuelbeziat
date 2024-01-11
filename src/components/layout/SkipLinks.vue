@@ -19,8 +19,9 @@ const props = defineProps({
 const label = computed(() => props.position === 'top' ? 'Accès rapide (haut de page)' : 'Accès rapide (bas de page)')
 </script>
 
-<style lang="stylus" scoped>
-.skip-link
-	position absolute
-	z-index 10
+<style scoped>
+.skip-link {
+  position: absolute;
+  z-index: 10;
+}
 </style>

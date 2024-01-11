@@ -29,7 +29,7 @@ defineProps({
 .social__item {
   display: block;
   width: 3rem;
-  aspect-ratio: 1/1;
+  aspect-ratio: 1;
   color: var(--color-text);
   background: var(--color-background-dark);
   padding: 0.55em;
@@ -38,42 +38,44 @@ defineProps({
   overflow: hidden;
 }
 
-.social__item:hover,
-.social__item:focus {
+.social__item:is(:hover, :focus) {
   background: var(--bg-social-link);
   transition: var(--transition-xfast) ease-out;
 }
 
-.social__item:hover :deep(svg),
-.social__item:focus :deep(svg) {
+.social__item:is(:hover, :focus) :deep(svg) {
   transform: scale(0.95);
 }
 
-.social__item.--twitter {
+.--twitter {
   --bg-social-link: var(--brand-color-twitter);
 }
 
-.social__item.--facebook {
+.--x {
+  --bg-social-link: var(--brand-color-x);
+}
+
+.--facebook {
   --bg-social-link: var(--brand-color-facebook);
 }
 
-.social__item.--instagram {
+.--instagram {
   --bg-social-link: var(--brand-color-instagram);
 }
 
-.social__item.--codepen {
+.--codepen {
   --bg-social-link: var(--brand-color-codepen);
 }
 
-.social__item.--github {
+.--github {
   --bg-social-link: var(--brand-color-github);
 }
 
-.social__item.--linkedin {
+.--linkedin {
   --bg-social-link: var(--brand-color-linkedin);
 }
 
-.social__item.--youtube {
+.--youtube {
   --bg-social-link: var(--brand-color-youtube);
 }
 

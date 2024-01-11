@@ -30,8 +30,7 @@ defineProps({
   align-content: center;
 }
 
-.navigation:hover,
-.navigation:focus {
+.navigation:is(:hover, :focus) {
   --nav-color: var(--color-yellow);
 }
 
@@ -47,8 +46,7 @@ defineProps({
   --transform: translateX(-4px);
 }
 
-.navigation.--previous:hover,
-.navigation.--previous:focus {
+.navigation.--previous:is(:hover, :focus) {
   --transform: translateX(-8px);
 }
 
@@ -61,8 +59,7 @@ defineProps({
   order: 2;
 }
 
-.navigation.--next:hover,
-.navigation.--next:focus {
+.navigation.--next:is(:hover, :focus) {
   --transform: translateX(8px);
 }
 </style>

@@ -24,9 +24,7 @@ import MenuItem from '@/components/layout/MenuItem.vue'
 		justify-content: space-between;
 		position: fixed;
 		background: var(--color-background-dark);
-		left: 0;
-		right: 0;
-		bottom: 0;
+		inset: auto 0 0;
 		z-index: 50;
 		padding: 0;
 	}

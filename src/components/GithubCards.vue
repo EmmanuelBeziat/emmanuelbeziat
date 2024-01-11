@@ -30,10 +30,6 @@ const card = ref(github)
 </script>
 
 <style scoped>
-.github-card {
-  margin-bottom: 1rem;
-}
-
 @supports (content-visibility: auto) {
   .github-card {
     content-visibility: auto;

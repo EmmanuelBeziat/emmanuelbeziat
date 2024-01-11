@@ -1,5 +1,5 @@
 <template>
-	<div class="cv-code animationFadeBounce">
+	<div class="cv-code">
 		<div class="cv-code__header">
 			<div class="cv-code__buttons">
 				<span class="fake-button --close" />
@@ -30,10 +30,10 @@ const code = computed(() => codes.list[Math.floor(Math.random() * codes.count)] 
 
 <style scoped>
 .cv-code {
-  border-radius: 0.5rem;
+  border-radius: .5rem;
   overflow: hidden;
   background: var(--color-background-dark);
-  animation-delay: 0.65s;
+  animation-delay: .65s;
 }
 
 @supports (content-visibility: auto) {
@@ -46,7 +46,7 @@ const code = computed(() => codes.list[Math.floor(Math.random() * codes.count)] 
 	margin: 0;
 }
 
-@media (width <= 768px) {
+@container (width < 46rem) {
   :deep(pre) {
     padding: 1.5em 1em;
   }
@@ -57,7 +57,7 @@ const code = computed(() => codes.list[Math.floor(Math.random() * codes.count)] 
 }
 
 :deep(code) {
-  animation-delay: 0.5s;
+  animation-delay: .5s;
 }
 
 .cv-code__header {
@@ -67,15 +67,9 @@ const code = computed(() => codes.list[Math.floor(Math.random() * codes.count)] 
   color: var(--color-text);
   text-align: center;
   padding: 5px 10px;
-  border-radius: 0.5rem 0.5rem 0 0;
+  border-radius: .5rem .5rem 0 0;
   position: relative;
   font-family: var(--font-stack-code);
-}
-
-@media (width <= 768px) {
-	.cv-code__header {
-		border-radius: 0;
-	}
 }
 
 .cv-code__buttons {
@@ -84,22 +78,22 @@ const code = computed(() => codes.list[Math.floor(Math.random() * codes.count)] 
   gap: 6px;
 }
 
-.cv-code__buttons .fake-button {
-  width: 0.7rem;
-  height: 0.7rem;
+.fake-button {
+  width: .7rem;
+  height: .7rem;
   border-radius: 50%;
   background: var(--bg-button);
 }
 
-.cv-code__buttons .--close {
+.--close {
   --bg-button: var(--color-red);
 }
 
-.cv-code__buttons .--minify {
+.--minify {
   --bg-button: var(--color-yellow);
 }
 
-.cv-code__buttons .--expand {
+.--expand {
   --bg-button: var(--color-green);
 }
 
@@ -109,7 +103,7 @@ const code = computed(() => codes.list[Math.floor(Math.random() * codes.count)] 
   color: var(--color-subwhite);
 }
 
-@media (width <= 1120px) {
+@container (width < 46rem) {
 	.cv-code__title {
 		margin: 0;
 		transform: none;

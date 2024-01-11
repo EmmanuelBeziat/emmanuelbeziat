@@ -53,15 +53,15 @@ defineProps({
   transform-origin: 50% 20px;
   transition: var(--transition-slow) var(--ease-back-out);
   backface-visibility: hidden;
-  aspect-ratio: 1/1;
+  aspect-ratio: 1;
 }
 
 .showcase__layer :deep(svg) {
   width: 128px;
   fill: currentColor;
-  aspect-ratio: 1/1;
+  aspect-ratio: 1;
   backface-visibility: hidden;
-  transition: var(--transition-slow) var(--ease-back-out) 0.1s;
+  transition: var(--transition-slow) var(--ease-back-out) .1s;
 }
 
 @media (width <= 803px) {
@@ -91,15 +91,15 @@ defineProps({
 }
 
 .showcase__title {
-  margin: 0 0 0.35em;
+  margin: 0 0 .35em;
   line-height: 1;
   font-size: 28px;
   font-weight: 400;
 }
 
-@media (min-width: 481px) {
+@media (width >= 481px) {
   .showcase__item:hover .showcase__layer {
-    transform: scale(0.4) translateZ(0);
+    transform: scale(.4) translateZ(0);
     border-radius: 50%;
     aspect-ratio: 1;
     margin: auto;
@@ -133,12 +133,12 @@ defineProps({
     opacity: 1;
     visibility: visible;
     transform: translateY(0);
-    transition: var(--transition-slow) var(--ease-back-out) 0.1s;
+    transition: var(--transition-slow) var(--ease-back-out) .1s;
   }
 
   .showcase__item:hover .showcase__caption .portfolio-tags {
     transform: translateY(0);
-    transition: var(--transition-slow) var(--ease-back-out) 0.025s;
+    transition: var(--transition-slow) var(--ease-back-out) .025s;
   }
 }
 .showcase-tags {

@@ -29,27 +29,29 @@ const vFocus = {
 }
 </script>
 
-<style lang="stylus" scoped>
-// @import '../assets/styles/modules/transitions.styl'
-.search
-	margin-bottom 2rem
-	display flex
-	// @extends .animationBounce
+<style scoped>
+.search {
+  margin-bottom: 2rem;
+  display: flex;
+}
 
-.search__field
-	--border-color var(--color-separator)
-	flex 1
-	padding 10px 1rem
-	background var(--color-background-dark)
-	border 1px solid var(--border-color)
-	box-shadow none
-	outline none
-	color var(--color-text)
-	transition var(--transition-fast) ease-in-out
+.search__field {
+  --border-color: var(--color-separator);
+  flex: 1;
+  padding: 10px 1rem;
+  background: var(--color-background-dark);
+  border: 1px solid var(--border-color);
+  box-shadow: none;
+  outline: none;
+  color: var(--color-text);
+  transition: var(--transition-fast) ease-in-out;
+}
 
-	&:focus
-		--border-color var(--color-blue)
+.search__field:focus {
+  --border-color: var(--color-blue);
+}
 
-	&::placeholder
-		color var(--color-blue)
+.search__field::placeholder {
+  color: var(--color-blue);
+}
 </style>

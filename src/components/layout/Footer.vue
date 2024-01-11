@@ -14,11 +14,13 @@ import Copyright from '@/components/layout/Copyright.vue'
   padding: 1em 0;
   display: none;
 }
+
 @supports (content-visibility: auto) {
   .footer {
     content-visibility: auto;
   }
 }
+
 @media (width <= 1120px) {
   .footer {
     display: block;

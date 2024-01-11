@@ -22,7 +22,7 @@ defineProps({
 <style scoped>
 [class^="share__button"] {
   width: 36px;
-  aspect-ratio: 1/1;
+  aspect-ratio: 1;
   background: var(--color-background-darker);
   color: var(--color-text);
   border-radius: 2px;
@@ -35,13 +35,12 @@ defineProps({
 }
 
 [class^="share__button"] :deep(svg) {
-  padding: 0.5em;
+  padding: .5em;
   fill: currentColor;
   width: 100%;
 }
 
-[class^="share__button"]:hover,
-[class^="share__button"]:focus {
+[class^="share__button"]:is(:hover, :focus) {
   background: var(--bg-social-link);
   transition: var(--transition-xfast) ease-out;
 }

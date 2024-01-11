@@ -44,14 +44,7 @@ export default ({ mode }) => {
 	return defineConfig({
 		plugins: [vue(), VitePWA(pwa), svg()],
 		css: {
-			preprocessorOptions: {
-				stylus: {
-					import: [
-						path.resolve(__dirname, './src/assets/styles/variables.styl'),
-						path.resolve(__dirname, './src/assets/styles/mixins.styl'),
-					]
-				}
-			}
+			preprocessorOptions: {}
 		},
 		resolve: {
 			alias: {

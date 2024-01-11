@@ -9,12 +9,10 @@
 		<div class="bio animationBounce">
 			<p>Développeur web full-stack, passionné de code optimisé et moderne. Parfois formateur.</p>
 			<p>Musicien à mes heures. Sportif monté en kit. Explorateur urbain.</p>
-			<p>Mon meilleur atout ? L’adaptabilité. Donnez-moi du temps et de la doc, et je suis votre dev. <i class="emoji" role="img" aria-label="Emoji de salut militaire">🫡</i></p>
+			<p>Mon meilleur atout ? L’<b>adaptabilité</b>. Donnez-moi du temps et de la doc, et je suis votre dev. <i class="emoji" role="img" aria-label="Emoji de salut militaire">🫡</i></p>
 		</div>
 
-		<div class="copyright animationBounce">
-			<Copyright />
-		</div>
+		<Copyright class="copyright animationBounce" />
 	</header>
 </template>
 
@@ -39,21 +37,26 @@ import Copyright from '@/components/layout/Copyright.vue'
   font-size: var(--font-size-heading-1);
   line-height: 1;
   font-weight: 400;
-  animation-delay: 0.25s;
+  animation-delay: .25s;
 }
 
 .picture {
-  animation-delay: 0.35s;
+  animation-delay: .35s;
 }
 
 .social {
-  animation-delay: 0.45s;
+  animation-delay: .45s;
 }
 
 .bio {
   margin: 2rem 0;
-  animation-delay: 0.55s;
+  animation-delay: .55s;
   text-wrap: balance;
+}
+
+.bio b {
+	color: var(--color-green);
+	font-weight: inherit;
 }
 
 @media (width <= 1120px) {
@@ -63,7 +66,7 @@ import Copyright from '@/components/layout/Copyright.vue'
 }
 
 .copyright {
-  animation-delay: 0.65s;
+  animation-delay: .65s;
 }
 
 
