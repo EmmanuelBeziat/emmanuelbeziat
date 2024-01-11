@@ -18,14 +18,16 @@ defineProps({
 })
 </script>
 
-<style lang="stylus" scoped>
-.tag
-	background var(--color-background-light)
-	padding 0 .5em
-	color var(--color-text)
+<style scoped>
+.tag {
+  background: var(--color-background-light);
+  padding: 0 0.5em;
+  color: var(--color-text);
+}
 
-	svg
-		fill currentColor
-		height .75em
-		margin-right .25em
+.tag svg {
+  fill: currentColor;
+  height: 0.75em;
+  margin-right: 0.25em;
+}
 </style>

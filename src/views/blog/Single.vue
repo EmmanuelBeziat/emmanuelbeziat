@@ -1,6 +1,6 @@
 <template>
 	<article class="post" v-if="post">
-		<header class="post__header">
+		<header class="post__header animationBounce">
 			<h1 class="post__title">{{ post.title }}</h1>
 
 			<div class="post-infos">
@@ -16,9 +16,9 @@
 			</div>
 		</header>
 
-		<div class="post-content" v-html="post.markup" />
+		<div class="post-content animationFade" v-html="post.markup" />
 
-		<footer class="post__footer">
+		<footer class="post__footer animationBounce">
 			<div class="flex">
 				<sequential-entrance animation="animationBounce" delay="125" class="tags">
 					<Tag v-for="(tag, index) in post.tags" :key="`tag-${index}`" :value="tag" />
@@ -76,3 +76,7 @@ useSeoMeta({
 	ogDescription: post.value?.description,
 })
 </script>
+
+<style scope>
+@import '../../assets/styles/components/posts.css';
+</style>

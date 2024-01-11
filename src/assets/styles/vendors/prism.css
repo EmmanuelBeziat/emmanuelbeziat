@@ -1,0 +1,218 @@
+/* http://prismjs.com/download.html?themes=prism-okaidia&languages=markup+css+css-extras+clike+javascript+php+coffeescript+scss+bash+sql+csharp */
+/**
+ * okaidia theme for JavaScript, CSS and HTML
+ * Loosely based on Monokai textmate theme by http://www.monokai.nl/
+ * @author ocodia
+ */
+
+code[class*="language-"],
+pre[class*="language-"] {
+  color: #f8f8f2;
+  text-shadow: 0 1px rgba(0,0,0,0.3);
+  font: 400 var(--font-size-code)/1.45 var(--font-stack-code);
+  direction: ltr;
+  text-align: left;
+  white-space: pre;
+  word-spacing: normal;
+  word-break: normal;
+  tab-size: 3;
+  -webkit-hyphens: none;
+  hyphens: none;
+}
+pre[class*="language-"]::-moz-selection,
+pre[class*="language-"] ::-moz-selection,
+code[class*="language-"]::-moz-selection,
+code[class*="language-"] ::-moz-selection {
+  text-shadow: none;
+  background: var(--color-background-dark);
+}
+pre[class*="language-"]::selection,
+pre[class*="language-"] ::selection,
+code[class*="language-"]::selection,
+code[class*="language-"] ::selection {
+  text-shadow: none;
+  background: var(--color-background-dark);
+}
+@media print {
+  code[class*="language-"],
+  pre[class*="language-"] {
+    text-shadow: none;
+  }
+}
+/* Code blocks */
+pre,
+pre[class*="language-"] {
+  padding: 1.5em 2em;
+  margin: 2em 0;
+  overflow: auto;
+  border-radius: 0.2em;
+  position: relative;
+  background: var(--color-background-dark);
+}
+@media $mq-tablet {
+  pre,
+  pre[class*="language-"] {
+    margin: 2em -1rem;
+    border-radius: 0;
+  }
+}
+code[class*="language-"]::selection {
+  background: var(--color-red);
+  color: var(--color-text);
+  text-shadow: 0 1px 0 rgba(0,0,0,0.5);
+}
+@media $mq-tablet {
+  code[class*="language-"] {
+    display: block;
+  }
+}
+:not(pre) > code[class*="language-"],
+pre[class*="language-"] {
+  background: var(--color-background-dark);
+}
+/* Inline code */
+:not(pre) > code[class*="language-"] {
+  padding: 0.1em;
+  border-radius: 0.3em;
+}
+.token.comment,
+.token.prolog,
+.token.doctype,
+.token.cdata {
+  color: var(--color-background-lighter);
+}
+.token.punctuation {
+  color: var(--color-text);
+}
+.namespace {
+  opacity: 0.7;
+}
+.token.constant,
+.token.symbol,
+.token.deleted,
+.token.tag,
+.token.selector {
+  color: var(--color-blue);
+}
+.token.boolean,
+.token.number {
+  color: var(--color-red);
+}
+.token.string,
+.token.property,
+.token.char,
+.token.builtin,
+.token.inserted,
+.token.attr-name {
+  color: var(--color-green);
+}
+.token.operator,
+.token.entity,
+.token.url,
+.language-css .token.string,
+.style .token.string,
+.token.variable {
+  color: var(--color-text);
+}
+.token.atrule,
+.token.attr-value,
+.token.keyword {
+  color: var(--color-yellow);
+}
+.token.function {
+  color: var(--color-blue);
+}
+.token.regex,
+.token.important {
+  color: var(--color-red);
+}
+.token.important,
+.token.bold {
+  font-weight: bold;
+}
+.token.italic {
+  font-style: italic;
+}
+.token.entity {
+  cursor: help;
+}
+pre[data-line] {
+  position: relative;
+  padding: 1em 0 1em 3em;
+}
+.line-highlight {
+  position: absolute;
+  left: 0;
+  right: 0;
+  padding-left: 0;
+  padding-right: 0;
+  margin-top: 1em /* Same as .prism’s padding-top */;
+  background: rgba(153,122,102,0.08);
+  background: linear-gradient(to right, rgba(153,122,102,0.1) 70%, rgba(153,122,102,0));
+  pointer-events: none;
+  line-height: inherit;
+  white-space: pre;
+}
+.line-highlight::before,
+.line-highlight[data-end]::after {
+  content: attr(data-start);
+  position: absolute;
+  top: 0.4em;
+  left: 0.6em;
+  min-width: 1em;
+  padding: 0 0.5em;
+  background-color: rgba(153,122,102,0.4);
+  color: #f5f2f0;
+  font: bold 65%/1.5 sans-serif;
+  text-align: center;
+  vertical-align: 0.3em;
+  border-radius: 999px;
+  text-shadow: none;
+  box-shadow: 0 1px #fff;
+}
+.line-highlight[data-end]::after {
+  content: attr(data-end);
+  top: auto;
+  bottom: 0.4em;
+}
+pre[class*="language-html"]::after,
+pre[class*="language-markup"]::after {
+  content: "html";
+}
+pre[class*="language-css"]::after {
+  content: "css";
+}
+pre[class*="language-javascript"]::after {
+  content: "javascript";
+}
+pre[class*="language-pug"]::after {
+  content: "pug";
+}
+pre[class*="language-php"]::after {
+  content: "php";
+}
+pre[class*="language-markdown"]::after {
+  content: "markdown";
+}
+pre[class*="language-"]::after,
+.code-toolbar > .toolbar {
+  position: absolute;
+  right: 0;
+  top: 0;
+}
+pre[class*="language-"]::after,
+.code-toolbar .toolbar-item {
+  color: var(--color-text);
+  background-color: var(--color-background-light);
+  border-radius: 0 3px 0 3px;
+  display: inline-block;
+  position: absolute;
+  top: 0;
+  right: 0;
+  font-size: 0.75rem;
+  padding: 0.25em 0.6em;
+  text-shadow: none;
+  z-index: 1;
+  box-shadow: none;
+  transform: none;
+}

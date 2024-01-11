@@ -1,0 +1,93 @@
+.visually-hidden,
+.visually-hidden-focusable:not(:focus):not(:focus-within) {
+  border: 0;
+  clip-path: inset(50%);
+  height: 1px;
+  overflow: hidden;
+  padding: 0;
+  position: absolute;
+  width: 1px;
+  white-space: nowrap;
+}
+
+.visually-hidden:not(caption),
+.visually-hidden-focusable:not(:focus):not(:focus-within):not(caption) {
+  position: absolute;
+}
+
+.text-align-left {
+  text-align: left;
+}
+
+.text-align-right {
+  text-align: right;
+}
+
+.text-align-center {
+  text-align: center;
+}
+
+.text-align-justify {
+  text-align: justify;
+}
+
+.pull-left {
+  float: left;
+  margin-right: 2em;
+  margin-bottom: 0.5em;
+}
+
+.pull-right {
+  float: right;
+  margin-left: 2em;
+  margin-bottom: 0.5em;
+}
+
+.shape-round {
+  shape-outside: circle();
+}
+
+.video iframe {
+  width: 100%;
+  vertical-align: top;
+  aspect-ratio: 16/9;
+}
+
+@supports not (aspect-ratio: 16/9) {
+	.video {
+    position: relative;
+    padding-bottom: 56.25%;
+    margin: 2rem auto;
+    height: 0;
+  }
+
+  .video iframe {
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 100%;
+    border: 0;
+  }
+}
+
+.noscript {
+  max-width: rem(480px);
+  margin: rem(60px) auto;
+  font-size: rem(20px);
+}
+
+.iframe-codepen {
+  width: 100%;
+  min-height: 430px;
+}
+
+@media $mq-tablet {
+  .iframe-codepen {
+    min-height: 380px;
+  }
+}
+
+.emoji {
+	font-family: system-ui !important;
+	font-style: inherit;
+}

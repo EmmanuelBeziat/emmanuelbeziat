@@ -16,7 +16,7 @@ const IconComponent = shallowRef(null)
 
 onMounted(async () => {
 	try {
-		const { default: component } = await import(`../../assets/icons/${props.name}.svg`)
+		const { default: component } = await import(`../../assets/images/icons/${props.name}.svg`)
 		IconComponent.value = component
 	}
 	catch (error) {

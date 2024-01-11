@@ -48,24 +48,31 @@ useSeoMeta({
 })
 </script>
 
-<style lang="stylus" scoped>
-.showcase__list
-	display grid
-	grid-template-columns repeat(auto-fit, minmax(240px, 1fr))
-	gap 4px
+<style scoped>
+.showcase__list {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+  gap: 4px;
+}
+@media (width <= 540px) {
+  .showcase__list {
+    grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+  }
+}
+.thanks {
+  font-size: var(--font-size-heading-4);
+}
+@supports (content-visibility: auto) {
+  .thanks {
+    content-visibility: auto;
+  }
+}
+.thanks .heart {
+  fill: var(--color-red);
+  width: 1em;
+  margin: 0 0.15em;
+  vertical-align: baseline;
+  transform: translateY(2px);
+}
 
-	@media (max-width 540px)
-		grid-template-columns repeat(auto-fit, minmax(180px, 1fr))
-
-.thanks
-	font-size var(--font-size-heading-4)
-	@supports (content-visibility auto)
-		content-visibility auto
-
-	.heart
-		fill var(--color-red)
-		width 1em
-		margin 0 .15em
-		vertical-align baseline
-		transform translateY(2px)
 </style>

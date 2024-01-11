@@ -1,6 +1,6 @@
 <template>
 	<article class="post" v-if="reference">
-		<header class="post__header">
+		<header class="post__header animationBounce">
 			<h1 class="post__title">{{ reference.title }}</h1>
 
 			<div class="post-infos">
@@ -16,9 +16,9 @@
 			</div>
 		</header>
 
-		<div class="post-content" v-html="reference.markup" />
+		<div class="post-content animationFade" v-html="reference.markup" />
 
-		<footer class="post__footer">
+		<footer class="post__footer animationBounce">
 			<nav class="post-navigation" aria-label="Navigation du portfolio">
 				<Navigation type="previous" :to="{ name: 'Portfolio' }" label="Revenir au portfolio" />
 			</nav>
@@ -32,7 +32,7 @@ import { openGraph } from '@/config'
 import { useRoute } from 'vue-router'
 import { useHead, useSeoMeta } from '@unhead/vue'
 
-import Tag from '@/components/tools/Tag.vue'
+import Tag from '@/components/tags/Tag.vue'
 import Navigation from '@/components/BackToPage.vue'
 
 import { usePortfolioStore } from '@/stores/portfolio'
@@ -64,6 +64,6 @@ useSeoMeta({
 })
 </script>
 
-<style lang="stylus" scoped>
-@require '../../assets/styles/components/posts.styl'
+<style scoped>
+@import '../../assets/styles/components/posts.css';
 </style>

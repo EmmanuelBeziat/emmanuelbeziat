@@ -1,8 +1,8 @@
 <template>
 	<hgroup class="card">
-		<div class="presentation__hello">Hello! Je suis</div>
-		<h1 class="presentation__title" ref="name">Emmanuel Béziat</h1>
-		<div class="presentation__job" ref="job">dev <span>full-stack</span> senior</div>
+		<div class="presentation__hello animationFadeBounce">Hello! Je suis</div>
+		<h1 class="presentation__title animationFadeBounce" ref="name">Emmanuel Béziat</h1>
+		<div class="presentation__job animationFadeBounce" ref="job">dev <span>full-stack</span> senior</div>
 	</hgroup>
 	<div class="presentation__age" ref="age"><span>{{ age }} ans</span> ({{ nextBirthday }})</div>
 	<div class="presentation__birthday" ref="birthday" v-if="isBirthdayMonth">Si vous voulez m’offrir un petit cadeau, <br>vous pouvez consulter ma <a :href="amazonList">liste de souhaits Amazon </a>!</div>
@@ -66,61 +66,76 @@ dayjs.locale(fr)
 checkAge(personal.birthday)
 </script>
 
-<style lang="stylus" scoped>
-@require '../assets/styles/modules/transitions.styl'
+<style scoped>
+.card {
+  color: var(--color-subwhite);
+  font: 700 var(--font-size-heading-1)/1 var(--font-stack-common);
+  margin-bottom: 80px;
+  text-align: center;
+  container-type: inline-size;
+}
 
-.card
-	color var(--color-subwhite)
-	font 700 var(--font-size-heading-1)/1 var(--font-stack-common)
-	margin-bottom rem(80px)
-	text-align center
-	container-type inline-size
-	@supports (content-visibility auto)
-		content-visibility auto
+@supports (content-visibility: auto) {
+  .card {
+    content-visibility: auto;
+  }
+}
 
-	@media $mq-tablet
-		font-size var(--font-size-heading-2)
+@media (width <= 768px) {
+	.card {
+		font-size: var(--font-size-heading-2);
+	}
+}
+.presentation__title {
+  margin: 0;
+  font: inherit;
+  font-size: 80px;
+  color: var(--color-blue);
+  animation-delay: 0.55s;
+  white-space: nowrap;
+}
 
-	> *
-		@extends .animationFadeBounce
+@supports (font-size: 1cqi) {
+  .presentation__title {
+    font-size: clamp(var(--font-size-heading-2), 13cqi, 5ch);
+  }
+}
 
-.presentation__title
-	margin 0
-	font inherit
-	font-size rem(80px)
-	color var(--color-blue)
-	animation-delay .55s
-	white-space nowrap
+.presentation__hello {
+  text-align: left;
+  animation-delay: 0.45s;
+}
 
-	@supports (font-size 1cqi)
-		font-size clamp(var(--font-size-heading-2), 13cqi, 5ch)
+.presentation__age {
+  display: block;
+  animation-delay: 0.55s;
+}
 
-.presentation__hello
-	text-align left
-	animation-delay .45s
+.presentation__age span {
+  color: var(--color-red);
+}
 
-.presentation__age
-	display block
-	animation-delay .55s
+.presentation__job {
+  animation-delay: 0.75s;
+  text-align: right;
+}
 
-	span
-		color var(--color-red)
+.presentation__job span {
+  white-space: nowrap;
+}
 
-.presentation__job
-	animation-delay .75s
-	text-align right
+.presentation__birthday {
+  text-align: center;
+  margin: 2em 2rem 0;
+  animation-delay: 0.85s;
+}
 
-	span
-		white-space nowrap
+.presentation__dev {
+  color: var(--color-green);
+}
 
-.presentation__birthday
-	text-align center
-	margin 2em 2rem 0
-	animation-delay .85s
+.presentation__dev span {
+  color: var(--color-yellow);
+}
 
-.presentation__dev
-	color var(--color-green)
-
-	span
-		color var(--color-yellow)
 </style>

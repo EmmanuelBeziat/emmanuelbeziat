@@ -29,23 +29,32 @@ defineProps({
 const card = ref(github)
 </script>
 
-<style lang="stylus" scoped>
-.github-card
-	margin-bottom 1rem
-	@supports (content-visibility auto)
-		content-visibility auto
+<style scoped>
+.github-card {
+  margin-bottom: 1rem;
+}
 
-.card-center
-	text-align center
+@supports (content-visibility: auto) {
+  .github-card {
+    content-visibility: auto;
+  }
+}
 
-.card-left
-	text-align left
+.card-center {
+  text-align: center;
+}
 
-.card-row
-	display flex
-	align-items flex-start
+.card-left {
+  text-align: left;
+}
 
-.card-column
-	display flex
-	flex-direction column
+.card-row {
+  display: flex;
+  align-items: flex-start;
+}
+
+.card-column {
+  display: flex;
+  flex-direction: column;
+}
 </style>

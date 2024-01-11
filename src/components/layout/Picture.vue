@@ -1,7 +1,7 @@
 <template>
 	<div class="picture">
 		<img :src="picture" alt="Emmanuel Béziat" width="220" height="220" loading="lazy" @click="pictureOnClick()">
-		<img v-if="pictureEasterIsOn" src="../../assets/img/criquette.webp" width="220" height="220" loading="lazy">
+		<img v-if="pictureEasterIsOn" src="../../assets/images/criquette.webp" width="220" height="220" loading="lazy">
 	</div>
 </template>
 
@@ -9,7 +9,7 @@
 import { ref, computed } from 'vue'
 import { useRoute } from 'vue-router'
 const route = useRoute()
-const picture = computed(() => new URL(`../../assets/img/${route.name === 'NotFound' ? 'emmanuelb-error' : 'emmanuelb'}.webp`, import.meta.url).href)
+const picture = computed(() => new URL(`../../assets/images/${route.name === 'NotFound' ? 'emmanuelb-error' : 'emmanuelb'}.webp`, import.meta.url).href)
 
 const pictureCount = ref(0)
 const pictureEasterIsOn = ref(false)
@@ -28,23 +28,32 @@ const pictureOnClick = () => {
 
 </script>
 
-<style lang="stylus" scoped>
-.picture
-	margin 2rem auto
-	display grid
-	grid-template "Picture" / auto
-	justify-content center
+<style scoped>
+.picture {
+  margin: 2rem auto;
+  display: grid;
+  grid-template: "Picture"/auto;
+  justify-content: center;
+}
 
-	@supports (content-visibility auto)
-		content-visibility auto
+@supports (content-visibility: auto) {
+  .picture {
+    content-visibility: auto;
+  }
+}
 
-	@media $mq-desktop
-		display none
+.picture img {
+  vertical-align: top;
+  border-radius: 50%;
+  max-width: 100%;
+  grid-area: Picture;
+  aspect-ratio: 1/1;
+}
 
-	img
-		vertical-align top
-		border-radius 50%
-		max-width 100%
-		grid-area Picture
-		aspect-ratio 1 / 1
+
+@media (width <= 1120px) {
+	.picture {
+		display: none;
+	}
+}
 </style>
