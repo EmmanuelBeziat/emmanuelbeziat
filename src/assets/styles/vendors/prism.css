@@ -8,7 +8,7 @@
 code[class*="language-"],
 pre[class*="language-"] {
   color: #f8f8f2;
-  text-shadow: 0 1px rgba(0,0,0,0.3);
+  text-shadow: 0 1px rgba(0,0,0,.3);
   font: 400 var(--font-size-code)/1.45 var(--font-stack-code);
   direction: ltr;
   text-align: left;
@@ -45,7 +45,7 @@ pre[class*="language-"] {
   padding: 1.5em 2em;
   margin: 2em 0;
   overflow: auto;
-  border-radius: 0.2em;
+  border-radius: .2em;
   position: relative;
   background: var(--color-background-dark);
 }
@@ -59,7 +59,7 @@ pre[class*="language-"] {
 code[class*="language-"]::selection {
   background: var(--color-red);
   color: var(--color-text);
-  text-shadow: 0 1px 0 rgba(0,0,0,0.5);
+  text-shadow: 0 1px 0 rgba(0,0,0,.5);
 }
 @media $mq-tablet {
   code[class*="language-"] {
@@ -72,8 +72,8 @@ pre[class*="language-"] {
 }
 /* Inline code */
 :not(pre) > code[class*="language-"] {
-  padding: 0.1em;
-  border-radius: 0.3em;
+  padding: .1em;
+  border-radius: .3em;
 }
 .token.comment,
 .token.prolog,
@@ -85,7 +85,7 @@ pre[class*="language-"] {
   color: var(--color-text);
 }
 .namespace {
-  opacity: 0.7;
+  opacity: .7;
 }
 .token.constant,
 .token.symbol,
@@ -147,8 +147,8 @@ pre[data-line] {
   padding-left: 0;
   padding-right: 0;
   margin-top: 1em /* Same as .prism’s padding-top */;
-  background: rgba(153,122,102,0.08);
-  background: linear-gradient(to right, rgba(153,122,102,0.1) 70%, rgba(153,122,102,0));
+  background: rgba(153,122,102,.08);
+  background: linear-gradient(to right, rgba(153,122,102,.1) 70%, rgba(153,122,102,0));
   pointer-events: none;
   line-height: inherit;
   white-space: pre;
@@ -157,15 +157,15 @@ pre[data-line] {
 .line-highlight[data-end]::after {
   content: attr(data-start);
   position: absolute;
-  top: 0.4em;
-  left: 0.6em;
+  top: .4em;
+  left: .6em;
   min-width: 1em;
-  padding: 0 0.5em;
-  background-color: rgba(153,122,102,0.4);
+  padding: 0 .5em;
+  background-color: rgba(153,122,102,.4);
   color: #f5f2f0;
   font: bold 65%/1.5 sans-serif;
   text-align: center;
-  vertical-align: 0.3em;
+  vertical-align: .3em;
   border-radius: 999px;
   text-shadow: none;
   box-shadow: 0 1px #fff;
@@ -173,7 +173,7 @@ pre[data-line] {
 .line-highlight[data-end]::after {
   content: attr(data-end);
   top: auto;
-  bottom: 0.4em;
+  bottom: .4em;
 }
 pre[class*="language-html"]::after,
 pre[class*="language-markup"]::after {
@@ -209,8 +209,8 @@ pre[class*="language-"]::after,
   position: absolute;
   top: 0;
   right: 0;
-  font-size: 0.75rem;
-  padding: 0.25em 0.6em;
+  font-size: .75rem;
+  padding: .25em .6em;
   text-shadow: none;
   z-index: 1;
   box-shadow: none;

@@ -32,7 +32,7 @@ defineProps({
   aspect-ratio: 1;
   color: var(--color-text);
   background: var(--color-background-dark);
-  padding: 0.55em;
+  padding: .55em;
   border-radius: 50%;
   transition: var(--transition-slow) ease-out;
   overflow: hidden;
@@ -44,7 +44,7 @@ defineProps({
 }
 
 .social__item:is(:hover, :focus) :deep(svg) {
-  transform: scale(0.95);
+  transform: scale(.95);
 }
 
 .--twitter {

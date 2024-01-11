@@ -40,7 +40,7 @@ h2::after {
   font-size: 2em;
   font-weight: 400;
   margin: 0 1rem;
-  transform: translateY(0.3em);
+  transform: translateY(.3em);
 }
 
 h2::before {

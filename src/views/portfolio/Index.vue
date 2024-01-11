@@ -70,7 +70,7 @@ useSeoMeta({
 .thanks .heart {
   fill: var(--color-red);
   width: 1em;
-  margin: 0 0.15em;
+  margin: 0 .15em;
   vertical-align: baseline;
   transform: translateY(2px);
 }

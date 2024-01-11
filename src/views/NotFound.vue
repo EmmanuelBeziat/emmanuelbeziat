@@ -73,9 +73,9 @@ useHead({
 
 .not-found__404 {
   font: 400 5.125rem/1 var(--font-stack-heading);
-  margin: 0.5em 0 0.25em;
+  margin: .5em 0 .25em;
   color: var(--color-green);
-  animation-delay: 0.3s;
+  animation-delay: .3s;
 }
 
 @media (width <= 992px) {
@@ -88,13 +88,13 @@ useHead({
 .not-found__title {
   font: 400 var(--font-size-heading-2)/1.5 var(--font-stack-heading);
   margin-top: 0;
-  animation-delay: 0.35s;
+  animation-delay: .35s;
 }
 
 .not-found__content {
   max-width: 17.5rem;
   text-align: justify;
   margin: auto;
-  animation-delay: 0.4s;
+  animation-delay: .4s;
 }
 </style>

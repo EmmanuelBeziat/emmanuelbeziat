@@ -88,14 +88,14 @@ div {
 }
 
 .interview {
-  animation-delay: 0.35s;
+  animation-delay: .35s;
 }
 
 .work {
-  animation-delay: 0.55s;
+  animation-delay: .55s;
 }
 
 .play {
-  animation-delay: 0.85s;
+  animation-delay: .85s;
 }
 </style>

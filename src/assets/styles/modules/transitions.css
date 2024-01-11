@@ -31,7 +31,7 @@
  */
 .list-enter-active,
 .list-leave-active {
-  transition: 0.5s;
+  transition: .5s;
 }
 
 .list-enter-to,
@@ -61,13 +61,13 @@
 
 .animationBounce {
   opacity: 0;
-  transform: translateY(20px) scale(0.975);
-  animation: 0.765s var(--ease-back-out) 0.25s forwards backSlideIn;
+  transform: translateY(20px) scale(.975);
+  animation: .765s var(--ease-back-out) .25s forwards backSlideIn;
 }
 
 .animationFadeBounce {
   opacity: 0;
-  transform: scale(0.975);
+  transform: scale(.975);
   animation-name: backSlideIn;
   animation-duration: var(--transition-slow);
   animation-fill-mode: forwards;

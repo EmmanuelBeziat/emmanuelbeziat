@@ -48,7 +48,7 @@
 	--transition-slow: .5s;
 	--transition-xslow: .75s;
 
-	--ease-back-out: cubic-bezier(0.295, 1.750, 0.690, 0.900);
+	--ease-back-out: cubic-bezier(.295, 1.750, .690, .900);
 
 	/* brands */
 	--brand-color-twitter: #55acee;
@@ -119,7 +119,7 @@ body::-webkit-scrollbar {
 
 body::-webkit-scrollbar-thumb {
   border: 2px solid var(--color-background);
-  border-radius: 0.5rem;
+  border-radius: .5rem;
   transition: var(--transition-fast) ease-in-out;
   background: var(--color-thumb);
 }
@@ -226,11 +226,11 @@ samp {
 
 kbd {
   background: var(--color-separator);
-  font-size: 0.85rem;
-  border-radius: 0.2em;
+  font-size: .85rem;
+  border-radius: .2em;
   display: inline-block;
-  padding: 0 0.35em;
+  padding: 0 .35em;
   border-bottom: 1px solid var(--color-background-darker);
-  margin: 0 0.05em;
+  margin: 0 .05em;
 }
 

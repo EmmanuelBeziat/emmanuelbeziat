@@ -34,13 +34,13 @@
 .pull-left {
   float: left;
   margin-right: 2em;
-  margin-bottom: 0.5em;
+  margin-bottom: .5em;
 }
 
 .pull-right {
   float: right;
   margin-left: 2em;
-  margin-bottom: 0.5em;
+  margin-bottom: .5em;
 }
 
 .shape-round {
