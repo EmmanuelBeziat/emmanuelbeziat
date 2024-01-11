@@ -1,0 +1,48 @@
+.flex {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.site {
+  min-height: 100dvh;
+  overflow-x: hidden;
+  display: grid;
+  grid-template: "header content"/20rem auto;
+}
+
+@media (width <= 1120px) {
+  .site {
+    grid-template: "header" "content" "footer";
+  }
+}
+
+@media (width <= 768px) {
+  .site {
+    padding-bottom: 80px;
+  }
+}
+
+.site-content {
+  padding: 2rem;
+  width: min(50rem, 100dvw);
+  margin: 0 auto;
+  grid-area: content;
+}
+
+@media (width <= 768px) {
+  .site-content {
+    padding: 2rem 1rem;
+  }
+}
+
+.main {
+  margin: 6rem auto 2rem;
+  outline: 0;
+}
+
+@media (width <= 1120px) {
+  .main {
+    margin: 2rem auto;
+  }
+}

@@ -1,6 +1,6 @@
 <template>
 	<nav class="social" v-once>
-		<Item :url="social.twitter" name="Twitter" icon="twitter" />
+		<Item :url="social.twitter" name="X" icon="x" />
 		<Item :url="social.instagram" name="Instagram" icon="instagram" />
 		<Item :url="social.github" name="GitHub" icon="github" />
 		<Item :url="social.linkedin" name="LinkedIn" icon="linkedin" />
@@ -13,13 +13,17 @@ import { social } from '@/config'
 import Item from '@/components/layout/SocialItem.vue'
 </script>
 
-<style lang="stylus" scoped>
-.social
-	display flex
-	flex-wrap wrap
-	justify-content center
-	gap 4px
+<style scoped>
+.social {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 4px;
+}
 
-	@media $mq-desktop
-		margin-top 1rem
+@media (width <= 1120px) {
+	.social {
+		margin-top: 1rem;
+	}
+}
 </style>

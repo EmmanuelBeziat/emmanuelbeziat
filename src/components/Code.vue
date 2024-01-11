@@ -1,5 +1,5 @@
 <template>
-	<div class="cv-code">
+	<div class="cv-code animationFadeBounce">
 		<div class="cv-code__header">
 			<div class="cv-code__buttons">
 				<span class="fake-button --close" />
@@ -28,72 +28,91 @@ const codes = useCodesStore()
 const code = computed(() => codes.list[Math.floor(Math.random() * codes.count)] || [])
 </script>
 
-<style lang="stylus" scoped>
-@require '../assets/styles/modules/transitions.styl'
+<style scoped>
+.cv-code {
+  border-radius: 0.5rem;
+  overflow: hidden;
+  background: var(--color-background-dark);
+  animation-delay: 0.65s;
+}
 
-.cv-code
-	border-radius .5rem
-	overflow hidden
-	background var(--color-background-dark)
-	animation-delay .65s
-	@extends .animationBounce
-	@supports (content-visibility auto)
-		content-visibility auto
+@supports (content-visibility: auto) {
+  .cv-code {
+    content-visibility: auto;
+  }
+}
 
-	@media $mq-tablet
-		margin 0 -1rem
-		border-radius 0
+:deep(pre) {
+	margin: 0;
+}
 
-	& :deep(pre)
-		margin 0
-		@media $mq-tablet
-			padding 1.5em 1em
+@media (width <= 768px) {
+  :deep(pre) {
+    padding: 1.5em 1em;
+  }
+}
 
-		&::after
-			content none
+:deep(pre)::after {
+  content: none;
+}
 
-	& :deep(code)
-		@extends .animationBounce
-		animation-delay .5s
+:deep(code) {
+  animation-delay: 0.5s;
+}
 
-.cv-code__header
-	display flex
-	align-items center
-	background var(--color-background-light)
-	color var(--color-text)
-	text-align center
-	padding 5px 10px
-	border-radius .5rem .5rem 0 0
-	position relative
-	font-family var(--font-stack-code)
+.cv-code__header {
+	display: flex;
+  align-items: center;
+  background: var(--color-background-light);
+  color: var(--color-text);
+  text-align: center;
+  padding: 5px 10px;
+  border-radius: 0.5rem 0.5rem 0 0;
+  position: relative;
+  font-family: var(--font-stack-code);
+}
 
-	@media $mq-tablet
-		border-radius 0
+@media (width <= 768px) {
+	.cv-code__header {
+		border-radius: 0;
+	}
+}
 
-.cv-code__buttons
-	margin-right 1rem
-	display flex
-	gap 6px
+.cv-code__buttons {
+  margin-right: 1rem;
+  display: flex;
+  gap: 6px;
+}
 
-	.fake-button
-		width .7rem
-		height .7rem
-		border-radius 50%
-		background var(--bg-button)
+.cv-code__buttons .fake-button {
+  width: 0.7rem;
+  height: 0.7rem;
+  border-radius: 50%;
+  background: var(--bg-button);
+}
 
-	.--close
-		--bg-button var(--color-red)
-	.--minify
-		--bg-button var(--color-yellow)
-	.--expand
-		--bg-button var(--color-green)
+.cv-code__buttons .--close {
+  --bg-button: var(--color-red);
+}
 
-.cv-code__title
-	margin auto
-	transform translateX(-32px)
-	color var(--color-subwhite)
+.cv-code__buttons .--minify {
+  --bg-button: var(--color-yellow);
+}
 
-	@media $mq-desktop
-		margin 0
-		transform none
+.cv-code__buttons .--expand {
+  --bg-button: var(--color-green);
+}
+
+.cv-code__title {
+  margin: auto;
+  transform: translateX(-32px);
+  color: var(--color-subwhite);
+}
+
+@media (width <= 1120px) {
+	.cv-code__title {
+		margin: 0;
+		transform: none;
+	}
+}
 </style>

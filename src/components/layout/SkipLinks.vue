@@ -1,7 +1,7 @@
 <template>
 	<nav :id="`access-shortcuts-wrapper-${position}`" class="skip-link" :aria-label="label">
-		<a href="#content" :id="`skiplink-go-to-content-from-${position}`" class="sr-only sr-only-focusable">Aller au contenu</a>
-		<a href="#menu" :id="`skiplink-go-to-menu-from-${position}`" class="sr-only sr-only-focusable">Aller au menu</a>
+		<a href="#content" :id="`skiplink-go-to-content-from-${position}`" class="visually-hidden visually-hidden-focusable">Aller au contenu</a>
+		<a href="#menu" :id="`skiplink-go-to-menu-from-${position}`" class="visually-hidden visually-hidden-focusable">Aller au menu</a>
 	</nav>
 </template>
 

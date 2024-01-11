@@ -41,6 +41,6 @@ defineProps({
 })
 </script>
 
-<style lang="stylus" scoped>
-@require '../assets/styles/components/posts.styl'
+<style scoped>
+@import '../assets/styles/components/posts.css'
 </style>

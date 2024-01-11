@@ -44,7 +44,8 @@ export default defineComponent({
 })
 </script>
 
-<style lang="stylus" scoped>
-.alert
-	display none
+<style scoped>
+.alert {
+  display: none;
+}
 </style>

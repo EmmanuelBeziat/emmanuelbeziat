@@ -19,30 +19,34 @@ defineProps({
 })
 </script>
 
-<style lang="stylus" scoped>
-[class^="share__button"]
-	width 36px
-	aspect-ratio 1 / 1
-	background var(--color-background-darker)
-	color var(--color-text)
-	border-radius 2px
-	transition var(--transition-slow) ease-out
-	overflow hidden
-	padding 0
-	border 0
-	outline 0
-	cursor pointer
+<style scoped>
+[class^="share__button"] {
+  width: 36px;
+  aspect-ratio: 1/1;
+  background: var(--color-background-darker);
+  color: var(--color-text);
+  border-radius: 2px;
+  transition: var(--transition-slow) ease-out;
+  overflow: hidden;
+  padding: 0;
+  border: 0;
+  outline: 0;
+  cursor: pointer;
+}
 
-	:deep(svg)
-		padding .5em
-		fill currentColor
-		width 100%
+[class^="share__button"] :deep(svg) {
+  padding: 0.5em;
+  fill: currentColor;
+  width: 100%;
+}
 
-	&:hover
-	&:focus
-		background var(--bg-social-link)
-		transition var(--transition-xfast) ease-out
+[class^="share__button"]:hover,
+[class^="share__button"]:focus {
+  background: var(--bg-social-link);
+  transition: var(--transition-xfast) ease-out;
+}
 
-	&.--share
-		--bg-social-link var(--color-blue)
+[class^="share__button"].--share {
+  --bg-social-link: var(--color-blue);
+}
 </style>

@@ -1,6 +1,6 @@
 <template>
 	<div class="share">
-		<span class="sr-only">Partager cet article :</span>
+		<span class="visually-hidden">Partager cet article :</span>
 
 		<Button icon="share" name="Partager" @on-click="dispatch" />
 	</div>

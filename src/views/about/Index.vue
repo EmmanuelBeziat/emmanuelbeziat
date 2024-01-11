@@ -1,10 +1,10 @@
 <template>
 	<section class="me">
-		<div class="drawing">
+		<div class="drawing animationBounce">
 			<img :src="picture" alt="Emmanuel Béziat (Drawing by Marie-Laure Rouzier)" loading="lazy">
 		</div>
 
-		<div class="interview">
+		<div class="interview animationBounce">
 			<h2>Et sinon …?</h2>
 
 			<p>J’ai pas d’idée pour me présenter.</p>
@@ -16,7 +16,7 @@
 			<p>C’est mon bureau. Y en a plein comme ça, mais celui-là c’est le mien. 😍</p>
 		</div>
 
-		<div class="work">
+		<div class="work animationBounce">
 			<h3>Et tu fais quoi ?</h3>
 			<KeepAlive>
 				<GithubCards align="left" />
@@ -24,7 +24,7 @@
 			<p>En gros, surtout du Javascript. Parfois avec Vue.js, parfois sans.</p>
 		</div>
 
-		<div class="play">
+		<div class="play animationBounce">
 			<h2>À quoi tu joues ? 🎮</h2>
 			<p>
 				<img src="https://i2.trueachievements.com/infog-story/760992.png?v=2" alt="Xbox" loading="lazy">
@@ -43,7 +43,7 @@ import { defineNamespace } from '@/plugins/mixins/namespace'
 
 import GithubCards from '@/components/GithubCards.vue'
 
-const picture = ref(new URL(`../../assets/img/emmanuelb-draw.webp`, import.meta.url).href)
+const picture = ref(new URL(`../../assets/images/emmanuelb-draw.webp`, import.meta.url).href)
 const route = useRoute()
 const fullURL = computed(() => openGraph.url + route.fullPath)
 
@@ -60,34 +60,42 @@ useSeoMeta({
 })
 </script>
 
-<style lang="stylus" scoped>
-@require '../../assets/styles/modules/transitions.styl'
+<style scoped>
+.drawing {
+  text-align: center;
+  padding: 0 2rem;
+  max-width: 38rem;
+  margin: auto;
+}
 
-.drawing
-	text-align center
-	padding 0 2rem
-	max-width 38rem
-	margin auto
+.drawing img {
+  vertical-align: top;
+  max-width: 100%;
+}
 
-	img
-		vertical-align top
-		max-width 100%
+h2 {
+  font: 400 var(--font-size-article-title)/1.25 var(--font-stack-heading);
+}
 
-h2
-	font 400 var(--font-size-article-title)/1.25 var(--font-stack-heading)
+div {
+  opacity: 0;
+}
 
-div
-	opacity 0
-	@extends .animationBounce
-	@supports (content-visibility auto)
-		content-visibility auto
+@supports (content-visibility: auto) {
+  div {
+    content-visibility: auto;
+  }
+}
 
-.interview
-	animation-delay .35s
+.interview {
+  animation-delay: 0.35s;
+}
 
-.work
-	animation-delay .55s
+.work {
+  animation-delay: 0.55s;
+}
 
-.play
-	animation-delay .85s
+.play {
+  animation-delay: 0.85s;
+}
 </style>

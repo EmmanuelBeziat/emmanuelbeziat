@@ -25,42 +25,60 @@ defineProps({
 })
 </script>
 
-<style lang="stylus" scoped>
-.social__item
-	display block
-	width 3rem
-	aspect-ratio 1 / 1
-	color var(--color-text)
-	background var(--color-background-dark)
-	padding .55em
-	border-radius 50%
-	transition var(--transition-slow) ease-out
-	overflow hidden
+<style scoped>
+.social__item {
+  display: block;
+  width: 3rem;
+  aspect-ratio: 1/1;
+  color: var(--color-text);
+  background: var(--color-background-dark);
+  padding: 0.55em;
+  border-radius: 50%;
+  transition: var(--transition-slow) ease-out;
+  overflow: hidden;
+}
 
-	&:hover
-	&:focus
-		background var(--bg-social-link)
-		transition var(--transition-xfast) ease-out
+.social__item:hover,
+.social__item:focus {
+  background: var(--bg-social-link);
+  transition: var(--transition-xfast) ease-out;
+}
 
-		:deep(svg)
-			transform scale(.95)
+.social__item:hover :deep(svg),
+.social__item:focus :deep(svg) {
+  transform: scale(0.95);
+}
 
-	&.--twitter
-		--bg-social-link $color-brand-twitter
-	&.--facebook
-		--bg-social-link $color-brand-facebook
-	&.--instagram
-		--bg-social-link $color-brand-instagram
-	&.--codepen
-		--bg-social-link $color-brand-codepen
-	&.--github
-		--bg-social-link $color-brand-github
-	&.--linkedin
-		--bg-social-link $color-brand-linkedin
-	&.--youtube
-		--bg-social-link $color-brand-youtube
+.social__item.--twitter {
+  --bg-social-link: var(--brand-color-twitter);
+}
 
-	:deep(svg)
-		fill currentColor
-		transition var(--transition-fast) ease-in-out
+.social__item.--facebook {
+  --bg-social-link: var(--brand-color-facebook);
+}
+
+.social__item.--instagram {
+  --bg-social-link: var(--brand-color-instagram);
+}
+
+.social__item.--codepen {
+  --bg-social-link: var(--brand-color-codepen);
+}
+
+.social__item.--github {
+  --bg-social-link: var(--brand-color-github);
+}
+
+.social__item.--linkedin {
+  --bg-social-link: var(--brand-color-linkedin);
+}
+
+.social__item.--youtube {
+  --bg-social-link: var(--brand-color-youtube);
+}
+
+.social__item :deep(svg) {
+  fill: currentColor;
+  transition: var(--transition-fast) ease-in-out;
+}
 </style>
