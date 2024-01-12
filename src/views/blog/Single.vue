@@ -1,13 +1,13 @@
 <template>
 	<article class="post" v-if="post">
-		<header class="post__header animationBounce">
+		<header class="post__header animation-bounce">
 			<h1 class="post__title">{{ post.title }}</h1>
 
 			<div class="post-infos">
 				<div class="post__date">Posté le <time>{{ dateFormat(post.date, { year: 'numeric', month: 'long', day: 'numeric' }) }}</time></div>
 
 				<div class="flex">
-					<sequential-entrance animation="animationBounce" delay="125" class="tags">
+					<sequential-entrance animation="animation-bounce" delay="125" class="tags">
 						<Tag v-for="(tag, index) in post.tags" :key="`tag-${index}`" :value="tag" />
 					</sequential-entrance>
 
@@ -16,11 +16,11 @@
 			</div>
 		</header>
 
-		<div class="post-content animationFade" v-html="post.markup" />
+		<div class="post-content animation-fade" v-html="post.markup" />
 
-		<footer class="post__footer animationBounce">
+		<footer class="post__footer animation-bounce">
 			<div class="flex">
-				<sequential-entrance animation="animationBounce" delay="125" class="tags">
+				<sequential-entrance animation="animation-bounce" delay="125" class="tags">
 					<Tag v-for="(tag, index) in post.tags" :key="`tag-${index}`" :value="tag" />
 				</sequential-entrance>
 

@@ -52,25 +52,39 @@
 /**
  * Sequential entrances
  */
-.animationFade {
+.animation-fade {
   opacity: 0;
   animation-name: animationFade;
   animation-duration: var(--transition-slow);
   animation-fill-mode: forwards;
 }
 
-.animationBounce {
+.animation-bounce {
   opacity: 0;
   transform: translateY(20px) scale(.975);
   animation: .765s var(--ease-back-out) .25s forwards backSlideIn;
 }
 
-.animationFadeBounce {
+.animation-fade-bounce {
   opacity: 0;
   transform: scale(.975);
   animation-name: backSlideIn;
   animation-duration: var(--transition-slow);
   animation-fill-mode: forwards;
+}
+
+.animation-skew-y {
+	opacity: 0;
+	transform: translateY(25%) skewY(-5deg);
+	transform-origin: top right;
+	animation: .765s var(--ease-back-out) .25s forwards animationSkewY;
+}
+
+.animation-skew-y-revert {
+	opacity: 0;
+	transform: translateY(25%) skewY(5deg);
+	transform-origin: top left;
+	animation: .765s var(--ease-back-out) .25s forwards animationSkewY;
 }
 
 @keyframes animationFade {
@@ -85,4 +99,11 @@
     opacity: 1;
     transform: translateY(0) scale(1);
   }
+}
+
+@keyframes animationSkewY {
+	to {
+		opacity: 1;
+		transform: translateY(0) skewY(0);
+	}
 }

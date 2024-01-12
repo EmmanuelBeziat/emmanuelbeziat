@@ -1,18 +1,18 @@
 <template>
 	<header class="header" v-once ref="header">
-		<h1 class="header__title animationBouncee"><router-link to="/">Emmanuel Béziat</router-link></h1>
+		<h1 class="header__title animation-skew-y"><router-link to="/">Emmanuel Béziat</router-link></h1>
 
-		<Picture class="picture animationBounce" />
+		<Picture class="picture animation-bounce" />
 
-		<SocialLinks class="social animationBounce" />
+		<SocialLinks class="social animation-bounce" />
 
-		<div class="bio animationBounce">
+		<div class="bio animation-bounce">
 			<p>Développeur web full-stack, passionné de code optimisé et moderne. Parfois formateur.</p>
 			<p>Musicien à mes heures. Sportif monté en kit. Explorateur urbain.</p>
 			<p>Mon meilleur atout ? L’<b>adaptabilité</b>. Donnez-moi du temps et de la doc, et je suis votre dev. <i class="emoji" role="img" aria-label="Emoji de salut militaire">🫡</i></p>
 		</div>
 
-		<Copyright class="copyright animationBounce" />
+		<Copyright class="copyright animation-bounce" />
 	</header>
 </template>
 
@@ -34,7 +34,7 @@ import Copyright from '@/components/layout/Copyright.vue'
 
 .header__title {
   margin: 0;
-  font-size: var(--font-size-heading-1);
+  font-size: var(--font-size-title);
   line-height: 1;
   font-weight: 400;
   animation-delay: .25s;

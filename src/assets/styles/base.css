@@ -1,82 +1,11 @@
-:root {
-	/* Colors */
-	--color-background: #1e192b;
-	--color-text: #eeeeee;
-
-	--color-subwhite: #f9fad3;
-	--color-green: #c3e88d;
-	--color-blue: #4eb0e4;
-	--color-violet: #a48aec;
-	--color-yellow: #ffcb6b;
-	--color-red: #ec4185;
-
-	--color-separator: #282139;
-
-	--color-background-light: #282139;
-  --color-background-lighter: #4f4271;
-  --color-background-dark: #1b1627;
-  --color-background-darker: #171320;
-
-	/* fonts */
-	--font-stack-common: "Source Sans 3", system-ui, "Segoe UI", "Helvetica Neue", Roboto, Arial, sans-serif;
-	--font-stack-heading: "Yanone Kaffeesatz", "Source Sans 3", system-ui, "Segoe UI", "Helvetica Neue", Roboto, Arial, sans-serif;
-	--font-stack-code: "JetBrains Mono", monospace;
-
-	--font-size-base: 16px;
-	--font-size-title: 40px;
-
-	--font-size-heading-1: 3.815rem;
-	--font-size-heading-2: 3.052rem;
-	--font-size-heading-3: 2.441rem;
-	--font-size-heading-4: 1.953rem;
-	--font-size-heading-5: 1.563rem;
-	--font-size-heading-6: 1.25rem;
-
-	--font-size-logo: 48px;
-
-	--font-size-article-title: var(--font-size-heading-1);
-	--font-size-article-title-small: var(--font-size-heading-4);
-	--font-size-article-infos: 14px;
-
-	--font-size-menu: 30px;
-	--font-size-quotes: 20px;
-	--font-size-code: 14px;
-
-	--transition-xfast: .2s;
-	--transition-fast: .25s;
-	--transition-normal: .3s;
-	--transition-slow: .5s;
-	--transition-xslow: .75s;
-
-	--ease-back-out: cubic-bezier(.295, 1.750, .690, .900);
-
-	/* brands */
-	--brand-color-twitter: #55acee;
-	--brand-color-x: #000;
-	--brand-color-facebook: #3b5988;
-	--brand-color-codepen: #000;
-	--brand-color-github: #333;
-	--brand-color-linkedin: #0077b5;
-	--brand-color-instagram: #833ab4;
-	--brand-color-youtube: #ff0000;
-
-	scrollbar-gutter: stable;
-}
-
-@media (prefers-reduced-motion: reduce) {
-	:root {
-		--transition-xfast: 0;
-		--transition-fast: 0;
-		--transition-normal: 0;
-		--transition-slow: 0;
-		--transition-xslow: 0;
-	}
-}
-
 ::selection {
 	background: var(--color-blue);
 	color: var(--color-text);
 	text-shadow: 0 1px 0 rgba(0, 0, 0, .5);
+}
+
+:root {
+	scrollbar-gutter: stable;
 }
 
 @media (prefers-reduced-motion: no-preference) {

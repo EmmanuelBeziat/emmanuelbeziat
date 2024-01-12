@@ -10,6 +10,7 @@
 @import './vendors/prism.css';
 
 /* basis */
+@import './custom-properties.css';
 @import './base.css';
 @import './helpers.css';
 @import './layout.css';

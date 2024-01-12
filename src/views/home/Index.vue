@@ -2,7 +2,7 @@
 	<section class="home">
 		<div class="presentation">
 			<Presentation />
-			<CodeHome class="code animationFadeBounce" />
+			<CodeHome class="code animation-fade-bounce" />
 		</div>
 	</section>
 </template>

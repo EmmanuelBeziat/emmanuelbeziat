@@ -1,10 +1,10 @@
 <template>
 	<section class="me">
-		<div class="drawing animationBounce">
+		<div class="drawing animation-bounce">
 			<img :src="picture" alt="Emmanuel Béziat (Drawing by Marie-Laure Rouzier)" loading="lazy">
 		</div>
 
-		<div class="interview animationBounce">
+		<div class="interview animation-bounce">
 			<h2>Et sinon …?</h2>
 
 			<p>J’ai pas d’idée pour me présenter.</p>
@@ -16,7 +16,7 @@
 			<p>C’est mon bureau. Y en a plein comme ça, mais celui-là c’est le mien. 😍</p>
 		</div>
 
-		<div class="work animationBounce">
+		<div class="work animation-bounce">
 			<h3>Et tu fais quoi ?</h3>
 			<KeepAlive>
 				<GithubCards align="left" />
@@ -24,7 +24,7 @@
 			<p>En gros, surtout du Javascript. Parfois avec Vue.js, parfois sans.</p>
 		</div>
 
-		<div class="play animationBounce">
+		<div class="play animation-bounce">
 			<h2>À quoi tu joues ? 🎮</h2>
 			<p>
 				<img src="https://i2.trueachievements.com/infog-story/760992.png?v=2" alt="Xbox" loading="lazy">

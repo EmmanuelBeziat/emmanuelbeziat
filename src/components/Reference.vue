@@ -97,7 +97,7 @@ defineProps({
   font-weight: 400;
 }
 
-@media (width >= 481px) {
+@media (hover: hover) {
   .showcase__item:hover .showcase__layer {
     transform: scale(.4) translateZ(0);
     border-radius: 50%;

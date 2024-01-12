@@ -1,8 +1,8 @@
 <template>
 	<hgroup class="card">
-		<div class="presentation__hello animationFadeBounce">Hello! Je suis</div>
-		<h1 class="presentation__title animationFadeBounce" ref="name">Emmanuel Béziat</h1>
-		<div class="presentation__job animationFadeBounce" ref="job">dev <span>full-stack</span> senior</div>
+		<div class="presentation__hello animation-fade-bounce">Hello! Je suis</div>
+		<h1 class="presentation__title animation-fade-bounce" ref="name">Emmanuel Béziat</h1>
+		<div class="presentation__job animation-fade-bounce" ref="job">dev <span>full-stack</span> senior</div>
 	</hgroup>
 	<div class="presentation__age" ref="age"><span>{{ age }} ans</span> ({{ nextBirthday }})</div>
 	<div class="presentation__birthday" ref="birthday" v-if="isBirthdayMonth">Si vous voulez m’offrir un petit cadeau, <br>vous pouvez consulter ma <a :href="amazonList">liste de souhaits Amazon </a>!</div>

@@ -71,9 +71,9 @@
 }
 
 .noscript {
-  max-width: rem(480px);
-  margin: rem(60px) auto;
-  font-size: rem(20px);
+  max-width: 480px;
+  margin: 60px auto;
+  font-size: 20px;
 }
 
 .iframe-codepen {
@@ -81,7 +81,7 @@
   min-height: 430px;
 }
 
-@media $mq-tablet {
+@media (width <= 768px) {
   .iframe-codepen {
     min-height: 380px;
   }

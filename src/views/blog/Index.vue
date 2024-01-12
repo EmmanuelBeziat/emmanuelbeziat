@@ -3,7 +3,7 @@
 		<Search placeholder="Recherche…" label="Rechercher" v-model="searchTerms" />
 
 		<template v-if="posts">
-			<sequential-entrance animation="animationFade" delay="100" class="post-list">
+			<sequential-entrance animation="animation-fade" delay="100" class="post-list">
 				<Post v-for="post in posts" :key="`post-${post.slug}`" :post="post" />
 			</sequential-entrance>
 		</template>

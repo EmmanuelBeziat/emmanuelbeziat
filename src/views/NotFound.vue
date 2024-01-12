@@ -1,12 +1,12 @@
 <template>
 	<section class="not-found">
-		<div class="not-found__image animationBounce" @click="$router.go()">
+		<div class="not-found__image animation-bounce" @click="$router.go()">
 			<img :src="error.image" alt="error" loading="lazy">
 		</div>
-		<div class="not-found__404 animationBounce" v-html="error.title"></div>
+		<div class="not-found__404 animation-bounce" v-html="error.title"></div>
 
-		<h1 class="not-found__title animationBounce">Page introuvable</h1>
-		<div class="not-found__content animationBounce">
+		<h1 class="not-found__title animation-bounce">Page introuvable</h1>
+		<div class="not-found__content animation-bounce">
 			<p>Et voilà, vous avez tout cassé… Et qui c’est qui doit réparer tout ça maintenant ?</p>
 			<p>Oooh, mais c’est pas grave, hein ? Y’a toujours un « informaticien » pour tout régler, pas vrai ?! <br>Après tout, c’est mon métier, alors ça n’a rien de compliqué… En plus c’est même pas un vrai métier : c’est l’ordinateur qui fait tout.</p>
 			<p>Pfff…</p>

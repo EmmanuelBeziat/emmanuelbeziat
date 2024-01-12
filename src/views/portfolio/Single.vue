@@ -1,24 +1,24 @@
 <template>
 	<article class="post" v-if="reference">
-		<header class="post__header animationBounce">
+		<header class="post__header animation-bounce">
 			<h1 class="post__title">{{ reference.title }}</h1>
 
 			<div class="post-infos">
 				<div class="flex">
-					<sequential-entrance animation="animationBounce" delay="125" class="tags">
+					<sequential-entrance animation="animation-bounce" delay="125" class="tags">
 						<Tag v-for="tag in reference.tags" :key="`tag-${tag}`" :value="tag" />
 					</sequential-entrance>
 
-					<sequential-entrance animation="animationBounce" delay="150" class="tags">
+					<sequential-entrance animation="animation-bounce" delay="150" class="tags">
 						<Tag v-for="client in reference.clients" :key="`client-${client}`" :value="client" />
 					</sequential-entrance>
 				</div>
 			</div>
 		</header>
 
-		<div class="post-content animationFade" v-html="reference.markup" />
+		<div class="post-content animation-fade" v-html="reference.markup" />
 
-		<footer class="post__footer animationBounce">
+		<footer class="post__footer animation-bounce">
 			<nav class="post-navigation" aria-label="Navigation du portfolio">
 				<Navigation type="previous" :to="{ name: 'Portfolio' }" label="Revenir au portfolio" />
 			</nav>

@@ -1,5 +1,5 @@
 <template>
-	<nav class="social" v-once>
+	<nav class="social animation-skew-y" v-once>
 		<Item :url="social.twitter" name="X" icon="x" />
 		<Item :url="social.instagram" name="Instagram" icon="instagram" />
 		<Item :url="social.github" name="GitHub" icon="github" />
