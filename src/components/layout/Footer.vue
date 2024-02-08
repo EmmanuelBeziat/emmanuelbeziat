@@ -23,7 +23,7 @@ import Copyright from '@/components/layout/Copyright.vue'
 
 @media (width <= 1120px) {
   .footer {
-    /* display: block; */
+    display: block;
     grid-area: footer;
   }
 }

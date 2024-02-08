@@ -22,6 +22,7 @@
 	--font-stack-common: "Source Sans 3", system-ui, "Segoe UI", "Helvetica Neue", Roboto, Arial, sans-serif;
 	--font-stack-heading: "Yanone Kaffeesatz", "Source Sans 3", system-ui, "Segoe UI", "Helvetica Neue", Roboto, Arial, sans-serif;
 	--font-stack-code: "JetBrains Mono", monospace;
+	--font-stack-hand: "jr!hand", cursive;
 
 	--font-size-base: 16px;
 	--font-size-title: var(--font-size-heading-3);

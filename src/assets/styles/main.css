@@ -5,6 +5,7 @@
 @import '../fonts/jetbrains-mono/jetbrains-mono.css';
 @import '../fonts/source-sans-3/source-sans-3.css';
 @import '../fonts/yanone-kaffeesatz/yanone-kaffeesatz.css';
+@import '../fonts/jrhand/jrhand.css';
 
 /* vendors */
 @import './vendors/prism.css';

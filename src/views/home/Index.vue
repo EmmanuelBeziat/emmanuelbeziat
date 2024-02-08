@@ -25,6 +25,6 @@ onMounted(() => {
 }
 
 .code {
-	margin-top: 4rem;
+	margin-top: 2rem;
 }
 </style>
