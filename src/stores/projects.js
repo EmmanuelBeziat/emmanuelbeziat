@@ -16,7 +16,7 @@ export const useProjectsStore = defineStore({
 
 	actions: {
 		async fetch () {
-			await fetch(`${api.projects}?sort=updated`)
+			await fetch(api.projects)
 				.then(response => response.json())
 				.then(data => {
 					this.projects = data.map(repo => {
@@ -28,6 +28,7 @@ export const useProjectsStore = defineStore({
 							description: repo.description,
 							created_at: repo.created_at,
 							updated_at: repo.updated_at,
+							pushed_at: repo.pushed_at,
 							language: repo.language,
 							languages_url: repo.languages_url,
 							stargazers: repo.stargazers_count,
@@ -37,7 +38,7 @@ export const useProjectsStore = defineStore({
 							issues: repo.open_issues_count,
 							archived: repo.archived
 						}
-					})
+					}).sort((a, b) => new Date(b.pushed_at) - new Date(a.pushed_at))
 				})
 				.catch(error => console.error(`Store error: ${error}`))
 		},

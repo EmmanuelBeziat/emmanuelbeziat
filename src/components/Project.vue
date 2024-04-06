@@ -10,7 +10,7 @@
 		</h1>
 
 		<div class="post-infos flex">
-			<div class="post__date">Créé le <time>{{ dateFormat(project.created_at, { year: 'numeric', month: 'long', day: 'numeric' }) }}</time> — Dernière mise à jour le <time>{{ dateFormat(project.updated_at, { year: 'numeric', month: 'long', day: 'numeric' }) }}</time></div>
+			<div class="post__date">Créé le <time>{{ dateFormat(project.created_at, { year: 'numeric', month: 'long', day: 'numeric' }) }}</time> — Dernière mise à jour le <time>{{ dateFormat(project.pushed_at, { year: 'numeric', month: 'long', day: 'numeric' }) }}</time></div>
 
 			<div class="tags">
 				<Tag :value="project.language" v-if="project.language" />
