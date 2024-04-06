@@ -19,7 +19,7 @@ onMounted(() => {
 })
 </script>
 
-<style scope>
+<style scoped>
 .presentation {
 	container: presentation / inline-size;
 }

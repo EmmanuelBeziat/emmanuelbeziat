@@ -52,6 +52,6 @@ useSeoMeta({
 
 <style scoped>
 .card {
-  margin-bottom: 1rem;
+  margin-block: 2.5rem;
 }
 </style>

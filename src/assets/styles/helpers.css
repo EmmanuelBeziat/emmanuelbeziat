@@ -85,6 +85,13 @@
   .iframe-codepen {
     min-height: 380px;
   }
+
+	.picture-full {
+		margin-inline: calc(var(--gutter-screen-x) * -1);
+		display: block;
+		max-width: none;
+		width: calc(100% + (var(--gutter-screen-x) * 2))
+	}
 }
 
 .emoji {

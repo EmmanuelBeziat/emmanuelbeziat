@@ -76,7 +76,3 @@ useSeoMeta({
 	ogDescription: post.value?.description,
 })
 </script>
-
-<style scope>
-@import '../../assets/styles/components/posts.css';
-</style>

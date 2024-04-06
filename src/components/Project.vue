@@ -40,7 +40,3 @@ defineProps({
 	}
 })
 </script>
-
-<style scoped>
-@import '../assets/styles/components/posts.css'
-</style>

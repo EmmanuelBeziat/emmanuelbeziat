@@ -11,24 +11,20 @@
 
 			<h3>Où est-ce que tu bosses ?</h3>
 			<p>
-				<img src="https://images.emmanuelbeziat.com/Home-2020---01-min.jpg" alt="Home" loading="lazy">
+				<img class="picture-full" src="https://images.emmanuelbeziat.com/Home-2020---01-min.jpg" alt="Home" loading="lazy">
 			</p>
 			<p>C’est mon bureau. Y en a plein comme ça, mais celui-là c’est le mien. 😍</p>
 		</div>
+
+		<!-- <div class="timeline animation-bounce">
+			<h3>Timeline</h3>
+		</div> -->
 
 		<div class="work animation-bounce">
 			<h3>Et tu fais quoi ?</h3>
 			<KeepAlive>
 				<GithubCards align="left" />
 			</KeepAlive>
-			<p>En gros, surtout du Javascript. Parfois avec Vue.js, parfois sans.</p>
-		</div>
-
-		<div class="play animation-bounce">
-			<h2>À quoi tu joues ? 🎮</h2>
-			<p>
-				<img src="https://i2.trueachievements.com/infog-story/760992.png?v=2" alt="Xbox" loading="lazy">
-			</p>
 		</div>
 	</section>
 </template>
@@ -63,13 +59,13 @@ useSeoMeta({
 <style scoped>
 .drawing {
   text-align: center;
-  padding: 0 2rem;
-  max-width: 38rem;
-  margin: auto;
+  padding: 0 var(--gutter-screen-x);
+  max-width: 32rem;
+  margin-inline: auto;
 }
 
 .drawing img {
-  vertical-align: top;
+  display: block;
   max-width: 100%;
 }
 
@@ -77,25 +73,19 @@ h2 {
   font: 400 var(--font-size-article-title)/1.25 var(--font-stack-heading);
 }
 
-div {
+.animation-bounce {
   opacity: 0;
 }
 
-@supports (content-visibility: auto) {
-  div {
-    content-visibility: auto;
-  }
-}
-
-.interview {
+.animation-bounce:nth-of-type(1) {
   animation-delay: .35s;
 }
 
-.work {
+.animation-bounce:nth-of-type(2) {
   animation-delay: .55s;
 }
 
-.play {
+.animation-bounce:nth-of-type(3) {
   animation-delay: .85s;
 }
 </style>

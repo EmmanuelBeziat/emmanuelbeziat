@@ -3,7 +3,7 @@
 		<hgroup class="card">
 			<div class="presentation__hello animation-fade-bounce">Hello! Je suis</div>
 			<h1 class="presentation__title animation-fade-bounce" ref="name">Emmanuel Béziat</h1>
-			<div class="presentation__job animation-fade-bounce" ref="job">dev <span>full-stack</span> senior</div>
+			<div class="presentation__job animation-fade-bounce" ref="job">dev web <span>full-stack</span></div>
 		</hgroup>
 
 		<FloatingNote class="floating-note fn-age" :speedX="0.005" :speedY="0.025">
@@ -158,6 +158,16 @@ checkAge(personal.birthday)
 	.floating-note {
 		display: none;
 	}
+}
+
+.fn-age :deep(.animation-fade-bounce) {
+	animation-delay: 1.25s;
+	animation-duration: 1s;
+}
+
+.fn-note :deep(.animation-fade-bounce) {
+	animation-delay: 1.45s;
+	animation-duration: 1.05s;
 }
 
 .fn-age {

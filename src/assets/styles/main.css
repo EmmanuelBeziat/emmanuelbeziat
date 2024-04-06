@@ -19,3 +19,6 @@
 /* modules */
 @import './modules/transitions.css';
 @import './modules/notes.css';
+
+/* components */
+@import './components/posts.css';

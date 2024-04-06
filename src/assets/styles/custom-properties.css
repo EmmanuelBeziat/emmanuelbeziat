@@ -50,6 +50,10 @@
 
 	--ease-back-out: cubic-bezier(.295, 1.750, .690, .900);
 
+	/* Gutters */
+	--gutter-screen-y: 2rem;
+	--gutter-screen-x: 2rem;
+
 	/* brands */
 	--brand-color-twitter: #55acee;
 	--brand-color-x: #000;
@@ -68,5 +72,20 @@
 		--transition-normal: 0;
 		--transition-slow: 0;
 		--transition-xslow: 0;
+	}
+}
+
+@media (width <= 768px) {
+	:root {
+		--font-size-heading-1: 2.986rem;
+		--font-size-heading-2: 2.488rem;
+		--font-size-heading-3: 2.074rem;
+		--font-size-heading-4: 1.728rem;
+		--font-size-heading-5: 1.44rem;
+		--font-size-heading-6: 1.2rem;
+
+		/* Gutters */
+		--gutter-screen-y: 2rem;
+		--gutter-screen-x: 2rem;
 	}
 }

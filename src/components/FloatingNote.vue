@@ -1,6 +1,8 @@
 <template>
   <div class="floating-note" :style="{ transform: transformValue }">
-    <slot />
+		<div class="animation-fade-bounce">
+			<slot />
+		</div>
   </div>
 </template>
 

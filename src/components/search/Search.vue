@@ -35,6 +35,12 @@ const vFocus = {
   display: flex;
 }
 
+@media (width <= 768px) {
+	.search {
+		margin-inline: -1rem;
+	}
+}
+
 .search__field {
   --border-color: var(--color-separator);
   flex: 1;
