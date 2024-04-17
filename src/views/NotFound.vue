@@ -7,8 +7,8 @@
 
 		<h1 class="not-found__title animation-bounce">Page introuvable</h1>
 		<div class="not-found__content animation-bounce">
-			<p>Et voilà, vous avez tout cassé… Et qui c’est qui doit réparer tout ça maintenant ?</p>
-			<p>Oooh, mais c’est pas grave, hein ? Y’a toujours un « informaticien » pour tout régler, pas vrai ?! <br>Après tout, c’est mon métier, alors ça n’a rien de compliqué… En plus c’est même pas un vrai métier : c’est l’ordinateur qui fait tout.</p>
+			<p>Et voilà, vous avez tout cassé… Et qui c’est qui doit réparer tout ça maintenant ?</p>
+			<p>Oooh, mais c’est pas grave, hein ? Y’a toujours un « informaticien » pour tout régler, pas vrai ?! <br>Après tout, c’est mon métier, alors ça n’a rien de compliqué… En plus c’est même pas un vrai métier : c’est l’ordinateur qui fait tout.</p>
 			<p>Pfff…</p>
 		</div>
 	</section>
@@ -17,6 +17,7 @@
 <script setup>
 import { computed } from 'vue'
 import { useHead } from '@unhead/vue'
+import { selectRandomItem } from '@/plugins/mixins/randomize'
 
 const errors = [
 	{ image: 'doctor-who.webp', title: 'What?!' },
@@ -25,16 +26,14 @@ const errors = [
 	{ image: 'obiwan.webp', title: 'This is not the page <br>you’re looking for…' },
 	{ image: 'pulp-fiction.webp', title: '…?' },
 	{ image: 'arya-got.webp', title: 'A page has no name' },
+	{ image: 'toy-story.webp', title: 'There seem to be no sign <br>of this page anywhere'},
 	// { image: 'jurassic-park.webp', title: 'This page is extinct'},
-	// { image: 'toy-story.webp', title: 'There seem to be no sign of this page anywhere'},
 ]
 const error = computed(() => {
-	let i = Number(localStorage.getItem('lastErrorIndex')) || 0
-	i = (i + 1) % errors.length
-	localStorage.setItem('lastErrorIndex', i)
+	const errorIndex = selectRandomItem(errors, 'lastErrorIndex')
 	return {
-		title: errors[i].title,
-		image: new URL(`../assets/images/404/${errors[i].image}`, import.meta.url)
+		title: errors[errorIndex].title,
+		image: new URL(`../assets/images/404/${errors[errorIndex].image}`, import.meta.url)
 	}
 })
 
@@ -92,7 +91,7 @@ useHead({
 }
 
 .not-found__content {
-  max-width: 17.5rem;
+  max-width: 21.5rem;
   text-align: justify;
   margin: auto;
   animation-delay: .4s;
