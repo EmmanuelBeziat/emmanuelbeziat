@@ -31,6 +31,11 @@
   text-align: justify;
 }
 
+img.text-align-center {
+	margin-inline: auto;
+	display: block;
+}
+
 .pull-left {
   float: left;
   margin-right: 2em;
