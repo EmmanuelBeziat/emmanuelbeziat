@@ -44,5 +44,8 @@
 		"vite-plugin-pwa": "^0.20.1",
 		"vite-svg-loader": "^5.1.0",
 		"workbox-precaching": "^7.1.0"
+	},
+	"resolutions": {
+		"rollup": "npm:@rollup/wasm-node"
 	}
 }
