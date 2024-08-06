@@ -61,11 +61,11 @@ const post = computed(() => postsStore.getPost(props.slug))
 
 onMounted(() => {
 	defineNamespace('blog')
+	updateMetaTags()
 })
 
 const updateMetaTags = () => {
 	useHead({
-		// title: post.value ? `${post.value.title} — Blog` : 'Article — Blog'
 		title: `${post.value?.title} — Blog`
 	})
 
@@ -81,6 +81,4 @@ const updateMetaTags = () => {
 watch(post, (newPost) => {
 	if (newPost) updateMetaTags()
 })
-
-updateMetaTags()
 </script>
