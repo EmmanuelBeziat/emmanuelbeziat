@@ -65,8 +65,8 @@ const updateMetaTags = () => {
 	})
 }
 
-watch(post, (newPost) => {
-	if (newPost) updateMetaTags()
+watch(reference, (newReference) => {
+	if (newReference) updateMetaTags()
 })
 
 updateMetaTags()
