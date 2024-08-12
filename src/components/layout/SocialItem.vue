@@ -79,6 +79,10 @@ defineProps({
   --bg-social-link: var(--brand-color-youtube);
 }
 
+.--npmjs {
+  --bg-social-link: var(--brand-color-npmjs);
+}
+
 .social__item :deep(svg) {
   fill: currentColor;
   transition: var(--transition-fast) ease-in-out;

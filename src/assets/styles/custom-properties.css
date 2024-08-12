@@ -63,6 +63,7 @@
 	--brand-color-linkedin: #0077b5;
 	--brand-color-instagram: #833ab4;
 	--brand-color-youtube: #ff0000;
+	--brand-color-npmjs: #cb3837;
 }
 
 @media (prefers-reduced-motion: reduce) {

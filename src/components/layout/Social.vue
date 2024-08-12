@@ -2,9 +2,9 @@
 	<nav class="social animation-skew-y" v-once>
 		<Item :url="social.twitter" name="X" icon="x" />
 		<Item :url="social.instagram" name="Instagram" icon="instagram" />
+		<Item :url="social.npmjs" name="NPMJS" icon="npmjs" />
 		<Item :url="social.github" name="GitHub" icon="github" />
 		<Item :url="social.linkedin" name="LinkedIn" icon="linkedin" />
-		<Item :url="social.codepen" name="CodePen" icon="codepen" />
 	</nav>
 </template>
 
