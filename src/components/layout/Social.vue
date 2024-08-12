@@ -5,6 +5,7 @@
 		<Item :url="social.npmjs" name="NPMJS" icon="npmjs" />
 		<Item :url="social.github" name="GitHub" icon="github" />
 		<Item :url="social.linkedin" name="LinkedIn" icon="linkedin" />
+		<!-- <Item :url="social.codepen" name="CodePen" icon="codepen" /> -->
 	</nav>
 </template>
 
