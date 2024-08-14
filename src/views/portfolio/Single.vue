@@ -16,7 +16,7 @@
 			</div>
 		</header>
 
-		<div class="post-content animation-fade" v-html="reference.markup" />
+		<div class="post__content animation-fade" v-html="reference.markup" />
 
 		<footer class="post__footer animation-bounce">
 			<nav class="post-navigation" aria-label="Navigation du portfolio">

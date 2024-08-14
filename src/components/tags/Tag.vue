@@ -26,11 +26,11 @@ defineProps({
 	display: flex;
 	align-items: center;
 	gap: 4px;
-}
 
-.tag svg {
-  fill: currentColor;
-  height: .75em;
-  margin-right: .25em;
+	svg {
+		fill: currentColor;
+		height: .75em;
+		margin-right: .25em;
+	}
 }
 </style>

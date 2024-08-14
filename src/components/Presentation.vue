@@ -79,10 +79,8 @@ checkAge(personal.birthday)
 .resume {
 	position: relative;
 	padding-bottom: 4rem;
-}
 
-@media (width <= 768px) {
-	.resume {
+	@media (width <= 768px) {
 		padding-bottom: 0;
 	}
 }
@@ -92,16 +90,12 @@ checkAge(personal.birthday)
   font: 700 var(--font-size-heading-1)/1 var(--font-stack-common);
   margin-bottom: 80px;
   text-align: center;
-}
 
-@supports (content-visibility: visible) {
-  .card {
-    content-visibility: visible;
-  }
-}
+	@supports (content-visibility: visible) {
+		content-visibility: visible;
+	}
 
-@container (width < 46rem) {
-	.card {
+	@container (width < 46rem) {
 		font-size: var(--font-size-heading-3);
 	}
 }
@@ -113,12 +107,10 @@ checkAge(personal.birthday)
   color: var(--color-blue);
   animation-delay: .55s;
   white-space: nowrap;
-}
 
-@supports (font-size: 1cqi) {
-  .presentation__title {
-    font-size: clamp(var(--font-size-heading-3), 13cqi, 5ch);
-  }
+	@supports (font-size: 1cqi) {
+		font-size: clamp(var(--font-size-heading-3), 13cqi, 5ch);
+	}
 }
 
 .presentation__hello {
@@ -131,11 +123,11 @@ checkAge(personal.birthday)
   animation-delay: .75s;
   text-align: right;
 	transition: .25s ease-in-out;
-}
 
-.presentation__job span {
-  color: var(--color-red);
-  white-space: nowrap;
+	span {
+		color: var(--color-red);
+		white-space: nowrap;
+	}
 }
 
 .presentation__birthday {
@@ -152,10 +144,8 @@ checkAge(personal.birthday)
 	animation-name: footNotesIn;
 	animation-duration: 2s;
   animation-fill-mode: forwards;
-}
 
-@media (width <= 768px) {
-	.floating-note {
+	@media (width <= 768px) {
 		display: none;
 	}
 }
@@ -183,25 +173,25 @@ checkAge(personal.birthday)
 .presentation__age {
 	transform: rotate(5deg);
 	animation-delay: 1.25s;
-}
 
-.presentation__age span {
-	display: block;
-  color: var(--color-green);
-}
+	span {
+		display: block;
+		color: var(--color-green);
+	}
 
-.presentation__age i {
-	color: var(--color-subwhite);
-	font-style: normal;
-	font-size: 80%;
-	display: block;
-	transform: translateX(-12%);
-}
+	i {
+		color: var(--color-subwhite);
+		font-style: normal;
+		font-size: 80%;
+		display: block;
+		transform: translateX(-12%);
+	}
 
-.presentation__age svg {
-	fill: var(--color-blue);
-	width: 90px;
-	transform: translate(62px, 20px) rotate(-28deg) scaleX(-1);
+	svg {
+		fill: var(--color-blue);
+		width: 90px;
+		transform: translate(62px, 20px) rotate(-28deg) scaleX(-1);
+	}
 }
 
 .presentation__note {
@@ -209,12 +199,12 @@ checkAge(personal.birthday)
 	display: flex;
 	align-items: center;
 	animation-delay: 1.55s;
-}
 
-.presentation__note svg {
-	fill: var(--color-blue);
-	width: 90px;
-	transform: translate(12px, -30px) rotate(28deg);
+	svg {
+		fill: var(--color-blue);
+		width: 90px;
+		transform: translate(12px, -30px) rotate(28deg);
+	}
 }
 
 @keyframes footNotesIn {

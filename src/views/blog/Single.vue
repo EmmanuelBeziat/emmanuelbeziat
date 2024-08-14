@@ -16,7 +16,7 @@
 			</div>
 		</header>
 
-		<div class="post-content animation-fade" v-html="post.markup" />
+		<div class="post__content animation-fade" v-html="post.markup" />
 
 		<footer class="post__footer animation-bounce">
 			<div class="flex">

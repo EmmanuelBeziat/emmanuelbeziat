@@ -33,12 +33,10 @@ defineProps({
   position: relative;
   color: var(--color-text);
   background: var(--color-background-dark);
-}
 
-@supports (content-visibility: auto) {
-  .showcase__item {
-    content-visibility: auto;
-  }
+	@supports (content-visibility: auto) {
+		content-visibility: auto;
+	}
 }
 
 .showcase__layer {
@@ -98,57 +96,60 @@ defineProps({
 }
 
 @media (hover: hover) {
-  .showcase__item:hover .showcase__layer {
-    transform: scale(.4) translateZ(0);
-    border-radius: 50%;
-    aspect-ratio: 1;
-    margin: auto;
-    background: var(--showcase-color);
-  }
+  .showcase__item:hover {
+		.showcase__layer {
+			transform: scale(.4) translateZ(0);
+			border-radius: 50%;
+			aspect-ratio: 1;
+			margin: auto;
+			background: var(--showcase-color);
+		}
 
-  .showcase__item:hover .blue {
-    --showcase-color: var(--color-blue);
-  }
-  .showcase__item:hover .red {
-    --showcase-color: var(--color-red);
-  }
-  .showcase__item:hover .violet {
-    --showcase-color: var(--color-violet);
-  }
-  .showcase__item:hover .yellow {
-    --showcase-color: var(--color-yellow);
-  }
-  .showcase__item:hover .green {
-    --showcase-color: var(--color-green);
-  }
-  .showcase__item:hover .black {
-    --showcase-color: var(--color-black);
-  }
+		.showcase__image {
+			transform: scale(1.2);
+		}
 
-  .showcase__item:hover .showcase__image {
-    transform: scale(1.2);
-  }
+		.showcase__caption {
+			opacity: 1;
+			visibility: visible;
+			transform: translateY(0);
+			transition: var(--transition-slow) var(--ease-back-out) .1s;
 
-  .showcase__item:hover .showcase__caption {
-    opacity: 1;
-    visibility: visible;
-    transform: translateY(0);
-    transition: var(--transition-slow) var(--ease-back-out) .1s;
-  }
+			.portfolio-tags {
+				transform: translateY(0);
+				transition: var(--transition-slow) var(--ease-back-out) .025s;
+			}
+		}
 
-  .showcase__item:hover .showcase__caption .portfolio-tags {
-    transform: translateY(0);
-    transition: var(--transition-slow) var(--ease-back-out) .025s;
-  }
+		.blue {
+			--showcase-color: var(--color-blue);
+		}
+		.red {
+			--showcase-color: var(--color-red);
+		}
+		.violet {
+			--showcase-color: var(--color-violet);
+		}
+		.yellow {
+			--showcase-color: var(--color-yellow);
+		}
+		.green {
+			--showcase-color: var(--color-green);
+		}
+		.black {
+			--showcase-color: var(--color-black);
+		}
+	}
 }
+
 .showcase-tags {
   display: flex;
   align-items: center;
   justify-content: center;
-}
 
-.showcase-tags i {
-  margin-right: 10px;
+	i {
+		margin-right: 10px;
+	}
 }
 
 .showcase-tags__list {

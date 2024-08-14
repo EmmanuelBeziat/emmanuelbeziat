@@ -9,18 +9,14 @@
   overflow-x: hidden;
   display: grid;
   grid-template: "header content"/20rem auto;
-}
 
-@media (width <= 1120px) {
-  .site {
-    grid-template: "header" "content" "footer";
-  }
-}
+	@media (width <= 1120px) {
+		grid-template: "header" "content" "footer";
+	}
 
-@media (width <= 768px) {
-  .site {
-    padding-bottom: 80px;
-  }
+	@media (width <= 768px) {
+		padding-bottom: 80px;
+	}
 }
 
 .site-content {
@@ -33,10 +29,8 @@
 .main {
   margin: 6rem auto 2rem;
   outline: 0;
-}
 
-@media (width <= 1120px) {
-  .main {
-    margin: 2rem auto;
-  }
+	@media (width <= 1120px) {
+		margin-block: 0 2rem;
+	}
 }

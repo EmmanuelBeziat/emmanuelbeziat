@@ -33,10 +33,8 @@ const vFocus = {
 .search {
   margin-bottom: 2rem;
   display: flex;
-}
 
-@media (width <= 768px) {
-	.search {
+	@media (width <= 768px) {
 		margin-inline: -1rem;
 	}
 }
@@ -51,13 +49,13 @@ const vFocus = {
   outline: none;
   color: var(--color-text);
   transition: var(--transition-fast) ease-in-out;
-}
 
-.search__field:focus {
-  --border-color: var(--color-blue);
-}
+	&:focus {
+		--border-color: var(--color-blue);
+	}
 
-.search__field::placeholder {
-  color: var(--color-blue);
+	&::placeholder {
+		color: var(--color-blue);
+	}
 }
 </style>

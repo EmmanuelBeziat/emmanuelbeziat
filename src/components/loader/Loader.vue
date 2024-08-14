@@ -31,24 +31,24 @@ defineProps({
 
 h2 {
   margin: 0;
-}
 
-h2::before,
-h2::after {
-  display: inline-block;
-  color: var(--color-red);
-  font-size: 2em;
-  font-weight: 400;
-  margin: 0 1rem;
-  transform: translateY(.3em);
-}
+	&::before,
+	&::after {
+		display: inline-block;
+		color: var(--color-red);
+		font-size: 2em;
+		font-weight: 400;
+		margin: 0 1rem;
+		transform: translateY(.3em);
+	}
 
-h2::before {
-  content: "{";
-}
+	&::before {
+		content: "{";
+	}
 
-h2::after {
-  content: "}";
+	&::after {
+		content: "}";
+	}
 }
 
 p {

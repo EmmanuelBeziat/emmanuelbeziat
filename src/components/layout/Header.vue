@@ -52,26 +52,21 @@ import Copyright from '@/components/layout/Copyright.vue'
   margin: 2rem 0;
   animation-delay: .55s;
   text-wrap: balance;
-}
 
-.bio b {
-	color: var(--color-green);
-	font-weight: inherit;
-}
+	b {
+		color: var(--color-green);
+		font-weight: inherit;
+	}
 
-@media (width <= 1120px) {
-	.bio {
+	@media (width <= 1120px) {
 		display: none;
 	}
 }
 
 .copyright {
   animation-delay: .65s;
-}
 
-
-@media (width <= 1120px) {
-	.copyright {
+	@media (width <= 1120px) {
 		display: none;
 	}
 }

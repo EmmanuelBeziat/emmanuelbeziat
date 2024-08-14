@@ -35,38 +35,38 @@ body {
 	font: 400 var(--font-size-base)/1.5 var(--font-stack-common);
 
 	--color-thumb: var(--color-green);
-}
 
-body::-webkit-scrollbar-track {
-  background: none;
-}
+	&::-webkit-scrollbar-track {
+		background: none;
+	}
 
-body::-webkit-scrollbar {
-  width: 12px;
-  background: none;
-}
+	&::-webkit-scrollbar {
+		width: 12px;
+		background: none;
+	}
 
-body::-webkit-scrollbar-thumb {
-  border: 2px solid var(--color-background);
-  border-radius: .5rem;
-  transition: var(--transition-fast) ease-in-out;
-  background: var(--color-thumb);
-}
+	&::-webkit-scrollbar-thumb {
+		border: 2px solid var(--color-background);
+		border-radius: .5rem;
+		transition: var(--transition-fast) ease-in-out;
+		background: var(--color-thumb);
+	}
 
-body.portfolio {
-  --color-thumb: var(--color-blue);
-}
+	&.portfolio {
+		--color-thumb: var(--color-blue);
+	}
 
-body.projects {
+	&.projects {
+		--color-thumb: var(--color-yellow);
+	}
 
-	--color-thumb: var(--color-yellow);
-}
-body.blog {
-  --color-thumb: var(--color-red);
-}
+	&.blog {
+		--color-thumb: var(--color-red);
+	}
 
-body.me {
-  --color-thumb: var(--color-violet);
+	&.me {
+		--color-thumb: var(--color-violet);
+	}
 }
 
 a {
@@ -128,15 +128,15 @@ blockquote {
   margin: 2rem 0;
   padding-left: 4rem;
   font: 400 italic var(--font-size-quotes)/1.5em var(--font-stack-common);
-}
 
-blockquote::before {
-  content: "“";
-  position: absolute;
-  left: 0;
-  top: 2rem;
-  font-size: 6em;
-  color: var(--color-background-lighter);
+	&::before {
+		content: "“";
+		position: absolute;
+		left: 0;
+		top: 2rem;
+		font-size: 6em;
+		color: var(--color-background-lighter);
+	}
 }
 
 q {

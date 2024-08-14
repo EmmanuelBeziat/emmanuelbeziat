@@ -64,20 +64,16 @@
 	--brand-color-instagram: #833ab4;
 	--brand-color-youtube: #ff0000;
 	--brand-color-npmjs: #cb3837;
-}
 
-@media (prefers-reduced-motion: reduce) {
-	:root {
+	@media (prefers-reduced-motion: reduce) {
 		--transition-xfast: 0;
 		--transition-fast: 0;
 		--transition-normal: 0;
 		--transition-slow: 0;
 		--transition-xslow: 0;
 	}
-}
 
-@media (width <= 768px) {
-	:root {
+	@media (width <= 768px) {
 		--font-size-heading-1: 2.986rem;
 		--font-size-heading-2: 2.488rem;
 		--font-size-heading-3: 2.074rem;

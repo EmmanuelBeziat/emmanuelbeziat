@@ -20,10 +20,8 @@ import Item from '@/components/layout/SocialItem.vue'
   flex-wrap: wrap;
   justify-content: center;
   gap: 4px;
-}
 
-@media (width <= 1120px) {
-	.social {
+	@media (width <= 1120px) {
 		margin-top: 1rem;
 	}
 }

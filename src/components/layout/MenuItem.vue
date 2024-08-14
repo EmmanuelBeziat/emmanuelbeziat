@@ -40,44 +40,89 @@ const isActive = computed(() => router.resolve(props.to).path === '/' + route.pa
   text-decoration: none;
   color: var(--link-color);
   position: relative;
-}
 
-@media (width <= 768px) {
-  .menu__item {
-    font-weight: 300;
-    font-size: 1rem;
-    text-align: center;
-    flex: 1;
-    padding: 8px;
-  }
-}
+	@media (width <= 768px) {
+		font-weight: 300;
+		font-size: 1rem;
+		text-align: center;
+		flex: 1;
+		padding: 8px;
+	}
 
-.menu__item::before,
-.menu__item::after {
-  display: inline-block;
-  opacity: 0;
-  transition: var(--transition-normal) ease-in-out;
-  color: var(--color-text);
-  content: var(--content);
-}
+	&::before,
+	&::after {
+		display: inline-block;
+		opacity: 0;
+		transition: var(--transition-normal) ease-in-out;
+		color: var(--color-text);
+		content: var(--content);
+	}
 
-@media (width <= 768px) {
-  .menu__item::before,
-  .menu__item::after {
-    display: none;
-  }
-}
+	@media (width <= 768px) {
+		&::before,
+		&::after {
+			display: none;
+		}
+	}
 
-.menu__item::before {
-  --content: "<";
-  transform: translateX(20px);
-  padding-right: .125em;
-}
+	&::before {
+		--content: "<";
+		transform: translateX(20px);
+		padding-right: .125em;
+	}
 
-.menu__item::after {
-  --content: "/>";
-  transform: translateX(-20px);
-  padding-left: .1875em;
+	&::after {
+		--content: "/>";
+		transform: translateX(-20px);
+		padding-left: .1875em;
+	}
+
+	&:is(:hover, :focus) {
+		color: var(--link-color-hover);
+	}
+
+	&.-active {
+		color: var(--link-color-active);
+
+		&:hover::before,
+		&:hover::after {
+			color: var(--link-color-hover);
+		}
+	}
+
+	&:is(:hover, :focus),
+	&.-active {
+		&::before,
+		&::after {
+			opacity: 1;
+			transform: translateX(0);
+		}
+	}
+
+	&[href="/"] {
+		--link-color-hover: var(--color-green);
+		--link-color-active: var(--color-green);
+	}
+
+	&[href="/portfolio"] {
+		--link-color-hover: var(--color-blue);
+		--link-color-active: var(--color-blue);
+	}
+
+	&[href="/projets"] {
+		--link-color-hover: var(--color-yellow);
+		--link-color-active: var(--color-yellow);
+	}
+
+	&[href="/blog"] {
+		--link-color-hover: var(--color-red);
+		--link-color-active: var(--color-red);
+	}
+
+	&[href="/moi"] {
+		--link-color-hover: var(--color-violet);
+		--link-color-active: var(--color-violet);
+	}
 }
 
 .menu__item :deep(svg) {
@@ -89,53 +134,9 @@ const isActive = computed(() => router.resolve(props.to).path === '/' + route.pa
   aspect-ratio: 1/1;
   margin: 0 auto 5px;
   fill: currentColor;
-}
 
-@media (width <= 768px) {
-  .menu__item :deep(svg) {
-    display: block;
-  }
-}
-
-.menu__item:is(:hover, :focus) {
-  color: var(--link-color-hover);
-}
-
-[href="/"] {
-  --link-color-hover: var(--color-green);
-  --link-color-active: var(--color-green);
-}
-[href="/portfolio"] {
-  --link-color-hover: var(--color-blue);
-  --link-color-active: var(--color-blue);
-}
-[href="/projets"] {
-  --link-color-hover: var(--color-yellow);
-  --link-color-active: var(--color-yellow);
-}
-[href="/blog"] {
-  --link-color-hover: var(--color-red);
-  --link-color-active: var(--color-red);
-}
-[href="/moi"] {
-  --link-color-hover: var(--color-violet);
-  --link-color-active: var(--color-violet);
-}
-
-.-active {
-  color: var(--link-color-active);
-}
-
-.-active:hover::before,
-.-active:hover::after {
-  color: var(--link-color-hover);
-}
-
-.menu__item:is(:hover, :focus)::before,
-.-active::before,
-.-active::after,
-.menu__item:is(:hover, :focus)::after {
-  opacity: 1;
-  transform: translateX(0);
+	@media (width <= 768px) {
+		display: block;
+	}
 }
 </style>

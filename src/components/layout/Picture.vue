@@ -34,26 +34,21 @@ const pictureOnClick = () => {
   display: grid;
   grid-template: "Picture"/auto;
   justify-content: center;
-}
 
-@supports (content-visibility: auto) {
-  .picture {
-    content-visibility: auto;
-  }
-}
+	@supports (content-visibility: auto) {
+		content-visibility: auto;
+	}
 
-.picture img {
-  vertical-align: top;
-  border-radius: 50%;
-  max-width: 100%;
-  grid-area: Picture;
-  aspect-ratio: 1;
-}
-
-
-@media (width <= 1120px) {
-	.picture {
+	@media (width <= 1120px) {
 		display: none;
+	}
+
+	img {
+		vertical-align: top;
+		border-radius: 50%;
+		max-width: 100%;
+		grid-area: Picture;
+		aspect-ratio: 1;
 	}
 }
 </style>

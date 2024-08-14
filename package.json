@@ -1,6 +1,6 @@
 {
 	"name": "emmanuelbeziat",
-	"version": "9.1.4",
+	"version": "9.1.5",
 	"description": "My website, 2024 version.",
 	"type": "module",
 	"author": {
@@ -36,7 +36,7 @@
 	"devDependencies": {
 		"@vitejs/plugin-vue": "^5.1.2",
 		"autoprefixer": "^10.4.20",
-		"cypress": "^13.13.2",
+		"cypress": "^13.13.3",
 		"cypress-dotenv": "^2.0.0",
 		"eslint": "^9.9.0",
 		"eslint-plugin-vue": "^9.27.0",

@@ -7,7 +7,7 @@ Porfolio / Blog / Projects / Bio
 
 > This is my website. There are many like these, but this one’s mine. 😊
 
-**Q1 2024** version is using:
+**2024** version is using:
 * [Vuejs 3](https://vuejs.org/) as a main framework and template pattern
 * [Source Sans 3](https://fonts.google.com/specimen/Source+Sans+3) as a main font, [Yanone Kaffeesatz](https://www.yanone.de/fonts/kaffeesatz/) for titles, and [JetBrains mono](https://www.jetbrains.com/fr-fr/lp/mono/) for code parts
 * [Vitejs](https://vitejs.dev/) to build and pack everything

@@ -34,12 +34,10 @@ const code = computed(() => codes.list[Math.floor(Math.random() * codes.count)] 
   overflow: hidden;
   background: var(--color-background-dark);
   animation-delay: .65s;
-}
 
-@supports (content-visibility: auto) {
-  .cv-code {
-    content-visibility: auto;
-  }
+	@supports (content-visibility: auto) {
+		content-visibility: auto;
+	}
 }
 
 :deep(pre) {
@@ -85,28 +83,26 @@ const code = computed(() => codes.list[Math.floor(Math.random() * codes.count)] 
   background: var(--bg-button);
 }
 
-.--close {
-  --bg-button: var(--color-red);
-}
-
-.--minify {
-  --bg-button: var(--color-yellow);
-}
-
-.--expand {
-  --bg-button: var(--color-green);
-}
-
 .cv-code__title {
   margin: auto;
   transform: translateX(-32px);
   color: var(--color-subwhite);
-}
 
-@container (width < 46rem) {
-	.cv-code__title {
+	@container (width < 46rem) {
 		margin: 0;
 		transform: none;
 	}
+}
+
+.--close {
+	--bg-button: var(--color-red);
+}
+
+.--minify {
+	--bg-button: var(--color-yellow);
+}
+
+.--expand {
+	--bg-button: var(--color-green);
 }
 </style>

@@ -17,10 +17,8 @@ import MenuItem from '@/components/layout/MenuItem.vue'
   grid-area: menu;
   display: flex;
   justify-content: flex-end;
-}
 
-@media (width <= 768px) {
-	.menu {
+	@media (width <= 768px) {
 		justify-content: space-between;
 		position: fixed;
 		background: var(--color-background-dark);

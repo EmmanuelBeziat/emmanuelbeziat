@@ -36,51 +36,51 @@ defineProps({
   border-radius: 50%;
   transition: var(--transition-slow) ease-out;
   overflow: hidden;
-}
 
-.social__item:is(:hover, :focus) {
-  background: var(--bg-social-link);
-  transition: var(--transition-xfast) ease-out;
-}
+	&:is(:hover, :focus) {
+		background: var(--bg-social-link);
+		transition: var(--transition-xfast) ease-out;
+	}
 
-.social__item:is(:hover, :focus) :deep(svg) {
-  transform: scale(.95);
-}
+	&:is(:hover, :focus) :deep(svg) {
+		transform: scale(.95);
+	}
 
-.--twitter {
-  --bg-social-link: var(--brand-color-twitter);
-}
+	&.--twitter {
+		--bg-social-link: var(--brand-color-twitter);
+	}
 
-.--x {
-  --bg-social-link: var(--brand-color-x);
-}
+	&.--x {
+		--bg-social-link: var(--brand-color-x);
+	}
 
-.--facebook {
-  --bg-social-link: var(--brand-color-facebook);
-}
+	&.--facebook {
+		--bg-social-link: var(--brand-color-facebook);
+	}
 
-.--instagram {
-  --bg-social-link: var(--brand-color-instagram);
-}
+	&.--instagram {
+		--bg-social-link: var(--brand-color-instagram);
+	}
 
-.--codepen {
-  --bg-social-link: var(--brand-color-codepen);
-}
+	&.--codepen {
+		--bg-social-link: var(--brand-color-codepen);
+	}
 
-.--github {
-  --bg-social-link: var(--brand-color-github);
-}
+	&.--github {
+		--bg-social-link: var(--brand-color-github);
+	}
 
-.--linkedin {
-  --bg-social-link: var(--brand-color-linkedin);
-}
+	&.--linkedin {
+		--bg-social-link: var(--brand-color-linkedin);
+	}
 
-.--youtube {
-  --bg-social-link: var(--brand-color-youtube);
-}
+	&.--youtube {
+		--bg-social-link: var(--brand-color-youtube);
+	}
 
-.--npmjs {
-  --bg-social-link: var(--brand-color-npmjs);
+	&.--npmjs {
+		--bg-social-link: var(--brand-color-npmjs);
+	}
 }
 
 .social__item :deep(svg) {

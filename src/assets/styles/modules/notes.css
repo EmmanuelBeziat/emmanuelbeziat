@@ -4,63 +4,59 @@
   padding: 1em 2em 1em 2em;
   border-left: 4px solid var(--note-color);
   position: relative;
-}
 
-@media (width <= 768px) {
-  .note {
-    margin: var(--gutter-screen-y) calc(var(--gutter-screen-x) * -1);
-    padding-top: 2em;
-    margin-top: 2.5rem;
-    border-left: 0;
-    border-top: 4px solid var(--note-color);
-  }
-}
+	@media (width <= 768px) {
+		margin: var(--gutter-screen-y) calc(var(--gutter-screen-x) * -1);
+		padding-top: 2em;
+		margin-top: 2.5rem;
+		border-left: 0;
+		border-top: 4px solid var(--note-color);
 
-.note::before {
-  content: var(--icon);
-  position: absolute;
-  left: -2px;
-  transform: translateX(-50%);
-  width: 28px;
-  aspect-ratio: 1;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  color: var(--color-background-dark);
-  border-radius: 50%;
-  border-color: var(--note-color);
-  background: var(--note-color) 50% no-repeat;
-}
+		&&::before{
+			left: 50%;
+			top: 0;
+			transform: translate(-50%, -50%);
+		}
+	}
 
-@media (width <= 768px) {
-  .note::before {
-    left: 50%;
-    top: 0;
-    transform: translate(-50%, -50%);
-  }
-}
+	&::before {
+		content: var(--icon);
+		position: absolute;
+		left: -2px;
+		transform: translateX(-50%);
+		width: 28px;
+		aspect-ratio: 1;
+		display: flex;
+		justify-content: center;
+		align-items: center;
+		color: var(--color-background-dark);
+		border-radius: 50%;
+		border-color: var(--note-color);
+		background: var(--note-color) 50% no-repeat;
+	}
 
-.note.--info {
-  --note-color: var(--color-blue);
-  --icon: "ℹ";
-}
+	&.--info {
+		--note-color: var(--color-blue);
+		--icon: "ℹ";
+	}
 
-.note.--success {
-  --note-color: var(--color-green);
-  --icon: "✔";
-}
+	&.--success {
+		--note-color: var(--color-green);
+		--icon: "✔";
+	}
 
-.note.--question {
-  --note-color: var(--color-violet);
-  --icon: "❓";
-}
+	&.--question {
+		--note-color: var(--color-violet);
+		--icon: "❓";
+	}
 
-.note.--important {
-  --note-color: var(--color-yellow);
-  --icon: "❗";
-}
+	&.--important {
+		--note-color: var(--color-yellow);
+		--icon: "❗";
+	}
 
-.note.--alert {
-  --note-color: var(--color-red);
-  --icon: "❗";
+	&.--alert {
+		--note-color: var(--color-red);
+		--icon: "❗";
+	}
 }

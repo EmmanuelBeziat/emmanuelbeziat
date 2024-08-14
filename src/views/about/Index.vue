@@ -62,11 +62,11 @@ useSeoMeta({
   padding: 0 var(--gutter-screen-x);
   max-width: 32rem;
   margin-inline: auto;
-}
 
-.drawing img {
-  display: block;
-  max-width: 100%;
+	img {
+		display: block;
+		max-width: 100%;
+	}
 }
 
 h2 {
@@ -75,17 +75,17 @@ h2 {
 
 .animation-bounce {
   opacity: 0;
-}
 
-.animation-bounce:nth-of-type(1) {
-  animation-delay: .35s;
-}
+	&:nth-of-type(1) {
+		animation-delay: .35s;
+	}
 
-.animation-bounce:nth-of-type(2) {
-  animation-delay: .55s;
-}
+	&:nth-of-type(2) {
+		animation-delay: .55s;
+	}
 
-.animation-bounce:nth-of-type(3) {
-  animation-delay: .85s;
+	&:nth-of-type(3) {
+		animation-delay: .85s;
+	}
 }
 </style>

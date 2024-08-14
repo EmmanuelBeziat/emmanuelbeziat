@@ -55,12 +55,10 @@ useHead({
   background: transparent 50% 50% no-repeat;
   background-size: cover;
   overflow: hidden;
-}
 
-@media (width <= 992px) {
-  .not-found__image {
-    margin-top: 2rem;
-  }
+	@media (width <= 992px) {
+		margin-top: 0;
+	}
 }
 
 .not-found__image img {
@@ -75,13 +73,11 @@ useHead({
   margin: .5em 0 .25em;
   color: var(--color-green);
   animation-delay: .3s;
-}
 
-@media (width <= 992px) {
-  .not-found__404 {
-    font-size: 3.25rem;
-    margin-bottom: 2rem;
-  }
+	@media (width <= 992px) {
+		font-size: 3.25rem;
+		margin-bottom: 2rem;
+	}
 }
 
 .not-found__title {

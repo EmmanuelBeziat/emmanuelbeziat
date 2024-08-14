@@ -57,26 +57,23 @@ useSeoMeta({
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(230px, 1fr));
   gap: 4px;
-}
 
-@container (width <= 540px) {
-  .showcase__list {
+	@container (width <= 540px) {
     grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
   }
 }
 
-@supports (content-visibility: auto) {
-  .thanks {
+.thanks {
+	@supports (content-visibility: auto) {
     content-visibility: auto;
   }
-}
 
-.thanks .heart {
-  fill: var(--color-red);
-  width: 1em;
-  margin: 0 .15em;
-  vertical-align: baseline;
-  transform: translateY(2px);
+	.heart {
+		fill: var(--color-red);
+		width: 1em;
+		margin: 0 .15em;
+		vertical-align: baseline;
+		transform: translateY(2px);
+	}
 }
-
 </style>

@@ -28,38 +28,38 @@ defineProps({
   color: var(--nav-color, var(--color-green));
   display: flex;
   align-content: center;
-}
 
-.navigation:is(:hover, :focus) {
-  --nav-color: var(--color-yellow);
-}
+	&:is(:hover, :focus) {
+		--nav-color: var(--color-yellow);
+	}
 
-.navigation svg {
-  width: 1.25em;
-  stroke: currentColor;
-  transform: var(--transform);
-  transition: transform var(--transition-fast) ease-in-out;
-  margin-right: 6px;
-}
+	svg {
+		width: 1.25em;
+		stroke: currentColor;
+		transform: var(--transform);
+		transition: transform var(--transition-fast) ease-in-out;
+		margin-right: 6px;
+	}
 
-.navigation.--previous {
-  --transform: translateX(-4px);
-}
+	&.--previous {
+		--transform: translateX(-4px);
+	}
 
-.navigation.--previous:is(:hover, :focus) {
-  --transform: translateX(-8px);
-}
+	&.--previous:is(:hover, :focus) {
+		--transform: translateX(-8px);
+	}
 
-.navigation.--next {
-  --transform: translateX(4px);
-}
+	&.--next {
+		--transform: translateX(4px);
+	}
 
-.navigation.--next svg {
-  transform: var(--transform) rotate(180deg);
-  order: 2;
-}
+	&.--next svg {
+		transform: var(--transform) rotate(180deg);
+		order: 2;
+	}
 
-.navigation.--next:is(:hover, :focus) {
-  --transform: translateX(8px);
+	&.--next:is(:hover, :focus) {
+		--transform: translateX(8px);
+	}
 }
 </style>

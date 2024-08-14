@@ -13,18 +13,14 @@ import Copyright from '@/components/layout/Copyright.vue'
   text-align: center;
   padding: 1em 0;
   display: none;
-}
 
-@supports (content-visibility: auto) {
-  .footer {
-    content-visibility: auto;
-  }
-}
+	@supports (content-visibility: auto) {
+		content-visibility: auto;
+	}
 
-@media (width <= 1120px) {
-  .footer {
-    display: block;
-    grid-area: footer;
-  }
+	@media (width <= 1120px) {
+		display: block;
+		grid-area: footer;
+	}
 }
 </style>
