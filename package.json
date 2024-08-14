@@ -25,7 +25,7 @@
 		"core-js": "^3.38.0",
 		"dayjs": "^1.11.12",
 		"mobile-device-detect": "^0.4.3",
-		"modern-normalize": "^2.0.0",
+		"modern-normalize": "^3.0.0",
 		"pinia": "^2.2.1",
 		"slug": "^9.1.0",
 		"toastify-js": "^1.12.0",
