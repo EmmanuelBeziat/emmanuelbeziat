@@ -1,6 +1,6 @@
 <template>
 	<section class="showcase">
-		<template v-if="references">
+		<template v-if="references.length">
 			<sequential-entrance animation="animation-fade" delay="50" class="showcase__list">
 				<Reference v-for="ref in references" :key="`ref-${ref.slug}`" :reference="ref" class="showcase__item" />
 			</sequential-entrance>
@@ -12,7 +12,7 @@
 			</div>
 		</template>
 
-		<Loader mini v-else />
+		<NoContent v-else />
 	</section>
 </template>
 
@@ -23,7 +23,7 @@ import { useRoute } from 'vue-router'
 import { useHead, useSeoMeta } from '@unhead/vue'
 
 import Reference from '@/components/Reference.vue'
-import Loader from '@/components/loader/Loader.vue'
+import NoContent from '@/components/loader/NoContent.vue'
 import Icon from '@/components/icon/Icon.vue'
 
 

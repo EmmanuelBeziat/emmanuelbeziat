@@ -2,13 +2,13 @@
 	<section class="blog">
 		<Search placeholder="Recherche…" label="Rechercher" v-model="searchTerms" />
 
-		<template v-if="posts">
+		<template v-if="posts.length">
 			<sequential-entrance animation="animation-fade" delay="100" class="post-list">
 				<Post v-for="post in posts" :key="`post-${post.slug}`" :post="post" />
 			</sequential-entrance>
 		</template>
 
-		<Loader mini v-else />
+		<NoContent v-else />
 	</section>
 </template>
 
@@ -20,7 +20,7 @@ import { usePostsStore } from '@/stores/posts'
 import { useHead, useSeoMeta } from '@unhead/vue'
 import slug from 'slug'
 
-import Loader from '@/components/loader/Loader.vue'
+import NoContent from '@/components/loader/NoContent.vue'
 import Search from '@/components/search/Search.vue'
 import Post from '@/components/Post.vue'
 

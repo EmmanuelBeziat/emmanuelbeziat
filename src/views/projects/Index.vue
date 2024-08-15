@@ -6,13 +6,13 @@
 			<GithubCards class="card" :cards="{ stats: true, languages: false }" />
 		</KeepAlive>
 
-		<template v-if="projects">
+		<template v-if="projects.length">
 			<sequential-entrance animation="animation-fade" delay="100" class="post-list">
 				<Project v-for="project in projects" :key="`repo-${project.id}`" :project />
 			</sequential-entrance>
 		</template>
 
-		<Loader mini v-else />
+		<NoContent v-else />
 	</section>
 </template>
 
@@ -29,7 +29,7 @@ import { defineNamespace } from '@/plugins/mixins/namespace'
 import Project from '@/components/Project.vue'
 import Search from '@/components/search/Search.vue'
 import GithubCards from '@/components/GithubCards.vue'
-import Loader from '@/components/loader/Loader.vue'
+import NoContent from '@/components/loader/NoContent.vue'
 
 const searchTerms = ref('')
 const projectsStore = useProjectsStore()
