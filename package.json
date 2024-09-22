@@ -16,7 +16,7 @@
 	"scripts": {
 		"dev": "vite",
 		"build": "vite build",
-		"setup": "node setup.js",
+		"setup": "npm i && node setup.js",
 		"preview": "vite preview --port 3033",
 		"lint": "eslint . --ext .vue,.js,.jsx,.cjs,.mjs --fix --ignore-path .gitignore",
 		"test": "cross-env NODE_ENV=test node -r dotenv/config node_modules/jest/bin/jest.js",
