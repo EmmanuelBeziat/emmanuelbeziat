@@ -1,6 +1,6 @@
 <template>
 	<article class="post-list__item post">
-		<h1 class="post__title --small"><router-link :to="{ name: 'Post', params: { slug: post.slug }}">{{ post.title }}</router-link></h1>
+		<h2 class="post__title --small"><router-link :to="{ name: 'Post', params: { slug: post.slug }}">{{ post.title }}</router-link></h2>
 
 		<div class="post-infos flex">
 			<div class="post__date">Posté le <time>{{ date }}</time></div>

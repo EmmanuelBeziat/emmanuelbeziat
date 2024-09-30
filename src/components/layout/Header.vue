@@ -1,6 +1,6 @@
 <template>
 	<header class="header" v-once ref="header">
-		<h1 class="header__title animation-skew-y"><router-link to="/">Emmanuel Béziat</router-link></h1>
+		<div class="header__title animation-skew-y"><router-link to="/">Emmanuel Béziat</router-link></div>
 
 		<Picture class="picture animation-bounce" />
 
@@ -34,9 +34,7 @@ import Copyright from '@/components/layout/Copyright.vue'
 
 .header__title {
   margin: 0;
-  font-size: var(--font-size-title);
-  line-height: 1;
-  font-weight: 400;
+  font: 400 var(--font-size-title)/1 var(--font-stack-heading);
   animation-delay: .25s;
 }
 

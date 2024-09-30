@@ -1,6 +1,6 @@
 {
 	"name": "emmanuelbeziat",
-	"version": "9.1.5",
+	"version": "9.1.6",
 	"description": "My website, 2024 version.",
 	"type": "module",
 	"author": {
@@ -23,15 +23,15 @@
 		"test:env": "cross-env NODE_ENV=test node -r dotenv/config node_modules/jest/bin/jest.js tests/Environment.test.js"
 	},
 	"dependencies": {
-		"@unhead/vue": "^1.11.6",
+		"@unhead/vue": "^1.11.7",
 		"core-js": "^3.38.1",
 		"dayjs": "^1.11.13",
 		"mobile-device-detect": "^0.4.3",
 		"modern-normalize": "^3.0.1",
-		"pinia": "^2.2.2",
+		"pinia": "^2.2.3",
 		"slug": "^9.1.0",
 		"toastify-js": "^1.12.0",
-		"vue": "^3.5.8",
+		"vue": "^3.5.10",
 		"vue-router": "^4.4.5",
 		"vue3-sequential-entrance": "^2.0.2"
 	},
