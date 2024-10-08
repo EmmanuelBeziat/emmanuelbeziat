@@ -1,7 +1,11 @@
 <template>
 	<section class="me">
 		<div class="drawing animation-bounce">
-			<img :src="picture" alt="Emmanuel Béziat (Drawing by Marie-Laure Rouzier)" loading="lazy">
+			<picture>
+				<source :srcset="pictureAvif" type="image/avif">
+				<source :srcset="pictureWebp" type="image/wepb">
+				<img :src="pictureWebp" alt="Emmanuel Béziat (Drawing by Marie-Laure Rouzier)" loading="lazy">
+			</picture>
 		</div>
 
 		<div class="interview animation-bounce">
@@ -39,7 +43,8 @@ import { defineNamespace } from '@/plugins/mixins/namespace'
 
 import GithubCards from '@/components/GithubCards.vue'
 
-const picture = ref(new URL(`../../assets/images/emmanuelb-draw.webp`, import.meta.url).href)
+const pictureAvif = ref(new URL(`../../assets/images/emmanuelb-draw.avif`, import.meta.url).href)
+const pictureWebp = ref(new URL(`../../assets/images/emmanuelb-draw.webp`, import.meta.url).href)
 const route = useRoute()
 const fullURL = computed(() => openGraph.url + route.fullPath)
 
