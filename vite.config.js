@@ -14,6 +14,9 @@ const pwa = {
 	srcDir: 'src',
 	filename: 'serviceworker.js',
 	includeAssets: ['/favicons/*'],
+	workbox: {
+		globPatterns: ['**/*.{js,css,html,svg,ico,png,webp,avif,woff2}'],
+	},
 	manifest: {
 		name: 'Emmanuel Béziat',
 		short_name: 'EmmanuelB',
@@ -69,16 +72,16 @@ export default ({ mode }) => {
 			port: process.env.VITE_PORT
 		},
 		build: {
-			target: 'es2020',
+			target: 'es2022',
 			outDir: process.env.VITE_DIST,
 			emptyOutDir: true
 		},
 		esbuild: {
-			target: 'es2020'
+			target: 'es2022'
 		},
 		optimizeDeps: {
 			esbuildOptions: {
-				target: 'es2020',
+				target: 'es2022',
 				supported: {
 					bigint: true
 				}
