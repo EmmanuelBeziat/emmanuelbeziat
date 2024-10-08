@@ -1,6 +1,10 @@
 <template>
 	<div class="picture">
-		<img :src="picture" alt="Emmanuel Béziat" width="220" height="220" loading="lazy" @click="pictureOnClick()">
+		<picture>
+      <source :srcset="pictureAvif" type="image/avif">
+      <source :srcset="pictureWebp" type="image/webp">
+      <img :src="pictureWebp" alt="Emmanuel Béziat" width="220" height="220" loading="lazy" @click="pictureOnClick()">
+    </picture>
 		<img v-if="pictureEasterIsOn" src="../../assets/images/criquette.webp" width="220" height="220" loading="lazy">
 	</div>
 </template>
@@ -9,7 +13,10 @@
 import { ref, computed } from 'vue'
 import { useRoute } from 'vue-router'
 const route = useRoute()
-const picture = computed(() => new URL(`../../assets/images/${route.name === 'NotFound' ? 'emmanuelb-error' : 'emmanuelb'}.webp`, import.meta.url).href)
+
+const baseImageName = computed(() => route.name === 'NotFound' ? 'emmanuelb-error' : 'emmanuelb')
+const pictureAvif = computed(() => new URL(`../../assets/images/${baseImageName.value}.avif`, import.meta.url).href)
+const pictureWebp = computed(() => new URL(`../../assets/images/${baseImageName.value}.webp`, import.meta.url).href)
 
 const pictureCount = ref(0)
 const pictureEasterIsOn = ref(false)
@@ -32,7 +39,7 @@ const pictureOnClick = () => {
 .picture {
   margin: 2rem auto;
   display: grid;
-  grid-template: "Picture"/auto;
+  grid-template: "Picture" / auto;
   justify-content: center;
 
 	@supports (content-visibility: auto) {
@@ -44,11 +51,15 @@ const pictureOnClick = () => {
 	}
 
 	img {
+		grid-area: Picture;
 		vertical-align: top;
 		border-radius: 50%;
 		max-width: 100%;
-		grid-area: Picture;
 		aspect-ratio: 1;
+	}
+
+	picture {
+		grid-area: Picture;
 	}
 }
 </style>
