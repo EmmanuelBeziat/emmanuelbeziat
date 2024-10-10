@@ -1,7 +1,8 @@
 import { fileURLToPath, URL } from 'node:url'
 
 import vue from '@vitejs/plugin-vue'
-import { defineConfig, loadEnv } from 'vite'
+import { loadEnv } from 'vite'
+import { defineConfig } from 'vitest/config'
 import { VitePWA } from 'vite-plugin-pwa'
 import { createHtmlPlugin } from 'vite-plugin-html'
 import svg from 'vite-svg-loader'
@@ -58,7 +59,7 @@ export default ({ mode }) => {
 						ogUrl: process.env.VITE_OG_URL
 					}
 				}
-			})
+			}),
 		],
 		css: {
 			preprocessorOptions: {}
@@ -87,5 +88,8 @@ export default ({ mode }) => {
 				}
 			},
 		},
+		test: {
+			environment: 'jsdom'
+		}
 	})
 }

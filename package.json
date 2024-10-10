@@ -1,6 +1,6 @@
 {
 	"name": "emmanuelbeziat",
-	"version": "9.1.7",
+	"version": "9.2.0",
 	"description": "My website, 2024 version.",
 	"type": "module",
 	"author": {
@@ -19,8 +19,7 @@
 		"setup": "npm i && node setup.js",
 		"preview": "vite preview --port 3033",
 		"lint": "eslint . --ext .vue,.js,.jsx,.cjs,.mjs --fix --ignore-path .gitignore",
-		"test": "cross-env NODE_ENV=test node -r dotenv/config node_modules/jest/bin/jest.js",
-		"test:env": "cross-env NODE_ENV=test node -r dotenv/config node_modules/jest/bin/jest.js tests/Environment.test.js"
+		"test": "npx vitest --run"
 	},
 	"dependencies": {
 		"@unhead/vue": "^1.11.7",
@@ -37,16 +36,19 @@
 	},
 	"devDependencies": {
 		"@vitejs/plugin-vue": "^5.1.4",
+		"@vue/test-utils": "^2.4.6",
 		"autoprefixer": "^10.4.20",
 		"cross-env": "^7.0.3",
 		"dotenv": "^16.4.5",
 		"eslint": "^9.12.0",
 		"eslint-plugin-vue": "^9.28.0",
 		"jest": "^29.7.0",
+		"jsdom": "^25.0.1",
 		"vite": "^5.4.8",
 		"vite-plugin-html": "^3.2.2",
 		"vite-plugin-pwa": "^0.20.5",
 		"vite-svg-loader": "^5.1.0",
+		"vitest": "^2.1.2",
 		"workbox-precaching": "^7.1.0"
 	},
 	"optionalDependencies": {

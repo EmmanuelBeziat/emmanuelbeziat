@@ -1,3 +1,5 @@
+import { describe, it, expect } from 'vitest'
+
 describe('Environment Variables', () => {
   it('should have PORT defined', () => {
     expect(process.env.VITE_PORT).toBeDefined()
