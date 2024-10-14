@@ -14,12 +14,12 @@
 	},
 	"private": false,
 	"scripts": {
-		"dev": "bunx --bun vite",
-		"build": "bunx --bun vite build",
-		"setup": "bun i && bun setup.js",
-		"preview": "bunx --bun vite preview --port 3033",
+		"dev": "vite",
+		"build": "vite build",
+		"setup": "npm i && node setup.js",
+		"preview": "vite preview --port 3033",
 		"lint": "eslint . --ext .vue,.js,.jsx,.cjs,.mjs --fix --ignore-path .gitignore",
-		"test": "bun vitest --run"
+		"test": "npx vitest --run"
 	},
 	"dependencies": {
 		"@unhead/vue": "^1.11.7",
