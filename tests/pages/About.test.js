@@ -4,7 +4,6 @@ import { nextTick } from 'vue'
 import AboutIndex from '@/views/about/Index.vue'
 import GithubCards from '@/components/GithubCards.vue'
 import { useRoute } from 'vue-router'
-import { useHead, useSeoMeta } from '@unhead/vue'
 import { defineNamespace } from '@/plugins/mixins/namespace'
 
 // Mock the vue-router
