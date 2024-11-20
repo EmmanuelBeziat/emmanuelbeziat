@@ -51,11 +51,11 @@ describe('<Picture>', () => {
     }
 
     await nextTick()
-    expect(wrapper.find('img[src$="criquette.webp"]').exists()).toBe(true)
+    expect(wrapper.find('img[src$="criquette.avifs"]').exists()).toBe(true)
 
     vi.advanceTimersByTime(1920)
     await nextTick()
-    expect(wrapper.find('img[src$="criquette.webp"]').exists()).toBe(false)
+    expect(wrapper.find('img[src$="criquette.avifs"]').exists()).toBe(false)
 
     vi.useRealTimers()
   })

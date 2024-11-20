@@ -54,7 +54,7 @@ describe('<NotFound>', () => {
     const image = wrapper.find('.not-found__image img')
     const title = wrapper.find('.not-found__404')
 
-    expect(image.attributes('src')).toContain('doctor-who.webp')
+    expect(image.attributes('src')).toContain('doctor-who.avifs')
     expect(title.html()).toContain('What?!')
   })
 
