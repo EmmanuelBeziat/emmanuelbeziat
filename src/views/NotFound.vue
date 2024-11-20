@@ -22,7 +22,7 @@ import { selectRandomItem } from '@/plugins/mixins/randomize'
 const errors = [
 	{ image: 'doctor-who.avifs', title: 'What?!' },
 	{ image: 'south-park.avifs', title: 'We’re sorry…' },
-	{ image: 'mario.avifs', title: 'Sorry, but your page <br>is in another castle' },
+	{ image: 'mario.webp', title: 'Sorry, but your page <br>is in another castle' },
 	{ image: 'obiwan.avifs', title: 'This is not the page <br>you’re looking for…' },
 	{ image: 'pulp-fiction.avifs', title: '…?' },
 	{ image: 'arya-got.avifs', title: 'A page has no name' },
