@@ -20,14 +20,14 @@ import { useHead } from '@unhead/vue'
 import { selectRandomItem } from '@/plugins/mixins/randomize'
 
 const errors = [
-	{ image: 'doctor-who.webp', title: 'What?!' },
-	{ image: 'south-park.webp', title: 'We’re sorry…' },
-	{ image: 'mario.webp', title: 'Sorry, but your page <br>is in another castle' },
-	{ image: 'obiwan.webp', title: 'This is not the page <br>you’re looking for…' },
-	{ image: 'pulp-fiction.webp', title: '…?' },
-	{ image: 'arya-got.webp', title: 'A page has no name' },
-	{ image: 'toy-story.webp', title: 'There seem to be no sign <br>of this page anywhere'},
-	// { image: 'jurassic-park.webp', title: 'This page is extinct'},
+	{ image: 'doctor-who.avifs', title: 'What?!' },
+	{ image: 'south-park.avifs', title: 'We’re sorry…' },
+	{ image: 'mario.avifs', title: 'Sorry, but your page <br>is in another castle' },
+	{ image: 'obiwan.avifs', title: 'This is not the page <br>you’re looking for…' },
+	{ image: 'pulp-fiction.avifs', title: '…?' },
+	{ image: 'arya-got.avifs', title: 'A page has no name' },
+	{ image: 'toy-story.avifs', title: 'There seem to be no sign <br>of this page anywhere'},
+	// { image: 'jurassic-park.avifs', title: 'This page is extinct'},
 ]
 const error = computed(() => {
 	const errorIndex = selectRandomItem(errors, 'lastErrorIndex')
