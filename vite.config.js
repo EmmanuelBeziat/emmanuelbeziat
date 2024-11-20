@@ -16,7 +16,7 @@ const pwa = {
 	filename: 'serviceworker.js',
 	includeAssets: ['/favicons/*'],
 	workbox: {
-		globPatterns: ['**/*.{js,css,html,svg,ico,png,webp,avif,woff2}'],
+		globPatterns: ['**/*.{js,css,html,svg,ico,png,webp,avif,avifs,woff,woff2}'],
 	},
 	manifest: {
 		name: 'Emmanuel Béziat',
@@ -64,6 +64,7 @@ export default ({ mode }) => {
 		css: {
 			preprocessorOptions: {}
 		},
+		assetsInclude: ['**/*.avifs'],
 		resolve: {
 			alias: {
 				'@': fileURLToPath(new URL('./src', import.meta.url))
