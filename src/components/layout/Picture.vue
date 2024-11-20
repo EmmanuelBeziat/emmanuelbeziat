@@ -5,7 +5,7 @@
       <source :srcset="pictureWebp" type="image/webp">
       <img :src="pictureWebp" alt="Emmanuel Béziat" width="220" height="220" loading="lazy" @click="pictureOnClick()">
     </picture>
-		<img v-if="pictureEasterIsOn" src="../../assets/images/criquette.webp" width="220" height="220" loading="lazy">
+		<img v-if="pictureEasterIsOn" src="../../assets/images/criquette.avifs" width="220" height="220" loading="lazy">
 	</div>
 </template>
 
@@ -16,7 +16,7 @@ const route = useRoute()
 
 const baseImageName = computed(() => route.name === 'NotFound' ? 'emmanuelb-error' : 'emmanuelb')
 const pictureAvif = computed(() => new URL(`../../assets/images/${baseImageName.value}.avif`, import.meta.url).href)
-const pictureWebp = computed(() => new URL(`../../assets/images/${baseImageName.value}.avifs`, import.meta.url).href)
+const pictureWebp = computed(() => new URL(`../../assets/images/${baseImageName.value}.webp`, import.meta.url).href)
 
 const pictureCount = ref(0)
 const pictureEasterIsOn = ref(false)
