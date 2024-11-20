@@ -33,7 +33,7 @@ import Copyright from '@/components/layout/Copyright.vue'
 }
 
 .header__title {
-  margin: 0;
+  margin-block: 0;
   font: 400 var(--font-size-title)/1 var(--font-stack-heading);
   animation-delay: .25s;
 }
@@ -47,7 +47,7 @@ import Copyright from '@/components/layout/Copyright.vue'
 }
 
 .bio {
-  margin: 2rem 0;
+  margin-block: 2rem;
   animation-delay: .55s;
   text-wrap: balance;
 

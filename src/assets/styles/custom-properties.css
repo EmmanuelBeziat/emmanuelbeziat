@@ -3,13 +3,12 @@
 	--color-background: #1e192b;
 	--color-text: #eeeeee;
 
-	--color-subwhite: #f9fad3;
+	--color-light: #f9fad3;
 	--color-green: #c3e88d;
 	--color-blue: #4eb0e4;
 	--color-violet: #a48aec;
 	--color-yellow: #ffcb6b;
 	--color-red: #ec4185;
-	--color-black: var(--color-background-light);
 
 	--color-separator: var(--color-background-light);
 

@@ -26,6 +26,12 @@ defineProps({
 </script>
 
 <style scoped>
+@property --bg-social-link {
+	syntax: "<color>";
+	inherits: true;
+	initial-value: var(--color-light);
+}
+
 .social__item {
   display: block;
   width: 3rem;

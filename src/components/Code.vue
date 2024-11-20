@@ -86,7 +86,7 @@ const code = computed(() => codes.list[Math.floor(Math.random() * codes.count)] 
 .cv-code__title {
   margin: auto;
   transform: translateX(-32px);
-  color: var(--color-subwhite);
+  color: var(--color-light);
 
 	@container (width < 46rem) {
 		margin: 0;

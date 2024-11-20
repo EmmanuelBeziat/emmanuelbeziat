@@ -22,15 +22,11 @@
 .site-content {
   padding: var(--gutter-screen-y, 2rem) var(--gutter-screen-x, 2rem);
   width: min(50rem, 100dvw);
-  margin: 0 auto;
+  margin-inline: auto;
   grid-area: content;
 }
 
 .main {
-  margin: 6rem auto 2rem;
+  margin: 0 auto 2rem;
   outline: 0;
-
-	@media (width <= 1120px) {
-		margin-block: 0 2rem;
-	}
 }

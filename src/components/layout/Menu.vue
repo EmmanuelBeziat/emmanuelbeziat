@@ -18,6 +18,10 @@ import MenuItem from '@/components/layout/MenuItem.vue'
   display: flex;
   justify-content: flex-end;
 
+	@media (width > 768px) {
+		margin-bottom: 6rem;
+	}
+
 	@media (width <= 768px) {
 		justify-content: space-between;
 		position: fixed;

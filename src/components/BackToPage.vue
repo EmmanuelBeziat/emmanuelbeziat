@@ -25,9 +25,9 @@ defineProps({
 
 <style scoped>
 .navigation {
-  color: var(--nav-color, var(--color-green));
-  display: flex;
-  align-content: center;
+	color: var(--nav-color, var(--color-green));
+	display: inline-flex;
+	gap: 6px;
 
 	&:is(:hover, :focus) {
 		--nav-color: var(--color-yellow);
@@ -38,7 +38,6 @@ defineProps({
 		stroke: currentColor;
 		transform: var(--transform);
 		transition: transform var(--transition-fast) ease-in-out;
-		margin-right: 6px;
 	}
 
 	&.--previous {
@@ -54,7 +53,7 @@ defineProps({
 	}
 
 	&.--next svg {
-		transform: var(--transform) rotate(180deg);
+		transform: var(--transform) rotate(.5turn);
 		order: 2;
 	}
 

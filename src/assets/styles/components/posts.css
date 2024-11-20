@@ -7,10 +7,6 @@
   background: var(--color-background);
   opacity: 0;
 
-	@supports (content-visibility: auto) {
-		content-visibility: auto;
-	}
-
 	.tags {
 		max-width: 50%;
 		display: flex;

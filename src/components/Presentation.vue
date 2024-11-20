@@ -88,7 +88,7 @@ checkAge(personal.birthday)
 }
 
 .card {
-  color: var(--color-subwhite);
+  color: var(--color-light);
   font: 700 var(--font-size-heading-1)/1 var(--font-stack-common);
   margin-bottom: 80px;
   text-align: center;
@@ -109,10 +109,7 @@ checkAge(personal.birthday)
   color: var(--color-blue);
   animation-delay: .55s;
   white-space: nowrap;
-
-	@supports (font-size: 1cqi) {
-		font-size: clamp(var(--font-size-heading-3), 13cqi, 5ch);
-	}
+	font-size: clamp(var(--font-size-heading-3), 13cqi, 5ch);
 }
 
 .presentation__hello {
@@ -182,7 +179,7 @@ checkAge(personal.birthday)
 	}
 
 	i {
-		color: var(--color-subwhite);
+		color: var(--color-light);
 		font-style: normal;
 		font-size: 80%;
 		display: block;

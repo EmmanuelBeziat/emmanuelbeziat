@@ -34,8 +34,13 @@ const isActive = computed(() => router.resolve(props.to).path === '/' + route.pa
 </script>
 
 <style scoped>
+@property --link-color {
+	syntax: "<color>";
+	inherits: false;
+	initial-value: var(--color-text);
+}
+
 .menu__item {
-  --link-color: var(--color-text);
   font: 400 var(--font-size-menu)/1 var(--font-stack-heading);
   text-decoration: none;
   color: var(--link-color);

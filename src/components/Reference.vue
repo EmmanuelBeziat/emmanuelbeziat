@@ -120,25 +120,25 @@ defineProps({
 				transition: var(--transition-slow) var(--ease-back-out) .025s;
 			}
 		}
+	}
 
-		.blue {
-			--showcase-color: var(--color-blue);
-		}
-		.red {
-			--showcase-color: var(--color-red);
-		}
-		.violet {
-			--showcase-color: var(--color-violet);
-		}
-		.yellow {
-			--showcase-color: var(--color-yellow);
-		}
-		.green {
-			--showcase-color: var(--color-green);
-		}
-		.black {
-			--showcase-color: var(--color-black);
-		}
+	.blue {
+		--showcase-color: var(--color-blue);
+	}
+	.red {
+		--showcase-color: var(--color-red);
+	}
+	.violet {
+		--showcase-color: var(--color-violet);
+	}
+	.yellow {
+		--showcase-color: var(--color-yellow);
+	}
+	.green {
+		--showcase-color: var(--color-green);
+	}
+	.black {
+		--showcase-color: var(--color-background-light);
 	}
 }
 

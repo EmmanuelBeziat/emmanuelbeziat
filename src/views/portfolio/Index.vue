@@ -49,14 +49,20 @@ useSeoMeta({
 </script>
 
 <style scoped>
+@property --gap-size {
+	syntax: "<length>";
+	inherits: false;
+	initial-value: 4px;
+}
+
 .showcase {
 	container: showcase / inline-size;
 }
 
 .showcase__list {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(230px, 1fr));
-  gap: 4px;
+  grid-template-columns: repeat(auto-fit, minmax(calc(100cqi / 3 - var(--gap-size)), 1fr));
+  gap: var(--gap-size);
 
 	@container (width <= 540px) {
     grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
