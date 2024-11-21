@@ -5,7 +5,7 @@
 </template>
 
 <script setup>
-import Copyright from '@/components/layout/Copyright.vue'
+import Copyright from '@/components/global/Copyright.vue'
 </script>
 
 <style scoped>

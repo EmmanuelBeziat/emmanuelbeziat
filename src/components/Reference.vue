@@ -1,15 +1,15 @@
 <template>
-	<router-link class="showcase__item" :to="`/portfolio/${reference.slug}/`">
-		<div :class="['showcase__layer', reference.color]" v-html="reference.image" />
+	<router-link class="card" :to="`/portfolio/${reference.slug}/`">
+		<div :class="['layer', reference.color]" v-html="reference.image" />
 
-		<div class="showcase__caption">
-			<h2 class="showcase__title">{{ reference.title }}</h2>
+		<div class="caption">
+			<h2 class="title">{{ reference.title }}</h2>
 
-			<div class="portfolio-tags">
-				<Icon class="portfolio-tags__icon" width="1em" name="tags" />
+			<div class="tags">
+				<Icon class="tags-icon" width="1em" name="tags" />
 
-				<div class="showcase-tags__list">
-					<span class="showcase-tags__item" v-for="tag in reference.tags" :key="`tag-${tag}`">{{ tag }}</span>
+				<div class="tags-list">
+					<span class="tag" v-for="tag in reference.tags" :key="`tag-${tag}`">{{ tag }}</span>
 				</div>
 			</div>
 		</div>
@@ -17,7 +17,7 @@
 </template>
 
 <script setup>
-import Icon from '@/components/icon/Icon.vue'
+import Icon from '@/components/Icon.vue'
 
 defineProps({
 	reference: {
@@ -28,7 +28,7 @@ defineProps({
 </script>
 
 <style scoped>
-.showcase__item {
+.card {
   opacity: 0;
   position: relative;
   color: var(--color-text);
@@ -39,7 +39,7 @@ defineProps({
 	}
 }
 
-.showcase__layer {
+.layer {
   background: var(--color-separator);
   pointer-events: none;
   position: relative;
@@ -54,7 +54,7 @@ defineProps({
   aspect-ratio: 1;
 }
 
-.showcase__layer :deep(svg) {
+.layer :deep(svg) {
   width: 128px;
   fill: currentColor;
   aspect-ratio: 1;
@@ -63,12 +63,12 @@ defineProps({
 }
 
 @media (width <= 803px) {
-  .showcase__layer :deep(svg) {
+  .layer :deep(svg) {
     width: calc(60%);
   }
 }
 
-.showcase__caption {
+.caption {
   pointer-events: none;
   z-index: 5;
   position: absolute;
@@ -88,7 +88,7 @@ defineProps({
   transition: var(--transition-slow) var(--ease-back-out) 0s;
 }
 
-.showcase__title {
+.title {
   margin: 0 0 .35em;
   line-height: 1;
   font-size: 28px;
@@ -96,8 +96,8 @@ defineProps({
 }
 
 @media (hover: hover) {
-  .showcase__item:hover {
-		.showcase__layer {
+  .card:hover {
+		.layer {
 			transform: scale(.4) translateZ(0);
 			border-radius: 50%;
 			aspect-ratio: 1;
@@ -109,13 +109,13 @@ defineProps({
 			transform: scale(1.2);
 		}
 
-		.showcase__caption {
+		.caption {
 			opacity: 1;
 			visibility: visible;
 			transform: translateY(0);
 			transition: var(--transition-slow) var(--ease-back-out) .1s;
 
-			.portfolio-tags {
+			.tags {
 				transform: translateY(0);
 				transition: var(--transition-slow) var(--ease-back-out) .025s;
 			}
@@ -152,27 +152,27 @@ defineProps({
 	}
 }
 
-.showcase-tags__list {
+.tags-list {
   text-align: left;
   line-height: 1.15;
 }
 
-.showcase-tags__item {
+.tag {
   font-size: 14px;
   color: var(--color-text);
 }
 
-.showcase-tags__item:not(:last-child)::after {
+.tag:not(:last-child)::after {
   content: ", ";
 }
 
-.portfolio-tags {
+.tags {
   display: flex;
   transform: translateY(20px);
   transition: var(--transition-slow) var(--ease-back-out) 0s;
 }
 
-.portfolio-tags__icon {
+.tags-icon {
   width: 1em;
   min-width: 1em;
   aspect-ratio: 1;

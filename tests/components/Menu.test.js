@@ -1,10 +1,10 @@
 import { mount } from '@vue/test-utils'
 import { describe, it, expect, vi } from 'vitest'
-import Menu from '@/components/layout/Menu.vue'
-import MenuItem from '@/components/layout/MenuItem.vue'
+import Menu from '@/components/global/Menu.vue'
+import MenuItem from '@/components/global/MenuItem.vue'
 
 // Mock MenuItem component
-vi.mock('@/components/layout/MenuItem.vue', () => ({
+vi.mock('@/components/global/MenuItem.vue', () => ({
   default: {
     name: 'MenuItem',
     props: ['to', 'label', 'icon'],

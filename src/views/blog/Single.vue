@@ -1,37 +1,29 @@
 <template>
-	<article class="post" v-if="post">
-		<header class="post__header animation-bounce">
-			<h1 class="post__title">{{ post.title }}</h1>
+	<Article class="blog" v-if="post">
+		<template #title>{{ post.title }}</template>
 
-			<div class="post-infos">
-				<div class="post__date">Posté le <time>{{ dateFormat(post.date, { year: 'numeric', month: 'long', day: 'numeric' }) }}</time></div>
+		<template #date>Posté le <time>{{ dateFormat(post.date, { year: 'numeric', month: 'long', day: 'numeric' }) }}</time></template>
 
-				<div class="flex">
-					<sequential-entrance animation="animation-bounce" delay="125" class="tags">
-						<Tag v-for="(tag, index) in post.tags" :key="`tag-${index}`" :value="tag" />
-					</sequential-entrance>
+		<template #tags>
+			<sequential-entrance animation="animation-bounce" delay="125" class="tags">
+				<Tag v-for="(tag, index) in post.tags" :key="`tag-${index}`" :value="tag" />
+			</sequential-entrance>
+		</template>
 
-					<Share />
-				</div>
-			</div>
-		</header>
+		<template #share>
+			<Share />
+		</template>
 
-		<div class="post__content animation-fade" v-html="post.markup" />
+		<template #content>
+			<div v-html="post.markup"></div>
+		</template>
 
-		<footer class="post__footer animation-bounce">
-			<div class="flex">
-				<sequential-entrance animation="animation-bounce" delay="125" class="tags">
-					<Tag v-for="(tag, index) in post.tags" :key="`tag-${index}`" :value="tag" />
-				</sequential-entrance>
-
-				<Share />
-			</div>
-
-			<div class="post__help">
+		<template #footer>
+			<div class="help">
 				Un problème ? Une question ? <br>Vous pouvez me contacter sur <a href="https://www.twitter.com/EmmanuelBeziat" target="_blank" rel="noopener noreferrer">Twitter</a>, ou bien créer un sujet sur un forum d’entraide comme <a href="https://zestedesavoir.com/" target="_blank" rel="noopener noreferrer">ZesteDeSavoir</a>, <a href="https://openclassrooms.com/forum/" target="_blank" rel="noopener noreferrer">OpenClassrooms</a>, <a href="http://www.alsacreations.com/" target="_blank" rel="noopener noreferrer">Alsacréations</a>…
 			</div>
-		</footer>
-	</article>
+		</template>
+	</Article>
 </template>
 
 <script setup>
@@ -40,8 +32,9 @@ import { openGraph } from '@/config'
 import { useRoute } from 'vue-router'
 import { useSeoMeta, useHead } from '@unhead/vue'
 
+import Article from '@/components/layouts/Article.vue'
 import Share from '@/components/share/Share.vue'
-import Tag from '@/components/tags/Tag.vue'
+import Tag from '@/components/Tag.vue'
 
 import { dateFormat } from '@/plugins/mixins/date'
 import { usePostsStore } from '@/stores/posts'
@@ -82,3 +75,10 @@ watch(post, (newPost) => {
 	if (newPost) updateMetaTags()
 })
 </script>
+
+<style scoped>
+.help {
+  font-size: .9rem;
+  margin-top: 2rem;
+}
+</style>

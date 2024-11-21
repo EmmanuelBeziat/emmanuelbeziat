@@ -6,7 +6,7 @@ import { usePortfolioStore } from '@/stores/portfolio'
 import { useRoute } from 'vue-router'
 import { useHead, useSeoMeta } from '@unhead/vue'
 import { defineNamespace } from '@/plugins/mixins/namespace'
-import Tag from '@/components/tags/Tag.vue'
+import Tag from '@/components/Tag.vue'
 import Navigation from '@/components/BackToPage.vue'
 
 // Mocks
@@ -16,7 +16,7 @@ vi.mock('@/plugins/mixins/namespace', () => ({ defineNamespace: vi.fn() }))
 vi.mock('@/stores/portfolio', () => ({ usePortfolioStore: vi.fn() }))
 
 // Mock child components
-vi.mock('@/components/tags/Tag.vue', () => ({ default: { template: '<div class="tag-mock"></div>', props: ['value'] } }))
+vi.mock('@/components/Tag.vue', () => ({ default: { template: '<div class="tag-mock"></div>', props: ['value'] } }))
 vi.mock('@/components/BackToPage.vue', () => ({ default: { template: '<div class="navigation-mock"></div>', props: ['type', 'to', 'label'] } }))
 
 describe('PortfolioSingle', () => {
@@ -54,7 +54,7 @@ describe('PortfolioSingle', () => {
   })
 
   it('should render the reference title', () => {
-    expect(wrapper.find('.post__title').text()).toBe('Test Reference')
+    expect(wrapper.find('.title').text()).toBe('Test Reference')
   })
 
   /* it('should render tags', () => {
@@ -67,7 +67,7 @@ describe('PortfolioSingle', () => {
   }) */
 
   it('should render reference content', () => {
-    expect(wrapper.find('.post__content').html()).toContain('<p>Test content</p>')
+    expect(wrapper.find('.content').html()).toContain('<p>Test content</p>')
   })
 
   it('should render Navigation component', () => {

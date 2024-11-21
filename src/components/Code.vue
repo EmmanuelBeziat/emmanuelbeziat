@@ -1,15 +1,15 @@
 <template>
 	<div class="cv-code">
-		<div class="cv-code__header">
-			<div class="cv-code__buttons">
+		<div class="top-bar">
+			<div class="fake-buttons">
 				<span class="fake-button --close" />
 				<span class="fake-button --minify" />
 				<span class="fake-button --expand" />
 			</div>
-			<span class="cv-code__title" v-if="code">emmanuel@code: ~/{{ code.slug }}</span>
+			<span class="title" v-if="code">emmanuel@code: ~/{{ code.slug }}</span>
 		</div>
 
-		<div class="cv-code__body">
+		<div class="code">
 			<transition mode="out-in" name="fade">
 				<div v-if="code" v-html="code.markup" />
 
@@ -58,7 +58,7 @@ const code = computed(() => codes.list[Math.floor(Math.random() * codes.count)] 
   animation-delay: .5s;
 }
 
-.cv-code__header {
+.top-bar {
 	display: flex;
   align-items: center;
   background: var(--color-background-light);
@@ -70,7 +70,7 @@ const code = computed(() => codes.list[Math.floor(Math.random() * codes.count)] 
   font-family: var(--font-stack-code);
 }
 
-.cv-code__buttons {
+.fake-buttons {
   margin-right: 1rem;
   display: flex;
   gap: 6px;
@@ -83,7 +83,7 @@ const code = computed(() => codes.list[Math.floor(Math.random() * codes.count)] 
   background: var(--bg-button);
 }
 
-.cv-code__title {
+.title {
   margin: auto;
   transform: translateX(-32px);
   color: var(--color-light);

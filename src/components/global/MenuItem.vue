@@ -8,7 +8,7 @@
 <script setup>
 import { computed } from 'vue'
 import { useRoute, useRouter } from 'vue-router'
-import Icon from '@/components/icon/Icon.vue'
+import Icon from '@/components/Icon.vue'
 
 const props = defineProps({
 	to: {

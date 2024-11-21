@@ -38,8 +38,8 @@ describe('Code', () => {
     expect(wrapper.find('.cv-code').exists()).toBe(true)
   })
 
-  it('should render the code header', () => {
-    expect(wrapper.find('.cv-code__header').exists()).toBe(true)
+  it('should render the code top-bar', () => {
+    expect(wrapper.find('.top-bar').exists()).toBe(true)
   })
 
   it('should render fake buttons', () => {
@@ -50,12 +50,12 @@ describe('Code', () => {
 
   it('should render the code title when code is available', async () => {
     await nextTick()
-    expect(wrapper.find('.cv-code__title').text()).toBe('emmanuel@code: ~/test-code')
+    expect(wrapper.find('.title').text()).toBe('emmanuel@code: ~/test-code')
   })
 
   it('should render the code markup when code is available', async () => {
     await nextTick()
-    expect(wrapper.find('.cv-code__body').html()).toContain('<pre><code>Test code</code></pre>')
+    expect(wrapper.find('.code').html()).toContain('<pre><code>Test code</code></pre>')
   })
 
   it('should render the Loader when no code is available', async () => {

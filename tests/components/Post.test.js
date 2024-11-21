@@ -1,7 +1,7 @@
 import { mount } from '@vue/test-utils'
 import { describe, it, expect, vi } from 'vitest'
 import Post from '@/components/Post.vue'
-import Tag from '@/components/tags/Tag.vue'
+import Tag from '@/components/Tag.vue'
 import { dateFormat } from '@/plugins/mixins/date'
 
 // Mock the dateFormat function
@@ -10,7 +10,7 @@ vi.mock('@/plugins/mixins/date', () => ({
 }))
 
 // Mock the Tag component
-vi.mock('@/components/tags/Tag.vue', () => ({
+vi.mock('@/components/Tag.vue', () => ({
   default: {
     name: 'Tag',
     template: '<div class="tag-mock">{{ value }}</div>',
@@ -47,7 +47,7 @@ describe('Post', () => {
   it('should render the formatted date', () => {
     dateFormat.mockReturnValue('20 May 2023')
     const wrapper = createWrapper()
-    expect(wrapper.find('.post__date').text()).toContain('20 May 2023')
+    expect(wrapper.find('.date').text()).toContain('20 May 2023')
     expect(dateFormat).toHaveBeenCalledWith('2023-05-20', { year: 'numeric', month: 'long', day: 'numeric' })
   })
 
@@ -61,7 +61,7 @@ describe('Post', () => {
 
   it('should render the post description', () => {
     const wrapper = createWrapper()
-    expect(wrapper.find('.post__description').text()).toBe('This is a test post description')
+    expect(wrapper.find('.excerpt').text()).toBe('This is a test post description')
   })
 
   it('should handle posts without tags', () => {
@@ -73,6 +73,6 @@ describe('Post', () => {
   it('should handle posts without description', () => {
     const postWithoutDescription = { ...mockPost, description: undefined }
     const wrapper = createWrapper({ post: postWithoutDescription })
-    expect(wrapper.find('.post__description').text()).toBe('')
+    expect(wrapper.find('.excerpt').text()).toBe('')
   })
 })

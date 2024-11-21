@@ -1,18 +1,18 @@
 import { mount } from '@vue/test-utils'
 import { describe, it, expect, vi } from 'vitest'
-import Header from '@/components/layout/Header.vue'
-import Picture from '@/components/layout/Picture.vue'
-import SocialLinks from '@/components/layout/Social.vue'
-import Copyright from '@/components/layout/Copyright.vue'
+import Header from '@/components/global/Header.vue'
+import Picture from '@/components/global/Picture.vue'
+import SocialLinks from '@/components/global/Social.vue'
+import Copyright from '@/components/global/Copyright.vue'
 
 // Mock child components
-vi.mock('@/components/layout/Picture.vue', () => ({
+vi.mock('@/components/global/Picture.vue', () => ({
   default: { template: '<div class="picture-mock"></div>' }
 }))
-vi.mock('@/components/layout/Social.vue', () => ({
+vi.mock('@/components/global/Social.vue', () => ({
   default: { template: '<div class="social-mock"></div>' }
 }))
-vi.mock('@/components/layout/Copyright.vue', () => ({
+vi.mock('@/components/global/Copyright.vue', () => ({
   default: { template: '<div class="copyright-mock"></div>' }
 }))
 
@@ -54,7 +54,7 @@ describe('<Header>', () => {
 
   it('should render the title with a router-link', () => {
     const wrapper = mountHeader()
-    const title = wrapper.find('.header__title')
+    const title = wrapper.find('.title')
     expect(title.exists()).toBe(true)
     const link = title.find('a')
     expect(link.exists()).toBe(true)
@@ -86,7 +86,7 @@ describe('<Header>', () => {
 
   it('should have correct CSS classes for animations', () => {
     const wrapper = mountHeader()
-    expect(wrapper.find('.header__title').classes()).toContain('animation-skew-y')
+    expect(wrapper.find('.title').classes()).toContain('animation-skew-y')
     expect(wrapper.find('.picture').classes()).toContain('animation-bounce')
     expect(wrapper.find('.social').classes()).toContain('animation-bounce')
     expect(wrapper.find('.bio').classes()).toContain('animation-bounce')

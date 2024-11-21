@@ -11,7 +11,7 @@
 
 <script setup>
 import { social } from '@/config'
-import Item from '@/components/layout/SocialItem.vue'
+import Item from '@/components/global/SocialItem.vue'
 </script>
 
 <style scoped>

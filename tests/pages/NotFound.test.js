@@ -51,33 +51,33 @@ describe('<NotFound>', () => {
 
   it('should render a random error image and title', async () => {
     await nextTick()
-    const image = wrapper.find('.not-found__image img')
-    const title = wrapper.find('.not-found__404')
+    const image = wrapper.find('.image img')
+    const title = wrapper.find('.error')
 
     expect(image.attributes('src')).toContain('doctor-who.avifs')
     expect(title.html()).toContain('What?!')
   })
 
   it('should call router.go when image is clicked', async () => {
-    const image = wrapper.find('.not-found__image')
+    const image = wrapper.find('.image')
     await image.trigger('click')
     expect(wrapper.vm.$router.go).toHaveBeenCalled()
   })
 
   it('should render the main title', () => {
-    const mainTitle = wrapper.find('.not-found__title')
+    const mainTitle = wrapper.find('.title')
     expect(mainTitle.text()).toBe('Page introuvable')
   })
 
   it('should render the content', () => {
-    const content = wrapper.find('.not-found__content')
+    const content = wrapper.find('.message')
     expect(content.text()).toContain('Et voilà, vous avez tout cassé…')
   })
 
   it('should apply correct CSS classes for animations', () => {
-    expect(wrapper.find('.not-found__image').classes()).toContain('animation-bounce')
-    expect(wrapper.find('.not-found__404').classes()).toContain('animation-bounce')
-    expect(wrapper.find('.not-found__title').classes()).toContain('animation-bounce')
-    expect(wrapper.find('.not-found__content').classes()).toContain('animation-bounce')
+    expect(wrapper.find('.image').classes()).toContain('animation-bounce')
+    expect(wrapper.find('.error').classes()).toContain('animation-bounce')
+    expect(wrapper.find('.title').classes()).toContain('animation-bounce')
+    expect(wrapper.find('.message').classes()).toContain('animation-bounce')
   })
 })

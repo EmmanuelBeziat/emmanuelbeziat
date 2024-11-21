@@ -1,6 +1,6 @@
 <template>
 	<header class="header" v-once ref="header">
-		<div class="header__title animation-skew-y"><router-link to="/">Emmanuel Béziat</router-link></div>
+		<div class="title animation-skew-y"><router-link to="/">Emmanuel Béziat</router-link></div>
 
 		<Picture class="picture animation-bounce" />
 
@@ -17,9 +17,9 @@
 </template>
 
 <script setup>
-import Picture from '@/components/layout/Picture.vue'
-import SocialLinks from '@/components/layout/Social.vue'
-import Copyright from '@/components/layout/Copyright.vue'
+import Picture from '@/components/global/Picture.vue'
+import SocialLinks from '@/components/global/Social.vue'
+import Copyright from '@/components/global/Copyright.vue'
 </script>
 
 <style scoped>
@@ -32,7 +32,7 @@ import Copyright from '@/components/layout/Copyright.vue'
   grid-area: header;
 }
 
-.header__title {
+.title {
   margin-block: 0;
   font: 400 var(--font-size-title)/1 var(--font-stack-heading);
   animation-delay: .25s;

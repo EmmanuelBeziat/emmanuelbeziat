@@ -1,14 +1,10 @@
 <template>
-	<section class="projects">
+	<section :class="sectionClass">
 		<Search placeholder="Recherche…" label="Rechercher" v-model="searchTerms" />
 
-		<KeepAlive>
-			<GithubCards class="card" :cards="{ stats: true, languages: false }" />
-		</KeepAlive>
-
-		<template v-if="projects.length">
+		<template v-if="items.length">
 			<sequential-entrance animation="animation-fade" delay="100" class="post-list">
-				<Project v-for="project in projects" :key="`repo-${project.id}`" :project />
+				<slot name="item" :items="items" />
 			</sequential-entrance>
 		</template>
 
@@ -23,38 +19,47 @@ import { useRoute } from 'vue-router'
 import { useHead, useSeoMeta } from '@unhead/vue'
 import slug from 'slug'
 
-import { useProjectsStore } from '@/stores/projects'
-import { defineNamespace } from '@/plugins/mixins/namespace'
-
-import Project from '@/components/Project.vue'
 import Search from '@/components/Search.vue'
-import GithubCards from '@/components/GithubCards.vue'
 import NoContent from '@/components/loader/NoContent.vue'
 
+const props = defineProps({
+  sectionClass: {
+    type: String,
+    required: true
+  },
+  searchPlaceholder: {
+    type: String,
+    required: true
+  },
+  store: {
+    type: Object,
+    required: true
+  },
+  itemKey: {
+    type: String,
+    required: true
+  }
+})
+
 const searchTerms = ref('')
-const projectsStore = useProjectsStore()
 const route = useRoute()
 const fullURL = computed(() => openGraph.url + route.fullPath)
-const projects = computed(() => projectsStore.list.filter(project => slug(project.name).includes(slug(searchTerms.value.toLowerCase()))))
+const items = computed(() => props.store.list.filter(item => slug(item[props.itemKey].toLowerCase()).includes(slug(searchTerms.value.toLowerCase()))))
 
 onMounted(() => {
-	defineNamespace('projects')
+  defineNamespace(props.sectionClass)
 })
 
 useHead({
-	title: 'Projets'
+  title: props.sectionClass.charAt(0).toUpperCase() + props.sectionClass.slice(1)
 })
 
 useSeoMeta({
-	ogUrl: fullURL,
+  ogUrl: fullURL,
 })
 </script>
 
 <style scoped>
-.card {
-  margin-block: 2.5rem;
-}
-
 .post-list {
   display: grid;
 }

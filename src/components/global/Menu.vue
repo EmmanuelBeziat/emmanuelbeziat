@@ -9,7 +9,7 @@
 </template>
 
 <script setup>
-import MenuItem from '@/components/layout/MenuItem.vue'
+import MenuItem from '@/components/global/MenuItem.vue'
 </script>
 
 <style scoped>
@@ -29,6 +29,7 @@ import MenuItem from '@/components/layout/MenuItem.vue'
 		inset: auto 0 0;
 		z-index: 50;
 		padding: 0;
+		will-change: transform;
 	}
 }
 </style>

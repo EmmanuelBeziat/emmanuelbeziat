@@ -1,29 +1,29 @@
 <template>
-	<article class="post" v-if="reference">
-		<header class="post__header animation-bounce">
-			<h1 class="post__title">{{ reference.title }}</h1>
+	<Article class="showcase" v-if="reference" :showFooterInfos="false">
+		<template #title>{{ reference.title }}</template>
 
-			<div class="post-infos">
-				<div class="flex">
-					<sequential-entrance animation="animation-bounce" delay="125" class="tags">
-						<Tag v-for="tag in reference.tags" :key="`tag-${tag}`" :value="tag" />
-					</sequential-entrance>
+		<template #tags>
+			<sequential-entrance animation="animation-bounce" delay="125" class="tags">
+				<Tag v-for="tag in reference.tags" :key="`tag-${tag}`" :value="tag" />
+			</sequential-entrance>
+		</template>
 
-					<sequential-entrance animation="animation-bounce" delay="150" class="tags">
-						<Tag v-for="client in reference.clients" :key="`client-${client}`" :value="client" />
-					</sequential-entrance>
-				</div>
-			</div>
-		</header>
+		<template #clients>
+			<sequential-entrance animation="animation-bounce" delay="125" class="tags">
+				<Tag v-for="client in reference.clients" :key="`client-${client}`" :value="client" />
+			</sequential-entrance>
+		</template>
 
-		<div class="post__content animation-fade" v-html="reference.markup" />
+		<template #content>
+			<div v-html="reference.markup"></div>
+		</template>
 
-		<footer class="post__footer animation-bounce">
+		<template #footer>
 			<nav class="post-navigation" aria-label="Navigation du portfolio">
 				<Navigation type="previous" :to="{ name: 'Portfolio' }" label="Revenir au portfolio" />
 			</nav>
-		</footer>
-	</article>
+		</template>
+	</Article>
 </template>
 
 <script setup>
@@ -32,7 +32,8 @@ import { openGraph } from '@/config'
 import { useRoute } from 'vue-router'
 import { useHead, useSeoMeta } from '@unhead/vue'
 
-import Tag from '@/components/tags/Tag.vue'
+import Article from '@/components/layouts/Article.vue'
+import Tag from '@/components/Tag.vue'
 import Navigation from '@/components/BackToPage.vue'
 
 import { usePortfolioStore } from '@/stores/portfolio'

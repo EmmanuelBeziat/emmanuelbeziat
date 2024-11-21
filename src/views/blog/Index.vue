@@ -21,7 +21,7 @@ import { useHead, useSeoMeta } from '@unhead/vue'
 import slug from 'slug'
 
 import NoContent from '@/components/loader/NoContent.vue'
-import Search from '@/components/search/Search.vue'
+import Search from '@/components/Search.vue'
 import Post from '@/components/Post.vue'
 
 import { defineNamespace } from '@/plugins/mixins/namespace'
@@ -57,3 +57,9 @@ useSeoMeta({
 	ogUrl: fullURL,
 })
 </script>
+
+<style scoped>
+.post-list {
+  display: grid;
+}
+</style>

@@ -9,7 +9,7 @@ import { defineNamespace } from '@/plugins/mixins/namespace'
 
 // Mock components
 vi.mock('@/components/Project.vue', () => ({ default: { template: '<div class="project-mock"></div>' } }))
-vi.mock('@/components/search/Search.vue', () => ({ default: { template: '<div class="search-mock"></div>' } }))
+vi.mock('@/components/Search.vue', () => ({ default: { template: '<div class="search-mock"></div>' } }))
 vi.mock('@/components/GithubCards.vue', () => ({ default: { template: '<div class="github-cards-mock"></div>' } }))
 vi.mock('@/components/loader/NoContent.vue', () => ({ default: { template: '<div class="no-content-mock"></div>' } }))
 

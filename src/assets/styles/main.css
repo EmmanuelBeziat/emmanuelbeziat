@@ -14,11 +14,7 @@
 @import './custom-properties.css';
 @import './base.css';
 @import './helpers.css';
-@import './layout.css';
 
 /* modules */
 @import './modules/transitions.css';
 @import './modules/notes.css';
-
-/* components */
-@import './components/posts.css';

@@ -1,7 +1,7 @@
 import { mount } from '@vue/test-utils'
 import { describe, it, expect, vi } from 'vitest'
-import Social from '@/components/layout/Social.vue'
-import SocialItem from '@/components/layout/SocialItem.vue'
+import Social from '@/components/global/Social.vue'
+import SocialItem from '@/components/global/SocialItem.vue'
 
 // Mock the config
 vi.mock('@/config', () => ({
@@ -15,7 +15,7 @@ vi.mock('@/config', () => ({
 }))
 
 // Mock the SocialItem component
-vi.mock('@/components/layout/SocialItem.vue', () => ({
+vi.mock('@/components/global/SocialItem.vue', () => ({
   default: {
     name: 'SocialItem',
     props: ['url', 'name', 'icon'],

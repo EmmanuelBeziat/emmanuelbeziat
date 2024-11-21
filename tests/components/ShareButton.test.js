@@ -1,10 +1,10 @@
 import { mount } from '@vue/test-utils'
 import { describe, it, expect, vi } from 'vitest'
 import Button from '@/components/share/Button.vue'
-import Icon from '@/components/icon/Icon.vue'
+import Icon from '@/components/Icon.vue'
 
 // Mock the Icon component
-vi.mock('@/components/icon/Icon.vue', () => ({
+vi.mock('@/components/Icon.vue', () => ({
   default: {
     name: 'Icon',
     props: ['name'],

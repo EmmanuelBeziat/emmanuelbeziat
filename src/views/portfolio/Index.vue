@@ -24,7 +24,7 @@ import { useHead, useSeoMeta } from '@unhead/vue'
 
 import Reference from '@/components/Reference.vue'
 import NoContent from '@/components/loader/NoContent.vue'
-import Icon from '@/components/icon/Icon.vue'
+import Icon from '@/components/Icon.vue'
 
 
 import { usePortfolioStore } from '@/stores/portfolio'

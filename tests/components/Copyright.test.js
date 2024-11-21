@@ -1,6 +1,6 @@
 import { mount } from '@vue/test-utils'
 import { describe, it, expect, vi } from 'vitest'
-import Copyright from '@/components/layout/Copyright.vue'
+import Copyright from '@/components/global/Copyright.vue'
 
 // Mock the Date object to ensure consistent test results
 const mockDate = new Date(2023, 0, 1) // January 1, 2023

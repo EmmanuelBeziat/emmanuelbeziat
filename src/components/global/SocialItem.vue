@@ -1,11 +1,11 @@
 <template>
-	<a :href="url" :class="`social__item --${name.toLowerCase()}`" :aria-label="name">
+	<a :href="url" :class="`network --${name.toLowerCase()}`" :aria-label="name">
 		<Icon :name="icon" />
 	</a>
 </template>
 
 <script setup>
-import Icon from '@/components/icon/Icon.vue'
+import Icon from '@/components/Icon.vue'
 
 defineProps({
 	name: {
@@ -32,7 +32,7 @@ defineProps({
 	initial-value: var(--color-light);
 }
 
-.social__item {
+.network {
   display: block;
   width: 3rem;
   aspect-ratio: 1;
@@ -89,7 +89,7 @@ defineProps({
 	}
 }
 
-.social__item :deep(svg) {
+.network :deep(svg) {
   fill: currentColor;
   transition: var(--transition-fast) ease-in-out;
 }

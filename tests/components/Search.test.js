@@ -1,8 +1,7 @@
 import { mount } from '@vue/test-utils'
 import { describe, it, expect, vi, beforeEach, afterEach } from 'vitest'
 import { nextTick } from 'vue'
-import Search from '@/components/search/Search.vue'
-
+import Search from '@/components/Search.vue'
 
 // Mock mobile-device-detect
 vi.mock('mobile-device-detect', () => ({
@@ -85,6 +84,6 @@ describe('<Search>', () => {
   it('should apply scoped styles to input', () => {
     wrapper = createWrapper()
     const input = wrapper.find('input')
-    expect(input.classes()).toContain('search__field')
+    expect(input.classes()).toContain('search-field')
   })
 })

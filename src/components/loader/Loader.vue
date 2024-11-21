@@ -10,7 +10,7 @@
 </template>
 
 <script setup>
-import Icon from '@/components/icon/Icon.vue'
+import Icon from '@/components/Icon.vue'
 
 defineProps({
 	mini: {

@@ -1,20 +1,20 @@
 <template>
 	<section class="resume">
 		<hgroup class="card">
-			<div class="presentation__hello animation-fade-bounce">Hello! Je suis</div>
-			<h1 class="presentation__title animation-fade-bounce" ref="name">Emmanuel Béziat</h1>
-			<div class="presentation__job animation-fade-bounce" ref="job">dev web <span>full-stack</span></div>
+			<div class="card-hello animation-fade-bounce">Hello! Je suis</div>
+			<h1 class="card-name animation-fade-bounce" ref="name">Emmanuel Béziat</h1>
+			<div class="card-job animation-fade-bounce" ref="job">dev web <span>full-stack</span></div>
 		</hgroup>
 
 		<FloatingNote class="floating-note fn-age" :speedX="0.005" :speedY="0.025">
-			<div class="presentation__age">
+			<div class="resume-age">
 				<Icon name="drawn-arrow" /><span>{{ age }} ans</span>
 				<i>({{ nextBirthday }})</i>
 			</div>
 		</FloatingNote>
 
 		<FloatingNote class="floating-note fn-note" :speedX="0.02" :speedY="0.01">
-			<div class="presentation__note">
+			<div class="resume-note">
 				<Icon name="drawn-arrow" /> Très bon !
 			</div>
 		</FloatingNote>
@@ -29,7 +29,7 @@ import fr from 'dayjs/locale/fr'
 import relativeTime from 'dayjs/plugin/relativeTime'
 import updateLocale from 'dayjs/plugin/updateLocale'
 
-import Icon from '@/components/icon/Icon.vue'
+import Icon from '@/components/Icon.vue'
 import FloatingNote from '@/components/FloatingNote.vue'
 
 let age = null
@@ -102,7 +102,7 @@ checkAge(personal.birthday)
 	}
 }
 
-.presentation__title {
+.card-name {
   margin: 0;
   font: inherit;
   font-size: 80px;
@@ -112,13 +112,13 @@ checkAge(personal.birthday)
 	font-size: clamp(var(--font-size-heading-3), 13cqi, 5ch);
 }
 
-.presentation__hello {
+.card-hello {
   text-align: left;
   animation-delay: .45s;
 	transition: .25s ease-in-out;
 }
 
-.presentation__job {
+.card-job {
   animation-delay: .75s;
   text-align: right;
 	transition: .25s ease-in-out;
@@ -169,7 +169,7 @@ checkAge(personal.birthday)
 	bottom: 8%;
 }
 
-.presentation__age {
+.resume-age {
 	transform: rotate(5deg);
 	animation-delay: 1.25s;
 
@@ -193,7 +193,7 @@ checkAge(personal.birthday)
 	}
 }
 
-.presentation__note {
+.resume-note {
 	transform: rotate(-6deg);
 	display: flex;
 	align-items: center;

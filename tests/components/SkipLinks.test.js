@@ -1,6 +1,6 @@
 import { mount } from '@vue/test-utils'
 import { describe, it, expect } from 'vitest'
-import SkipLinks from '@/components/layout/SkipLinks.vue'
+import SkipLinks from '@/components/global/SkipLinks.vue'
 
 describe('<SkipLinks>', () => {
   it('should render with default props', () => {

@@ -1,6 +1,6 @@
 import { mount } from '@vue/test-utils'
 import { describe, it, expect, vi } from 'vitest'
-import Picture from '@/components/layout/Picture.vue'
+import Picture from '@/components/global/Picture.vue'
 import { useRoute } from 'vue-router'
 import { nextTick } from 'vue'
 

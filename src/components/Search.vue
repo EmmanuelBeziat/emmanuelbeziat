@@ -1,6 +1,6 @@
 <template>
 	<div class="search">
-		<input id="searchField" class="search__field" ref="searchField" type="search" :placeholder v-focus @input="inputSearch($event.target.value)" :aria-label="label">
+		<input id="searchField" class="search-field" ref="searchField" type="search" :placeholder v-focus @input="inputSearch($event.target.value)" :aria-label="label">
 	</div>
 </template>
 
@@ -39,7 +39,7 @@ const vFocus = {
 	}
 }
 
-.search__field {
+.search-field {
   --border-color: var(--color-separator);
   flex: 1;
   padding: 10px 1rem;

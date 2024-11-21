@@ -5,7 +5,7 @@ import BlogIndex from '@/views/blog/Index.vue'
 import { usePostsStore } from '@/stores/posts'
 import { useRoute } from 'vue-router'
 import { defineNamespace } from '@/plugins/mixins/namespace'
-import Search from '@/components/search/Search.vue'
+import Search from '@/components/Search.vue'
 import Post from '@/components/Post.vue'
 import NoContent from '@/components/loader/NoContent.vue'
 
@@ -31,7 +31,7 @@ vi.mock('@/stores/posts', () => ({
 }))
 
 // Mock child components
-vi.mock('@/components/search/Search.vue', () => ({ default: { template: '<div class="search-mock"></div>' } }))
+vi.mock('@/components/Search.vue', () => ({ default: { template: '<div class="search-mock"></div>' } }))
 vi.mock('@/components/Post.vue', () => ({ default: { template: '<div class="post-mock"></div>', props: ['post'] } }))
 vi.mock('@/components/loader/NoContent.vue', () => ({ default: { template: '<div class="no-content-mock"></div>' } }))
 

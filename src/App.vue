@@ -31,10 +31,10 @@ import { useProjectsStore } from './stores/projects'
 import { RouterView } from 'vue-router'
 import { useHead, useSeoMeta } from '@unhead/vue'
 
-import Header from '@/components/layout/Header.vue'
-import Footer from '@/components/layout/Footer.vue'
-import Menu from '@/components/layout/Menu.vue'
-import SkipLinks from '@/components/layout/SkipLinks.vue'
+import Header from '@/components/global/Header.vue'
+import Footer from '@/components/global/Footer.vue'
+import Menu from '@/components/global/Menu.vue'
+import SkipLinks from '@/components/global/SkipLinks.vue'
 // import ReloadPWA from '@/components/ReloadPWA.vue'
 
 useCodesStore().fetch()
@@ -56,3 +56,31 @@ useSeoMeta({
 })
 </script>
 
+<style scoped>
+.site {
+  min-height: 100dvh;
+  overflow-x: hidden;
+  display: grid;
+  grid-template: "header content"/20rem auto;
+
+	@media (width <= 1120px) {
+		grid-template: "header" "content" "footer";
+	}
+
+	@media (width <= 768px) {
+		padding-bottom: 80px;
+	}
+}
+
+.site-content {
+  padding: var(--gutter-screen-y, 2rem) var(--gutter-screen-x, 2rem);
+  width: min(50rem, 100dvw);
+  margin-inline: auto;
+  grid-area: content;
+}
+
+.main {
+  margin: 0 auto 2rem;
+  outline: 0;
+}
+</style>
