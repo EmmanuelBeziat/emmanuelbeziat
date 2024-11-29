@@ -13,8 +13,12 @@
 /* basis */
 @import './custom-properties.css';
 @import './base.css';
-@import './helpers.css';
 
-/* modules */
-@import './modules/transitions.css';
-@import './modules/notes.css';
+/* utilities */
+@import './utilities/helpers.css';
+@import './utilities/screen-readers.css';
+@import './utilities/transitions.css';
+
+/* components */
+@import './components/notes.css';
+@import './components/frames.css';

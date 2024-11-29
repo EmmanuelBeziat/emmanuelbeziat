@@ -1,0 +1,47 @@
+.text-align-left {
+  text-align: left;
+}
+
+.text-align-right {
+  text-align: right;
+}
+
+.text-align-center {
+  text-align: center;
+}
+
+.text-align-justify {
+  text-align: justify;
+}
+
+img.text-align-center {
+	margin-inline: auto;
+	display: block;
+}
+
+.pull-left {
+  float: left;
+  margin-right: 2em;
+  margin-bottom: .5em;
+}
+
+.pull-right {
+  float: right;
+  margin-left: 2em;
+  margin-bottom: .5em;
+}
+
+.shape-round {
+  shape-outside: circle();
+}
+
+.noscript {
+  max-width: 480px;
+  margin: 60px auto;
+  font-size: 20px;
+}
+
+.emoji {
+	font-family: system-ui !important;
+	font-style: inherit;
+}
