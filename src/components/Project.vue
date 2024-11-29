@@ -31,6 +31,7 @@
 import ListArticle from '@/components/layouts/ListArticle.vue'
 import { dateFormat } from '@/plugins/mixins/date'
 import Tag from '@/components/Tag.vue'
+import Icon from '@/components/Icon.vue'
 
 defineProps({
 	project: {
