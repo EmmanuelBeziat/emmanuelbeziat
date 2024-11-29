@@ -5,14 +5,14 @@
  * @returns {Object} - The selected item.
  */
 export const selectRandomItem = (items, storageKey) => {
-    let lastIndex = Number(localStorage.getItem(storageKey)) || 0
-    let randomIndex = lastIndex
+	const lastIndex = Number(localStorage.getItem(storageKey)) || 0
+	let randomIndex = lastIndex
 
-    while (randomIndex === lastIndex) {
-        randomIndex = Math.floor(Math.random() * items.length)
-    }
+	while (randomIndex === lastIndex) {
+		randomIndex = Math.floor(Math.random() * items.length)
+	}
 
-    localStorage.setItem(storageKey, randomIndex)
+	localStorage.setItem(storageKey, randomIndex)
 
-    return randomIndex
+	return randomIndex
 }

@@ -47,6 +47,8 @@ const props = defineProps({
 
 <style scoped>
 .post {
+	container-type: inline-size;
+
 	.footer {
 		animation-delay: .5s;
 	}
@@ -79,7 +81,7 @@ const props = defineProps({
 	justify-content: space-between;
 	align-items: center;
 
-	@media (width <= 768px) {
+	@container (width <= 620px) {
 		flex-direction: column;
 		align-items: flex-start;
 	}
@@ -88,7 +90,7 @@ const props = defineProps({
 .date {
   color: var(--color-blue);
 
-	@media (width <= 768px) {
+	@container (width <= 620px) {
 		margin: .5em 0;
 	}
 
@@ -131,7 +133,7 @@ const props = defineProps({
   gap: 5px;
 	flex-wrap: wrap;
 
-	@media (width <= 768px) {
+	@container (width <= 620px) {
 		margin: .5em 0;
 		max-width: none;
 	}

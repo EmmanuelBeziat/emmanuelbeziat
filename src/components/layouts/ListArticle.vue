@@ -22,6 +22,7 @@
 
 <style scoped>
 .post {
+	container-type: inline-size;
   transition: var(--transition-fast) 0s;
   background: var(--color-background);
   opacity: 0;
@@ -38,7 +39,7 @@
 	justify-content: space-between;
 	align-items: center;
 
-	@media (width <= 768px) {
+	@media (width <= 620px) {
 		flex-direction: column;
 		align-items: flex-start;
 	}
@@ -57,7 +58,7 @@
 .date {
   color: var(--color-blue);
 
-	@media (width <= 768px) {
+	@container (width <= 620px) {
 		margin: .5em 0;
 	}
 
@@ -68,12 +69,11 @@
 
 .tags {
   margin: .5em 0;
-	max-width: 50%;
   display: flex;
   gap: 5px;
 	flex-wrap: wrap;
 
-	@media (width <= 768px) {
+	@container (width <= 620px) {
 		margin: .5em 0;
 		max-width: none;
 	}
