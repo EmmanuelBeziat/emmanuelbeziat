@@ -11,12 +11,6 @@
 		margin-top: 2.5rem;
 		border-left: 0;
 		border-top: 4px solid var(--note-color);
-
-		&&::before{
-			left: 50%;
-			top: 0;
-			transform: translate(-50%, -50%);
-		}
 	}
 
 	&::before {
@@ -33,6 +27,12 @@
 		border-radius: 50%;
 		border-color: var(--note-color);
 		background: var(--note-color) 50% no-repeat;
+
+		@media (width <= 768px) {
+			left: 50%;
+			top: 0;
+			transform: translate(-50%, -50%);
+		}
 	}
 
 	&.--info {
