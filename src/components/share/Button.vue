@@ -1,5 +1,5 @@
 <template>
-	<button @click="$emit('on-click', icon)" :class="`share__button --${icon}`">
+	<button @click="$emit('on-click', icon)" :class="`share-button --${icon}`">
 		<Icon name="share" />
 	</button>
 </template>
@@ -20,7 +20,7 @@ defineProps({
 </script>
 
 <style scoped>
-.share__button {
+.share-button {
   width: 36px;
   aspect-ratio: 1;
   background: var(--color-background-darker);
@@ -43,7 +43,7 @@ defineProps({
 	}
 }
 
-.share__button :deep(svg) {
+.share-button :deep(svg) {
   padding: .5em;
   fill: currentColor;
   width: 100%;
