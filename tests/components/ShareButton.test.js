@@ -27,7 +27,7 @@ describe('<Button>', () => {
   it('should render the button with correct class', () => {
     const wrapper = createWrapper()
     expect(wrapper.find('button').exists()).toBe(true)
-    expect(wrapper.classes()).toContain('share__button')
+    expect(wrapper.classes()).toContain('share-button')
     expect(wrapper.classes()).toContain('--share')
   })
 
