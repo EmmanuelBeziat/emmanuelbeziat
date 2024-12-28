@@ -54,6 +54,9 @@
  */
 .animation-fade {
   opacity: 0;
+	transform: translateY(16px) scale(.925);
+	transform-origin: bottom left;
+	animation-timing-function: var(--ease-back-out);
   animation-name: animationFade;
   animation-duration: var(--transition-slow);
   animation-fill-mode: forwards;
@@ -90,7 +93,7 @@
 @keyframes animationFade {
   to {
     opacity: 1;
-    transform: scale(1);
+    transform: translateY(0) scale(1);
   }
 }
 
