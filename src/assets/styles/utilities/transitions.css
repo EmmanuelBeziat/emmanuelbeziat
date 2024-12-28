@@ -54,9 +54,6 @@
  */
 .animation-fade {
   opacity: 0;
-	transform: translateY(16px) scale(.925);
-	transform-origin: bottom left;
-	animation-timing-function: var(--ease-back-out);
   animation-name: animationFade;
   animation-duration: var(--transition-slow);
   animation-fill-mode: forwards;
@@ -76,6 +73,16 @@
   animation-fill-mode: forwards;
 }
 
+.animation-fade-scale {
+	opacity: 0;
+	transform: translateY(16px) scale(.925);
+	transform-origin: bottom left;
+	animation-timing-function: var(--ease-back-out);
+	animation-name: animationFadeScale;
+  animation-duration: var(--transition-slow);
+  animation-fill-mode: forwards;
+}
+
 .animation-skew-y {
 	opacity: 0;
 	transform: translateY(25%) skewY(-5deg);
@@ -91,6 +98,13 @@
 }
 
 @keyframes animationFade {
+  to {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+@keyframes animationFadeScale {
   to {
     opacity: 1;
     transform: translateY(0) scale(1);
