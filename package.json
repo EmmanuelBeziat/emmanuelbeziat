@@ -22,8 +22,8 @@
 		"test": "npx vitest --run"
 	},
 	"dependencies": {
-		"@unhead/vue": "^1.11.14",
-		"core-js": "^3.39.0",
+		"@unhead/vue": "^1.11.15",
+		"core-js": "^3.40.0",
 		"dayjs": "^1.11.13",
 		"mobile-device-detect": "^0.4.3",
 		"modern-normalize": "^3.0.1",
@@ -38,9 +38,9 @@
 		"@vitejs/plugin-vue": "^5.2.1",
 		"@vue/test-utils": "^2.4.6",
 		"autoprefixer": "^10.4.20",
-		"eslint": "^9.17.0",
+		"eslint": "^9.18.0",
 		"eslint-plugin-vue": "^9.32.0",
-		"jsdom": "^25.0.1",
+		"jsdom": "^26.0.0",
 		"vite": "^6.0.7",
 		"vite-plugin-html": "^3.2.2",
 		"vite-plugin-pwa": "^0.21.1",
