@@ -45,7 +45,7 @@
 		"vite-plugin-html": "^3.2.2",
 		"vite-plugin-pwa": "^0.21.1",
 		"vite-svg-loader": "^5.1.0",
-		"vitest": "^2.1.8",
+		"vitest": "^3.0.2",
 		"workbox-precaching": "^7.3.0"
 	},
 	"optionalDependencies": {
