@@ -15,7 +15,8 @@ export const social = {
 	codepen: env.VITE_SOCIAL_CODEPEN,
 	instagram: env.VITE_SOCIAL_INSTAGRAM,
 	youtube: env.VITE_SOCIAL_YOUTUBE,
-	npmjs: env.VITE_SOCIAL_NPM
+	npmjs: env.VITE_SOCIAL_NPM,
+	bluesky: env.VITE_SOCIAL_BLUESKY
 }
 
 export const openGraph = {

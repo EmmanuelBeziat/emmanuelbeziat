@@ -1,6 +1,7 @@
 <template>
 	<nav class="social animation-skew-y" v-once>
-		<Item :url="social.twitter" name="X" icon="x" />
+		<!-- <Item :url="social.twitter" name="X" icon="x" /> -->
+		<Item :url="social.bluesky" name="Bluesky" icon="bluesky" />
 		<Item :url="social.instagram" name="Instagram" icon="instagram" />
 		<Item :url="social.npmjs" name="NPMJS" icon="npmjs" />
 		<Item :url="social.github" name="GitHub" icon="github" />
