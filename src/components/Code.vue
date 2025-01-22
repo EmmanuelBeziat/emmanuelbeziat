@@ -33,7 +33,8 @@ const code = computed(() => codes.list[Math.floor(Math.random() * codes.count)] 
   border-radius: .5rem;
   overflow: hidden;
   background: var(--color-background-dark);
-  animation-delay: .65s;
+  animation-delay: .75s;
+	animation-duration: calc(var(--transition-slow) * 1.5);
 
 	@supports (content-visibility: auto) {
 		content-visibility: auto;

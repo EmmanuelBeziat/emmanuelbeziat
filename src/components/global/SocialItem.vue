@@ -40,12 +40,12 @@ defineProps({
   background: var(--color-background-dark);
   padding: .55em;
   border-radius: 50%;
-  transition: var(--transition-slow) ease-out;
+  transition: var(--transition-slow) var(--ease-back-out);
   overflow: hidden;
 
 	&:is(:hover, :focus) {
 		background: var(--bg-social-link);
-		transition: var(--transition-xfast) ease-out;
+		transition: var(--transition-xfast) ease-in-out;
 	}
 
 	&:is(:hover, :focus) :deep(svg) {
@@ -86,6 +86,10 @@ defineProps({
 
 	&.--npmjs {
 		--bg-social-link: var(--brand-color-npmjs);
+	}
+
+	&.--bluesky {
+		--bg-social-link: var(--brand-color-bluesky);
 	}
 }
 

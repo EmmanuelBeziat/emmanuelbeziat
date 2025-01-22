@@ -110,18 +110,19 @@ checkAge(personal.birthday)
   animation-delay: .55s;
   white-space: nowrap;
 	font-size: clamp(var(--font-size-heading-3), 13cqi, 5ch);
+	transition: .25s var(--ease-back-out);
 }
 
 .card-hello {
   text-align: left;
   animation-delay: .45s;
-	transition: .25s ease-in-out;
+	transition: .25s var(--ease-back-out);
 }
 
 .card-job {
   animation-delay: .75s;
   text-align: right;
-	transition: .25s ease-in-out;
+	transition: .25s var(--ease-back-out);
 
 	span {
 		color: var(--color-red);
@@ -129,7 +130,7 @@ checkAge(personal.birthday)
 	}
 }
 
-.presentation__birthday {
+.card-birthday {
   text-align: center;
   margin: 2em 2rem 0;
   animation-delay: .85s;

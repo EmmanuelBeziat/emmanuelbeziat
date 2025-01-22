@@ -70,15 +70,16 @@
   transform: scale(.975);
   animation-name: backSlideIn;
   animation-duration: var(--transition-slow);
+	animation-timing-function: var(--ease-back-out);
   animation-fill-mode: forwards;
 }
 
 .animation-fade-scale {
 	opacity: 0;
 	transform: translateY(16px) scale(.925);
+	animation-name: animationFadeScale;
 	transform-origin: bottom left;
 	animation-timing-function: var(--ease-back-out);
-	animation-name: animationFadeScale;
   animation-duration: var(--transition-slow);
   animation-fill-mode: forwards;
 }

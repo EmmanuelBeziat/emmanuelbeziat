@@ -63,6 +63,7 @@
 	--brand-color-instagram: #833ab4;
 	--brand-color-youtube: #ff0000;
 	--brand-color-npmjs: #cb3837;
+	--brand-color-bluesky: #0085ff;
 
 	@media (prefers-reduced-motion: reduce) {
 		--transition-xfast: 0;
