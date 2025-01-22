@@ -37,7 +37,7 @@ describe('<SocialItem>', () => {
   })
 
   it('should apply correct CSS class based on name prop', () => {
-    const socialNetworks = ['X', 'Facebook', 'Instagram', 'GitHub', 'LinkedIn', 'YouTube', 'NPMjs']
+    const socialNetworks = ['Bluesky', 'Facebook', 'Instagram', 'GitHub', 'LinkedIn', 'YouTube', 'NPMjs']
 
     socialNetworks.forEach(network => {
       const wrapper = mount(SocialItem, {

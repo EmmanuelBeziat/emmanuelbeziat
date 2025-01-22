@@ -35,7 +35,7 @@ describe('<Social>', () => {
     const socialItems = wrapper.findAllComponents(SocialItem)
 
     const expectedItems = [
-      { name: 'X', icon: 'x' },
+      { name: 'Bluesky', icon: 'bluesky' },
       { name: 'Instagram', icon: 'instagram' },
       { name: 'NPMJS', icon: 'npmjs' },
       { name: 'GitHub', icon: 'github' },
