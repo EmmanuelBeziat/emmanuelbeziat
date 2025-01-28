@@ -9,9 +9,8 @@ Github: @EmmanuelBeziat
 
 
 /* SITE */
-March 2023 version is using:
 Vuejs 3 as a main framework and template pattern
-Stylus for stylesheets
-Source Sans Pro as a main font, Yanone Kaffeesatz for titles, and Source Code Pro for code parts
-Vitejs to build and pack everything
-Webhook to deploy everything
+Pinia for the store system
+Source Sans 3 as a main font, Yanone Kaffeesatz for titles, and JetBrains mono for code parts
+Vitejs to build, test and pack everything
+Webhook to deploy everything on my own server
