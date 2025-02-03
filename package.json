@@ -7,7 +7,7 @@
 		"name": "Emmanuel Béziat",
 		"email": "contact@emmanuelbeziat.com"
 	},
-	"license": "MPL-2.0",
+	"license": "GPLv3",
 	"repository": {
 		"type": "git",
 		"url": "git+https://github.com/emmanuelbeziat/emmanuelbeziat.git"

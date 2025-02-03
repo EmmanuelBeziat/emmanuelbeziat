@@ -7,9 +7,15 @@ Porfolio / Blog / Projects / Bio
 
 > This is my website. There are many like these, but this one’s mine. 😊
 
-**2024** version is using:
+**2025** version is using:
 * [Vuejs 3](https://vuejs.org/) as a main framework and template pattern
 * [Pinia](https://pinia.vuejs.org/) for the store system
 * [Source Sans 3](https://fonts.google.com/specimen/Source+Sans+3) as a main font, [Yanone Kaffeesatz](https://www.yanone.de/fonts/kaffeesatz/) for titles, and [JetBrains mono](https://www.jetbrains.com/fr-fr/lp/mono/) for code parts
 * [Vitejs](https://vitejs.dev/) to build, test and pack everything
 * [Webhook](https://github.com/adnanh/webhook) to deploy everything on my own server
+
+## Live
+➡️ [Visit my portfolio](https://www.emmanuelbeziat.com)
+
+## Licence
+This project is licensed under the GPLv3 (GNU General Public License V3).
