@@ -1,4 +1,6 @@
-# ![](public/favicons/favicon-32x32.png) Emmanuel Béziat
+![](public/favicons/favicon-96x96.png)
+
+# Emmanuel Béziat
 
 Porfolio / Blog / Projects / Bio
 
