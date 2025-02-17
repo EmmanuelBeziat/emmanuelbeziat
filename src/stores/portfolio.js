@@ -1,9 +1,7 @@
 import { defineStore } from 'pinia'
 import { api } from '@/config'
 
-export const usePortfolioStore = defineStore({
-	id: 'portfolio',
-
+export const usePortfolioStore = defineStore('portfolio', {
 	state: () => ({
 		portfolio: []
 	}),

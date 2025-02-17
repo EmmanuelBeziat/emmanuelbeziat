@@ -1,9 +1,7 @@
 import { defineStore } from 'pinia'
 import { api } from '@/config'
 
-export const useCodesStore = defineStore({
-	id: 'codes',
-
+export const useCodesStore = defineStore('codes', {
 	state: () => ({
 		codes: []
 	}),
