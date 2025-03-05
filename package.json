@@ -23,7 +23,7 @@
 	},
 	"dependencies": {
 		"@unhead/vue": "^1.11.20",
-		"core-js": "^3.40.0",
+		"core-js": "^3.41.0",
 		"dayjs": "^1.11.13",
 		"mobile-device-detect": "^0.4.3",
 		"modern-normalize": "^3.0.1",
@@ -41,7 +41,7 @@
 		"@vue/test-utils": "^2.4.6",
 		"autoprefixer": "^10.4.20",
 		"eslint": "^9.21.0",
-		"eslint-plugin-vue": "^9.32.0",
+		"eslint-plugin-vue": "^10.0.0",
 		"jsdom": "^26.0.0",
 		"vite": "^6.2.0",
 		"vite-plugin-html": "^3.2.2",
