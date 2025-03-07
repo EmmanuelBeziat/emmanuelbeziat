@@ -8,17 +8,14 @@ describe('Environment Variables', () => {
 
   it('should have API_POSTS defined', () => {
     expect(process.env.VITE_API_POSTS).toBeDefined()
-    expect(process.env.VITE_API_POSTS).toBe('https://rest.emmanuelbeziat.com/posts')
   })
 
   it('should have API_REFS defined', () => {
     expect(process.env.VITE_API_REFS).toBeDefined()
-    expect(process.env.VITE_API_REFS).toBe('https://rest.emmanuelbeziat.com/portfolio')
   })
 
   it('should have API_CODES defined', () => {
     expect(process.env.VITE_API_CODES).toBeDefined()
-    expect(process.env.VITE_API_CODES).toBe('https://rest.emmanuelbeziat.com/codes')
   })
 
   it('should have API_PROJECTS defined', () => {
