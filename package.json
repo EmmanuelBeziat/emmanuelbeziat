@@ -39,7 +39,7 @@
 		"@realfavicongenerator/image-adapter-node": "^0.4.16",
 		"@vitejs/plugin-vue": "^5.2.1",
 		"@vue/test-utils": "^2.4.6",
-		"autoprefixer": "^10.4.20",
+		"autoprefixer": "^10.4.21",
 		"eslint": "^9.22.0",
 		"eslint-plugin-vue": "^10.0.0",
 		"jsdom": "^26.0.0",
