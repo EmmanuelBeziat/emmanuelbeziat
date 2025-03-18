@@ -37,7 +37,7 @@
 	"devDependencies": {
 		"@realfavicongenerator/generate-favicon": "^0.4.16",
 		"@realfavicongenerator/image-adapter-node": "^0.4.16",
-		"@vitejs/plugin-vue": "^5.2.1",
+		"@vitejs/plugin-vue": "^5.2.3",
 		"@vue/test-utils": "^2.4.6",
 		"autoprefixer": "^10.4.21",
 		"eslint": "^9.22.0",
@@ -47,7 +47,7 @@
 		"vite-plugin-html": "^3.2.2",
 		"vite-plugin-pwa": "^0.21.1",
 		"vite-svg-loader": "^5.1.0",
-		"vitest": "^3.0.8",
+		"vitest": "^3.0.9",
 		"workbox-precaching": "^7.3.0"
 	},
 	"optionalDependencies": {
