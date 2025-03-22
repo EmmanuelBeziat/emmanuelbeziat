@@ -50,7 +50,7 @@ const copy = url => {
  */
 const dispatch = () => {
 	const data = {
-		title: 'Via @emmanuelBeziat',
+		title: 'Via &emmanuelBeziat',
 		text: encodeURIComponent(document.title),
 		url: window.location.href
 	}
