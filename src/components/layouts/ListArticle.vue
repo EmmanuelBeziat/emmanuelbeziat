@@ -23,9 +23,9 @@
 <style scoped>
 .post {
 	container-type: inline-size;
-  transition: var(--transition-fast) 0s;
-  background: var(--color-background);
-  opacity: 0;
+	transition: var(--transition-fast) 0s;
+	background: var(--color-background);
+	opacity: 0;
 
 	& + & {
 		margin-top: 2.5em;
@@ -46,17 +46,17 @@
 }
 
 .excerpt {
-  margin-top: 1em;
+	margin-top: 1em;
 }
 
 .title {
-  margin: 0;
-  color: var(--color-red);
-  font: 400 var(--font-size-article-title-small)/1.25 var(--font-stack-heading);
+	margin: 0;
+	color: var(--color-red);
+	font: 400 var(--font-size-article-title-small)/1.25 var(--font-stack-heading);
 }
 
 .date {
-  color: var(--color-blue);
+	color: var(--color-blue);
 
 	@container (width <= 620px) {
 		margin: .5em 0;
@@ -68,9 +68,9 @@
 }
 
 .tags {
-  margin: .5em 0;
-  display: flex;
-  gap: 5px;
+	margin: .5em 0;
+	display: flex;
+	gap: 5px;
 	flex-wrap: wrap;
 
 	@container (width <= 620px) {

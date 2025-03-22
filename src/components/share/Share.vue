@@ -11,10 +11,18 @@ import Toastify from 'toastify-js'
 import 'toastify-js/src/toastify.css'
 import Button from '@/components/share/Button.vue'
 
+/**
+ * Shares the provided data using the Web Share API
+ * @param {Object} data - The data to share, including title, text, and url.
+ */
 const share = data => {
 	navigator.share(data)
 }
 
+/**
+ * Copies the provided URL to the clipboard and shows a toast notification
+ * @param {string} url - The URL to copy to the clipboard
+ */
 const copy = url => {
 	if (navigator?.clipboard?.writeText) {
 		navigator.clipboard.writeText(url)
@@ -37,9 +45,12 @@ const copy = url => {
 	}
 }
 
+/**
+ * Dispatches the share action. Uses the Web Share API if available, otherwise falls back to copying the URL to the clipboard
+ */
 const dispatch = () => {
 	const data = {
-		title: 'Via &emmanuelBeziat',
+		title: 'Via @emmanuelBeziat',
 		text: encodeURIComponent(document.title),
 		url: window.location.href
 	}
@@ -49,7 +60,7 @@ const dispatch = () => {
 
 <style scoped>
 .share {
-  display: flex;
-  gap: 4px;
+	display: flex;
+	gap: 4px;
 }
 </style>

@@ -30,10 +30,10 @@ const code = computed(() => codes.list[Math.floor(Math.random() * codes.count)] 
 
 <style scoped>
 .cv-code {
-  border-radius: .5rem;
-  overflow: hidden;
-  background: var(--color-background-dark);
-  animation-delay: .75s;
+	border-radius: .5rem;
+	overflow: hidden;
+	background: var(--color-background-dark);
+	animation-delay: .75s;
 	animation-duration: calc(var(--transition-slow) * 1.5);
 
 	@supports (content-visibility: auto) {
@@ -46,48 +46,48 @@ const code = computed(() => codes.list[Math.floor(Math.random() * codes.count)] 
 }
 
 @container (width < 46rem) {
-  :deep(pre) {
-    padding: 1.5em 1em;
-  }
+	:deep(pre) {
+		padding: 1.5em 1em;
+	}
 }
 
 :deep(pre)::after {
-  content: none;
+	content: none;
 }
 
 :deep(code) {
-  animation-delay: .5s;
+	animation-delay: .5s;
 }
 
 .top-bar {
 	display: flex;
-  align-items: center;
-  background: var(--color-background-light);
-  color: var(--color-text);
-  text-align: center;
-  padding: 5px 10px;
-  border-radius: .5rem .5rem 0 0;
-  position: relative;
-  font-family: var(--font-stack-code);
+	align-items: center;
+	background: var(--color-background-light);
+	color: var(--color-text);
+	text-align: center;
+	padding: 5px 10px;
+	border-radius: .5rem .5rem 0 0;
+	position: relative;
+	font-family: var(--font-stack-code);
 }
 
 .fake-buttons {
-  margin-right: 1rem;
-  display: flex;
-  gap: 6px;
+	margin-right: 1rem;
+	display: flex;
+	gap: 6px;
 }
 
 .fake-button {
-  width: .7rem;
-  height: .7rem;
-  border-radius: 50%;
-  background: var(--bg-button);
+	width: .7rem;
+	height: .7rem;
+	border-radius: 50%;
+	background: var(--bg-button);
 }
 
 .title {
-  margin: auto;
-  transform: translateX(-32px);
-  color: var(--color-light);
+	margin: auto;
+	transform: translateX(-32px);
+	color: var(--color-light);
 
 	@container (width < 46rem) {
 		margin: 0;

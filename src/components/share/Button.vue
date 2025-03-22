@@ -21,17 +21,17 @@ defineProps({
 
 <style scoped>
 .share-button {
-  width: 36px;
-  aspect-ratio: 1;
-  background: var(--color-background-darker);
-  color: var(--color-text);
-  border-radius: 2px;
-  transition: var(--transition-slow) ease-out;
-  overflow: hidden;
-  padding: 0;
-  border: 0;
-  outline: 0;
-  cursor: pointer;
+	width: 36px;
+	aspect-ratio: 1;
+	background: var(--color-background-darker);
+	color: var(--color-text);
+	border-radius: 2px;
+	transition: var(--transition-slow) ease-out;
+	overflow: hidden;
+	padding: 0;
+	border: 0;
+	outline: 0;
+	cursor: pointer;
 
 	&:is(:hover, :focus) {
 		background: var(--bg-social-link);
@@ -44,8 +44,8 @@ defineProps({
 }
 
 .share-button :deep(svg) {
-  padding: .5em;
-  fill: currentColor;
-  width: 100%;
+	padding: .5em;
+	fill: currentColor;
+	width: 100%;
 }
 </style>

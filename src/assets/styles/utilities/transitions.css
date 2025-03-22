@@ -3,27 +3,27 @@
  **/
 .page-enter-active,
 .page-leave-active {
-  transition: var(--transition-slow) ease;
+	transition: var(--transition-slow) ease;
 }
 
 .page-enter,
 .page-leave-active {
-  opacity: 0;
+	opacity: 0;
 }
 
 .fade-enter-active,
 .fade-leave-active {
-  transition: opacity var(--transition-slow);
+	transition: opacity var(--transition-slow);
 }
 
 .fade-enter-active,
 .fade-enter,
 .fade-leave-to {
-  opacity: 0;
+	opacity: 0;
 }
 
 .fade-enter-to {
-  opacity: 1;
+	opacity: 1;
 }
 
 /**
@@ -31,47 +31,47 @@
  */
 .list-enter-active,
 .list-leave-active {
-  transition: .5s;
+	transition: .5s;
 }
 
 .list-enter-to,
 .list-leave {
-  opacity: 1;
+	opacity: 1;
 }
 
 .list-enter,
 .list-leave-to {
-  opacity: 0;
+	opacity: 0;
 }
 
 .list-complete-leave-active,
 .list-complete-enter-active {
-  position: absolute;
+	position: absolute;
 }
 
 /**
  * Sequential entrances
  */
 .animation-fade {
-  opacity: 0;
-  animation-name: animationFade;
-  animation-duration: var(--transition-slow);
-  animation-fill-mode: forwards;
+	opacity: 0;
+	animation-name: animationFade;
+	animation-duration: var(--transition-slow);
+	animation-fill-mode: forwards;
 }
 
 .animation-bounce {
-  opacity: 0;
-  transform: translateY(20px) scale(.975);
-  animation: .765s var(--ease-back-out) .25s forwards backSlideIn;
+	opacity: 0;
+	transform: translateY(20px) scale(.975);
+	animation: .765s var(--ease-back-out) .25s forwards backSlideIn;
 }
 
 .animation-fade-bounce {
-  opacity: 0;
-  transform: scale(.975);
-  animation-name: backSlideIn;
-  animation-duration: var(--transition-slow);
+	opacity: 0;
+	transform: scale(.975);
+	animation-name: backSlideIn;
+	animation-duration: var(--transition-slow);
 	animation-timing-function: var(--ease-back-out);
-  animation-fill-mode: forwards;
+	animation-fill-mode: forwards;
 }
 
 .animation-fade-scale {
@@ -80,8 +80,8 @@
 	animation-name: animationFadeScale;
 	transform-origin: bottom left;
 	animation-timing-function: var(--ease-back-out);
-  animation-duration: var(--transition-slow);
-  animation-fill-mode: forwards;
+	animation-duration: var(--transition-slow);
+	animation-fill-mode: forwards;
 }
 
 .animation-skew-y {
@@ -99,24 +99,24 @@
 }
 
 @keyframes animationFade {
-  to {
-    opacity: 1;
-    transform: scale(1);
-  }
+	to {
+		opacity: 1;
+		transform: scale(1);
+	}
 }
 
 @keyframes animationFadeScale {
-  to {
-    opacity: 1;
-    transform: translateY(0) scale(1);
-  }
+	to {
+		opacity: 1;
+		transform: translateY(0) scale(1);
+	}
 }
 
 @keyframes backSlideIn {
-  to {
-    opacity: 1;
-    transform: translateY(0) scale(1);
-  }
+	to {
+		opacity: 1;
+		transform: translateY(0) scale(1);
+	}
 }
 
 @keyframes animationSkewY {

@@ -60,6 +60,6 @@ useSeoMeta({
 
 <style scoped>
 .post-list {
-  display: grid;
+	display: grid;
 }
 </style>

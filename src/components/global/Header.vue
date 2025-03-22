@@ -24,32 +24,32 @@ import Copyright from '@/components/global/Copyright.vue'
 
 <style scoped>
 .header {
-  padding: 2rem;
-  background: var(--color-background-dark);
-  position: relative;
-  z-index: 10;
-  text-align: center;
-  grid-area: header;
+	padding: 2rem;
+	background: var(--color-background-dark);
+	position: relative;
+	z-index: 10;
+	text-align: center;
+	grid-area: header;
 }
 
 .title {
-  margin-block: 0;
-  font: 400 var(--font-size-title)/1 var(--font-stack-heading);
-  animation-delay: .25s;
+	margin-block: 0;
+	font: 400 var(--font-size-title)/1 var(--font-stack-heading);
+	animation-delay: .25s;
 }
 
 .picture {
-  animation-delay: .35s;
+	animation-delay: .35s;
 }
 
 .social {
-  animation-delay: .45s;
+	animation-delay: .45s;
 }
 
 .bio {
-  margin-block: 2rem;
-  animation-delay: .55s;
-  text-wrap: balance;
+	margin-block: 2rem;
+	animation-delay: .55s;
+	text-wrap: balance;
 
 	b {
 		color: var(--color-green);
@@ -62,7 +62,7 @@ import Copyright from '@/components/global/Copyright.vue'
 }
 
 .copyright {
-  animation-delay: .65s;
+	animation-delay: .65s;
 
 	@media (width <= 1120px) {
 		display: none;

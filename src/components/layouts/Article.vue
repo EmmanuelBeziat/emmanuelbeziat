@@ -60,9 +60,9 @@ const props = defineProps({
 }
 
 .header {
-  margin-bottom: 2rem;
-  padding-bottom: 2rem;
-  border-bottom: 1px solid var(--color-separator);
+	margin-bottom: 2rem;
+	padding-bottom: 2rem;
+	border-bottom: 1px solid var(--color-separator);
 
 	.title {
 		line-height: 1;
@@ -71,9 +71,9 @@ const props = defineProps({
 }
 
 .title {
-  margin: 0;
-  color: var(--color-red);
-  font: 400 var(--font-size-article-title)/1.25 var(--font-stack-heading);
+	margin: 0;
+	color: var(--color-red);
+	font: 400 var(--font-size-article-title)/1.25 var(--font-stack-heading);
 }
 
 .infos {
@@ -88,7 +88,7 @@ const props = defineProps({
 }
 
 .date {
-  color: var(--color-blue);
+	color: var(--color-blue);
 
 	@container (width <= 620px) {
 		margin: .5em 0;
@@ -100,7 +100,7 @@ const props = defineProps({
 }
 
 .content {
-  text-align: justify;
+	text-align: justify;
 
 	:where(h2, h3, h4, h5) {
 		position: relative;
@@ -121,16 +121,16 @@ const props = defineProps({
 }
 
 .footer {
-  margin-top: 2rem;
-  padding-top: 2rem;
-  border-top: 1px solid var(--color-separator);
+	margin-top: 2rem;
+	padding-top: 2rem;
+	border-top: 1px solid var(--color-separator);
 }
 
 :deep(.tags) {
-  margin: .5em 0;
+	margin: .5em 0;
 	max-width: 50%;
-  display: flex;
-  gap: 5px;
+	display: flex;
+	gap: 5px;
 	flex-wrap: wrap;
 
 	@container (width <= 620px) {

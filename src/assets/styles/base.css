@@ -84,7 +84,7 @@ a:is(:hover, :focus) {
 
 a:not([href]):not([class]),
 a:not([href]):not([class]):hover {
-  color: inherit;
+	color: inherit;
 }
 
 i[lang] {
@@ -125,10 +125,10 @@ h3 {
 
 /* quotes */
 blockquote {
-  position: relative;
-  margin: 2rem 0;
-  padding-left: 4rem;
-  font: 400 italic var(--font-size-quotes)/1.5em var(--font-stack-common);
+	position: relative;
+	margin: 2rem 0;
+	padding-left: 4rem;
+	font: 400 italic var(--font-size-quotes)/1.5em var(--font-stack-common);
 
 	&::before {
 		content: "“";
@@ -141,9 +141,9 @@ blockquote {
 }
 
 q {
-  font-style: italic;
-  color: var(--color-yellow);
-  quotes: "« " " »";
+	font-style: italic;
+	color: var(--color-yellow);
+	quotes: "« " " »";
 }
 
 /* codes */
@@ -151,16 +151,16 @@ pre,
 code,
 kbd,
 samp {
-  font-family: var(--font-stack-code);
+	font-family: var(--font-stack-code);
 }
 
 kbd {
-  background: var(--color-separator);
-  font-size: .85rem;
-  border-radius: .2em;
-  display: inline-block;
-  padding: 0 .35em;
-  border-bottom: 1px solid var(--color-background-darker);
-  margin: 0 .05em;
+	background: var(--color-separator);
+	font-size: .85rem;
+	border-radius: .2em;
+	display: inline-block;
+	padding: 0 .35em;
+	border-bottom: 1px solid var(--color-background-darker);
+	margin: 0 .05em;
 }
 

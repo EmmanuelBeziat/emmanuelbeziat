@@ -35,6 +35,10 @@ import FloatingNote from '@/components/FloatingNote.vue'
 let age = null
 let nextBirthday = null
 
+/**
+ * Calculates the age and the time until the next birthday.
+ * @param {string} date - The birth date in a format recognized by dayjs.
+ */
 const checkAge = date => {
 	nextBirthday = dayjs(date).set('year', dayjs().format('YYYY'))
 
@@ -88,10 +92,10 @@ checkAge(personal.birthday)
 }
 
 .card {
-  color: var(--color-light);
-  font: 700 var(--font-size-heading-1)/1 var(--font-stack-common);
-  margin-bottom: 80px;
-  text-align: center;
+	color: var(--color-light);
+	font: 700 var(--font-size-heading-1)/1 var(--font-stack-common);
+	margin-bottom: 80px;
+	text-align: center;
 
 	@supports (content-visibility: visible) {
 		content-visibility: visible;
@@ -103,25 +107,25 @@ checkAge(personal.birthday)
 }
 
 .card-name {
-  margin: 0;
-  font: inherit;
-  font-size: 80px;
-  color: var(--color-blue);
-  animation-delay: .55s;
-  white-space: nowrap;
+	margin: 0;
+	font: inherit;
+	font-size: 80px;
+	color: var(--color-blue);
+	animation-delay: .55s;
+	white-space: nowrap;
 	font-size: clamp(var(--font-size-heading-3), 13cqi, 5ch);
 	transition: .25s var(--ease-back-out);
 }
 
 .card-hello {
-  text-align: left;
-  animation-delay: .45s;
+	text-align: left;
+	animation-delay: .45s;
 	transition: .25s var(--ease-back-out);
 }
 
 .card-job {
-  animation-delay: .75s;
-  text-align: right;
+	animation-delay: .75s;
+	text-align: right;
 	transition: .25s var(--ease-back-out);
 
 	span {
@@ -131,9 +135,9 @@ checkAge(personal.birthday)
 }
 
 .card-birthday {
-  text-align: center;
-  margin: 2em 2rem 0;
-  animation-delay: .85s;
+	text-align: center;
+	margin: 2em 2rem 0;
+	animation-delay: .85s;
 }
 
 .floating-note {
@@ -143,7 +147,7 @@ checkAge(personal.birthday)
 	opacity: 0;
 	animation-name: footNotesIn;
 	animation-duration: 2s;
-  animation-fill-mode: forwards;
+	animation-fill-mode: forwards;
 
 	@media (width <= 768px) {
 		display: none;

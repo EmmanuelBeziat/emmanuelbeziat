@@ -31,26 +31,26 @@ const card = ref(github)
 
 <style scoped>
 @supports (content-visibility: auto) {
-  .github-card {
-    content-visibility: auto;
-  }
+	.github-card {
+		content-visibility: auto;
+	}
 }
 
 .card-center {
-  text-align: center;
+	text-align: center;
 }
 
 .card-left {
-  text-align: left;
+	text-align: left;
 }
 
 .card-row {
-  display: flex;
-  align-items: flex-start;
+	display: flex;
+	align-items: flex-start;
 }
 
 .card-column {
-  display: flex;
-  flex-direction: column;
+	display: flex;
+	flex-direction: column;
 }
 </style>

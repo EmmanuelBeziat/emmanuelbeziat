@@ -58,10 +58,10 @@ useSeoMeta({
 
 <style scoped>
 .site {
-  min-height: 100dvh;
-  overflow-x: clip;
-  display: grid;
-  grid-template: "header content"/20rem auto;
+	min-height: 100dvh;
+	overflow-x: clip;
+	display: grid;
+	grid-template: "header content"/20rem auto;
 
 	@media (width <= 1120px) {
 		grid-template: "header" "content" "footer";
@@ -73,14 +73,14 @@ useSeoMeta({
 }
 
 .site-content {
-  padding: var(--gutter-screen-y, 2rem) var(--gutter-screen-x, 2rem);
-  width: min(50rem, 100dvw);
-  margin-inline: auto;
-  grid-area: content;
+	padding: var(--gutter-screen-y, 2rem) var(--gutter-screen-x, 2rem);
+	width: min(50rem, 100dvw);
+	margin-inline: auto;
+	grid-area: content;
 }
 
 .main {
-  margin: 0 auto 2rem;
-  outline: 0;
+	margin: 0 auto 2rem;
+	outline: 0;
 }
 </style>

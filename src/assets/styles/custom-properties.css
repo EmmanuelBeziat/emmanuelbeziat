@@ -13,9 +13,9 @@
 	--color-separator: var(--color-background-light);
 
 	--color-background-light: #282139;
-  --color-background-lighter: #4f4271;
-  --color-background-dark: #1b1627;
-  --color-background-darker: #171320;
+	--color-background-lighter: #4f4271;
+	--color-background-dark: #1b1627;
+	--color-background-darker: #171320;
 
 	/* fonts */
 	--font-stack-common: "Source Sans 3", system-ui, "Segoe UI", "Helvetica Neue", Roboto, Arial, sans-serif;

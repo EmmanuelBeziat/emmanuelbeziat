@@ -21,7 +21,7 @@ const label = computed(() => props.position === 'top' ? 'Accès rapide (haut de 
 
 <style scoped>
 .skip-link {
-  position: absolute;
-  z-index: 10;
+	position: absolute;
+	z-index: 10;
 }
 </style>

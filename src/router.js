@@ -75,15 +75,7 @@ const router = createRouter({
 	// strict: true,
 	linkActiveClass: '-active',
 	scrollBehavior (to, from, savedPosition) {
-		if (savedPosition) {
-			return savedPosition
-		}
-
-		if (to.hash) {
-			return { selector: to.hash }
-		}
-
-		return { top: 0 }
+		return savedPosition || (to.hash ? { selector: to.hash } : { top: 0 })
 	},
 	routes
 })

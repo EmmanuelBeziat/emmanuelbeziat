@@ -1,17 +1,17 @@
 @font-face {
-  font-family: "Source Sans 3";
-  src: url("SourceSans3-VariableFont_wght.woff2");
-  font-weight: 300 700;
-  font-style: normal;
-  font-display: swap;
+	font-family: "Source Sans 3";
+	src: url("SourceSans3-VariableFont_wght.woff2");
+	font-weight: 300 700;
+	font-style: normal;
+	font-display: swap;
 }
 
 @font-face {
-  font-family: "Source Sans 3";
-  src: url("SourceSans3-Italic-VariableFont_wght.woff2");
-  font-weight: 300 700;
-  font-style: italic;
-  font-display: swap;
+	font-family: "Source Sans 3";
+	src: url("SourceSans3-Italic-VariableFont_wght.woff2");
+	font-weight: 300 700;
+	font-style: italic;
+	font-display: swap;
 }
 
 @supports (not (font-variation-settings: normal)) {

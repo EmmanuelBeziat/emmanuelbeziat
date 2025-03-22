@@ -14,7 +14,7 @@ const props = defineProps({
 
 const IconComponent = shallowRef(null)
 
-onMounted(async () => {
+onMounted (async () => {
 	try {
 		const { default: component } = await import(`../assets/images/icons/${props.name}.svg`)
 		IconComponent.value = component

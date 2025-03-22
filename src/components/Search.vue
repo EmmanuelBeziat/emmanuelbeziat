@@ -31,8 +31,8 @@ const vFocus = {
 
 <style scoped>
 .search {
-  margin-bottom: 2rem;
-  display: flex;
+	margin-bottom: 2rem;
+	display: flex;
 
 	@media (width <= 768px) {
 		margin-inline: -1rem;
@@ -40,15 +40,15 @@ const vFocus = {
 }
 
 .search-field {
-  --border-color: var(--color-separator);
-  flex: 1;
-  padding: 10px 1rem;
-  background: var(--color-background-dark);
-  border: 1px solid var(--border-color);
-  box-shadow: none;
-  outline: none;
-  color: var(--color-text);
-  transition: var(--transition-fast) ease-in-out;
+	--border-color: var(--color-separator);
+	flex: 1;
+	padding: 10px 1rem;
+	background: var(--color-background-dark);
+	border: 1px solid var(--border-color);
+	box-shadow: none;
+	outline: none;
+	color: var(--color-text);
+	transition: var(--transition-fast) ease-in-out;
 
 	&:focus {
 		--border-color: var(--color-blue);

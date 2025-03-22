@@ -1,7 +1,7 @@
 <template>
 	<section class="showcase">
 		<template v-if="references.length">
-			<sequential-entrance animation="animation-fade-scale" delay="50" class="showcase__list">
+			<sequential-entrance animation="animation-fade-scale" delay="50" class="showcase-list">
 				<Reference v-for="ref in references" :key="`ref-${ref.slug}`" :reference="ref" class="showcase__item" />
 			</sequential-entrance>
 
@@ -59,20 +59,20 @@ useSeoMeta({
 	container: showcase / inline-size;
 }
 
-.showcase__list {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(calc(100cqi / 3 - var(--gap-size)), 1fr));
-  gap: var(--gap-size);
+.showcase-list {
+	display: grid;
+	grid-template-columns: repeat(auto-fit, minmax(calc(100cqi / 3 - var(--gap-size)), 1fr));
+	gap: var(--gap-size);
 
 	@container (width <= 540px) {
-    grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
-  }
+		grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+	}
 }
 
 .thanks {
 	@supports (content-visibility: auto) {
-    content-visibility: auto;
-  }
+		content-visibility: auto;
+	}
 
 	.heart {
 		fill: var(--color-red);

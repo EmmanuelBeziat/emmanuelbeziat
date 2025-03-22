@@ -52,10 +52,10 @@ useSeoMeta({
 
 <style scoped>
 .card {
-  margin-block: 2.5rem;
+	margin-block: 2.5rem;
 }
 
 .post-list {
-  display: grid;
+	display: grid;
 }
 </style>

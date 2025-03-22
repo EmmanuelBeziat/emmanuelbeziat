@@ -1,9 +1,9 @@
 .note {
-  margin: var(--gutter-screen-y) auto;
-  background: var(--color-background-light);
-  padding: 1em 2em 1em 2em;
-  border-left: 4px solid var(--note-color);
-  position: relative;
+	margin: var(--gutter-screen-y) auto;
+	background: var(--color-background-light);
+	padding: 1em 2em 1em 2em;
+	border-left: 4px solid var(--note-color);
+	position: relative;
 
 	@media (width <= 768px) {
 		margin: var(--gutter-screen-y) calc(var(--gutter-screen-x) * -1);

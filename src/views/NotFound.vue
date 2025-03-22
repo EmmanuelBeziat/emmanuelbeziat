@@ -44,17 +44,17 @@ useHead({
 
 <style scoped>
 .not-found {
-  text-align: center;
+	text-align: center;
 }
 
 .image {
-  width: 16rem;
-  aspect-ratio: 1/1;
-  border-radius: 50%;
-  margin: 4rem auto 0;
-  background: transparent 50% 50% no-repeat;
-  background-size: cover;
-  overflow: hidden;
+	width: 16rem;
+	aspect-ratio: 1/1;
+	border-radius: 50%;
+	margin: 4rem auto 0;
+	background: transparent 50% 50% no-repeat;
+	background-size: cover;
+	overflow: hidden;
 
 	@media (width <= 992px) {
 		margin-top: 0;
@@ -69,10 +69,10 @@ useHead({
 }
 
 .error {
-  font: 400 5.125rem/1 var(--font-stack-heading);
-  margin: .5em 0 .25em;
-  color: var(--color-green);
-  animation-delay: .3s;
+	font: 400 5.125rem/1 var(--font-stack-heading);
+	margin: .5em 0 .25em;
+	color: var(--color-green);
+	animation-delay: .3s;
 
 	@media (width <= 992px) {
 		font-size: 3.25rem;
@@ -81,15 +81,15 @@ useHead({
 }
 
 .title {
-  font: 400 var(--font-size-heading-2)/1.5 var(--font-stack-heading);
-  margin-top: 0;
-  animation-delay: .35s;
+	font: 400 var(--font-size-heading-2)/1.5 var(--font-stack-heading);
+	margin-top: 0;
+	animation-delay: .35s;
 }
 
 .message {
-  max-width: 21.5rem;
-  text-align: justify;
-  margin: auto;
-  animation-delay: .4s;
+	max-width: 21.5rem;
+	text-align: justify;
+	margin: auto;
+	animation-delay: .4s;
 }
 </style>

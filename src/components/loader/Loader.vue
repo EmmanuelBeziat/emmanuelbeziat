@@ -22,15 +22,15 @@ defineProps({
 
 <style scoped>
 .loader {
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  text-align: center;
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
+	text-align: center;
 }
 
 h2 {
-  margin: 0;
+	margin: 0;
 
 	&::before,
 	&::after {
@@ -52,6 +52,6 @@ h2 {
 }
 
 p {
-  margin: 0;
+	margin: 0;
 }
 </style>

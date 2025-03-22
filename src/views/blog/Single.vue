@@ -78,7 +78,7 @@ watch(post, (newPost) => {
 
 <style scoped>
 .help {
-  font-size: .9rem;
-  margin-top: 2rem;
+	font-size: .9rem;
+	margin-top: 2rem;
 }
 </style>

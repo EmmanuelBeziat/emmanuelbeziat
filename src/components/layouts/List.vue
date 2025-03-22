@@ -23,22 +23,22 @@ import Search from '@/components/Search.vue'
 import NoContent from '@/components/loader/NoContent.vue'
 
 const props = defineProps({
-  sectionClass: {
-    type: String,
-    required: true
-  },
-  searchPlaceholder: {
-    type: String,
-    required: true
-  },
-  store: {
-    type: Object,
-    required: true
-  },
-  itemKey: {
-    type: String,
-    required: true
-  }
+	sectionClass: {
+		type: String,
+		required: true
+	},
+	searchPlaceholder: {
+		type: String,
+		required: true
+	},
+	store: {
+		type: Object,
+		required: true
+	},
+	itemKey: {
+		type: String,
+		required: true
+	}
 })
 
 const searchTerms = ref('')
@@ -47,20 +47,20 @@ const fullURL = computed(() => openGraph.url + route.fullPath)
 const items = computed(() => props.store.list.filter(item => slug(item[props.itemKey].toLowerCase()).includes(slug(searchTerms.value.toLowerCase()))))
 
 onMounted(() => {
-  defineNamespace(props.sectionClass)
+	defineNamespace(props.sectionClass)
 })
 
 useHead({
-  title: props.sectionClass.charAt(0).toUpperCase() + props.sectionClass.slice(1)
+	title: props.sectionClass.charAt(0).toUpperCase() + props.sectionClass.slice(1)
 })
 
 useSeoMeta({
-  ogUrl: fullURL,
+	ogUrl: fullURL,
 })
 </script>
 
 <style scoped>
 .post-list {
-  display: grid;
+	display: grid;
 }
 </style>

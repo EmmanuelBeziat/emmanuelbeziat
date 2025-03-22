@@ -41,10 +41,10 @@ const isActive = computed(() => router.resolve(props.to).path === '/' + route.pa
 }
 
 .menu__item {
-  font: 400 var(--font-size-menu)/1 var(--font-stack-heading);
-  text-decoration: none;
-  color: var(--link-color);
-  position: relative;
+	font: 400 var(--font-size-menu)/1 var(--font-stack-heading);
+	text-decoration: none;
+	color: var(--link-color);
+	position: relative;
 
 	@media (width <= 768px) {
 		font-weight: 300;
@@ -131,14 +131,14 @@ const isActive = computed(() => router.resolve(props.to).path === '/' + route.pa
 }
 
 .menu__item :deep(svg) {
-  display: none;
-  transform: none;
-  padding: 0;
-  opacity: 1;
-  width: 24px;
-  aspect-ratio: 1/1;
-  margin: 0 auto 5px;
-  fill: currentColor;
+	display: none;
+	transform: none;
+	padding: 0;
+	opacity: 1;
+	width: 24px;
+	aspect-ratio: 1/1;
+	margin: 0 auto 5px;
+	fill: currentColor;
 
 	@media (width <= 768px) {
 		display: block;

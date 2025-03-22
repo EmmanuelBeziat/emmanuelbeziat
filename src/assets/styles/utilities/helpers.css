@@ -1,17 +1,17 @@
 .text-align-left {
-  text-align: left;
+	text-align: left;
 }
 
 .text-align-right {
-  text-align: right;
+	text-align: right;
 }
 
 .text-align-center {
-  text-align: center;
+	text-align: center;
 }
 
 .text-align-justify {
-  text-align: justify;
+	text-align: justify;
 }
 
 img.text-align-center {
@@ -20,25 +20,25 @@ img.text-align-center {
 }
 
 .pull-left {
-  float: left;
-  margin-right: 2em;
-  margin-bottom: .5em;
+	float: left;
+	margin-right: 2em;
+	margin-bottom: .5em;
 }
 
 .pull-right {
-  float: right;
-  margin-left: 2em;
-  margin-bottom: .5em;
+	float: right;
+	margin-left: 2em;
+	margin-bottom: .5em;
 }
 
 .shape-round {
-  shape-outside: circle();
+	shape-outside: circle();
 }
 
 .noscript {
-  max-width: 480px;
-  margin: 60px auto;
-  font-size: 20px;
+	max-width: 480px;
+	margin: 60px auto;
+	font-size: 20px;
 }
 
 .emoji {

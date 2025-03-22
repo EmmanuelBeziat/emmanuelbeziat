@@ -29,10 +29,10 @@ defineProps({
 
 <style scoped>
 .card {
-  opacity: 0;
-  position: relative;
-  color: var(--color-text);
-  background: var(--color-background-dark);
+	opacity: 0;
+	position: relative;
+	color: var(--color-text);
+	background: var(--color-background-dark);
 
 	@supports (content-visibility: auto) {
 		content-visibility: auto;
@@ -40,63 +40,63 @@ defineProps({
 }
 
 .layer {
-  background: var(--color-separator);
-  pointer-events: none;
-  position: relative;
-  color: var(--color-text);
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  z-index: 10;
-  transform-origin: 50% 20px;
-  transition: var(--transition-slow) var(--ease-back-out);
-  backface-visibility: hidden;
-  aspect-ratio: 1;
+	background: var(--color-separator);
+	pointer-events: none;
+	position: relative;
+	color: var(--color-text);
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	z-index: 10;
+	transform-origin: 50% 20px;
+	transition: var(--transition-slow) var(--ease-back-out);
+	backface-visibility: hidden;
+	aspect-ratio: 1;
 }
 
 .layer :deep(svg) {
-  width: 128px;
-  fill: currentColor;
-  aspect-ratio: 1;
-  backface-visibility: hidden;
-  transition: var(--transition-slow) var(--ease-back-out) .1s;
+	width: 128px;
+	fill: currentColor;
+	aspect-ratio: 1;
+	backface-visibility: hidden;
+	transition: var(--transition-slow) var(--ease-back-out) .1s;
 }
 
 @media (width <= 803px) {
-  .layer :deep(svg) {
-    width: calc(60%);
-  }
+	.layer :deep(svg) {
+		width: calc(60%);
+	}
 }
 
 .caption {
-  pointer-events: none;
-  z-index: 5;
-  position: absolute;
-  top: auto;
-  right: 0;
-  bottom: 0;
-  left: 0;
-  padding: 1rem;
-  display: flex;
-  flex-direction: column;
-  justify-content: flex-end;
-  overflow: hidden;
-  text-align: center;
-  opacity: 0;
-  visibility: hidden;
-  transform: translateY(15px);
-  transition: var(--transition-slow) var(--ease-back-out) 0s;
+	pointer-events: none;
+	z-index: 5;
+	position: absolute;
+	top: auto;
+	right: 0;
+	bottom: 0;
+	left: 0;
+	padding: 1rem;
+	display: flex;
+	flex-direction: column;
+	justify-content: flex-end;
+	overflow: hidden;
+	text-align: center;
+	opacity: 0;
+	visibility: hidden;
+	transform: translateY(15px);
+	transition: var(--transition-slow) var(--ease-back-out) 0s;
 }
 
 .title {
-  margin: 0 0 .35em;
-  line-height: 1;
-  font-size: 28px;
-  font-weight: 400;
+	margin: 0 0 .35em;
+	line-height: 1;
+	font-size: 28px;
+	font-weight: 400;
 }
 
 @media (hover: hover) {
-  .card:hover {
+	.card:hover {
 		.layer {
 			transform: scale(.4) translateZ(0);
 			border-radius: 50%;
@@ -143,9 +143,9 @@ defineProps({
 }
 
 .showcase-tags {
-  display: flex;
-  align-items: center;
-  justify-content: center;
+	display: flex;
+	align-items: center;
+	justify-content: center;
 
 	i {
 		margin-right: 10px;
@@ -153,30 +153,30 @@ defineProps({
 }
 
 .tags-list {
-  text-align: left;
-  line-height: 1.15;
+	text-align: left;
+	line-height: 1.15;
 }
 
 .tag {
-  font-size: 14px;
-  color: var(--color-text);
+	font-size: 14px;
+	color: var(--color-text);
 }
 
 .tag:not(:last-child)::after {
-  content: ", ";
+	content: ", ";
 }
 
 .tags {
-  display: flex;
-  transform: translateY(20px);
-  transition: var(--transition-slow) var(--ease-back-out) 0s;
+	display: flex;
+	transform: translateY(20px);
+	transition: var(--transition-slow) var(--ease-back-out) 0s;
 }
 
 .tags-icon {
-  width: 1em;
-  min-width: 1em;
-  aspect-ratio: 1;
-  fill: var(--color-yellow);
-  margin-right: 10px;
+	width: 1em;
+	min-width: 1em;
+	aspect-ratio: 1;
+	fill: var(--color-yellow);
+	margin-right: 10px;
 }
 </style>

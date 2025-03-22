@@ -1,12 +1,12 @@
 .iframe-codepen {
-  width: 100%;
-  min-height: 430px;
+	width: 100%;
+	min-height: 430px;
 }
 
 @media (width <= 768px) {
-  .iframe-codepen {
-    min-height: 380px;
-  }
+	.iframe-codepen {
+		min-height: 380px;
+	}
 
 	.picture-full {
 		margin-inline: calc(var(--gutter-screen-x) * -1);
@@ -17,15 +17,15 @@
 }
 
 .video iframe {
-  width: 100%;
-  vertical-align: top;
-  aspect-ratio: 16/9;
+	width: 100%;
+	vertical-align: top;
+	aspect-ratio: 16/9;
 
 	@supports not (aspect-ratio: 16/9) {
-    position: relative;
-    padding-bottom: 56.25%;
-    margin: 2rem auto;
-    height: 0;
+		position: relative;
+		padding-bottom: 56.25%;
+		margin: 2rem auto;
+		height: 0;
 
 		iframe {
 			position: absolute;
@@ -34,5 +34,5 @@
 			height: 100%;
 			border: 0;
 		}
-  }
+	}
 }

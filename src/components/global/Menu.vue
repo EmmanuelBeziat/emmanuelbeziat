@@ -14,9 +14,9 @@ import MenuItem from '@/components/global/MenuItem.vue'
 
 <style scoped>
 .menu {
-  grid-area: menu;
-  display: flex;
-  justify-content: flex-end;
+	grid-area: menu;
+	display: flex;
+	justify-content: flex-end;
 
 	@media (width > 768px) {
 		margin-bottom: 6rem;

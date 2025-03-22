@@ -1,7 +1,7 @@
 <template>
 	<div v-if="offlineReady || needRefresh" class="alert" role="alert">
 		<div class="message">
-			<span v-if="offlineReady">App ready to work offline </span>
+			<span v-if="offlineReady">App ready to work offline</span>
 			<span v-else>New content available, click on reload button to update.</span>
 		</div>
 
@@ -16,7 +16,6 @@
 import { defineComponent } from 'vue'
 import { useRegisterSW } from 'virtual:pwa-register/vue'
 
-const { updateServiceWorker } = useRegisterSW()
 export default defineComponent({
 	name: 'ReloadPWA',
 	setup() {
@@ -25,6 +24,7 @@ export default defineComponent({
 			offlineReady.value = false
 			needRefresh.value = false
 		}
+
 		return { offlineReady, needRefresh, updateServiceWorker, close }
 	},
 
@@ -43,7 +43,7 @@ export default defineComponent({
 
 <style scoped>
 .alert {
-  display: none;
+	display: none;
 }
 
 .buttons {

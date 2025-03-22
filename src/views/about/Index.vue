@@ -63,10 +63,10 @@ useSeoMeta({
 
 <style scoped>
 .drawing {
-  text-align: center;
-  padding: 0 var(--gutter-screen-x);
-  max-width: 32rem;
-  margin-inline: auto;
+	text-align: center;
+	padding: 0 var(--gutter-screen-x);
+	max-width: 32rem;
+	margin-inline: auto;
 
 	img {
 		display: block;
@@ -75,11 +75,11 @@ useSeoMeta({
 }
 
 h2 {
-  font: 400 var(--font-size-article-title)/1.25 var(--font-stack-heading);
+	font: 400 var(--font-size-article-title)/1.25 var(--font-stack-heading);
 }
 
 .animation-bounce {
-  opacity: 0;
+	opacity: 0;
 
 	&:nth-of-type(1) {
 		animation-delay: .35s;

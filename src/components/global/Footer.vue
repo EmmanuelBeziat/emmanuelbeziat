@@ -10,9 +10,9 @@ import Copyright from '@/components/global/Copyright.vue'
 
 <style scoped>
 .footer {
-  text-align: center;
-  padding: 1em 0;
-  display: none;
+	text-align: center;
+	padding: 1em 0;
+	display: none;
 
 	@supports (content-visibility: auto) {
 		content-visibility: auto;
