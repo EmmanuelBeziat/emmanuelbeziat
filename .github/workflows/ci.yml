@@ -8,6 +8,17 @@ jobs:
   test:
     runs-on: ubuntu-latest
 
+    env:
+      VITE_PORT: ${{ vars.VITE_PORT }}
+      VITE_API_POSTS: ${{ vars.VITE_API_POSTS }}
+      VITE_API_REFS: ${{ vars.VITE_API_REFS }}
+      VITE_API_CODES: ${{ vars.VITE_API_CODES }}
+      VITE_API_PROJECTS: ${{ vars.VITE_API_PROJECTS }}
+      VITE_OG_TITLE: ${{ vars.VITE_OG_TITLE }}
+      VITE_OG_URL: ${{ vars.VITE_OG_URL }}
+      VITE_OG_IMAGE: ${{ vars.VITE_OG_IMAGE }}
+      VITE_OG_DESCRIPTION: ${{ vars.VITE_OG_DESCRIPTION }}
+
     steps:
     - uses: actions/checkout@v3
 
