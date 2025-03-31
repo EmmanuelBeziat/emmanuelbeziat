@@ -3,6 +3,18 @@ name: CI
 on:
   push:
     branches: [ main ]
+    paths:
+      - '.github/workflows/**'
+      - 'public/**'
+      - 'src/**'
+      - 'tests/**'
+      - 'package.json'
+      - 'package-lock.json'
+      - 'vite.config.js'
+      - 'index.html'
+      - 'postcss.config.js'
+      - '.eslintrc.js'
+      - '.browserlistrc'
 
 jobs:
   test:

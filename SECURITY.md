@@ -4,9 +4,7 @@
 
 This is a static website with no user input or data collection.
 
-However, if you discover a security vulnerability, please report it by:
-1. Creating a private security advisory in this repository
-2. Or emailing security@emmanuelbeziat.com
+However, if you discover a security vulnerability, please report it by creating a private security advisory in this repository
 
 Please include:
 - A description of the vulnerability
