@@ -68,8 +68,14 @@ jobs:
         # Calculate the signature
         SIGNATURE=$(echo -n "$PAYLOAD" | openssl dgst -sha1 -hmac "${{ secrets.DEPLOY_WEBHOOK_SECRET }}" | cut -d' ' -f2)
 
-        # Send the webhook with signature
-        curl -X POST ${{ secrets.DEPLOY_WEBHOOK_URL }} \
+        # Debug information
+        echo "Payload:"
+        echo "$PAYLOAD"
+        echo "Signature: sha1=$SIGNATURE"
+        echo "Webhook URL: ${{ secrets.DEPLOY_WEBHOOK_URL }}"
+
+        # Send the webhook with signature and verbose output
+        curl -v -X POST ${{ secrets.DEPLOY_WEBHOOK_URL }} \
           -H "Content-Type: application/json" \
           -H "X-GitHub-Event: push" \
           -H "X-Hub-Signature: sha1=$SIGNATURE" \
