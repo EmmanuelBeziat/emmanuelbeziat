@@ -86,12 +86,12 @@ const code = computed(() => codes.list[Math.floor(Math.random() * codes.count)] 
 
 .title {
 	margin: auto;
-	transform: translateX(-32px);
+	translate: -32px 0;
 	color: var(--color-light);
 
 	@container (width < 46rem) {
 		margin: 0;
-		transform: none;
+		translate: 0 0;
 	}
 }
 

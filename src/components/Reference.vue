@@ -84,7 +84,7 @@ defineProps({
 	text-align: center;
 	opacity: 0;
 	visibility: hidden;
-	transform: translateY(15px);
+	translate: 0 15px;
 	transition: var(--transition-slow) var(--ease-back-out) 0s;
 }
 
@@ -98,7 +98,8 @@ defineProps({
 @media (hover: hover) {
 	.card:hover {
 		.layer {
-			transform: scale(.4) translateZ(0);
+			scale: .4;
+			translate: 0 0;
 			border-radius: 50%;
 			aspect-ratio: 1;
 			margin: auto;
@@ -106,17 +107,17 @@ defineProps({
 		}
 
 		.showcase__image {
-			transform: scale(1.2);
+			scale: 1.2;
 		}
 
 		.caption {
 			opacity: 1;
 			visibility: visible;
-			transform: translateY(0);
+			translate: 0 0;
 			transition: var(--transition-slow) var(--ease-back-out) .1s;
 
 			.tags {
-				transform: translateY(0);
+				translate: 0 0;
 				transition: var(--transition-slow) var(--ease-back-out) .025s;
 			}
 		}
@@ -168,7 +169,7 @@ defineProps({
 
 .tags {
 	display: flex;
-	transform: translateY(20px);
+	translate: 0 20px;
 	transition: var(--transition-slow) var(--ease-back-out) 0s;
 }
 

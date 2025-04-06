@@ -39,7 +39,7 @@ h2 {
 		font-size: 2em;
 		font-weight: 400;
 		margin: 0 1rem;
-		transform: translateY(.3em);
+		translate: 0 .3em;
 	}
 
 	&::before {

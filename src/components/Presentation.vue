@@ -175,7 +175,7 @@ checkAge(personal.birthday)
 }
 
 .resume-age {
-	transform: rotate(5deg);
+	rotate: 5deg;
 	animation-delay: 1.25s;
 
 	span {
@@ -188,18 +188,20 @@ checkAge(personal.birthday)
 		font-style: normal;
 		font-size: 80%;
 		display: block;
-		transform: translateX(-12%);
+		translate: -12% 0;
 	}
 
 	svg {
 		fill: var(--color-blue);
 		width: 90px;
-		transform: translate(62px, 20px) rotate(-28deg) scaleX(-1);
+		translate: 62px 20px;
+		rotate: -28deg;
+		scale: -1 1;
 	}
 }
 
 .resume-note {
-	transform: rotate(-6deg);
+	rotate: -6deg;
 	display: flex;
 	align-items: center;
 	animation-delay: 1.55s;
@@ -207,7 +209,8 @@ checkAge(personal.birthday)
 	svg {
 		fill: var(--color-blue);
 		width: 90px;
-		transform: translate(12px, -30px) rotate(28deg);
+		translate: 12px -30px;
+		rotate: 28deg;
 	}
 }
 

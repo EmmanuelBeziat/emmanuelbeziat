@@ -36,29 +36,33 @@ defineProps({
 	svg {
 		width: 1.25em;
 		stroke: currentColor;
-		transform: var(--transform);
-		transition: transform var(--transition-fast) ease-in-out;
+		translate: var(--translate);
+		rotate: var(--rotate);
+		transition: translate var(--transition-fast) ease-in-out, rotate var(--transition-fast) ease-in-out;
 	}
 
 	&.--previous {
-		--transform: translateX(-4px);
+		--translate: -4px 0;
+		--rotate: 0;
 	}
 
 	&.--previous:is(:hover, :focus) {
-		--transform: translateX(-8px);
+		--translate: -8px 0;
 	}
 
 	&.--next {
-		--transform: translateX(4px);
+		--translate: 4px 0;
+		--rotate: 0;
 	}
 
 	&.--next svg {
-		transform: var(--transform) rotate(.5turn);
+		translate: var(--translate);
+		rotate: var(--rotate);
 		order: 2;
 	}
 
 	&.--next:is(:hover, :focus) {
-		--transform: translateX(8px);
+		--translate: 8px 0;
 	}
 }
 </style>

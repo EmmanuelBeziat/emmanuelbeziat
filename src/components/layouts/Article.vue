@@ -109,7 +109,7 @@ const props = defineProps({
 	[target="_blank"]::after {
 		content: "⇲";
 		vertical-align: baseline;
-		transform: translateY(-4px);
+		translate: 0 -4px;
 		font-size: .85em;
 		margin-left: .25em;
 		display: inline-block;
@@ -150,12 +150,12 @@ const props = defineProps({
 	opacity: 0;
 	font-size: .65em;
 	transition: var(--transition-xfast) ease-in-out;
-	transform: translateX(-75%);
+	translate: -75% 0;
 	padding-right: 10px;
 }
 
 :deep(h2:hover .anchor) {
 	opacity: 1;
-	transform: translateX(-100%);
+	translate: -100% 0;
 }
 </style>

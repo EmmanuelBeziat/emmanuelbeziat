@@ -72,13 +72,13 @@ const isActive = computed(() => router.resolve(props.to).path === '/' + route.pa
 
 	&::before {
 		--content: "<";
-		transform: translateX(20px);
+		translate: 20px 0;
 		padding-right: .125em;
 	}
 
 	&::after {
 		--content: "/>";
-		transform: translateX(-20px);
+		translate: -20px 0;
 		padding-left: .1875em;
 	}
 
@@ -100,7 +100,7 @@ const isActive = computed(() => router.resolve(props.to).path === '/' + route.pa
 		&::before,
 		&::after {
 			opacity: 1;
-			transform: translateX(0);
+			translate: 0 0;
 		}
 	}
 
@@ -132,7 +132,7 @@ const isActive = computed(() => router.resolve(props.to).path === '/' + route.pa
 
 .menu__item :deep(svg) {
 	display: none;
-	transform: none;
+	translate: 0 0;
 	padding: 0;
 	opacity: 1;
 	width: 24px;

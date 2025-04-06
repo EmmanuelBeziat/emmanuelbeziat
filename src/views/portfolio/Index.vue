@@ -79,7 +79,7 @@ useSeoMeta({
 		width: 1em;
 		margin: 0 .15em;
 		vertical-align: baseline;
-		transform: translateY(2px);
+		translate: 0 2px;
 	}
 }
 </style>

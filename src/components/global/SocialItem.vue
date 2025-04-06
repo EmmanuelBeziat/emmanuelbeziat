@@ -49,7 +49,7 @@ defineProps({
 	}
 
 	&:is(:hover, :focus) :deep(svg) {
-		transform: scale(.95);
+		scale: .95;
 	}
 
 	&.--twitter {
