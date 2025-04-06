@@ -62,18 +62,20 @@ jobs:
           }
         }'
 
-        # Calculate the signature
-        SIGNATURE=$(echo -n "$PAYLOAD" | openssl dgst -sha1 -hmac "${{ secrets.DEPLOY_WEBHOOK_SECRET }}" | cut -d' ' -f2)
+        # Calculate signatures with both secrets for comparison
+        SIGNATURE_GITHUB=$(echo -n "$PAYLOAD" | openssl dgst -sha1 -hmac "${{ secrets.DEPLOY_WEBHOOK_SECRET }}" | cut -d' ' -f2)
+        SIGNATURE_SERVER=$(echo -n "$PAYLOAD" | openssl dgst -sha1 -hmac "3-tron,D1giT4l-CacA" | cut -d' ' -f2)
 
         # Debug information
         echo "Payload:"
         echo "$PAYLOAD"
-        echo "Signature: sha1=$SIGNATURE"
+        echo "GitHub Secret Signature: sha1=$SIGNATURE_GITHUB"
+        echo "Server Secret Signature: sha1=$SIGNATURE_SERVER"
         echo "Webhook URL: ${{ secrets.DEPLOY_WEBHOOK_URL }}"
 
         # Send the webhook with signature and verbose output
         curl -v -X POST ${{ secrets.DEPLOY_WEBHOOK_URL }} \
           -H "Content-Type: application/json" \
           -H "X-GitHub-Event: push" \
-          -H "X-Hub-Signature: sha1=$SIGNATURE" \
+          -H "X-Hub-Signature: sha1=$SIGNATURE_GITHUB" \
           -d "$PAYLOAD"
