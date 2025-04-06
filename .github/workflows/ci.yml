@@ -53,11 +53,8 @@ jobs:
         PAYLOAD='{
           "ref": "refs/heads/main",
           "repository": {
-            "name": "${{ github.repository }}",
+            "name": "emmanuelbeziat",
             "full_name": "${{ github.repository }}"
-          },
-          "sender": {
-            "login": "${{ github.actor }}"
           },
           "head_commit": {
             "id": "${{ github.sha }}",
