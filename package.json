@@ -22,7 +22,7 @@
 		"test": "npx vitest --run"
 	},
 	"dependencies": {
-		"@unhead/vue": "^2.0.3",
+		"@unhead/vue": "^2.0.5",
 		"core-js": "^3.41.0",
 		"dayjs": "^1.11.13",
 		"mobile-device-detect": "^0.4.3",
