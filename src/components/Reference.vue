@@ -32,7 +32,7 @@ defineProps({
 	opacity: 0;
 	position: relative;
 	color: var(--color-text);
-	background: var(--color-background-dark);
+	background: var(--color-surface-dark);
 
 	@supports (content-visibility: auto) {
 		content-visibility: auto;
@@ -139,7 +139,7 @@ defineProps({
 		--showcase-color: var(--color-green);
 	}
 	.black {
-		--showcase-color: var(--color-background-light);
+		--showcase-color: var(--color-surface-light);
 	}
 }
 

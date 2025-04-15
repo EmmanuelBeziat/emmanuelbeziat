@@ -1,6 +1,6 @@
 .note {
 	margin: var(--gutter-screen-y) auto;
-	background: var(--color-background-light);
+	background: var(--color-surface-light);
 	padding: 1em 2em 1em 2em;
 	border-left: 4px solid var(--note-color);
 	position: relative;
@@ -23,7 +23,7 @@
 		display: flex;
 		justify-content: center;
 		align-items: center;
-		color: var(--color-background-dark);
+		color: var(--color-surface-dark);
 		border-radius: 50%;
 		border-color: var(--note-color);
 		background: var(--note-color) 50% no-repeat;
@@ -31,7 +31,7 @@
 		@media (width <= 768px) {
 			left: 50%;
 			top: 0;
-			translate: -50% -50%;
+			translate: -50%;
 		}
 	}
 

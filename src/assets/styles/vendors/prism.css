@@ -16,8 +16,11 @@ pre[class*="language-"] {
 	word-spacing: normal;
 	word-break: normal;
 	tab-size: 3;
-	-webkit-hyphens: none;
 	hyphens: none;
+
+	@media print {
+		text-shadow: none;
+	}
 }
 
 pre[class*="language-"]::selection,
@@ -25,14 +28,7 @@ pre[class*="language-"] ::selection,
 code[class*="language-"]::selection,
 code[class*="language-"] ::selection {
 	text-shadow: none;
-	background: var(--color-background-lighter);
-}
-
-@media print {
-	code[class*="language-"],
-	pre[class*="language-"] {
-		text-shadow: none;
-	}
+	background: var(--color-surface-lighter);
 }
 
 /* Code blocks */
@@ -43,12 +39,9 @@ pre[class*="language-"] {
 	overflow: auto;
 	border-radius: .2em;
 	position: relative;
-	background: var(--color-background-dark);
-}
+	background: var(--color-surface-dark);
 
-@media (max-width: 768px) {
-	pre,
-	pre[class*="language-"] {
+	@media (width <= 768px) {
 		margin: 2em -1rem;
 		border-radius: 0;
 	}
@@ -60,7 +53,7 @@ code[class*="language-"]::selection {
 	text-shadow: 0 1px 0 rgba(0,0,0,.5);
 }
 
-@media (max-width: 768px) {
+@media (width <= 768px) {
 	code[class*="language-"] {
 		display: block;
 	}
@@ -68,7 +61,7 @@ code[class*="language-"]::selection {
 
 :not(pre) > code[class*="language-"],
 pre[class*="language-"] {
-	background: var(--color-background-dark);
+	background: var(--color-surface-dark);
 }
 
 /* Inline code */
@@ -81,7 +74,7 @@ pre[class*="language-"] {
 .token.prolog,
 .token.doctype,
 .token.cdata {
-	color: var(--color-background-lighter);
+	color: var(--color-surface-lighter);
 }
 
 .token.punctuation {
@@ -229,7 +222,7 @@ pre[class*="language-"]::after,
 pre[class*="language-"]::after,
 .code-toolbar .toolbar-item {
 	color: var(--color-text);
-	background-color: var(--color-background-light);
+	background-color: var(--color-surface-light);
 	border-radius: 0 3px 0 3px;
 	display: inline-block;
 	position: absolute;

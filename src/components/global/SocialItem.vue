@@ -37,7 +37,7 @@ defineProps({
 	width: 3rem;
 	aspect-ratio: 1;
 	color: var(--color-text);
-	background: var(--color-background-dark);
+	background: var(--color-surface-dark);
 	padding: .55em;
 	border-radius: 50%;
 	transition: var(--transition-slow) var(--ease-back-out);
@@ -53,43 +53,43 @@ defineProps({
 	}
 
 	&.--twitter {
-		--bg-social-link: var(--brand-color-twitter);
+		--bg-social-link: var(--color-brand-twitter);
 	}
 
 	&.--x {
-		--bg-social-link: var(--brand-color-x);
+		--bg-social-link: var(--color-brand-x);
 	}
 
 	&.--facebook {
-		--bg-social-link: var(--brand-color-facebook);
+		--bg-social-link: var(--color-brand-facebook);
 	}
 
 	&.--instagram {
-		--bg-social-link: var(--brand-color-instagram);
+		--bg-social-link: var(--color-brand-instagram);
 	}
 
 	&.--codepen {
-		--bg-social-link: var(--brand-color-codepen);
+		--bg-social-link: var(--color-brand-codepen);
 	}
 
 	&.--github {
-		--bg-social-link: var(--brand-color-github);
+		--bg-social-link: var(--color-brand-github);
 	}
 
 	&.--linkedin {
-		--bg-social-link: var(--brand-color-linkedin);
+		--bg-social-link: var(--color-brand-linkedin);
 	}
 
 	&.--youtube {
-		--bg-social-link: var(--brand-color-youtube);
+		--bg-social-link: var(--color-brand-youtube);
 	}
 
 	&.--npmjs {
-		--bg-social-link: var(--brand-color-npmjs);
+		--bg-social-link: var(--color-brand-npmjs);
 	}
 
 	&.--bluesky {
-		--bg-social-link: var(--brand-color-bluesky);
+		--bg-social-link: var(--color-brand-bluesky);
 	}
 }
 

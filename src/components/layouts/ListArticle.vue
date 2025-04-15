@@ -24,7 +24,7 @@
 .post {
 	container-type: inline-size;
 	transition: var(--transition-fast) 0s;
-	background: var(--color-background);
+	background: var(--color-surface);
 	opacity: 0;
 
 	& + & {

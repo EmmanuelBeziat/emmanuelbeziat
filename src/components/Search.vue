@@ -43,7 +43,7 @@ const vFocus = {
 	--border-color: var(--color-separator);
 	flex: 1;
 	padding: 10px 1rem;
-	background: var(--color-background-dark);
+	background: var(--color-surface-dark);
 	border: 1px solid var(--border-color);
 	box-shadow: none;
 	outline: none;

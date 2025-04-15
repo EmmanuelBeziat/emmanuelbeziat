@@ -31,7 +31,7 @@ html {
 }
 
 body {
-	background: var(--color-background);
+	background: var(--color-surface);
 	color: var(--color-text);
 	font: 400 var(--font-size-base)/1.5 var(--font-stack-common);
 
@@ -47,7 +47,7 @@ body {
 	}
 
 	&::-webkit-scrollbar-thumb {
-		border: 2px solid var(--color-background);
+		border: 2px solid var(--color-surface);
 		border-radius: .5rem;
 		transition: var(--transition-fast) ease-in-out;
 		background: var(--color-thumb);
@@ -136,7 +136,7 @@ blockquote {
 		left: 0;
 		top: 2rem;
 		font-size: 6em;
-		color: var(--color-background-lighter);
+		color: var(--color-surface-lighter);
 	}
 }
 
@@ -160,7 +160,7 @@ kbd {
 	border-radius: .2em;
 	display: inline-block;
 	padding: 0 .35em;
-	border-bottom: 1px solid var(--color-background-darker);
+	border-bottom: 1px solid var(--color-surface-darker);
 	margin: 0 .05em;
 }
 

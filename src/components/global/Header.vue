@@ -25,7 +25,7 @@ import Copyright from '@/components/global/Copyright.vue'
 <style scoped>
 .header {
 	padding: 2rem;
-	background: var(--color-background-dark);
+	background: var(--color-surface-dark);
 	position: relative;
 	z-index: 10;
 	text-align: center;

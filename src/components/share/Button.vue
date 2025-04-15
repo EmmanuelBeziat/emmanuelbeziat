@@ -23,7 +23,7 @@ defineProps({
 .share-button {
 	width: 36px;
 	aspect-ratio: 1;
-	background: var(--color-background-darker);
+	background: var(--color-surface-darker);
 	color: var(--color-text);
 	border-radius: 2px;
 	transition: var(--transition-slow) ease-out;

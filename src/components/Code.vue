@@ -32,7 +32,7 @@ const code = computed(() => codes.list[Math.floor(Math.random() * codes.count)] 
 .cv-code {
 	border-radius: .5rem;
 	overflow: hidden;
-	background: var(--color-background-dark);
+	background: var(--color-surface-dark);
 	animation-delay: .75s;
 	animation-duration: calc(var(--transition-slow) * 1.5);
 
@@ -62,7 +62,7 @@ const code = computed(() => codes.list[Math.floor(Math.random() * codes.count)] 
 .top-bar {
 	display: flex;
 	align-items: center;
-	background: var(--color-background-light);
+	background: var(--color-surface-light);
 	color: var(--color-text);
 	text-align: center;
 	padding: 5px 10px;
