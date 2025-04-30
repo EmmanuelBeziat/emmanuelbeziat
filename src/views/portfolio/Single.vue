@@ -31,7 +31,6 @@ import { computed, onMounted, watch } from 'vue'
 import { openGraph } from '@/config'
 import { useRoute } from 'vue-router'
 import { useHead, useSeoMeta } from '@unhead/vue'
-import { defineArticle, useSchemaOrg } from '@unhead/schema-org/vue'
 
 import Article from '@/components/layouts/Article.vue'
 import Tag from '@/components/Tag.vue'
@@ -66,12 +65,6 @@ const updateMetaTags = () => {
 		ogTitle: `${reference.value?.title} — Portfolio`,
 		ogUrl: fullURL,
 	})
-
-	useSchemaOrg([
-		defineArticle({
-			url: fullURL,
-		})
-	])
 }
 
 watch(reference, (newReference) => {

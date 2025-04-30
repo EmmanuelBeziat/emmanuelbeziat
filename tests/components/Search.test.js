@@ -3,9 +3,11 @@ import { describe, it, expect, vi, beforeEach, afterEach } from 'vitest'
 import { nextTick } from 'vue'
 import Search from '@/components/Search.vue'
 
-// Mock mobile-device-detect
-vi.mock('mobile-device-detect', () => ({
-  isMobile: false
+// Mock @vueuse/core
+vi.mock('@vueuse/core', () => ({
+  useMediaQuery: vi.fn(() => false),
+	usePointer: vi.fn(() => ({ pointerType: { value: 'mouse' } })),
+	useDebounceFn: vi.fn((fn) => fn),
 }))
 
 describe('<Search>', () => {
@@ -63,9 +65,11 @@ describe('<Search>', () => {
   }) */
 
   it('should not apply focus directive on mobile devices', async () => {
-    // Mock isMobile as true
-    vi.mock('mobile-device-detect', () => ({
-      isMobile: true
+    // Mock useMediaQuery as true
+    vi.mock('@vueuse/core', () => ({
+      useMediaQuery: vi.fn(() => true),
+			usePointer: vi.fn(() => ({ pointerType: { value: 'touch' } })),
+			useDebounceFn: vi.fn((fn) => fn)
     }), { virtual: true })
 
     const focusSpy = vi.spyOn(HTMLElement.prototype, 'focus')

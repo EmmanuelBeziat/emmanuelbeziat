@@ -1,8 +1,8 @@
-import { mount } from '@vue/test-utils'
 import { describe, it, expect, vi } from 'vitest'
+import { mount } from '@vue/test-utils'
+import { dateFormat } from '@/plugins/mixins/date'
 import Post from '@/components/Post.vue'
 import Tag from '@/components/Tag.vue'
-import { dateFormat } from '@/plugins/mixins/date'
 
 // Mock the dateFormat function
 vi.mock('@/plugins/mixins/date', () => ({
@@ -34,7 +34,7 @@ describe('Post', () => {
         ...props
       },
       global: {
-        stubs: ['router-link']
+        stubs: ['router-link'],
       }
     })
   }
