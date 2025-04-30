@@ -31,6 +31,7 @@ import { computed, onMounted, watch } from 'vue'
 import { openGraph } from '@/config'
 import { useRoute } from 'vue-router'
 import { useSeoMeta, useHead } from '@unhead/vue'
+import { defineArticle, useSchemaOrg } from '@unhead/schema-org/vue'
 
 import Article from '@/components/layouts/Article.vue'
 import Share from '@/components/share/Share.vue'
@@ -59,7 +60,7 @@ onMounted(() => {
 
 const updateMetaTags = () => {
 	useHead({
-		title: `${post.value?.title} — Blog`
+		title: `${post.value?.title} — Blog`,
 	})
 
 	useSeoMeta({
@@ -69,6 +70,14 @@ const updateMetaTags = () => {
 		ogImage: post.value?.image,
 		ogDescription: post.value?.description,
 	})
+
+	useSchemaOrg([
+		defineArticle({
+			url: fullURL,
+			image: post.value?.image,
+			datePublished: () => post.value?.date,
+		})
+	])
 }
 
 watch(post, (newPost) => {

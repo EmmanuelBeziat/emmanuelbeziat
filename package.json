@@ -37,6 +37,7 @@
 	"devDependencies": {
 		"@realfavicongenerator/generate-favicon": "^0.4.16",
 		"@realfavicongenerator/image-adapter-node": "^0.4.16",
+		"@unhead/schema-org": "^2.0.8",
 		"@vitejs/plugin-vue": "^5.2.3",
 		"@vue/test-utils": "^2.4.6",
 		"autoprefixer": "^10.4.21",
