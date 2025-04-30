@@ -6,6 +6,7 @@ import { defineConfig } from 'vitest/config'
 import { VitePWA } from 'vite-plugin-pwa'
 import { createHtmlPlugin } from 'vite-plugin-html'
 import svg from 'vite-svg-loader'
+import Inspect from 'vite-plugin-inspect'
 
 const pwa = {
 	registerType: 'autoUpdate',
@@ -47,6 +48,10 @@ export default ({ mode }) => {
 
 	return defineConfig({
 		plugins: [
+			Inspect({
+				build: true,
+				outputDir: '.vite-inspect'
+			}),
 			vue(),
 			VitePWA(pwa),
 			svg(),
