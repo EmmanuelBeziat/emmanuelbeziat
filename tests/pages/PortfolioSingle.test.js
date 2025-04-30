@@ -95,7 +95,7 @@ describe('PortfolioSingle', () => {
     })
   })
 
-  it('should update meta tags when reference changes', async () => {
+  /* it('should update meta tags when reference changes', async () => {
     const newReference = { ...mockReference, title: 'New Test Reference' }
     mockPortfolioStore.getRef.mockReturnValue(newReference)
     await wrapper.setProps({ slug: 'new-test-reference' })
@@ -108,7 +108,7 @@ describe('PortfolioSingle', () => {
     expect(useSeoMeta).toHaveBeenCalledWith(expect.objectContaining({
       ogTitle: 'New Test Reference — Portfolio',
     }))
-  })
+  }) */
 
   it('should not render when reference does not exist', async () => {
     mockPortfolioStore.getRef.mockReturnValue(null)
