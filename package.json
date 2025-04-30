@@ -23,9 +23,9 @@
 	},
 	"dependencies": {
 		"@unhead/vue": "^2.0.8",
+		"@vueuse/core": "^13.1.0",
 		"core-js": "^3.42.0",
 		"dayjs": "^1.11.13",
-		"mobile-device-detect": "^0.4.3",
 		"modern-normalize": "^3.0.1",
 		"pinia": "^3.0.2",
 		"slug": "^10.0.0",

@@ -7,7 +7,8 @@
 </template>
 
 <script setup>
-import { ref, onMounted, onUnmounted } from 'vue'
+import { computed } from 'vue'
+import { useMouse } from '@vueuse/core'
 
 const props = defineProps({
 	speedX: {
@@ -21,27 +22,11 @@ const props = defineProps({
 	},
 })
 
-const moveX = ref(0)
-const moveY = ref(0)
-const rotation = ref(0)
+const { x, y } = useMouse({ touch: false })
 
-/**
- * Handles mouse movement to update the position and rotation of the floating note
- * @param {MouseEvent} event - The mousemove event
- */
-const handleMouseMove = event => {
-	moveX.value = event.clientX * (-props.speedX * .45)
-	moveY.value = event.clientY * (-props.speedY * .45)
-	rotation.value = (event.clientX / window.innerWidth) * .75
-}
-
-onMounted(() => {
-	document.addEventListener('mousemove', handleMouseMove)
-})
-
-onUnmounted(() => {
-	document.removeEventListener('mousemove', handleMouseMove)
-})
+const moveX = computed(() => x.value * (-props.speedX * .45))
+const moveY = computed(() => y.value * (-props.speedY * .45))
+const rotation = computed(() => (x.value / window.innerWidth) * .75)
 </script>
 
 <style scoped>

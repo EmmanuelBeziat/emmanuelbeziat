@@ -5,8 +5,8 @@
 </template>
 
 <script setup>
-import { ref } from 'vue'
-import { isMobile } from 'mobile-device-detect'
+import { ref, computed } from 'vue'
+import { useDebounceFn, usePointer, useMediaQuery } from '@vueuse/core'
 
 defineProps({
 	label: {
@@ -19,13 +19,15 @@ defineProps({
 
 const emit = defineEmits(['update:modelValue'])
 const searchField = ref('searchField')
+const { pointerType } = usePointer()
+const isTouchDevice = computed(() => pointerType.value === 'touch')
+const isMobileViewport = useMediaQuery('(max-width: 768px)')
+const shouldAutoFocus = computed(() => !isTouchDevice.value && !isMobileViewport.value)
 
-const inputSearch = value => {
-	setTimeout(() => emit('update:modelValue', value), 150)
-}
+const inputSearch = useDebounceFn((value) => emit('update:modelValue', value), 150)
 
 const vFocus = {
-	mounted: el => { if (!isMobile) el.focus() }
+	mounted: el => { if (shouldAutoFocus.value) el.focus() }
 }
 </script>
 
