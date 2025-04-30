@@ -27,7 +27,7 @@
 </template>
 
 <script setup>
-import { computed, onMounted, watch } from 'vue'
+import { computed, onMounted } from 'vue'
 import { openGraph } from '@/config'
 import { useRoute } from 'vue-router'
 import { useSeoMeta, useHead } from '@unhead/vue'
@@ -54,25 +54,18 @@ const post = computed(() => postsStore.getPost(props.slug))
 
 onMounted(() => {
 	defineNamespace('blog')
-	updateMetaTags()
 })
 
-const updateMetaTags = () => {
-	useHead({
-		title: `${post.value?.title} — Blog`,
-	})
+useHead({
+	title: `${post.value?.title} — Blog`,
+})
 
-	useSeoMeta({
-		description: post.value?.description,
-		ogTitle: `${post.value?.title} — Blog`,
-		ogUrl: fullURL,
-		ogImage: post.value?.image,
-		ogDescription: post.value?.description,
-	})
-}
-
-watch(post, (newPost) => {
-	if (newPost) updateMetaTags()
+useSeoMeta({
+	description: post.value?.description,
+	ogTitle: `${post.value?.title} — Blog`,
+	ogUrl: fullURL,
+	ogImage: post.value?.image,
+	ogDescription: post.value?.description,
 })
 </script>
 

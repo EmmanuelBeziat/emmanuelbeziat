@@ -27,7 +27,7 @@
 </template>
 
 <script setup>
-import { computed, onMounted, watch } from 'vue'
+import { computed, onMounted } from 'vue'
 import { openGraph } from '@/config'
 import { useRoute } from 'vue-router'
 import { useHead, useSeoMeta } from '@unhead/vue'
@@ -46,28 +46,21 @@ const props = defineProps({
 	}
 })
 
+onMounted(() => {
+	defineNamespace('portfolio')
+})
+
 const route = useRoute()
 const fullURL = openGraph.url + route.fullPath
 const portfolioStore = usePortfolioStore()
 const reference = computed(() => portfolioStore.getRef(props.slug))
 
-onMounted(() => {
-	defineNamespace('portfolio')
-	updateMetaTags()
+useHead({
+	title: `${reference.value?.title} — Portfolio`
 })
 
-const updateMetaTags = () => {
-	useHead({
-		title: `${reference.value?.title} — Portfolio`
-	})
-
-	useSeoMeta({
-		ogTitle: `${reference.value?.title} — Portfolio`,
-		ogUrl: fullURL,
-	})
-}
-
-watch(reference, (newReference) => {
-	if (newReference) updateMetaTags()
+useSeoMeta({
+	ogTitle: `${reference.value?.title} — Portfolio`,
+	ogUrl: fullURL,
 })
 </script>
