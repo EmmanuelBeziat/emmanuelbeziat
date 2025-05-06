@@ -18,13 +18,17 @@
 		"build": "vite build",
 		"setup": "npm i && node setup.js",
 		"preview": "vite preview --port 3033",
-		"lint": "npx eslint src --ext .vue,.js,.jsx,.cjs,.mjs --fix",
+		"lint:style": "stylelint src/**/*.{css,vue}",
+		"lint:script": "npx eslint src --ext .vue,.js,.jsx,.cjs,.mjs",
 		"test": "npx vitest --run",
 		"prepare": "husky"
 	},
 	"lint-staged": {
 		"src/**/*.{vue,css}": [
-			"npx stylelint --fix"
+			"npx stylelint"
+		],
+		"src/**/*.{vue,js,jsx,cjs,mjs}": [
+			"npx eslint"
 		]
 	},
 	"dependencies": {

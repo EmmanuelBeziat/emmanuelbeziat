@@ -61,7 +61,7 @@ useSeoMeta({
 	min-height: 100dvh;
 	overflow-x: clip;
 	display: grid;
-	grid-template: "header content"/20rem auto;
+	grid-template: "header content" / 20rem auto;
 
 	@media (width <= 1120px) {
 		grid-template: "header" "content" "footer";

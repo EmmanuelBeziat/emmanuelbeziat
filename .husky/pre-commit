@@ -2,5 +2,4 @@
 . "$(dirname "$0")/h"
 
 npx lint-staged
-npm run lint
-npx vitest --run
+npm run test
