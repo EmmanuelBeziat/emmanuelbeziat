@@ -20,44 +20,44 @@ vi.mock('@/components/Tag.vue', () => ({ default: { template: '<div class="tag-m
 vi.mock('@/components/BackToPage.vue', () => ({ default: { template: '<div class="navigation-mock"></div>', props: ['type', 'to', 'label'] } }))
 
 describe('PortfolioSingle', () => {
-  let wrapper
-  let mockPortfolioStore
+	let wrapper
+	let mockPortfolioStore
 
-  const mockReference = {
-    slug: 'test-reference',
-    title: 'Test Reference',
-    tags: ['tag1', 'tag2'],
-    clients: ['client1', 'client2'],
-    markup: '<p>Test content</p>'
-  }
+	const mockReference = {
+		slug: 'test-reference',
+		title: 'Test Reference',
+		tags: ['tag1', 'tag2'],
+		clients: ['client1', 'client2'],
+		markup: '<p>Test content</p>'
+	}
 
-  beforeEach(() => {
-    useRoute.mockReturnValue({ fullPath: '/portfolio/test-reference' })
+	beforeEach(() => {
+		useRoute.mockReturnValue({ fullPath: '/portfolio/test-reference' })
 
-    mockPortfolioStore = {
-      getRef: vi.fn().mockReturnValue(mockReference)
-    }
-    usePortfolioStore.mockReturnValue(mockPortfolioStore)
+		mockPortfolioStore = {
+			getRef: vi.fn().mockReturnValue(mockReference)
+		}
+		usePortfolioStore.mockReturnValue(mockPortfolioStore)
 
-    wrapper = mount(PortfolioSingle, {
-      props: {
-        slug: 'test-reference'
-      },
-      global: {
-        stubs: ['sequential-entrance']
-      }
-    })
-  })
+		wrapper = mount(PortfolioSingle, {
+			props: {
+				slug: 'test-reference'
+			},
+			global: {
+				stubs: ['sequential-entrance']
+			}
+		})
+	})
 
-  it('should render the component when reference exists', () => {
-    expect(wrapper.find('.post').exists()).toBe(true)
-  })
+	it('should render the component when reference exists', () => {
+		expect(wrapper.find('.post').exists()).toBe(true)
+	})
 
-  it('should render the reference title', () => {
-    expect(wrapper.find('.title').text()).toBe('Test Reference')
-  })
+	it('should render the reference title', () => {
+		expect(wrapper.find('.title').text()).toBe('Test Reference')
+	})
 
-  /* it('should render tags', () => {
+	/* it('should render tags', () => {
     const tags = wrapper.findAllComponents(Tag)
     expect(tags).toHaveLength(4) // 2 tags + 2 clients
     expect(tags[0].props('value')).toBe('tag1')
@@ -66,36 +66,36 @@ describe('PortfolioSingle', () => {
     expect(tags[3].props('value')).toBe('client2')
   }) */
 
-  it('should render reference content', () => {
-    expect(wrapper.find('.content').html()).toContain('<p>Test content</p>')
-  })
+	it('should render reference content', () => {
+		expect(wrapper.find('.content').html()).toContain('<p>Test content</p>')
+	})
 
-  it('should render Navigation component', () => {
-    const navigation = wrapper.findComponent(Navigation)
-    expect(navigation.exists()).toBe(true)
-    expect(navigation.props('type')).toBe('previous')
-    expect(navigation.props('to')).toEqual({ name: 'Portfolio' })
-    expect(navigation.props('label')).toBe('Revenir au portfolio')
-  })
+	it('should render Navigation component', () => {
+		const navigation = wrapper.findComponent(Navigation)
+		expect(navigation.exists()).toBe(true)
+		expect(navigation.props('type')).toBe('previous')
+		expect(navigation.props('to')).toEqual({ name: 'Portfolio' })
+		expect(navigation.props('label')).toBe('Revenir au portfolio')
+	})
 
-  it('should call defineNamespace on mount', async () => {
-    await nextTick()
-    expect(defineNamespace).toHaveBeenCalledWith('portfolio')
-  })
+	it('should call defineNamespace on mount', async () => {
+		await nextTick()
+		expect(defineNamespace).toHaveBeenCalledWith('portfolio')
+	})
 
-  it('should set correct head metadata', async () => {
-    await nextTick()
-    expect(useHead).toHaveBeenCalledWith({
-      title: 'Test Reference — Portfolio'
-    })
+	it('should set correct head metadata', async () => {
+		await nextTick()
+		expect(useHead).toHaveBeenCalledWith({
+			title: 'Test Reference — Portfolio'
+		})
 
-    expect(useSeoMeta).toHaveBeenCalledWith({
-      ogTitle: 'Test Reference — Portfolio',
-      ogUrl: expect.any(String)
-    })
-  })
+		expect(useSeoMeta).toHaveBeenCalledWith({
+			ogTitle: 'Test Reference — Portfolio',
+			ogUrl: expect.any(String)
+		})
+	})
 
-  /* it('should update meta tags when reference changes', async () => {
+	/* it('should update meta tags when reference changes', async () => {
     const newReference = { ...mockReference, title: 'New Test Reference' }
     mockPortfolioStore.getRef.mockReturnValue(newReference)
     await wrapper.setProps({ slug: 'new-test-reference' })
@@ -110,10 +110,10 @@ describe('PortfolioSingle', () => {
     }))
   }) */
 
-  it('should not render when reference does not exist', async () => {
-    mockPortfolioStore.getRef.mockReturnValue(null)
-    await wrapper.setProps({ slug: 'non-existent-reference' })
-    await nextTick()
-    expect(wrapper.find('.post').exists()).toBe(false)
-  })
+	it('should not render when reference does not exist', async () => {
+		mockPortfolioStore.getRef.mockReturnValue(null)
+		await wrapper.setProps({ slug: 'non-existent-reference' })
+		await nextTick()
+		expect(wrapper.find('.post').exists()).toBe(false)
+	})
 })

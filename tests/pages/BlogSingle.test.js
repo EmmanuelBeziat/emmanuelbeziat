@@ -22,74 +22,74 @@ vi.mock('@/components/share/Share.vue', () => ({ default: { template: '<div clas
 vi.mock('@/components/Tag.vue', () => ({ default: { template: '<div class="tag-mock"></div>', props: ['value'] } }))
 
 describe('BlogSingle', () => {
-  let wrapper
-  let mockPostsStore
+	let wrapper
+	let mockPostsStore
 
-  const mockPost = {
-    slug: 'test-post',
-    title: 'Test Post',
-    date: '2023-05-20',
-    tags: ['tag1', 'tag2'],
-    description: 'Test description',
-    image: 'test-image.jpg',
-    markup: '<p>Test content</p>'
-  }
+	const mockPost = {
+		slug: 'test-post',
+		title: 'Test Post',
+		date: '2023-05-20',
+		tags: ['tag1', 'tag2'],
+		description: 'Test description',
+		image: 'test-image.jpg',
+		markup: '<p>Test content</p>'
+	}
 
-  beforeEach(() => {
-    useRoute.mockReturnValue({ fullPath: '/blog/test-post' })
+	beforeEach(() => {
+		useRoute.mockReturnValue({ fullPath: '/blog/test-post' })
 
-    mockPostsStore = {
-      getPost: vi.fn().mockReturnValue(mockPost)
-    }
-    usePostsStore.mockReturnValue(mockPostsStore)
+		mockPostsStore = {
+			getPost: vi.fn().mockReturnValue(mockPost)
+		}
+		usePostsStore.mockReturnValue(mockPostsStore)
 
-    dateFormat.mockReturnValue('20 May 2023')
+		dateFormat.mockReturnValue('20 May 2023')
 
-    wrapper = mount(BlogSingle, {
-      props: {
-        slug: 'test-post'
-      },
-      global: {
-        stubs: ['sequential-entrance']
-      }
-    })
-  })
+		wrapper = mount(BlogSingle, {
+			props: {
+				slug: 'test-post'
+			},
+			global: {
+				stubs: ['sequential-entrance']
+			}
+		})
+	})
 
-  it('should render the component when post exists', () => {
-    expect(wrapper.find('.post').exists()).toBe(true)
-  })
+	it('should render the component when post exists', () => {
+		expect(wrapper.find('.post').exists()).toBe(true)
+	})
 
-  it('should render the post title', () => {
-    expect(wrapper.find('.title').text()).toBe('Test Post')
-  })
+	it('should render the post title', () => {
+		expect(wrapper.find('.title').text()).toBe('Test Post')
+	})
 
-  it('should render the formatted date', () => {
-    expect(wrapper.find('.date').text()).toContain('20 May 2023')
-    expect(dateFormat).toHaveBeenCalledWith('2023-05-20', { year: 'numeric', month: 'long', day: 'numeric' })
-  })
+	it('should render the formatted date', () => {
+		expect(wrapper.find('.date').text()).toContain('20 May 2023')
+		expect(dateFormat).toHaveBeenCalledWith('2023-05-20', { year: 'numeric', month: 'long', day: 'numeric' })
+	})
 
-  /* it('should render tags', () => {
+	/* it('should render tags', () => {
     const tags = wrapper.findAllComponents(Tag)
     expect(tags).toHaveLength(4) // 2 in header, 2 in footer
     expect(tags[0].props('value')).toBe('tag1')
     expect(tags[1].props('value')).toBe('tag2')
   }) */
 
-  /* it('should render Share component', () => {
+	/* it('should render Share component', () => {
     const shareComponents = wrapper.findAllComponents(Share)
     expect(shareComponents).toHaveLength(2) // 1 in header, 1 in footer
   }) */
 
-  it('should render post content', () => {
-    expect(wrapper.find('.content').html()).toContain('<p>Test content</p>')
-  })
+	it('should render post content', () => {
+		expect(wrapper.find('.content').html()).toContain('<p>Test content</p>')
+	})
 
-  it('should call defineNamespace on mount', async () => {
-    await nextTick()
-    expect(defineNamespace).toHaveBeenCalledWith('blog')
-  })
+	it('should call defineNamespace on mount', async () => {
+		await nextTick()
+		expect(defineNamespace).toHaveBeenCalledWith('blog')
+	})
 
-/*   it('should update meta tags when post changes', async () => {
+	/*   it('should update meta tags when post changes', async () => {
     const newPost = { ...mockPost, title: 'New Test Post', description: 'New description' }
     mockPostsStore.getPost.mockReturnValue(newPost)
     await wrapper.setProps({ slug: 'new-test-post' })
@@ -106,10 +106,10 @@ describe('BlogSingle', () => {
     }))
   }) */
 
-  it('should not render when post does not exist', async () => {
-    mockPostsStore.getPost.mockReturnValue(null)
-    await wrapper.setProps({ slug: 'non-existent-post' })
-    await nextTick()
-    expect(wrapper.find('.post').exists()).toBe(false)
-  })
+	it('should not render when post does not exist', async () => {
+		mockPostsStore.getPost.mockReturnValue(null)
+		await wrapper.setProps({ slug: 'non-existent-post' })
+		await nextTick()
+		expect(wrapper.find('.post').exists()).toBe(false)
+	})
 })

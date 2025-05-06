@@ -8,9 +8,9 @@ vi.useFakeTimers()
 vi.setSystemTime(mockDate)
 
 describe('<Copyright>', () => {
-  it('should render the correct year and text', () => {
-    const wrapper = mount(Copyright)
-    const expectedYear = new Intl.DateTimeFormat(navigator.language, { year: 'numeric' }).format(mockDate)
-    expect(wrapper.text()).toBe(`© ${expectedYear} Emmanuel Béziat`)
-  })
+	it('should render the correct year and text', () => {
+		const wrapper = mount(Copyright)
+		const expectedYear = new Intl.DateTimeFormat(navigator.language, { year: 'numeric' }).format(mockDate)
+		expect(wrapper.text()).toBe(`© ${expectedYear} Emmanuel Béziat`)
+	})
 })

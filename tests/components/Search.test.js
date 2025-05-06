@@ -5,57 +5,57 @@ import Search from '@/components/Search.vue'
 
 // Mock @vueuse/core
 vi.mock('@vueuse/core', () => ({
-  useMediaQuery: vi.fn(() => false),
+	useMediaQuery: vi.fn(() => false),
 	usePointer: vi.fn(() => ({ pointerType: { value: 'mouse' } })),
 	useDebounceFn: vi.fn((fn) => fn),
 }))
 
 describe('<Search>', () => {
-  let wrapper
-  let container
+	let wrapper
+	let container
 
-  beforeEach(() => {
-    container = document.createElement('div')
-    document.body.appendChild(container)
-  })
+	beforeEach(() => {
+		container = document.createElement('div')
+		document.body.appendChild(container)
+	})
 
-  afterEach(() => {
-    document.body.removeChild(container)
-  })
+	afterEach(() => {
+		document.body.removeChild(container)
+	})
 
-  const createWrapper = (props = {}) => {
-    return mount(Search, {
-      props: {
-        label: 'Search label',
-        placeholder: 'Search placeholder',
-        ...props
-      },
-      attachTo: container
-    })
-  }
+	const createWrapper = (props = {}) => {
+		return mount(Search, {
+			props: {
+				label: 'Search label',
+				placeholder: 'Search placeholder',
+				...props
+			},
+			attachTo: container
+		})
+	}
 
-  it('should render the search input', () => {
-    wrapper = createWrapper()
-    const input = wrapper.find('input')
-    expect(input.exists()).toBe(true)
-    expect(input.attributes('type')).toBe('search')
-    expect(input.attributes('aria-label')).toBe('Search label')
-    expect(input.attributes('placeholder')).toBe('Search placeholder')
-  })
+	it('should render the search input', () => {
+		wrapper = createWrapper()
+		const input = wrapper.find('input')
+		expect(input.exists()).toBe(true)
+		expect(input.attributes('type')).toBe('search')
+		expect(input.attributes('aria-label')).toBe('Search label')
+		expect(input.attributes('placeholder')).toBe('Search placeholder')
+	})
 
-  it('should emit update:modelValue event on input', async () => {
-    wrapper = createWrapper()
-    const input = wrapper.find('input')
-    await input.setValue('test search')
+	it('should emit update:modelValue event on input', async () => {
+		wrapper = createWrapper()
+		const input = wrapper.find('input')
+		await input.setValue('test search')
 
-    // Wait for the debounce
-    await new Promise(resolve => setTimeout(resolve, 200))
+		// Wait for the debounce
+		await new Promise(resolve => setTimeout(resolve, 200))
 
-    expect(wrapper.emitted('update:modelValue')).toBeTruthy()
-    expect(wrapper.emitted('update:modelValue')[0]).toEqual(['test search'])
-  })
+		expect(wrapper.emitted('update:modelValue')).toBeTruthy()
+		expect(wrapper.emitted('update:modelValue')[0]).toEqual(['test search'])
+	})
 
-  /* it('should apply focus directive on non-mobile devices', async () => {
+	/* it('should apply focus directive on non-mobile devices', async () => {
     const focusSpy = vi.spyOn(HTMLElement.prototype, 'focus')
 
     createWrapper()
@@ -64,30 +64,30 @@ describe('<Search>', () => {
     expect(focusSpy).toHaveBeenCalled()
   }) */
 
-  it('should not apply focus directive on mobile devices', async () => {
-    // Mock useMediaQuery as true
-    vi.mock('@vueuse/core', () => ({
-      useMediaQuery: vi.fn(() => true),
+	it('should not apply focus directive on mobile devices', async () => {
+		// Mock useMediaQuery as true
+		vi.mock('@vueuse/core', () => ({
+			useMediaQuery: vi.fn(() => true),
 			usePointer: vi.fn(() => ({ pointerType: { value: 'touch' } })),
 			useDebounceFn: vi.fn((fn) => fn)
-    }), { virtual: true })
+		}), { virtual: true })
 
-    const focusSpy = vi.spyOn(HTMLElement.prototype, 'focus')
+		const focusSpy = vi.spyOn(HTMLElement.prototype, 'focus')
 
-    createWrapper()
-    await nextTick()
+		createWrapper()
+		await nextTick()
 
-    expect(focusSpy).not.toHaveBeenCalled()
-  })
+		expect(focusSpy).not.toHaveBeenCalled()
+	})
 
-  it('should have correct CSS class', () => {
-    wrapper = createWrapper()
-    expect(wrapper.classes()).toContain('search')
-  })
+	it('should have correct CSS class', () => {
+		wrapper = createWrapper()
+		expect(wrapper.classes()).toContain('search')
+	})
 
-  it('should apply scoped styles to input', () => {
-    wrapper = createWrapper()
-    const input = wrapper.find('input')
-    expect(input.classes()).toContain('search-field')
-  })
+	it('should apply scoped styles to input', () => {
+		wrapper = createWrapper()
+		const input = wrapper.find('input')
+		expect(input.classes()).toContain('search-field')
+	})
 })

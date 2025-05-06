@@ -15,58 +15,58 @@ vi.mock('@/components/loader/NoContent.vue', () => ({ default: { template: '<div
 
 // Mock composables and functions
 vi.mock('vue-router', () => ({
-  useRoute: vi.fn()
+	useRoute: vi.fn()
 }))
 vi.mock('@unhead/vue', () => ({
-  useHead: vi.fn(),
-  useSeoMeta: vi.fn()
+	useHead: vi.fn(),
+	useSeoMeta: vi.fn()
 }))
 vi.mock('@/plugins/mixins/namespace', () => ({
-  defineNamespace: vi.fn()
+	defineNamespace: vi.fn()
 }))
 vi.mock('@/stores/projects', () => ({
-  useProjectsStore: vi.fn()
+	useProjectsStore: vi.fn()
 }))
 
 describe('ProjectsIndex', () => {
-  let wrapper
-  let mockProjectsStore
+	let wrapper
+	let mockProjectsStore
 
-  beforeEach(() => {
-    // Mock route
-    useRoute.mockReturnValue({ fullPath: '/projects' })
+	beforeEach(() => {
+		// Mock route
+		useRoute.mockReturnValue({ fullPath: '/projects' })
 
-    // Mock projects store
-    mockProjectsStore = {
-      list: [
-        { id: 1, name: 'Project 1' },
-        { id: 2, name: 'Project 2' }
-      ]
-    }
-    useProjectsStore.mockReturnValue(mockProjectsStore)
+		// Mock projects store
+		mockProjectsStore = {
+			list: [
+				{ id: 1, name: 'Project 1' },
+				{ id: 2, name: 'Project 2' }
+			]
+		}
+		useProjectsStore.mockReturnValue(mockProjectsStore)
 
-    wrapper = mount(ProjectsIndex, {
-      global: {
-        stubs: ['sequential-entrance']
-      }
-    })
-  })
+		wrapper = mount(ProjectsIndex, {
+			global: {
+				stubs: ['sequential-entrance']
+			}
+		})
+	})
 
-  it('should render the projects section', () => {
-    expect(wrapper.find('.projects').exists()).toBe(true)
-  })
+	it('should render the projects section', () => {
+		expect(wrapper.find('.projects').exists()).toBe(true)
+	})
 
-  it('should render the Search component', () => {
-    expect(wrapper.find('.search-mock').exists()).toBe(true)
-  })
+	it('should render the Search component', () => {
+		expect(wrapper.find('.search-mock').exists()).toBe(true)
+	})
 
-  it('should render the GithubCards component', () => {
-    expect(wrapper.find('.github-cards-mock').exists()).toBe(true)
-  })
+	it('should render the GithubCards component', () => {
+		expect(wrapper.find('.github-cards-mock').exists()).toBe(true)
+	})
 
-  it('should call defineNamespace on mount', () => {
-    expect(defineNamespace).toHaveBeenCalledWith('projects')
-  })
+	it('should call defineNamespace on mount', () => {
+		expect(defineNamespace).toHaveBeenCalledWith('projects')
+	})
 
 	/*
 	it('should render NoContent when no projects match search', async () => {
