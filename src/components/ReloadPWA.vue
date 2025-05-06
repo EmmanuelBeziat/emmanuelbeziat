@@ -6,8 +6,8 @@
 		</div>
 
 		<div class="buttons">
-			<button v-if="needRefresh" @click="updateServiceWorker()" class="button">Reload</button>
-			<button @click="close" class="button">Close</button>
+			<button v-if="needRefresh" class="button" @click="updateServiceWorker()">Reload</button>
+			<button class="button" @click="close">Close</button>
 		</div>
 	</div>
 </template>

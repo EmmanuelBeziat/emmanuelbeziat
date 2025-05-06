@@ -1,5 +1,5 @@
 <template>
-	<Article class="blog" v-if="post">
+	<Article v-if="post" class="blog">
 		<template #title>{{ post.title }}</template>
 
 		<template #date>Posté le <time>{{ dateFormat(post.date, { year: 'numeric', month: 'long', day: 'numeric' }) }}</time></template>

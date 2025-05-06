@@ -1,5 +1,5 @@
 <template>
-	<Article class="showcase" v-if="reference" :showFooterInfos="false">
+	<Article v-if="reference" class="showcase" :showFooterInfos="false">
 		<template #title>{{ reference.title }}</template>
 
 		<template #tags>

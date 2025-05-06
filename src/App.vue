@@ -7,7 +7,7 @@
 
 			<Menu />
 
-			<main class="main" id="content" tabindex="-1">
+			<main id="content" class="main" tabindex="-1">
 				<RouterView v-slot="{ Component }">
 					<Transition mode="out-in" :name="$route.meta.transition || 'fade'">
 						<component :is="Component" />

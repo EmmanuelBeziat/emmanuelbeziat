@@ -2,8 +2,8 @@
 	<section class="resume">
 		<hgroup class="card">
 			<div class="card-hello animation-fade-bounce">Hello! Je suis</div>
-			<h1 class="card-name animation-fade-bounce" ref="name">Emmanuel Béziat</h1>
-			<div class="card-job animation-fade-bounce" ref="job">dev web <span>full-stack</span></div>
+			<h1 ref="name" class="card-name animation-fade-bounce">Emmanuel Béziat</h1>
+			<div ref="job" class="card-job animation-fade-bounce">dev web <span>full-stack</span></div>
 		</hgroup>
 
 		<FloatingNote class="floating-note fn-age" :speedX="0.005" :speedY="0.025">

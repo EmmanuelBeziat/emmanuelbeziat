@@ -1,6 +1,6 @@
 <template>
 	<section class="blog">
-		<Search placeholder="Recherche…" label="Rechercher" v-model="searchTerms" />
+		<Search v-model="searchTerms" placeholder="Recherche…" label="Rechercher" />
 
 		<template v-if="posts.length">
 			<sequential-entrance animation="animation-fade" delay="100" class="post-list">

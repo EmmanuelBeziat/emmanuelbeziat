@@ -7,7 +7,7 @@
 
 			<div class="note --success">
 				<div class="thanks">
-					Et bien d’autres au fil des ans <small>(merci, hé ! <Icon name="heart" class="heart" />)</small>
+					Et bien d’autres au fil des ans <small>(merci, hé ! <Icon name="heart" class="heart" />)</small>
 				</div>
 			</div>
 		</template>

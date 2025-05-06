@@ -1,6 +1,6 @@
 <template>
 	<section class="projects">
-		<Search placeholder="Recherche…" label="Rechercher" v-model="searchTerms" />
+		<Search v-model="searchTerms" placeholder="Recherche…" label="Rechercher" />
 
 		<KeepAlive>
 			<GithubCards class="card" :cards="{ stats: true, languages: false }" />

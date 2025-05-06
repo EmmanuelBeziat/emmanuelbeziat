@@ -1,5 +1,5 @@
 <template>
-	<header class="header" v-once ref="header">
+	<header v-once ref="header" class="header">
 		<div class="title animation-skew-y"><router-link to="/">Emmanuel Béziat</router-link></div>
 
 		<Picture class="picture animation-bounce" />

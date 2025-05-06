@@ -9,7 +9,7 @@
 				<Icon class="tags-icon" width="1em" name="tags" />
 
 				<div class="tags-list">
-					<span class="tag" v-for="tag in reference.tags" :key="`tag-${tag}`">{{ tag }}</span>
+					<span v-for="tag in reference.tags" :key="`tag-${tag}`" class="tag">{{ tag }}</span>
 				</div>
 			</div>
 		</div>

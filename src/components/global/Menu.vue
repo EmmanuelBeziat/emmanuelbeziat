@@ -1,5 +1,5 @@
 <template>
-	<nav class="menu animation-bounce" id="menu" aria-label="Navigation principale" v-once>
+	<nav v-once id="menu" class="menu animation-bounce" aria-label="Navigation principale">
 		<MenuItem :to="{ name: 'Home' }" label="Accueil" icon="home" />
 		<MenuItem :to="{ name: 'Portfolio' }" label="Portfolio" icon="portfolio" />
 		<MenuItem :to="{ name: 'Projects' }" label="Projets" icon="projects" />

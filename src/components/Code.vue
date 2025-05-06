@@ -6,14 +6,14 @@
 				<span class="fake-button --minify" />
 				<span class="fake-button --expand" />
 			</div>
-			<span class="title" v-if="code">emmanuel@code: ~/{{ code.slug }}</span>
+			<span v-if="code" class="title">emmanuel@code: ~/{{ code.slug }}</span>
 		</div>
 
 		<div class="code">
 			<transition mode="out-in" name="fade">
 				<div v-if="code" v-html="code.markup" />
 
-				<Loader mini v-else />
+				<Loader v-else mini />
 			</transition>
 		</div>
 	</div>

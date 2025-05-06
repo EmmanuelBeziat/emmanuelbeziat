@@ -43,10 +43,10 @@ export const useProjectsStore = defineStore('projects', {
 				.catch(error => console.error(`Store error: ${error}`))
 		},
 
-		languages () {
+		/* languages () {
 			this.projects.forEach(project => {
 				// axios.get(project.languages_url).then(response => '')
 			})
-		}
+		} */
 	}
 })

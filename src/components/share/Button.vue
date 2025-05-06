@@ -1,5 +1,5 @@
 <template>
-	<button @click="$emit('on-click', icon)" :class="`share-button --${icon}`">
+	<button :class="`share-button --${icon}`" @click="$emit('on-click', icon)">
 		<Icon name="share" />
 	</button>
 </template>

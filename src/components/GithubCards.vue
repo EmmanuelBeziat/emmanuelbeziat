@@ -1,7 +1,7 @@
 <template>
 	<div :class="`github-card card-${align}`">
-		<img :src="card.stats" alt="github stats" loading="lazy" v-if="cards.stats">
-		<img :src="card.languages" alt="Github stats" loading="lazy" v-if="cards.languages">
+		<img v-if="cards.stats" :src="card.stats" alt="github stats" loading="lazy">
+		<img v-if="cards.languages" :src="card.languages" alt="Github stats" loading="lazy">
 	</div>
 </template>
 

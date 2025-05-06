@@ -40,21 +40,3 @@ export const easterSearch = {
 		}
 	}
 }
-
-import { ref } from 'vue'
-export const easterPicture = () => {
-	const pictureCount = ref(0)
-	const pictureEasterIsOn = ref(false)
-
-	const pictureOnClick = () => {
-		pictureCount.value += 1
-
-		if (pictureCount.value === 5) {
-			pictureEasterIsOn.value = true
-			setTimeout(() => {
-				pictureEasterIsOn.value = false
-				pictureCount.value = 0
-			}, 1920)
-		}
-	}
-}

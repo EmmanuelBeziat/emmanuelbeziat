@@ -12,7 +12,7 @@
 		</template>
 
 		<template #tags>
-			<Tag :value="project.language" v-if="project.language" />
+			<Tag v-if="project.language" :value="project.language" />
 			<Tag :value="project.stargazers" icon="star" />
 			<Tag :value="project.forks" icon="fork" />
 			<!-- <Tag :value="project.issues" icon="bug" /> -->

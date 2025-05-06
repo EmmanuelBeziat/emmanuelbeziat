@@ -20,7 +20,7 @@ onMounted (async () => {
 		IconComponent.value = component
 	}
 	catch (error) {
-		console.error(`Failed to import icon: ${props.name}`)
+		console.error(`Failed to import icon: ${props.name}: (${error.message})`)
 	}
 })
 </script>

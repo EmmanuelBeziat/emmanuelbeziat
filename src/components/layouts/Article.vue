@@ -7,13 +7,13 @@
 
 			<div class="post-infos">
 				<div class="date">
-					<slot name="date" v-if="$slots.date" />
+					<slot v-if="$slots.date" name="date" />
 				</div>
 
 				<div class="infos">
-					<slot name="tags" v-if="$slots.tags" />
-					<slot name="clients" v-if="$slots.clients" />
-					<slot name="share" v-if="$slots.share" />
+					<slot v-if="$slots.tags" name="tags" />
+					<slot v-if="$slots.clients" name="clients" />
+					<slot v-if="$slots.share" name="share" />
 				</div>
 			</div>
 		</header>
@@ -23,12 +23,12 @@
 		</div>
 
 		<footer class="footer animation-bounce">
-			<div class="infos" v-if="showFooterInfos">
-				<sequential-entrance animation="animation-bounce" delay="125" class="tags"  v-if="$slots.tags">
+			<div v-if="showFooterInfos" class="infos">
+				<sequential-entrance v-if="$slots.tags" animation="animation-bounce" delay="125" class="tags">
 					<slot name="tags" />
 				</sequential-entrance>
 
-				<slot name="share" v-if="$slots.share" />
+				<slot v-if="$slots.share" name="share" />
 			</div>
 
 			<slot name="footer" />
@@ -37,7 +37,7 @@
 </template>
 
 <script setup>
-const props = defineProps({
+defineProps({
 	showFooterInfos: {
 		type: Boolean,
 		default: false
