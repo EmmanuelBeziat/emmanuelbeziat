@@ -48,32 +48,18 @@ const props = defineProps({
 <style scoped>
 .post {
 	container-type: inline-size;
-
-	.footer {
-		animation-delay: .5s;
-	}
-
-	.content {
-		opacity: 0;
-		animation-delay: .45s;
-	}
 }
 
 .header {
 	margin-bottom: 2rem;
 	padding-bottom: 2rem;
 	border-bottom: 1px solid var(--color-separator);
-
-	.title {
-		line-height: 1;
-		margin-bottom: .25em;
-	}
 }
 
 .title {
-	margin: 0;
+	margin-block: 0 .25em;
 	color: var(--color-red);
-	font: 400 var(--font-size-article-title)/1.25 var(--font-stack-heading);
+	font: 400 var(--font-size-article-title)/1 var(--font-stack-heading);
 }
 
 .infos {
@@ -101,6 +87,8 @@ const props = defineProps({
 
 .content {
 	text-align: justify;
+	opacity: 0;
+	animation-delay: .45s;
 
 	:where(h2, h3, h4, h5) {
 		position: relative;
@@ -124,6 +112,7 @@ const props = defineProps({
 	margin-top: 2rem;
 	padding-top: 2rem;
 	border-top: 1px solid var(--color-separator);
+	animation-delay: .5s;
 }
 
 :deep(.tags) {

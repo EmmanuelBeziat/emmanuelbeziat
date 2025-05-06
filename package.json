@@ -19,7 +19,13 @@
 		"setup": "npm i && node setup.js",
 		"preview": "vite preview --port 3033",
 		"lint": "eslint . --ext .vue,.js,.jsx,.cjs,.mjs --fix --ignore-path .gitignore",
-		"test": "npx vitest --run"
+		"test": "npx vitest --run",
+		"prepare": "husky"
+	},
+	"lint-staged": {
+		"src/**/*.{vue,css}": [
+			"npx stylelint --fix"
+		]
 	},
 	"dependencies": {
 		"@unhead/vue": "^2.0.8",
@@ -42,7 +48,9 @@
 		"autoprefixer": "^10.4.21",
 		"eslint": "^9.26.0",
 		"eslint-plugin-vue": "^10.1.0",
+		"husky": "^9.1.7",
 		"jsdom": "^26.1.0",
+		"lint-staged": "^15.5.2",
 		"postcss": "^8.5.3",
 		"postcss-html": "^1.8.0",
 		"stylelint": "^16.19.1",

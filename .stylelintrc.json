@@ -10,7 +10,13 @@
 	],
 	"rules": {
 		"alpha-value-notation": "number",
-		"color-function-notation": "modern",
+		"color-function-notation": [
+			"modern", {
+				"ignore": [
+					"with-var-inside"
+				]
+			}
+		],
 		"color-hex-length": "long",
 		"import-notation": "string",
 		"selector-class-pattern": [

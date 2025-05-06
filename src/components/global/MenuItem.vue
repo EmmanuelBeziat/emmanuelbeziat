@@ -61,11 +61,8 @@ const isActive = computed(() => router.resolve(props.to).path === '/' + route.pa
 		transition: var(--transition-normal) ease-in-out;
 		color: var(--color-text);
 		content: var(--content);
-	}
 
-	@media (width <= 768px) {
-		&::before,
-		&::after {
+		@media (width <= 768px) {
 			display: none;
 		}
 	}
@@ -88,21 +85,21 @@ const isActive = computed(() => router.resolve(props.to).path === '/' + route.pa
 		color: var(--link-color-hover);
 	}
 
-	&.--active {
-		color: var(--link-color-active);
-
-		&:hover::before,
-		&:hover::after {
-			color: var(--link-color-hover);
-		}
-	}
-
 	&:is(:hover, :focus),
 	&.--active {
 		&::before,
 		&::after {
 			opacity: 1;
 			translate: 0 0;
+		}
+	}
+
+	&.--active {
+		color: var(--link-color-active);
+
+		&:hover::before,
+		&:hover::after {
+			color: var(--link-color-hover);
 		}
 	}
 

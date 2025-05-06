@@ -26,9 +26,9 @@ import Loader from '@/components/loader/Loader.vue'
 
 		&::before {
 			content: "[";
-
 			color: var(--color-red);
 		}
+
 		&::after {
 			content: "]";
 			color: var(--color-red);
