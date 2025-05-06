@@ -1,6 +1,6 @@
 <template>
 	<RouterLink class="menu-item" :class="!isActive || '--active'" :to>
-			<Icon :name="icon" />
+		<Icon :name="icon" />
 		{{ label }}
 	</RouterLink>
 </template>

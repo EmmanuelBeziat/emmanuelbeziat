@@ -19,7 +19,6 @@ export default [
 		},
 		rules: {
 			...vuePlugin.configs.base.rules,
-			// ici tu ajoutes manuellement les règles essentielles (si tu veux)
 			'vue/multi-word-component-names': 'off',
 		},
 	},
