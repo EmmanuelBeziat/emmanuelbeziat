@@ -7,6 +7,7 @@ import { VitePWA } from 'vite-plugin-pwa'
 import { createHtmlPlugin } from 'vite-plugin-html'
 import svg from 'vite-svg-loader'
 import Inspect from 'vite-plugin-inspect'
+import stylelint from 'vite-plugin-stylelint'
 
 const pwa = {
 	registerType: 'autoUpdate',
@@ -53,6 +54,7 @@ export default ({ mode }) => {
 				outputDir: '.vite-inspect'
 			}),
 			vue(),
+			stylelint(),
 			VitePWA(pwa),
 			svg(),
 			createHtmlPlugin({
