@@ -28,7 +28,7 @@ defineProps({
 	gap: 4px;
 
 	svg {
-		fill: currentColor;
+		fill: currentcolor;
 		height: .75em;
 		margin-right: .25em;
 	}

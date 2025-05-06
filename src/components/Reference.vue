@@ -56,7 +56,7 @@ defineProps({
 
 .layer :deep(svg) {
 	width: 128px;
-	fill: currentColor;
+	fill: currentcolor;
 	aspect-ratio: 1;
 	backface-visibility: hidden;
 	transition: var(--transition-slow) var(--ease-back-out) .1s;
@@ -72,10 +72,7 @@ defineProps({
 	pointer-events: none;
 	z-index: 5;
 	position: absolute;
-	top: auto;
-	right: 0;
-	bottom: 0;
-	left: 0;
+	inset: auto 0 0;
 	padding: 1rem;
 	display: flex;
 	flex-direction: column;
@@ -106,7 +103,7 @@ defineProps({
 			background: var(--showcase-color);
 		}
 
-		.showcase__image {
+		.showcase-image {
 			scale: 1.2;
 		}
 
@@ -126,18 +123,23 @@ defineProps({
 	.blue {
 		--showcase-color: var(--color-blue);
 	}
+
 	.red {
 		--showcase-color: var(--color-red);
 	}
+
 	.violet {
 		--showcase-color: var(--color-violet);
 	}
+
 	.yellow {
 		--showcase-color: var(--color-yellow);
 	}
+
 	.green {
 		--showcase-color: var(--color-green);
 	}
+
 	.black {
 		--showcase-color: var(--color-surface-light);
 	}

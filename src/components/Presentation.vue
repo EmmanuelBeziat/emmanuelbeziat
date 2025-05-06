@@ -109,7 +109,6 @@ checkAge(personal.birthday)
 .card-name {
 	margin: 0;
 	font: inherit;
-	font-size: 80px;
 	color: var(--color-blue);
 	animation-delay: .55s;
 	white-space: nowrap;
@@ -145,7 +144,7 @@ checkAge(personal.birthday)
 	position: absolute;
 	color: var(--color-green);
 	opacity: 0;
-	animation-name: footNotesIn;
+	animation-name: foot-notes-in;
 	animation-duration: 2s;
 	animation-fill-mode: forwards;
 
@@ -214,7 +213,7 @@ checkAge(personal.birthday)
 	}
 }
 
-@keyframes footNotesIn {
+@keyframes foot-notes-in {
 	to {
 		opacity: 1
 	}

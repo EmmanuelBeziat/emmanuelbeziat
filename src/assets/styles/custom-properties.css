@@ -1,31 +1,28 @@
 :root {
-	/* Colors */
+	/* colors */
 	--color-surface: #1e192b;
 	--color-text: #eeeeee;
-
 	--color-light: #f9fad3;
 	--color-green: #c3e88d;
 	--color-blue: #4eb0e4;
 	--color-violet: #a48aec;
 	--color-yellow: #ffcb6b;
 	--color-red: #ec4185;
-
 	--color-separator: var(--color-surface-light);
-
 	--color-surface-light: #282139;
 	--color-surface-lighter: #4f4271;
 	--color-surface-dark: #1b1627;
 	--color-surface-darker: #171320;
 
-	/* fonts */
-	--font-stack-common: "Source Sans 3", system-ui, "Segoe UI", "Helvetica Neue", Roboto, Arial, sans-serif;
-	--font-stack-heading: "Yanone Kaffeesatz", "Source Sans 3", system-ui, "Segoe UI", "Helvetica Neue", Roboto, Arial, sans-serif;
+	/* fonts stacks */
+	--font-stack-common: "Source Sans 3", system-ui, "Segoe UI", "Helvetica Neue", roboto, arial, sans-serif;
+	--font-stack-heading: "Yanone Kaffeesatz", "Source Sans 3", system-ui, "Segoe UI", "Helvetica Neue", roboto, arial, sans-serif;
 	--font-stack-code: "JetBrains Mono", monospace;
 	--font-stack-hand: "jr!hand", cursive;
 
+	/* font sizes */
 	--font-size-base: 16px;
 	--font-size-title: var(--font-size-heading-3);
-
 	--font-size-heading-1: 3.815rem;
 	--font-size-heading-2: 3.052rem;
 	--font-size-heading-3: 2.441rem;
@@ -40,44 +37,21 @@
 		--font-size-heading-4: 1.728rem;
 		--font-size-heading-5: 1.44rem;
 		--font-size-heading-6: 1.2rem;
-
-		/* Gutters */
-		--gutter-screen-y: 2rem;
-		--gutter-screen-x: 2rem;
 	}
 
 	--font-size-article-title: var(--font-size-heading-1);
 	--font-size-article-title-small: var(--font-size-heading-4);
 	--font-size-article-infos: .875rem;
-
 	--font-size-menu: 1.875rem;
 	--font-size-quotes: 1.25rem;
 	--font-size-code: .875rem;
 
+	/* transitions */
 	--transition-xfast: .2s;
 	--transition-fast: .25s;
 	--transition-normal: .3s;
 	--transition-slow: .5s;
 	--transition-xslow: .75s;
-
-	--ease-back-out: cubic-bezier(.295, 1.750, .690, .900);
-	--ease-spring: linear(0, -0.002 7.8%, -0.013 13.5%, -0.09 30.5%, -0.088 33.8%, -0.07 36.6%, 0.003 40.8%, 0.129 44.4%, 0.309 47.6%, 0.807 54.3%, 0.95 57.6%, 1.042 61.3%, 1.081 64.8%, 1.09 68.9%, 1.013 86.5%, 1.002 92.2%, 1);
-
-	/* Gutters */
-	--gutter-screen-y: 2rem;
-	--gutter-screen-x: 2rem;
-
-	/* Brands */
-	--color-brand-twitter: #55acee;
-	--color-brand-x: #000;
-	--color-brand-facebook: #3b5988;
-	--color-brand-codepen: #000;
-	--color-brand-github: #333;
-	--color-brand-linkedin: #0077b5;
-	--color-brand-instagram: #833ab4;
-	--color-brand-youtube: #ff0000;
-	--color-brand-npmjs: #cb3837;
-	--color-brand-bluesky: #0085ff;
 
 	@media (prefers-reduced-motion: reduce) {
 		--transition-xfast: 0;
@@ -86,4 +60,29 @@
 		--transition-slow: 0;
 		--transition-xslow: 0;
 	}
+
+	/* transition styles */
+	--ease-back-out: cubic-bezier(.295, 1.750, .690, .900);
+	--ease-spring: linear(0, -0.002 7.8%, -0.013 13.5%, -0.09 30.5%, -0.088 33.8%, -0.07 36.6%, 0.003 40.8%, 0.129 44.4%, 0.309 47.6%, 0.807 54.3%, 0.95 57.6%, 1.042 61.3%, 1.081 64.8%, 1.09 68.9%, 1.013 86.5%, 1.002 92.2%, 1);
+
+	/* Gutters */
+	--gutter-screen-y: 2rem;
+	--gutter-screen-x: 2rem;
+
+	@media (width <= 768px) {
+		--gutter-screen-y: 2rem;
+		--gutter-screen-x: 2rem;
+	}
+
+	/* Brands */
+	--color-brand-twitter: #55acee;
+	--color-brand-x: #000000;
+	--color-brand-facebook: #3b5988;
+	--color-brand-codepen: #000000;
+	--color-brand-github: #333333;
+	--color-brand-linkedin: #0077b5;
+	--color-brand-instagram: #833ab4;
+	--color-brand-youtube: #ff0000;
+	--color-brand-npmjs: #cb3837;
+	--color-brand-bluesky: #0085ff;
 }

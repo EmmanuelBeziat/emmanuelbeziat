@@ -1,5 +1,5 @@
 <template>
-	<RouterLink class="menu__item" :class="!isActive || '-active'" :to>
+	<RouterLink class="menu-item" :class="!isActive || '--active'" :to>
 			<Icon :name="icon" />
 		{{ label }}
 	</RouterLink>
@@ -40,7 +40,7 @@ const isActive = computed(() => router.resolve(props.to).path === '/' + route.pa
 	initial-value: var(--color-text);
 }
 
-.menu__item {
+.menu-item {
 	font: 400 var(--font-size-menu)/1 var(--font-stack-heading);
 	text-decoration: none;
 	color: var(--link-color);
@@ -72,12 +72,14 @@ const isActive = computed(() => router.resolve(props.to).path === '/' + route.pa
 
 	&::before {
 		--content: "<";
+
 		translate: 20px 0;
 		padding-right: .125em;
 	}
 
 	&::after {
 		--content: "/>";
+
 		translate: -20px 0;
 		padding-left: .1875em;
 	}
@@ -86,7 +88,7 @@ const isActive = computed(() => router.resolve(props.to).path === '/' + route.pa
 		color: var(--link-color-hover);
 	}
 
-	&.-active {
+	&.--active {
 		color: var(--link-color-active);
 
 		&:hover::before,
@@ -96,7 +98,7 @@ const isActive = computed(() => router.resolve(props.to).path === '/' + route.pa
 	}
 
 	&:is(:hover, :focus),
-	&.-active {
+	&.--active {
 		&::before,
 		&::after {
 			opacity: 1;
@@ -130,7 +132,7 @@ const isActive = computed(() => router.resolve(props.to).path === '/' + route.pa
 	}
 }
 
-.menu__item :deep(svg) {
+.menu-item :deep(svg) {
 	display: none;
 	translate: 0 0;
 	padding: 0;
@@ -138,7 +140,7 @@ const isActive = computed(() => router.resolve(props.to).path === '/' + route.pa
 	width: 24px;
 	aspect-ratio: 1/1;
 	margin: 0 auto 5px;
-	fill: currentColor;
+	fill: currentcolor;
 
 	@media (width <= 768px) {
 		display: block;

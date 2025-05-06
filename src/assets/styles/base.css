@@ -1,7 +1,7 @@
 ::selection {
 	background: var(--color-blue);
 	color: var(--color-text);
-	text-shadow: 0 1px 0 rgba(0, 0, 0, .5);
+	text-shadow: 0 1px 0 rgb(0 0 0 / .5);
 }
 
 :root {
@@ -82,8 +82,8 @@ a:is(:hover, :focus) {
 	outline: none;
 }
 
-a:not([href]):not([class]),
-a:not([href]):not([class]):hover {
+a:not([href], [class]),
+a:not([href], [class]):hover {
 	color: inherit;
 }
 
@@ -116,10 +116,11 @@ h2 {
 h3 {
 	--title-size: var(--font-size-heading-3);
 	--title-color: var(--color-yellow);
+
 	line-height: 1.5;
 }
 
-:where(button, [type=button], [type=reset], [type=submit]):not(:disabled) {
+:where(button, [type="button"], [type="reset"], [type="submit"]):not(:disabled) {
 	cursor: pointer;
 }
 

@@ -35,7 +35,7 @@ defineProps({
 
 	svg {
 		width: 1.25em;
-		stroke: currentColor;
+		stroke: currentcolor;
 		translate: var(--translate);
 		rotate: var(--rotate);
 		transition: translate var(--transition-fast) ease-in-out, rotate var(--transition-fast) ease-in-out;

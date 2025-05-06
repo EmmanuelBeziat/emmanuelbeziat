@@ -94,7 +94,7 @@ defineProps({
 }
 
 .network :deep(svg) {
-	fill: currentColor;
+	fill: currentcolor;
 	transition: var(--transition-fast) ease-in-out;
 }
 </style>

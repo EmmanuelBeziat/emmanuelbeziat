@@ -45,7 +45,7 @@ defineProps({
 
 .share-button :deep(svg) {
 	padding: .5em;
-	fill: currentColor;
+	fill: currentcolor;
 	width: 100%;
 }
 </style>

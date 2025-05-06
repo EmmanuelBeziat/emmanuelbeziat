@@ -54,7 +54,7 @@
  */
 .animation-fade {
 	opacity: 0;
-	animation-name: animationFade;
+	animation-name: animation-fade;
 	animation-duration: var(--transition-slow);
 	animation-fill-mode: forwards;
 }
@@ -63,13 +63,13 @@
 	opacity: 0;
 	translate: 0 20px;
 	scale: .975;
-	animation: .765s var(--ease-back-out) .25s forwards backSlideIn;
+	animation: .765s var(--ease-back-out) .25s forwards animation-back-slide-in;
 }
 
 .animation-fade-bounce {
 	opacity: 0;
 	scale: .975;
-	animation-name: backSlideIn;
+	animation-name: animation-back-slide-in;
 	animation-duration: var(--transition-slow);
 	animation-timing-function: var(--ease-back-out);
 	animation-fill-mode: forwards;
@@ -79,7 +79,7 @@
 	opacity: 0;
 	translate: 0 16px;
 	scale: .925;
-	animation-name: animationFadeScale;
+	animation-name: animation-fade-scale;
 	transform-origin: bottom left;
 	animation-timing-function: var(--ease-back-out);
 	animation-duration: var(--transition-slow);
@@ -91,7 +91,7 @@
 	translate: 0 25%;
 	transform: skewY(-5deg);
 	transform-origin: top right;
-	animation: .765s var(--ease-back-out) .25s forwards animationSkewY;
+	animation: .765s var(--ease-back-out) .25s forwards animation-skew-y;
 }
 
 .animation-skew-y-revert {
@@ -99,24 +99,16 @@
 	translate: 0 25%;
 	transform: skewY(5deg);
 	transform-origin: top left;
-	animation: .765s var(--ease-back-out) .25s forwards animationSkewY;
+	animation: .765s var(--ease-back-out) .25s forwards animation-skew-y;
 }
 
-@keyframes animationFade {
+@keyframes animation-fade {
 	to {
 		opacity: 1;
 	}
 }
 
-@keyframes animationFadeScale {
-	to {
-		opacity: 1;
-		translate: 0 0;
-		scale: 1;
-	}
-}
-
-@keyframes backSlideIn {
+@keyframes animation-fade-scale {
 	to {
 		opacity: 1;
 		translate: 0 0;
@@ -124,7 +116,15 @@
 	}
 }
 
-@keyframes animationSkewY {
+@keyframes animation-back-slide-in {
+	to {
+		opacity: 1;
+		translate: 0 0;
+		scale: 1;
+	}
+}
+
+@keyframes animation-skew-y {
 	to {
 		opacity: 1;
 		translate: 0 0;

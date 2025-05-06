@@ -43,6 +43,7 @@ const vFocus = {
 
 .search-field {
 	--border-color: var(--color-separator);
+
 	flex: 1;
 	padding: 10px 1rem;
 	background: var(--color-surface-dark);

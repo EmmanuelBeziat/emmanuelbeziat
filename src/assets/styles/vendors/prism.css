@@ -1,4 +1,5 @@
 /* http://prismjs.com/download.html?themes=prism-okaidia&languages=markup+css+css-extras+clike+javascript+php+coffeescript+scss+bash+sql+csharp */
+
 /**
  * okaidia theme for JavaScript, CSS and HTML
  * Loosely based on Monokai textmate theme by http://www.monokai.nl/
@@ -8,7 +9,7 @@
 code[class*="language-"],
 pre[class*="language-"] {
 	color: #f8f8f2;
-	text-shadow: 0 1px rgba(0,0,0,.3);
+	text-shadow: 0 1px rgb(0 0 0 / .3);
 	font: 400 var(--font-size-code)/1.45 var(--font-stack-code);
 	direction: ltr;
 	text-align: left;
@@ -50,7 +51,7 @@ pre[class*="language-"] {
 code[class*="language-"]::selection {
 	background: var(--color-red);
 	color: var(--color-text);
-	text-shadow: 0 1px 0 rgba(0,0,0,.5);
+	text-shadow: 0 1px 0 rgb(0 0 0 / .5);
 }
 
 @media (width <= 768px) {
@@ -156,8 +157,8 @@ pre[data-line] {
 	padding-left: 0;
 	padding-right: 0;
 	margin-top: 1em /* Same as .prism’s padding-top */;
-	background: rgba(153,122,102,.08);
-	background: linear-gradient(to right, rgba(153,122,102,.1) 70%, rgba(153,122,102,0));
+	background: rgb(153 122 102 / .08);
+	background: linear-gradient(to right, rgb(153 122 102 / .1) 70%, rgb(153 122 102 / 0));
 	pointer-events: none;
 	line-height: inherit;
 	white-space: pre;
@@ -171,14 +172,14 @@ pre[data-line] {
 	left: .6em;
 	min-width: 1em;
 	padding: 0 .5em;
-	background-color: rgba(153,122,102,.4);
+	background-color: rgb(153 122 102 / .4);
 	color: #f5f2f0;
 	font: 700 65%/1.5 sans-serif;
 	text-align: center;
 	vertical-align: .3em;
 	border-radius: 999px;
 	text-shadow: none;
-	box-shadow: 0 1px #fff;
+	box-shadow: 0 1px #ffffff;
 }
 
 .line-highlight[data-end]::after {
@@ -223,7 +224,7 @@ pre[class*="language-"]::after,
 .code-toolbar .toolbar-item {
 	color: var(--color-text);
 	background-color: var(--color-surface-light);
-	border-radius: 0 3px 0 3px;
+	border-radius: 0 3px;
 	display: inline-block;
 	position: absolute;
 	top: 0;
