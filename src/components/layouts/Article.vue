@@ -19,6 +19,7 @@
 		</header>
 
 		<div class="content animation-fade">
+			<slot name="note" />
 			<slot name="content" />
 		</div>
 

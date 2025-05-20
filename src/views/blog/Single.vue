@@ -14,13 +14,20 @@
 			<Share />
 		</template>
 
+		<template #note>
+			<Note v-if="articleIsOld" type="important">
+				<strong>Article datant de plus de 5 ans</strong><br>
+				Attention, cet article a été rédigé il y a une éternité à l'échelle du web. Certaines informations peuvent s'avérer obsolète.
+			</Note>
+		</template>
+
 		<template #content>
 			<div v-html="post.markup"></div>
 		</template>
 
 		<template #footer>
 			<div class="help">
-				Un problème ? Une question ? <br>Vous pouvez me contacter sur <a href="https://www.twitter.com/EmmanuelBeziat" target="_blank" rel="noopener noreferrer">Twitter</a>, ou bien créer un sujet sur un forum d’entraide comme <a href="https://zestedesavoir.com/" target="_blank" rel="noopener noreferrer">ZesteDeSavoir</a>, <a href="https://openclassrooms.com/forum/" target="_blank" rel="noopener noreferrer">OpenClassrooms</a>, <a href="http://www.alsacreations.com/" target="_blank" rel="noopener noreferrer">Alsacréations</a>…
+				Un problème ? Une question ? <br>Vous pouvez me contacter sur <a href="https://www.twitter.com/EmmanuelBeziat" target="_blank" rel="noopener noreferrer">Twitter</a>, ou bien créer un sujet sur un forum d’entraide comme <a href="https://zestedesavoir.com/" target="_blank" rel="noopener noreferrer">ZesteDeSavoir</a>, <a href="https://openclassrooms.com/forum/" target="_blank" rel="noopener noreferrer">OpenClassrooms</a>, <a href="http://www.alsacreations.com/" target="_blank" rel="noopener noreferrer">Alsacréations</a>…
 			</div>
 		</template>
 	</Article>
@@ -35,8 +42,10 @@ import { useSeoMeta, useHead } from '@unhead/vue'
 import Article from '@/components/layouts/Article.vue'
 import Share from '@/components/share/Share.vue'
 import Tag from '@/components/Tag.vue'
+import Note from '@/components/Note.vue'
 
 import { dateFormat } from '@/plugins/mixins/date'
+import { isOlderThan } from '@/plugins/mixins/dateComparison'
 import { usePostsStore } from '@/stores/posts'
 import { defineNamespace } from '@/plugins/mixins/namespace'
 
@@ -51,6 +60,7 @@ const route = useRoute()
 const fullURL = computed(() => openGraph.url + route.fullPath)
 const postsStore = usePostsStore()
 const post = computed(() => postsStore.getPost(props.slug))
+const articleIsOld = computed(() => isOlderThan(post.value?.date, 5))
 
 onMounted(() => {
 	defineNamespace('blog')

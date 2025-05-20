@@ -100,7 +100,7 @@ svg {
 h1, h2, h3, h4 {
 	font: 300 var(--title-size)/1 var(--font-stack-heading);
 	color: var(--title-color);
-	margin: 2em 0 .75em;
+	margin: 1.5em 0 .75em;
 }
 
 h1 {
