@@ -5,17 +5,17 @@ import BlogSingle from '@/views/blog/Single.vue'
 import { usePostsStore } from '@/stores/posts'
 import { useRoute } from 'vue-router'
 import { useHead, useSeoMeta } from '@unhead/vue'
-import { defineNamespace } from '@/plugins/mixins/namespace'
+import { defineNamespace } from '@/utilities/namespace'
 import Share from '@/components/share/Share.vue'
 import Tag from '@/components/Tag.vue'
-import { dateFormat } from '@/plugins/mixins/date'
+import { dateFormat } from '@/utilities/date'
 
 // Mocks
 vi.mock('vue-router', () => ({ useRoute: vi.fn() }))
 vi.mock('@unhead/vue', () => ({ useHead: vi.fn(), useSeoMeta: vi.fn() }))
-vi.mock('@/plugins/mixins/namespace', () => ({ defineNamespace: vi.fn() }))
+vi.mock('@/utilities/namespace', () => ({ defineNamespace: vi.fn() }))
 vi.mock('@/stores/posts', () => ({ usePostsStore: vi.fn() }))
-vi.mock('@/plugins/mixins/date', () => ({ dateFormat: vi.fn() }))
+vi.mock('@/utilities/date', () => ({ dateFormat: vi.fn() }))
 
 // Mock child components
 vi.mock('@/components/share/Share.vue', () => ({ default: { template: '<div class="share-mock"></div>' } }))

@@ -39,7 +39,7 @@ import { openGraph } from '@/config'
 import { useRoute } from 'vue-router'
 import { useHead, useSeoMeta } from '@unhead/vue'
 
-import { defineNamespace } from '@/plugins/mixins/namespace'
+import { defineNamespace } from '@/utilities/namespace'
 
 import GithubCards from '@/components/GithubCards.vue'
 

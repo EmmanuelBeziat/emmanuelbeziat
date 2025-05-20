@@ -3,10 +3,10 @@ import { describe, it, expect, vi } from 'vitest'
 import Project from '@/components/Project.vue'
 import Tag from '@/components/Tag.vue'
 import Icon from '@/components/Icon.vue'
-import { dateFormat } from '@/plugins/mixins/date'
+import { dateFormat } from '@/utilities/date'
 
 // Mock the dateFormat function
-vi.mock('@/plugins/mixins/date', () => ({
+vi.mock('@/utilities/date', () => ({
 	dateFormat: vi.fn((date) => `Formatted ${date}`)
 }))
 

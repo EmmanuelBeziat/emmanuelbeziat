@@ -17,7 +17,7 @@
 <script setup>
 import { computed } from 'vue'
 import { useHead } from '@unhead/vue'
-import { selectRandomItem } from '@/plugins/mixins/randomize'
+import { selectRandomItem } from '@/utilities/randomize'
 
 const errors = [
 	{ image: 'doctor-who.avifs', title: 'What?!' },

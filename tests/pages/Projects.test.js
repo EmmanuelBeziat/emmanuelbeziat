@@ -5,7 +5,7 @@ import ProjectsIndex from '@/views/projects/Index.vue'
 import { useProjectsStore } from '@/stores/projects'
 import { useRoute } from 'vue-router'
 import { useHead, useSeoMeta } from '@unhead/vue'
-import { defineNamespace } from '@/plugins/mixins/namespace'
+import { defineNamespace } from '@/utilities/namespace'
 
 // Mock components
 vi.mock('@/components/Project.vue', () => ({ default: { template: '<div class="project-mock"></div>' } }))
@@ -21,7 +21,7 @@ vi.mock('@unhead/vue', () => ({
 	useHead: vi.fn(),
 	useSeoMeta: vi.fn()
 }))
-vi.mock('@/plugins/mixins/namespace', () => ({
+vi.mock('@/utilities/namespace', () => ({
 	defineNamespace: vi.fn()
 }))
 vi.mock('@/stores/projects', () => ({

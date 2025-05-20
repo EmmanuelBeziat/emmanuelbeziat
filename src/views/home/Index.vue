@@ -9,7 +9,7 @@
 
 <script setup>
 import { onMounted } from 'vue'
-import { defineNamespace } from '@/plugins/mixins/namespace'
+import { defineNamespace } from '@/utilities/namespace'
 
 import Presentation from '@/components/Presentation.vue'
 import CodeHome from '@/components/Code.vue'

@@ -37,7 +37,7 @@ import Tag from '@/components/Tag.vue'
 import Navigation from '@/components/BackToPage.vue'
 
 import { usePortfolioStore } from '@/stores/portfolio'
-import { defineNamespace } from '@/plugins/mixins/namespace'
+import { defineNamespace } from '@/utilities/namespace'
 
 const props = defineProps({
 	slug: {

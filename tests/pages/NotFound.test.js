@@ -3,7 +3,7 @@ import { describe, it, expect, vi, beforeEach } from 'vitest'
 import { nextTick } from 'vue'
 import NotFound from '@/views/NotFound.vue'
 import { useHead } from '@unhead/vue'
-import { selectRandomItem } from '@/plugins/mixins/randomize'
+import { selectRandomItem } from '@/utilities/randomize'
 
 // Mock the useHead composable
 vi.mock('@unhead/vue', () => ({
@@ -11,7 +11,7 @@ vi.mock('@unhead/vue', () => ({
 }))
 
 // Mock the selectRandomItem function
-vi.mock('@/plugins/mixins/randomize', () => ({
+vi.mock('@/utilities/randomize', () => ({
 	selectRandomItem: vi.fn()
 }))
 

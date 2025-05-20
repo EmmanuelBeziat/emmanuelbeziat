@@ -1,5 +1,5 @@
 import { defineStore } from 'pinia'
-import { api } from '@/config'
+import { fetchPosts } from '@/api/posts'
 
 export const usePostsStore = defineStore('posts', {
 	state: () => ({
@@ -14,10 +14,12 @@ export const usePostsStore = defineStore('posts', {
 
 	actions: {
 		async fetch () {
-			await fetch(api.posts)
-				.then(response => response.json())
-				.then(data => { this.posts = data.filter(item => item.publish) })
-				.catch(error => console.error(`Store error: ${error}`))
+			try {
+				this.posts = await fetchPosts()
+			}
+			catch (error) {
+				console.error(`Store error: ${error}`)
+			}
 		}
 	}
 })

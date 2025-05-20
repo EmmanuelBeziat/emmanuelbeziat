@@ -1,5 +1,5 @@
 import { defineStore } from 'pinia'
-import { api } from '@/config'
+import { fetchPortfolio } from '@/api/portfolio'
 
 export const usePortfolioStore = defineStore('portfolio', {
 	state: () => ({
@@ -14,10 +14,12 @@ export const usePortfolioStore = defineStore('portfolio', {
 
 	actions: {
 		async fetch () {
-			await fetch(api.refs)
-				.then(response => response.json())
-				.then(data => { this.portfolio = data })
-				.catch(error => console.error(`Store error: ${error}`))
+			try {
+				this.portfolio = await fetchPortfolio()
+			}
+			catch (error) {
+				console.error(`Store error: ${error}`)
+			}
 		}
 	}
 })

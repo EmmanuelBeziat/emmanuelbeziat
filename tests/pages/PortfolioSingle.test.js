@@ -5,14 +5,14 @@ import PortfolioSingle from '@/views/portfolio/Single.vue'
 import { usePortfolioStore } from '@/stores/portfolio'
 import { useRoute } from 'vue-router'
 import { useHead, useSeoMeta } from '@unhead/vue'
-import { defineNamespace } from '@/plugins/mixins/namespace'
+import { defineNamespace } from '@/utilities/namespace'
 import Tag from '@/components/Tag.vue'
 import Navigation from '@/components/BackToPage.vue'
 
 // Mocks
 vi.mock('vue-router', () => ({ useRoute: vi.fn() }))
 vi.mock('@unhead/vue', () => ({ useHead: vi.fn(), useSeoMeta: vi.fn() }))
-vi.mock('@/plugins/mixins/namespace', () => ({ defineNamespace: vi.fn() }))
+vi.mock('@/utilities/namespace', () => ({ defineNamespace: vi.fn() }))
 vi.mock('@/stores/portfolio', () => ({ usePortfolioStore: vi.fn() }))
 
 // Mock child components

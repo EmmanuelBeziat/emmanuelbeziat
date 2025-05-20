@@ -4,7 +4,7 @@ import { nextTick } from 'vue'
 import AboutIndex from '@/views/about/Index.vue'
 import GithubCards from '@/components/GithubCards.vue'
 import { useRoute } from 'vue-router'
-import { defineNamespace } from '@/plugins/mixins/namespace'
+import { defineNamespace } from '@/utilities/namespace'
 
 // Mock the vue-router
 vi.mock('vue-router', () => ({
@@ -18,7 +18,7 @@ vi.mock('@unhead/vue', () => ({
 }))
 
 // Mock the defineNamespace function
-vi.mock('@/plugins/mixins/namespace', () => ({
+vi.mock('@/utilities/namespace', () => ({
 	defineNamespace: vi.fn()
 }))
 

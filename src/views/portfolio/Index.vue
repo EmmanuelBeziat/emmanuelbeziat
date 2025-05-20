@@ -28,7 +28,7 @@ import Icon from '@/components/Icon.vue'
 
 
 import { usePortfolioStore } from '@/stores/portfolio'
-import { defineNamespace } from '@/plugins/mixins/namespace'
+import { defineNamespace } from '@/utilities/namespace'
 
 const route = useRoute()
 const portfolioStore = usePortfolioStore()

@@ -1,5 +1,5 @@
 import { defineStore } from 'pinia'
-import { api } from '@/config'
+import { fetchCodes } from '@/api/codes'
 
 export const useCodesStore = defineStore('codes', {
 	state: () => ({
@@ -14,10 +14,12 @@ export const useCodesStore = defineStore('codes', {
 
 	actions: {
 		async fetch () {
-			await fetch(api.codes)
-				.then(response => response.json())
-				.then(data => { this.codes = data })
-				.catch(error => console.error(`Store error: ${error}`))
+			try {
+				this.codes = await fetchCodes()
+			}
+			catch (error) {
+				console.error(`Store error: ${error}`)
+			}
 		}
 	}
 })

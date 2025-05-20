@@ -44,10 +44,10 @@ import Share from '@/components/share/Share.vue'
 import Tag from '@/components/Tag.vue'
 import Note from '@/components/Note.vue'
 
-import { dateFormat } from '@/plugins/mixins/date'
-import { isOlderThan } from '@/plugins/mixins/dateComparison'
+import { dateFormat } from '@/utilities/date'
+import { isOlderThan } from '@/utilities/dateComparison'
 import { usePostsStore } from '@/stores/posts'
-import { defineNamespace } from '@/plugins/mixins/namespace'
+import { defineNamespace } from '@/utilities/namespace'
 
 const props = defineProps({
 	slug: {

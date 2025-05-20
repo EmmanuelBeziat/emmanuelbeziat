@@ -21,7 +21,7 @@
 <script setup>
 import ListArticle from '@/components/layouts/ListArticle.vue'
 import Tag from '@/components/Tag.vue'
-import { dateFormat } from '@/plugins/mixins/date'
+import { dateFormat } from '@/utilities/date'
 
 const props = defineProps({
 	post: {

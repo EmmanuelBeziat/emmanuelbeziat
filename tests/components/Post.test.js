@@ -1,11 +1,11 @@
 import { describe, it, expect, vi } from 'vitest'
 import { mount } from '@vue/test-utils'
-import { dateFormat } from '@/plugins/mixins/date'
+import { dateFormat } from '@/utilities/date'
 import Post from '@/components/Post.vue'
 import Tag from '@/components/Tag.vue'
 
 // Mock the dateFormat function
-vi.mock('@/plugins/mixins/date', () => ({
+vi.mock('@/utilities/date', () => ({
 	dateFormat: vi.fn()
 }))
 

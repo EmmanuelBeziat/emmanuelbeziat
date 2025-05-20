@@ -4,7 +4,7 @@ import { nextTick } from 'vue'
 import BlogIndex from '@/views/blog/Index.vue'
 import { usePostsStore } from '@/stores/posts'
 import { useRoute } from 'vue-router'
-import { defineNamespace } from '@/plugins/mixins/namespace'
+import { defineNamespace } from '@/utilities/namespace'
 import Search from '@/components/Search.vue'
 import Post from '@/components/Post.vue'
 import NoContent from '@/components/loader/NoContent.vue'
@@ -21,7 +21,7 @@ vi.mock('@unhead/vue', () => ({
 }))
 
 // Mock the defineNamespace function
-vi.mock('@/plugins/mixins/namespace', () => ({
+vi.mock('@/utilities/namespace', () => ({
 	defineNamespace: vi.fn()
 }))
 

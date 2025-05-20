@@ -24,7 +24,7 @@ import { useHead, useSeoMeta } from '@unhead/vue'
 import slug from 'slug'
 
 import { useProjectsStore } from '@/stores/projects'
-import { defineNamespace } from '@/plugins/mixins/namespace'
+import { defineNamespace } from '@/utilities/namespace'
 
 import Project from '@/components/Project.vue'
 import Search from '@/components/Search.vue'
