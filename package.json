@@ -33,7 +33,7 @@
 	},
 	"dependencies": {
 		"@unhead/vue": "^2.0.10",
-		"@vueuse/core": "^13.2.0",
+		"@vueuse/core": "^13.3.0",
 		"core-js": "^3.42.0",
 		"dayjs": "^1.11.13",
 		"modern-normalize": "^3.0.1",
