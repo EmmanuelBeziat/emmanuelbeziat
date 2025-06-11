@@ -24,7 +24,7 @@ const props = defineProps({
 	},
 	icon: {
 		type: String,
-		require: true
+		requirde: true
 	}
 })
 
