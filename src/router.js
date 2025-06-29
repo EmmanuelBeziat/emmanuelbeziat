@@ -13,7 +13,7 @@ const routes = [
 	{
 		path: '/blog',
 		name: 'Blog',
-		component: () => import(/* webpackChunkName: "blog" */ '@/views/blog/Index.vue'),
+		component: () => import('@/views/blog/Index.vue'),
 		meta: {
 			title: 'Blog'
 		}
@@ -21,7 +21,7 @@ const routes = [
 	{
 		path: '/blog/:slug/',
 		name: 'Post',
-		component: () => import(/* webpackChunkName: "post" */ '@/views/blog/Single.vue'),
+		component: () => import('@/views/blog/Single.vue'),
 		props: true,
 		meta: {
 			title: 'Blog'
@@ -30,7 +30,7 @@ const routes = [
 	{
 		path: '/portfolio',
 		name: 'Portfolio',
-		component: () => import(/* webpackChunkName: "portfolio" */ '@/views/portfolio/Index.vue'),
+		component: () => import('@/views/portfolio/Index.vue'),
 		meta: {
 			title: 'Portfolio'
 		}
@@ -38,7 +38,7 @@ const routes = [
 	{
 		path: '/portfolio/:slug/',
 		name: 'Reference',
-		component: () => import(/* webpackChunkName: "ref" */ '@/views/portfolio/Single.vue'),
+		component: () => import('@/views/portfolio/Single.vue'),
 		props: true,
 		meta: {
 			title: 'Portfolio'
@@ -47,7 +47,7 @@ const routes = [
 	{
 		path: '/projets',
 		name: 'Projects',
-		component: () => import(/* webpackChunkName: "projects" */ '@/views/projects/Index.vue'),
+		component: () => import('@/views/projects/Index.vue'),
 		meta: {
 			title: 'Projets'
 		}
@@ -55,7 +55,7 @@ const routes = [
 	{
 		path: '/moi',
 		name: 'Me',
-		component: () => import(/* webpackChunkName: "me" */ '@/views/about/Index.vue'),
+		component: () => import('@/views/about/Index.vue'),
 		meta: {
 			title: 'À propos de moi…'
 		}
@@ -63,7 +63,7 @@ const routes = [
 	{
 		path: '/:pathMatch(.*)*',
 		name: 'NotFound',
-		component: () => import(/* webpackChunkName: "not-found" */ '@/views/NotFound.vue'),
+		component: () => import('@/views/NotFound.vue'),
 		meta: {
 			title: 'Page non trouvée !'
 		}
