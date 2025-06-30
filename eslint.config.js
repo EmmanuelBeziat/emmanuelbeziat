@@ -26,7 +26,10 @@ export default [
 			'no-return-assign': 'off',
 			'no-tabs': 'off',
 			'no-undef': 'off',
-			'brace-style': 'off',
+			'brace-style': [
+				'error',
+				'stroustrup'
+			],
 			'comma-dangle': ['error', 'only-multiline'],
 			'no-irregular-whitespace': 'off',
 			'vue/no-v-html': 'off'
