@@ -1,11 +1,9 @@
 import { fileURLToPath, URL } from 'node:url'
-
 import vue from '@vitejs/plugin-vue'
 import { defineConfig, loadEnv } from 'vite'
 import { VitePWA } from 'vite-plugin-pwa'
 import { createHtmlPlugin } from 'vite-plugin-html'
 import svg from 'vite-svg-loader'
-import Inspect from 'vite-plugin-inspect'
 import stylelint from 'vite-plugin-stylelint'
 
 const pwa = {
@@ -49,10 +47,6 @@ export default ({ mode }) => {
 	return defineConfig({
 		plugins: [
 			vue(),
-			Inspect({
-				build: true,
-				outputDir: '.vite-inspect'
-			}),
 			stylelint(),
 			VitePWA(pwa),
 			svg(),
@@ -88,6 +82,7 @@ export default ({ mode }) => {
 			target: 'es2022'
 		},
 		optimizeDeps: {
+			include: ['vite-plugin-stylelint'],
 			esbuildOptions: {
 				target: 'es2022',
 				supported: {
