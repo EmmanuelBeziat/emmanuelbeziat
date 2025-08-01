@@ -3,7 +3,7 @@
 		<div class="image animation-bounce" @click="$router.go()">
 			<img :src="error.image" alt="error" loading="lazy">
 		</div>
-		<div class="error animation-bounce">{{ error.title }}</div>
+		<div class="error animation-bounce" v-html="error.title"></div>
 
 		<h1 class="title animation-bounce">Page introuvable</h1>
 		<div class="message animation-bounce">
