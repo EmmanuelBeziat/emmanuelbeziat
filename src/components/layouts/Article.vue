@@ -139,7 +139,9 @@ defineProps({
 	top: .35em;
 	opacity: 0;
 	font-size: .65em;
-	transition: var(--transition-xfast) ease-in-out;
+	transition-property: opacity, translate;
+	transition-duration: var(--transition-xfast);
+	transition-timing-function: var(--ease-back-out);
 	translate: -75% 0;
 	padding-right: 10px;
 }

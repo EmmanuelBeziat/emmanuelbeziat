@@ -31,6 +31,8 @@ const rotation = computed(() => (x.value / window.innerWidth) * .75)
 
 <style scoped>
 .floating-note {
-	transition: .15s var(--ease-back-out);
+	transition-property: translate, rotate;
+	transition-duration: .15s;
+	transition-timing-function: var(--ease-back-out);
 }
 </style>

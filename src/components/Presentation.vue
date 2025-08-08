@@ -113,19 +113,25 @@ checkAge(personal.birthday)
 	animation-delay: .55s;
 	white-space: nowrap;
 	font-size: clamp(var(--font-size-heading-3), 13cqi, 5ch);
-	transition: .25s var(--ease-back-out);
+	transition-property: translate, opacity, scale;
+	transition-delay: .25s;
+	transition-timing-function: var(--ease-back-out);
 }
 
 .card-hello {
 	text-align: left;
 	animation-delay: .45s;
-	transition: .25s var(--ease-back-out);
+	transition-property: translate, opacity, scale;
+	transition-delay: .25s;
+	transition-timing-function: var(--ease-back-out);
 }
 
 .card-job {
 	animation-delay: .75s;
 	text-align: right;
-	transition: .25s var(--ease-back-out);
+	transition-property: translate, opacity, scale;
+	transition-delay: .25s;
+	transition-timing-function: var(--ease-back-out);
 
 	span {
 		color: var(--color-red);

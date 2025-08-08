@@ -49,7 +49,9 @@ defineProps({
 	align-items: center;
 	z-index: 10;
 	transform-origin: 50% 20px;
-	transition: var(--transition-slow) var(--ease-back-out);
+	transition-property: scale, translate, background-color;
+	transition-duration: var(--transition-slow);
+	transition-timing-function: var(--ease-back-out);
 	backface-visibility: hidden;
 	aspect-ratio: 1;
 }
@@ -59,7 +61,6 @@ defineProps({
 	fill: currentcolor;
 	aspect-ratio: 1;
 	backface-visibility: hidden;
-	transition: var(--transition-slow) var(--ease-back-out) .1s;
 }
 
 @media (width <= 803px) {
@@ -82,7 +83,7 @@ defineProps({
 	opacity: 0;
 	visibility: hidden;
 	translate: 0 15px;
-	transition: var(--transition-slow) var(--ease-back-out) 0s;
+	transition: translate var(--transition-slow) var(--ease-back-out) 0s, opacity var(--transition-slow) var(--ease-back-out) 0s;
 }
 
 .title {
@@ -111,12 +112,12 @@ defineProps({
 			opacity: 1;
 			visibility: visible;
 			translate: 0 0;
-			transition: var(--transition-slow) var(--ease-back-out) .1s;
+			transition-delay: .1s;
+		}
 
-			.tags {
-				translate: 0 0;
-				transition: var(--transition-slow) var(--ease-back-out) .025s;
-			}
+		.tags {
+			translate: 0 0;
+			transition: translate var(--transition-slow) var(--ease-back-out) .1s, opacity var(--transition-slow) var(--ease-back-out) .1s;
 		}
 	}
 
@@ -172,7 +173,7 @@ defineProps({
 .tags {
 	display: flex;
 	translate: 0 20px;
-	transition: var(--transition-slow) var(--ease-back-out) 0s;
+	transition: opacity var(--transition-slow) var(--ease-back-out) 0s, translate var(--transition-slow) var(--ease-back-out) 0s;
 }
 
 .tags-icon {

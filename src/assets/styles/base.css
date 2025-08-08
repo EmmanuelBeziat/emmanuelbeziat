@@ -49,7 +49,7 @@ body {
 	&::-webkit-scrollbar-thumb {
 		border: 2px solid var(--color-surface);
 		border-radius: .5rem;
-		transition: var(--transition-fast) ease-in-out;
+		transition: background-color var(--transition-fast) ease-in-out;
 		background: var(--color-thumb);
 	}
 
@@ -74,7 +74,7 @@ a {
 	background-color: transparent;
 	color: var(--color-green);
 	text-decoration: none;
-	transition: var(--transition-xfast) ease-in-out;
+	transition: color var(--transition-xfast) ease-in-out;
 }
 
 a:is(:hover, :focus) {

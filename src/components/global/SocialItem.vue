@@ -40,16 +40,16 @@ defineProps({
 	background: var(--color-surface-dark);
 	padding: .55em;
 	border-radius: 50%;
-	transition: var(--transition-slow) var(--ease-back-out);
+	transition: background-color var(--transition-slow) var(--ease-back-out);
 	overflow: hidden;
 
 	&:is(:hover, :focus) {
 		background: var(--bg-social-link);
-		transition: var(--transition-xfast) ease-in-out;
+		transition: background-color var(--transition-xfast) ease-in-out;
 	}
 
 	&:is(:hover, :focus) :deep(svg) {
-		scale: .95;
+		scale: .75;
 	}
 
 	&.--twitter {
@@ -95,6 +95,6 @@ defineProps({
 
 .network :deep(svg) {
 	fill: currentcolor;
-	transition: var(--transition-fast) ease-in-out;
+	transition: scale var(--transition-normal) var(--ease-back-out);
 }
 </style>

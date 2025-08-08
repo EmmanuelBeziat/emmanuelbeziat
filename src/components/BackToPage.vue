@@ -38,7 +38,9 @@ defineProps({
 		stroke: currentcolor;
 		translate: var(--translate);
 		rotate: var(--rotate);
-		transition: translate var(--transition-fast) ease-in-out, rotate var(--transition-fast) ease-in-out;
+		transition-property: translate, rotate;
+		transition-duration: var(--transition-fast);
+		transition-timing-function: ease-in-out;
 	}
 
 	&.--previous {

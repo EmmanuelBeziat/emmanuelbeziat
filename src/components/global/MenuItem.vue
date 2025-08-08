@@ -58,7 +58,9 @@ const isActive = computed(() => router.resolve(props.to).path === '/' + route.pa
 	&::after {
 		display: inline-block;
 		opacity: 0;
-		transition: var(--transition-normal) ease-in-out;
+		transition-property: color, opacity, translate;
+		transition-duration: var(--transition-normal);
+		transition-timing-function: var(--ease-back-out);
 		color: var(--color-text);
 		content: var(--content);
 

@@ -27,7 +27,9 @@ const shouldAutoFocus = computed(() => !isTouchDevice.value && !isMobileViewport
 const inputSearch = useDebounceFn((value) => emit('update:modelValue', value), 150)
 
 const vFocus = {
-	mounted: el => { if (shouldAutoFocus.value) el.focus() }
+	mounted: el => {
+		if (shouldAutoFocus.value) el.focus()
+	}
 }
 </script>
 
@@ -51,7 +53,7 @@ const vFocus = {
 	box-shadow: none;
 	outline: none;
 	color: var(--color-text);
-	transition: var(--transition-fast) ease-in-out;
+	transition: border-color var(--transition-fast) ease-in-out;
 
 	&:focus {
 		--border-color: var(--color-blue);
