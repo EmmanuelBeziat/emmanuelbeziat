@@ -62,6 +62,7 @@ jobs:
         source: "dist.tar.gz"
         target: "/tmp/"
         strip_components: 1
+        tar_tmp_path: "/tmp/dist.tar.gz"
 
     - name: Extract archive on server
       uses: appleboy/ssh-action@v1.0.0
