@@ -17,7 +17,7 @@ on:
       - '.browserlistrc'
 
 jobs:
-  test:
+  build-and-deploy:
     runs-on: ubuntu-latest
 
     env:
@@ -45,6 +45,35 @@ jobs:
 
     - name: Run tests
       run: npm test
+
+    - name: Build project
+      run: npm run build
+
+    - name: Create archive of dist folder
+      run: tar -czf dist.tar.gz -C dist .
+
+    - name: Deploy to server
+      uses: appleboy/scp-action@v0.1.7
+      with:
+        host: ${{ secrets.DEPLOY_HOST }}
+        port: ${{ secrets.DEPLOY_PORT }}
+        username: ${{ secrets.DEPLOY_USER }}
+        key: ${{ secrets.DEPLOY_KEY }}
+        source: "dist.tar.gz"
+        target: "/tmp/"
+        strip_components: 1
+
+    - name: Extract archive on server
+      uses: appleboy/ssh-action@v1.0.0
+      with:
+        host: ${{ secrets.DEPLOY_HOST }}
+        port: ${{ secrets.DEPLOY_PORT }}
+        username: ${{ secrets.DEPLOY_USER }}
+        key: ${{ secrets.DEPLOY_KEY }}
+        script: |
+          cd ${{ secrets.DEPLOY_PATH }}
+          tar -xzf /tmp/dist.tar.gz
+          rm /tmp/dist.tar.gz
 
     - name: Trigger deployment webhook
       if: success()
