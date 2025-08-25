@@ -61,10 +61,9 @@ jobs:
         key: ${{ secrets.DEPLOY_KEY }}
         source: "dist.tar.gz"
         target: "/tmp/"
-        strip_components: 1
         tar_tmp_path: "/tmp/dist.tar.gz"
 
-    - name: Extract archive on server
+    - name: Extract and move files to deployment directory
       uses: appleboy/ssh-action@v1.0.0
       with:
         host: ${{ secrets.DEPLOY_HOST }}
@@ -72,9 +71,28 @@ jobs:
         username: ${{ secrets.DEPLOY_USER }}
         key: ${{ secrets.DEPLOY_KEY }}
         script: |
-          cd ${{ secrets.DEPLOY_PATH }}
-          tar -xzf /tmp/dist.tar.gz
-          rm /tmp/dist.tar.gz
+          # Créer le dossier de déploiement s'il n'existe pas
+          mkdir -p ${{ secrets.DEPLOY_PATH }}
+
+          # Décompresser l'archive dans un dossier temporaire
+          cd /tmp
+          tar -xzf dist.tar.gz
+
+          # Déplacer le contenu vers le dossier de déploiement
+          # Le contenu est normalement dans un dossier 'dist'
+          if [ -d "/tmp/dist" ]; then
+            # Supprimer le contenu existant du dossier de déploiement
+            rm -rf ${{ secrets.DEPLOY_PATH }}/*
+
+            # Déplacer le nouveau contenu
+            cp -r /tmp/dist/* ${{ secrets.DEPLOY_PATH }}/
+
+            # Supprimer le dossier temporaire
+            rm -rf /tmp/dist
+          fi
+
+          # Nettoyer l'archive temporaire
+          rm -f /tmp/dist.tar.gz
 
     - name: Trigger deployment webhook
       if: success()
