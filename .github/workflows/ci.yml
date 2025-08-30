@@ -82,6 +82,9 @@ jobs:
           # Décompresser l'archive directement dans le dossier de déploiement
           tar -xzf /tmp/dist.tar.gz -C .
 
+          # Changer le propriétaire des fichiers extraits pour qu'ils appartiennent à www-data
+          chown -R www-data:www-data .
+
           # Nettoyer l'archive temporaire
           rm -f /tmp/dist.tar.gz
 
