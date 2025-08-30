@@ -70,46 +70,24 @@ jobs:
         username: ${{ secrets.DEPLOY_USER }}
         key: ${{ secrets.DEPLOY_KEY }}
         script: |
-          # Créer le dossier de déploiement s'il n'existe pas
+          # Create the deployment directory if it doesn't exist
           mkdir -p ${{ secrets.DEPLOY_PATH }}
 
-          # Aller dans le dossier de déploiement
+          # Navigate to the deployment directory
           cd ${{ secrets.DEPLOY_PATH }}
 
-          # Supprimer le contenu existant
+          # Remove existing content
           rm -rf *
 
-          # Décompresser l'archive directement dans le dossier de déploiement
+          # Extract the archive directly into the deployment directory
           tar -xzf /tmp/dist.tar.gz -C .
 
-          # Changer le propriétaire des fichiers extraits pour qu'ils appartiennent à www-data
+          # Change ownership of extracted files to www-data
           chown -R www-data:www-data .
 
-          # Nettoyer l'archive temporaire
+          # Make deploy script executable and execute it
+          chmod +x ${{ secrets.DEPLOY_SCRIPT }}
+          bash ${{ secrets.DEPLOY_SCRIPT }}
+
+          # Clean up temporary archive
           rm -f /tmp/dist.tar.gz
-
-    - name: Trigger deployment webhook
-      if: success()
-      run: |
-        # Create the payload
-        PAYLOAD='{
-          "ref": "refs/heads/main",
-          "repository": {
-            "name": "${{ github.repository }}",
-            "full_name": "${{ github.repository }}"
-          },
-          "head_commit": {
-            "id": "${{ github.sha }}",
-            "message": "${{ github.event.head_commit.message }}"
-          }
-        }'
-
-        # Calculate signatures with both secrets for comparison
-        SIGNATURE_GITHUB=$(echo -n "$PAYLOAD" | openssl dgst -sha1 -hmac "${{ secrets.DEPLOY_WEBHOOK_SECRET }}" | cut -d' ' -f2)
-
-        # Send the webhook with signature and verbose output
-        curl -v -X POST ${{ secrets.DEPLOY_WEBHOOK_URL }} \
-          -H "Content-Type: application/json" \
-          -H "X-GitHub-Event: push" \
-          -H "X-Hub-Signature: sha1=$SIGNATURE_GITHUB" \
-          -d "$PAYLOAD"
