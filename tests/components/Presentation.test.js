@@ -1,22 +1,30 @@
 import { mount } from '@vue/test-utils'
 import { describe, it, expect, vi } from 'vitest'
+import { defineComponent } from 'vue'
 import Presentation from '@/components/Presentation.vue'
 import FloatingNote from '@/components/FloatingNote.vue'
 import Icon from '@/components/Icon.vue'
 import { personal } from '@/config'
 import dayjs from 'dayjs'
 
-// Mock the FloatingNote and Icon components
-vi.mock('@/components/FloatingNote.vue', () => ({
-	default: {
-		template: '<div><slot /></div>'
+// Mock the personal config with a valid birthday
+vi.mock('@/config', () => ({
+	personal: {
+		birthday: '1990-01-01T00:00:00'
 	}
 }))
 
+// Mock the FloatingNote and Icon components
+vi.mock('@/components/FloatingNote.vue', () => ({
+	default: defineComponent({
+		template: '<div><slot /></div>'
+	})
+}))
+
 vi.mock('@/components/Icon.vue', () => ({
-	default: {
+	default: defineComponent({
 		template: '<svg></svg>'
-	}
+	})
 }))
 
 describe('<Presentation>', () => {
