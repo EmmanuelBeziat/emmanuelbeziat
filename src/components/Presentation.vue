@@ -43,19 +43,19 @@ const checkAge = date => {
 
 	const birthday = dayjs(date)
 
-	dayjs.extend(relativeTime)
 	dayjs.extend(updateLocale)
+	dayjs.extend(relativeTime)
 
-	/*
 	dayjs.updateLocale('fr', {
 		relativeTime: {
-			future: out  => 'pour encore ' + out,
-			past: out => 'depuis ' + out,
+			future: 'pour encore %s',
+			past: 'depuis %s',
 			s: 'quelques secondes',
 			m: 'une minute',
 			mm: '%d minutes',
 			h: 'une heure',
 			hh: '%d heures',
+			d: 'un jour',
 			dd: '%d jours',
 			M: 'un mois',
 			MM: '%d mois',
@@ -63,7 +63,6 @@ const checkAge = date => {
 			yy: '%d ans'
 		}
 	})
-	*/
 
 	age = Math.abs(dayjs(birthday).diff(dayjs(), 'years'))
 	nextBirthday = dayjs(nextBirthday).fromNow()
@@ -217,4 +216,3 @@ checkAge(personal.birthday)
 	}
 }
 </style>
-
