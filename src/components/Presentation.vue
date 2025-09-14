@@ -25,7 +25,6 @@
 import { personal } from '@/config'
 import dayjs from 'dayjs'
 import fr from 'dayjs/locale/fr'
-// import isBetween from 'dayjs/plugin/isBetween'
 import relativeTime from 'dayjs/plugin/relativeTime'
 import updateLocale from 'dayjs/plugin/updateLocale'
 
@@ -44,14 +43,14 @@ const checkAge = date => {
 
 	const birthday = dayjs(date)
 
-	// dayjs.extend(isBetween)
-	dayjs.extend(updateLocale)
 	dayjs.extend(relativeTime)
+	dayjs.extend(updateLocale)
 
+	/*
 	dayjs.updateLocale('fr', {
 		relativeTime: {
-			future: 'pour encore %s',
-			past: 'depuis %s',
+			future: out  => 'pour encore ' + out,
+			past: out => 'depuis ' + out,
 			s: 'quelques secondes',
 			m: 'une minute',
 			mm: '%d minutes',
@@ -64,13 +63,6 @@ const checkAge = date => {
 			yy: '%d ans'
 		}
 	})
-
-	/*
-	const rangeMin = dayjs(nextBirthday).subtract(1, 'month')
-	const rangeMax = dayjs(nextBirthday).add(1, 'month')
-	if (dayjs().isBetween(rangeMin, rangeMax)) {
-		isBirthdayMonth = true
-	}
 	*/
 
 	age = Math.abs(dayjs(birthday).diff(dayjs(), 'years'))
@@ -225,3 +217,4 @@ checkAge(personal.birthday)
 	}
 }
 </style>
+
