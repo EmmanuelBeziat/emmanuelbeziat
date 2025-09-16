@@ -102,7 +102,7 @@ checkAge(personal.birthday)
 	font: inherit;
 	color: var(--color-blue);
 	animation-delay: .55s;
-	white-space: nowrap;
+	min-width: fit-content;
 	font-size: clamp(var(--font-size-heading-3), 13cqi, 5ch);
 	transition-property: translate, opacity, scale;
 	transition-delay: .25s;
@@ -126,7 +126,7 @@ checkAge(personal.birthday)
 
 	span {
 		color: var(--color-red);
-		white-space: nowrap;
+		min-width: fit-content;
 	}
 }
 
