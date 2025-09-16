@@ -94,7 +94,13 @@ i[lang] {
 img,
 svg {
 	max-width: 100%;
-	vertical-align: top;
+	vertical-align: middle;
+	height: auto;
+}
+
+img {
+	font-style: italic;
+	shape-margin: 1rem;
 }
 
 h1, h2, h3, h4 {
