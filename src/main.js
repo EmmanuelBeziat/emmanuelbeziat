@@ -3,6 +3,7 @@ import './assets/styles/main.css'
 import { createApp } from 'vue'
 import { createPinia } from 'pinia'
 import { createHead } from '@unhead/vue/client'
+import { update } from './config'
 
 import App from './App.vue'
 import router from './router'
@@ -18,4 +19,4 @@ app.use(head)
 app.use(SequentialEntrance)
 app.mount('#emmanuelbeziat')
 
-console.log('%c Made with 🕑 and 💖 by Emmanuel Béziat', 'background: #c3e88d; color: #233238; padding: .5em 1em;')
+console.log('%c Made with 🕑 and 💖 by Emmanuel Béziat. Last update: ' + update.lastUpdate, 'background: #c3e88d; color: #233238; padding: .5em 1em;')

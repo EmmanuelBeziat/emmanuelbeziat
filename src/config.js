@@ -57,3 +57,7 @@ export const personal = {
 	],
 	birthday: env.VITE_PERSO_BIRTHDAY
 }
+
+export const update = {
+	lastUpdate: env.VITE_LAST_BUILD_DATE
+}
