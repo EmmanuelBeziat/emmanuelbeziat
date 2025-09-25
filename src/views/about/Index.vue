@@ -65,7 +65,7 @@ useSeoMeta({
 .drawing {
 	text-align: center;
 	padding: 0 var(--gutter-screen-x);
-	max-width: 32rem;
+	max-inline-size: 32rem;
 	margin-inline: auto;
 
 	img {

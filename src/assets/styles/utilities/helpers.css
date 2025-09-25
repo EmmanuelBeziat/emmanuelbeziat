@@ -36,7 +36,7 @@ img.text-align-center {
 }
 
 .noscript {
-	max-width: 480px;
+	max-inline-size: 480px;
 	margin: 60px auto;
 	font-size: 20px;
 }

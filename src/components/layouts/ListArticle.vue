@@ -72,10 +72,5 @@
 	display: flex;
 	gap: 5px;
 	flex-wrap: wrap;
-
-	@container (width <= 620px) {
-		margin: .5em 0;
-		max-width: none;
-	}
 }
 </style>

@@ -87,7 +87,7 @@ useHead({
 }
 
 .message {
-	max-width: 21.5rem;
+	max-inline-size: 21.5rem;
 	text-align: justify;
 	margin: auto;
 	animation-delay: .4s;

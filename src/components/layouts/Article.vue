@@ -117,15 +117,12 @@ defineProps({
 }
 
 :deep(.tags) {
-	margin: .5em 0;
-	max-width: 50%;
 	display: flex;
 	gap: 5px;
 	flex-wrap: wrap;
 
-	@container (width <= 620px) {
-		margin: .5em 0;
-		max-width: none;
+	@container (width > 620px) {
+		max-inline-size: 50%;
 	}
 }
 
