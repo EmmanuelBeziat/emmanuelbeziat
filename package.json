@@ -32,9 +32,9 @@
 		]
 	},
 	"dependencies": {
-		"@unhead/vue": "^2.0.18",
+		"@unhead/vue": "^2.0.19",
 		"@vueuse/core": "^13.9.0",
-		"core-js": "^3.45.1",
+		"core-js": "^3.46.0",
 		"dayjs": "^1.11.18",
 		"modern-normalize": "^3.0.1",
 		"pinia": "^3.0.3",
