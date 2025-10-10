@@ -91,10 +91,6 @@ defineProps({
 	opacity: 0;
 	animation-delay: .45s;
 
-	:where(h2, h3, h4, h5) {
-		position: relative;
-	}
-
 	[target="_blank"]::after {
 		content: "⇲";
 		vertical-align: baseline;
@@ -103,10 +99,6 @@ defineProps({
 		margin-left: .25em;
 		display: inline-block;
 	}
-}
-
-:deep(.content h2:first-child) {
-	margin-top: 0;
 }
 
 .footer {
@@ -128,23 +120,32 @@ defineProps({
 
 :deep(.content h2) {
 	position: relative;
-}
 
-:deep(.anchor) {
-	position: absolute;
-	left: 0;
-	top: .35em;
-	opacity: 0;
-	font-size: .65em;
-	transition-property: opacity, translate;
-	transition-duration: var(--transition-xfast);
-	transition-timing-function: var(--ease-back-out);
-	translate: -75% 0;
-	padding-right: 10px;
-}
+	&:first-child {
+		margin-top: 0;
+	}
 
-:deep(h2:hover .anchor) {
-	opacity: 1;
-	translate: -100% 0;
+	.header-anchor {
+		&::before {
+			@media (hover: hover) {
+				content: "#";
+			}
+
+			position: absolute;
+			opacity: 0;
+			transition-property: opacity, translate;
+			transition-duration: var(--transition-xfast);
+			transition-timing-function: var(--ease-back-out);
+			translate: -75% 0;
+			padding-right: 10px;
+		}
+	}
+
+	@media (hover: hover) {
+		&:hover .header-anchor::before {
+			opacity: 1;
+			translate: -100% 0;
+		}
+	}
 }
 </style>
