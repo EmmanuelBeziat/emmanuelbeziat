@@ -1,5 +1,9 @@
 <template>
-	<Article v-if="post" class="blog">
+	<template v-if="!post">
+		<NotFound />
+	</template>
+
+	<Article v-else class="blog">
 		<template #title>{{ post.title }}</template>
 
 		<template #date>Posté le <time>{{ dateFormat(post.date, { year: 'numeric', month: 'long', day: 'numeric' }) }}</time></template>
@@ -43,6 +47,7 @@ import Article from '@/components/layouts/Article.vue'
 import Share from '@/components/share/Share.vue'
 import Tag from '@/components/Tag.vue'
 import Note from '@/components/Note.vue'
+import NotFound from '@/views/NotFound.vue'
 
 import { dateFormat } from '@/utilities/date'
 import { isOlderThan } from '@/utilities/dateComparison'

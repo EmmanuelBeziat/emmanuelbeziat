@@ -1,5 +1,9 @@
 <template>
-	<Article v-if="reference" class="showcase" :showFooterInfos="false">
+	<template v-if="!reference">
+		<NotFound />
+	</template>
+
+	<Article v-else class="showcase" :showFooterInfos="false">
 		<template #title>{{ reference.title }}</template>
 
 		<template #tags>
@@ -35,6 +39,7 @@ import { useHead, useSeoMeta } from '@unhead/vue'
 import Article from '@/components/layouts/Article.vue'
 import Tag from '@/components/Tag.vue'
 import Navigation from '@/components/BackToPage.vue'
+import NotFound from '@/views/NotFound.vue'
 
 import { usePortfolioStore } from '@/stores/portfolio'
 import { defineNamespace } from '@/utilities/namespace'
