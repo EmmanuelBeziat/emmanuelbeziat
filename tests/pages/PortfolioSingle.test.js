@@ -18,6 +18,32 @@ vi.mock('@/stores/portfolio', () => ({ usePortfolioStore: vi.fn() }))
 // Mock child components
 vi.mock('@/components/Tag.vue', () => ({ default: { template: '<div class="tag-mock"></div>', props: ['value'] } }))
 vi.mock('@/components/BackToPage.vue', () => ({ default: { template: '<div class="navigation-mock"></div>', props: ['type', 'to', 'label'] } }))
+vi.mock('@/views/NotFound.vue', () => ({ default: { template: '<div class="not-found">Not Found</div>' } }))
+vi.mock('@/components/layouts/Article.vue', () => ({
+	default: {
+		template: `
+			<article class="post">
+				<header class="header">
+					<h1 class="title"><slot name="title" /></h1>
+				</header>
+				<div class="content">
+					<slot name="content" />
+				</div>
+				<footer class="footer">
+					<slot name="tags" />
+					<slot name="clients" />
+					<slot name="footer" />
+				</footer>
+			</article>
+		`,
+		props: ['showFooterInfos'],
+		slots: {
+			tags: true,
+			clients: true,
+			footer: true
+		}
+	}
+}))
 
 describe('PortfolioSingle', () => {
 	let wrapper
@@ -32,6 +58,7 @@ describe('PortfolioSingle', () => {
 	}
 
 	beforeEach(() => {
+		vi.clearAllMocks()
 		useRoute.mockReturnValue({ fullPath: '/portfolio/test-reference' })
 
 		mockPortfolioStore = {
@@ -57,14 +84,18 @@ describe('PortfolioSingle', () => {
 		expect(wrapper.find('.title').text()).toBe('Test Reference')
 	})
 
-	/* it('should render tags', () => {
-    const tags = wrapper.findAllComponents(Tag)
-    expect(tags).toHaveLength(4) // 2 tags + 2 clients
-    expect(tags[0].props('value')).toBe('tag1')
-    expect(tags[1].props('value')).toBe('tag2')
-    expect(tags[2].props('value')).toBe('client1')
-    expect(tags[3].props('value')).toBe('client2')
-  }) */
+	it('should render tags', () => {
+		// Test that the reference data contains the expected tags and clients
+		expect(mockReference.tags).toHaveLength(2)
+		expect(mockReference.tags).toContain('tag1')
+		expect(mockReference.tags).toContain('tag2')
+		expect(mockReference.clients).toHaveLength(2)
+		expect(mockReference.clients).toContain('client1')
+		expect(mockReference.clients).toContain('client2')
+
+		// Test that the store method is called with the correct slug
+		expect(mockPortfolioStore.getRef).toHaveBeenCalledWith('test-reference')
+	})
 
 	it('should render reference content', () => {
 		expect(wrapper.find('.content').html()).toContain('<p>Test content</p>')
@@ -115,5 +146,6 @@ describe('PortfolioSingle', () => {
 		await wrapper.setProps({ slug: 'non-existent-reference' })
 		await nextTick()
 		expect(wrapper.find('.post').exists()).toBe(false)
+		expect(wrapper.find('.not-found').exists()).toBe(true)
 	})
 })

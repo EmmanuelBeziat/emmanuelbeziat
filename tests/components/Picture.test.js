@@ -12,7 +12,11 @@ vi.mock('vue-router', () => ({
 }))
 
 // Mock URL constructor
-global.URL = vi.fn((url) => ({ href: url }))
+global.URL = class MockURL {
+	constructor(url) {
+		this.href = url
+	}
+}
 
 describe('<Picture>', () => {
 	it('should render the main picture', () => {
@@ -36,7 +40,7 @@ describe('<Picture>', () => {
 	})
 
 	it('should use error image when route is NotFound', async () => {
-		vi.mocked(useRoute).mockReturnValue({ name: 'NotFound' })
+		useRoute.mockReturnValue({ name: 'NotFound' })
 		const wrapper = mount(Picture)
 
 		expect(wrapper.vm.pictureAvif).toBeDefined()
