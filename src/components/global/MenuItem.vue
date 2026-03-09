@@ -45,6 +45,25 @@ const isActive = computed(() => router.resolve(props.to).path === '/' + route.pa
 	text-decoration: none;
 	color: var(--link-color);
 	position: relative;
+	transition: opacity, translate, scale;
+	transition-duration: var(--transition-slow);
+	transition-timing-function: var(--ease-back-out);
+	transition-delay: calc(var(--appearance-delay, 0s) * 1.25);
+
+	@media (width <= 768px) {
+		transition-delay: var(--appearance-delay, 0s);
+	}
+
+	@starting-style {
+		opacity: 0;
+		translate: 0 45%;
+		scale: .75;
+
+		@media (width <= 768px) {
+			translate: 0 50%;
+			scale: .5;
+		}
+	}
 
 	@media (width <= 768px) {
 		font-weight: 300;

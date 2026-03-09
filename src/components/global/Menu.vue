@@ -28,8 +28,35 @@ import MenuItem from '@/components/global/MenuItem.vue'
 		background: var(--color-surface-dark);
 		inset: auto 0 0;
 		z-index: 50;
-		padding: 0;
 		will-change: transform;
+		padding: 0;
+		transition: translate var(--transition-xfast) var(--ease-spring);
+
+		@starting-style {
+			translate: 0 100%;
+		}
+	}
+}
+
+.menu :deep(.menu-item) {
+	&:nth-child(1) {
+		--appearance-delay: .4s;
+	}
+
+	&:nth-child(2) {
+		--appearance-delay: .35s;
+	}
+
+	&:nth-child(3) {
+		--appearance-delay: .3s;
+	}
+
+	&:nth-child(4) {
+		--appearance-delay: .25s;
+	}
+
+	&:nth-child(5) {
+		--appearance-delay: .2s;
 	}
 }
 </style>

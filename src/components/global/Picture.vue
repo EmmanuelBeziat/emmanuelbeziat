@@ -38,10 +38,10 @@ const handlePictureClick = () => {
 
 <style scoped>
 .picture {
-	margin: 2rem auto;
+	margin-block: 2rem;
 	display: grid;
 	grid-template: "Picture" / auto;
-	justify-content: center;
+	place-items: center;
 
 	@supports (content-visibility: auto) {
 		content-visibility: auto;
@@ -51,16 +51,14 @@ const handlePictureClick = () => {
 		display: none;
 	}
 
-	img {
-		grid-area: Picture;
-		vertical-align: top;
-		border-radius: 50%;
-		max-width: 100%;
-		aspect-ratio: 1;
-	}
-
 	picture {
 		grid-area: Picture;
+	}
+
+	img {
+		grid-area: Picture;
+		border-radius: 100vw;
+		aspect-ratio: 1;
 	}
 }
 </style>

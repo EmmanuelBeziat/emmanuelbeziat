@@ -28,46 +28,31 @@
 
 html {
 	box-sizing: border-box;
+	scrollbar-color: var(--scrollbar-color) transparent;
+	scrollbar-width: var(--scrollbar-width);
+	transition: scrollbar-color var(--transition-xfast) ease;
+
+	&:has(.portfolio) {
+		--scrollbar-color: var(--color-blue);
+	}
+
+	&:has(.projects) {
+		--scrollbar-color: var(--color-yellow);
+	}
+
+	&:has(.blog) {
+		--scrollbar-color: var(--color-red);
+	}
+
+	&:has(.me) {
+		--scrollbar-color: var(--color-violet);
+	}
 }
 
 body {
 	background: var(--color-surface);
 	color: var(--color-text);
 	font: 400 var(--font-size-base)/1.5 var(--font-stack-common);
-
-	--color-thumb: var(--color-green);
-
-	&::-webkit-scrollbar-track {
-		background: none;
-	}
-
-	&::-webkit-scrollbar {
-		width: 12px;
-		background: none;
-	}
-
-	&::-webkit-scrollbar-thumb {
-		border: 2px solid var(--color-surface);
-		border-radius: .5rem;
-		transition: background-color var(--transition-fast) ease-in-out;
-		background: var(--color-thumb);
-	}
-
-	&.portfolio {
-		--color-thumb: var(--color-blue);
-	}
-
-	&.projects {
-		--color-thumb: var(--color-yellow);
-	}
-
-	&.blog {
-		--color-thumb: var(--color-red);
-	}
-
-	&.me {
-		--color-thumb: var(--color-violet);
-	}
 }
 
 a {
