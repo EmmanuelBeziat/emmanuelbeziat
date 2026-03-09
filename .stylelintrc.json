@@ -31,7 +31,8 @@
 			{
 				"ignorePseudoClasses": ["deep"]
 			}
-		]
+		],
+		"at-rule-prelude-no-invalid": null
 	},
 	"ignoreFiles": [
 		"**/*.js",
