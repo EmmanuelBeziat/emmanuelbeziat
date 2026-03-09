@@ -8,8 +8,6 @@ export default [
 		languageOptions: {
 			parser: (await import('vue-eslint-parser')).default,
 			parserOptions: {
-				parser: '@babel/eslint-parser',
-				requireConfigFile: false,
 				ecmaVersion: 'latest',
 				sourceType: 'module',
 			},
