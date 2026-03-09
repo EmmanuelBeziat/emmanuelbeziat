@@ -1,42 +1,42 @@
-export const easterSearch = {
-	data () {
-		return {
-			easters: {}
-		}
-	},
+import { reactive } from 'vue'
 
-	methods: {
-		searchWithEaster (value) {
-			setTimeout(() => {
-				this.$emit('input', value)
+export const useEasterSearch = (emit) => {
+	const easters = reactive({
+		tilt: false,
+		roll: false,
+		zoom: false
+	})
 
-				this.easterEggReset()
+	const easterEggReset = () => {
+		easters.tilt = false
+		easters.roll = false
+		easters.zoom = false
 
-				switch (value) {
-					case 'tilt':
-					case 'zoom':
-					case 'roll': this.easterEgg(value)
-						break
-				}
-			}, 150)
-		},
-
-		easterEggReset () {
-			this.easters = {
-				tilt: false,
-				roll: false,
-				zoom: false
+		document.body.classList.forEach(className => {
+			if (className.startsWith('egg')) {
+				document.body.classList.remove(className)
 			}
-
-			document.body.classList.forEach(className => {
-				if (className.startsWith('egg')) {
-					document.body.classList.remove(className)
-				}
-			})
-		},
-
-		easterEgg (value) {
-			document.body.classList.add(`egg-${value}`)
-		}
+		})
 	}
+
+	const easterEgg = (value) => {
+		document.body.classList.add(`egg-${value}`)
+	}
+
+	const searchWithEaster = (value) => {
+		setTimeout(() => {
+			emit('input', value)
+
+			easterEggReset()
+
+			switch (value) {
+				case 'tilt':
+				case 'zoom':
+				case 'roll': easterEgg(value)
+					break
+			}
+		}, 150)
+	}
+
+	return { easters, searchWithEaster, easterEggReset, easterEgg }
 }

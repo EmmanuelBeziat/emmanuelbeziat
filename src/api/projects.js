@@ -2,6 +2,9 @@ import { api } from '@/config'
 
 export const fetchProjects = async () => {
 	const response = await fetch(`${api.projects}?sort=update`)
+
+	if (!response.ok) throw new Error(`fetchProjects: HTTP ${response.status}`)
+
 	const data = await response.json()
 
 	return data
