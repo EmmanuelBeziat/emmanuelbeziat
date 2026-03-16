@@ -62,7 +62,9 @@ export default ({ mode }) => {
 			}),
 		],
 		css: {
-			preprocessorOptions: {}
+			postcss: './postcss.config.js',
+			devSourcemap: true,
+			minify: 'esbuild'
 		},
 		assetsInclude: ['**/*.avifs'],
 		resolve: {
@@ -74,21 +76,22 @@ export default ({ mode }) => {
 			port: process.env.VITE_PORT
 		},
 		build: {
-			target: 'es2022',
+			target: 'baseline-widely-available',
 			outDir: process.env.VITE_DIST,
-			emptyOutDir: true
+			emptyOutDir: true,
+			cssMinify: 'esbuild',
+			rollupOptions: {
+				output: {
+					manualChunks: undefined
+				}
+			}
 		},
 		esbuild: {
 			target: 'es2022'
 		},
 		optimizeDeps: {
 			include: ['vite-plugin-stylelint'],
-			esbuildOptions: {
-				target: 'es2022',
-				supported: {
-					bigint: true
-				}
-			},
+			rolldownOptions: {}
 		}
 	})
 }

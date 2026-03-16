@@ -1,5 +1,5 @@
 /* Dependencies */
-@import '/node_modules/modern-normalize/modern-normalize.css';
+@import 'modern-normalize/modern-normalize.css';
 
 /* fonts */
 @import '../fonts/jetbrains-mono/jetbrains-mono.css';
