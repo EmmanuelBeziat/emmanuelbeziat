@@ -75,7 +75,7 @@ checkAge(personal.birthday)
 <style scoped>
 .resume {
 	position: relative;
-	padding-bottom: 4rem;
+	padding-bottom: calc(var(--gutter-base) * 2);
 
 	@media (width <= 768px) {
 		padding-bottom: 0;
@@ -85,7 +85,7 @@ checkAge(personal.birthday)
 .card {
 	color: var(--color-light);
 	font: 700 var(--font-size-heading-1)/1 var(--font-stack-common);
-	margin-bottom: 80px;
+	margin-bottom: calc(var(--gutter-base) * 2.5);
 	text-align: center;
 
 	@supports (content-visibility: visible) {
@@ -132,7 +132,7 @@ checkAge(personal.birthday)
 
 .card-birthday {
 	text-align: center;
-	margin: 2em 2rem 0;
+	margin: 2em var(--gutter-base) 0;
 	animation-delay: .85s;
 }
 

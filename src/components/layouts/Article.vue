@@ -70,7 +70,7 @@ defineProps({
 
 	@container (width <= 620px) {
 		flex-direction: column;
-		align-items: flex-start;
+		align-items: start;
 	}
 }
 
@@ -134,7 +134,7 @@ defineProps({
 			position: absolute;
 			opacity: 0;
 			transition-property: opacity, translate;
-			transition-duration: var(--transition-xfast);
+			transition-duration: var(--timming-xfast);
 			transition-timing-function: var(--ease-back-out);
 			translate: -75% 0;
 			padding-right: 10px;

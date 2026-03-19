@@ -1,18 +1,21 @@
 :root {
 	/* colors */
-	--color-surface: #1e192b;
-	--color-text: #eeeeee;
+	--color-black: #1e192b;
+	--color-white: #f8f8f2;
 	--color-light: #f9fad3;
 	--color-green: #c3e88d;
 	--color-blue: #4eb0e4;
 	--color-violet: #a48aec;
 	--color-yellow: #ffcb6b;
 	--color-red: #ec4185;
-	--color-separator: var(--color-surface-light);
-	--color-surface-light: #282139;
-	--color-surface-lighter: #4f4271;
-	--color-surface-dark: #1b1627;
-	--color-surface-darker: #171320;
+
+	--color-back: var(--color-black);
+	--color-front: var(--color-white);
+	--color-separator: var(--color-back-light);
+	--color-back-dark: hsl(from var(--color-back) h s calc(l - 1));
+	--color-back-darker: hsl(from var(--color-back) h s calc(l - 3));
+	--color-back-light: hsl(from var(--color-back) h s calc(l + 5));
+	--color-back-lighter: hsl(from var(--color-back) h s calc(l + 22));
 
 	/* fonts stacks */
 	--font-stack-common: "Source Sans 3", system-ui, "Segoe UI", "Helvetica Neue", roboto, arial, sans-serif;
@@ -20,45 +23,53 @@
 	--font-stack-code: "JetBrains Mono", monospace;
 	--font-stack-hand: "jr!hand", cursive;
 
-	/* font sizes */
+	/* font sizes (scale) */
+	--font-grow-ratio: 1.25;
 	--font-size-base: 16px;
-	--font-size-title: var(--font-size-heading-3);
-	--font-size-heading-1: 3.815rem;
-	--font-size-heading-2: 3.052rem;
-	--font-size-heading-3: 2.441rem;
-	--font-size-heading-4: 1.953rem;
-	--font-size-heading-5: 1.563rem;
-	--font-size-heading-6: 1.25rem;
+	--font-size-xs: calc(var(--font-size-base) * 0.875); /* .875rem */
+	--font-size-sm: var(--font-size-base); /* 1rem */
+	--font-size-md: calc(var(--font-size-base) * var(--font-grow-ratio)); /* 1.25rem */
+	--font-size-lg: calc(var(--font-size-md) * var(--font-grow-ratio)); /* 1.5625rem */
+	--font-size-xl: calc(var(--font-size-lg) * var(--font-grow-ratio)); /* 1.953rem */
+	--font-size-2xl: calc(var(--font-size-xl) * var(--font-grow-ratio)); /* 2.441rem */
+	--font-size-3xl: calc(var(--font-size-2xl) * var(--font-grow-ratio)); /* 3.052rem  */
+	--font-size-4xl: calc(var(--font-size-3xl) * var(--font-grow-ratio)); /* 3.815rem */
+	--font-size-5xl: calc(var(--font-size-4xl) * var(--font-grow-ratio)); /* 4.768rem */
+	--font-size-6xl: calc(var(--font-size-5xl) * var(--font-grow-ratio)); /* 5.96rem */
+
+	/* Font sizes (semantic) */
+	--font-size-heading-1: var(--font-size-4xl);
+	--font-size-heading-2: var(--font-size-3xl);
+	--font-size-heading-3: var(--font-size-2xl);
+	--font-size-heading-4: var(--font-size-xl);
+	--font-size-heading-5: var(--font-size-lg);
+	--font-size-heading-6: var(--font-size-md);
+	--font-size-title: var(--font-size-2xl);
+	--font-size-article-title: var(--font-size-4xl);
+	--font-size-article-title-small: var(--font-size-xl);
+	--font-size-article-infos: var(--font-size-xs);
+	--font-size-error: var(--font-size-5xl);
+	--font-size-menu: var(--font-size-xl);
+	--font-size-quotes: var(--font-size-md);
+	--font-size-code: var(--font-size-xs);
 
 	@media (width <= 768px) {
-		--font-size-heading-1: 2.986rem;
-		--font-size-heading-2: 2.488rem;
-		--font-size-heading-3: 2.074rem;
-		--font-size-heading-4: 1.728rem;
-		--font-size-heading-5: 1.44rem;
-		--font-size-heading-6: 1.2rem;
+		--font-grow-ratio: 1.2;
 	}
 
-	--font-size-article-title: var(--font-size-heading-1);
-	--font-size-article-title-small: var(--font-size-heading-4);
-	--font-size-article-infos: .875rem;
-	--font-size-menu: 1.875rem;
-	--font-size-quotes: 1.25rem;
-	--font-size-code: .875rem;
-
 	/* transitions */
-	--transition-xfast: .2s;
-	--transition-fast: .25s;
-	--transition-normal: .3s;
-	--transition-slow: .5s;
-	--transition-xslow: .75s;
+	--timming-xfast: .2s;
+	--timming-fast: .25s;
+	--timming-normal: .3s;
+	--timming-slow: .5s;
+	--timming-xslow: .75s;
 
 	@media (prefers-reduced-motion: reduce) {
-		--transition-xfast: 0;
-		--transition-fast: 0;
-		--transition-normal: 0;
-		--transition-slow: 0;
-		--transition-xslow: 0;
+		--timming-xfast: 0;
+		--timming-fast: 0;
+		--timming-normal: 0;
+		--timming-slow: 0;
+		--timming-xslow: 0;
 	}
 
 	/* transition styles */
@@ -66,12 +77,12 @@
 	--ease-spring: linear(0, -0.002 7.8%, -0.013 13.5%, -0.09 30.5%, -0.088 33.8%, -0.07 36.6%, 0.003 40.8%, 0.129 44.4%, 0.309 47.6%, 0.807 54.3%, 0.95 57.6%, 1.042 61.3%, 1.081 64.8%, 1.09 68.9%, 1.013 86.5%, 1.002 92.2%, 1);
 
 	/* Gutters */
-	--gutter-screen-y: 2rem;
-	--gutter-screen-x: 2rem;
+	--gutter-base: 2rem;
+	--gutter-screen-y: var(--gutter-base);
+	--gutter-screen-x: var(--gutter-base);
 
 	@media (width <= 768px) {
-		--gutter-screen-y: 2rem;
-		--gutter-screen-x: 2rem;
+		--gutter-base: 2rem;
 	}
 
 	/* Brands */

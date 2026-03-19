@@ -20,9 +20,9 @@ defineProps({
 
 <style scoped>
 .tag {
-	background: var(--color-surface-light);
+	background: var(--color-back-light);
 	padding: 0 .5em;
-	color: var(--color-text);
+	color: var(--color-front);
 	display: flex;
 	align-items: center;
 	gap: 4px;

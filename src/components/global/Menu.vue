@@ -16,7 +16,7 @@ import MenuItem from '@/components/global/MenuItem.vue'
 .menu {
 	grid-area: menu;
 	display: flex;
-	justify-content: flex-end;
+	justify-content: end;
 
 	@media (width > 768px) {
 		margin-bottom: 6rem;
@@ -25,12 +25,12 @@ import MenuItem from '@/components/global/MenuItem.vue'
 	@media (width <= 768px) {
 		justify-content: space-between;
 		position: fixed;
-		background: var(--color-surface-dark);
+		background: var(--color-back-dark);
 		inset: auto 0 0;
 		z-index: 50;
 		will-change: transform;
 		padding: 0;
-		transition: translate var(--transition-xfast) var(--ease-spring);
+		transition: translate var(--timming-xfast) var(--ease-spring);
 
 		@starting-style {
 			translate: 0 100%;

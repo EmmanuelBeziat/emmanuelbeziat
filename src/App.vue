@@ -80,7 +80,7 @@ useSeoMeta({
 }
 
 .main {
-	margin: 0 auto 2rem;
+	margin: 0 auto var(--gutter-base);
 	outline: 0;
 }
 </style>

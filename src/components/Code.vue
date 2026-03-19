@@ -32,9 +32,9 @@ const code = computed(() => codes.list[Math.floor(Math.random() * codes.count)] 
 .cv-code {
 	border-radius: .5rem;
 	overflow: hidden;
-	background: var(--color-surface-dark);
+	background: var(--color-back-dark);
 	animation-delay: .75s;
-	animation-duration: calc(var(--transition-slow) * 1.5);
+	animation-duration: calc(var(--timming-slow) * 1.5);
 
 	@supports (content-visibility: auto) {
 		content-visibility: auto;
@@ -62,8 +62,8 @@ const code = computed(() => codes.list[Math.floor(Math.random() * codes.count)] 
 .top-bar {
 	display: flex;
 	align-items: center;
-	background: var(--color-surface-light);
-	color: var(--color-text);
+	background: var(--color-back-light);
+	color: var(--color-front);
 	text-align: center;
 	padding: 5px 10px;
 	border-radius: .5rem .5rem 0 0;

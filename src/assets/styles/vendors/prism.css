@@ -8,7 +8,7 @@
 
 code[class*="language-"],
 pre[class*="language-"] {
-	color: #f8f8f2;
+	color: var(--color-white);
 	text-shadow: 0 1px rgb(0 0 0 / .3);
 	font: 400 var(--font-size-code)/1.45 var(--font-stack-code);
 	direction: ltr;
@@ -29,7 +29,7 @@ pre[class*="language-"] ::selection,
 code[class*="language-"]::selection,
 code[class*="language-"] ::selection {
 	text-shadow: none;
-	background: var(--color-surface-lighter);
+	background: var(--color-back-lighter);
 }
 
 /* Code blocks */
@@ -40,7 +40,7 @@ pre[class*="language-"] {
 	overflow: auto;
 	border-radius: .2em;
 	position: relative;
-	background: var(--color-surface-dark);
+	background: var(--color-back-dark);
 
 	@media (width <= 768px) {
 		margin: 2em -1rem;
@@ -50,7 +50,7 @@ pre[class*="language-"] {
 
 code[class*="language-"]::selection {
 	background: var(--color-red);
-	color: var(--color-text);
+	color: var(--color-front);
 	text-shadow: 0 1px 0 rgb(0 0 0 / .5);
 }
 
@@ -62,7 +62,7 @@ code[class*="language-"]::selection {
 
 :not(pre) > code[class*="language-"],
 pre[class*="language-"] {
-	background: var(--color-surface-dark);
+	background: var(--color-back-dark);
 }
 
 /* Inline code */
@@ -75,11 +75,11 @@ pre[class*="language-"] {
 .token.prolog,
 .token.doctype,
 .token.cdata {
-	color: var(--color-surface-lighter);
+	color: var(--color-back-lighter);
 }
 
 .token.punctuation {
-	color: var(--color-text);
+	color: var(--color-front);
 }
 
 .namespace {
@@ -114,7 +114,7 @@ pre[class*="language-"] {
 .language-css .token.string,
 .style .token.string,
 .token.variable {
-	color: var(--color-text);
+	color: var(--color-front);
 }
 
 .token.atrule,
@@ -222,8 +222,8 @@ pre[class*="language-"]::after,
 
 pre[class*="language-"]::after,
 .code-toolbar .toolbar-item {
-	color: var(--color-text);
-	background-color: var(--color-surface-light);
+	color: var(--color-front);
+	background-color: var(--color-back-light);
 	border-radius: 0 3px;
 	display: inline-block;
 	position: absolute;

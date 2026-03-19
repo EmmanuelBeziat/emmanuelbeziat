@@ -1,6 +1,6 @@
 <template>
-	<router-link class="card" :to="`/portfolio/${reference.slug}/`">
-		<div :class="['layer', reference.color]" v-html="reference.image" />
+	<router-link :class="['card', reference.color]" :to="`/portfolio/${reference.slug}/`">
+		<div class="layer" v-html="reference.image" />
 
 		<div class="caption">
 			<h2 class="title">{{ reference.title }}</h2>
@@ -31,8 +31,8 @@ defineProps({
 .card {
 	opacity: 0;
 	position: relative;
-	color: var(--color-text);
-	background: var(--color-surface-dark);
+	color: var(--color-front);
+	background: var(--color-back-dark);
 
 	@supports (content-visibility: auto) {
 		content-visibility: auto;
@@ -43,14 +43,14 @@ defineProps({
 	background: var(--color-separator);
 	pointer-events: none;
 	position: relative;
-	color: var(--color-text);
+	color: var(--color-front);
 	display: flex;
 	justify-content: center;
 	align-items: center;
 	z-index: 10;
 	transform-origin: 50% 20px;
 	transition-property: scale, translate, background-color;
-	transition-duration: var(--transition-slow);
+	transition-duration: var(--timming-slow);
 	transition-timing-function: var(--ease-back-out);
 	backface-visibility: hidden;
 	aspect-ratio: 1;
@@ -74,23 +74,24 @@ defineProps({
 	z-index: 5;
 	position: absolute;
 	inset: auto 0 0;
-	padding: 1rem;
+	padding: calc(var(--gutter-base) / 2);
 	display: flex;
 	flex-direction: column;
-	justify-content: flex-end;
+	justify-content: end;
 	overflow: hidden;
 	text-align: center;
 	opacity: 0;
 	visibility: hidden;
 	translate: 0 15px;
-	transition: translate var(--transition-slow) var(--ease-back-out) 0s, opacity var(--transition-slow) var(--ease-back-out) 0s;
+	transition: translate var(--timming-slow) var(--ease-back-out) 0s, opacity var(--timming-slow) var(--ease-back-out) 0s;
 }
 
 .title {
-	margin: 0 0 .35em;
-	line-height: 1;
-	font-size: 28px;
+	margin: 0 0 .5em;
+	font-size: var(--font-size-xl);
 	font-weight: 400;
+	line-height: 1;
+	color: var(--showcase-color);
 }
 
 @media (hover: hover) {
@@ -117,7 +118,7 @@ defineProps({
 
 		.tags {
 			translate: 0 0;
-			transition: translate var(--transition-slow) var(--ease-back-out) .1s, opacity var(--transition-slow) var(--ease-back-out) .1s;
+			transition: translate var(--timming-slow) var(--ease-back-out) .1s, opacity var(--timming-slow) var(--ease-back-out) .1s;
 		}
 	}
 
@@ -142,7 +143,11 @@ defineProps({
 	}
 
 	.black {
-		--showcase-color: var(--color-surface-light);
+		--showcase-color: var(--color-back-light);
+
+		.title {
+			--showcase-color: var(--color-front);
+		}
 	}
 }
 
@@ -162,8 +167,8 @@ defineProps({
 }
 
 .tag {
-	font-size: 14px;
-	color: var(--color-text);
+	font-size: var(--font-size-xs);
+	color: var(--color-front);
 }
 
 .tag:not(:last-child)::after {
@@ -173,7 +178,7 @@ defineProps({
 .tags {
 	display: flex;
 	translate: 0 20px;
-	transition: opacity var(--transition-slow) var(--ease-back-out) 0s, translate var(--transition-slow) var(--ease-back-out) 0s;
+	transition: opacity var(--timming-slow) var(--ease-back-out) 0s, translate var(--timming-slow) var(--ease-back-out) 0s;
 }
 
 .tags-icon {

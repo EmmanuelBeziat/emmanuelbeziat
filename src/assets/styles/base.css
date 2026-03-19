@@ -1,6 +1,6 @@
 ::selection {
 	background: var(--color-blue);
-	color: var(--color-text);
+	color: var(--color-front);
 	text-shadow: 0 1px 0 rgb(0 0 0 / .5);
 }
 
@@ -15,7 +15,7 @@
 	}
 
 	:focus {
-		transition: outline-offset var(--transition-fast) ease;
+		transition: outline-offset var(--timming-fast) ease;
 		outline-offset: 5px;
 	}
 }
@@ -30,7 +30,7 @@ html {
 	box-sizing: border-box;
 	scrollbar-color: var(--scrollbar-color) transparent;
 	scrollbar-width: var(--scrollbar-width);
-	transition: scrollbar-color var(--transition-xfast) ease;
+	transition: scrollbar-color var(--timming-xfast) ease;
 
 	&:has(.portfolio) {
 		--scrollbar-color: var(--color-blue);
@@ -50,8 +50,8 @@ html {
 }
 
 body {
-	background: var(--color-surface);
-	color: var(--color-text);
+	background: var(--color-back);
+	color: var(--color-front);
 	font: 400 var(--font-size-base)/1.5 var(--font-stack-common);
 }
 
@@ -59,7 +59,7 @@ a {
 	background-color: transparent;
 	color: var(--color-green);
 	text-decoration: none;
-	transition: color var(--transition-xfast) ease-in-out;
+	transition: color var(--timming-xfast) ease-in-out;
 }
 
 a:is(:hover, :focus) {
@@ -128,7 +128,7 @@ blockquote {
 		left: 0;
 		top: 2rem;
 		font-size: 6em;
-		color: var(--color-surface-lighter);
+		color: var(--color-back-lighter);
 	}
 }
 
@@ -152,6 +152,6 @@ kbd {
 	border-radius: .2em;
 	display: inline-block;
 	padding: 0 .35em;
-	border-bottom: 1px solid var(--color-surface-darker);
+	border-bottom: 1px solid var(--color-back-darker);
 	margin: 0 .05em;
 }

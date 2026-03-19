@@ -23,7 +23,7 @@ import Item from '@/components/global/SocialItem.vue'
 	gap: 4px;
 
 	@media (width <= 1120px) {
-		margin-top: 1rem;
+		margin-top: calc(var(--gutter-base) / 2);
 	}
 }
 </style>

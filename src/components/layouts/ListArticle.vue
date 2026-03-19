@@ -23,8 +23,8 @@
 <style scoped>
 .post {
 	container-type: inline-size;
-	transition: opacity var(--transition-fast) 0s;
-	background: var(--color-surface);
+	transition: opacity var(--timming-fast) 0s;
+	background: var(--color-back);
 	opacity: 0;
 
 	& + & {
@@ -41,7 +41,7 @@
 
 	@media (width <= 620px) {
 		flex-direction: column;
-		align-items: flex-start;
+		align-items: start;
 	}
 }
 

@@ -24,8 +24,8 @@ import Copyright from '@/components/global/Copyright.vue'
 
 <style scoped>
 .header {
-	padding: 2rem;
-	background: var(--color-surface-dark);
+	padding: var(--gutter-base);
+	background: var(--color-back-dark);
 	position: relative;
 	z-index: 10;
 	text-align: center;
@@ -47,7 +47,7 @@ import Copyright from '@/components/global/Copyright.vue'
 }
 
 .bio {
-	margin-block: 2rem;
+	margin-block: var(--gutter-base);
 	animation-delay: .55s;
 	text-wrap: balance;
 

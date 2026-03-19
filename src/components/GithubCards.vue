@@ -46,7 +46,7 @@ const card = ref(github)
 
 .card-row {
 	display: flex;
-	align-items: flex-start;
+	align-items: start;
 }
 
 .card-column {

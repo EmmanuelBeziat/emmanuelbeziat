@@ -86,7 +86,7 @@ useSeoMeta({
 
 <style scoped>
 .help {
-	font-size: .9rem;
-	margin-top: 2rem;
+	font-size: var(--font-size-xs);
+	margin-top: var(--gutter-base);
 }
 </style>

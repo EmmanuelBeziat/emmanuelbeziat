@@ -34,18 +34,18 @@ defineProps({
 
 .network {
 	display: block;
-	width: 3rem;
+	width: calc(var(--gutter-base) * 1.5);
 	aspect-ratio: 1;
-	color: var(--color-text);
-	background: var(--color-surface-dark);
+	color: var(--color-front);
+	background: var(--color-back-dark);
 	padding: .55em;
 	border-radius: 50%;
-	transition: background-color var(--transition-slow) var(--ease-back-out);
+	transition: background-color var(--timming-slow) var(--ease-back-out);
 	overflow: hidden;
 
 	&:is(:hover, :focus) {
 		background: var(--bg-social-link);
-		transition: background-color var(--transition-xfast) ease-in-out;
+		transition: background-color var(--timming-xfast) ease-in-out;
 	}
 
 	&:is(:hover, :focus) :deep(svg) {
@@ -95,6 +95,6 @@ defineProps({
 
 .network :deep(svg) {
 	fill: currentcolor;
-	transition: scale var(--transition-normal) var(--ease-back-out);
+	transition: scale var(--timming-normal) var(--ease-back-out);
 }
 </style>

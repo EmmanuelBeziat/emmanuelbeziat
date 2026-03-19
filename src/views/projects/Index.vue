@@ -52,7 +52,7 @@ useSeoMeta({
 
 <style scoped>
 .card {
-	margin-block: 2.5rem;
+	margin-block: calc(var(--gutter-base) * 1.25);
 }
 
 .post-list {

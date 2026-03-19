@@ -1,12 +1,12 @@
 .note {
-	margin: var(--gutter-screen-y) auto;
-	background: var(--color-surface-light);
+	margin: var(--gutter-base) auto;
+	background: var(--color-back-light);
 	padding: 1em 2em;
 	border-left: 4px solid var(--note-color);
 	position: relative;
 
 	@media (width <= 768px) {
-		margin: var(--gutter-screen-y) calc(var(--gutter-screen-x) * -1);
+		margin: var(--gutter-basey) calc(var(--gutter-base) * -1);
 		padding-top: 2em;
 		margin-top: 2.5rem;
 		border-left: 0;
@@ -23,7 +23,7 @@
 		display: flex;
 		justify-content: center;
 		align-items: center;
-		color: var(--color-surface-dark);
+		color: var(--color-back-dark);
 		border-radius: 50%;
 		border-color: var(--note-color);
 		background: var(--note-color) 50% no-repeat;
@@ -57,6 +57,6 @@
 
 	&.--alert {
 		--note-color: var(--color-red);
-		--icon: "❗";
+		--icon: "🚨";
 	}
 }

@@ -48,12 +48,12 @@ const vFocus = {
 
 	flex: 1;
 	padding: 10px 1rem;
-	background: var(--color-surface-dark);
+	background: var(--color-back-dark);
 	border: 1px solid var(--border-color);
 	box-shadow: none;
 	outline: none;
-	color: var(--color-text);
-	transition: border-color var(--transition-fast) ease-in-out;
+	color: var(--color-front);
+	transition: border-color var(--timming-fast) ease-in-out;
 
 	&:focus {
 		--border-color: var(--color-blue);

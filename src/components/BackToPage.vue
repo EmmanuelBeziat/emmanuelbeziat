@@ -39,7 +39,7 @@ defineProps({
 		translate: var(--translate);
 		rotate: var(--rotate);
 		transition-property: translate, rotate;
-		transition-duration: var(--transition-fast);
+		transition-duration: var(--timming-fast);
 		transition-timing-function: ease-in-out;
 	}
 

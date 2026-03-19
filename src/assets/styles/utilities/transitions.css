@@ -3,7 +3,7 @@
  **/
 .page-enter-active,
 .page-leave-active {
-	transition: var(--transition-slow) ease;
+	transition: var(--timming-slow) ease;
 }
 
 .page-enter,
@@ -13,7 +13,7 @@
 
 .fade-enter-active,
 .fade-leave-active {
-	transition: opacity var(--transition-slow);
+	transition: opacity var(--timming-slow);
 }
 
 .fade-enter-active,
@@ -55,7 +55,7 @@
 .animation-fade {
 	opacity: 0;
 	animation-name: animation-fade;
-	animation-duration: var(--transition-slow);
+	animation-duration: var(--timming-slow);
 	animation-fill-mode: forwards;
 }
 
@@ -70,7 +70,7 @@
 	opacity: 0;
 	scale: .975;
 	animation-name: animation-back-slide-in;
-	animation-duration: var(--transition-slow);
+	animation-duration: var(--timming-slow);
 	animation-timing-function: var(--ease-back-out);
 	animation-fill-mode: forwards;
 }
@@ -82,7 +82,7 @@
 	animation-name: animation-fade-scale;
 	transform-origin: bottom left;
 	animation-timing-function: var(--ease-back-out);
-	animation-duration: var(--transition-slow);
+	animation-duration: var(--timming-slow);
 	animation-fill-mode: forwards;
 }
 

@@ -37,7 +37,7 @@ const isActive = computed(() => router.resolve(props.to).path === '/' + route.pa
 @property --link-color {
 	syntax: "<color>";
 	inherits: false;
-	initial-value: var(--color-text);
+	initial-value: var(--color-front);
 }
 
 .menu-item {
@@ -46,7 +46,7 @@ const isActive = computed(() => router.resolve(props.to).path === '/' + route.pa
 	color: var(--link-color);
 	position: relative;
 	transition: opacity, translate, scale;
-	transition-duration: var(--transition-slow);
+	transition-duration: var(--timming-slow);
 	transition-timing-function: var(--ease-back-out);
 	transition-delay: calc(var(--appearance-delay, 0s) * 1.25);
 
@@ -78,9 +78,9 @@ const isActive = computed(() => router.resolve(props.to).path === '/' + route.pa
 		display: inline-block;
 		opacity: 0;
 		transition-property: color, opacity, translate;
-		transition-duration: var(--transition-normal);
+		transition-duration: var(--timming-normal);
 		transition-timing-function: var(--ease-back-out);
-		color: var(--color-text);
+		color: var(--color-front);
 		content: var(--content);
 
 		@media (width <= 768px) {
@@ -156,7 +156,7 @@ const isActive = computed(() => router.resolve(props.to).path === '/' + route.pa
 	padding: 0;
 	opacity: 1;
 	width: 24px;
-	aspect-ratio: 1/1;
+	aspect-ratio: 1;
 	margin: 0 auto 5px;
 	fill: currentcolor;
 

@@ -4,9 +4,12 @@ import { nextTick } from 'vue'
 import Search from '@/components/Search.vue'
 
 // Mock @vueuse/core
+let isMobile = false
+let pointerType = 'mouse'
+
 vi.mock('@vueuse/core', () => ({
-	useMediaQuery: vi.fn(() => false),
-	usePointer: vi.fn(() => ({ pointerType: { value: 'mouse' } })),
+	useMediaQuery: vi.fn(() => isMobile),
+	usePointer: vi.fn(() => ({ pointerType: { value: pointerType } })),
 	useDebounceFn: vi.fn((fn) => fn),
 }))
 
@@ -15,6 +18,8 @@ describe('<Search>', () => {
 	let container
 
 	beforeEach(() => {
+		isMobile = false
+		pointerType = 'mouse'
 		container = document.createElement('div')
 		document.body.appendChild(container)
 	})
@@ -65,12 +70,8 @@ describe('<Search>', () => {
   }) */
 
 	it('should not apply focus directive on mobile devices', async () => {
-		// Mock useMediaQuery as true
-		vi.mock('@vueuse/core', () => ({
-			useMediaQuery: vi.fn(() => true),
-			usePointer: vi.fn(() => ({ pointerType: { value: 'touch' } })),
-			useDebounceFn: vi.fn((fn) => fn)
-		}), { virtual: true })
+		isMobile = true
+		pointerType = 'touch'
 
 		const focusSpy = vi.spyOn(HTMLElement.prototype, 'focus')
 

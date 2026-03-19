@@ -23,10 +23,10 @@ defineProps({
 .share-button {
 	width: 36px;
 	aspect-ratio: 1;
-	background: var(--color-surface-darker);
-	color: var(--color-text);
+	background: var(--color-back-darker);
+	color: var(--color-front);
 	border-radius: 2px;
-	transition: background-color var(--transition-slow) ease-out;
+	transition: background-color var(--timming-slow) ease-out;
 	overflow: hidden;
 	padding: 0;
 	border: 0;
@@ -35,7 +35,7 @@ defineProps({
 
 	&:is(:hover, :focus) {
 		background: var(--bg-social-link);
-		transition: background-color var(--transition-xfast) ease-out;
+		transition: background-color var(--timming-xfast) ease-out;
 	}
 
 	&.--share {

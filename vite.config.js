@@ -75,6 +75,9 @@ export default ({ mode }) => {
 		server: {
 			port: process.env.VITE_PORT
 		},
+		test: {
+			setupFiles: ['./tests/setup.js']
+		},
 		build: {
 			target: 'baseline-widely-available',
 			outDir: process.env.VITE_DIST,
@@ -85,9 +88,6 @@ export default ({ mode }) => {
 					manualChunks: undefined
 				}
 			}
-		},
-		esbuild: {
-			target: 'es2022'
 		},
 		optimizeDeps: {
 			include: ['vite-plugin-stylelint'],

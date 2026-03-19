@@ -49,9 +49,9 @@ useHead({
 
 .image {
 	width: 16rem;
-	aspect-ratio: 1/1;
+	aspect-ratio: 1;
 	border-radius: 50%;
-	margin: 4rem auto 0;
+	margin: calc(var(--gutter-base) * 2) auto 0;
 	background: transparent 50% 50% no-repeat;
 	background-size: cover;
 	overflow: hidden;
@@ -69,14 +69,13 @@ useHead({
 }
 
 .error {
-	font: 400 5.125rem/1 var(--font-stack-heading);
+	font: 400 var(--font-size-error)/1 var(--font-stack-heading);
 	margin: .5em 0 .25em;
-	color: var(--color-green);
+	color: var(--color-red);
 	animation-delay: .3s;
 
 	@media (width <= 992px) {
-		font-size: 3.25rem;
-		margin-bottom: 2rem;
+		margin-bottom: var(--gutter-base);
 	}
 }
 
