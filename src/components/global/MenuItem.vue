@@ -46,7 +46,7 @@ const isActive = computed(() => router.resolve(props.to).path === '/' + route.pa
 	color: var(--link-color);
 	position: relative;
 	transition: opacity, translate, scale;
-	transition-duration: var(--timming-slow);
+	transition-duration: var(--timing-slow);
 	transition-timing-function: var(--ease-back-out);
 	transition-delay: calc(var(--appearance-delay, 0s) * 1.25);
 
@@ -78,7 +78,7 @@ const isActive = computed(() => router.resolve(props.to).path === '/' + route.pa
 		display: inline-block;
 		opacity: 0;
 		transition-property: color, opacity, translate;
-		transition-duration: var(--timming-normal);
+		transition-duration: var(--timing-normal);
 		transition-timing-function: var(--ease-back-out);
 		color: var(--color-front);
 		content: var(--content);

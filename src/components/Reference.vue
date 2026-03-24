@@ -50,7 +50,7 @@ defineProps({
 	z-index: 10;
 	transform-origin: 50% 20px;
 	transition-property: scale, translate, background-color;
-	transition-duration: var(--timming-slow);
+	transition-duration: var(--timing-slow);
 	transition-timing-function: var(--ease-back-out);
 	backface-visibility: hidden;
 	aspect-ratio: 1;
@@ -83,7 +83,7 @@ defineProps({
 	opacity: 0;
 	visibility: hidden;
 	translate: 0 15px;
-	transition: translate var(--timming-slow) var(--ease-back-out) 0s, opacity var(--timming-slow) var(--ease-back-out) 0s;
+	transition: translate var(--timing-slow) var(--ease-back-out) 0s, opacity var(--timing-slow) var(--ease-back-out) 0s;
 }
 
 .title {
@@ -118,7 +118,7 @@ defineProps({
 
 		.tags {
 			translate: 0 0;
-			transition: translate var(--timming-slow) var(--ease-back-out) .1s, opacity var(--timming-slow) var(--ease-back-out) .1s;
+			transition: translate var(--timing-slow) var(--ease-back-out) .1s, opacity var(--timing-slow) var(--ease-back-out) .1s;
 		}
 	}
 
@@ -178,7 +178,7 @@ defineProps({
 .tags {
 	display: flex;
 	translate: 0 20px;
-	transition: opacity var(--timming-slow) var(--ease-back-out) 0s, translate var(--timming-slow) var(--ease-back-out) 0s;
+	transition: opacity var(--timing-slow) var(--ease-back-out) 0s, translate var(--timing-slow) var(--ease-back-out) 0s;
 }
 
 .tags-icon {

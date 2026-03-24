@@ -53,7 +53,7 @@ const vFocus = {
 	box-shadow: none;
 	outline: none;
 	color: var(--color-front);
-	transition: border-color var(--timming-fast) ease-in-out;
+	transition: border-color var(--timing-fast) ease-in-out;
 
 	&:focus {
 		--border-color: var(--color-blue);

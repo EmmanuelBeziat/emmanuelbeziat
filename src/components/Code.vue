@@ -34,7 +34,7 @@ const code = computed(() => codes.list[Math.floor(Math.random() * codes.count)] 
 	overflow: hidden;
 	background: var(--color-back-dark);
 	animation-delay: .75s;
-	animation-duration: calc(var(--timming-slow) * 1.5);
+	animation-duration: calc(var(--timing-slow) * 1.5);
 
 	@supports (content-visibility: auto) {
 		content-visibility: auto;
@@ -87,7 +87,7 @@ const code = computed(() => codes.list[Math.floor(Math.random() * codes.count)] 
 .title {
 	margin: auto;
 	translate: -32px 0;
-	color: var(--color-light);
+	color: var(--color-front-sub);
 
 	@container (width < 46rem) {
 		margin: 0;

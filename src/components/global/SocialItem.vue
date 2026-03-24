@@ -29,7 +29,7 @@ defineProps({
 @property --bg-social-link {
 	syntax: "<color>";
 	inherits: true;
-	initial-value: var(--color-light);
+	initial-value: var(--color-front-sub);
 }
 
 .network {
@@ -40,12 +40,12 @@ defineProps({
 	background: var(--color-back-dark);
 	padding: .55em;
 	border-radius: 50%;
-	transition: background-color var(--timming-slow) var(--ease-back-out);
+	transition: background-color var(--timing-slow) var(--ease-back-out);
 	overflow: hidden;
 
 	&:is(:hover, :focus) {
 		background: var(--bg-social-link);
-		transition: background-color var(--timming-xfast) ease-in-out;
+		transition: background-color var(--timing-xfast) ease-in-out;
 	}
 
 	&:is(:hover, :focus) :deep(svg) {
@@ -95,6 +95,6 @@ defineProps({
 
 .network :deep(svg) {
 	fill: currentcolor;
-	transition: scale var(--timming-normal) var(--ease-back-out);
+	transition: scale var(--timing-normal) var(--ease-back-out);
 }
 </style>

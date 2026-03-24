@@ -134,7 +134,7 @@ defineProps({
 			position: absolute;
 			opacity: 0;
 			transition-property: opacity, translate;
-			transition-duration: var(--timming-xfast);
+			transition-duration: var(--timing-xfast);
 			transition-timing-function: var(--ease-back-out);
 			translate: -75% 0;
 			padding-right: 10px;

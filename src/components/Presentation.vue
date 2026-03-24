@@ -83,7 +83,7 @@ checkAge(personal.birthday)
 }
 
 .card {
-	color: var(--color-light);
+	color: var(--color-front-sub);
 	font: 700 var(--font-size-heading-1)/1 var(--font-stack-common);
 	margin-bottom: calc(var(--gutter-base) * 2.5);
 	text-align: center;
@@ -180,7 +180,7 @@ checkAge(personal.birthday)
 	}
 
 	i {
-		color: var(--color-light);
+		color: var(--color-front-sub);
 		font-style: normal;
 		font-size: 80%;
 		display: block;

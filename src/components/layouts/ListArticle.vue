@@ -23,7 +23,7 @@
 <style scoped>
 .post {
 	container-type: inline-size;
-	transition: opacity var(--timming-fast) 0s;
+	transition: opacity var(--timing-fast) 0s;
 	background: var(--color-back);
 	opacity: 0;
 

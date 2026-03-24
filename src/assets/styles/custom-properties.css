@@ -2,7 +2,7 @@
 	/* colors */
 	--color-black: #1e192b;
 	--color-white: #f8f8f2;
-	--color-light: #f9fad3;
+	--color-subwhite: #f9fad3;
 	--color-green: #c3e88d;
 	--color-blue: #4eb0e4;
 	--color-violet: #a48aec;
@@ -11,6 +11,7 @@
 
 	--color-back: var(--color-black);
 	--color-front: var(--color-white);
+	--color-front-sub: var(--color-subwhite);
 	--color-separator: var(--color-back-light);
 	--color-back-dark: hsl(from var(--color-back) h s calc(l - 1));
 	--color-back-darker: hsl(from var(--color-back) h s calc(l - 3));
@@ -58,18 +59,18 @@
 	}
 
 	/* transitions */
-	--timming-xfast: .2s;
-	--timming-fast: .25s;
-	--timming-normal: .3s;
-	--timming-slow: .5s;
-	--timming-xslow: .75s;
+	--timing-xfast: .2s;
+	--timing-fast: .25s;
+	--timing-normal: .3s;
+	--timing-slow: .5s;
+	--timing-xslow: .75s;
 
 	@media (prefers-reduced-motion: reduce) {
-		--timming-xfast: 0;
-		--timming-fast: 0;
-		--timming-normal: 0;
-		--timming-slow: 0;
-		--timming-xslow: 0;
+		--timing-xfast: 0;
+		--timing-fast: 0;
+		--timing-normal: 0;
+		--timing-slow: 0;
+		--timing-xslow: 0;
 	}
 
 	/* transition styles */
