@@ -1,24 +1,24 @@
 .iframe-codepen {
-	width: 100%;
-	min-height: 430px;
+	inline-size: 100%;
+	min-block-size: 430px;
 }
 
-@media (width <= 768px) {
+@media (inline-size <= 768px) {
 	.iframe-codepen {
-		min-height: 380px;
+		min-block-size: 380px;
 	}
 
 	.picture-full {
 		margin-inline: calc(var(--gutter-screen-x) * -1);
 		display: block;
-		max-width: none;
 		max-inline-size: none;
-		width: calc(100% + (var(--gutter-screen-x) * 2))
+		max-inline-size: none;
+		inline-size: calc(100% + (var(--gutter-screen-x) * 2))
 	}
 }
 
 .video iframe {
-	width: 100%;
+	inline-size: 100%;
 	vertical-align: top;
 	aspect-ratio: 16/9;
 }

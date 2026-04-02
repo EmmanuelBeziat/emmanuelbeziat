@@ -132,5 +132,6 @@
 	to {
 		opacity: 1;
 		translate: 0 0;
+		transform: skewY(0);
 	}
 }

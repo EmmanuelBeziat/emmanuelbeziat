@@ -75,7 +75,7 @@ i[lang] {
 
 img,
 svg {
-	max-width: 100%;
+	max-inline-size: 100%;
 	vertical-align: middle;
 	height: auto;
 }

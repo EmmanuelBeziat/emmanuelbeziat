@@ -78,8 +78,8 @@ const code = computed(() => codes.list[Math.floor(Math.random() * codes.count)] 
 }
 
 .fake-button {
-	width: .7rem;
-	height: .7rem;
+	inline-size: .7rem;
+	block-size: .7rem;
 	border-radius: 50%;
 	background: var(--bg-button);
 }

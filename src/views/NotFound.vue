@@ -63,8 +63,8 @@ useHead({
 	img {
 		display: block;
 		object-fit: cover;
-		min-width: 100%;
-		min-height: 100%;
+		min-inline-size: 100%;
+		min-block-size: 100%;
 	}
 }
 

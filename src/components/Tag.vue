@@ -29,7 +29,7 @@ defineProps({
 
 	svg {
 		fill: currentcolor;
-		height: .75em;
+		block-size: .75em;
 		margin-right: .25em;
 	}
 }

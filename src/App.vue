@@ -58,7 +58,7 @@ useSeoMeta({
 
 <style scoped>
 .site {
-	min-height: 100dvh;
+	min-block-size: 100svh;
 	overflow-x: clip;
 	display: grid;
 	grid-template: "header content" / 20rem auto;
