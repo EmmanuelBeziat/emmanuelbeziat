@@ -1,10 +1,10 @@
 <template>
 	<section ref="sectionRef" class="me">
 		<div class="drawing stagger-group" :data-delay="250">
-			<picture class="stagger-item">
+			<picture>
 				<source :srcset="pictureAvif" type="image/avif">
 				<source :srcset="pictureWebp" type="image/wepb">
-				<img :src="pictureWebp" alt="Emmanuel Béziat (Drawing by Marie-Laure Rouzier)" loading="lazy">
+				<img :src="pictureWebp" alt="Emmanuel Béziat (Drawing by Marie-Laure Rouzier)" loading="lazy" class="stagger-item">
 			</picture>
 		</div>
 
@@ -38,19 +38,15 @@ import { ref, computed, onMounted } from 'vue'
 import { openGraph } from '@/config'
 import { useRoute } from 'vue-router'
 import { useHead, useSeoMeta } from '@unhead/vue'
-
 import { defineNamespace } from '@/utilities/namespace'
-
 import GithubCards from '@/components/GithubCards.vue'
 
 const pictureAvif = ref(new URL(`../../assets/images/emmanuelb-draw.avif`, import.meta.url).href)
 const pictureWebp = ref(new URL(`../../assets/images/emmanuelb-draw.webp`, import.meta.url).href)
 const route = useRoute()
 const fullURL = computed(() => openGraph.url + route.fullPath)
-
 const sectionRef = ref(null)
-
-const staggerGapTime = 100 // ms entre chaque élément
+const staggerGapTime = 100
 
 onMounted(() => {
 	defineNamespace('me')
@@ -93,7 +89,7 @@ h2 {
 
 .stagger-item {
 	opacity: 0;
-	translate: 0 20px;
+	translate: 0 2rem;
 	scale: .975;
 	animation: .765s var(--ease-back-out) var(--stagger-delay, 0s) forwards animation-back-slide-in;
 }
