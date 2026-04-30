@@ -60,13 +60,13 @@ useSeoMeta({
 }
 
 .showcase-list {
-	display: grid;
-	grid-template-columns: repeat(auto-fit, minmax(calc(100cqi / 3 - var(--gap-size)), 1fr));
-	gap: var(--gap-size);
+	--col-number: max(1, 3);
+	--col-size-minimum: 220px;
+	--col-size-maximum: calc(100cqi / 3);
 
-	@container (width <= 540px) {
-		grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
-	}
+	display: grid;
+	grid-template-columns: repeat(auto-fill, minmax(max(var(--col-size-minimum), calc((100% - var(--gap-size) * (var(--col-number) - 1)) / var(--col-number))), 1fr));
+	gap: var(--gap-size);
 }
 
 .thanks {
