@@ -76,10 +76,10 @@ describe('AboutIndex', () => {
 	})
 
 	it('should have correct CSS classes for animations', () => {
-		const animatedElements = wrapper.findAll('.animation-bounce')
+		const animatedElements = wrapper.findAll('.stagger-group')
 		expect(animatedElements.length).toBe(3)
 		animatedElements.forEach((el, index) => {
-			expect(el.classes()).toContain(`animation-bounce`)
+			expect(el.classes()).toContain(`stagger-group`)
 		})
 	})
 })

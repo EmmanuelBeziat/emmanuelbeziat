@@ -1,31 +1,31 @@
 <template>
-	<section class="me">
-		<div class="drawing animation-bounce">
-			<picture>
+	<section ref="sectionRef" class="me">
+		<div class="drawing stagger-group" :data-delay="250">
+			<picture class="stagger-item">
 				<source :srcset="pictureAvif" type="image/avif">
 				<source :srcset="pictureWebp" type="image/wepb">
 				<img :src="pictureWebp" alt="Emmanuel Béziat (Drawing by Marie-Laure Rouzier)" loading="lazy">
 			</picture>
 		</div>
 
-		<div class="interview animation-bounce">
-			<h2>Et sinon …?</h2>
+		<div class="interview stagger-group" :data-delay="400">
+			<h2 class="stagger-item">Et sinon …?</h2>
 
-			<p>J’ai pas d’idée pour me présenter.</p>
+			<p class="stagger-item">J’ai pas d'idée pour me présenter.</p>
 
-			<h3>Où est-ce que tu bosses ?</h3>
-			<p>
+			<h3 class="stagger-item">Où est-ce que tu bosses ?</h3>
+			<p class="stagger-item">
 				<img class="picture-full" src="https://images.emmanuelbeziat.com/Home-2020---01-min.jpg" alt="Home" loading="lazy">
 			</p>
-			<p>C’est mon bureau. Y en a plein comme ça, mais celui-là c’est le mien. 😍</p>
+			<p class="stagger-item">C'est mon bureau. Y en a plein comme ça, mais celui-là c'est le mien. 😍</p>
 		</div>
 
-		<!-- <div class="timeline animation-bounce">
-			<h3>Timeline</h3>
+		<!-- <div class="timeline stagger-group" :data-delay="700">
+			<h3 class="stagger-item">Timeline</h3>
 		</div> -->
 
-		<div class="work animation-bounce">
-			<h3>Et tu fais quoi ?</h3>
+		<div class="work stagger-group" :data-delay="700">
+			<h3 class="stagger-item">Et tu fais quoiÎ?</h3>
 			<KeepAlive>
 				<GithubCards align="left" />
 			</KeepAlive>
@@ -48,8 +48,21 @@ const pictureWebp = ref(new URL(`../../assets/images/emmanuelb-draw.webp`, impor
 const route = useRoute()
 const fullURL = computed(() => openGraph.url + route.fullPath)
 
+const sectionRef = ref(null)
+
+const staggerGapTime = 100 // ms entre chaque élément
+
 onMounted(() => {
 	defineNamespace('me')
+
+	const groups = sectionRef.value.querySelectorAll('.stagger-group')
+	groups.forEach(group => {
+		const baseDelay = parseInt(group.dataset.delay, 10) || 0
+		const items = group.querySelectorAll('.stagger-item')
+		items.forEach((item, i) => {
+			item.style.setProperty('--stagger-delay', `${baseDelay + (i * staggerGapTime)}ms`)
+		})
+	})
 })
 
 useHead({
@@ -78,19 +91,10 @@ h2 {
 	font: 400 var(--font-size-article-title)/1.25 var(--font-stack-heading);
 }
 
-.animation-bounce {
+.stagger-item {
 	opacity: 0;
-
-	&:nth-of-type(1) {
-		animation-delay: .35s;
-	}
-
-	&:nth-of-type(2) {
-		animation-delay: .55s;
-	}
-
-	&:nth-of-type(3) {
-		animation-delay: .85s;
-	}
+	translate: 0 20px;
+	scale: .975;
+	animation: .765s var(--ease-back-out) var(--stagger-delay, 0s) forwards animation-back-slide-in;
 }
 </style>
