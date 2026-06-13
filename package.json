@@ -51,7 +51,7 @@
 		"@vitejs/plugin-vue": "^6.0.7",
 		"@vue/test-utils": "^2.4.10",
 		"autoprefixer": "^10.5.0",
-		"esbuild": "^0.28.0",
+		"esbuild": "^0.28.1",
 		"eslint": "^10.4.0",
 		"eslint-plugin-vue": "^10.9.1",
 		"husky": "^9.1.7",
