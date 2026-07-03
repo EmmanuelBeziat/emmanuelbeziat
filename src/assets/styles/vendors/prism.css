@@ -1,4 +1,5 @@
-/* http://prismjs.com/download.html?themes=prism-okaidia&languages=markup+css+css-extras+clike+javascript+php+coffeescript+scss+bash+sql+csharp */
+/* PrismJS 1.30.0
+http://prismjs.com/download.html?themes=prism-okaidia&languages=markup+css+css-extras+clike+javascript+php+coffeescript+scss+bash+sql+csharp */
 
 /**
  * okaidia theme for JavaScript, CSS and HTML
@@ -35,6 +36,7 @@ code[class*="language-"] ::selection {
 /* Code blocks */
 pre,
 pre[class*="language-"] {
+	line-height: 1.25;
 	padding: 1.5em 2em;
 	margin: 2em 0;
 	overflow: auto;
@@ -71,6 +73,7 @@ pre[class*="language-"] {
 	border-radius: .3em;
 }
 
+.token.cdata,
 .token.comment,
 .token.prolog,
 .token.doctype,
@@ -87,10 +90,10 @@ pre[class*="language-"] {
 }
 
 .token.constant,
-.token.symbol,
 .token.deleted,
-.token.tag,
-.token.selector {
+.token.property,
+.token.symbol,
+.token.tag {
 	color: var(--color-blue);
 }
 
@@ -99,41 +102,42 @@ pre[class*="language-"] {
 	color: var(--color-red);
 }
 
-.token.string,
-.token.property,
-.token.char,
+.token.attr-name,
 .token.builtin,
+.token.char,
 .token.inserted,
-.token.attr-name {
+.token.selector,
+.token.string {
 	color: var(--color-green);
 }
 
-.token.operator,
-.token.entity,
-.token.url,
 .language-css .token.string,
 .style .token.string,
+.token.entity,
+.token.operator,
+.token.url,
 .token.variable {
 	color: var(--color-front);
 }
 
 .token.atrule,
 .token.attr-value,
-.token.keyword {
+.token.class-name,
+.token.function {
 	color: var(--color-yellow);
 }
 
-.token.function {
+.token.keyword {
 	color: var(--color-blue);
 }
 
-.token.regex,
-.token.important {
+.token.important,
+.token.regex {
 	color: var(--color-red);
 }
 
-.token.important,
-.token.bold {
+.token.bold,
+.token.important {
 	font-weight: 700;
 }
 
