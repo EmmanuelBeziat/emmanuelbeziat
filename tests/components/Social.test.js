@@ -27,7 +27,7 @@ describe('<Social>', () => {
 	it('should render the correct number of SocialItem components', () => {
 		const wrapper = mount(Social)
 		const socialItems = wrapper.findAllComponents(SocialItem)
-		expect(socialItems).toHaveLength(5) // Adjust this number if you change the number of items
+		expect(socialItems).toHaveLength(4) // Adjust
 	})
 
 	it('should pass correct props to SocialItem components', () => {
@@ -35,7 +35,6 @@ describe('<Social>', () => {
 		const socialItems = wrapper.findAllComponents(SocialItem)
 
 		const expectedItems = [
-			{ name: 'Bluesky', icon: 'bluesky' },
 			{ name: 'Instagram', icon: 'instagram' },
 			{ name: 'NPMJS', icon: 'npmjs' },
 			{ name: 'GitHub', icon: 'github' },
