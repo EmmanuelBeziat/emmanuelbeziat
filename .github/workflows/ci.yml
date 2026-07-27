@@ -50,7 +50,7 @@ jobs:
     - name: Setup Node.js
       uses: actions/setup-node@v3
       with:
-        node-version: '20'
+        node-version: '24'
         cache: 'npm'
 
     - name: Install dependencies
@@ -60,7 +60,7 @@ jobs:
       run: echo "VITE_LAST_BUILD_DATE=$(TZ=Europe/Paris date +'%d/%m/%Y')" >> $GITHUB_ENV
 
     - name: Run tests
-      run: npm test
+      run: npx vitest run --pool=forks
 
     - name: Build project
       run: npm run build
