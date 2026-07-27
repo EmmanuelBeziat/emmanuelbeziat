@@ -71,5 +71,10 @@
 		"vue-eslint-parser": "^10.4.1",
 		"workbox-precaching": "^7.4.1"
 	},
-	"overrides": {}
+	"overrides": {},
+	"allowScripts": {
+		"core-js@3.49.0": true,
+		"esbuild@0.28.1": true,
+		"sharp@0.34.5": true
+	}
 }
