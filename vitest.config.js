@@ -8,6 +8,8 @@ export default mergeConfig(
 		test: {
 			environment: 'jsdom',
 			setupFiles: ['./tests/setup.js'],
+			pool: 'threads',
+			singleThread: true,
 			coverage: {
 				include: undefined,
 				exclude: [...configDefaults.exclude, 'e2e/**'],
