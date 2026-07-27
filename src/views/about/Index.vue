@@ -27,7 +27,7 @@
 		<div class="work stagger-group" :data-delay="700">
 			<h3 class="stagger-item">Et tu fais quoiÎ?</h3>
 			<KeepAlive>
-				<GithubCards align="left" />
+				<GithubCards align="left" type="languages" />
 			</KeepAlive>
 		</div>
 	</section>

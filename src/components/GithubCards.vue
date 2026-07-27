@@ -1,7 +1,7 @@
 <template>
 	<div :class="`github-card card-${align}`">
-		<img v-if="cards.stats" :src="card.stats" alt="github stats" loading="lazy">
-		<img v-if="cards.languages" :src="card.languages" alt="Github stats" loading="lazy">
+		<img v-if="type === 'stats'" :src="card.stats" alt="Github stats" loading="lazy">
+		<img v-if="type === 'languages'" :src="card.languages" alt="Github languages" loading="lazy">
 	</div>
 </template>
 
@@ -15,14 +15,9 @@ defineProps({
 		default: 'center'
 	},
 
-	cards: {
-		type: Object,
-		default: () => {
-			return {
-				stats: true,
-				languages: true
-			}
-		}
+	type: {
+		type: String,
+		default: 'stats'
 	}
 })
 

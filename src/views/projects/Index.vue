@@ -3,7 +3,7 @@
 		<Search v-model="searchTerms" placeholder="Recherche…" label="Rechercher" />
 
 		<KeepAlive>
-			<GithubCards class="card" :cards="{ stats: true, languages: false }" />
+			<GithubCards class="card" type="stats" />
 		</KeepAlive>
 
 		<template v-if="projects.length">

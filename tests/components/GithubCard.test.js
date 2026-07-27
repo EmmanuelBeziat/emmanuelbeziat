@@ -10,10 +10,6 @@ describe('GithubCards', () => {
 		return mount(GithubCards, {
 			props: {
 				align: 'center',
-				cards: {
-					stats: true,
-					languages: true
-				},
 				...props
 			}
 		})
@@ -34,26 +30,28 @@ describe('GithubCards', () => {
 		expect(wrapper.classes()).toContain('card-left')
 	})
 
-	it('should render stats card when stats is true', () => {
-		const statsImg = wrapper.find('img[alt="github stats"]')
+	it('should render stats card when type is stats', () => {
+		wrapper = createWrapper({ type: 'stats' })
+		const statsImg = wrapper.find('img[alt="Github stats"]')
 		expect(statsImg.exists()).toBe(true)
 		expect(statsImg.attributes('src')).toBe(github.stats)
 	})
 
-	it('should render languages card when languages is true', () => {
-		const languagesImg = wrapper.find('img[alt="Github stats"]')
+	it('should render languages card when type is languages', () => {
+		wrapper = createWrapper({ type: 'languages' })
+		const languagesImg = wrapper.find('img[alt="Github languages"]')
 		expect(languagesImg.exists()).toBe(true)
 		expect(languagesImg.attributes('src')).toBe(github.languages)
 	})
 
-	it('should not render stats card when stats is false', () => {
-		wrapper = createWrapper({ cards: { stats: false, languages: true } })
-		expect(wrapper.find('img[alt="github stats"]').exists()).toBe(false)
+	it('should not render stats card when type is languages', () => {
+		wrapper = createWrapper({ type: 'languages' })
+		expect(wrapper.find('img[alt="Github stats"]').exists()).toBe(false)
 	})
 
-	it('should not render languages card when languages is false', () => {
-		wrapper = createWrapper({ cards: { stats: true, languages: false } })
-		expect(wrapper.find('img[alt="Github stats"]').exists()).toBe(false)
+	it('should not render languages card when type is stats', () => {
+		wrapper = createWrapper({ type: 'stats' })
+		expect(wrapper.find('img[alt="Github languages"]').exists()).toBe(false)
 	})
 
 	it('should have lazy loading on images', () => {
@@ -66,8 +64,8 @@ describe('GithubCards', () => {
 	it('should use default props when not provided', () => {
 		wrapper = mount(GithubCards)
 		expect(wrapper.classes()).toContain('card-center')
-		expect(wrapper.find('img[alt="github stats"]').exists()).toBe(true)
 		expect(wrapper.find('img[alt="Github stats"]').exists()).toBe(true)
+		expect(wrapper.find('img[alt="Github languages"]').exists()).toBe(false)
 	})
 
 	it('should apply correct CSS classes', () => {
