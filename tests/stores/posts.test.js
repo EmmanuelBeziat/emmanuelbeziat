@@ -65,4 +65,23 @@ describe('usePostsStore', () => {
 		await expect(store.fetch()).resolves.not.toThrow()
 		expect(store.posts).toEqual([])
 	})
+
+	it('should not be marked as loaded before fetching', () => {
+		const store = usePostsStore()
+		expect(store.loaded).toBe(false)
+	})
+
+	it('should be marked as loaded once the fetch resolves', async () => {
+		fetchPosts.mockResolvedValue(mockPosts)
+		const store = usePostsStore()
+		await store.fetch()
+		expect(store.loaded).toBe(true)
+	})
+
+	it('should be marked as loaded even when the fetch fails', async () => {
+		fetchPosts.mockRejectedValue(new Error('Network error'))
+		const store = usePostsStore()
+		await store.fetch()
+		expect(store.loaded).toBe(true)
+	})
 })

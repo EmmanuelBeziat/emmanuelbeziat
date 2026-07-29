@@ -45,8 +45,17 @@ describe('selectRandomItem()', () => {
 	})
 
 	it('should work with an empty localStorage (defaults to index 0)', () => {
-		// With no stored value, lastIndex defaults to 0, so result should not be items[0]
 		const result = selectRandomItem(items, storageKey)
 		expect(result).not.toBe(items[0])
+	})
+
+	it('should return 0 for a single-item array instead of looping forever', () => {
+		localStorageMock.setItem(storageKey, '0')
+		expect(selectRandomItem(['🍎'], storageKey)).toBe(0)
+	})
+
+	it('should return 0 for an empty array instead of looping forever', () => {
+		localStorageMock.setItem(storageKey, '0')
+		expect(selectRandomItem([], storageKey)).toBe(0)
 	})
 })

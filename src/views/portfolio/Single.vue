@@ -1,5 +1,9 @@
 <template>
-	<template v-if="!reference">
+	<template v-if="!portfolioStore.loaded">
+		<Loader />
+	</template>
+
+	<template v-else-if="!reference">
 		<NotFound />
 	</template>
 
@@ -39,6 +43,7 @@ import { useHead, useSeoMeta } from '@unhead/vue'
 import Article from '@/components/layouts/Article.vue'
 import Tag from '@/components/Tag.vue'
 import Navigation from '@/components/BackToPage.vue'
+import Loader from '@/components/loader/Loader.vue'
 import NotFound from '@/views/NotFound.vue'
 
 import { usePortfolioStore } from '@/stores/portfolio'
@@ -56,16 +61,17 @@ onMounted(() => {
 })
 
 const route = useRoute()
-const fullURL = openGraph.url + route.fullPath
+const fullURL = computed(() => openGraph.url + route.fullPath)
 const portfolioStore = usePortfolioStore()
 const reference = computed(() => portfolioStore.getRef(props.slug))
+const pageTitle = computed(() => reference.value ? `${reference.value.title} — Portfolio` : 'Portfolio')
 
 useHead({
-	title: `${reference.value?.title} — Portfolio`
+	title: pageTitle
 })
 
 useSeoMeta({
-	ogTitle: `${reference.value?.title} — Portfolio`,
+	ogTitle: pageTitle,
 	ogUrl: fullURL,
 })
 </script>

@@ -15,7 +15,6 @@
 </template>
 
 <script setup>
-import { computed } from 'vue'
 import { useHead } from '@unhead/vue'
 import { selectRandomItem } from '@/utilities/randomize'
 
@@ -29,13 +28,12 @@ const errors = [
 	{ image: 'toy-story.avifs', title: 'There seem to be no sign <br>of this page anywhere'},
 	// { image: 'jurassic-park.avifs', title: 'This page is extinct'},
 ]
-const error = computed(() => {
-	const errorIndex = selectRandomItem(errors, 'lastErrorIndex')
-	return {
-		title: errors[errorIndex].title,
-		image: new URL(`../assets/images/404/${errors[errorIndex].image}`, import.meta.url)
-	}
-})
+
+const errorIndex = selectRandomItem(errors, 'lastErrorIndex')
+const error = {
+	title: errors[errorIndex].title,
+	image: new URL(`../assets/images/404/${errors[errorIndex].image}`, import.meta.url)
+}
 
 useHead({
 	title: 'Erreur !'

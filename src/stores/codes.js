@@ -3,7 +3,8 @@ import { fetchCodes } from '@/api/codes'
 
 export const useCodesStore = defineStore('codes', {
 	state: () => ({
-		codes: []
+		codes: [],
+		loaded: false
 	}),
 
 	getters: {
@@ -19,6 +20,9 @@ export const useCodesStore = defineStore('codes', {
 			}
 			catch (error) {
 				console.error(`Store error: ${error}`)
+			}
+			finally {
+				this.loaded = true
 			}
 		}
 	}

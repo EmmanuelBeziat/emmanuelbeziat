@@ -5,6 +5,11 @@
  * @returns {number} - The selected index.
  */
 export const selectRandomItem = (items, storageKey) => {
+	if (items.length < 2) {
+		localStorage.setItem(storageKey, 0)
+		return 0
+	}
+
 	const lastIndex = Number(localStorage.getItem(storageKey)) || 0
 	let randomIndex = lastIndex
 

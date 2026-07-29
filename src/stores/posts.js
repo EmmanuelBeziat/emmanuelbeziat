@@ -3,7 +3,8 @@ import { fetchPosts } from '@/api/posts'
 
 export const usePostsStore = defineStore('posts', {
 	state: () => ({
-		posts: []
+		posts: [],
+		loaded: false
 	}),
 
 	getters: {
@@ -19,6 +20,9 @@ export const usePostsStore = defineStore('posts', {
 			}
 			catch (error) {
 				console.error(`Store error: ${error}`)
+			}
+			finally {
+				this.loaded = true
 			}
 		}
 	}

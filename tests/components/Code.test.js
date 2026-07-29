@@ -58,11 +58,13 @@ describe('Code', () => {
 		expect(wrapper.find('.code').html()).toContain('<pre><code>Test code</code></pre>')
 	})
 
-	it('should render the Loader when no code is available', async () => {
-		mockCodesStore.list = []
-		mockCodesStore.count = 0
-		await nextTick()
-		expect(wrapper.findComponent(Loader).exists())
+	it('should render the Loader when no code is available', () => {
+		useCodesStore.mockReturnValue({ list: [], count: 0 })
+
+		const empty = mount(Code)
+
+		expect(empty.findComponent(Loader).exists()).toBe(true)
+		expect(empty.find('.title').exists()).toBe(false)
 	})
 
 	it('should randomly select a code from the store', () => {

@@ -21,10 +21,11 @@ defineProps({
 <style scoped>
 .tag {
 	background: var(--color-back-light);
-	padding: 0 .5em;
+	padding: 0 .65em;
 	color: var(--color-front);
 	display: flex;
 	align-items: center;
+	border-radius: 100vw;
 	gap: 4px;
 
 	svg {

@@ -1,6 +1,6 @@
 import { mount } from '@vue/test-utils'
 import { describe, it, expect, vi, beforeEach } from 'vitest'
-import { nextTick } from 'vue'
+import { nextTick, reactive, unref } from 'vue'
 import PortfolioSingle from '@/views/portfolio/Single.vue'
 import { usePortfolioStore } from '@/stores/portfolio'
 import { useRoute } from 'vue-router'
@@ -19,6 +19,7 @@ vi.mock('@/stores/portfolio', () => ({ usePortfolioStore: vi.fn() }))
 vi.mock('@/components/Tag.vue', () => ({ default: { template: '<div class="tag-mock"></div>', props: ['value'] } }))
 vi.mock('@/components/BackToPage.vue', () => ({ default: { template: '<div class="navigation-mock"></div>', props: ['type', 'to', 'label'] } }))
 vi.mock('@/views/NotFound.vue', () => ({ default: { template: '<div class="not-found">Not Found</div>' } }))
+vi.mock('@/components/loader/Loader.vue', () => ({ default: { template: '<div class="loader-mock"></div>' } }))
 vi.mock('@/components/layouts/Article.vue', () => ({
 	default: {
 		template: `
@@ -61,9 +62,10 @@ describe('PortfolioSingle', () => {
 		vi.clearAllMocks()
 		useRoute.mockReturnValue({ fullPath: '/portfolio/test-reference' })
 
-		mockPortfolioStore = {
+		mockPortfolioStore = reactive({
+			loaded: true,
 			getRef: vi.fn().mockReturnValue(mockReference)
-		}
+		})
 		usePortfolioStore.mockReturnValue(mockPortfolioStore)
 
 		wrapper = mount(PortfolioSingle, {
@@ -116,14 +118,13 @@ describe('PortfolioSingle', () => {
 
 	it('should set correct head metadata', async () => {
 		await nextTick()
-		expect(useHead).toHaveBeenCalledWith({
-			title: 'Test Reference — Portfolio'
-		})
 
-		expect(useSeoMeta).toHaveBeenCalledWith({
-			ogTitle: 'Test Reference — Portfolio',
-			ogUrl: expect.any(String)
-		})
+		const { title } = useHead.mock.calls.at(-1)[0]
+		expect(unref(title)).toBe('Test Reference — Portfolio')
+
+		const meta = useSeoMeta.mock.calls.at(-1)[0]
+		expect(unref(meta.ogTitle)).toBe('Test Reference — Portfolio')
+		expect(unref(meta.ogUrl)).toContain('/portfolio/test-reference')
 	})
 
 	/* it('should update meta tags when reference changes', async () => {
@@ -147,5 +148,44 @@ describe('PortfolioSingle', () => {
 		await nextTick()
 		expect(wrapper.find('.post').exists()).toBe(false)
 		expect(wrapper.find('.not-found').exists()).toBe(true)
+	})
+
+	it('should show the loader, not a 404, while the store has not settled', () => {
+		const pendingStore = reactive({ loaded: false, getRef: vi.fn().mockReturnValue(undefined) })
+		usePortfolioStore.mockReturnValue(pendingStore)
+
+		const pending = mount(PortfolioSingle, {
+			props: { slug: 'test-reference' },
+			global: { stubs: ['sequential-entrance'] }
+		})
+
+		expect(pending.find('.loader-mock').exists()).toBe(true)
+		expect(pending.find('.not-found').exists()).toBe(false)
+		expect(pending.find('.post').exists()).toBe(false)
+	})
+
+	it('should update the head title once the reference resolves after mount', async () => {
+		const pendingStore = reactive({
+			loaded: false,
+			portfolio: [],
+			getRef (slug) {
+				return this.portfolio.find(ref => ref.slug === slug)
+			}
+		})
+		usePortfolioStore.mockReturnValue(pendingStore)
+
+		mount(PortfolioSingle, {
+			props: { slug: 'test-reference' },
+			global: { stubs: ['sequential-entrance'] }
+		})
+
+		const { title } = useHead.mock.calls.at(-1)[0]
+		expect(unref(title)).toBe('Portfolio')
+
+		pendingStore.portfolio.push(mockReference)
+		pendingStore.loaded = true
+		await nextTick()
+
+		expect(unref(title)).toBe('Test Reference — Portfolio')
 	})
 })

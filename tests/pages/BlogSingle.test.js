@@ -1,6 +1,6 @@
 import { mount } from '@vue/test-utils'
 import { describe, it, expect, vi, beforeEach } from 'vitest'
-import { nextTick } from 'vue'
+import { nextTick, reactive, unref } from 'vue'
 import BlogSingle from '@/views/blog/Single.vue'
 import { usePostsStore } from '@/stores/posts'
 import { useRoute } from 'vue-router'
@@ -21,6 +21,7 @@ vi.mock('@/utilities/date', () => ({ dateFormat: vi.fn() }))
 vi.mock('@/components/share/Share.vue', () => ({ default: { template: '<div class="share-mock"></div>' } }))
 vi.mock('@/components/Tag.vue', () => ({ default: { template: '<div class="tag-mock"></div>', props: ['value'] } }))
 vi.mock('@/views/NotFound.vue', () => ({ default: { template: '<div class="not-found">Not Found</div>' } }))
+vi.mock('@/components/loader/Loader.vue', () => ({ default: { template: '<div class="loader-mock"></div>' } }))
 vi.mock('@/components/layouts/Article.vue', () => ({
 	default: {
 		template: `
@@ -62,9 +63,10 @@ describe('BlogSingle', () => {
 		vi.clearAllMocks()
 		useRoute.mockReturnValue({ fullPath: '/blog/test-post' })
 
-		mockPostsStore = {
+		mockPostsStore = reactive({
+			loaded: true,
 			getPost: vi.fn().mockReturnValue(mockPost)
-		}
+		})
 		usePostsStore.mockReturnValue(mockPostsStore)
 
 		dateFormat.mockReturnValue('20 May 2023')
@@ -143,5 +145,67 @@ describe('BlogSingle', () => {
 		await nextTick()
 		expect(wrapper.find('.post').exists()).toBe(false)
 		expect(wrapper.find('.not-found').exists()).toBe(true)
+	})
+
+	it('should show the loader, not a 404, while the store has not settled', () => {
+		const pendingStore = reactive({ loaded: false, getPost: vi.fn().mockReturnValue(undefined) })
+		usePostsStore.mockReturnValue(pendingStore)
+
+		const pending = mount(BlogSingle, {
+			props: { slug: 'test-post' },
+			global: { stubs: ['sequential-entrance'] }
+		})
+
+		expect(pending.find('.loader-mock').exists()).toBe(true)
+		expect(pending.find('.not-found').exists()).toBe(false)
+		expect(pending.find('.post').exists()).toBe(false)
+	})
+
+	const pendingPostsStore = () => reactive({
+		loaded: false,
+		posts: [],
+		getPost (slug) {
+			return this.posts.find(post => post.slug === slug)
+		}
+	})
+
+	it('should update the head title once the post resolves after mount', async () => {
+		const pendingStore = pendingPostsStore()
+		usePostsStore.mockReturnValue(pendingStore)
+
+		mount(BlogSingle, {
+			props: { slug: 'test-post' },
+			global: { stubs: ['sequential-entrance'] }
+		})
+
+		const { title } = useHead.mock.calls.at(-1)[0]
+		expect(unref(title)).toBe('Blog')
+
+		pendingStore.posts.push(mockPost)
+		pendingStore.loaded = true
+		await nextTick()
+
+		expect(unref(title)).toBe('Test Post — Blog')
+	})
+
+	it('should pass reactive seo meta rather than a snapshot', async () => {
+		const pendingStore = pendingPostsStore()
+		usePostsStore.mockReturnValue(pendingStore)
+
+		mount(BlogSingle, {
+			props: { slug: 'test-post' },
+			global: { stubs: ['sequential-entrance'] }
+		})
+
+		const meta = useSeoMeta.mock.calls.at(-1)[0]
+		expect(unref(meta.description)).toBeUndefined()
+
+		pendingStore.posts.push(mockPost)
+		pendingStore.loaded = true
+		await nextTick()
+
+		expect(unref(meta.description)).toBe('Test description')
+		expect(unref(meta.ogTitle)).toBe('Test Post — Blog')
+		expect(unref(meta.ogImage)).toBe('test-image.jpg')
 	})
 })

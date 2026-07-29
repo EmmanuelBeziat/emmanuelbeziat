@@ -3,7 +3,8 @@ import { fetchPortfolio } from '@/api/portfolio'
 
 export const usePortfolioStore = defineStore('portfolio', {
 	state: () => ({
-		portfolio: []
+		portfolio: [],
+		loaded: false
 	}),
 
 	getters: {
@@ -19,6 +20,9 @@ export const usePortfolioStore = defineStore('portfolio', {
 			}
 			catch (error) {
 				console.error(`Store error: ${error}`)
+			}
+			finally {
+				this.loaded = true
 			}
 		}
 	}

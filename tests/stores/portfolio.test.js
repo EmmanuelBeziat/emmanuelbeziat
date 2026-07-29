@@ -51,4 +51,23 @@ describe('usePortfolioStore', () => {
 		await expect(store.fetch()).resolves.not.toThrow()
 		expect(store.portfolio).toEqual([])
 	})
+
+	it('should not be marked as loaded before fetching', () => {
+		const store = usePortfolioStore()
+		expect(store.loaded).toBe(false)
+	})
+
+	it('should be marked as loaded once the fetch resolves', async () => {
+		fetchPortfolio.mockResolvedValue(mockRefs)
+		const store = usePortfolioStore()
+		await store.fetch()
+		expect(store.loaded).toBe(true)
+	})
+
+	it('should be marked as loaded even when the fetch fails', async () => {
+		fetchPortfolio.mockRejectedValue(new Error('Network error'))
+		const store = usePortfolioStore()
+		await store.fetch()
+		expect(store.loaded).toBe(true)
+	})
 })

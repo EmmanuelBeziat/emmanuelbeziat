@@ -35,21 +35,19 @@ const vFocus = {
 
 <style scoped>
 .search {
-	margin-bottom: 2rem;
 	display: flex;
-
-	@media (width <= 768px) {
-		margin-inline: -1rem;
-	}
+	margin-inline: -1.25rem;
+	margin-bottom: 4rem;
 }
 
 .search-field {
 	--border-color: var(--color-separator);
 
 	flex: 1;
-	padding: 10px 1rem;
+	padding: .8em 1.25rem;
 	background: var(--color-back-dark);
 	border: 1px solid var(--border-color);
+	border-radius: 100vw;
 	box-shadow: none;
 	outline: none;
 	color: var(--color-front);
@@ -61,6 +59,7 @@ const vFocus = {
 
 	&::placeholder {
 		color: var(--color-blue);
+		font-style: italic;
 	}
 }
 </style>

@@ -25,7 +25,8 @@ import { useCodesStore } from '@/stores/codes'
 import Loader from '@/components/loader/Loader.vue'
 
 const codes = useCodesStore()
-const code = computed(() => codes.list[Math.floor(Math.random() * codes.count)] || [])
+const random = Math.random()
+const code = computed(() => codes.count ? codes.list[Math.floor(random * codes.count)] : null)
 </script>
 
 <style scoped>

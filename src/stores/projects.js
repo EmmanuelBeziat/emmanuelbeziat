@@ -3,7 +3,8 @@ import { fetchProjects } from '@/api/projects'
 
 export const useProjectsStore = defineStore('projects', {
 	state: () => ({
-		projects: []
+		projects: [],
+		loaded: false
 	}),
 
 	getters: {
@@ -19,6 +20,9 @@ export const useProjectsStore = defineStore('projects', {
 			}
 			catch (error) {
 				console.error(`Store error: ${error}`)
+			}
+			finally {
+				this.loaded = true
 			}
 		},
 

@@ -1,5 +1,9 @@
 <template>
-	<template v-if="!post">
+	<template v-if="!postsStore.loaded">
+		<Loader />
+	</template>
+
+	<template v-else-if="!post">
 		<NotFound />
 	</template>
 
@@ -47,6 +51,7 @@ import Article from '@/components/layouts/Article.vue'
 import Share from '@/components/share/Share.vue'
 import Tag from '@/components/Tag.vue'
 import Note from '@/components/Note.vue'
+import Loader from '@/components/loader/Loader.vue'
 import NotFound from '@/views/NotFound.vue'
 
 import { dateFormat } from '@/utilities/date'
@@ -66,21 +71,24 @@ const fullURL = computed(() => openGraph.url + route.fullPath)
 const postsStore = usePostsStore()
 const post = computed(() => postsStore.getPost(props.slug))
 const articleIsOld = computed(() => isOlderThan(post.value?.date, 5))
+const pageTitle = computed(() => post.value ? `${post.value.title} — Blog` : 'Blog')
+const description = computed(() => post.value?.description)
+const image = computed(() => post.value?.image)
 
 onMounted(() => {
 	defineNamespace('blog')
 })
 
 useHead({
-	title: `${post.value?.title} — Blog`,
+	title: pageTitle,
 })
 
 useSeoMeta({
-	description: post.value?.description,
-	ogTitle: `${post.value?.title} — Blog`,
+	description,
+	ogTitle: pageTitle,
 	ogUrl: fullURL,
-	ogImage: post.value?.image,
-	ogDescription: post.value?.description,
+	ogImage: image,
+	ogDescription: description,
 })
 </script>
 
