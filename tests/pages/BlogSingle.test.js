@@ -122,23 +122,6 @@ describe('BlogSingle', () => {
 		expect(defineNamespace).toHaveBeenCalledWith('blog')
 	})
 
-	/*   it('should update meta tags when post changes', async () => {
-    const newPost = { ...mockPost, title: 'New Test Post', description: 'New description' }
-    mockPostsStore.getPost.mockReturnValue(newPost)
-    await wrapper.setProps({ slug: 'new-test-post' })
-    await nextTick()
-
-    expect(useHead).toHaveBeenCalledWith({
-      title: 'New Test Post — Blog'
-    })
-
-    expect(useSeoMeta).toHaveBeenCalledWith(expect.objectContaining({
-      description: 'New description',
-      ogTitle: 'New Test Post — Blog',
-      ogDescription: 'New description',
-    }))
-  }) */
-
 	it('should not render when post does not exist', async () => {
 		mockPostsStore.getPost.mockReturnValue(null)
 		await wrapper.setProps({ slug: 'non-existent-post' })

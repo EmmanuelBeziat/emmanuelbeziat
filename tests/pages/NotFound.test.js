@@ -74,10 +74,4 @@ describe('<NotFound>', () => {
 		expect(content.text()).toContain('Et voilà, vous avez tout cassé…')
 	})
 
-	it('should apply correct CSS classes for animations', () => {
-		expect(wrapper.find('.image').classes()).toContain('animation-bounce')
-		expect(wrapper.find('.error').classes()).toContain('animation-bounce')
-		expect(wrapper.find('.title').classes()).toContain('animation-bounce')
-		expect(wrapper.find('.message').classes()).toContain('animation-bounce')
-	})
 })

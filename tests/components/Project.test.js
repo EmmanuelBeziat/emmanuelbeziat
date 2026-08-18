@@ -60,22 +60,10 @@ describe('Project', () => {
 		expect(wrapper.find('.title a').text()).toBe('Test Project')
 	})
 
-	/* it('should render the archive icon for archived projects', () => {
-    const wrapper = createWrapper({ archived: true })
-    expect(wrapper.find('.title svg').exists()).toBe(true)
-  }) */
-
 	it('should not render the archive icon for non-archived projects', () => {
 		const wrapper = createWrapper()
 		expect(wrapper.find('.title svg').exists()).toBe(false)
 	})
-
-	/* it('should render formatted dates', () => {
-    const wrapper = createWrapper()
-    const dateInfo = wrapper.find('.date').text()
-    expect(dateInfo).toContain('Créé le Formatted 2023-01-01')
-    expect(dateInfo).toContain('Dernière mise à jour le Formatted 2023-05-20')
-  }) */
 
 	it('should render language tag if language is provided', () => {
 		const wrapper = createWrapper()

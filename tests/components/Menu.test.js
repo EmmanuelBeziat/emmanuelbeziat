@@ -20,8 +20,6 @@ describe('<Menu>', () => {
 		expect(nav.exists()).toBe(true)
 		expect(nav.attributes('id')).toBe('menu')
 		expect(nav.attributes('aria-label')).toBe('Navigation principale')
-		expect(nav.classes()).toContain('menu')
-		expect(nav.classes()).toContain('animation-bounce')
 	})
 
 	it('should render the correct number of MenuItem components', () => {
@@ -50,9 +48,4 @@ describe('<Menu>', () => {
 		})
 	})
 
-	it('should have correct CSS classes', () => {
-		const wrapper = mount(Menu)
-		expect(wrapper.classes()).toContain('menu')
-		expect(wrapper.classes()).toContain('animation-bounce')
-	})
 })

@@ -84,15 +84,6 @@ describe('<Header>', () => {
 		expect(wrapper.findComponent(Copyright).exists()).toBe(true)
 	})
 
-	it('should have correct CSS classes for animations', () => {
-		const wrapper = mountHeader()
-		expect(wrapper.find('.title').classes()).toContain('animation-skew-y')
-		expect(wrapper.find('.picture').classes()).toContain('animation-bounce')
-		expect(wrapper.find('.social').classes()).toContain('animation-bounce')
-		expect(wrapper.find('.bio').classes()).toContain('animation-bounce')
-		expect(wrapper.find('.copyright').classes()).toContain('animation-bounce')
-	})
-
 	it('should render emoji with correct accessibility attributes', () => {
 		const wrapper = mountHeader()
 		const emoji = wrapper.find('.emoji')

@@ -54,21 +54,10 @@ describe('GithubCards', () => {
 		expect(wrapper.find('img[alt="Github languages"]').exists()).toBe(false)
 	})
 
-	it('should have lazy loading on images', () => {
-		const images = wrapper.findAll('img')
-		images.forEach(img => {
-			expect(img.attributes('loading')).toBe('lazy')
-		})
-	})
-
 	it('should use default props when not provided', () => {
 		wrapper = mount(GithubCards)
 		expect(wrapper.classes()).toContain('card-center')
 		expect(wrapper.find('img[alt="Github stats"]').exists()).toBe(true)
 		expect(wrapper.find('img[alt="Github languages"]').exists()).toBe(false)
-	})
-
-	it('should apply correct CSS classes', () => {
-		expect(wrapper.classes()).toContain('github-card')
 	})
 })

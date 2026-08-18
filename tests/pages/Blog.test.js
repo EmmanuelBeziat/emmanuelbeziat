@@ -67,24 +67,6 @@ describe('BlogIndex', () => {
 		expect(wrapper.findComponent(Search).exists()).toBe(true)
 	})
 
-	/* it('should render Post components for each post', () => {
-    const posts = wrapper.findAllComponents(Post)
-    expect(posts).toHaveLength(2)
-  }) */
-
-	/* it('should filter posts based on search terms', async () => {
-    await wrapper.setData({ searchTerms: 'Post 1' })
-    await nextTick()
-    const posts = wrapper.findAllComponents(Post)
-    expect(posts).toHaveLength(1)
-  }) */
-
-	/* it('should render NoContent when no posts match search', async () => {
-    await wrapper.setData({ searchTerms: 'Non-existent Post' })
-    await nextTick()
-    expect(wrapper.findComponent(NoContent).exists()).toBe(true)
-  }) */
-
 	it('should call defineNamespace on mount', async () => {
 		await nextTick()
 		expect(defineNamespace).toHaveBeenCalledWith('blog')

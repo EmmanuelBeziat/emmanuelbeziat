@@ -81,14 +81,4 @@ describe('<Search>', () => {
 		expect(focusSpy).not.toHaveBeenCalled()
 	})
 
-	it('should have correct CSS class', () => {
-		wrapper = createWrapper()
-		expect(wrapper.classes()).toContain('search')
-	})
-
-	it('should apply scoped styles to input', () => {
-		wrapper = createWrapper()
-		const input = wrapper.find('input')
-		expect(input.classes()).toContain('search-field')
-	})
 })

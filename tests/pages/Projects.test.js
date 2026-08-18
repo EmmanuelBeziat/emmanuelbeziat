@@ -67,33 +67,4 @@ describe('ProjectsIndex', () => {
 	it('should call defineNamespace on mount', () => {
 		expect(defineNamespace).toHaveBeenCalledWith('projects')
 	})
-
-	/*
-	it('should render NoContent when no projects match search', async () => {
-    await wrapper.setData({ searchTerms: 'Non-existent Project' })
-    await nextTick()
-    expect(wrapper.find('.no-content-mock').exists()).toBe(true)
-  })
-
-	it('should render Project components for each project', () => {
-    const projects = wrapper.findAll('.project-mock')
-    expect(projects).toHaveLength(2)
-  })
-
-  it('should filter projects based on search terms', async () => {
-    await wrapper.setData({ searchTerms: 'Project 1' })
-    await nextTick()
-    const projects = wrapper.findAll('.project-mock')
-    expect(projects).toHaveLength(1)
-  })
-
-  it('should set correct head metadata', () => {
-    expect(useHead).toHaveBeenCalledWith({
-      title: 'Projets'
-    })
-    expect(useSeoMeta).toHaveBeenCalledWith({
-      ogUrl: expect.any(String)
-    })
-  })
-		*/
 })

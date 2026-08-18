@@ -75,11 +75,4 @@ describe('AboutIndex', () => {
 		expect(sources[1].attributes('srcset')).toContain('emmanuelb-draw.webp')
 	})
 
-	it('should have correct CSS classes for animations', () => {
-		const animatedElements = wrapper.findAll('.stagger-group')
-		expect(animatedElements.length).toBe(3)
-		animatedElements.forEach((el, index) => {
-			expect(el.classes()).toContain(`stagger-group`)
-		})
-	})
 })

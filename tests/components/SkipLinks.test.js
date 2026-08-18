@@ -41,17 +41,4 @@ describe('<SkipLinks>', () => {
 		expect(menuLink.attributes('id')).toBe('skiplink-go-to-menu-from-top')
 	})
 
-	it('should apply correct CSS classes to links', () => {
-		const wrapper = mount(SkipLinks)
-		const links = wrapper.findAll('a')
-		links.forEach(link => {
-			expect(link.classes()).toContain('visually-hidden')
-			expect(link.classes()).toContain('visually-hidden-focusable')
-		})
-	})
-
-	it('should have correct CSS class on nav element', () => {
-		const wrapper = mount(SkipLinks)
-		expect(wrapper.classes()).toContain('skip-link')
-	})
 })

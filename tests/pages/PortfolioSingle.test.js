@@ -127,21 +127,6 @@ describe('PortfolioSingle', () => {
 		expect(unref(meta.ogUrl)).toContain('/portfolio/test-reference')
 	})
 
-	/* it('should update meta tags when reference changes', async () => {
-    const newReference = { ...mockReference, title: 'New Test Reference' }
-    mockPortfolioStore.getRef.mockReturnValue(newReference)
-    await wrapper.setProps({ slug: 'new-test-reference' })
-    await nextTick()
-
-    expect(useHead).toHaveBeenCalledWith({
-      title: 'New Test Reference — Portfolio'
-    })
-
-    expect(useSeoMeta).toHaveBeenCalledWith(expect.objectContaining({
-      ogTitle: 'New Test Reference — Portfolio',
-    }))
-  }) */
-
 	it('should not render when reference does not exist', async () => {
 		mockPortfolioStore.getRef.mockReturnValue(null)
 		await wrapper.setProps({ slug: 'non-existent-reference' })

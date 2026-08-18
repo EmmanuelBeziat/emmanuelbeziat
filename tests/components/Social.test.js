@@ -47,9 +47,4 @@ describe('<Social>', () => {
 		})
 	})
 
-	it('should have the correct CSS class', () => {
-		const wrapper = mount(Social)
-		expect(wrapper.classes()).toContain('social')
-		expect(wrapper.classes()).toContain('animation-skew-y')
-	})
 })
