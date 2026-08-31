@@ -44,6 +44,14 @@ describe('<MenuItem>', () => {
 				to: { name: 'Blog' },
 				label: 'Blog',
 				icon: 'blog'
+			},
+			global: {
+				stubs: {
+					RouterLink: {
+						props: ['to'],
+						template: '<a><slot /></a>'
+					}
+				}
 			}
 		})
 	}
