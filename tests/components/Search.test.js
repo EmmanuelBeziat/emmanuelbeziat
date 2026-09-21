@@ -8,7 +8,7 @@ let isMobile = false
 let pointerType = 'mouse'
 
 vi.mock('@vueuse/core', () => ({
-	useMediaQuery: vi.fn(() => isMobile),
+	useMediaQuery: vi.fn(() => ({ value: isMobile })),
 	usePointer: vi.fn(() => ({ pointerType: { value: pointerType } })),
 	useDebounceFn: vi.fn((fn) => fn),
 }))
