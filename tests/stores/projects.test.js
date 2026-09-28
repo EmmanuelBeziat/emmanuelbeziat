@@ -38,13 +38,6 @@ describe('useProjectsStore', () => {
 		expect(store.count).toBe(2)
 	})
 
-	it('should find a project by slug', async () => {
-		fetchProjects.mockResolvedValue(mockProjects)
-		const store = useProjectsStore()
-		await store.fetch()
-		expect(store.getProject('project-1')).toEqual(mockProjects[0])
-	})
-
 	it('should handle fetch errors gracefully', async () => {
 		fetchProjects.mockRejectedValue(new Error('Network error'))
 		const store = useProjectsStore()

@@ -25,4 +25,8 @@ describe('dateFormat()', () => {
 		const result = dateFormat(timestamp, { year: 'numeric' })
 		expect(result).toContain('2023')
 	})
+
+	it('should throw on an invalid date', () => {
+		expect(() => dateFormat('not-a-date')).toThrow('dateFormat: invalid date "not-a-date"')
+	})
 })

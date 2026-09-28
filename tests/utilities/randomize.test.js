@@ -54,8 +54,7 @@ describe('selectRandomItem()', () => {
 		expect(selectRandomItem(['🍎'], storageKey)).toBe(0)
 	})
 
-	it('should return 0 for an empty array instead of looping forever', () => {
-		localStorageMock.setItem(storageKey, '0')
-		expect(selectRandomItem([], storageKey)).toBe(0)
+	it('should throw for an empty array', () => {
+		expect(() => selectRandomItem([], storageKey)).toThrow('selectRandomItem: items must not be empty')
 	})
 })

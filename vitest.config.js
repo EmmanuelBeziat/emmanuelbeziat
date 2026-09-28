@@ -10,6 +10,7 @@ export default mergeConfig(
 			setupFiles: ['./tests/setup.js'],
 			pool: 'threads',
 			singleThread: true,
+			exclude: [...configDefaults.exclude, '.kilo/**'],
 			coverage: {
 				include: undefined,
 				exclude: [...configDefaults.exclude, 'e2e/**'],

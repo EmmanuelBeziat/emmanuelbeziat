@@ -1,4 +1,4 @@
-import { describe, it, expect } from 'vitest'
+import { describe, it, expect, vi } from 'vitest'
 import { api, social, openGraph, github, personal, update } from '@/config'
 
 describe('config.js', () => {
@@ -62,5 +62,17 @@ describe('config.js', () => {
 	it('should expose last build date', () => {
 		expect(update).toHaveProperty('lastUpdate')
 		expect(update.lastUpdate).toBeDefined()
+	})
+})
+
+describe('config.js required environment', () => {
+	it('should throw when a required variable is missing', async () => {
+		vi.resetModules()
+		vi.stubEnv('VITE_API_POSTS', '')
+
+		await expect(import('@/config')).rejects.toThrow('VITE_API_POSTS')
+
+		vi.unstubAllEnvs()
+		vi.resetModules()
 	})
 })

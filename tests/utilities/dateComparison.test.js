@@ -31,4 +31,8 @@ describe('isOlderThan()', () => {
 		oldDate.setFullYear(oldDate.getFullYear() - 10)
 		expect(isOlderThan(oldDate, 5)).toBe(true)
 	})
+
+	it('should throw on an invalid date', () => {
+		expect(() => isOlderThan('not-a-date', 5)).toThrow('isOlderThan: invalid date "not-a-date"')
+	})
 })

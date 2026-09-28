@@ -9,8 +9,7 @@ export const useProjectsStore = defineStore('projects', {
 
 	getters: {
 		list: state => state.projects,
-		count: state => state.projects.length,
-		getProject: state => slug => state.projects.find(project => project.slug === slug)
+		count: state => state.projects.length
 	},
 
 	actions: {

@@ -7,6 +7,8 @@ export const fetchProjects = async () => {
 
 	const data = await response.json()
 
+	if (!Array.isArray(data)) throw new Error('fetchProjects: expected an array')
+
 	return data
 		.filter(repo => !repo.archived)
 		.map(repo => ({

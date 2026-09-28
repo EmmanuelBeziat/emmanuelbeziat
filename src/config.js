@@ -1,4 +1,8 @@
 const env = import.meta.env
+const requiredEnv = ['VITE_API_POSTS', 'VITE_API_REFS', 'VITE_API_CODES', 'VITE_API_PROJECTS', 'VITE_OG_URL']
+const missingEnv = requiredEnv.filter(key => typeof env[key] !== 'string' || !env[key].trim())
+
+if (missingEnv.length) throw new Error(`config: missing environment variables: ${missingEnv.join(', ')}`)
 
 export const api = {
 	posts: env.VITE_API_POSTS,

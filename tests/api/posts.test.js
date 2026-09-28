@@ -44,4 +44,22 @@ describe('fetchPosts()', () => {
 		fetch.mockRejectedValue(new Error('Network error'))
 		await expect(fetchPosts()).rejects.toThrow('Network error')
 	})
+
+	it('should throw when the response is not an array', async () => {
+		fetch.mockResolvedValue({
+			ok: true,
+			json: () => Promise.resolve({ message: 'oops' })
+		})
+
+		await expect(fetchPosts()).rejects.toThrow('fetchPosts: expected an array')
+	})
+
+	it('should throw when an item has no slug', async () => {
+		fetch.mockResolvedValue({
+			ok: true,
+			json: () => Promise.resolve([{ slug: 'ok', publish: true }, { title: 'no slug', publish: true }])
+		})
+
+		await expect(fetchPosts()).rejects.toThrow('fetchPosts: every item needs a slug')
+	})
 })

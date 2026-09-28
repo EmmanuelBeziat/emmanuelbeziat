@@ -98,4 +98,13 @@ describe('fetchProjects()', () => {
 
 		await expect(fetchProjects()).rejects.toThrow('fetchProjects: HTTP 403')
 	})
+
+	it('should throw when the response is not an array', async () => {
+		fetch.mockResolvedValue({
+			ok: true,
+			json: () => Promise.resolve({ message: 'oops' })
+		})
+
+		await expect(fetchProjects()).rejects.toThrow('fetchProjects: expected an array')
+	})
 })

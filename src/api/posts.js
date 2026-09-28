@@ -6,5 +6,12 @@ export const fetchPosts = async () => {
 	if (!response.ok) throw new Error(`fetchPosts: HTTP ${response.status}`)
 
 	const data = await response.json()
-	return data.filter(item => item.publish)
+
+	if (!Array.isArray(data)) throw new Error('fetchPosts: expected an array')
+
+	const posts = data.filter(item => item.publish)
+
+	if (!posts.every(item => typeof item?.slug === 'string' && item.slug)) throw new Error('fetchPosts: every item needs a slug')
+
+	return posts
 }
