@@ -41,8 +41,8 @@ import { useHead, useSeoMeta } from '@unhead/vue'
 import { defineNamespace } from '@/utilities/namespace'
 import GithubCards from '@/components/GithubCards.vue'
 
-const pictureAvif = ref(new URL(`../../assets/images/emmanuelb-draw.avif`, import.meta.url).href)
-const pictureWebp = ref(new URL(`../../assets/images/emmanuelb-draw.webp`, import.meta.url).href)
+const pictureAvif = ref(new URL('../../assets/images/emmanuelb-draw.avif', import.meta.url).href)
+const pictureWebp = ref(new URL('../../assets/images/emmanuelb-draw.webp', import.meta.url).href)
 const route = useRoute()
 const fullURL = computed(() => openGraph.url + route.fullPath)
 const sectionRef = ref(null)

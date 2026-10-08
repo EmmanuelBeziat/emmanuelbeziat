@@ -39,24 +39,24 @@ export const github = {
 export const personal = {
 	amazonLists: [
 		{
-			title: "Informatique",
-			url: "https://www.amazon.fr/hz/wishlist/ls/262X5U712UDBE?ref_=wl_share"
+			title: 'Informatique',
+			url: 'https://www.amazon.fr/hz/wishlist/ls/262X5U712UDBE?ref_=wl_share'
 		},
 		{
-			"title": "Musique",
-			"url": "https://www.amazon.fr/hz/wishlist/ls/2JYJFI9NWY4GM?ref_=wl_share"
+			title: 'Musique',
+			url: 'https://www.amazon.fr/hz/wishlist/ls/2JYJFI9NWY4GM?ref_=wl_share'
 		},
 		{
-			"title": "Bricolage",
-			"url": "https://www.amazon.fr/hz/wishlist/ls/1ZT5X3BZXZPVH?ref_=wl_share"
+			title: 'Bricolage',
+			url: 'https://www.amazon.fr/hz/wishlist/ls/1ZT5X3BZXZPVH?ref_=wl_share'
 		},
 		{
-			"title": "Gaming",
-			"url": "https://www.amazon.fr/hz/wishlist/ls/NEG3ECFITM7X?ref_=wl_share"
+			title: 'Gaming',
+			url: 'https://www.amazon.fr/hz/wishlist/ls/NEG3ECFITM7X?ref_=wl_share'
 		},
 		{
-			"title": "Autres",
-			"url": "https://www.amazon.fr/hz/wishlist/ls/287DJMM2YDJKB?ref_=wl_share"
+			title: 'Autres',
+			url: 'https://www.amazon.fr/hz/wishlist/ls/287DJMM2YDJKB?ref_=wl_share'
 		}
 	],
 	birthday: env.VITE_PERSO_BIRTHDAY
