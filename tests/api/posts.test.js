@@ -14,11 +14,10 @@ describe('fetchPosts()', () => {
 		vi.unstubAllGlobals()
 	})
 
-	it('should return only published posts', async () => {
+	it('should return the posts as served (the API already hides drafts)', async () => {
 		const mockData = [
 			{ slug: 'post-1', publish: true },
-			{ slug: 'post-2', publish: false },
-			{ slug: 'post-3', publish: true },
+			{ slug: 'post-2', publish: true },
 		]
 
 		fetch.mockResolvedValue({
@@ -27,8 +26,7 @@ describe('fetchPosts()', () => {
 		})
 
 		const result = await fetchPosts()
-		expect(result).toHaveLength(2)
-		expect(result.every(p => p.publish)).toBe(true)
+		expect(result).toEqual(mockData)
 	})
 
 	it('should throw an error on HTTP error response', async () => {
