@@ -33,10 +33,6 @@ defineProps({
 	position: relative;
 	color: var(--color-front);
 	background: var(--color-back-dark);
-
-	@supports (content-visibility: auto) {
-		content-visibility: auto;
-	}
 }
 
 .layer {
