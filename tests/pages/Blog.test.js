@@ -52,11 +52,7 @@ describe('BlogIndex', () => {
 		}
 		usePostsStore.mockReturnValue(mockPostsStore)
 
-		wrapper = mount(BlogIndex, {
-			global: {
-				stubs: ['sequential-entrance']
-			}
-		})
+		wrapper = mount(BlogIndex)
 	})
 
 	it('should render the component', () => {

@@ -6,10 +6,7 @@ describe('<Article>', () => {
 	const createWrapper = (props = {}, slots = {}) => {
 		return mount(Article, {
 			props,
-			slots,
-			global: {
-				stubs: ['sequential-entrance']
-			}
+			slots
 		})
 	}
 

@@ -1,9 +1,9 @@
 <template>
 	<section class="showcase">
 		<template v-if="references.length">
-			<sequential-entrance animation="animation-fade-scale" delay="50" class="showcase-list">
-				<Reference v-for="ref in references" :key="`ref-${ref.slug}`" :reference="ref" class="showcase-item" />
-			</sequential-entrance>
+			<div class="showcase-list stagger">
+				<Reference v-for="ref in references" :key="`ref-${ref.slug}`" :reference="ref" class="showcase-item animation-fade-scale" />
+			</div>
 
 			<div class="note --success">
 				<div class="thanks">
@@ -60,6 +60,7 @@ useSeoMeta({
 }
 
 .showcase-list {
+	--stagger-delay: 50ms;
 	--col-number: max(1, 3);
 	--col-size-minimum: 220px;
 	--col-size-maximum: calc(100cqi / 3);

@@ -1,6 +1,6 @@
 {
 	"name": "emmanuelbeziat",
-	"version": "9.4.2",
+	"version": "9.5.0",
 	"description": "My website, basically. Portfolio, Blog, Resume",
 	"type": "module",
 	"author": {
@@ -41,8 +41,7 @@
 		"slug": "^12.0.1",
 		"toastify-js": "^1.12.0",
 		"vue": "^3.5.43",
-		"vue-router": "^5.4.0",
-		"vue3-sequential-entrance": "^2.0.2"
+		"vue-router": "^5.4.0"
 	},
 	"devDependencies": {
 		"@eslint/js": "^10.0.1",

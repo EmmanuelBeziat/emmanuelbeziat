@@ -11,15 +11,15 @@
 		<template #title>{{ reference.title }}</template>
 
 		<template #tags>
-			<sequential-entrance animation="animation-bounce" delay="125" class="tags">
-				<Tag v-for="tag in reference.tags" :key="`tag-${tag}`" :value="tag" />
-			</sequential-entrance>
+			<div class="tags stagger">
+				<Tag v-for="tag in reference.tags" :key="`tag-${tag}`" :value="tag" class="animation-bounce" />
+			</div>
 		</template>
 
 		<template #clients>
-			<sequential-entrance animation="animation-bounce" delay="125" class="tags">
-				<Tag v-for="client in reference.clients" :key="`client-${client}`" :value="client" />
-			</sequential-entrance>
+			<div class="tags stagger">
+				<Tag v-for="client in reference.clients" :key="`client-${client}`" :value="client" class="animation-bounce" />
+			</div>
 		</template>
 
 		<template #content>
@@ -75,3 +75,9 @@ useSeoMeta({
 	ogUrl: fullURL,
 })
 </script>
+
+<style scoped>
+.tags {
+	--stagger-delay: 125ms;
+}
+</style>

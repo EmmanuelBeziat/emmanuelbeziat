@@ -137,6 +137,20 @@
 	animation: .765s var(--ease-back-out) .25s forwards animation-skew-y;
 }
 
+/**
+ * Staggered entrances: each child of .stagger starts its animation
+ * --stagger-delay after its previous sibling.
+ * Browsers without sibling-index() play all children at once.
+ */
+.stagger > * {
+	animation-delay: calc(var(--sibling-index, 0) * var(--stagger-delay, 100ms));
+	animation-delay: calc((sibling-index() - 1) * var(--stagger-delay, 100ms));
+
+	@media (prefers-reduced-motion: reduce) {
+		animation-delay: 0s;
+	}
+}
+
 @keyframes animation-fade {
 	to {
 		opacity: 1;

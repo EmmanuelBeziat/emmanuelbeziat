@@ -71,9 +71,6 @@ describe('PortfolioSingle', () => {
 		wrapper = mount(PortfolioSingle, {
 			props: {
 				slug: 'test-reference'
-			},
-			global: {
-				stubs: ['sequential-entrance']
 			}
 		})
 	})
@@ -97,6 +94,15 @@ describe('PortfolioSingle', () => {
 
 		// Test that the store method is called with the correct slug
 		expect(mockPortfolioStore.getRef).toHaveBeenCalledWith('test-reference')
+	})
+
+	it('should stagger tags and clients entrance', () => {
+		const groups = wrapper.findAll('.tags.stagger')
+
+		expect(groups).toHaveLength(2)
+		groups.forEach(group => {
+			expect(group.findAll('.animation-bounce')).toHaveLength(2)
+		})
 	})
 
 	it('should render reference content', () => {
@@ -140,8 +146,7 @@ describe('PortfolioSingle', () => {
 		usePortfolioStore.mockReturnValue(pendingStore)
 
 		const pending = mount(PortfolioSingle, {
-			props: { slug: 'test-reference' },
-			global: { stubs: ['sequential-entrance'] }
+			props: { slug: 'test-reference' }
 		})
 
 		expect(pending.find('.loader-mock').exists()).toBe(true)
@@ -160,8 +165,7 @@ describe('PortfolioSingle', () => {
 		usePortfolioStore.mockReturnValue(pendingStore)
 
 		mount(PortfolioSingle, {
-			props: { slug: 'test-reference' },
-			global: { stubs: ['sequential-entrance'] }
+			props: { slug: 'test-reference' }
 		})
 
 		const { title } = useHead.mock.calls.at(-1)[0]

@@ -13,9 +13,9 @@
 		<template #date>Posté le <time>{{ dateFormat(post.date, { year: 'numeric', month: 'long', day: 'numeric' }) }}</time></template>
 
 		<template #tags>
-			<sequential-entrance animation="animation-bounce" delay="125" class="tags">
-				<Tag v-for="(tag, index) in post.tags" :key="`tag-${index}`" :value="tag" />
-			</sequential-entrance>
+			<div class="tags stagger">
+				<Tag v-for="(tag, index) in post.tags" :key="`tag-${index}`" :value="tag" class="animation-bounce" />
+			</div>
 		</template>
 
 		<template #share>
@@ -93,6 +93,10 @@ useSeoMeta({
 </script>
 
 <style scoped>
+.tags {
+	--stagger-delay: 125ms;
+}
+
 .help {
 	font-size: var(--font-size-xs);
 	margin-top: var(--gutter-base);

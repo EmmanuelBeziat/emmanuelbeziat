@@ -3,9 +3,9 @@
 		<Search v-model="searchTerms" placeholder="Recherche…" label="Rechercher" />
 
 		<template v-if="items.length">
-			<sequential-entrance animation="animation-fade" delay="100" class="post-list">
+			<div class="post-list stagger">
 				<slot name="item" :items="items" />
-			</sequential-entrance>
+			</div>
 		</template>
 
 		<NoContent v-else />

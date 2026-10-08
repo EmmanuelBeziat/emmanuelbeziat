@@ -45,11 +45,7 @@ describe('ProjectsIndex', () => {
 		}
 		useProjectsStore.mockReturnValue(mockProjectsStore)
 
-		wrapper = mount(ProjectsIndex, {
-			global: {
-				stubs: ['sequential-entrance']
-			}
-		})
+		wrapper = mount(ProjectsIndex)
 	})
 
 	it('should render the projects section', () => {

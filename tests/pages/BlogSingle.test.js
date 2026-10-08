@@ -74,9 +74,6 @@ describe('BlogSingle', () => {
 		wrapper = mount(BlogSingle, {
 			props: {
 				slug: 'test-post'
-			},
-			global: {
-				stubs: ['sequential-entrance']
 			}
 		})
 	})
@@ -135,8 +132,7 @@ describe('BlogSingle', () => {
 		usePostsStore.mockReturnValue(pendingStore)
 
 		const pending = mount(BlogSingle, {
-			props: { slug: 'test-post' },
-			global: { stubs: ['sequential-entrance'] }
+			props: { slug: 'test-post' }
 		})
 
 		expect(pending.find('.loader-mock').exists()).toBe(true)
@@ -157,8 +153,7 @@ describe('BlogSingle', () => {
 		usePostsStore.mockReturnValue(pendingStore)
 
 		mount(BlogSingle, {
-			props: { slug: 'test-post' },
-			global: { stubs: ['sequential-entrance'] }
+			props: { slug: 'test-post' }
 		})
 
 		const { title } = useHead.mock.calls.at(-1)[0]
@@ -176,8 +171,7 @@ describe('BlogSingle', () => {
 		usePostsStore.mockReturnValue(pendingStore)
 
 		mount(BlogSingle, {
-			props: { slug: 'test-post' },
-			global: { stubs: ['sequential-entrance'] }
+			props: { slug: 'test-post' }
 		})
 
 		const meta = useSeoMeta.mock.calls.at(-1)[0]

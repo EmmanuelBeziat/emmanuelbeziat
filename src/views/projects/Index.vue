@@ -7,9 +7,9 @@
 		</KeepAlive>
 
 		<template v-if="projects.length">
-			<sequential-entrance animation="animation-fade" delay="100" class="post-list">
-				<Project v-for="project in projects" :key="`repo-${project.id}`" :project />
-			</sequential-entrance>
+			<div class="post-list stagger">
+				<Project v-for="project in projects" :key="`repo-${project.id}`" :project class="animation-fade" />
+			</div>
 		</template>
 
 		<NoContent v-else />

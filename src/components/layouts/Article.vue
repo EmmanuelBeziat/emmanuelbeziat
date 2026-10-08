@@ -25,9 +25,9 @@
 
 		<footer class="footer animation-bounce">
 			<div v-if="showFooterInfos" class="infos">
-				<sequential-entrance v-if="$slots.tags" animation="animation-bounce" delay="125" class="tags">
+				<div v-if="$slots.tags" class="tags">
 					<slot name="tags" />
-				</sequential-entrance>
+				</div>
 
 				<slot v-if="$slots.share" name="share" />
 			</div>
