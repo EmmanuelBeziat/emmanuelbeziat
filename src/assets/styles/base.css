@@ -89,6 +89,11 @@ h1, h2, h3, h4 {
 	font: 300 var(--title-size)/1 var(--font-stack-heading);
 	color: var(--title-color);
 	margin: 1.5em 0 .75em;
+	text-wrap: balance;
+}
+
+p, li, blockquote, figcaption {
+	text-wrap: pretty;
 }
 
 h1 {

@@ -1,14 +1,46 @@
 /**
- * Pages transitions
+ * Pages transitions (View Transitions API)
+ * Only the main content fades, the rest of the page stays still.
  **/
-.page-enter-active,
-.page-leave-active {
-	transition: var(--timing-normal) ease;
+::view-transition-old(root),
+::view-transition-new(root),
+::view-transition-group(main) {
+	animation: none;
 }
 
-.page-enter,
-.page-leave-active {
-	opacity: 0;
+::view-transition-old(main) {
+	animation: var(--timing-normal) ease both view-transition-fade-out;
+}
+
+::view-transition-new(main) {
+	animation: var(--timing-normal) ease var(--timing-normal) both view-transition-fade-in;
+}
+
+/* Entrance animations wait for the page transition to end */
+.is-navigating .main :is(*, *::before, *::after) {
+	animation-play-state: paused;
+}
+
+@media (prefers-reduced-motion: reduce) {
+	::view-transition-group(*),
+	::view-transition-old(*),
+	::view-transition-new(*) {
+		animation: none !important;
+	}
+}
+
+@keyframes view-transition-fade-out {
+	to {
+		opacity: 0;
+		filter: blur(2px);
+	}
+}
+
+@keyframes view-transition-fade-in {
+	from {
+		opacity: 0;
+		filter: blur(2px);
+	}
 }
 
 .fade-enter-active,

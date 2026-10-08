@@ -1,4 +1,4 @@
-import { describe, it, expect } from 'vitest'
+import { describe, it, expect, vi, afterEach } from 'vitest'
 import router from '@/router'
 
 describe('Router', () => {
@@ -54,6 +54,62 @@ describe('Router', () => {
 			const result = router.options.scrollBehavior({}, {})
 
 			expect(result).toEqual({ top: 0 })
+		})
+	})
+	describe('view transitions', () => {
+		afterEach(async () => {
+			delete document.startViewTransition
+			await router.push('/')
+		})
+
+		it('should navigate normally without the View Transitions API', async () => {
+			await router.push('/blog')
+
+			expect(router.currentRoute.value.name).toBe('Blog')
+		})
+
+		it('should wrap navigation in a view transition and finish it once rendered', async () => {
+			await router.push('/')
+			let update
+			document.startViewTransition = vi.fn(callback => {
+				update = callback()
+				return { finished: Promise.resolve() }
+			})
+
+			await router.push('/portfolio')
+
+			expect(document.startViewTransition).toHaveBeenCalledOnce()
+			expect(router.currentRoute.value.name).toBe('Portfolio')
+			await expect(update).resolves.toBeUndefined()
+		})
+
+		it('should pause entrance animations until the transition has finished', async () => {
+			await router.push('/')
+			let endTransition
+			const finished = new Promise(resolve => endTransition = resolve)
+			document.startViewTransition = vi.fn(callback => {
+				callback()
+				return { finished }
+			})
+
+			await router.push('/projets')
+
+			expect(document.documentElement.classList.contains('is-navigating')).toBe(true)
+
+			endTransition()
+			await finished
+			await Promise.resolve()
+
+			expect(document.documentElement.classList.contains('is-navigating')).toBe(false)
+		})
+
+		it('should not start a view transition when only the hash changes', async () => {
+			await router.push('/blog')
+			document.startViewTransition = vi.fn(() => ({ finished: Promise.resolve() }))
+
+			await router.push('/blog#section')
+
+			expect(document.startViewTransition).not.toHaveBeenCalled()
 		})
 	})
 })

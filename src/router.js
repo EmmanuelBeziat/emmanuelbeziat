@@ -1,4 +1,5 @@
-import { createRouter, createWebHistory } from 'vue-router'
+import { nextTick } from 'vue'
+import { createRouter, createWebHistory, START_LOCATION } from 'vue-router'
 import Home from '@/views/home/Index.vue'
 
 const routes = [
@@ -78,6 +79,39 @@ const router = createRouter({
 		return savedPosition || (to.hash ? { el: to.hash } : { top: 0 })
 	},
 	routes
+})
+
+let finishViewTransition
+
+/**
+ * Wraps route changes in a view transition when the browser supports it.
+ * The navigation waits until the old page has been captured, and the transition
+ * waits until the new page has been rendered.
+ * Entrance animations are paused (via the `is-navigating` class) until the transition
+ * ends, as some browsers (Firefox) don't play them inside the new page snapshot.
+ */
+router.beforeResolve((to, from) => {
+	if (!document.startViewTransition || from === START_LOCATION || to.path === from.path) return
+
+	const root = document.documentElement
+	root.classList.add('is-navigating')
+
+	return new Promise(resolve => {
+		const transition = document.startViewTransition(() => new Promise(done => {
+			finishViewTransition = done
+			resolve()
+		}))
+
+		transition.finished.finally(() => root.classList.remove('is-navigating'))
+	})
+})
+
+router.afterEach(async () => {
+	if (!finishViewTransition) return
+
+	await nextTick()
+	finishViewTransition()
+	finishViewTransition = undefined
 })
 
 export default router

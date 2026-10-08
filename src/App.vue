@@ -8,11 +8,7 @@
 			<Menu />
 
 			<main id="content" class="main" tabindex="-1">
-				<RouterView v-slot="{ Component }">
-					<Transition mode="out-in" :name="$route.meta.transition || 'fade'">
-						<component :is="Component" />
-					</Transition>
-				</RouterView>
+				<RouterView />
 			</main>
 
 			<SkipLinks position="bottom" />
@@ -81,5 +77,6 @@ useSeoMeta({
 .main {
 	margin: 0 auto var(--gutter-base);
 	outline: 0;
+	view-transition-name: main;
 }
 </style>
