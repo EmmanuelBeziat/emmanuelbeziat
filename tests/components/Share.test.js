@@ -1,4 +1,4 @@
-import { mount } from '@vue/test-utils'
+import { mount, flushPromises } from '@vue/test-utils'
 import { describe, it, expect, vi, beforeEach } from 'vitest'
 import Share from '@/components/share/Share.vue'
 import Button from '@/components/share/Button.vue'
@@ -53,7 +53,7 @@ describe('<Share>', () => {
 		expect(mockCanShare).toHaveBeenCalled()
 		expect(mockShare).toHaveBeenCalledWith({
 			title: 'Via &emmanuelBeziat',
-			text: 'Test%20Title',
+			text: 'Test Title',
 			url: 'https://example.com'
 		})
 	})
@@ -67,6 +67,7 @@ describe('<Share>', () => {
 		Object.defineProperty(navigator, 'share', { value: undefined, configurable: true })
 
 		await wrapper.findComponent(Button).trigger('click')
+		await flushPromises()
 
 		expect(mockWriteText).toHaveBeenCalledWith('https://example.com')
 		expect(Toastify).toHaveBeenCalledWith(expect.objectContaining({
@@ -83,5 +84,32 @@ describe('<Share>', () => {
 		expect(Toastify).toHaveBeenCalledWith(expect.objectContaining({
 			text: 'L’API clipboard n’est pas compatible avec votre navigateur'
 		}))
+	})
+	it('should show error toast when clipboard write fails', async () => {
+		Object.defineProperty(navigator, 'clipboard', {
+			value: { writeText: vi.fn(() => Promise.reject(new Error('denied'))) },
+			configurable: true
+		})
+		Object.defineProperty(navigator, 'share', { value: undefined, configurable: true })
+
+		await wrapper.findComponent(Button).trigger('click')
+		await flushPromises()
+
+		expect(Toastify).toHaveBeenCalledWith(expect.objectContaining({
+			text: 'Impossible de copier l’URL dans le presse papier'
+		}))
+	})
+
+	it('should not fall back to clipboard when the user cancels sharing', async () => {
+		const mockWriteText = vi.fn()
+		const abort = Object.assign(new Error('cancel'), { name: 'AbortError' })
+		Object.defineProperty(navigator, 'clipboard', { value: { writeText: mockWriteText }, configurable: true })
+		Object.defineProperty(navigator, 'share', { value: vi.fn(() => Promise.reject(abort)), configurable: true })
+		Object.defineProperty(navigator, 'canShare', { value: () => true, configurable: true })
+
+		await wrapper.findComponent(Button).trigger('click')
+		await flushPromises()
+
+		expect(mockWriteText).not.toHaveBeenCalled()
 	})
 })

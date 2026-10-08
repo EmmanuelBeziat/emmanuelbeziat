@@ -35,7 +35,6 @@ import Header from '@/components/global/Header.vue'
 import Footer from '@/components/global/Footer.vue'
 import Menu from '@/components/global/Menu.vue'
 import SkipLinks from '@/components/global/SkipLinks.vue'
-// import ReloadPWA from '@/components/ReloadPWA.vue'
 
 useCodesStore().fetch()
 usePostsStore().fetch()

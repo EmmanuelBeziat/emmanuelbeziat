@@ -12,36 +12,51 @@ import 'toastify-js/src/toastify.css'
 import Button from '@/components/share/Button.vue'
 
 /**
- * Shares the provided data using the Web Share API
- * @param {Object} data - The data to share, including title, text, and url.
+ * Shows a toast notification
+ * @param {string} text - The message to display
+ * @param {string} color - The background color custom property
  */
-const share = data => {
-	navigator.share(data)
+const toast = (text, color) => {
+	Toastify({
+		text,
+		duration: 2000,
+		style:{
+			background: `var(${color})`
+		}
+	}).showToast()
 }
 
 /**
  * Copies the provided URL to the clipboard and shows a toast notification
  * @param {string} url - The URL to copy to the clipboard
  */
-const copy = url => {
-	if (navigator?.clipboard?.writeText) {
-		navigator.clipboard.writeText(url)
-		Toastify({
-			text: `URL "${url}" copiée dans le presse papier`,
-			duration: 2000,
-			style:{
-				background: 'var(--color-blue)'
-			}
-		}).showToast()
+const copy = async url => {
+	if (!navigator?.clipboard?.writeText) {
+		toast('L’API clipboard n’est pas compatible avec votre navigateur', '--color-red')
+		return
 	}
-	else {
-		Toastify({
-			text: 'L’API clipboard n’est pas compatible avec votre navigateur',
-			duration: 2000,
-			style:{
-				background: 'var(--color-red)'
-			}
-		}).showToast()
+
+	try {
+		await navigator.clipboard.writeText(url)
+		toast(`URL "${url}" copiée dans le presse papier`, '--color-blue')
+	}
+	catch {
+		toast('Impossible de copier l’URL dans le presse papier', '--color-red')
+	}
+}
+
+/**
+ * Shares the provided data using the Web Share API, falls back to copying the URL if sharing fails
+ * @param {Object} data - The data to share, including title, text, and url.
+ */
+const share = async data => {
+	try {
+		await navigator.share(data)
+	}
+	catch (error) {
+		// The user closed the share dialog
+		if (error?.name === 'AbortError') return
+		await copy(data.url)
 	}
 }
 
@@ -51,10 +66,11 @@ const copy = url => {
 const dispatch = () => {
 	const data = {
 		title: 'Via &emmanuelBeziat',
-		text: encodeURIComponent(document.title),
+		text: document.title,
 		url: window.location.href
 	}
-	navigator?.share && navigator?.canShare(data) ? share(data) : copy(data.url)
+
+	return navigator?.share && navigator?.canShare?.(data) ? share(data) : copy(data.url)
 }
 </script>
 

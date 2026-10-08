@@ -44,10 +44,10 @@ describe('Router', () => {
 			expect(result).toEqual(savedPosition)
 		})
 
-		it('should return hash selector when hash is present', () => {
+		it('should return hash element when hash is present', () => {
 			const result = router.options.scrollBehavior({ hash: '#section' }, {})
 
-			expect(result).toEqual({ selector: '#section' })
+			expect(result).toEqual({ el: '#section' })
 		})
 
 		it('should return top: 0 by default', () => {
