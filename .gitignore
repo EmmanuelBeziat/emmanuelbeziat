@@ -26,4 +26,9 @@ yarn-error.log*
 
 # Tests
 .stylelintcache
+
+# LLM
+AGENTS.md
+CLAUDE.md
+.claude
 .kilo
