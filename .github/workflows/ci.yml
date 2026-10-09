@@ -16,6 +16,9 @@ on:
       - '.eslintrc.js'
       - '.browserlistrc'
 
+permissions:
+  contents: read
+
 jobs:
   build-and-deploy:
     runs-on: ubuntu-latest
@@ -45,10 +48,12 @@ jobs:
       VITE_GITHUB_LANGUAGES: ${{ vars.VITE_GITHUB_LANGUAGES }}
 
     steps:
-    - uses: actions/checkout@v3
+    - uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7.0.1
+      with:
+        persist-credentials: false
 
     - name: Setup Node.js
-      uses: actions/setup-node@v3
+      uses: actions/setup-node@949feb2413d6458794dcd2491c4babbbce0c15c1 # v7.1.0
       with:
         node-version: '24'
         cache: 'npm'
@@ -83,41 +88,39 @@ jobs:
       run: tar -czf dist.tar.gz -C dist .
 
     - name: Deploy to server
-      uses: appleboy/scp-action@v0.1.7
-      with:
-        host: ${{ secrets.DEPLOY_HOST }}
-        port: ${{ secrets.DEPLOY_PORT }}
-        username: ${{ secrets.DEPLOY_USER }}
-        key: ${{ secrets.DEPLOY_KEY }}
-        source: "dist.tar.gz"
-        target: "/tmp/"
+      env:
+        DEPLOY_HOST: ${{ secrets.DEPLOY_HOST }}
+        DEPLOY_PORT: ${{ secrets.DEPLOY_PORT }}
+        DEPLOY_USER: ${{ secrets.DEPLOY_USER }}
+        DEPLOY_KEY: ${{ secrets.DEPLOY_KEY }}
+        DEPLOY_KNOWN_HOSTS: ${{ secrets.DEPLOY_KNOWN_HOSTS }}
+        DEPLOY_PATH: ${{ secrets.DEPLOY_PATH }}
+        DEPLOY_SCRIPT: ${{ secrets.DEPLOY_SCRIPT }}
+      run: |
+        install -m 700 -d ~/.ssh
+        printf '%s\n' "$DEPLOY_KEY" > ~/.ssh/deploy_key
+        chmod 600 ~/.ssh/deploy_key
+        printf '%s\n' "$DEPLOY_KNOWN_HOSTS" > ~/.ssh/known_hosts
+        cat > ~/.ssh/config <<EOF
+        Host deploy
+          HostName $DEPLOY_HOST
+          Port $DEPLOY_PORT
+          User $DEPLOY_USER
+          IdentityFile ~/.ssh/deploy_key
+          IdentitiesOnly yes
+          StrictHostKeyChecking yes
+        EOF
 
-    - name: Extract and move files to deployment directory
-      uses: appleboy/ssh-action@v1.0.0
-      with:
-        host: ${{ secrets.DEPLOY_HOST }}
-        port: ${{ secrets.DEPLOY_PORT }}
-        username: ${{ secrets.DEPLOY_USER }}
-        key: ${{ secrets.DEPLOY_KEY }}
-        script: |
-          # Create the deployment directory if it doesn't exist
-          mkdir -p ${{ secrets.DEPLOY_PATH }}
+        scp dist.tar.gz deploy:/tmp/dist.tar.gz
 
-          # Navigate to the deployment directory
-          cd ${{ secrets.DEPLOY_PATH }}
-
-          # Remove existing content
-          rm -rf *
-
-          # Extract the archive directly into the deployment directory
-          tar -xzf /tmp/dist.tar.gz -C .
-
-          # Change ownership of extracted files to www-data
-          chown -R www-data:www-data .
-
-          # Make deploy script executable and execute it
-          chmod +x ${{ secrets.DEPLOY_SCRIPT }}
-          bash ${{ secrets.DEPLOY_SCRIPT }}
-
-          # Clean up temporary archive
-          rm -f /tmp/dist.tar.gz
+        ssh deploy "bash -s -- $(printf '%q ' "$DEPLOY_PATH" "$DEPLOY_SCRIPT")" <<'EOF'
+        set -euo pipefail
+        mkdir -p "$1"
+        cd "$1"
+        rm -rf ./*
+        tar -xzf /tmp/dist.tar.gz -C .
+        chown -R www-data:www-data .
+        chmod +x "$2"
+        bash "$2"
+        rm -f /tmp/dist.tar.gz
+        EOF
