@@ -12,7 +12,6 @@
 		margin-inline: calc(var(--gutter-screen-x) * -1);
 		display: block;
 		max-inline-size: none;
-		max-inline-size: none;
 		inline-size: calc(100% + (var(--gutter-screen-x) * 2))
 	}
 }

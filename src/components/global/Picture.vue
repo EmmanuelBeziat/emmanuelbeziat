@@ -38,7 +38,7 @@ const handlePictureClick = () => {
 
 <style scoped>
 .picture {
-	margin-block: var(--gutter-base);
+	margin-block: var(--spacer);
 	display: grid;
 	grid-template: "Picture" / auto;
 	place-items: center;

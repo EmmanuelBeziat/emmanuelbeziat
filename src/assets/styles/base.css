@@ -1,6 +1,6 @@
 ::selection {
-	background: var(--color-blue);
-	color: var(--color-front);
+	background: var(--selection-back);
+	color: var(--front-body);
 	text-shadow: 0 1px 0 rgb(0 0 0 / .5);
 }
 
@@ -28,39 +28,23 @@ html {
 	scrollbar-gutter: stable;
 	interpolate-size: allow-keywords;
 	transition: scrollbar-color var(--timing-xfast) ease;
-
-	&:has(.portfolio) {
-		--scrollbar-color: var(--color-blue);
-	}
-
-	&:has(.projects) {
-		--scrollbar-color: var(--color-yellow);
-	}
-
-	&:has(.blog) {
-		--scrollbar-color: var(--color-red);
-	}
-
-	&:has(.me) {
-		--scrollbar-color: var(--color-violet);
-	}
 }
 
 body {
-	background: var(--color-back);
-	color: var(--color-front);
-	font: 400 var(--font-size-base)/1.5 var(--font-stack-common);
+	background: var(--back-body);
+	color: var(--front-body);
+	font: 400 var(--font-size-base)/1.5 var(--font-body);
 }
 
 a {
 	background-color: transparent;
-	color: var(--color-green);
+	color: var(--link-color);
 	text-decoration: none;
 	transition: color var(--timing-xfast) ease-in-out;
 }
 
 a:is(:hover, :focus) {
-	color: var(--color-yellow);
+	color: var(--link-color-hover);
 	outline: none;
 }
 
@@ -86,8 +70,7 @@ img {
 }
 
 h1, h2, h3, h4 {
-	font: 300 var(--title-size)/1 var(--font-stack-heading);
-	color: var(--title-color);
+	font: 300 var(--heading-font-size)/1 var(--font-heading);
 	margin: 1.5em 0 .75em;
 	text-wrap: balance;
 }
@@ -97,19 +80,21 @@ p, li, blockquote, figcaption {
 }
 
 h1 {
-	--title-size: var(--font-size-heading-1);
-	--title-color: var(--color-green);
+	--heading-font-size: var(--font-size-heading-1);
+
+	color: var(--heading-color);
 }
 
 h2 {
-	--title-size: var(--font-size-heading-2);
-	--title-color: var(--color-green);
+	--heading-font-size: var(--font-size-heading-2);
+
+	color: var(--heading-color);
 }
 
 h3 {
-	--title-size: var(--font-size-heading-3);
-	--title-color: var(--color-yellow);
+	--heading-font-size: var(--font-size-heading-3);
 
+	color: var(--heading-color-alt);
 	line-height: 1.5;
 }
 
@@ -119,10 +104,12 @@ h3 {
 
 /* quotes */
 blockquote {
+	--blockquote-font-size: var(--font-size-md);
+
 	position: relative;
 	margin: 2rem 0;
 	padding-left: 4rem;
-	font: 400 italic var(--font-size-quotes)/1.5em var(--font-stack-common);
+	font: 400 italic var(--blockquote-font-size)/1.5em var(--font-body);
 
 	&::before {
 		content: "“";
@@ -130,13 +117,13 @@ blockquote {
 		left: 0;
 		top: 2rem;
 		font-size: 6em;
-		color: var(--color-back-lighter);
+		color: var(--back-4);
 	}
 }
 
 q {
 	font-style: italic;
-	color: var(--color-yellow);
+	color: var(--quote-color);
 	quotes: "« " " »";
 }
 
@@ -145,15 +132,15 @@ pre,
 code,
 kbd,
 samp {
-	font-family: var(--font-stack-code);
+	font-family: var(--font-mono);
 }
 
 kbd {
-	background: var(--color-separator);
+	background: var(--back-3);
 	font-size: .85rem;
 	border-radius: .2em;
 	display: inline-block;
 	padding: 0 .35em;
-	border-bottom: 1px solid var(--color-back-darker);
+	border-bottom: 1px solid var(--back-2);
 	margin: 0 .05em;
 }

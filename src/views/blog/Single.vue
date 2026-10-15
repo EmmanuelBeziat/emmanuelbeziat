@@ -99,6 +99,6 @@ useSeoMeta({
 
 .help {
 	font-size: var(--font-size-xs);
-	margin-top: var(--gutter-base);
+	margin-top: var(--spacer);
 }
 </style>

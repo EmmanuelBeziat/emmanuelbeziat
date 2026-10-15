@@ -1,5 +1,5 @@
 <template>
-	<RouterLink class="menu-item" :class="!isActive || '--active'" :to>
+	<RouterLink class="menu-item" :class="[`accent-${target.meta.accent}`, { '--active': isActive }]" :to>
 		<Icon :name="icon" />
 		{{ label }}
 	</RouterLink>
@@ -24,30 +24,31 @@ const props = defineProps({
 	},
 	icon: {
 		type: String,
-		requirde: true
+		required: true
 	}
 })
 
 const router = useRouter()
 const route = useRoute()
-const isActive = computed(() => router.resolve(props.to).path === '/' + route.path.split('/')[1])
+const target = computed(() => router.resolve(props.to))
+const isActive = computed(() => target.value.path === '/' + route.path.split('/')[1])
 </script>
 
 <style scoped>
-@property --link-color {
-	syntax: "<color>";
-	inherits: false;
-	initial-value: var(--color-front);
-}
-
 .menu-item {
-	font: 400 var(--font-size-menu)/1 var(--font-stack-heading);
+	--menu-item-font-size: var(--font-size-xl);
+	--menu-item-color: var(--front-body);
+	--menu-item-transition-property: opacity, translate, scale;
+	--menu-item-transition-duration: var(--timing-slow);
+	--menu-item-transition-timing: var(--ease-back-out);
+
+	font: 400 var(--menu-item-font-size)/1 var(--font-heading);
 	text-decoration: none;
-	color: var(--link-color);
+	color: var(--menu-item-color);
 	position: relative;
-	transition: opacity, translate, scale;
-	transition-duration: var(--timing-slow);
-	transition-timing-function: var(--ease-back-out);
+	transition: var(--menu-item-transition-property);
+	transition-duration: var(--menu-item-transition-duration);
+	transition-timing-function: var(--menu-item-transition-timing);
 	transition-delay: calc(var(--appearance-delay, 0s) * 1.25);
 
 	@media (width <= 768px) {
@@ -80,7 +81,7 @@ const isActive = computed(() => router.resolve(props.to).path === '/' + route.pa
 		transition-property: color, opacity, translate;
 		transition-duration: var(--timing-normal);
 		transition-timing-function: var(--ease-back-out);
-		color: var(--color-front);
+		color: var(--menu-item-color);
 		content: var(--content);
 
 		@media (width <= 768px) {
@@ -102,12 +103,10 @@ const isActive = computed(() => router.resolve(props.to).path === '/' + route.pa
 		padding-left: .1875em;
 	}
 
-	&:is(:hover, :focus) {
-		color: var(--link-color-hover);
-	}
-
 	&:is(:hover, :focus),
 	&.--active {
+		color: var(--accent);
+
 		&::before,
 		&::after {
 			opacity: 1;
@@ -115,38 +114,11 @@ const isActive = computed(() => router.resolve(props.to).path === '/' + route.pa
 		}
 	}
 
-	&.--active {
-		color: var(--link-color-active);
-
-		&:hover::before,
-		&:hover::after {
-			color: var(--link-color-hover);
+	&.--active:hover {
+		&::before,
+		&::after {
+			color: var(--accent);
 		}
-	}
-
-	&[href="/"] {
-		--link-color-hover: var(--color-green);
-		--link-color-active: var(--color-green);
-	}
-
-	&[href="/portfolio"] {
-		--link-color-hover: var(--color-blue);
-		--link-color-active: var(--color-blue);
-	}
-
-	&[href="/projets"] {
-		--link-color-hover: var(--color-yellow);
-		--link-color-active: var(--color-yellow);
-	}
-
-	&[href="/blog"] {
-		--link-color-hover: var(--color-red);
-		--link-color-active: var(--color-red);
-	}
-
-	&[href="/moi"] {
-		--link-color-hover: var(--color-violet);
-		--link-color-active: var(--color-violet);
 	}
 }
 

@@ -84,7 +84,7 @@ useSeoMeta({
 }
 
 h2 {
-	font: 400 var(--font-size-article-title)/1.25 var(--font-stack-heading);
+	font: 400 var(--font-size-article-title)/1.25 var(--font-heading);
 }
 
 .stagger-item {

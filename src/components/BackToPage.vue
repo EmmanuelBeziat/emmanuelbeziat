@@ -25,12 +25,12 @@ defineProps({
 
 <style scoped>
 .navigation {
-	color: var(--nav-color, var(--color-green));
+	color: var(--link-color);
 	display: inline-flex;
 	gap: 6px;
 
 	&:is(:hover, :focus) {
-		--nav-color: var(--color-yellow);
+		color: var(--link-color-hover);
 	}
 
 	svg {

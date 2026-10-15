@@ -28,12 +28,12 @@ describe('<MenuItem>', () => {
 		useRouter.mockReturnValue({
 			resolve: (to) => {
 				const map = {
-					Home: '/',
-					Blog: '/blog',
-					Portfolio: '/portfolio'
+					Home: { path: '/', meta: { accent: 'green' } },
+					Blog: { path: '/blog', meta: { accent: 'red' } },
+					Portfolio: { path: '/portfolio', meta: { accent: 'blue' } }
 				}
 
-				return { path: map[to.name] || '/' }
+				return map[to.name] || map.Home
 			}
 		})
 
@@ -67,6 +67,11 @@ describe('<MenuItem>', () => {
 
 		expect(icon.exists()).toBe(true)
 		expect(icon.props('name')).toBe('blog')
+	})
+
+	it('should apply the accent of the target route', () => {
+		const wrapper = createWrapper()
+		expect(wrapper.classes()).toContain('accent-red')
 	})
 
 	it('should mark link as active when current route matches', () => {

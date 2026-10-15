@@ -24,13 +24,13 @@
 .post {
 	container-type: inline-size;
 	transition: opacity var(--timing-fast) 0s;
-	background: var(--color-back);
+	background: var(--back-body);
 	opacity: 0;
 
 	& + & {
 		margin-top: 2.5em;
 		padding-top: 2.5em;
-		border-top: 1px solid var(--color-separator);
+		border-top: 1px solid var(--border-color);
 	}
 }
 
@@ -50,9 +50,11 @@
 }
 
 .title {
+	--list-article-title-font-size: var(--font-size-xl);
+
 	margin: 0;
 	color: var(--color-red);
-	font: 400 var(--font-size-article-title-small)/1.25 var(--font-stack-heading);
+	font: 400 var(--list-article-title-font-size)/1.25 var(--font-heading);
 }
 
 .date {

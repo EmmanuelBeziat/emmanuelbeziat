@@ -1,5 +1,5 @@
 :root {
-	/* colors */
+	/* palette (syntax colors) */
 	--color-black: #1e192b;
 	--color-white: #f8f8f2;
 	--color-subwhite: #f9fad3;
@@ -9,20 +9,32 @@
 	--color-yellow: #ffcb6b;
 	--color-red: #ec4185;
 
-	--color-back: var(--color-black);
-	--color-front: var(--color-white);
-	--color-front-sub: var(--color-subwhite);
-	--color-separator: var(--color-back-light);
-	--color-back-dark: hsl(from var(--color-back) h s calc(l - 1));
-	--color-back-darker: hsl(from var(--color-back) h s calc(l - 3));
-	--color-back-light: hsl(from var(--color-back) h s calc(l + 5));
-	--color-back-lighter: hsl(from var(--color-back) h s calc(l + 22));
+	/* backgrounds */
+	--back-body: var(--color-black);
+	--back-1: hsl(from var(--back-body) h s calc(l - 1));
+	--back-2: hsl(from var(--back-body) h s calc(l - 3));
+	--back-3: hsl(from var(--back-body) h s calc(l + 5));
+	--back-4: hsl(from var(--back-body) h s calc(l + 22));
 
-	/* fonts stacks */
-	--font-stack-common: "Source Sans 3", system-ui, "Segoe UI", "Helvetica Neue", roboto, arial, sans-serif;
-	--font-stack-heading: "Yanone Kaffeesatz", "Source Sans 3", system-ui, "Segoe UI", "Helvetica Neue", roboto, arial, sans-serif;
-	--font-stack-code: "JetBrains Mono", monospace;
-	--font-stack-hand: "jr!hand", cursive;
+	/* foregrounds */
+	--front-body: var(--color-white);
+	--front-subtle: var(--color-subwhite);
+
+	--border-color: var(--back-3);
+
+	/* document roles */
+	--link-color: var(--color-green);
+	--link-color-hover: var(--color-yellow);
+	--heading-color: var(--color-green);
+	--heading-color-alt: var(--color-yellow);
+	--quote-color: var(--color-yellow);
+	--selection-back: var(--color-blue);
+
+	/* font families */
+	--font-body: "Source Sans 3", system-ui, "Segoe UI", "Helvetica Neue", roboto, arial, sans-serif;
+	--font-heading: "Yanone Kaffeesatz", "Source Sans 3", system-ui, "Segoe UI", "Helvetica Neue", roboto, arial, sans-serif;
+	--font-mono: "JetBrains Mono", monospace;
+	--font-hand: "jr!hand", cursive;
 
 	/* font sizes (scale) */
 	--font-grow-ratio: 1.25;
@@ -45,14 +57,7 @@
 	--font-size-heading-4: var(--font-size-xl);
 	--font-size-heading-5: var(--font-size-lg);
 	--font-size-heading-6: var(--font-size-md);
-	--font-size-title: var(--font-size-2xl);
 	--font-size-article-title: var(--font-size-4xl);
-	--font-size-article-title-small: var(--font-size-xl);
-	--font-size-article-infos: var(--font-size-xs);
-	--font-size-error: var(--font-size-5xl);
-	--font-size-menu: var(--font-size-xl);
-	--font-size-quotes: var(--font-size-md);
-	--font-size-code: var(--font-size-xs);
 
 	@media (width <= 768px) {
 		--font-grow-ratio: 1.2;
@@ -77,14 +82,10 @@
 	--ease-back-out: cubic-bezier(.295, 1.750, .690, .900);
 	--ease-spring: linear(0, -0.002 7.8%, -0.013 13.5%, -0.09 30.5%, -0.088 33.8%, -0.07 36.6%, 0.003 40.8%, 0.129 44.4%, 0.309 47.6%, 0.807 54.3%, 0.95 57.6%, 1.042 61.3%, 1.081 64.8%, 1.09 68.9%, 1.013 86.5%, 1.002 92.2%, 1);
 
-	/* Gutters */
-	--gutter-base: 2rem;
-	--gutter-screen-y: var(--gutter-base);
-	--gutter-screen-x: var(--gutter-base);
-
-	@media (width <= 768px) {
-		--gutter-base: 2rem;
-	}
+	/* spacing */
+	--spacer: 2rem;
+	--gutter-screen-y: var(--spacer);
+	--gutter-screen-x: var(--spacer);
 
 	/* Brands */
 	--color-brand-twitter: #55acee;
@@ -99,7 +100,7 @@
 	--color-brand-bluesky: #0085ff;
 
 	/* Scrollbars */
-	--scrollbar-color: var(--color-green);
+	--scrollbar-color: var(--accent, var(--color-green));
 	--scrollbar-width: thin;
 
 	@media (prefers-reduced-motion: reduce) {

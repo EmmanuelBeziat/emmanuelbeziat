@@ -1,5 +1,5 @@
 <template>
-	<button :class="`share-button --${icon}`" @click="$emit('on-click', icon)">
+	<button class="share-button accent-blue" @click="$emit('on-click', icon)">
 		<Icon name="share" />
 	</button>
 </template>
@@ -23,8 +23,8 @@ defineProps({
 .share-button {
 	width: 36px;
 	aspect-ratio: 1;
-	background: var(--color-back-darker);
-	color: var(--color-front);
+	background: var(--back-2);
+	color: var(--front-body);
 	border-radius: 2px;
 	transition: background-color var(--timing-slow) ease-out;
 	overflow: hidden;
@@ -34,12 +34,8 @@ defineProps({
 	cursor: pointer;
 
 	&:is(:hover, :focus) {
-		background: var(--bg-social-link);
+		background: var(--accent);
 		transition: background-color var(--timing-xfast) ease-out;
-	}
-
-	&.--share {
-		--bg-social-link: var(--color-blue);
 	}
 }
 

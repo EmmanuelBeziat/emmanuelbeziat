@@ -38,7 +38,7 @@ h2 {
 		color: var(--color-red);
 		font-size: 2em;
 		font-weight: 400;
-		margin-inline: var(--gutter-base);
+		margin-inline: var(--spacer);
 		translate: 0 .3em;
 	}
 

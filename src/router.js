@@ -8,7 +8,8 @@ const routes = [
 		name: 'Home',
 		component: Home,
 		meta: {
-			title: 'Accueil'
+			title: 'Accueil',
+			accent: 'green'
 		}
 	},
 	{
@@ -16,7 +17,8 @@ const routes = [
 		name: 'Blog',
 		component: () => import('@/views/blog/Index.vue'),
 		meta: {
-			title: 'Blog'
+			title: 'Blog',
+			accent: 'red'
 		}
 	},
 	{
@@ -25,7 +27,8 @@ const routes = [
 		component: () => import('@/views/blog/Single.vue'),
 		props: true,
 		meta: {
-			title: 'Blog'
+			title: 'Blog',
+			accent: 'red'
 		}
 	},
 	{
@@ -33,7 +36,8 @@ const routes = [
 		name: 'Portfolio',
 		component: () => import('@/views/portfolio/Index.vue'),
 		meta: {
-			title: 'Portfolio'
+			title: 'Portfolio',
+			accent: 'blue'
 		}
 	},
 	{
@@ -42,7 +46,8 @@ const routes = [
 		component: () => import('@/views/portfolio/Single.vue'),
 		props: true,
 		meta: {
-			title: 'Portfolio'
+			title: 'Portfolio',
+			accent: 'blue'
 		}
 	},
 	{
@@ -50,7 +55,8 @@ const routes = [
 		name: 'Projects',
 		component: () => import('@/views/projects/Index.vue'),
 		meta: {
-			title: 'Projets'
+			title: 'Projets',
+			accent: 'yellow'
 		}
 	},
 	{
@@ -58,7 +64,8 @@ const routes = [
 		name: 'Me',
 		component: () => import('@/views/about/Index.vue'),
 		meta: {
-			title: 'À propos de moi…'
+			title: 'À propos de moi…',
+			accent: 'violet'
 		}
 	},
 	{

@@ -24,7 +24,7 @@ import { useCodesStore } from './stores/codes'
 import { usePostsStore } from './stores/posts'
 import { usePortfolioStore } from './stores/portfolio'
 import { useProjectsStore } from './stores/projects'
-import { RouterView } from 'vue-router'
+import { RouterView, useRoute } from 'vue-router'
 import { useHead, useSeoMeta } from '@unhead/vue'
 
 import Header from '@/components/global/Header.vue'
@@ -37,9 +37,14 @@ usePostsStore().fetch()
 usePortfolioStore().fetch()
 useProjectsStore().fetch()
 
+const route = useRoute()
+
 useHead({
 	title: 'Hello World',
 	titleTemplate: (title) => `${openGraph.title} :: ${title}`,
+	htmlAttrs: {
+		class: () => route.meta.accent ? `accent-${route.meta.accent}` : '',
+	},
 })
 
 useSeoMeta({
@@ -75,7 +80,7 @@ useSeoMeta({
 }
 
 .main {
-	margin: 0 auto var(--gutter-base);
+	margin: 0 auto var(--spacer);
 	outline: 0;
 	view-transition-name: main;
 }

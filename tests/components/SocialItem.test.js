@@ -25,7 +25,7 @@ describe('<SocialItem>', () => {
 
 		expect(link.attributes('href')).toBe(defaultProps.url)
 		expect(link.attributes('aria-label')).toBe(defaultProps.name)
-		expect(link.classes()).toContain('--instagram')
+		expect(link.classes()).toContain('accent-brand-instagram')
 	})
 
 	it('should render the Icon component', () => {
@@ -44,7 +44,7 @@ describe('<SocialItem>', () => {
 				props: { ...defaultProps, name: network }
 			})
 			const link = wrapper.find('a')
-			expect(link.classes()).toContain(`--${network.toLowerCase()}`)
+			expect(link.classes()).toContain(`accent-brand-${network.toLowerCase()}`)
 		})
 	})
 
@@ -53,6 +53,6 @@ describe('<SocialItem>', () => {
 			props: { ...defaultProps, name: 'CustomNetwork' }
 		})
 		const link = wrapper.find('a')
-		expect(link.classes()).toContain('--customnetwork')
+		expect(link.classes()).toContain('accent-brand-customnetwork')
 	})
 })

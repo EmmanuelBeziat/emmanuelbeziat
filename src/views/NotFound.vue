@@ -49,7 +49,7 @@ useHead({
 	width: 16rem;
 	aspect-ratio: 1;
 	border-radius: 50%;
-	margin: calc(var(--gutter-base) * 2) auto 0;
+	margin: calc(var(--spacer) * 2) auto 0;
 	background: transparent 50% 50% no-repeat;
 	background-size: cover;
 	overflow: hidden;
@@ -67,18 +67,20 @@ useHead({
 }
 
 .error {
-	font: 400 var(--font-size-error)/1 var(--font-stack-heading);
+	--error-font-size: var(--font-size-5xl);
+
+	font: 400 var(--error-font-size)/1 var(--font-heading);
 	margin: .5em 0 .25em;
 	color: var(--color-red);
 	animation-delay: .3s;
 
 	@media (width <= 992px) {
-		margin-bottom: var(--gutter-base);
+		margin-bottom: var(--spacer);
 	}
 }
 
 .title {
-	font: 400 var(--font-size-heading-2)/1.5 var(--font-stack-heading);
+	font: 400 var(--font-size-heading-2)/1.5 var(--font-heading);
 	margin-top: 0;
 	animation-delay: .35s;
 }

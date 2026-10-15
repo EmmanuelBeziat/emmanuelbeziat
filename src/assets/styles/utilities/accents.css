@@ -1,0 +1,69 @@
+:where([class*="accent-"]) {
+	--accent-front: var(--accent);
+}
+
+.accent-green {
+	--accent: var(--color-green);
+}
+
+.accent-blue {
+	--accent: var(--color-blue);
+}
+
+.accent-yellow {
+	--accent: var(--color-yellow);
+}
+
+.accent-red {
+	--accent: var(--color-red);
+}
+
+.accent-violet {
+	--accent: var(--color-violet);
+}
+
+.accent-black {
+	--accent: var(--back-3);
+	--accent-front: var(--front-body);
+}
+
+/* Brands */
+.accent-brand-twitter {
+	--accent: var(--color-brand-twitter);
+}
+
+.accent-brand-x {
+	--accent: var(--color-brand-x);
+}
+
+.accent-brand-facebook {
+	--accent: var(--color-brand-facebook);
+}
+
+.accent-brand-codepen {
+	--accent: var(--color-brand-codepen);
+}
+
+.accent-brand-github {
+	--accent: var(--color-brand-github);
+}
+
+.accent-brand-linkedin {
+	--accent: var(--color-brand-linkedin);
+}
+
+.accent-brand-instagram {
+	--accent: var(--color-brand-instagram);
+}
+
+.accent-brand-youtube {
+	--accent: var(--color-brand-youtube);
+}
+
+.accent-brand-npmjs {
+	--accent: var(--color-brand-npmjs);
+}
+
+.accent-brand-bluesky {
+	--accent: var(--color-brand-bluesky);
+}

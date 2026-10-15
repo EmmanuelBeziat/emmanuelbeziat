@@ -37,7 +37,7 @@ img.text-align-center {
 
 .noscript {
 	max-inline-size: 480px;
-	margin: calc(var(--gutter-base) * 3) auto;
+	margin: calc(var(--spacer) * 3) auto;
 	font-size: var(--font-size-md);
 }
 

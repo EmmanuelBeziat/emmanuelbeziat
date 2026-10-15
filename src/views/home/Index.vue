@@ -25,6 +25,6 @@ onMounted(() => {
 }
 
 .code {
-	margin-top: var(--gutter-base);
+	margin-top: var(--spacer);
 }
 </style>

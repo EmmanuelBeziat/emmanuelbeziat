@@ -2,9 +2,9 @@
 	<div class="cv-code">
 		<div class="top-bar">
 			<div class="fake-buttons">
-				<span class="fake-button --close" />
-				<span class="fake-button --minify" />
-				<span class="fake-button --expand" />
+				<span class="fake-button accent-red" />
+				<span class="fake-button accent-yellow" />
+				<span class="fake-button accent-green" />
 			</div>
 			<span v-if="code" class="title">emmanuel@code: ~/{{ code.slug }}</span>
 		</div>
@@ -33,7 +33,7 @@ const code = computed(() => codes.count ? codes.list[Math.floor(random * codes.c
 .cv-code {
 	border-radius: .5rem;
 	overflow: hidden;
-	background: var(--color-back-dark);
+	background: var(--back-1);
 	animation-delay: .75s;
 	animation-duration: calc(var(--timing-slow) * 1.5);
 
@@ -63,13 +63,13 @@ const code = computed(() => codes.count ? codes.list[Math.floor(random * codes.c
 .top-bar {
 	display: flex;
 	align-items: center;
-	background: var(--color-back-light);
-	color: var(--color-front);
+	background: var(--back-3);
+	color: var(--front-body);
 	text-align: center;
 	padding: 5px 10px;
 	border-radius: .5rem .5rem 0 0;
 	position: relative;
-	font-family: var(--font-stack-code);
+	font-family: var(--font-mono);
 }
 
 .fake-buttons {
@@ -82,29 +82,17 @@ const code = computed(() => codes.count ? codes.list[Math.floor(random * codes.c
 	inline-size: .7rem;
 	block-size: .7rem;
 	border-radius: 50%;
-	background: var(--bg-button);
+	background: var(--accent);
 }
 
 .title {
 	margin: auto;
 	translate: -32px 0;
-	color: var(--color-front-sub);
+	color: var(--front-subtle);
 
 	@container (width < 46rem) {
 		margin: 0;
 		translate: 0 0;
 	}
-}
-
-.--close {
-	--bg-button: var(--color-red);
-}
-
-.--minify {
-	--bg-button: var(--color-yellow);
-}
-
-.--expand {
-	--bg-button: var(--color-green);
 }
 </style>

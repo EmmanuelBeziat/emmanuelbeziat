@@ -28,7 +28,7 @@ describe('<Button>', () => {
 		const wrapper = createWrapper()
 		expect(wrapper.find('button').exists()).toBe(true)
 		expect(wrapper.classes()).toContain('share-button')
-		expect(wrapper.classes()).toContain('--share')
+		expect(wrapper.classes()).toContain('accent-blue')
 	})
 
 	it('should render the Icon component', () => {
@@ -43,10 +43,5 @@ describe('<Button>', () => {
 		await wrapper.trigger('click')
 		expect(wrapper.emitted('on-click')).toBeTruthy()
 		expect(wrapper.emitted('on-click')[0]).toEqual(['share'])
-	})
-
-	it('should apply correct classes based on icon prop', () => {
-		const wrapper = createWrapper({ icon: 'custom' })
-		expect(wrapper.classes()).toContain('--custom')
 	})
 })

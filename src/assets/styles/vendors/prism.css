@@ -9,9 +9,11 @@ http://prismjs.com/download.html?themes=prism-okaidia&languages=markup+css+css-e
 
 code[class*="language-"],
 pre[class*="language-"] {
+	--code-font-size: var(--font-size-xs);
+
 	color: var(--color-white);
 	text-shadow: 0 1px rgb(0 0 0 / .3);
-	font: 400 var(--font-size-code)/1.45 var(--font-stack-code);
+	font: 400 var(--code-font-size)/1.45 var(--font-mono);
 	direction: ltr;
 	text-align: left;
 	white-space: pre;
@@ -30,7 +32,7 @@ pre[class*="language-"] ::selection,
 code[class*="language-"]::selection,
 code[class*="language-"] ::selection {
 	text-shadow: none;
-	background: var(--color-back-lighter);
+	background: var(--back-4);
 }
 
 /* Code blocks */
@@ -42,7 +44,7 @@ pre[class*="language-"] {
 	overflow: auto;
 	border-radius: .2em;
 	position: relative;
-	background: var(--color-back-dark);
+	background: var(--back-1);
 
 	@media (width <= 768px) {
 		margin: 2em -1rem;
@@ -52,7 +54,7 @@ pre[class*="language-"] {
 
 code[class*="language-"]::selection {
 	background: var(--color-red);
-	color: var(--color-front);
+	color: var(--front-body);
 	text-shadow: 0 1px 0 rgb(0 0 0 / .5);
 }
 
@@ -64,7 +66,7 @@ code[class*="language-"]::selection {
 
 :not(pre) > code[class*="language-"],
 pre[class*="language-"] {
-	background: var(--color-back-dark);
+	background: var(--back-1);
 }
 
 /* Inline code */
@@ -78,11 +80,11 @@ pre[class*="language-"] {
 .token.prolog,
 .token.doctype,
 .token.cdata {
-	color: var(--color-back-lighter);
+	color: var(--back-4);
 }
 
 .token.punctuation {
-	color: var(--color-front);
+	color: var(--front-body);
 }
 
 .namespace {
@@ -117,7 +119,7 @@ pre[class*="language-"] {
 .token.operator,
 .token.url,
 .token.variable {
-	color: var(--color-front);
+	color: var(--front-body);
 }
 
 .token.atrule,
@@ -226,8 +228,8 @@ pre[class*="language-"]::after,
 
 pre[class*="language-"]::after,
 .code-toolbar .toolbar-item {
-	color: var(--color-front);
-	background-color: var(--color-back-light);
+	color: var(--front-body);
+	background-color: var(--back-3);
 	border-radius: 0 3px;
 	display: inline-block;
 	position: absolute;

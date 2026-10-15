@@ -54,13 +54,13 @@ defineProps({
 .header {
 	margin-bottom: 2rem;
 	padding-bottom: 2rem;
-	border-bottom: 1px solid var(--color-separator);
+	border-bottom: 1px solid var(--border-color);
 }
 
 .title {
 	margin-block: 0 .25em;
 	color: var(--color-red);
-	font: 400 var(--font-size-article-title)/1 var(--font-stack-heading);
+	font: 400 var(--font-size-article-title)/1 var(--font-heading);
 }
 
 .infos {
@@ -104,7 +104,7 @@ defineProps({
 .footer {
 	margin-top: 2rem;
 	padding-top: 2rem;
-	border-top: 1px solid var(--color-separator);
+	border-top: 1px solid var(--border-color);
 	animation-delay: .5s;
 }
 

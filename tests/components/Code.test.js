@@ -43,9 +43,9 @@ describe('Code', () => {
 	})
 
 	it('should render fake buttons', () => {
-		expect(wrapper.find('.fake-button.--close').exists()).toBe(true)
-		expect(wrapper.find('.fake-button.--minify').exists()).toBe(true)
-		expect(wrapper.find('.fake-button.--expand').exists()).toBe(true)
+		expect(wrapper.find('.fake-button.accent-red').exists()).toBe(true)
+		expect(wrapper.find('.fake-button.accent-yellow').exists()).toBe(true)
+		expect(wrapper.find('.fake-button.accent-green').exists()).toBe(true)
 	})
 
 	it('should render the code title when code is available', async () => {

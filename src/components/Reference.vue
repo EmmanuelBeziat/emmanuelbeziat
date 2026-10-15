@@ -1,5 +1,5 @@
 <template>
-	<router-link :class="['card', reference.color]" :to="`/portfolio/${reference.slug}/`">
+	<router-link :class="['card', `accent-${reference.color}`]" :to="`/portfolio/${reference.slug}/`">
 		<div class="layer" v-html="reference.image" />
 
 		<div class="caption">
@@ -31,15 +31,15 @@ defineProps({
 .card {
 	opacity: 0;
 	position: relative;
-	color: var(--color-front);
-	background: var(--color-back-dark);
+	color: var(--front-body);
+	background: var(--back-1);
 }
 
 .layer {
-	background: var(--color-separator);
+	background: var(--border-color);
 	pointer-events: none;
 	position: relative;
-	color: var(--color-front);
+	color: var(--front-body);
 	display: flex;
 	justify-content: center;
 	align-items: center;
@@ -70,7 +70,7 @@ defineProps({
 	z-index: 5;
 	position: absolute;
 	inset: auto 0 0;
-	padding: calc(var(--gutter-base) / 2);
+	padding: calc(var(--spacer) / 2);
 	display: flex;
 	flex-direction: column;
 	justify-content: end;
@@ -87,7 +87,7 @@ defineProps({
 	font-size: var(--font-size-xl);
 	font-weight: 400;
 	line-height: 1;
-	color: var(--showcase-color);
+	color: var(--accent-front);
 }
 
 @media (hover: hover) {
@@ -98,7 +98,7 @@ defineProps({
 			border-radius: 50%;
 			aspect-ratio: 1;
 			margin: auto;
-			background: var(--showcase-color);
+			background: var(--accent);
 		}
 
 		.showcase-image {
@@ -115,34 +115,6 @@ defineProps({
 		.tags {
 			translate: 0 0;
 			transition: translate var(--timing-slow) var(--ease-back-out) .1s, opacity var(--timing-slow) var(--ease-back-out) .1s;
-		}
-	}
-
-	.blue {
-		--showcase-color: var(--color-blue);
-	}
-
-	.red {
-		--showcase-color: var(--color-red);
-	}
-
-	.violet {
-		--showcase-color: var(--color-violet);
-	}
-
-	.yellow {
-		--showcase-color: var(--color-yellow);
-	}
-
-	.green {
-		--showcase-color: var(--color-green);
-	}
-
-	.black {
-		--showcase-color: var(--color-back-light);
-
-		.title {
-			--showcase-color: var(--color-front);
 		}
 	}
 }
@@ -164,7 +136,7 @@ defineProps({
 
 .tag {
 	font-size: var(--font-size-xs);
-	color: var(--color-front);
+	color: var(--front-body);
 }
 
 .tag:not(:last-child)::after {

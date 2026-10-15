@@ -1,20 +1,20 @@
 .note {
-	margin: var(--gutter-base) auto;
-	background: var(--color-back-light);
+	margin: var(--spacer) auto;
+	background: var(--back-3);
 	padding: 1em 2em;
-	border-left: 4px solid var(--note-color);
+	border-left: 4px solid var(--accent);
 	position: relative;
 
 	@media (width <= 768px) {
-		margin: var(--gutter-basey) calc(var(--gutter-base) * -1);
+		margin: var(--spacer) calc(var(--spacer) * -1);
 		padding-top: 2em;
 		margin-top: 2.5rem;
 		border-left: 0;
-		border-top: 4px solid var(--note-color);
+		border-top: 4px solid var(--accent);
 	}
 
 	&::before {
-		content: var(--icon);
+		content: var(--note-icon);
 		position: absolute;
 		left: -2px;
 		translate: -50% 0;
@@ -23,10 +23,10 @@
 		display: flex;
 		justify-content: center;
 		align-items: center;
-		color: var(--color-back-dark);
+		color: var(--back-1);
 		border-radius: 50%;
-		border-color: var(--note-color);
-		background: var(--note-color) 50% no-repeat;
+		border-color: var(--accent);
+		background: var(--accent) 50% no-repeat;
 
 		@media (width <= 768px) {
 			left: 50%;
@@ -36,27 +36,27 @@
 	}
 
 	&.--info {
-		--note-color: var(--color-blue);
-		--icon: "ℹ";
+		--accent: var(--color-blue);
+		--note-icon: "ℹ";
 	}
 
 	&.--success {
-		--note-color: var(--color-green);
-		--icon: "✔";
+		--accent: var(--color-green);
+		--note-icon: "✔";
 	}
 
 	&.--question {
-		--note-color: var(--color-violet);
-		--icon: "❓";
+		--accent: var(--color-violet);
+		--note-icon: "❓";
 	}
 
 	&.--important {
-		--note-color: var(--color-yellow);
-		--icon: "❗";
+		--accent: var(--color-yellow);
+		--note-icon: "❗";
 	}
 
 	&.--alert {
-		--note-color: var(--color-red);
-		--icon: "🚨";
+		--accent: var(--color-red);
+		--note-icon: "🚨";
 	}
 }

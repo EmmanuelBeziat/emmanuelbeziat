@@ -24,8 +24,8 @@ import Copyright from '@/components/global/Copyright.vue'
 
 <style scoped>
 .header {
-	padding: var(--gutter-base);
-	background: var(--color-back-dark);
+	padding: var(--spacer);
+	background: var(--back-1);
 	position: relative;
 	z-index: 10;
 	text-align: center;
@@ -33,8 +33,10 @@ import Copyright from '@/components/global/Copyright.vue'
 }
 
 .title {
+	--header-title-font-size: var(--font-size-2xl);
+
 	margin-block: 0;
-	font: 400 var(--font-size-title)/1 var(--font-stack-heading);
+	font: 400 var(--header-title-font-size)/1 var(--font-heading);
 	animation-delay: .25s;
 }
 
@@ -47,7 +49,7 @@ import Copyright from '@/components/global/Copyright.vue'
 }
 
 .bio {
-	margin-block: var(--gutter-base);
+	margin-block: var(--spacer);
 	animation-delay: .55s;
 	text-wrap: balance;
 

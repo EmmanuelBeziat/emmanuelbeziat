@@ -1,5 +1,7 @@
+@layer reset, base, vendors, components, utilities;
+
 /* Dependencies */
-@import 'modern-normalize/modern-normalize.css';
+@import 'modern-normalize/modern-normalize.css' layer(reset);
 
 /* fonts */
 @import '../fonts/jetbrains-mono/jetbrains-mono.css';
@@ -7,18 +9,19 @@
 @import '../fonts/yanone-kaffeesatz/yanone-kaffeesatz.css';
 @import '../fonts/jrhand/jrhand.css';
 
-/* vendors */
-@import './vendors/prism.css';
-
 /* basis */
 @import './custom-properties.css';
-@import './base.css';
+@import './base.css' layer(base);
 
-/* utilities */
-@import './utilities/helpers.css';
-@import './utilities/screen-readers.css';
-@import './utilities/transitions.css';
+/* vendors */
+@import './vendors/prism.css' layer(vendors);
 
 /* components */
-@import './components/notes.css';
-@import './components/frames.css';
+@import './components/notes.css' layer(components);
+@import './components/frames.css' layer(components);
+
+/* utilities */
+@import './utilities/helpers.css' layer(utilities);
+@import './utilities/screen-readers.css' layer(utilities);
+@import './utilities/transitions.css' layer(utilities);
+@import './utilities/accents.css' layer(utilities);

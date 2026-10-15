@@ -41,20 +41,20 @@ const vFocus = {
 }
 
 .search-field {
-	--border-color: var(--color-separator);
+	--search-field-border-color: var(--border-color);
 
 	flex: 1;
 	padding: .8em 1.25rem;
-	background: var(--color-back-dark);
-	border: 1px solid var(--border-color);
+	background: var(--back-1);
+	border: 1px solid var(--search-field-border-color);
 	border-radius: 100vw;
 	box-shadow: none;
 	outline: none;
-	color: var(--color-front);
+	color: var(--front-body);
 	transition: border-color var(--timing-fast) ease-in-out;
 
 	&:focus {
-		--border-color: var(--color-blue);
+		--search-field-border-color: var(--color-blue);
 	}
 
 	&::placeholder {

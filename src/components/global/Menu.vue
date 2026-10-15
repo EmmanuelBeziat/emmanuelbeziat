@@ -25,7 +25,7 @@ import MenuItem from '@/components/global/MenuItem.vue'
 	@media (width <= 768px) {
 		justify-content: space-between;
 		position: fixed;
-		background: var(--color-back-dark);
+		background: var(--back-1);
 		inset: auto 0 0;
 		z-index: 50;
 		will-change: transform;
