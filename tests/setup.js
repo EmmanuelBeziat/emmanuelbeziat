@@ -1,5 +1,8 @@
 import { beforeEach, afterEach, vi } from 'vitest'
 
+// jsdom doesn't implement scrollTo, which vue-router calls after each navigation
+window.scrollTo = () => {}
+
 let consoleErrorSpy
 const originalConsoleError = console.error
 

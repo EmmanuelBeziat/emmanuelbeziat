@@ -105,6 +105,7 @@ describe('Router', () => {
 
 		it('should not start a view transition when only the hash changes', async () => {
 			await router.push('/blog')
+			vi.spyOn(router.options, 'scrollBehavior').mockReturnValueOnce(false)
 			document.startViewTransition = vi.fn(() => ({ finished: Promise.resolve() }))
 
 			await router.push('/blog#section')
