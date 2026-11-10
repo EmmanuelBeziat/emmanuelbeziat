@@ -45,8 +45,6 @@
 	},
 	"devDependencies": {
 		"@eslint/js": "^10.0.1",
-		"@realfavicongenerator/generate-favicon": "^0.9.0",
-		"@realfavicongenerator/image-adapter-node": "^0.9.0",
 		"@vitejs/plugin-vue": "^6.0.10",
 		"@vue/test-utils": "^2.5.1",
 		"esbuild": "^0.28.2",
@@ -69,7 +67,6 @@
 	},
 	"overrides": {},
 	"allowScripts": {
-		"esbuild@0.28.1": true,
-		"sharp@0.34.5": true
+		"esbuild@0.28.1": true
 	}
 }
