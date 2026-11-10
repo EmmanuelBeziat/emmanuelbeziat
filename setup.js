@@ -1,32 +1,35 @@
-import fs from 'fs'
-import inquirer from 'inquirer'
-import path from 'path'
-import { fileURLToPath } from 'url'
-import { dirname } from 'path'
+import fs from 'node:fs'
+import path from 'node:path'
+import { createInterface } from 'node:readline/promises'
 
-const __filename = fileURLToPath(import.meta.url)
-const __dirname = dirname(__filename)
+const envPath = path.join(import.meta.dirname, '.env')
+const examplePath = path.join(import.meta.dirname, '.env.example')
 
-async function createEnvFile() {
-	const envPath = path.join(__dirname, '.env')
+/** Creates the .env file by asking a value for each key of .env.example */
+async function createEnvFile () {
 	if (fs.existsSync(envPath)) {
-    console.log('.env file already exists. Skipping creation.')
-    return
-  }
+		console.log('.env file already exists. Skipping creation.')
+		return
+	}
 
-  const examplePath = path.join(__dirname, '.env.example')
-  const exampleContent = fs.readFileSync(examplePath, 'utf8')
+	const keys = fs.readFileSync(examplePath, 'utf8')
+		.split(/\r?\n/)
+		.filter(line => line.trim() && !line.startsWith('#'))
+		.map(line => line.split('=')[0].trim())
 
-  const questions = exampleContent.split('\n').filter(line => line && !line.startsWith('#')).map(line => {
-    const [key] = line.split('=')
-    return {
-      type: 'input',
-      name: key,
-      message: `${key}:`
-    }
-  })
+	const prompt = createInterface({ input: process.stdin })
+	const answers = prompt[Symbol.asyncIterator]()
+	const lines = []
 
-  const responses = await inquirer.prompt(questions)
-  const envContent = Object.entries(responses).map(([key, value]) => `${key}=${value}`).join('\n')
-  fs.writeFileSync('.env', envContent)
+	for (const key of keys) {
+		process.stdout.write(`${key}: `)
+		const { value = '' } = await answers.next()
+		lines.push(`${key}=${value}`)
+	}
+
+	prompt.close()
+
+	fs.writeFileSync(envPath, `${lines.join('\n')}\n`)
 }
+
+await createEnvFile()
